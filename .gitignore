@@ -1,0 +1,15 @@
+# System Files (Rác hệ thống)
+.DS_Store
+Thumbs.db
+
+# Obsidian Internals (Rác của App)
+.obsidian/workspace
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+
+# Cache file 
+.obsidian/cache
+.obsidian/*cache*
+
+# Thùng rác của Obsidian
+.trash/
