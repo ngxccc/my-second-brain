@@ -1,11 +1,8 @@
 ---
-tags:
-  - type/method
-  - topic/knowledge-management
-  - topic/organization
-  - topic/obsidian
+tags: [type/method, topic/knowledge-management, topic/organization, topic/obsidian]
 status: evergreen
-created_at: 2026-01-29
+created_at: Thursday, January 29th 2026, 3:56:14 pm +07:00
+updated_at: Thursday, January 29th 2026, 7:09:36 pm +07:00
 ---
 
 # Map of Content (MOC)

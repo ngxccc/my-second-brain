@@ -1,9 +1,6 @@
 ---
-tags:
-  - type/concept      # concept, snippet, pattern, bugfix
-  - topic/undefined   # react, architecture, database...
-  - lang/undefined    # javascript, typescript, go...
-status: seeding       # seeding, sapling, evergreen
+tags: [type/concept, topic/react, lang/typescript]
+status: seeding       # seeding, sapling, evergreen, active
 created_at: <% tp.file.creation_date("dddd, MMMM Do YYYY, h:mm:ss a Z") %>
 updated_at: <% tp.file.last_modified_date("dddd, MMMM Do YYYY, h:mm:ss a Z") %>
 aliases: []           # Các tên gọi khác (VD: [RHF, React Hook Form])
@@ -12,17 +9,23 @@ aliases: []           # Các tên gọi khác (VD: [RHF, React Hook Form])
 # [Concept Name]
 
 ## 💡 TL;DR
+
 (Định nghĩa 1 câu: Nó là gì? Tại sao tôi cần quan tâm?)
 
 ---
 
-## 🧠 Why use it? (Tại sao dùng?)
+## 🧠 Why use it?
+
 *(Lý do tồn tại của concept này. Nó giải quyết vấn đề gì mà cách cũ không làm được?)*
+
 - **Problem:** ...
+
 - **Solution:** ...
+
 - **vs Alternative:** (So sánh nhanh với giải pháp khác, VD: vs Formik)
 
-## 🔍 Deep Dive (Cơ chế hoạt động)
+## 🔍 Deep Dive
+
 *(Giải thích How it works. Nguyên lý bên dưới)*
 
 1. **Principle 1:** ...
@@ -31,6 +34,7 @@ aliases: []           # Các tên gọi khác (VD: [RHF, React Hook Form])
 ---
 
 ## 💻 Code Snippet / Implementation
+
 *(Chỉ lưu code Clean/Best Practice. Không lưu code rác)*
 
 ```typescript
@@ -39,9 +43,11 @@ aliases: []           # Các tên gọi khác (VD: [RHF, React Hook Form])
 
 ---
 
-## ⚠️ Edge Cases / Pitfalls (Cạm bẫy)
+## ⚠️ Edge Cases / Pitfalls
 
 _(Đừng bỏ qua phần này. Kinh nghiệm xương máu nằm ở đây)_
+
+### Chia ra thành các header
 
 - ❌ **Don't:** ...
     
@@ -49,15 +55,33 @@ _(Đừng bỏ qua phần này. Kinh nghiệm xương máu nằm ở đây)_
 
 ---
 
-## 🔗 Connections (Mạng lưới)
+## 🚨 Troubleshooting
 
-### Internal (Trong não)
+*(Update khi gặp lỗi fix được hoặc chưa fix được cũng vứt vào luôn để biết)*
+
+### 🔧 Chia ra thành các header
+
+_(Chi tiết lỗi và cách fix)_
+
+---
+
+## 📄 Advanced Mechanics
+
+*(Những kiến thức sâu rộng hơn về phần này)*
+
+### Chia ra thành các header
+
+---
+
+## 🔗 Connections
+
+### Internal
 
 - [[Related_Concept]]
     
 - [[Project_Applied]] (Dự án nào đã áp dụng?)
 
-### External (Nguồn tham khảo)
+### External
 
 - [Docs chính chủ](https://www.google.com/search?q=url)
     

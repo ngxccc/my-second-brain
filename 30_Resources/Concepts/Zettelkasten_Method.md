@@ -1,11 +1,8 @@
 ---
-tags:
-  - type/method
-  - topic/knowledge-management
-  - topic/productivity
-  - topic/learning
+tags: [type/method, topic/knowledge-management, topic/productivity, topic/learning]
 status: evergreen
-created_at: 2026-01-29
+created_at: Thursday, January 29th 2026, 3:56:14 pm +07:00
+updated_at: Thursday, January 29th 2026, 7:09:30 pm +07:00
 ---
 
 # Zettelkasten Method (Hộp ghi chú liên kết)

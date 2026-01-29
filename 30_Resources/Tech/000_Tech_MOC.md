@@ -1,10 +1,8 @@
 ---
-tags:
-  - type/moc
-  - topic/technology
-  - topic/software-engineering
+tags: [type/moc, topic/technology, topic/software-engineering]
 status: evergreen
-created_at: 2026-01-29
+created_at: Thursday, January 29th 2026, 5:48:38 pm +07:00
+updated_at: Thursday, January 29th 2026, 7:06:47 pm +07:00
 ---
 
 # 🛠️ Tech Knowledge MOC

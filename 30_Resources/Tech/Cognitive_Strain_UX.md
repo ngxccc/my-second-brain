@@ -1,11 +1,8 @@
 ---
-tags:
-  - type/concept
-  - topic/ux-design
-  - topic/ed-tech
-  - topic/psychology
+tags: [type/concept, topic/ux-design, topic/ed-tech, topic/psychology]
 status: seeding
-created_at: 2026-01-29
+created_at: Thursday, January 29th 2026, 3:56:14 pm +07:00
+updated_at: Thursday, January 29th 2026, 7:08:03 pm +07:00
 ---
 
 # Cognitive Strain UX (Desirable Difficulty)

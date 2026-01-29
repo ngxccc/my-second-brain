@@ -1,11 +1,8 @@
 ---
-tags:
-  - type/concept
-  - topic/learning-method
-  - topic/memory
-  - topic/linguistics
+tags: [type/concept, topic/learning-method, topic/memory, topic/linguistics]
 status: evergreen
-created_at: 2026-01-29
+created_at: Thursday, January 29th 2026, 3:56:14 pm +07:00
+updated_at: Thursday, January 29th 2026, 7:09:33 pm +07:00
 ---
 
 # Phonetic Chunking (Gom nhóm theo âm)
