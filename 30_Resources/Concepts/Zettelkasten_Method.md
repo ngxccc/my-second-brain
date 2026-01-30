@@ -68,7 +68,7 @@ Nằm độc lập trong folder Resources. Được 2 dự án trên trỏ tới
 ---
 
 ## 🔗 Related Keywords
-* [[Atomic_Note_Template]] (Khuôn mẫu để tạo note chuẩn)
+* [[Technical_Concept_Template]] (Khuôn mẫu để tạo note chuẩn)
 * [[Map_of_Content_MOC]] (Bản đồ định hướng cho các note rời rạc)
 * [[PARA_Method]] (Cách tổ chức thư mục bao quát bên ngoài)
 * [[Graph_View]] (Tính năng visual hóa mạng lưới của Obsidian)

@@ -33,7 +33,7 @@ aliases: []           # Các tên gọi khác (VD: [RHF, React Hook Form])
 
 ---
 
-## 💻 Code Snippet / Implementation
+## 💻 Code Snippet / Implementation (Nếu đó là tech như React/NextJS/...)
 
 *(Chỉ lưu code Clean/Best Practice. Không lưu code rác)*
 
