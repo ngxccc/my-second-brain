@@ -1,8 +1,8 @@
 ---
 tags: [type/strategy, topic/finance, topic/personal-rules]
 status: active
-created_at: <% tp.file.creation_date("dddd, MMMM Do YYYY, h:mm:ss a Z") %>
-updated_at: <% tp.file.last_modified_date("dddd, MMMM Do YYYY, h:mm:ss a Z") %>
+created_at: Friday, January 30th 2026, 9:17:00 am +07:00
+updated_at: Friday, January 30th 2026, 11:04:30 am +07:00
 aliases: [Luật đầu tư, Quy tắc tài chính, Kim chỉ nam, JARS System]
 ---
 

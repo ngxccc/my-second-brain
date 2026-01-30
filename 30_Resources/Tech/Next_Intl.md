@@ -48,7 +48,8 @@ src/
 ├── messages/           # Kho chứa từ vựng
 │   ├── en.json
 │   └── vi.json
-├── i18n.ts             # Config load file JSON (Request Scope)
+├── i18n/
+│   └── request.ts      # Config load file JSON (Request Scope)
 ├── middleware.ts       # Config Routing & Redirect
 ├── navigation.ts       # Wrapper cho Link/Router (Quan trọng!)
 └── app/
