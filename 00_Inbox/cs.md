@@ -67,3 +67,52 @@ Thiết kế DB để chịu được nghiệp vụ Gộp/Chuyển bàn.
 - Thêm hiệu ứng Hover.
     
 - Xử lý biên (Edge cases): Nhập số lượng âm, tách bàn, gộp bàn.
+
+
+CoffeePOS/
+│
+├── 📂 Core/                   # Những thứ dùng chung toàn project
+│   ├── 📂 Constants/          # Lưu hằng số (Màu sắc, Font, Config)
+│   ├── 📂 Helpers/            # Hàm hỗ trợ (Vẽ bo góc, Convert tiền tệ)
+│   └── 📂 Events/             # Global Events (nếu cần)
+│
+├── 📂 Data/                   # Tầng giao tiếp Database (PostgreSQL)
+│   ├── DbContext.cs           # Wrapper cho Npgsql (kết nối DB)
+│   └── 📂 Entities/           # Class ánh xạ bảng SQL (Table, Food, Bill)
+│       ├── Table.cs
+│       ├── Food.cs
+│       └── ...
+│
+├── 📂 Shared/                 # Các UI Control tự chế (Code Chay nằm đây)
+│   ├── 📂 Components/
+│   │   ├── RoundedButton.cs
+│   │   ├── ProductCard.cs     # Thẻ món ăn
+│   │   └── OverlayForm.cs     # Cái màn đen mờ
+│   └── 📂 Styles/             # Class quản lý Theme màu
+│
+├── 📂 Features/               # QUAN TRỌNG NHẤT - Chia theo nghiệp vụ
+│   │
+│   ├── 📂 Auth/               # Đăng nhập/Phân quyền
+│   │   ├── LoginForm.cs
+│   │   └── AuthService.cs
+│   │
+│   ├── 📂 Tables/             # Quản lý sơ đồ bàn
+│   │   ├── UCTableMap.cs      # UserControl hiển thị lưới bàn
+│   │   ├── TableService.cs    # Logic gộp bàn, chuyển bàn
+│   │   └── TableRepository.cs # Query SQL liên quan đến bàn
+│   │
+│   ├── 📂 Menu/               # Quản lý thực đơn & Order
+│   │   ├── UCMenuGrid.cs      # UserControl hiển thị món ăn
+│   │   └── MenuRepository.cs  # Query lấy list món
+│   │
+│   └── 📂 Billing/            # Thanh toán
+│       ├── UCBillPanel.cs     # Panel bên phải (List món đã chọn)
+│       ├── FormPayment.cs     # Popup thanh toán
+│       └── BillService.cs     # Tính tiền, in hóa đơn
+│
+├── 📂 Forms/                  # Các Form chính (Container)
+│   ├── MainForm.cs            # Form 3 cột (Sidebar - Main - Bill)
+│   └── AdminForm.cs           # Form quản lý riêng
+│
+├── Program.cs                 # Điểm khởi chạy
+└── App.config                 # Lưu Connection String
