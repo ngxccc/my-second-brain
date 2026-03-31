@@ -27,22 +27,22 @@ aliases: []            # VD: [Stress Shift, Noun-Verb Pairs]
 
 | **Word**      | **Type** | **IPA (US)**     | **Meaning**            | **Context / Example**                                | Oxford                                                                            |
 | ------------- | -------- | ---------------- | ---------------------- | ---------------------------------------------------- | --------------------------------------------------------------------------------- |
-| **Record**    | **Noun** | `/ˈrekərd/`      | Bản ghi (Data)         | _Delete this **record** from the database._          | [🔊](https://www.oxfordlearnersdictionaries.com/definition/english/record_1)       |
-|               | **Verb** | `/rɪˈkɔːrd/`     | Ghi lại (Log/Audio)    | _The system **records** all error logs._             | [🔊](https://www.oxfordlearnersdictionaries.com/definition/english/record_2)       |
-| **Project**   | **Noun** | `/ˈprɑː.dʒekt/`  | Dự án                  | _My GitHub **project** is public._                   | [🔊](https://www.oxfordlearnersdictionaries.com/definition/english/project_1)      |
-|               | **Verb** | `/prəˈdʒekt/`    | Chiếu/Phóng            | _Can you **project** your screen to the TV?_         | [🔊](https://www.oxfordlearnersdictionaries.com/definition/english/project_2)      |
-| **Object**    | **Noun** | `/ˈɑːb.dʒekt/`   | Đối tượng (OOP)        | _In JavaScript, almost everything is an **object**._ | [🔊](https://www.oxfordlearnersdictionaries.com/definition/english/object_1)       |
-|               | **Verb** | `/əbˈdʒekt/`     | Phản đối               | _I **object** to this bad design pattern._           | [🔊](https://www.oxfordlearnersdictionaries.com/definition/english/object_2)       |
-| **Present**   | **Noun** | `/ˈprez.ənt/`    | Hiện tại / Món quà     | _At **present**, the server is down._                | [🔊](https://www.oxfordlearnersdictionaries.com/definition/english/present_1)      |
-|               | **Verb** | `/prɪˈzent/`     | Trình bày (Demo)       | _I will **present** the demo tomorrow._              | [🔊](https://www.oxfordlearnersdictionaries.com/definition/english/present_2)      |
-| **Export**    | **Noun** | `/ˈek.spɔːrt/`   | Hàng/File xuất khẩu    | _The **export** file is too large._                  | [🔊](https://www.oxfordlearnersdictionaries.com/definition/english/export_1)       |
-|               | **Verb** | `/ɪkˈspɔːrt/`    | Xuất ra                | _Click here to **export** to CSV._                   | [🔊](https://www.oxfordlearnersdictionaries.com/definition/english/export_2)       |
-| **Import**    | **Noun** | `/ˈɪm.pɔːrt/`    | Hàng/File nhập khẩu    | _This is a prohibited **import**._                   | [🔊](https://www.oxfordlearnersdictionaries.com/definition/english/import_1)       |
-|               | **Verb** | `/ɪmˈpɔːrt/`     | Nhập vào               | _Remember to **import** React from 'react'._         | [🔊](https://www.oxfordlearnersdictionaries.com/definition/english/import_2)       |
-| **Address**   | **Noun** | `/ˈæd.res/`      | Địa chỉ (IP/Home)      | _What is your IP **address**?_                       | [🔊](https://www.oxfordlearnersdictionaries.com/definition/english/address_1)      |
-|               | **Verb** | `/əˈdres/`       | Giải quyết/Xử lý       | _We need to **address** this bug immediately._       | [🔊](https://www.oxfordlearnersdictionaries.com/definition/english/address_2)      |
-| **Decrease**  | **Noun** | `/ˈdiː.kriːs/`   | Sự giảm sút            | _There is a **decrease** in user traffic._           | [🔊](https://www.oxfordlearnersdictionaries.com/definition/english/decrease_1)     |
-|               | **Verb** | `/dɪˈkriːs/`     | Giảm xuống             | _The latency will **decrease** after caching._       | [🔊](https://www.oxfordlearnersdictionaries.com/definition/english/decrease_2)     |
+| **Record**    | **Noun** | `/ˈrekərd/`      | Bản ghi (Data)         | _Delete this **record** from the database._          | [🔊](https://www.oxfordlearnersdictionaries.com/definition/english/record_1)      |
+|               | **Verb** | `/rɪˈkɔːrd/`     | Ghi lại (Log/Audio)    | _The system **records** all error logs._             | [🔊](https://www.oxfordlearnersdictionaries.com/definition/english/record_2)      |
+| **Project**   | **Noun** | `/ˈprɑː.dʒekt/`  | Dự án                  | _My GitHub **project** is public._                   | [🔊](https://www.oxfordlearnersdictionaries.com/definition/english/project_1)     |
+|               | **Verb** | `/prəˈdʒekt/`    | Chiếu/Phóng            | _Can you **project** your screen to the TV?_         | [🔊](https://www.oxfordlearnersdictionaries.com/definition/english/project_2)     |
+| **Object**    | **Noun** | `/ˈɑːb.dʒekt/`   | Đối tượng (OOP)        | _In JavaScript, almost everything is an **object**._ | [🔊](https://www.oxfordlearnersdictionaries.com/definition/english/object_1)      |
+|               | **Verb** | `/əbˈdʒekt/`     | Phản đối               | _I **object** to this bad design pattern._           | [🔊](https://www.oxfordlearnersdictionaries.com/definition/english/object_2)      |
+| **Present**   | **Noun** | `/ˈpreznt/`      | Hiện tại / Món quà     | _At **present**, the server is down._                | [🔊](https://www.oxfordlearnersdictionaries.com/definition/english/present_1)     |
+|               | **Verb** | `/prɪˈzent/`     | Trình bày (Demo)       | _I will **present** the demo tomorrow._              | [🔊](https://www.oxfordlearnersdictionaries.com/definition/english/present_3)     |
+| **Export**    | **Noun** | `/ˈek.spɔːrt/`   | Hàng/File xuất khẩu    | _The **export** file is too large._                  | [🔊](https://www.oxfordlearnersdictionaries.com/definition/english/export_1)      |
+|               | **Verb** | `/ɪkˈspɔːrt/`    | Xuất ra                | _Click here to **export** to CSV._                   | [🔊](https://www.oxfordlearnersdictionaries.com/definition/english/export_2)      |
+| **Import**    | **Noun** | `/ˈɪm.pɔːrt/`    | Hàng/File nhập khẩu    | _This is a prohibited **import**._                   | [🔊](https://www.oxfordlearnersdictionaries.com/definition/english/import_1)      |
+|               | **Verb** | `/ɪmˈpɔːrt/`     | Nhập vào               | _Remember to **import** React from 'react'._         | [🔊](https://www.oxfordlearnersdictionaries.com/definition/english/import_2)      |
+| **Address**   | **Noun** | `/ˈæd.res/`      | Địa chỉ (IP/Home)      | _What is your IP **address**?_                       | [🔊](https://www.oxfordlearnersdictionaries.com/definition/english/address_1)     |
+|               | **Verb** | `/əˈdres/`       | Giải quyết/Xử lý       | _We need to **address** this bug immediately._       | [🔊](https://www.oxfordlearnersdictionaries.com/definition/english/address_2)     |
+| **Decrease**  | **Noun** | `/ˈdiː.kriːs/`   | Sự giảm sút            | _There is a **decrease** in user traffic._           | [🔊](https://www.oxfordlearnersdictionaries.com/definition/english/decrease_1)    |
+|               | **Verb** | `/dɪˈkriːs/`     | Giảm xuống             | _The latency will **decrease** after caching._       | [🔊](https://www.oxfordlearnersdictionaries.com/definition/english/decrease_2)    |
 | **Progress**  | **Noun** | `/ˈprɑː.ɡres/`   | Tiến độ                | _Check the download **progress** bar._               | [Link](https://www.oxfordlearnersdictionaries.com/definition/english/progress_1)  |
 |               | **Verb** | `/prəˈɡres/`     | Tiến triển             | _The deployment is **progressing** smoothly._        | [Link](https://www.oxfordlearnersdictionaries.com/definition/english/progress_2)  |
 | **Increase**  | **Noun** | `/ˈɪn.kriːs/`    | Sự tăng trưởng         | _We saw an **increase** in API latency._             | [Link](https://www.oxfordlearnersdictionaries.com/definition/english/increase_1)  |
@@ -127,9 +127,9 @@ _Nhóm này không đổi trọng âm, nhưng đổi âm cuối. Noun = /s/ (nh�
 
 ### 🛠️ Stress Shift Tests (Noun-1 vs Verb-2)
 
-- [ ] **Record:** I need to **record** `/rɪˈkɔːrd/` (v) a new user **record** `/ˈrek.ɚd/` (n).
-- [ ] **Project:** Can you **project** `/prəˈdʒekt/` (v) the **project** `/ˈprɑː.dʒekt/` (n) plan on the TV?
-- [ ] **Object:** I **object** `/əbˈdʒekt/` (v) to treating this variable as an **object** `/ˈɑːb.dʒekt/` (n).
+- [x] **Record:** I need to **record** `/rɪˈkɔːrd/` (v) a new user **record** `/ˈrek.ɚd/` (n).
+- [x] **Project:** Can you **project** `/prəˈdʒekt/` (v) the **project** `/ˈprɑː.dʒekt/` (n) plan on the TV?
+- [x] **Object:** I **object** `/əbˈdʒekt/` (v) to treating this variable as an **object** `/ˈɑːb.dʒekt/` (n).
 - [ ] **Present:** At **present** `/ˈprez.ənt/` (n), I cannot **present** `/prɪˈzent/` (v) the demo.
 - [ ] **Export:** Click to **export** `/ɪkˈspɔːrt/` (v) the data; the **export** `/ˈek.spɔːrt/` (n) is ready.
 - [ ] **Import:** Don't **import** `/ɪmˈpɔːrt/` (v) a prohibited **import** `/ˈɪm.pɔːrt/` (n).

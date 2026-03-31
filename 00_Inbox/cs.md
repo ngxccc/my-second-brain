@@ -1,118 +1,55 @@
-Vậy, cậu sẽ xử lý vấn đề **DPI Awareness** và **Responsive** trong WinForms code chay như thế nào? Cậu sẽ tiếp tục dùng pixel chết (absolute positioning) hay chuyển sang tính toán theo phần trăm (%) màn hình? Và nếu tính theo %, WinForms hỗ trợ class nào để làm việc đó tốt nhất?
+#### 2. Workspace của Thu Ngân (Staff Role)
 
-### Phase 1: Figma & Design System (20%)
+Layout ưu tiên hiển thị hình ảnh và tốc độ thao tác (Touch-friendly).
 
-Trước khi gõ dòng code nào, phải có bản vẽ kỹ thuật.
-
-1. **Define Layout:**
+- **Thanh Sidebar:** Cực kỳ tối giản. Chỉ có: Trang chủ (Bán hàng), Lịch sử, Đăng xuất.
     
-    - **Dashboard:** Bên trái là Lưới Bàn (Table Grid), bên phải là Menu chọn món & Bill tạm tính.
+- **Tính năng 1: POS Bán hàng (Main Flow):** Chứa `UC_Menu` và `UC_Billing`. Chính là cái luồng xịn xò Async/Batching mà ta vừa xây xong.
+    
+- **Tính năng 2: Lịch sử ca làm (Lịch sử Bill):** _(Mới)_ Thu ngân xem lại các hóa đơn **trong ngày hôm nay** của mình.
+    
+    - _Tại sao cần?_ Lỡ máy in kẹt giấy, file PDF lỗi, hoặc khách mất biên lai -> Thu ngân bấm vào nút **"In lại (Reprint)"** để gọi lại hàm Gen PDF QuestPDF. Rất thực tế!
+    
+- **Tính năng 3: Cài đặt cá nhân:** Đổi mật khẩu tài khoản của chính mình.
+    
+
+#### 3. Workspace của Quản Lý (Admin Role)
+
+Layout chuẩn ERP, Sidebar bên trái chứa nhiều Menu, bên phải là lưới dữ liệu (Grid) hoặc Biểu đồ (Chart).
+
+- **Thanh Sidebar:** Tổng quan, Sản phẩm, Danh mục, Nhân viên, Hóa đơn, Đăng xuất.
+    
+- **Tính năng 1: Dashboard (Tổng quan):** _(Core)_
+    
+    - Dùng thư viện **ScottPlot** hoặc **LiveCharts2** vẽ 2 cái biểu đồ: (1) Biểu đồ cột Doanh thu 7 ngày qua. (2) Biểu đồ tròn Top 5 món bán chạy nhất. Cực kỳ lấy lòng cô giáo!
         
-    - **Color Palette:** Chọn 1 màu chủ đạo (Primary Color) ví dụ `#6C5DD3` (Tím) hoặc `#00B894` (Xanh Mint).
+    - Hiển thị 3 con số to đùng: Tổng đơn hôm nay, Tổng doanh thu hôm nay, Số ly nước đã bán.
         
-2. **Define Specs (Thông số kỹ thuật):**
+- **Tính năng 2: Quản lý Menu (Master Data):** * CRUD (Thêm/Sửa/Xóa/Xem) bảng `categories` (Nhóm nước).
     
-    - `Card Món`: 180x240px, Radius 15px.
+    - CRUD bảng `products` (Sản phẩm). Kèm tính năng tải ảnh đại diện lên (lưu dưới dạng Base64 vào DB hoặc copy file vào folder `Images/`).
+    - Chức năng hiển thị các món đã xoá và khôi phục
+    
+- **Tính năng 3: Quản lý Nhân sự:**
+    
+    - CRUD bảng `users` (Tài khoản, Mật khẩu, Role).
+    
+    - Nút "Reset Password" (Phòng trường hợp nhân viên quên mật khẩu).
+    
+- **Tính năng 4: Quản trị Hóa đơn (Audit):** _(Cực kỳ quan trọng)_
+    
+    - Xem toàn bộ lịch sử Bill từ ngày A đến ngày B.
         
-    - `Table Button`: 100x100px, Radius 10px.
-        
-    - `Shadow`: Blur 10, Y=4, Color `#000000` Opacity 10%.
-        
-    - _Lưu lại các thông số này vào một file Text/Notion để lúc code C# nhìn vào đó mà gõ._
-        
+    - Tính năng **Hủy Hóa Đơn (Refund/Void)**. Khi Admin bấm hủy, gọi hàm `CancelBill` (Soft Delete `is_deleted = true`) mà ta đã viết. Bill hủy sẽ bị gạch ngang màu đỏ trên UI.
 
-### Phase 2: Database Modeling (SQL Server) (20%)
+---  
+    Làm thế nào (How) để ông implement cơ chế **In-Memory Caching (`IMemoryCache` của .NET)** vào tầng Service để:
 
-Thiết kế DB để chịu được nghiệp vụ Gộp/Chuyển bàn.
-
-- `TableFood`: (id, name, status) -> _Lưu danh sách bàn._
+1. Lần đầu tiên Thu ngân mở máy, App chọc xuống DB lấy Menu lên và "Nhét" vào RAM (Sống trong 24 tiếng).
     
-- `Account`: (username, displayname, password, type).
+2. Từ nghìn lần sau trở đi, App chỉ móc Data từ RAM ra (0 mili-giây, bypass hoàn toàn PostgreSQL).
     
-- `FoodCategory`: (id, name).
-    
-- `Food`: (id, name, idCategory, price).
-    
-- `Bill`: (id, DateCheckIn, DateCheckOut, idTable, status, discount, totalPrice). -> _Lưu hóa đơn tổng._
-    
-- `BillInfo`: (id, idBill, idFood, count). -> _Lưu chi tiết món trong hóa đơn._
-    
-
-### Phase 3: Core UI Framework "Code Chay" (30%)
-
-Đây là lúc khổ nhất nhưng sướng nhất. Viết các Class cơ sở.
-
-1. **Utils Class:** Viết hàm `DrawRoundedRectangle`, `DrawShadow` dùng chung.
-    
-2. **Component Building:**
-    
-    - Code class `ProductCard` (như ví dụ trước).
-        
-    - Code class `TableButton` (Kế thừa Button/Panel, có property `Status` để tự đổi màu Xanh/Đỏ).
-        
-3. **Layout Manager:** Code Form chính dùng `TableLayoutPanel` chia 2 cột (70% Menu, 30% Bill).
-    
-
-### Phase 4: Business Logic & Binding (20%)
-
-1. **Load Table:** `SELECT * FROM TableFood` -> Loop tạo `TableButton`.
-    
-2. **Load Menu:** `SELECT * FROM Food` -> Loop tạo `ProductCard`.
-    
-3. **Order Flow:** Click Bàn -> Lấy Bill ID -> Click Món -> Insert vào `BillInfo` -> Reload List món bên phải.
-    
-
-### Phase 5: Refine & Polish (10%)
-
-- Thêm hiệu ứng Hover.
-    
-- Xử lý biên (Edge cases): Nhập số lượng âm, tách bàn, gộp bàn.
+3. **Bài toán Edge Case:** Nếu Sếp đang ngồi ở màn hình Admin (Máy số 2) và đổi giá món "Bánh Flan" từ 15k lên 20k. Làm sao để cái Cache trên RAM của máy Thu ngân (Máy số 1) biết đường tự động "Hủy diệt" (Cache Invalidation) để cập nhật giá mới ngay lập tức mà không bán hớ tiền của công ty?
 
 
-CoffeePOS/
-│
-├── 📂 Core/                   # Những thứ dùng chung toàn project
-│   ├── 📂 Constants/          # Lưu hằng số (Màu sắc, Font, Config)
-│   ├── 📂 Helpers/            # Hàm hỗ trợ (Vẽ bo góc, Convert tiền tệ)
-│   └── 📂 Events/             # Global Events (nếu cần)
-│
-├── 📂 Data/                   # Tầng giao tiếp Database (PostgreSQL)
-│   ├── DbContext.cs           # Wrapper cho Npgsql (kết nối DB)
-│   └── 📂 Entities/           # Class ánh xạ bảng SQL (Table, Food, Bill)
-│       ├── Table.cs
-│       ├── Food.cs
-│       └── ...
-│
-├── 📂 Shared/                 # Các UI Control tự chế (Code Chay nằm đây)
-│   ├── 📂 Components/
-│   │   ├── RoundedButton.cs
-│   │   ├── ProductCard.cs     # Thẻ món ăn
-│   │   └── OverlayForm.cs     # Cái màn đen mờ
-│   └── 📂 Styles/             # Class quản lý Theme màu
-│
-├── 📂 Features/               # QUAN TRỌNG NHẤT - Chia theo nghiệp vụ
-│   │
-│   ├── 📂 Auth/               # Đăng nhập/Phân quyền
-│   │   ├── LoginForm.cs
-│   │   └── AuthService.cs
-│   │
-│   ├── 📂 Tables/             # Quản lý sơ đồ bàn
-│   │   ├── UCTableMap.cs      # UserControl hiển thị lưới bàn
-│   │   ├── TableService.cs    # Logic gộp bàn, chuyển bàn
-│   │   └── TableRepository.cs # Query SQL liên quan đến bàn
-│   │
-│   ├── 📂 Menu/               # Quản lý thực đơn & Order
-│   │   ├── UCMenuGrid.cs      # UserControl hiển thị món ăn
-│   │   └── MenuRepository.cs  # Query lấy list món
-│   │
-│   └── 📂 Billing/            # Thanh toán
-│       ├── UCBillPanel.cs     # Panel bên phải (List món đã chọn)
-│       ├── FormPayment.cs     # Popup thanh toán
-│       └── BillService.cs     # Tính tiền, in hóa đơn
-│
-├── 📂 Forms/                  # Các Form chính (Container)
-│   ├── MainForm.cs            # Form 3 cột (Sidebar - Main - Bill)
-│   └── AdminForm.cs           # Form quản lý riêng
-│
-├── Program.cs                 # Điểm khởi chạy
-└── App.config                 # Lưu Connection String
+fix việc khôi phục category khi có các product đã được xoá sẵn trước đó thay vì bị xoá dây chuyển bởi category
