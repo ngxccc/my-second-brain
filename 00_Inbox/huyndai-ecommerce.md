@@ -4,40 +4,46 @@ tại sao dùng drizzle thay vì prisma?
 
 what is 3NF?
 
-#### 1. 📝 Luồng Đàm phán Báo giá B2B (The B2B Quote Negotiation Flow)
+Đây là **Bảng Tech Stack B2B Heavy Logistics (2026 Edition)** chuẩn không cần chỉnh:
 
-- **Map với:** `US-M02` & `US-M03`
-    
-- **Các Actor/System tham gia:** Client (User) -> Next.js Server Actions -> Neon Postgres -> Admin Client -> Email Service (Nodemailer/Resend).
-    
-- **Tại sao phải vẽ:** Đây là luồng Asynchronous (Bất đồng bộ về mặt con người). User request hôm nay, nhưng ngày mai Admin mới chốt giá. Phải vẽ để thấy rõ lúc nào state đổi thành `PENDING_REVIEW`, lúc nào Admin chèn `shipping_bids`, và lúc nào DB chạy Transaction để chốt sang `PRICE_UPDATED` rồi nã Email cho khách.
-    
+#### 1. Core Framework & Runtime
 
-#### 2. 💳 Luồng Thanh toán VNPay & Khóa Tồn kho (Payment & Concurrency Lock Flow)
-
-- **Map với:** `US-M04` & `US-M07`
+- **Framework:** Next.js 16 (App Router). Bắt buộc để xài React Server Components & Server Actions.
     
-- **Các Actor/System tham gia:** Client -> Next.js API -> VNPay Gateway -> VNPay Webhook -> Database (Row-level Lock).
-    
-- **Tại sao phải vẽ:** HR cực kỳ khoái hỏi cái này! Bro phải vẽ để thể hiện rõ quá trình: Next.js tạo Payment URL -> Client bị redirect sang VNPay -> Client thanh toán xong bị đá về trang `Return URL` (chỉ để hiện UI) -> Đồng thời lúc đó VNPay bắn `IPN Webhook` ngầm về Server để trừ tồn kho và update `status = FULL_PAID`.
+- **Runtime / Package Manager:** Bun. (Cực nhanh, thay thế hoàn toàn npm/pnpm).
     
 
-#### 3. 🤖 Luồng RAG Chatbot Phân luồng Ý định (AI DAG Chatbot Flow)
+#### 2. Database & ORM (Data Layer)
 
-- **Map với:** `US-S01`
+- **Primary DB:** PostgreSQL (Neon Serverless). Cực xịn vì hỗ trợ scale tự động và branching (tạo nhánh DB như Git).
     
-- **Các Actor/System tham gia:** Client -> Next.js Route Handler -> LangGraph (Intention Router) -> Neon Postgres (`pgvector`) -> OpenAI -> Client (HTTP Streaming).
+- **Vector DB:** Dùng luôn **`pgvector`** (Extension của Neon) để làm RAG tìm máy phát điện. Không cần Qdrant rườm rà nữa.
     
-- **Tại sao phải vẽ:** RAG không phải là gọi API 1 phát ăn luôn. Vẽ để show cho sếp thấy cách LangGraph nhận prompt, quyết định xem có cần gọi `Tool` chọc vào DB hay không, sau đó trộn data với prompt gốc rồi mới stream Text chunk về UI cho user đọc (không bị Vercel chém Timeout).
+- **ORM:** Drizzle ORM. Type-safe, nhẹ, và sinh ra raw SQL cực nhanh. Rất hợp với môi trường Serverless (Edge).
     
 
-tính năng tìm kiếm gần đúng
+#### 3. State Management & Frontend UI
 
-#### 4. 🧹 Luồng Dọn dẹp Báo giá Hết hạn (Expired Quote Cronjob Flow)
-
-- **Map với:** `US-S03`
+- **Global State:** Zustand. (Như đã bàn, dùng để bắn state xuyên lục địa từ Generative UI lên Header).
     
-- **Các Actor/System tham gia:** Vercel Cron (hoặc Inngest) -> Next.js Background Worker -> Neon Postgres -> Email Service.
+- **Styling:** Tailwind CSS v4.
     
-- **Tại sao phải vẽ:** Để chứng minh bro biết cách xử lý các tác vụ nền (Background Processing) trong môi trường Serverless. Vẽ luồng Cronjob quét DB định kỳ mỗi 1 tiếng, tìm các đơn `PRICE_UPDATED` quá 48h, update thành `EXPIRED` và gửi mail thông báo.
+- **UI Components (Thiếu sót cực lớn của bro):** **Shadcn UI** (hoặc Radix Primitives). Đừng tự code lại modal, dropdown hay toast notification. Dùng Shadcn để có UI chuẩn Enterprise và Accessible.
+    
 
+#### 4. Background Jobs & Caching (Bộ Não Xử Lý Nền)
+
+- **Job Orchestration:** **Inngest**. (ĐÂY LÀ CÁI BRO THIẾU). Vercel Cron chỉ để trigger, còn để chạy luồng Fan-out (xử lý 50k báo giá hết hạn) hay Dead Letter Queue (Gửi email lỗi) thì Inngest là Trùm Serverless hiện tại. Đánh bại hoàn toàn BullMQ vì không cần host Redis riêng cho Queue.
+    
+- **Cache & Rate Limiting:** **Upstash Redis** (Serverless Redis). Cực kỳ quan trọng để lưu Guest Cart (Giỏ hàng vãng lai), check Idempotency Key (chống hack thanh toán lặp), và chống Brute-force đăng nhập.
+    
+
+#### 5. AI & Integrations (Ecosystem)
+
+- **AI Agent:** **Vercel AI SDK + LangGraph.js**. Dùng để dựng DAG phân luồng ý định và Stream React Components về Client.
+    
+- **Authentication:** **Auth.js (BetterAuth)**. Xử lý đăng nhập JWT/Session, tích hợp RBAC (Role-Based Access Control) cho Admin và Dealer.
+    
+- **Email:** **Resend** + React Email (Code template email bằng React).
+    
+- **Storage:** **Cloudinary** hoặc AWS S3. (Lưu ảnh máy phát điện và file PDF Datasheet).
