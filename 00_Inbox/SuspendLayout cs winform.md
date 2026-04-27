@@ -16,3 +16,6 @@ Nếu bro add 100 cái controls mà không có `SuspendLayout()`, WinForms sẽ 
 
 
 khi resumelayout Bắt buộc phải tuân theo nguyên lý **Bottom-Up (Từ trong ra ngoài / Con trước Cha sau)**.
+
+
+Xài component nhỏ (Message, Notification) thì dùng `Target` hoặc truyền thẳng `this`. Xài component bự cần che toàn màn hình (Modal, Drawer) thì BẮT BUỘC xài `FindForm()`.

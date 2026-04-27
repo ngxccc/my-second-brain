@@ -1,0 +1,3 @@
+- **Tên bảng vật lý trong DB (Chuỗi String): SỐ ÍT.** Ví dụ: `pgTable("user")`, `pgTable("session")`. Tại sao? Vì Database lưu trữ các "Thực thể" (Entities). Một dòng (Row) là một thực thể User.
+    
+- **Tên biến TypeScript (Variable Name): SỐ NHIỀU.** Ví dụ: `export const users`. Tại sao? Vì trong code, cậu đang thao tác với một "Tập hợp" (Collection). Cú pháp `db.select().from(users)` đọc lên nghe cực kỳ thuận miệng và chuẩn tiếng Anh (Chọn từ tập hợp những người dùng).
