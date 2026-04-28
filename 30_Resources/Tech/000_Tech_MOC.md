@@ -1,45 +1,45 @@
 ---
-tags: [type/moc, topic/technology, topic/software-engineering]
-status: evergreen
-created_at: Thursday, January 29th 2026, 5:48:38 pm +07:00
-updated_at: Thursday, January 29th 2026, 7:06:47 pm +07:00
+tags: [type/moc, topic/tech]
+date: 2026-04-28
+aliases: [Tech Index, Tech Map]
 ---
+# Tech Knowledge Map of Content (MOC)
 
-# 🛠️ Tech Knowledge MOC
+## TL;DR
 
-## 💡 TL;DR
-Bản đồ tổng hợp các kiến thức kỹ thuật, kiến trúc phần mềm, mẫu thiết kế (Design Patterns) và tư duy lập trình (Engineering Mindset) đã được tinh lọc để tái sử dụng cho các dự án.
+Bản đồ điều hướng trung tâm cho toàn bộ tri thức kỹ thuật. Phân loại theo các Domain cốt lõi để tra cứu nhanh chóng thay vì phụ thuộc vào cấu trúc thư mục vật lý cứng nhắc.
 
----
+## Architecture & Patterns (Kiến trúc & Mẫu thiết kế)
 
-## 🏗️ Software Architecture (Kiến trúc phần mềm)
-Các mô hình tổ chức code và hệ thống Backend.
+- [[Layered_Architecture]]: Kiến trúc N-Tier truyền thống chia theo Technical Concerns.
+- [[Modular_Monolith_Architecture]]: Kiến trúc chia theo Domain/Feature (High Cohesion, Low Coupling).
+- [[MVC_Pattern]]: Mô hình kinh điển và sự tiến hóa thành REST API hiện đại.
+- [[Public_Interface_Pattern]]: Cổng giao tiếp an toàn giữa các module (Facade).
+- [[Dependency_Injection]]: Kỹ thuật đảo ngược luồng điều khiển (IoC) để giảm tight-coupling và dễ test.
+- [[Shared_Module_Dependency_Rule]]: Quy tắc mũi tên một chiều chống Circular Dependency.
 
-### Architectural Styles
-* [[Modular_Monolith]]: Kiến trúc "lai" tối ưu, chia theo Domain nhưng deploy một khối. Lựa chọn số 1 cho đồ án/startup.
-* [[Shared_Module_Dependency_Rule]]: Quy tắc sống còn để quản lý folder `Shared`, tránh vòng lặp phụ thuộc (Circular Dependency).
+## Frameworks & Ecosystem (Hệ sinh thái React/Next.js)
 
-### Communication Patterns
-* [[Public_Interface_Pattern]]: (Facade) Cách thiết kế cổng giao tiếp an toàn giữa các module, đảm bảo tính đóng gói (Encapsulation).
+- [[React_Server_Components]]: Cơ chế render UI trên server, gửi payload tĩnh về client.
+- [[NextJS_Server_Actions]]: Kỹ thuật mutate data trực tiếp từ server bằng RPC ngầm.
+- [[Next_Intl]]: Thư viện i18n hỗ trợ strict type-safety và Server Components.
 
----
+## API & Data Design (Thiết kế Giao tiếp Dữ liệu)
 
-## 🎨 UX/UI & Product Engineering
-Tâm lý học hành vi áp dụng vào thiết kế sản phẩm công nghệ.
+- [[Cursor_Pagination]]: Phân trang hiệu suất cao $O(1)$ thay thế cho Offset $O(N)$ cồng kềnh.
+- [[API_Versioning_Strategies]]: Quản lý tương thích ngược (Backward Compatibility) bằng URI hoặc Header.
 
-* [[Cognitive_Strain_UX]]: (Desirable Difficulty) Kỹ thuật tạo độ khó chủ đích (ép gõ chính xác, giới hạn thời gian) để tăng hiệu quả ghi nhớ cho ứng dụng giáo dục.
+## Infrastructure & Cloud (Hạ tầng & Đám mây)
 
----
+- [[Serverless_Architecture]]: Hạ tầng thực thi auto-scale, không lưu state (Stateless).
+- [[Edge_Computing]]: Đưa code ra các node CDN gần user nhất để giảm latency.
 
-## ⚡ Frontend Engineering (Coming Soon)
-* *(Dành cho các note về React, Next.js, State Management...)*
-* [[Feature_Based_Folder_Structure]] *(Gợi ý: Note này nên viết để quản lý code FE)*
+## Web Client & Security (Trình duyệt & Bảo mật)
 
-## 💾 Database & Infrastructure (Coming Soon)
-* *(Dành cho các note về MongoDB, SQL, Docker...)*
+- [[Client_Side_Encryption]]: Mã hóa LocalStorage/IndexedDB bằng thuật toán AES.
+- [[Offline_Sync_Queue]]: Kỹ thuật Outbox Pattern ở phía client cho ứng dụng Offline-First.
+- [[Cognitive_Strain_UX]]: Áp dụng tâm lý học tạo độ khó chủ đích vào UI/UX.
 
----
+## Language & Core (Cốt lõi Ngôn ngữ)
 
-## 🔗 Related MOCs
-* [[000_Concepts_MOC]] (Các khái niệm tư duy trừu tượng)
-* [[Project_DoAn_MOC]] (Dự án thực tế đang áp dụng các tech này)
+- [[TS_Distributive_Conditional_Types]]: Cơ chế tự động xé lẻ Union Type trong các biểu thức Generic của TypeScript.
