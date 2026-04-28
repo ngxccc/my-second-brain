@@ -1,88 +1,26 @@
 ---
-tags: [type/concept, topic/react, lang/typescript]
-status: seeding       # seeding, sapling, evergreen, active
-created_at: <% tp.file.creation_date("dddd, MMMM Do YYYY, h:mm:ss a Z") %>
-updated_at: <% tp.file.last_modified_date("dddd, MMMM Do YYYY, h:mm:ss a Z") %>
-aliases: []           # Các tên gọi khác (VD: [RHF, React Hook Form])
+tags: [type/concept, topic/tech]
+date: <% tp.file.creation_date("YYYY-MM-DD") %>
+aliases: []
 ---
+# [Tên Concept]
 
-# [Concept Name]
+## TL;DR
 
-## 💡 TL;DR
+(1-2 câu tóm tắt bản chất cốt lõi của vấn đề)
 
-(Định nghĩa 1 câu: Nó là gì? Tại sao tôi cần quan tâm?)
+## Core Concept (Lý thuyết)
 
----
+- Tại sao nó tồn tại? Giải quyết bài toán gì?
+- Cơ chế hoạt động (How it works under the hood).
 
-## 🧠 Why use it?
+## Practical Implementation (Thực chiến)
 
-*(Lý do tồn tại của concept này. Nó giải quyết vấn đề gì mà cách cũ không làm được?)*
-
-- **Problem:** ...
-
-- **Solution:** ...
-
-- **vs Alternative:** (So sánh nhanh với giải pháp khác, VD: vs Formik)
-
-## 🔍 Deep Dive
-
-*(Giải thích How it works. Nguyên lý bên dưới)*
-
-1. **Principle 1:** ...
-2. **Principle 2:** ...
+- Trade-offs (Điểm yếu, rủi ro khi dùng).
+- Code snippet (Chỉ lưu core logic, không lưu boilerplate).
 
 ---
+**Related Notes:**
 
-## 💻 Code Snippet / Implementation (Nếu đó là tech như React/NextJS/...)
-
-*(Chỉ lưu code Clean/Best Practice. Không lưu code rác)*
-
-```typescript
-// Code snippet here
-````
-
----
-
-## ⚠️ Edge Cases / Pitfalls
-
-_(Đừng bỏ qua phần này. Kinh nghiệm xương máu nằm ở đây)_
-
-### Chia ra thành các header
-
-- ❌ **Don't:** ...
-    
-- ✅ **Do:** ...
-
----
-
-## 🚨 Troubleshooting
-
-*(Update khi gặp lỗi fix được hoặc chưa fix được cũng vứt vào luôn để biết)*
-
-### 🔧 Chia ra thành các header
-
-_(Chi tiết lỗi và cách fix)_
-
----
-
-## 📄 Advanced Mechanics
-
-*(Những kiến thức sâu rộng hơn về phần này)*
-
-### Chia ra thành các header
-
----
-
-## 🔗 Connections
-
-### Internal
-
-- [[Related_Concept]]
-    
-- [[Project_Applied]] (Dự án nào đã áp dụng?)
-
-### External
-
-- [Docs chính chủ](https://www.google.com/search?q=url)
-    
-- [Blog/Video hay](https://www.google.com/search?q=url)
+- [[Link 1]]
+- [[Link 2]]
