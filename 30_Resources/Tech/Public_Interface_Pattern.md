@@ -1,112 +1,54 @@
 ---
-tags: [type/pattern, topic/architecture, topic/clean-code]
-status: evergreen
-created_at: Thursday, January 29th 2026, 3:56:14 pm +07:00
-updated_at: Thursday, January 29th 2026, 7:09:17 pm +07:00
+tags: [type/concept, topic/architecture, pattern/design]
+date: 2026-04-28
+aliases: [Module Facade, Boundary Interface]
 ---
+# Public Interface Pattern (Module Boundary)
 
-# Public Interface Pattern (Module Facade)
+## TL;DR
 
-## 💡 TL;DR
-Một mẫu thiết kế đóng vai trò là "Cổng giao tiếp" duy nhất của một Module, cho phép các Module khác gọi tính năng của nó mà không cần truy cập trực tiếp vào code nội bộ, giúp giảm sự phụ thuộc (Decoupling).
+Kỹ thuật đóng gói (Encapsulation) ở cấp độ Architecture. Tạo ra một "Cổng giao tiếp" duy nhất cho một Module, giấu đi toàn bộ logic phức tạp và database schema bên trong. Các module khác chỉ được phép tương tác thông qua cổng này.
 
----
+## Core Concept (Lý thuyết)
 
-## 🔍 Deep Dive (Phân tích sâu)
+- **Vấn đề (High Coupling):** Trong kiến trúc Modular Monolith, nếu Module `Orders` chọc thẳng vào `ProductRepository` để check tồn kho, hai module sẽ dính chặt vào nhau. Sửa database của Product sẽ làm crash Orders.
+- **Giải pháp (Blackbox):** Chia Module thành 2 phần:
+  - *Internal (Private):* Chứa logic nghiệp vụ lõi, Entity, ORM/Database queries.
+  - *Public (Facade):* Lớp vỏ bọc bên ngoài. Chỉ expose ra các method an toàn (Ví dụ: `checkStock(id)`).
+- **Barrel File (`index.ts`):** Đóng vai trò là chốt chặn bảo vệ (Gatekeeper). Tại thư mục gốc của module, ta chỉ `export` cái Public Interface và DTO. Tuyệt đối cấm export Internal Services.
 
-### 1. Context (Bối cảnh)
-Trong kiến trúc [[Modular_Monolith]], nếu Module A (Order) `import` trực tiếp Service hoặc Repository của Module B (Product) để kiểm tra tồn kho, chúng sẽ bị dính chặt vào nhau (High Coupling). Nếu Module B thay đổi logic nội bộ, Module A sẽ chết theo.
+## Practical Implementation (Thực chiến)
 
-### 2. The Solution (Giải pháp)
-Áp dụng tư duy **Encapsulation** (Đóng gói). Mỗi Module được coi như một "Hộp đen" hoặc một mini-service:
-* **Private Area (Internal):** Chứa logic nghiệp vụ phức tạp, truy vấn Database, Domain Models. Không ai bên ngoài được thấy.
-* **Public Area (Interface):** Một lớp vỏ bọc (Facade) chỉ chìa ra những hàm cần thiết cho bên ngoài dùng (ví dụ: `checkStock`, `getProductPrice`).
-
-### 3. Benefits (Lợi ích)
-* **Safety:** Ngăn chặn việc sửa đổi dữ liệu trái phép (VD: Module Order không thể tự ý update tên sản phẩm).
-* **Refactoring:** Bạn có thể đập đi xây lại toàn bộ logic bên trong Module Product (thậm chí đổi từ SQL sang NoSQL) mà không làm hỏng Module Order, miễn là cái Public Interface giữ nguyên.
-
----
-
-## 💻 Code / Example (Ví dụ thực tế)
-
-Giả sử Module **Order** cần kiểm tra tồn kho từ Module **Product**.
-
-### 1. Cấu trúc thư mục (File Structure)
-
-```text
-src/modules/product/
-├── internal/               <-- ⛔ VÙNG CẤM (Private)
-│   ├── product.repository.ts
-│   ├── product.entity.ts   <-- Database Schema
-│   └── product.service.ts  <-- Logic nội bộ phức tạp
-├── dtos/
-│   └── product-response.dto.ts
-├── product.public.ts       <-- ✅ CỔNG GIAO TIẾP (Facade)
-└── index.ts                <-- ✅ BARREL FILE
-```
-
-### 2. Code Implementation
-
-**Bước 1: Tạo Public Service (Facade)**
-Chỉ expose hàm `checkStock` đơn giản, giấu đi logic DB phức tạp.
+- **Trade-offs (Leaking Entities):** Cạm bẫy tử thần là hàm Public lại return về nguyên một Mongoose/Drizzle Schema Object. Khi đó, Module bên ngoài có thể gọi lệnh `.save()` và vô tình sửa luôn Database của Module nội bộ. Bắt buộc phải biến đổi dữ liệu thành plain object (Data Transfer Object - DTO) trước khi trả về.
+- **Code Snippet (TypeScript thuần):**
 
 ```typescript
-// src/modules/product/product.public.ts
-import { Injectable } from '@nestjs/common';
+// 1. Vùng Public: src/modules/product/product.api.ts
 import { ProductInternalService } from './internal/product.service';
 
-@Injectable()
-export class ProductPublicService {
-  constructor(private readonly internalService: ProductInternalService) {}
-
-  // Hàm này an toàn cho người ngoài dùng
-  async checkStock(productId: string, quantity: number): Promise<boolean> {
-    const product = await this.internalService.findOne(productId);
-    if (!product) return false;
-    return product.stock >= quantity;
+export const ProductPublicAPI = {
+  // Chỉ phô ra những hàm an toàn, che giấu logic nội bộ
+  async checkStock(productId: string, qty: number): Promise<boolean> {
+    const product = await ProductInternalService.findById(productId);
+    return product ? product.stock >= qty : false;
   }
-}
-```
+};
 
-**Bước 2: Export tại Barrels (index.ts)**
-Đây là chốt chặn cuối cùng. Chỉ export Public Service.
+// 2. Chốt chặn: src/modules/product/index.ts
+export { ProductPublicAPI } from './product.api';
+// CẤM EXPORT: export * from './internal/...';
 
-```typescript
-// src/modules/product/index.ts
-export * from './product.public';
-export * from './dtos/product-response.dto';
-// KHÔNG export internal service hay repository!
-```
+// 3. Module khác sử dụng: src/modules/orders/orders.service.ts
+import { ProductPublicAPI } from '@/modules/product'; // Chỉ import từ cổng
 
-**Bước 3: Module khác sử dụng**
-
-```typescript
-// src/modules/order/order.service.ts
-import { ProductPublicService } from '../product'; // Import từ cổng index
-
-class OrderService {
-  constructor(private readonly productService: ProductPublicService) {}
-
-  async createOrder(item: any) {
-    // Gọi qua Interface, không quan tâm Product lưu DB kiểu gì
-    const isOk = await this.productService.checkStock(item.id, item.qty);
-  }
-}
+const createOrder = async (item) => {
+  const isAvailable = await ProductPublicAPI.checkStock(item.id, item.qty);
+  if (!isAvailable) throw new Error("Out of stock");
+};
 ```
 
 ---
+**Related Notes:**
 
-## ⚠️ Edge Cases / Pitfalls (Cạm bẫy)
-
-* **Leaking Domain Entities:** Tuyệt đối không trả về `Entity` (Database Model) trong hàm Public. Hãy convert sang **DTO** (Data Transfer Object) trước khi trả về.
-    * *Tại sao?* Nếu trả về Entity, Module bên ngoài có thể lỡ tay sửa field của Entity đó -> Phá vỡ tính toàn vẹn dữ liệu.
-* **God Interface:** Đừng nhét tất cả mọi thứ vào Public Service. Chỉ expose những gì thực sự cần thiết (Need-to-know basis).
-
----
-
-## 🔗 Related Keywords
-* [[Modular_Monolith]]
-* [[Shared_Module_Dependency_Rule]]
-* [[Data_Transfer_Object_DTO]]
-* [[Facade_Pattern]]
+- Nền tảng áp dụng pattern này: [[Modular_Monolith_Architecture]]
+- Cách đóng gói dữ liệu an toàn để trả về: [[Data_Transfer_Object_DTO]]

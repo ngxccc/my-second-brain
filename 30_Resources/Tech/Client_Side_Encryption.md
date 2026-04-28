@@ -1,87 +1,49 @@
 ---
-tags: [type/pattern, topic/security, topic/frontend, lang/typescript]
-status: seeding
-created_at: Thursday, January 29th 2026, 8:12:38 pm +07:00
-updated_at: Thursday, January 29th 2026, 8:13:04 pm +07:00
+tags: [type/concept, topic/security, topic/frontend]
+date: 2026-01-29
 aliases: [AES Encryption, Secure Local Storage]
 ---
-
 # Client-Side Encryption (Data at Rest)
 
-## 💡 TL;DR
-Kỹ thuật mã hóa dữ liệu trước khi lưu xuống bộ nhớ trình duyệt (LocalStorage/IndexedDB) và giải mã khi lấy ra sử dụng, nhằm ngăn chặn việc đọc trộm dữ liệu nhạy cảm thông qua DevTools hoặc XSS cơ bản.
+## TL;DR
 
----
+Sử dụng thuật toán (thường là AES) để mã hóa dữ liệu thành chuỗi vô nghĩa trước khi lưu vào LocalStorage/IndexedDB. Mục tiêu là làm rối (Obfuscation) để ngăn chặn việc đọc trộm dữ liệu nhạy cảm qua DevTools hoặc XSS cơ bản.
 
-## 🧠 Why use it? (Tại sao dùng?)
-- **Problem:** IndexedDB và LocalStorage lưu dữ liệu dưới dạng Plain Text. Bất kỳ ai có quyền truy cập vật lý vào máy hoặc script độc hại (XSS) đều có thể đọc được nội dung nhạy cảm (Draft tin nhắn, Offline Queue chứa password...).
-- **Solution:** Biến dữ liệu thành một chuỗi ký tự vô nghĩa (Ciphertext) bằng thuật toán AES trước khi lưu.
-- **vs Alternative:** So với việc không mã hóa, cách này thêm một lớp bảo vệ (Defense in Depth). Tuy nhiên, không bảo mật tuyệt đối nếu kẻ tấn công lấy được cả "Chìa khóa" (Key).
+## Core Concept (Lý thuyết)
 
-## 🔍 Deep Dive (Cơ chế hoạt động)
+- **Vấn đề:** Các API lưu trữ của trình duyệt mặc định lưu data dưới dạng Plain Text. Script độc hại chạy trên domain của em có quyền truy cập hoàn toàn vào các bộ nhớ này.
+- **Cơ chế:** Áp dụng mã hóa đối xứng (Symmetric Encryption) - dùng chung một Secret Key để thực hiện cả thao tác khóa (Encrypt) và mở (Decrypt).
+- **Yếu huyệt (Key Management):** Thuật toán mã hóa có thể không thể bị phá, nhưng chìa khóa thì có thể bị trộm. Lưu key trong `.env` (`NEXT_PUBLIC_...`) đồng nghĩa với việc key bị lộ trực tiếp trong JS Bundle.
 
-1.  **Algorithm:** Sử dụng **AES (Advanced Encryption Standard)** - tiêu chuẩn mã hóa đối xứng (Symmetric), nhanh và đủ mạnh cho client.
-2.  **Key Management (Vấn đề hóc búa):** Chìa khóa để ở đâu?
-    * *Cách 1 (Đơn giản):* Lưu Key trong biến môi trường (`NEXT_PUBLIC_ENCRYPTION_KEY`). -> Chống tò mò, không chống được Hacker pro (vì key lộ trong source code).
-    * *Cách 2 (An toàn hơn):* Sinh Key ngẫu nhiên mỗi phiên làm việc hoặc lấy từ Token đăng nhập của user.
+## Practical Implementation (Thực chiến)
 
----
-
-## 💻 Code Snippet / Implementation
-*(Sử dụng thư viện quốc dân `crypto-js`)*
+- **Trade-offs:** Đây chỉ là biện pháp phòng thủ nhiều lớp (Defense in Depth), không phải "viên đạn bạc". Nếu hacker kiểm soát được trình duyệt (qua Extension độc hại), họ vẫn đọc được dữ liệu trực tiếp từ RAM (Memory Dump) ngay khoảnh khắc em vừa chạy hàm giải mã.
+- **Code Snippet (crypto-js):**
 
 ```typescript
 import AES from 'crypto-js/aes';
 import CryptoJS from 'crypto-js';
 
-const SECRET_KEY = process.env.NEXT_PUBLIC_APP_SECRET || 'my-secret-key';
+// WARNING: Hardcoding key is a bad practice. Consider deriving from user session.
+const SECRET_KEY = process.env.NEXT_PUBLIC_APP_SECRET;
 
-// Helper: Mã hóa Object -> Chuỗi bí ẩn
-export const encryptData = (data: any): string => {
+export const encrypt = (data: any) => {
   return AES.encrypt(JSON.stringify(data), SECRET_KEY).toString();
 };
 
-// Helper: Giải mã Chuỗi bí ẩn -> Object
-export const decryptData = (ciphertext: string): any => {
+export const decrypt = (ciphertext: string) => {
   try {
     const bytes = AES.decrypt(ciphertext, SECRET_KEY);
-    const decryptedData = JSON.parse(bytes.toString(CryptoJS.enc.Utf8));
-    return decryptedData;
-  } catch (error) {
-    console.error('Decryption failed! Dữ liệu có thể đã bị can thiệp.');
+    return JSON.parse(bytes.toString(CryptoJS.enc.Utf8));
+  } catch (err) {
+    // Thuật toán sẽ throw error nếu ciphertext bị tamper (chỉnh sửa bậy bạ)
     return null;
   }
 };
-
-// 👉 Áp dụng vào Offline Queue
-// Lúc lưu vào DB
-await db.mutation_queue.add({
-  url: '/api/change-password',
-  body: encryptData({ oldPass: '123', newPass: '456' }), // 🔒 Đã mã hóa
-  createdAt: Date.now()
-});
-
-// Lúc lấy ra gửi đi (Flush)
-const task = await db.mutation_queue.get(1);
-const body = decryptData(task.body); // 🔓 Giải mã để gửi lên Server
 ```
 
 ---
+**Related Notes:**
 
-## ⚠️ Edge Cases / Pitfalls (Cạm bẫy)
-
-- ❌ **Don't:** Lưu `SECRET_KEY` cứng trong code và push lên GitHub public.
-- ❌ **Don't:** Tin tưởng tuyệt đối. Nếu Hacker cài được Keylogger hoặc có quyền kiểm soát trình duyệt (Extension độc hại), họ vẫn có thể đánh cắp Key hoặc dữ liệu ngay lúc bạn vừa giải mã (Memory Dump).
-- ✅ **Do:** Coi đây là biện pháp "Obfuscation" (Làm rối) để ngăn chặn tò mò, chứ không thay thế được HTTPS và Server-side Security.
-
----
-
-## 🔗 Connections (Mạng lưới)
-
-### Internal (Trong não)
-- [[Offline_Sync_Queue]]
-- [[Environment_Variables]]
-
-### External (Nguồn tham khảo)
-- [CryptoJS Documentation](https://github.com/brix/crypto-js)
-- [OWASP Client-Side Storage Risks](https://owasp.org/www-project-top-ten/)
+- Nơi tiêu thụ logic này: [[Offline_Sync_Queue]]
+- Cách giấu secret key an toàn hơn: [[Environment_Variables]]

@@ -1,158 +1,46 @@
 ---
-tags: [type/concept, lang/typescript, topic/advanced-types, topic/generics]
-status: seeding
-created_at: <% tp.file.creation_date("dddd, MMMM Do YYYY, h:mm:ss a Z") %>
-updated_at: <% tp.file.last_modified_date("dddd, MMMM Do YYYY, h:mm:ss a Z") %>
-aliases: [Distributive Conditional Types, TypeScript Union Distribution, Disable Distribution]
+tags: [type/concept, topic/typescript, advanced-types]
+date: 2026-04-28
+aliases: [Distributive Conditionals, Disable Distribution]
 ---
+# TS Distributive Conditional Types
 
-# TypeScript Distributive Conditional Types
+## TL;DR
 
-## 💡 TL;DR
+Cơ chế tự động "xé lẻ" của TypeScript. Khi truyền một Union Type (`A | B`) vào một Generic Condition, TS sẽ tự động chạy vòng lặp phân phối (distribute) điều kiện cho từng phần tử bên trong Union thay vì so sánh nguyên một cục.
 
-Là cơ chế mặc định của TypeScript khi xử lý Generic Type là một **Union**: Nó sẽ tự động "xé lẻ" Union ra để so sánh từng phần tử (giống vòng lặp `forEach`). Cần đặc biệt chú ý khi check type `never` để tránh bug logic nghiêm trọng.
+## Core Concept (Lý thuyết)
 
----
+- **Cơ chế Phân phối:** Thay vì xử lý `(A | B) extends U ? X : Y`, trình biên dịch sẽ tự động bung nó ra thành `(A extends U ? X : Y) | (B extends U ? X : Y)`.
+- **Naked Type Parameter (Điều kiện kích hoạt):** Tính năng phân phối CHỈ hoạt động khi biến Generic `T` đứng "trần trụi". Nếu `T` bị bọc trong một cấu trúc khác (như `T[]`, `[T]`, `Promise<T>`), tính năng này lập tức bị tắt.
+- **Nghịch lý tập rỗng (The Empty Set Paradox):** Trong toán học, `never` là một tập rỗng ($\emptyset$). Vì cơ chế phân phối hoạt động giống hàm `map()`, khi nó duyệt qua một tập rỗng, đoạn code điều kiện sẽ không bao giờ được chạy $\rightarrow$ Kết quả luôn trả về `never`.
 
-## 🧠 Why use it?
+## Practical Implementation (Thực chiến)
 
-*(Tại sao nó tồn tại và giải quyết vấn đề gì?)*
-
-- **Problem:** Khi ta truyền một Union (`string | number`) vào một Generic Conditional Type (`T extends U ? X : Y`), ta thường muốn kết quả trả về là sự kết hợp của từng trường hợp con, thay vì so sánh nguyên cục Union đó với điều kiện.
-
-- **Solution:** TypeScript tự động phân phối (distribute) điều kiện cho từng thành phần của Union.
-    - $$(A | B) \text{ extends } U \rightarrow (A \text{ extends } U) | (B \text{ extends } U)$$
-
-- **The Catch (Cái bẫy):** Đôi khi ta **không muốn** hành vi này (ví dụ: muốn kiểm tra chính xác một type có phải là `never` hay không, hoặc muốn so sánh nguyên cả cụm Union).
-
----
-
-## 🔍 Deep Dive
-
-*(Cơ chế Under-the-hood)*
-
-1.  **Naked Type Parameter:** Cơ chế phân phối chỉ kích hoạt khi `T` là một "Naked Type" (Generic đứng trần trụi, không bị bọc bởi Array, Tuple, hay Promise).
-2.  **Set Theory (Lý thuyết tập hợp):**
-    - `never` được coi là một **Tập rỗng** ($\emptyset$).
-    - Khi `T` là `never`, quá trình phân phối giống như chạy vòng lặp trên một mảng rỗng -> Code bên trong điều kiện không bao giờ chạy -> Trả về `never`.
-
----
-
-## 💻 Code Snippet / Implementation
-
-*(Best Practices để xử lý hành vi này)*
+- **Tử huyệt "IsNever":** Lỗi kinh điển của các dev mới học TS là viết Utility Type `type IsNever<T> = T extends never ? true : false;`. Khi truyền `never` vào, nó không trả về `true` mà trả về `never`, làm gãy toàn bộ chuỗi Type Inference phía sau.
+- **Tuyệt chiêu Đóng hộp (Tuple Wrapping):** Để ép TypeScript "tắt" cơ chế phân phối, ta phải tước bỏ trạng thái "Naked" của `T` bằng cách nhốt cả hai vế vào trong ngoặc vuông (Tuple). Lúc này, TS bắt buộc phải so sánh nguyên "cái hộp" với "cái hộp".
+- **Code Snippet:**
 
 ```typescript
-// ---------------------------------------------------------
-// CASE 1: Hành vi mặc định (Distributive - Giống forEach)
-// ---------------------------------------------------------
+// 1. Phân phối mặc định (Distributive)
 type ToArray<T> = T extends any ? T[] : never;
+type DistResult = ToArray<string | number>;
+// -> Kết quả: string[] | number[] (Bị xé lẻ)
 
-// Kết quả: string[] | number[] (Nó tách ra từng cái rồi mới bọc Array)
-type DistributiveResult = ToArray<string | number>;
-
-
-// ---------------------------------------------------------
-// CASE 2: Tắt phân phối (Disable Distribution - Giống so sánh nguyên cục)
-// Kỹ thuật: "Nhốt vào lồng" (Tuple Wrapping)
-// ---------------------------------------------------------
+// 2. Tắt phân phối bằng Tuple Wrapping (Non-Distributive)
 type ToArrayFixed<T> = [T] extends [any] ? T[] : never;
+type NonDistResult = ToArrayFixed<string | number>;
+// -> Kết quả: (string | number)[] (Giữ nguyên cục)
 
-// Kết quả: (string | number)[] (Nó coi nguyên cục là 1 item)
-type NonDistributiveResult = ToArrayFixed<string | number>;
-
-
-// ---------------------------------------------------------
-// CASE 3: The "IsNever" Utility (Quan trọng nhất)
-// ---------------------------------------------------------
-
-// ❌ SAI: Vì never là tập rỗng, vòng lặp không chạy -> trả về never
+// 3. Fix bug IsNever kinh điển
+// ❌ SAI: Trả về never do tập rỗng
 type IsNeverWrong<T> = T extends never ? true : false;
-type TestWrong = IsNeverWrong<never>; // Kết quả: never
-
-// ✅ ĐÚNG: Bọc vào tuple để so sánh [never] vs [never]
+// ✅ ĐÚNG: So sánh nguyên hộp [never] vs [never]
 type IsNever<T> = [T] extends [never] ? true : false;
-type TestRight = IsNever<never>; // Kết quả: true
 ```
 
 ---
+**Related Notes:**
 
-## ⚠️ Edge Cases / Pitfalls
-
-*(Kinh nghiệm xương máu khi làm việc với Generics)*
-
-### The "Never" Paradox
-
-- ❌ **Don't:** Kiểm tra `never` trực tiếp bằng `T extends never`.
-    ```typescript
-    type Check<T> = T extends never ? 'YES' : 'NO';
-    // Check<never> sẽ trả về never, làm hỏng logic code phía sau.
-    ```
-
-- ✅ **Do:** Luôn bọc `[T]` và `[never]` khi muốn kiểm tra sự tồn tại của `never`.
-    ```typescript
-    type Check<T> = [T] extends [never] ? 'YES' : 'NO';
-    ```
-
-### Naked Type Condition
-
-- ❌ **Don't:** Nghĩ rằng lúc nào nó cũng phân phối.
-    ```typescript
-    // T không còn là "naked" vì bị bọc trong Box<T>
-    type Box<T> = { value: T };
-    type CheckBox<T> = Box<T> extends Box<string> ? true : false;
-    
-    // string | number -> Không phân phối -> Box<string | number> so với Box<string> -> False
-    type Result = CheckBox<string | number>; 
-    ```
-
----
-
-## 🚨 Troubleshooting
-
-*(Các lỗi thường gặp)*
-
-### 🔧 Lỗi kết quả trả về là `never` thay vì `boolean`
-
-- **Hiện tượng:** Bạn viết một Utility Type để check điều kiện, nhưng khi truyền `never` vào thì nó không ra `true/false` mà ra `never`.
-- **Nguyên nhân:** Do tính chất phân phối trên tập rỗng.
-- **Cách fix:** Bọc Generic `T` và điều kiện `Extends` vào trong ngoặc vuông `[]`.
-
-```typescript
-// Fix
-type MyCondition<T> = [T] extends [SomeType] ? true : false;
-```
-
----
-
-## 📄 Advanced Mechanics
-
-*(Kiến thức mở rộng)*
-
-### Biến thể `Exclude` và `Extract`
-
-TypeScript tận dụng tính chất phân phối này để xây dựng các Utility Types có sẵn:
-
-```typescript
-// Exclude hoạt động bằng cách phân phối T, nếu T trùng U thì loại bỏ (never), không thì giữ lại.
-type MyExclude<T, U> = T extends U ? never : T;
-```
-
-### Distributive Conditional Types với Union lớn
-
-Nếu Union quá lớn (ví dụ union của 10.000 string literals), việc phân phối này có thể gây áp lực lớn lên trình biên dịch (Compiler Performance), gây chậm IDE. Trong trường hợp đó, nên cân nhắc tắt phân phối nếu logic cho phép.
-
----
-
-## 🔗 Connections
-
-### Internal
-
-- [[Union Types]] - Nguồn gốc của hành vi phân phối.
-- [[Never Type]] - Edge case quan trọng nhất của concept này.
-- [[Tuple Types]] - Công cụ để tắt tính năng phân phối.
-
-### External
-
-- [TS Handbook: Distributive Conditional Types](https://www.typescriptlang.org/docs/handbook/2/conditional-types.html#distributive-conditional-types)
-- [Total TypeScript: The Distributive Conditionals Guide](https://www.totaltypescript.com)
+- Nguồn gốc của hành vi này: [[TS_Union_Types]]
+- Bản chất của tập rỗng trong Type System: [[TS_Never_Type]]
