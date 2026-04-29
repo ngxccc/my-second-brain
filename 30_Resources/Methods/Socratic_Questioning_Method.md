@@ -1,96 +1,33 @@
 ---
-tags: [type/method, topic/critical-thinking, topic/problem-solving, skill/soft-skills]
-status: seeding
-created_at: Friday, January 30th 2026, 9:55:55 pm +07:00
-updated_at: Friday, January 30th 2026, 9:56:01 pm +07:00
+tags: [type/concept, topic/psychology, topic/communication]
+date: 2026-04-29
 aliases: [Socratic Method, Maieutics, Elenchus]
 ---
-
 # Socratic Questioning Method
 
-## 💡 TL;DR
+## TL;DR
 
-Kỹ thuật đặt câu hỏi có hệ thống để "debug" suy nghĩ, bóc tách vấn đề, và lôi các giả định ngầm (assumptions) ra ánh sáng thay vì chấp nhận bề mặt.
+Kỹ thuật đặt câu hỏi có hệ thống để bóc tách vấn đề, làm rõ sự mơ hồ và lôi các giả định ngầm (Assumptions) ra ánh sáng. Phương pháp này giúp tránh việc ra quyết định dựa trên cảm tính hoặc bị cuốn vào các cuộc tranh luận vô bổ.
 
----
+## Core Concept (Lý thuyết)
 
-## 🧠 Why use it?
+- **Tư duy xây dựng (Constructive Curiosity):** Socratic không phải là công cụ để tấn công hay phân định thắng thua. Nó là một sự tò mò có chủ đích để khám phá bản chất sự việc.
+- **Khung 6 câu hỏi cốt lõi:**
+  1. *Clarification (Làm rõ):* "Định nghĩa chính xác của từ này là gì?".
+  2. *Assumptions (Giả định):* "Tại sao chúng ta lại mặc định điều này là đúng?".
+  3. *Evidence (Bằng chứng):* "Có số liệu hay dữ kiện thực tế nào chống lưng cho kết luận này không?".
+  4. *Viewpoints (Góc nhìn):* "Nếu đứng từ phe đối lập, họ sẽ phản biện ra sao?".
+  5. *Implications (Hệ quả):* "Hành động này sẽ dẫn đến rủi ro dài hạn nào?".
+  6. *Meta-question (Siêu câu hỏi):* "Câu hỏi này có thực sự giúp giải quyết vấn đề cốt lõi không?".
 
-*Công cụ để không bị "dắt mũi" bởi cảm xúc hoặc ngụy biện.*
+## Practical Implementation (Thực chiến)
 
-- **Problem:**
-    - Chúng ta thường tư duy dựa trên "Cảm giác" (Feeling) hoặc "Kinh nghiệm cũ" (Bias) mà không kiểm chứng.
-    - Dễ bị cuốn vào tranh luận vô bổ (Argument) thay vì tìm giải pháp (Solution).
-
-- **Solution:**
-    - Dùng bộ 6 câu hỏi để đào sâu vào bản chất (Root Cause).
-    - Biến sự mơ hồ (Ambiguity) thành sự rõ ràng (Clarity).
-
-- **vs Alternative:**
-    - **vs. Tranh luận thông thường:** Socratic mang tính *xây dựng* và *tò mò* (Curiosity), không phải *tấn công* (Attack) hay *thắng thua*.
-
----
-
-## 🔍 Deep Dive
-
-*Core Mechanics: 6 loại câu hỏi (The 6 Socratic Questions)*
-
-1.  **Clarification:** Định nghĩa lại từ ngữ. (VD: *"Khi ông nói 'thất bại', tiêu chuẩn thất bại ở đây là gì?"*)
-2.  **Probing Assumptions:** Tìm cái nền móng ẩn. (VD: *"Tại sao chúng ta lại mặc định là cách cũ luôn đúng?"*)
-3.  **Probing Reasons/Evidence:** Đòi bằng chứng. (VD: *"Số liệu nào dẫn đến kết luận này?"*)
-4.  **Viewpoints:** Đổi góc nhìn. (VD: *"Đối thủ của chúng ta sẽ nhìn vấn đề này thế nào?"*)
-5.  **Implications:** Nhìn hệ quả. (VD: *"Nếu làm theo cách này thì rủi ro dài hạn là gì?"*)
-6.  **Meta-question:** Hỏi về câu hỏi. (VD: *"Câu hỏi này có giúp giải quyết vấn đề chính không?"*)
+- **Cạm bẫy Giao tiếp (Tone of Voice):** Dùng giọng điệu gay gắt hoặc dồn dập sẽ khiến người nghe cảm thấy bị thẩm vấn và lập tức đóng não phòng thủ.
+- **Cách khắc phục (State Intent & Play Dumb):** Luôn hạ giọng, khẳng định mục đích tốt và tỏ ra "ngây thơ" để đối phương thoải mái giải thích (Ví dụ: "Tôi hỏi để hiểu rõ ý bạn hơn chứ không có ý bắt bẻ...").
+- **Right Timing (Đúng thời điểm):** Chỉ dùng kỹ thuật này trong các buổi Review, Retrospective, hoặc khi tự vấn bản thân (Self-reflection). Tuyệt đối không dùng khi đang xử lý khủng hoảng khẩn cấp (nhà đang cháy thì dập lửa, không đứng hỏi tại sao lửa nóng).
 
 ---
+**Related Notes:**
 
-## 💬 Example Script / Dialogue
-
-*Thay vì Code, đây là kịch bản mẫu khi tự vấn bản thân (Self-reflection).*
-
-**Situation:** Bạn cảm thấy: *"Mình không đủ giỏi để làm dự án này."*
-
-1.  **Clarification:** "Giỏi" nghĩa là gì? Là biết tất cả mọi thứ ngay từ đầu, hay là có khả năng học được khi cần?
-2.  **Assumption:** Mình đang giả định rằng những người khác làm được là do họ bẩm sinh đã biết sao?
-3.  **Evidence:** Có bằng chứng nào cho thấy mình *đã từng* học được cái mới rất nhanh trong quá khứ không? (VD: Hồi học React, lúc đầu cũng đâu biết gì).
-4.  **Viewpoint:** Nếu thằng bạn thân gặp tình huống này, mình sẽ khuyên nó thế nào? Có bảo nó bỏ cuộc không?
-5.  **Conclusion:** "Mình không cần biết hết, mình chỉ cần biết cách research và solve từng error một."
-
----
-
-## ⚠️ Edge Cases / Pitfalls
-
-*Dùng sai lúc là ăn đòn.*
-
-### ❌ Don't (Anti-patterns)
--   **Dùng khi khẩn cấp:** Nhà đang cháy thì lo dập lửa, đừng đứng đó hỏi *"Tại sao lửa lại nóng?"*.
--   **Tone cảnh sát:** Hỏi dồn dập *"Tại sao? Tại sao? Tại sao?"* sẽ khiến người nghe bị Defensive (phòng thủ).
-
-### ✅ Do (Best Practices)
--   **Dùng khi Review:** Code Review, Post-mortem, Retrospective.
--   **Giả ngu (Play dumb):** *"Chỗ này mình chưa rõ lắm, giải thích giúp mình logic tại sao chọn A thay vì B được không?"*
-
----
-
-## 🚨 Troubleshooting (Social Errors)
-
-*Fix lỗi giao tiếp khi áp dụng phương pháp này.*
-
-### 🔧 Người nghe bị khó chịu/im lặng
--   **Cause:** Họ cảm thấy bị thẩm vấn hoặc bị coi thường.
--   **Fix:** Hạ giọng, state intent (nêu rõ mục đích). *"Tui hỏi kỹ chút để chắc chắn mình hiểu đúng ý ông, chứ không phải bắt bẻ đâu nha."*
-
-### 🔧 Đi vào ngõ cụt (Circular Logic)
--   **Cause:** Hỏi mãi mà không ra vấn đề mới.
--   **Fix:** Dừng lại. Tóm tắt những gì đã đồng ý và chuyển sang hành động cụ thể.
-
----
-
-## 🔗 Connections
-
-### Internal
--   [[Critical_Thinking_Models]]
--   [[First_Principles_Thinking]] (Socratic là công cụ để đào xuống First Principles)
-
-### External
--   [Socratic Questioning Guide](https://www.criticalthinking.org/)
+- Công cụ áp dụng song song để bóc tách chân lý: [[First_Principles_Thinking]]
+- Khung tư duy tổng hợp để ra quyết định: [[Critical_Thinking_Models]]
