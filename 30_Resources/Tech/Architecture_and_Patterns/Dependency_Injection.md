@@ -9,13 +9,13 @@ aliases: [DI, Inversion of Control, IoC]
 
 Kỹ thuật thiết kế trong đó một đối tượng nhận các phụ thuộc (dependencies) từ bên ngoài truyền vào thay vì tự mình khởi tạo chúng. Giúp code linh hoạt, giảm sự phụ thuộc cứng (Decoupling) và cực kỳ dễ viết Unit Test.
 
-## Core Concept (Lý thuyết)
+## Core Concept
 
 - **Problem (Tight Coupling):** Nếu Class A tự tạo Instance của Class B (`const b = new B()`), Class A bị dính chặt vào Class B. Nếu Class B thay đổi, Class A phải sửa theo. Khó thay thế Class B bằng bản Mock khi Testing.
 - **Solution (Inversion of Control):** Class A chỉ định nghĩa là "Tôi cần một thứ giống như B". Việc tạo ra B và đưa vào A là trách nhiệm của "Shipper" (tầng khởi tạo hoặc DI Container).
 - **Hollywood Principle:** "Don't call us, we'll call you". Component không chủ động tìm kiếm phụ thuộc, nó chờ phụ thuộc được "bơm" vào.
 
-## Practical Implementation (Thực chiến)
+## Practical Implementation
 
 - **Constructor Injection:** Cách phổ biến nhất. Truyền dependency qua hàm khởi tạo.
 - **Props/Parameter Injection:** Phổ biến trong React và Functional Programming.

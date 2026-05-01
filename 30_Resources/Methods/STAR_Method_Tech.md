@@ -9,12 +9,12 @@ aliases: [STAR Framework, Kỹ thuật phỏng vấn hành vi]
 
 Khung kể chuyện chiến lược (Situation -> Task -> Action -> Result) giúp cấu trúc hóa câu trả lời trong các vòng phỏng vấn hành vi (Behavioral Interview) hoặc khi viết CV. Mục tiêu là show ra bằng chứng thép về năng lực giải quyết vấn đề.
 
-## Core Concept (Lý thuyết)
+## Core Concept
 
 - **Đúng người, đúng thời điểm:** Chỉ lấy STAR ra xài khi gặp những câu hỏi mở đầu bằng "Tell me about a time..." hoặc dùng để tự review bản thân cuối năm xin tăng lương. Tuyệt đối cất nó đi khi làm System Design hay Live Coding (những vòng này cần show hard skills ngay tại trận).
 - **Phân bổ thời lượng (The 60% Rule):** Đừng dành 20 phút để than thở/kể khổ về cái project cũ nát như thế nào (Situation/Task). Khúc này chỉ nói lướt qua. Trọng tâm sân khấu (60% thời lượng) phải dành cho **Action**: Bạn đã dùng tech stack gì, tư duy ra sao, và chấp nhận đánh đổi (trade-off) cái gì để giải quyết vấn đề.
 
-## Practical Implementation (Thực chiến)
+## Practical Implementation
 
 - **Tranh công hợp lý (The "I" Factor):** Tách bạch rõ ràng sự cống hiến. Thay vì nói "Chúng tôi đã tối ưu DB", hãy nói "Team chốt phương án X, nhưng **tôi trực tiếp** refactor module Y và optimize query...".
 - **Cú chốt định lượng (Result):** Phải có con số để đóng nắp quan tài sự nghi ngờ của người phỏng vấn.

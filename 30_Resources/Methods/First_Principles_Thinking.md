@@ -9,13 +9,13 @@ aliases: [Reasoning from First Principles, Tư duy nguyên bản, Nguyên lý đ
 
 Kỹ thuật giải quyết vấn đề bằng cách phá vỡ các định kiến, bóc tách sự việc xuống thành những chân lý/sự thật cơ bản nhất (Facts), sau đó xây dựng lên một giải pháp hoàn toàn mới. Công cụ đắc lực để tạo ra sự đổi mới mang tính đột phá (Innovation).
 
-## Core Concept (Lý thuyết)
+## Core Concept
 
 - **Tư duy tương đồng (Analogy):** Cách não bộ hoạt động ở chế độ "tiết kiệm năng lượng" bằng cách làm theo tiền lệ, bắt chước những gì đã có sẵn. Giúp tạo ra những bản nâng cấp nhỏ giọt (Cải tiến).
 - **Nguyên lý đầu tiên:** Đi tìm "chân lý tuyệt đối". Liên tục đặt câu hỏi truy vấn để loại bỏ các giả định (Assumptions) cho đến khi chỉ còn lại những sự thật vật lý/toán học không thể phủ nhận. Giúp tạo ra những bước nhảy vọt (Đột phá).
 - **Cook vs. Chef:** Người đầu bếp (Cook) sao chép công thức. Bếp trưởng (Chef) thấu hiểu bản chất nguyên liệu để kiến tạo món mới.
 
-## Practical Implementation (Thực chiến)
+## Practical Implementation
 
 - **Thuật toán 3 bước:**
   1. *Deconstruct:* Phân rã vấn đề và nhận diện mọi giả định đang tồn tại.

@@ -9,12 +9,12 @@ aliases: [Capstone Roadmap, Software Dev Lifecycle, Project SOP]
 
 Quy trình 16 tuần tiêu chuẩn (SOP) định hình Vòng đời Phát triển Phần mềm (SDLC) từ con số 0 đến lúc deploy. Giúp cân bằng giữa chất lượng kỹ thuật (Technical) và khả năng đóng gói sản phẩm (Delivery/Presentation).
 
-## Core Concept (Lý thuyết)
+## Core Concept
 
 - **Kiến trúc Hybrid:** Linh hoạt trong lúc code (Agile Sprints) nhưng phải cực kỳ bảo thủ và cứng nhắc ở giai đoạn thiết kế Database ban đầu (Waterfall).
 - **Thiết kế Database là sinh tử:** Logic code có thể viết lại trong 1 giờ, nhưng cấu trúc bảng dữ liệu (ERD) bị sai sẽ phá nát toàn bộ quan hệ Entity, kéo theo việc phải đập bỏ toàn bộ Backend.
 
-## Practical Implementation (Thực chiến)
+## Practical Implementation
 
 - **Roadmap 16 Tuần:**
   - *Phase 1: The Blueprint (Tuần 1-3):* Phân tích Requirement, chốt User Flow, thiết kế ERD Database, init repo và cấu trúc thư mục.

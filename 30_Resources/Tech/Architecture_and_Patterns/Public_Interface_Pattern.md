@@ -9,7 +9,7 @@ aliases: [Module Facade, Boundary Interface]
 
 Kỹ thuật đóng gói (Encapsulation) ở cấp độ Architecture. Tạo ra một "Cổng giao tiếp" duy nhất cho một Module, giấu đi toàn bộ logic phức tạp và database schema bên trong. Các module khác chỉ được phép tương tác thông qua cổng này.
 
-## Core Concept (Lý thuyết)
+## Core Concept
 
 - **Vấn đề (High Coupling):** Trong kiến trúc Modular Monolith, nếu Module `Orders` chọc thẳng vào `ProductRepository` để check tồn kho, hai module sẽ dính chặt vào nhau. Sửa database của Product sẽ làm crash Orders.
 - **Giải pháp (Blackbox):** Chia Module thành 2 phần:
@@ -17,7 +17,7 @@ Kỹ thuật đóng gói (Encapsulation) ở cấp độ Architecture. Tạo ra 
   - *Public (Facade):* Lớp vỏ bọc bên ngoài. Chỉ expose ra các method an toàn (Ví dụ: `checkStock(id)`).
 - **Barrel File (`index.ts`):** Đóng vai trò là chốt chặn bảo vệ (Gatekeeper). Tại thư mục gốc của module, ta chỉ `export` cái Public Interface và DTO. Tuyệt đối cấm export Internal Services.
 
-## Practical Implementation (Thực chiến)
+## Practical Implementation
 
 - **Trade-offs (Leaking Entities):** Cạm bẫy tử thần là hàm Public lại return về nguyên một Mongoose/Drizzle Schema Object. Khi đó, Module bên ngoài có thể gọi lệnh `.save()` và vô tình sửa luôn Database của Module nội bộ. Bắt buộc phải biến đổi dữ liệu thành plain object (Data Transfer Object - DTO) trước khi trả về.
 - **Code Snippet (TypeScript thuần):**

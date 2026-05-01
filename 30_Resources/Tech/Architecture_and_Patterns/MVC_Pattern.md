@@ -9,14 +9,14 @@ aliases: [Model-View-Controller, Classical MVC]
 
 Mẫu kiến trúc kinh điển chia ứng dụng thành 3 phần: **Model** (Dữ liệu & Logic), **View** (Giao diện hiển thị), và **Controller** (Điều phối). MVC là nền tảng giải quyết triệt để vấn đề "Spaghetti Code" (trộn lẫn logic query DB vào file HTML).
 
-## Core Concept (Lý thuyết)
+## Core Concept
 
 - **Model (Data & Rules):** Đại diện cho cấu trúc dữ liệu và quy tắc nghiệp vụ. Nơi duy nhất tương tác trực tiếp với Database.
 - **View (Presentation):** Nơi hiển thị dữ liệu (HTML/UI) cho người dùng. Không được chứa logic tính toán phức tạp.
 - **Controller (Traffic Cop):** Nhận request $\rightarrow$ Lấy/Cập nhật dữ liệu từ Model $\rightarrow$ Gắn dữ liệu vào View và trả về cho Client.
 - **Sự tiến hóa thành REST API:** Trong kiến trúc Backend hiện đại (Headless Architecture), tầng **View** vật lý (file HTML/EJS) đã biến mất và được nhường lại cho Frontend (React/Vue). Lúc này, bước `res.json(...)` chính là cách Controller trả về View dưới định dạng dữ liệu thô.
 
-## Practical Implementation (Thực chiến)
+## Practical Implementation
 
 - **Trade-offs (Fat Controller Anti-pattern):** Lỗi phổ biến nhất của Fresher là nhét toàn bộ logic (tính tiền, check quyền, gửi email) vào Controller. Controller chuẩn phải "gầy" (chỉ điều phối luồng), logic nên đẩy xuống Model hoặc một tầng trung gian (Service Layer).
 - **Code Snippet (Modern MVC - REST API):**

@@ -9,12 +9,12 @@ aliases: []
 
 (1-2 câu tóm tắt bản chất cốt lõi của vấn đề)
 
-## Core Concept (Lý thuyết)
+## Core Concept
 
 - Tại sao nó tồn tại? Giải quyết bài toán gì?
 - Cơ chế hoạt động (How it works under the hood).
 
-## Practical Implementation (Thực chiến)
+## Practical Implementation
 
 - Trade-offs (Điểm yếu, rủi ro khi dùng).
 - Code snippet (Chỉ lưu core logic, không lưu boilerplate).
