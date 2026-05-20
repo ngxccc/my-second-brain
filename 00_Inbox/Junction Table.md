@@ -1,0 +1,3 @@
+Để giải quyết triệt để, chúng ta tạo ra một bảng thứ 3 đứng ở giữa, gọi là bảng warehouse_stocks (Tồn kho tại điểm). Bảng này chỉ làm một nhiệm vụ duy nhất: "Map (Ánh xạ) thằng Product A với thằng Warehouse B, và lưu lại số lượng tồn kho của cặp đôi đó".
+
+**Khóa chính phức hợp (Composite Primary Key)** Trong cái bảng Junction này, cậu không cần tạo một cột `id` bằng UUID. Thay vào đó, cậu gộp luôn 2 cột `(warehouse_id, product_id)` làm thành một **Khóa chính phức hợp**. Điều này ép buộc Database ở cấp độ vật lý: _"Không bao giờ cho phép một loại máy phát điện xuất hiện 2 lần trong cùng một nhà kho"_ (Chống duplicate data tuyệt đối).
