@@ -7,6 +7,7 @@
 - **`zb`** (Bottom): Đưa dòng hiện tại xuống sát mép dưới màn hình.
 - **`Ctrl` + `f`** (Forward): Xuống một trang màn hình.
 - **`Ctrl` + `b`** (Backward): Lên một trang màn hình.
+- **`Ctrl` + `v`** Multi cursor
 
 - **`:s/cũ/mới/g`**: Chỉ thay thế trong **dòng hiện tại**.
 - **`:5,10s/cũ/mới/g`**: Thay thế từ dòng 5 đến dòng 10.

@@ -1,6 +1,5 @@
 ---
 tags: [type/concept, topic/tech]
-date: <% tp.file.creation_date("YYYY-MM-DD") %>
 aliases: []
 ---
 # [Tên Concept]
@@ -11,8 +10,11 @@ aliases: []
 
 ## Core Concept
 
-- Tại sao nó tồn tại? Giải quyết bài toán gì?
-- Cơ chế hoạt động (How it works under the hood).
+- **Tại sao nó tồn tại?**
+- **Giải quyết bài toán gì?**
+- **Nó có thay thế cái gì hay không?**
+- **Áp dụng dụng vào những dự án nào?**
+- **Cơ chế hoạt động (How it works under the hood).**
 
 ## Practical Implementation
 

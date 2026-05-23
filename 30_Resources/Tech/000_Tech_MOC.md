@@ -17,6 +17,11 @@ Bản đồ điều hướng trung tâm cho toàn bộ tri thức kỹ thuật. 
 - [[Public_Interface_Pattern]]: Cổng giao tiếp an toàn giữa các module (Facade).
 - [[Dependency_Injection]]: Kỹ thuật đảo ngược luồng điều khiển (IoC) để giảm tight-coupling và dễ test.
 - [[Shared_Module_Dependency_Rule]]: Quy tắc mũi tên một chiều chống Circular Dependency.
+- [[Circular_Dependency]]: Vòng lặp phụ thuộc tai hại giữa các module và cách giải quyết.
+- [[Clean_Architecture]]: Hệ tư tưởng phân tầng kiến trúc để cô lập và bảo vệ Core Business Logic khỏi sự phụ thuộc công nghệ.
+- [[SOLID_Principles]]: Bộ 5 nguyên lý vàng thiết kế hướng đối tượng giúp code modular, linh hoạt và dễ bảo trì.
+- [[Interface_Driven_Design]]: Thiết kế dựa trên giao diện (contract-first) giúp các lớp lỏng lẻo và phát triển song song.
+- [[Test_Driven_Design]]: Quy trình viết test trước, code sau giúp định hình kiến trúc phần mềm sạch.
 
 ## Frameworks & Ecosystem (Hệ sinh thái React/Next.js)
 

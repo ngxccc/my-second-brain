@@ -1,5 +1,5 @@
 ## Roadmap every day
-1. 15 phút Khởi động: Mở 1 video phát âm của Rachel hoặc Clear English Corner -> Nhìn gương nhại theo khẩu hình.
+1. 15 phút Khởi động: Mở 1 video phát âm của Rachel's English hoặc Clear English Corner with Keenyn Rhodes -> Nhìn gương nhại theo khẩu hình.
 
 2. 20 phút Học Cụm từ (Chunking): Mở 1 video Learn English with TV Series -> Xem trích đoạn -> Ghi chép 3-5 cụm từ hay vào sổ -> Nhại lại câu thoại chứa cụm từ đó vài lần.
 
@@ -11,14 +11,15 @@
 * **Thực hành YouTube:** Tìm các kênh YouTube dạy tiếng Anh cơ bản, các video giao tiếp đời sống (Vlog ngắn, hoạt hình, phim sitcom như Extra English). Bật phụ đề tiếng Anh, **nghe và nhại lại (Shadowing)** y hệt ngữ điệu của họ.
 * **Mục tiêu:** Mở lại "đôi tai" đã bị đóng với tiếng Anh, phát âm tròn vành rõ chữ, quen với nhịp điệu tiếng Anh.
 * **Kênh Youtube trị IPA:**
-	* Rachel's English
-	* BBC Learning English - Playlist "The Sounds of English"
+	* [Rachel's English](https://www.youtube.com/@rachelsenglish)
+	* [BBC Learning English - Playlist "The Sounds of English"](https://www.bbc.co.uk/learningenglish/oromo/features/the-sounds-of-english)
 	* mmmEnglish
 	* Clear English Corner with Keenyn Rhodes
+	* [SpeechModification](https://www.youtube.com/@SpeechModification)
 - **Luyện nghe và Shadowing:**
 	- Extra English
 	- Peppa Pig - English Episodes
-	- Learn English with TV Series
+	- [Learn English with TV Series](https://www.youtube.com/@LearnEnglishWithTVSeries)
 ### Ứng dụng ghi chép (Word Family + Chunking)
 
 Để bạn dễ hình dung, mình lấy luôn từ vựng IT áp dụng vào cách ghi chép bạn đã chọn nhé:
