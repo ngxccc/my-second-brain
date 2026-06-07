@@ -30,7 +30,6 @@ Each mode has strict boundaries:
 - **System Structure Reference**: All AI agents and systems MUST read `000_System_Structure.md` at the beginning of a task to understand the exact organization and directories of this Second Brain.
 - **Maintain & Update**: Any task that introduces a structural change, creates a new core folder, or deprecates an existing directory MUST immediately update `000_System_Structure.md` to ensure it remains the source of truth.
 
-
 ### Atomic Notes Guidelines
 
 - **Atomic Note Definition**: An atomic note is a highly focused, self-contained piece of knowledge dedicated to **exactly one concept or idea**.
@@ -43,10 +42,14 @@ Each mode has strict boundaries:
     4. **Concrete Examples**: Short code snippets or practical comparisons.
     5. **Related Notes**: Backlinks (`[[Link]]`) connecting it to other notes (e.g., MOCs or sibling concepts).
   - **Simplification**: Write explanations in a simple, direct, developer-friendly tone (using clear Vietnamese with standard English terms if needed). Avoid copying and pasting large walls of text; synthesize and write in your own words.
+  - **Note Classification (Litmus Test)**: Classify notes based on Actionability vs Cognition:
+    - If it contains checklists, step-by-step guidelines, code templates, or scripts -> Place under `30_Resources/Methods/`.
+    - If it contains definitions, theory, origins, or mental models -> Place under `30_Resources/Concepts/`.
+  - **Quality Verification**: After creating or updating any note, you MUST run `bun 99_Meta/Scripts/validate_notes.mjs` to verify its structure and content quality. No note should be committed with validation errors.
+
 ### Efficiency
 
 - Use subagents to isolate context when the user explicitly asks for delegation, parallel agent work, or a mode-specific agent
 - Pass only relevant files
 - Summarize rather than duplicate
 - Reuse existing plans and context
-

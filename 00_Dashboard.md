@@ -1,4 +1,3 @@
-
 ```dataviewjs
 const targetFolder = '"20_Areas/Daily_Logs"';
 const scanWindow = dv.date('today').minus({days: 7});
@@ -15,3 +14,10 @@ if (pendingTasks.length > 0) {
     dv.paragraph("Clear! Hệ thống không còn task tồn đọng.");
 }
 ```
+
+Cần tìm hiểu và hoàn thiện:
+
+- [ ] 30_Resources/Tech/API_and_Data_Design/Outbox_Pattern.md
+- [ ] 30_Resources/Tech/API_and_Data_Design/Partial_Index.md
+- [ ] 30_Resources/Tech/API_and_Data_Design/Prepare_Statements.md
+- [ ] 30_Resources/Tech/Language_and_Core/Tree_Shaking.md

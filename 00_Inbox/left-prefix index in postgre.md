@@ -1,2 +1,0 @@
-PostgreSQL có nguyên tắc Left-Prefix (Tiền tố bên trái). Khi bạn tạo composite index trên (userId, status, createdAt), PostgreSQL hoàn toàn có thể sử dụng cột đầu tiên       
- (userId) của index này để tối ưu các truy vấn chỉ lọc theo userId. 
