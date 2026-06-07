@@ -19,13 +19,13 @@ updated_at: Tuesday, March 31st 2026, 8:20:37 pm +07:00
 
 ## Phase 2: Ráp điện nước (Server Actions & API - ~1.5 tuần)
 
-- [ ] Vào apps/storefront, tạo server/actions.
+- [x] Vào apps/storefront, tạo server/actions.
 - [ ] Code Action: Lấy danh sách máy phát điện (có filter, pagination).
-- [ ] Code Action: Xử lý Đăng ký / Đăng nhập (Dùng NextAuth hoặc tự build JWT).
+- [x] Code Action: Xử lý Đăng ký / Đăng nhập (Dùng NextAuth hoặc tự build JWT).
 
 ## Phase 3: Đắp UI & Xử lý Client (Bro đang làm dở cái này)
 
-- [ ] Hoàn thiện nốt phần i18n (vi/en) cho các trang chi tiết.
+- [x] Hoàn thiện nốt phần i18n (vi/en) cho các trang chi tiết.
 - [ ] Tích hợp giỏ hàng (Zustand persist storage).
 - [ ] Code UI trang Checkout.
 

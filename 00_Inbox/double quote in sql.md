@@ -1,0 +1,1 @@
+trong sql nếu dùng nháy kép thì sẽ được hiểu là tên cột indentifier còn nếu dùng dấu nháy đơn thì nó sẽ được hiểu là chuối ký tự string literal

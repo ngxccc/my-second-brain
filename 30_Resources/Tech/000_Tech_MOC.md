@@ -33,6 +33,7 @@ Bản đồ điều hướng trung tâm cho toàn bộ tri thức kỹ thuật. 
 
 - [[Cursor_Pagination]]: Phân trang hiệu suất cao $O(1)$ thay thế cho Offset $O(N)$ cồng kềnh.
 - [[API_Versioning_Strategies]]: Quản lý tương thích ngược (Backward Compatibility) bằng URI hoặc Header.
+- [[DB_Naming]]: Quy tắc đặt tên đồng bộ và nhất quán giữa Database (Số ít) và TypeScript ORM (Số nhiều).
 
 ## Infrastructure & Cloud (Hạ tầng & Đám mây)
 

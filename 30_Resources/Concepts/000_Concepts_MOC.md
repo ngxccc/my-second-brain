@@ -14,6 +14,7 @@
 
 - [[Zettelkasten_Method]]: Quản lý tri thức bằng Atomic Notes và Links.
 - [[Map_of_Content]]: Nút giao thông điều hướng hệ thống.
+- [[PARA_Method]]: Tổ chức thông tin theo mức độ hành động (Actionability).
 
 ## Learning & Linguistics
 
