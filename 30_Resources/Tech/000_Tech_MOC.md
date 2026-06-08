@@ -32,6 +32,7 @@ Bản đồ điều hướng trung tâm cho toàn bộ tri thức kỹ thuật. 
 - [[NextJS_Server_Actions]]: Kỹ thuật mutate data trực tiếp từ server bằng RPC ngầm.
 - [[Next_Intl]]: Thư viện i18n hỗ trợ strict type-safety và Server Components.
 - [[WinForms_Layout_Optimization]]: Tối ưu hóa Layout Engine của WinForms bằng SuspendLayout và ResumeLayout.
+- [[React_Component_Declaration_Standards]]: Tiêu chuẩn khai báo React component (export function vs arrow function).
 
 ## API & Data Design (Thiết kế Giao tiếp Dữ liệu)
 
