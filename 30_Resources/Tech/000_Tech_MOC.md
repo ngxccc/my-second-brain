@@ -3,6 +3,7 @@ tags: [type/moc, topic/tech]
 date: 2026-04-28
 aliases: [Tech Index, Tech Map]
 ---
+
 # Tech Knowledge Map of Content (MOC)
 
 ## TL;DR
@@ -48,6 +49,7 @@ Bản đồ điều hướng trung tâm cho toàn bộ tri thức kỹ thuật. 
 - [[Timestamp_vs_Timestamptz]]: Phân biệt timestamp và timestamptz, quy tắc Enterprise bắt buộc.
 - [[RFC_Trending_Cache]]: RFC đề xuất caching realtime leaderboard bằng Redis Sorted Sets (ZSET).
 - [[Database_Indexing_Guidelines]]: Hướng dẫn chi tiết khi nào dùng Index thường, Composite Index và Partial Index.
+- [[Index_BPlusTree]]: Bản chất của Index, cấu trúc B+Tree và lý do tại sao Disk I/O quyết định kiến trúc Database.
 
 ## Infrastructure & Cloud (Hạ tầng & Đám mây)
 
