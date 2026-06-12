@@ -32,6 +32,9 @@ Bản đồ điều hướng trung tâm cho toàn bộ tri thức kỹ thuật. 
 - [[React_Server_Components]]: Cơ chế render UI trên server, gửi payload tĩnh về client.
 - [[NextJS_Server_Actions]]: Kỹ thuật mutate data trực tiếp từ server bằng RPC ngầm.
 - [[Next_Intl]]: Thư viện i18n hỗ trợ strict type-safety và Server Components.
+- [[NextJS_16_Cache_Components]]: Mô hình Caching component-level mới của Next.js 16 dùng chỉ thị 'use cache' và cacheLife.
+- [[NextJS_PPR_Platform_Support]]: Cơ chế và cách thức các Cloud Platform hỗ trợ triển khai Partial Prerendering.
+- [[NextJS_ISR]]: Cơ chế cập nhật và tái tạo các trang tĩnh ở runtime mà không cần rebuild toàn bộ site.
 - [[WinForms_Layout_Optimization]]: Tối ưu hóa Layout Engine của WinForms bằng SuspendLayout và ResumeLayout.
 - [[React_Component_Declaration_Standards]]: Tiêu chuẩn khai báo React component (export function vs arrow function).
 

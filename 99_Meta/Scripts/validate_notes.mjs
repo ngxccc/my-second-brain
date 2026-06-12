@@ -73,17 +73,112 @@ async function validateFile(filePath) {
       errors.push("Missing top-level heading (# Title)");
     }
 
-    if (!isPlaceholder) {
-      // 3. TL;DR check for normal notes
-      const hasTldr = /^##\s+TL;DR/m.test(content);
-      if (!hasTldr && !relativePath.startsWith('20_Areas/Daily_Logs')) {
-        errors.push("Missing '## TL;DR' section");
-      }
+    // Check for raw template instruction markers
+    if (content.includes('[BẮT BUỘC]') || content.includes('[TÙY CHỌN]')) {
+      errors.push("Note still contains raw template instruction markers ('[BẮT BUỘC]' or '[TÙY CHỌN]')");
+    }
 
-      // 4. Core concept or other sections check
-      const hasH2 = /^##\s+.+/m.test(content);
-      if (!hasH2) {
-        warnings.push("No secondary headings (##) found");
+    if (!isPlaceholder) {
+      // Check for Daily Logs path
+      if (relativePath.startsWith('20_Areas/Daily_Logs')) {
+        const hasWhatNext = /^##\s+What next\??/mi.test(content);
+        if (!hasWhatNext) {
+          errors.push("Daily Log is missing '## What next?' section");
+        }
+      } else {
+        // Enforce template-specific headers based on tags
+        if (tags.includes('type/concept')) {
+          const required = [
+            { name: "## TL;DR", regex: /^##\s+(?:💡\s+)?TL;DR/m },
+            { name: "## Core Concept", regex: /^##\s+Core Concept/m },
+            { name: "## Practical Implementation", regex: /^##\s+Practical Implementation/m },
+            { name: "## Related Notes or **Related Notes:**", regex: /^##\s+Related Notes|^##\s+🔗\s+Related Notes|^\*\*Related Notes:\*\*/m }
+          ];
+          for (const req of required) {
+            if (!req.regex.test(content)) {
+              errors.push(`Concept Note is missing '${req.name}' section`);
+            }
+          }
+        } else if (tags.includes('type/pattern')) {
+          const required = [
+            { name: "## TL;DR", regex: /^##\s+(?:💡\s+)?TL;DR/m },
+            { name: "## The Logic (Backend)", regex: /^##\s+(?:🧠\s+)?The Logic(?: \(Backend\))?/m },
+            { name: "## Dataset (The Inventory)", regex: /^##\s+(?:🗃️\s+)?Dataset(?: \(The Inventory\))?/m },
+            { name: "## Connections", regex: /^##\s+(?:🔗\s+)?Connections/m }
+          ];
+          for (const req of required) {
+            if (!req.regex.test(content)) {
+              errors.push(`Pattern Note is missing '${req.name}' section`);
+            }
+          }
+        } else if (tags.includes('type/mental-model')) {
+          const required = [
+            { name: "## TL;DR", regex: /^##\s+(?:💡\s+)?TL;DR/m },
+            { name: "## Context: When to apply?", regex: /^##\s+(?:🎯\s+)?Context:\s*When to apply\??/m },
+            { name: "## Actionable Script / How-to", regex: /^##\s+(?:💬\s+)?Actionable Script/m },
+            { name: "## Connections", regex: /^##\s+(?:🔗\s+)?Connections/m }
+          ];
+          for (const req of required) {
+            if (!req.regex.test(content)) {
+              errors.push(`Mental Model Note is missing '${req.name}' section`);
+            }
+          }
+        } else if (tags.includes('type/vocab')) {
+          const required = [
+            { name: "## Definition", regex: /^##\s+(?:📖\s+)?Definition/m },
+            { name: "## Context / Examples", regex: /^##\s+(?:🧩\s+)?Context \/ Examples/m }
+          ];
+          for (const req of required) {
+            if (!req.regex.test(content)) {
+              errors.push(`Vocab Note is missing '${req.name}' section`);
+            }
+          }
+        } else if (tags.includes('type/project')) {
+          const required = [
+            { name: "## Objective (SMART Goal)", regex: /^##\s+(?:🎯\s+)?Objective \(SMART Goal\)/m },
+            { name: "## Roadmap / Milestones", regex: /^##\s+(?:🗺️\s+)?Roadmap \/ Milestones/m },
+            { name: "## Work Log / Decisions", regex: /^##\s+(?:📝\s+)?Work Log \/ Decisions/m }
+          ];
+          for (const req of required) {
+            if (!req.regex.test(content)) {
+              errors.push(`Project Note is missing '${req.name}' section`);
+            }
+          }
+        } else if (tags.includes('type/meeting')) {
+          const required = [
+            { name: "## Agenda", regex: /^##\s+(?:🎯\s+)?Agenda/m },
+            { name: "## Action Items", regex: /^##\s+(?:✅\s+)?Action Items/m }
+          ];
+          for (const req of required) {
+            if (!req.regex.test(content)) {
+              errors.push(`Meeting Note is missing '${req.name}' section`);
+            }
+          }
+        } else if (tags.includes('type/method')) {
+          const required = [
+            { name: "## TL;DR", regex: /^##\s+(?:💡\s+)?TL;DR/m },
+            { name: "## Context: When to use?", regex: /^##\s+(?:🎯\s+)?Context:\s*When to use\??/m },
+            { name: "## Step-by-Step Guideline", regex: /^##\s+Step-by-Step Guideline/m },
+            { name: "## Related Notes or **Related Notes:**", regex: /^##\s+Related Notes|^##\s+🔗\s+Related Notes|^\*\*Related Notes:\*\*/m }
+          ];
+          for (const req of required) {
+            if (!req.regex.test(content)) {
+              errors.push(`Method/SOP Note is missing '${req.name}' section`);
+            }
+          }
+        } else {
+          // Fallback to standard generic checks if it has no type tag
+          const hasTldr = /^##\s+TL;DR/m.test(content);
+          if (!hasTldr) {
+            errors.push("Missing '## TL;DR' section");
+          }
+        }
+
+        // Standard check for secondary headings in general
+        const hasH2 = /^##\s+.+/m.test(content);
+        if (!hasH2) {
+          warnings.push("No secondary headings (##) found");
+        }
       }
     } else {
       // For placeholders

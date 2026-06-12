@@ -1,0 +1,29 @@
+---
+tags: [type/method, topic/engineering] [BẮT BUỘC]
+aliases: [] [BẮT BUỘC]
+created_at: <% tp.file.creation_date() %> [TÙY CHỌN]
+---
+
+# [Tên Method / SOP]
+
+## TL;DR [BẮT BUỘC]
+*(1-2 câu tóm tắt nhanh quy trình/phương pháp này dùng để làm gì và kết quả đạt được)*
+
+## Context: When to use? [BẮT BUỘC]
+- **Trường hợp áp dụng:** [BẮT BUỘC] (Khi nào thì nên dùng quy trình này)
+- **Điều kiện tiên quyết (Prerequisites):** [TÙY CHỌN] (Những thứ cần chuẩn bị trước khi thực hiện)
+
+## Step-by-Step Guideline [BẮT BUỘC]
+*(Các bước thực hiện chi tiết từ đầu đến cuối - Nên sử dụng checklist hoặc đánh số)*
+1. **Bước 1:** ...
+2. **Bước 2:** ...
+
+## Verification / Testing [TÙY CHỌN]
+*(Cách kiểm tra hoặc kiểm thử xem quy trình đã hoàn thành đúng chưa)*
+- [ ] Kiểm tra đầu ra A có khớp với mong muốn không.
+- [ ] Chạy lệnh thử nghiệm B để xác nhận kết quả.
+
+---
+**Related Notes:** [BẮT BUỘC]
+- [[Link 1]]
+- [[Link 2]]
