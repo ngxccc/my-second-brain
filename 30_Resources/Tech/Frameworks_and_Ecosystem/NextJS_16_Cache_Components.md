@@ -66,9 +66,19 @@ import { revalidateTag } from "next/cache";
 export async function updateProductAdminAction() {
   "use server";
   // Logic cập nhật database...
-  revalidateTag("catalog-metadata");
+
+  // Next.js 15+ hỗ trợ tham số thứ 2 để cấu hình hành vi hết hạn cache:
+  // 1. Chế độ Stale-While-Revalidate (Khuyên dùng):
+  revalidateTag("catalog-metadata", "default"); // Sử dụng profile cache mặc định
+  
+  // 2. Chế độ Hard Purge / Hết hạn ngay lập tức (Thích hợp cho webhook bên thứ ba):
+  // revalidateTag("catalog-metadata", { expire: 0 });
 }
 ```
+
+##### Ý nghĩa của tham số thứ hai của `revalidateTag`:
+- **Dạng chuỗi (Profile Name - ví dụ: `'max'`, `'default'`)**: Chỉ định tên profile cache cấu hình trong `next.config.js` (qua `cacheLife`). Khi được gọi, nó sẽ đánh dấu cache tương ứng là **stale (hết hạn tạm thời)**, cho phép phục vụ dữ liệu cũ cho request hiện tại trong khi chạy revalidate ngầm (Stale-While-Revalidate).
+- **Dạng đối tượng (ví dụ: `{ expire: 0 }`)**: Kích hoạt hành vi **hết hạn ngay lập tức (Hard Purge / Immediate Expiration)**. Lần truy cập tiếp theo sẽ bị block cho tới khi dữ liệu mới nhất được tải về. Thường được sử dụng cho tích hợp hệ thống bên thứ ba / webhook cần dữ liệu tươi mới ngay lập tức.
 
 ---
 

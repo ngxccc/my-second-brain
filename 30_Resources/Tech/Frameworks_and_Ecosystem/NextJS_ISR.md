@@ -60,8 +60,8 @@ Incremental Static Regeneration (ISR) là cơ chế của Next.js cho phép tạ
     // Cách 1: Làm mới theo đường dẫn
     revalidatePath("/blog");
 
-    // Cách 2: Làm mới theo tag gán cho API
-    revalidateTag("blog-posts");
+    // Cách 2: Làm mới theo tag gán cho API (Next.js 15+ hỗ trợ cấu hình hết hạn cache qua tham số thứ 2)
+    revalidateTag("blog-posts", "default");
   }
   ```
 

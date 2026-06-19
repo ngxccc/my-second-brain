@@ -26,6 +26,7 @@ Bản đồ điều hướng trung tâm cho toàn bộ tri thức kỹ thuật. 
 - [[Domain_Driven_Design]]: Thiết kế hướng tên miền, giải quyết độ phức tạp của nghiệp vụ cốt lõi.
 - [[DI_WinForms_Components]]: Kỹ thuật Dependency Injection cho Dumb, Root và Smart Child Components trong C# WinForms.
 - [[Newsfeed_Architecture_Fanout]]: Thiết kế hệ thống Newsfeed tải cao bằng kiến trúc Hybrid Fan-out (Push + Pull).
+- [[Repository_Pattern_vs_Fat_Service]]: So sánh giữa Repository Pattern và Fat Service (Direct ORM) trong thiết kế tầng dữ liệu.
 
 ## Frameworks & Ecosystem (Hệ sinh thái React/Next.js)
 
@@ -68,6 +69,7 @@ Bản đồ điều hướng trung tâm cho toàn bộ tri thức kỹ thuật. 
 ## Language & Core (Cốt lõi Ngôn ngữ)
 
 - [[TS_Distributive_Conditional_Types]]: Cơ chế tự động xé lẻ Union Type trong các biểu thức Generic của TypeScript.
+- [[TS_Type_Utilities_Omit_Pick_Exclude]]: So sánh chi tiết bản chất và phân biệt các tiện ích kiểu Omit, Pick, Exclude.
 - [[JS_Destructuring]]: Kỹ thuật bóc tách dữ liệu mảng và đối tượng trong ES6.
 - [[CSharp_WinForms_Thread_Invoke]]: Cơ chế Invoke đa luồng an toàn tránh lỗi Cross-thread trong WinForms.
 - [[Tree_Shaking]]: Kỹ thuật phân tích tĩnh để loại bỏ dead code khi đóng gói Javascript.
