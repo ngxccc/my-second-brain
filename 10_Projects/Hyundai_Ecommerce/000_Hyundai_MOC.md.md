@@ -13,6 +13,7 @@ Bản đồ định hướng và quản lý kiến thức dành riêng cho dự 
 ## Core Concepts & Design Decisions (Quyết định thiết kế & Khái niệm)
 
 - [[Database_Payment_Design]]: Bản thiết kế hệ thống thanh toán, phân tách `payment` và `payment_transaction` và cơ chế liên kết Star Schema.
+- [[Docs/PostgreSQL_vs_Other_Databases]]: Phân tích suy ngược (reverse-engineered) lý do lựa chọn PostgreSQL làm RDBMS trung tâm của dự án thay vì MySQL, MongoDB hay SQLite.
 
 ## Technical Specifications & Plans (Tài liệu kỹ thuật & Kế hoạch)
 

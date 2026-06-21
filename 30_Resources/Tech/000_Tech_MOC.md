@@ -45,7 +45,7 @@ Bản đồ điều hướng trung tâm cho toàn bộ tri thức kỹ thuật. 
 
 ## API & Data Design (Thiết kế Giao tiếp Dữ liệu)
 
-- [[PostgreSQL_vs_Other_Databases]]: Lý do lựa chọn PostgreSQL làm RDBMS trung tâm (so sánh MySQL, MongoDB, SQLite) dựa trên các mẫu hình nghiệp vụ thực tế.
+- [[10_Projects/Hyundai_Ecommerce/Docs/PostgreSQL_vs_Other_Databases|PostgreSQL_vs_Other_Databases]]: Lý do lựa chọn PostgreSQL làm RDBMS trung tâm (so sánh MySQL, MongoDB, SQLite) dựa trên các mẫu hình nghiệp vụ thực tế.
 - [[Cursor_Pagination]]: Phân trang hiệu suất cao $O(1)$ thay thế cho Offset $O(N)$ cồng kềnh.
 - [[API_Versioning_Strategies]]: Quản lý tương thích ngược (Backward Compatibility) bằng URI hoặc Header.
 - [[DB_Naming]]: Quy tắc đặt tên đồng bộ và nhất quán giữa Database (Số ít) và TypeScript ORM (Số nhiều).
