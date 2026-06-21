@@ -1,12 +1,5 @@
 ---
-tags:
-  [
-    type/concept,
-    topic/tech,
-    security/authentication,
-    library/better-auth,
-    framework/nextjs,
-  ]
+tags: [type/concept, topic/tech, security/authentication, library/better-auth, framework/nextjs]
 aliases: [Better Auth Session, Auth Flow, JWT Session Strategy, Cookies Auth]
 date: 2026-06-20
 ---

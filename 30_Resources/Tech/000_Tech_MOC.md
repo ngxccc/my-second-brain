@@ -45,7 +45,6 @@ Bản đồ điều hướng trung tâm cho toàn bộ tri thức kỹ thuật. 
 
 ## API & Data Design (Thiết kế Giao tiếp Dữ liệu)
 
-- [[10_Projects/Hyundai_Ecommerce/Docs/PostgreSQL_vs_Other_Databases|PostgreSQL_vs_Other_Databases]]: Lý do lựa chọn PostgreSQL làm RDBMS trung tâm (so sánh MySQL, MongoDB, SQLite) dựa trên các mẫu hình nghiệp vụ thực tế.
 - [[Cursor_Pagination]]: Phân trang hiệu suất cao $O(1)$ thay thế cho Offset $O(N)$ cồng kềnh.
 - [[API_Versioning_Strategies]]: Quản lý tương thích ngược (Backward Compatibility) bằng URI hoặc Header.
 - [[DB_Naming]]: Quy tắc đặt tên đồng bộ và nhất quán giữa Database (Số ít) và TypeScript ORM (Số nhiều).
@@ -67,7 +66,6 @@ Bản đồ điều hướng trung tâm cho toàn bộ tri thức kỹ thuật. 
 
 ## Web Client & Security (Trình duyệt & Bảo mật)
 
-- [[Better_Auth_Session_Flow]]: Chiến lược quản lý phiên đăng nhập JWT (sessionStrategy: "jwt"), HttpOnly cookies và phân biệt với Social OAuth tokens.
 - [[Client_Side_Encryption]]: Mã hóa LocalStorage/IndexedDB bằng thuật toán AES.
 - [[Offline_Sync_Queue]]: Kỹ thuật Outbox Pattern ở phía client cho ứng dụng Offline-First.
 - [[Cognitive_Strain_UX]]: Áp dụng tâm lý học tạo độ khó chủ đích vào UI/UX.
