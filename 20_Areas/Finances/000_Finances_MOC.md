@@ -8,7 +8,7 @@ aliases: [Bản đồ tài chính, Investment Strategy]
 
 # 💰 Personal Finance & Investment MOC
 
-## 💡 TL;DR
+## TL;DR
 Trung tâm quản lý tư duy đầu tư, chiến lược phân bổ vốn và các kiến thức vĩ mô để bảo vệ tài sản cá nhân.
 *"Kiếm tiền đã khó, giữ tiền còn khó hơn."*
 
@@ -25,6 +25,7 @@ Các phương pháp luận để quản lý dòng tiền và ra quyết định 
 ### 2. Investment Tactics (Chiến thuật đầu tư)
 * [[Dollar_Cost_Averaging]] (DCA): Chiến thuật "rải đinh" để triệt tiêu biến động giá và tâm lý FOMO.
 * [[Opportunity_Cost_Hold]]: Tư duy quản lý danh mục (Rút hay Hold? Audit danh mục thế nào?).
+* [[Kelly_Criterion]]: Quản lý quy mô vị thế vốn đầu tư tối ưu để đạt tăng trưởng dài hạn tối đa.
 
 ## 🌍 Macro & Market Concepts (Kiến thức thị trường)
 Hiểu luật chơi của thị trường để không bị "lùa gà".
