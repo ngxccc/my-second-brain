@@ -20,6 +20,7 @@ Bản đồ điều hướng trung tâm cho toàn bộ tri thức khái niệm l
 
 - [[Critical_Thinking_Models]]: Các lăng kính lọc nhiễu thông tin.
 - [[Systems_Thinking]]: Tư duy hệ thống và quy chiếu 6 lăng kính trong kỹ nghệ phần mềm.
+- [[Kanban_Methodology]]: Phương pháp và bảng Kanban quản lý dòng công việc trực quan theo mô hình Kéo (Pull).
 - [[Swimmers_Body_Illusion]]: Nhầm lẫn giữa tiêu chí chọn lọc và kết quả thực tế.
 - [[Product_Mindset]]: Chuyển dịch trọng tâm từ hoàn thành dự án sang tối ưu hóa giá trị sản phẩm.
 - [[Customer_Outcome_Thinking]]: Tập trung vào thay đổi hành vi tích cực của người dùng (Outcomes) thay vì tính năng (Outputs).
