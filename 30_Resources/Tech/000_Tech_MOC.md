@@ -74,6 +74,7 @@ Bản đồ điều hướng trung tâm cho toàn bộ tri thức kỹ thuật. 
 ## Language & Core (Cốt lõi Ngôn ngữ)
 
 - [[JS_Runtimes_Bun_vs_NodeJS]]: So sánh kiến trúc runtime Bun (JavaScriptCore + Zig) vs Node.js (V8 + Libuv) và cơ chế Event Loop cốt lõi.
+- [[JS_Temporal_API]]: API xử lý ngày giờ thế hệ mới chính thức của JavaScript (ECMAScript 2026).
 - [[JS_Memory_Management_Stack_Heap_GC]]: Mô hình quản lý bộ nhớ (Stack vs Heap), cơ chế dọn rác phân thế hệ (Generational GC) và cách phòng ngừa rò rỉ bộ nhớ (Memory Leaks).
 - [[JS_Immer_Immutable_State]]: Quản lý trạng thái bất biến (Immutable State) thông qua cơ chế Copy-on-Write (COW) và ES6 Proxy, giải pháp tối ưu cho Zustand/Redux stores.
 - [[TS_Type_System_Structural_Type_Erasure]]: Hệ thống kiểu cấu trúc (Structural Typing), cơ chế xóa bỏ kiểu (Type Erasure) và cách thu hẹp kiểu an toàn với Type Predicates.
