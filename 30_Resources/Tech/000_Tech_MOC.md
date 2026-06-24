@@ -44,6 +44,10 @@ Bản đồ điều hướng trung tâm cho toàn bộ tri thức kỹ thuật. 
 - [[WinForms_Layout_Optimization]]: Tối ưu hóa Layout Engine của WinForms bằng SuspendLayout và ResumeLayout.
 - [[React_Component_Declaration_Standards]]: Tiêu chuẩn khai báo React component (export function vs arrow function).
 
+## Backend Frameworks (Cấu trúc & Framework Backend)
+
+- [[Backend_Frameworks_Comparison]]: So sánh toàn diện giữa NestJS, Express, Fastify và ElysiaJS về hiệu năng, DX, độ tương thích và trường hợp sử dụng phù hợp.
+
 ## API & Data Design (Thiết kế Giao tiếp Dữ liệu)
 
 - [[Cursor_Pagination]]: Phân trang hiệu suất cao $O(1)$ thay thế cho Offset $O(N)$ cồng kềnh.
@@ -85,3 +89,6 @@ Bản đồ điều hướng trung tâm cho toàn bộ tri thức kỹ thuật. 
 - [[JS_Destructuring]]: Kỹ thuật bóc tách dữ liệu mảng và đối tượng trong ES6.
 - [[CSharp_WinForms_Thread_Invoke]]: Cơ chế Invoke đa luồng an toàn tránh lỗi Cross-thread trong WinForms.
 - [[Tree_Shaking]]: Kỹ thuật phân tích tĩnh để loại bỏ dead code khi đóng gói Javascript.
+
+---
+*Last updated: 2026-06*
