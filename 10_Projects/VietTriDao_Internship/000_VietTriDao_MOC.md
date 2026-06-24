@@ -43,6 +43,7 @@ Lịch trình chi tiết và lộ trình dự án từng ngày được theo dõ
 ## Related Resources
 
 - Checklist hoạt động ngày 1 (Kick-off): [[Day1_Checklist]]
+- Checklist hoạt động ngày 2 (Chuẩn bị kỹ thuật): [[Day2_Checklist]]
 - Hướng dẫn thực hành Daily Scrum: [[Daily_Scrum_Practice_Guide]]
 - Lịch trình cá nhân cân bằng học & thực tập: [[My_Internship_Schedule]]
 - Lịch trình chi tiết từng ngày của dự án: [[Detailed_Roadmap]]
