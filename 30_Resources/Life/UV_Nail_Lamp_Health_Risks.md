@@ -53,5 +53,4 @@ _Sources Checked: 2026-06-23_
 
 **Related Notes:**
 
-- [[000_System_Structure]]
-- [[PARA_Method]]
+- [[Efficacy_of_Facial_Sheet_Masks]]

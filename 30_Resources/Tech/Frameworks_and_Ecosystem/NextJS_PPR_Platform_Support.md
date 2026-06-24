@@ -11,11 +11,11 @@ date: 2026-06-12
 
 # NextJS PPR Platform Support
 
-## TL;DR [BẮT BUỘC]
+## TL;DR
 
 Partial Prerendering (PPR) của Next.js kết hợp static và dynamic rendering trên cùng một route bằng cách tạo ra một static HTML shell lúc build và stream tiếp phần dynamic lúc request. Để hỗ trợ PPR, platform cần lưu trữ đồng thời và cập nhật nguyên tử cả shell tĩnh và chuỗi trạng thái trì hoãn (postponedState), sau đó dùng Resume Protocol để thực hiện việc render tiếp các suspense boundaries còn thiếu.
 
-## Core Concept [BẮT BUỘC]
+## Core Concept
 
 - **Thành phần tạo ra lúc Build-time**:
   - **Static HTML Shell**: Giao diện tĩnh của trang chứa các phần fallback Suspense tại vị trí nội dung động.
@@ -31,7 +31,7 @@ Partial Prerendering (PPR) của Next.js kết hợp static và dynamic renderin
   - **Origin-Only**: Phù hợp cho mọi nền tảng hỗ trợ HTTP streaming. Toàn bộ quá trình từ đọc cache shell đến render động đều diễn ra trực tiếp trên Next.js origin server (giống hành vi của `next start`).
   - **CDN Shell + Origin Compute**: Tối ưu hóa TTFB ở CDN Edge. CDN trả ngay shell tĩnh từ cache của edge, đồng thời gửi request song song tới Origin server để thực hiện render động bằng Resume Protocol, sau đó ghép nối hai luồng dữ liệu này trả về cho client.
 
-## Practical Implementation [BẮT BUỘC]
+## Practical Implementation
 
 - **Giao thức Resume (Resume Protocol)**:
   Khi sử dụng mô hình CDN-to-origin, CDN kích hoạt việc render động tại Origin thông qua request HTTP POST:
@@ -60,7 +60,7 @@ Partial Prerendering (PPR) của Next.js kết hợp static và dynamic renderin
 
 ---
 
-**Related Notes:** [BẮT BUỘC]
+**Related Notes:**
 
 - [[React_Server_Components]]
 - [[NextJS_Server_Actions]]
