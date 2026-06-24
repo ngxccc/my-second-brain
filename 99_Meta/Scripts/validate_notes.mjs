@@ -1,8 +1,35 @@
-import fs from 'node:fs/promises';
-import path from 'node:path';
+import fs from "node:fs/promises";
+import path from "node:path";
+import { validate as validateAlgorithm } from "./validators/algorithm.mjs";
+import { validate as validateAudit } from "./validators/audit.mjs";
+import { validate as validateChecklist } from "./validators/checklist.mjs";
+import { validate as validateConcept } from "./validators/concept.mjs";
+import { validate as validateGuide } from "./validators/guide.mjs";
+import { validate as validateMeeting } from "./validators/meeting.mjs";
+import { validate as validateMentalModel } from "./validators/mental_model.mjs";
+import { validate as validateMethod } from "./validators/method.mjs";
+import { validate as validatePattern } from "./validators/pattern.mjs";
+import { validate as validateProject } from "./validators/project.mjs";
+import { validate as validateStrategy } from "./validators/strategy.mjs";
+import { validate as validateTechnique } from "./validators/technique.mjs";
+import { validate as validateVocab } from "./validators/vocab.mjs";
 
 const rootDir = process.cwd();
-
+const validatorsRegistry = {
+  "type/concept": validateConcept,
+  "type/pattern": validatePattern,
+  "type/mental-model": validateMentalModel,
+  "type/vocab": validateVocab,
+  "type/project": validateProject,
+  "type/meeting": validateMeeting,
+  "type/method": validateMethod,
+  "type/checklist": validateChecklist,
+  "type/guide": validateGuide,
+  "type/algorithm": validateAlgorithm,
+  "type/audit": validateAudit,
+  "type/strategy": validateStrategy,
+  "type/technique": validateTechnique,
+};
 // Colors for console
 const colors = {
   reset: "\x1b[0m",
@@ -10,8 +37,18 @@ const colors = {
   green: "\x1b[32m",
   yellow: "\x1b[33m",
   blue: "\x1b[34m",
-  cyan: "\x1b[36m"
+  cyan: "\x1b[36m",
 };
+
+const ignoredDirs = [
+  "00_Inbox",
+  "40_Archives",
+  "99_Meta",
+  ".git",
+  ".obsidian",
+  ".agents",
+  "node_modules",
+];
 
 async function getMarkdownFiles(dir) {
   let results = [];
@@ -19,9 +56,20 @@ async function getMarkdownFiles(dir) {
   for (const file of list) {
     const res = path.resolve(dir, file.name);
     if (file.isDirectory()) {
-      results = results.concat(await getMarkdownFiles(res));
-    } else if (file.isFile() && file.name.endsWith('.md') && !file.name.includes('MOC') && !file.name.includes('Template')) {
-      results.push(res);
+      if (!ignoredDirs.includes(file.name)) {
+        results = results.concat(await getMarkdownFiles(res));
+      }
+    } else if (
+      file.isFile() &&
+      file.name.endsWith(".md") &&
+      !file.name.includes("MOC") &&
+      !file.name.includes("Template")
+    ) {
+      const relative = path.relative(rootDir, res);
+      // Only include files in subfolders, skip root level notes/meta-files
+      if (relative.includes(path.sep)) {
+        results.push(res);
+      }
     }
   }
   return results;
@@ -30,15 +78,29 @@ async function getMarkdownFiles(dir) {
 function parseFrontmatter(content) {
   const match = content.match(/^---\r?\n([\s\S]*?)\r?\n---/);
   if (!match) return null;
-  const lines = match[1].split('\n');
+  const block = match[1];
+  const lines = block.split(/\r?\n/);
   const yaml = {};
   for (const line of lines) {
-    const colonIdx = line.indexOf(':');
+    const colonIdx = line.indexOf(":");
     if (colonIdx > 0) {
       const key = line.slice(0, colonIdx).trim();
       const val = line.slice(colonIdx + 1).trim();
       yaml[key] = val;
     }
+  }
+  // Robust parsing of tags if multiline or formatted
+  const tagsMatch = block.match(/tags:\s*([\s\S]*?)(?=\r?\n\w+:|$)/);
+  if (tagsMatch) {
+    let tagsStr = tagsMatch[1].trim();
+    // Clean up brackets, newlines, and list dash markers
+    tagsStr = tagsStr
+      .replace(/[[\]]/g, "")
+      .replace(/^\s*-\s*/gm, "")
+      .split(/[\s,\n\r]+/)
+      .filter(Boolean)
+      .join(", ");
+    yaml.tags = tagsStr;
   }
   return yaml;
 }
@@ -46,27 +108,59 @@ function parseFrontmatter(content) {
 async function validateFile(filePath) {
   const relativePath = path.relative(rootDir, filePath);
   try {
-    const content = await fs.readFile(filePath, 'utf8');
+    const content = await fs.readFile(filePath, "utf8");
     const errors = [];
     const warnings = [];
 
+    // 0. Empty file check
+    if (content.trim() === "") {
+      warnings.push("File is completely empty");
+      return { path: relativePath, errors, warnings, isPlaceholder: true };
+    }
+
     // 1. YAML frontmatter check
+    const isDailyLog = relativePath.startsWith("20_Areas/Daily_Logs");
+    const isResource = relativePath.startsWith("30_Resources/");
     const frontmatter = parseFrontmatter(content);
+
     if (!frontmatter) {
-      errors.push("Missing or invalid YAML frontmatter (must start and end with '---')");
-      return { path: relativePath, errors, warnings, isPlaceholder: false };
+      if (isResource) {
+        errors.push(
+          "Missing or invalid YAML frontmatter (must start and end with '---') for resource note",
+        );
+        return { path: relativePath, errors, warnings, isPlaceholder: false };
+      } else if (isDailyLog) {
+        // Daily logs don't require frontmatter
+      } else {
+        // Outside resources and not a daily log, skip validation as it is not a standard atomic note
+        return { path: relativePath, errors, warnings, isPlaceholder: false };
+      }
     }
 
     // Check tags
-    if (!frontmatter.tags) {
-      errors.push("Missing 'tags' in frontmatter");
-    } else if (frontmatter.tags === '[]' || frontmatter.tags.trim() === '') {
-      errors.push("'tags' is empty");
+    if (frontmatter) {
+      if (!frontmatter.tags && isResource) {
+        errors.push("Missing 'tags' in frontmatter");
+      } else if (
+        frontmatter.tags === "[]" ||
+        (frontmatter.tags && frontmatter.tags.trim() === "")
+      ) {
+        errors.push("'tags' is empty");
+      }
     }
 
-    const tags = frontmatter.tags || '';
-    const isPlaceholder = tags.includes('status/todo') || content.includes('TODO:') || content.includes('Placeholder');
+    const tags = frontmatter ? frontmatter.tags || "" : "";
+    const hasTypeTag = tags.includes("type/");
 
+    if (!isResource && !isDailyLog && !hasTypeTag) {
+      // Skip validation for files outside resources and daily logs that do not have a type tag
+      return { path: relativePath, errors, warnings, isPlaceholder: false };
+    }
+
+    const isPlaceholder =
+      tags.includes("status/todo") ||
+      content.includes("TODO:") ||
+      content.includes("Placeholder");
     // 2. Heading 1 check
     const hasH1 = /^#\s+.+/m.test(content);
     if (!hasH1) {
@@ -74,99 +168,31 @@ async function validateFile(filePath) {
     }
 
     // Check for raw template instruction markers
-    if (content.includes('[BẮT BUỘC]') || content.includes('[TÙY CHỌN]')) {
-      errors.push("Note still contains raw template instruction markers ('[BẮT BUỘC]' or '[TÙY CHỌN]')");
+    if (content.includes("[BẮT BUỘC]") || content.includes("[TÙY CHỌN]")) {
+      errors.push(
+        "Note still contains raw template instruction markers ('[BẮT BUỘC]' or '[TÙY CHỌN]')",
+      );
     }
 
     if (!isPlaceholder) {
       // Check for Daily Logs path
-      if (relativePath.startsWith('20_Areas/Daily_Logs')) {
-        const hasWhatNext = /^##\s+What next\??/mi.test(content);
+      if (relativePath.startsWith("20_Areas/Daily_Logs")) {
+        const hasWhatNext = /^##\s+What next\??/im.test(content);
         if (!hasWhatNext) {
           errors.push("Daily Log is missing '## What next?' section");
         }
       } else {
-        // Enforce template-specific headers based on tags
-        if (tags.includes('type/concept')) {
-          const required = [
-            { name: "## TL;DR", regex: /^##\s+(?:💡\s+)?TL;DR/m },
-            { name: "## Core Concept", regex: /^##\s+Core Concept/m },
-            { name: "## Practical Implementation", regex: /^##\s+Practical Implementation/m },
-            { name: "## Related Notes or **Related Notes:**", regex: /^##\s+Related Notes|^##\s+🔗\s+Related Notes|^\*\*Related Notes:\*\*/m }
-          ];
-          for (const req of required) {
-            if (!req.regex.test(content)) {
-              errors.push(`Concept Note is missing '${req.name}' section`);
-            }
+        let hasSpecificValidator = false;
+        for (const [tag, validateFn] of Object.entries(validatorsRegistry)) {
+          if (tags.includes(tag)) {
+            hasSpecificValidator = true;
+            const res = validateFn(content, { tags, relativePath });
+            if (res.errors) errors.push(...res.errors);
+            if (res.warnings) warnings.push(...res.warnings);
           }
-        } else if (tags.includes('type/pattern')) {
-          const required = [
-            { name: "## TL;DR", regex: /^##\s+(?:💡\s+)?TL;DR/m },
-            { name: "## The Logic (Backend)", regex: /^##\s+(?:🧠\s+)?The Logic(?: \(Backend\))?/m },
-            { name: "## Dataset (The Inventory)", regex: /^##\s+(?:🗃️\s+)?Dataset(?: \(The Inventory\))?/m },
-            { name: "## Connections", regex: /^##\s+(?:🔗\s+)?Connections/m }
-          ];
-          for (const req of required) {
-            if (!req.regex.test(content)) {
-              errors.push(`Pattern Note is missing '${req.name}' section`);
-            }
-          }
-        } else if (tags.includes('type/mental-model')) {
-          const required = [
-            { name: "## TL;DR", regex: /^##\s+(?:💡\s+)?TL;DR/m },
-            { name: "## Context: When to apply?", regex: /^##\s+(?:🎯\s+)?Context:\s*When to apply\??/m },
-            { name: "## Actionable Script / How-to", regex: /^##\s+(?:💬\s+)?Actionable Script/m },
-            { name: "## Connections", regex: /^##\s+(?:🔗\s+)?Connections/m }
-          ];
-          for (const req of required) {
-            if (!req.regex.test(content)) {
-              errors.push(`Mental Model Note is missing '${req.name}' section`);
-            }
-          }
-        } else if (tags.includes('type/vocab')) {
-          const required = [
-            { name: "## Definition", regex: /^##\s+(?:📖\s+)?Definition/m },
-            { name: "## Context / Examples", regex: /^##\s+(?:🧩\s+)?Context \/ Examples/m }
-          ];
-          for (const req of required) {
-            if (!req.regex.test(content)) {
-              errors.push(`Vocab Note is missing '${req.name}' section`);
-            }
-          }
-        } else if (tags.includes('type/project')) {
-          const required = [
-            { name: "## Objective (SMART Goal)", regex: /^##\s+(?:🎯\s+)?Objective \(SMART Goal\)/m },
-            { name: "## Roadmap / Milestones", regex: /^##\s+(?:🗺️\s+)?Roadmap \/ Milestones/m },
-            { name: "## Work Log / Decisions", regex: /^##\s+(?:📝\s+)?Work Log \/ Decisions/m }
-          ];
-          for (const req of required) {
-            if (!req.regex.test(content)) {
-              errors.push(`Project Note is missing '${req.name}' section`);
-            }
-          }
-        } else if (tags.includes('type/meeting')) {
-          const required = [
-            { name: "## Agenda", regex: /^##\s+(?:🎯\s+)?Agenda/m },
-            { name: "## Action Items", regex: /^##\s+(?:✅\s+)?Action Items/m }
-          ];
-          for (const req of required) {
-            if (!req.regex.test(content)) {
-              errors.push(`Meeting Note is missing '${req.name}' section`);
-            }
-          }
-        } else if (tags.includes('type/method')) {
-          const required = [
-            { name: "## TL;DR", regex: /^##\s+(?:💡\s+)?TL;DR/m },
-            { name: "## Context: When to use?", regex: /^##\s+(?:🎯\s+)?Context:\s*When to use\??/m },
-            { name: "## Step-by-Step Guideline", regex: /^##\s+Step-by-Step Guideline/m },
-            { name: "## Related Notes or **Related Notes:**", regex: /^##\s+Related Notes|^##\s+🔗\s+Related Notes|^\*\*Related Notes:\*\*/m }
-          ];
-          for (const req of required) {
-            if (!req.regex.test(content)) {
-              errors.push(`Method/SOP Note is missing '${req.name}' section`);
-            }
-          }
-        } else {
+        }
+
+        if (!hasSpecificValidator) {
           // Fallback to standard generic checks if it has no type tag
           const hasTldr = /^##\s+TL;DR/m.test(content);
           if (!hasTldr) {
@@ -182,67 +208,102 @@ async function validateFile(filePath) {
       }
     } else {
       // For placeholders
-      if (!content.includes('TODO') && !content.includes('placeholder') && !content.includes('Placeholder')) {
-        warnings.push("Note has placeholder status but no TODO tag or explanation in content");
+      if (
+        !content.includes("TODO") &&
+        !content.includes("placeholder") &&
+        !content.includes("Placeholder")
+      ) {
+        warnings.push(
+          "Note has placeholder status but no TODO tag or explanation in content",
+        );
       }
     }
 
     return { path: relativePath, errors, warnings, isPlaceholder };
   } catch (err) {
-    return { path: relativePath, errors: [`Error reading file: ${err.message}`], warnings: [], isPlaceholder: false };
+    return {
+      path: relativePath,
+      errors: [`Error reading file: ${err.message}`],
+      warnings: [],
+      isPlaceholder: false,
+    };
   }
 }
 
 async function main() {
-  console.log(`${colors.cyan}=== Obsidian Atomic Note Validator ===${colors.reset}`);
-  
-  let allFiles = [];
   const args = process.argv.slice(2);
+  const isJsonMode = args.includes("--json");
+  const fileArgs = args.filter((arg) => arg !== "--json");
 
-  if (args.length > 0) {
-    for (const arg of args) {
+  if (!isJsonMode) {
+    console.log(
+      `${colors.cyan}=== Obsidian Atomic Note Validator ===${colors.reset}`,
+    );
+  }
+
+  let allFiles = [];
+
+  if (fileArgs.length > 0) {
+    for (const arg of fileArgs) {
       allFiles.push(path.resolve(rootDir, arg));
     }
   } else {
-    const foldersToScan = [
-      path.join(rootDir, '30_Resources/Concepts'),
-      path.join(rootDir, '30_Resources/Tech'),
-      path.join(rootDir, '30_Resources/Methods')
-    ];
-
-    for (const folder of foldersToScan) {
-      try {
-        const files = await getMarkdownFiles(folder);
-        allFiles = allFiles.concat(files);
-      } catch (e) {
-        // Folder might not exist yet or error reading
+    try {
+      allFiles = await getMarkdownFiles(rootDir);
+    } catch (e) {
+      if (!isJsonMode) {
+        console.error(
+          `${colors.red}Error scanning directory: ${e.message}${colors.reset}`,
+        );
       }
     }
   }
+
   let failedCount = 0;
   let passedCount = 0;
   let placeholderCount = 0;
+  const jsonResults = [];
 
   for (const file of allFiles) {
     const result = await validateFile(file);
+    const passed = result.errors.length === 0;
+
+    if (isJsonMode) {
+      jsonResults.push({
+        path: result.path,
+        passed,
+        errors: result.errors,
+        warnings: result.warnings,
+        isPlaceholder: result.isPlaceholder,
+      });
+    }
+
     if (result.errors.length > 0) {
       failedCount++;
-      console.log(`${colors.red}✗ FAILED: ${result.path}${colors.reset}`);
-      for (const err of result.errors) {
-        console.log(`  - ERROR: ${err}`);
-      }
-      for (const warn of result.warnings) {
-        console.log(`  - WARNING: ${warn}`);
+      if (!isJsonMode) {
+        console.log(`${colors.red}✗ FAILED: ${result.path}${colors.reset}`);
+        for (const err of result.errors) {
+          console.log(`  - ERROR: ${err}`);
+        }
+        for (const warn of result.warnings) {
+          console.log(`  - WARNING: ${warn}`);
+        }
       }
     } else {
       passedCount++;
       if (result.isPlaceholder) {
         placeholderCount++;
-        console.log(`${colors.yellow}⚠ PASSED (Placeholder): ${result.path}${colors.reset}`);
+        if (!isJsonMode) {
+          console.log(
+            `${colors.yellow}⚠ PASSED (Placeholder): ${result.path}${colors.reset}`,
+          );
+        }
       } else {
-        console.log(`${colors.green}✓ PASSED: ${result.path}${colors.reset}`);
+        if (!isJsonMode) {
+          console.log(`${colors.green}✓ PASSED: ${result.path}${colors.reset}`);
+        }
       }
-      if (result.warnings.length > 0) {
+      if (!isJsonMode && result.warnings.length > 0) {
         for (const warn of result.warnings) {
           console.log(`    - WARNING: ${warn}`);
         }
@@ -250,10 +311,25 @@ async function main() {
     }
   }
 
-  console.log('\n=== Summary ===');
-  console.log(`Total scanned: ${allFiles.length}`);
-  console.log(`Passed:        ${colors.green}${passedCount}${colors.reset} (including ${placeholderCount} placeholders)`);
-  console.log(`Failed:        ${colors.red}${failedCount}${colors.reset}`);
+  if (isJsonMode) {
+    const jsonOutput = {
+      summary: {
+        total: allFiles.length,
+        passed: passedCount,
+        failed: failedCount,
+        placeholders: placeholderCount,
+      },
+      results: jsonResults,
+    };
+    console.log(JSON.stringify(jsonOutput, null, 2));
+  } else {
+    console.log("\n=== Summary ===");
+    console.log(`Total scanned: ${allFiles.length}`);
+    console.log(
+      `Passed:        ${colors.green}${passedCount}${colors.reset} (including ${placeholderCount} placeholders)`,
+    );
+    console.log(`Failed:        ${colors.red}${failedCount}${colors.reset}`);
+  }
 
   if (failedCount > 0) {
     process.exit(1);
@@ -262,7 +338,7 @@ async function main() {
   }
 }
 
-main().catch(err => {
+main().catch((err) => {
   console.error("Validator crashed:", err);
   process.exit(1);
 });
