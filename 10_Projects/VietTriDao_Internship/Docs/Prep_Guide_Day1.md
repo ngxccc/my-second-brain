@@ -14,8 +14,8 @@ Tài liệu nháp lưu giữ các mẫu biên bản họp tiếng Anh, quy trìn
 
 ## 📋 Checklist Chuẩn Bị Tối Nay
 
-- [ ] **Nghiên cứu quy trình Agile/Scrum:** Đọc kỹ các vai trò và cuộc họp cốt lõi.
-- [ ] **Nghiên cứu Tradeoffs & Tech Stack:** Chuẩn bị các lập luận lựa chọn công nghệ cho nhóm DEV.
+- [x] **Nghiên cứu quy trình Agile/Scrum:** Đọc kỹ các vai trò và cuộc họp cốt lõi.
+- [x] **Nghiên cứu Tradeoffs & Tech Stack:** Chuẩn bị các lập luận lựa chọn công nghệ cho nhóm DEV.
 - [ ] **Thực hành viết Meeting Minutes:** Nắm vững cấu trúc ghi chép bằng tiếng Anh.
 - [ ] **Figma Quick-study:** Xem qua các video/tài liệu về Figma Auto Layout & Components.
 
