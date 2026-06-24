@@ -22,9 +22,75 @@ Turborepo là một công cụ xây dựng (build system) hiệu suất cao cho 
 
 ## Practical Implementation
 
+### 1. Cấu hình `turbo.json` thực tế (v2 Schema)
+
+Dưới đây là file `turbo.json` mẫu chuẩn hóa theo schema v2 (sử dụng từ khóa `tasks` thay thế cho `pipeline` cũ):
+
+```json
+{
+  "$schema": "https://turbo.build/schema.json",
+  "tasks": {
+    "build": {
+      "dependsOn": ["^build"],
+      "outputs": ["dist/**", ".next/**", "!.next/cache/**"]
+    },
+    "check-types": {
+      "dependsOn": ["^build"]
+    },
+    "lint": {
+      "dependsOn": []
+    },
+    "dev": {
+      "cache": false,
+      "persistent": true
+    }
+  }
+}
+```
+
+*Giải thích các từ khóa:*
+- **`tasks`**: Khai báo các task tương ứng với các lệnh npm scripts trong các package.
+- **`dependsOn: ["^build"]`**: Yêu cầu build tất cả các dependencies của package này trước rồi mới build chính nó. Dấu `^` chỉ định package phụ thuộc ở lớp dưới.
+- **`outputs`**: Khai báo thư mục/file được lưu vào bộ nhớ đệm (cache) khi task chạy thành công.
+- **`cache: false`**: Tắt lưu cache (thường dùng cho môi trường dev chạy liên tục).
+- **`persistent: true`**: Khai báo cho Turborepo biết đây là task chạy vô hạn (như dev server) để tránh việc dừng task đột ngột.
+
+### 2. Cấu hình Bun/npm Workspaces (`package.json` ở Root)
+
+Để trình quản lý gói nhận diện các thư mục ứng dụng và thư viện dùng chung, file `package.json` tại thư mục gốc phải định nghĩa các workspaces:
+
+```json
+{
+  "name": "my-monorepo",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "devDependencies": {
+    "turbo": "^2.0.0"
+  }
+}
+```
+
+### 3. Cách chia sẻ code thông qua protocol `workspace:*`
+
+Khi ứng dụng `apps/frontend` (React) muốn sử dụng thư viện dùng chung `packages/shared`, mày chỉ cần khai báo dependency trong `apps/frontend/package.json`:
+
+```json
+{
+  "name": "frontend",
+  "dependencies": {
+    "@repo/shared": "workspace:*"
+  }
+}
+```
+Trình quản lý gói (Bun/npm/yarn) sẽ tự động tạo symlink trỏ trực tiếp `@repo/shared` về thư mục nguồn cục bộ, giúp cập nhật code tức thì khi dev.
+
+### 4. Trade-offs & Phỏng vấn
+
 - **Trade-offs**: Cấu hình ban đầu có thể phức tạp. Nếu cấu hình caching sai (`inputs`, `outputs`) có thể dẫn đến việc code cũ bị kẹt trong bộ nhớ đệm (stale cache).
 - **Mẫu trả lời phỏng vấn (Flex)**: "Dự án của em có nhiều ứng dụng (Admin, Storefront) xài chung một Database schema và Types. Em dùng kiến trúc Monorepo với Turborepo để dễ dàng chia sẻ code qua protocol `workspace:*` giúp 100% Type-Safe ở mọi app. Điểm em thích nhất ở Turbo là khả năng định nghĩa Task Pipeline trong `turbo.json` giúp chạy các job song song theo đúng dependency graph, kết hợp với cơ chế Caching giúp bỏ qua việc build lại những package không bị thay đổi source code, từ đó tăng tốc độ CI/CD lên rất nhiều lần."
-
 ---
 
 **Related Notes:**
