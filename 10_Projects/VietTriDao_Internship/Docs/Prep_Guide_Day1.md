@@ -100,6 +100,8 @@ Quy trình phát triển phần mềm lặp đi lặp lại theo từng chu kỳ
 
 ## 🌿 Phân Rã Công Việc (Work Breakdown Structure - WBS)
 
+*Xem thêm hướng dẫn chi tiết tại phương pháp: [[WBS_Best_Practices]]*
+
 Khi nhận một **User Story** (Yêu cầu của khách hàng), không được code ngay mà phải phân rã thành các task kỹ thuật nhỏ:
 
 - **Quy tắc:** Mỗi task chỉ nên kéo dài từ **2 đến 4 tiếng**. Nếu task ước lượng > 8 tiếng, bắt buộc phải chia nhỏ tiếp.

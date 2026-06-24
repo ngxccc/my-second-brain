@@ -124,14 +124,15 @@ _Lưu ý: Thực tập sinh kiến tập có thể tự do lựa chọn nhóm mu
    - Nếu ước lượng một task mất trên 8 tiếng (ví dụ: "Code toàn bộ phần Authentication"), **bắt buộc phải phân rã thành các task nhỏ hơn** (ví dụ: "Thiết kế database users", "Viết API login", "Viết API register").
 
 2. **Cách đặt tên Task (Action-oriented):**
-   - Bắt đầu bằng một **động từ hành động cụ thể** (như: *Thiết kế, Viết, Vẽ, Code, Test, Setup, Cấu hình*).
-   - *Sai:* Ghi chung chung `"Login Screen"`, `"Database"`.
-   - *Đúng:* `"Vẽ giao diện Login trên Figma"`, `"Thiết kế database schema cho Module Profile"`.
+   - Bắt đầu bằng một **động từ hành động cụ thể** (như: _Thiết kế, Viết, Vẽ, Code, Test, Setup, Cấu hình_).
+   - _Sai:_ Ghi chung chung `"Login Screen"`, `"Database"`.
+   - _Đúng:_ `"Vẽ giao diện Login trên Figma"`, `"Thiết kế database schema cho Module Profile"`.
 
 3. **Cách ước lượng và cập nhật Effort:**
    - **Estimated Effort (hour):** Điền vào đầu buổi sáng trước khi làm việc. Đây là ước lượng mang tính dự đoán dựa trên năng lực cá nhân.
    - **Actual Effort (hour):** Điền vào cuối ngày hoặc sáng hôm sau. Phản ánh đúng số giờ thực tế đã làm (ví dụ: ước lượng 2h nhưng code bị lỗi mất 4h thì điền đúng 4h).
    - Việc chênh lệch giữa Estimated và Actual giúp bạn rèn luyện khả năng ước lượng tốt hơn qua từng ngày.
+   - Xem lý thuyết chuẩn và ví dụ Đúng/Sai về phương pháp WBS tại [[WBS_Best_Practices]].
    - Xem thêm các ví dụ thực tế phân rã công việc sâu hơn tại [[Prep_Guide_Day1#🌿 Phân Rã Công Việc (Work Breakdown Structure - WBS)]].
 
 ---

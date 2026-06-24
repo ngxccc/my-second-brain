@@ -23,6 +23,7 @@ Khung làm việc ép bản thân vào kỷ luật để không bị vỡ trận
 - [[Standard_Project_Timeline_SOP]]: Quy trình 16 tuần tiêu chuẩn (Hybrid SDLC) để build đồ án/project từ số 0 đến lúc deploy và bảo vệ thành công.
 - [[Agile_Scrum]]: Quy trình quản lý và phát triển phần mềm linh hoạt thông qua các chu kỳ ngắn (Sprints) và cải tiến quy trình liên tục.
 - [[Agile_Management_via_GitHub]]: Hướng dẫn cấu hình và quy trình vận hành Kanban Board, Sprints bằng GitHub Projects & Issues.
+- [[WBS_Best_Practices]]: Phương pháp phân rã công việc WBS chuẩn PMBOK (PMI) và cách phân rã task cá nhân.
 - [[Vim_Shortcuts]]: Các phím tắt và câu lệnh thay thế vùng nâng cao trong Vim.
 - [[Local_Stress_Testing_Benchmark]]: SOP thiết lập kịch bản và tư duy stress test an toàn trên máy local.
 
