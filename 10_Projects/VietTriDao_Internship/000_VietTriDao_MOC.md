@@ -49,4 +49,5 @@ Lịch trình chi tiết và lộ trình dự án từng ngày được theo dõ
 - Tài liệu chuẩn bị và biểu mẫu họp tiếng Anh (Day 1 Prep): [[Prep_Guide_Day1]]
 - Vở bài tập thực hành viết biên bản họp (Meeting Minutes): [[Meeting_Minutes_Practice_Guide]]
 - Nghiên cứu nghiệp vụ & công nghệ Viện dưỡng lão Mỹ: [[Nursing_Home_System_Research]]
+- Phân tích khả thi hệ thống y tế Mỹ vs Việt Nam: [[Nursing_Home_System_Feasibility_Analysis]]
 - Link Google Doc giới thiệu chương trình: [Tuyển thực tập đợt 9](https://docs.google.com/document/d/e/2PACX-1vRzBJMoAhDlNF31rP-rpcmBmDl11o3Io8RNrmXlOR2rdZxXXY6qHu0HYXteKaDghwkpfgTCdC2K0PfK/pub)
