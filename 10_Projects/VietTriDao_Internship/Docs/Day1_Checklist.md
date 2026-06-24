@@ -65,11 +65,11 @@ _Lưu ý: Thực tập sinh kiến tập có thể tự do lựa chọn nhóm mu
   - [x] **Thiết lập Sprint - Milestone**:
     - [x] Tạo Milestone trên GitHub đặt tên là `Sprint1`.
     - [x] Thiết lập thời hạn (deadline) là **01 tháng** kể từ hôm nay (đặc thù dự án mock này chỉ có 1 Sprint duy nhất kéo dài 1 tháng).
-  - [ ] **Khởi tạo Task đầu tiên (Issue)**:
-    - [ ] Nhóm trưởng tạo các Task dưới dạng Issue trên GitHub.
-    - [ ] Gán đúng **Assignees** (thành viên thực hiện).
-    - [ ] Chọn **Milestone** là `Sprint1`.
-    - [ ] Thêm label `Task` cho issue ngay khi tạo mới.
+  - [x] **Khởi tạo Task đầu tiên (Issue)**:
+    - [x] Nhóm trưởng tạo các Task dưới dạng Issue trên GitHub.
+    - [x] Gán đúng **Assignees** (thành viên thực hiện).
+    - [x] Chọn **Milestone** là `Sprint1`.
+    - [x] Thêm label `Task` cho issue ngay khi tạo mới.
 
 ---
 
@@ -77,12 +77,12 @@ _Lưu ý: Thực tập sinh kiến tập có thể tự do lựa chọn nhóm mu
 
 ### 1. Quy Trình Daily Scrum & Biên Bản Họp (Meeting Minutes)
 
-- [ ] **Học cách Daily Scrum hàng ngày:** Họp nhanh đầu giờ sáng để báo cáo tiến độ & tháo gỡ khó khăn (blocker).
-- [ ] **Học cách viết Meeting Minutes bằng tiếng Anh:**
-  - [ ] Phân công luân phiên mỗi ngày 01 thành viên viết biên bản họp.
-  - [ ] Viết bằng **tiếng Anh 100%** (có thể dùng Google Translate hỗ trợ).
-  - [ ] Tham khảo cấu trúc trong file mẫu `MockProject_DailyScrum_Management` (hoặc xem mẫu có sẵn tại [[Prep_Guide_Day1#🇬🇧 Mẫu Biên Bản Họp & Daily Scrum (English Templates)]]).
-  - [ ] Tải biên bản họp lên thư mục Google Drive của nhóm hàng ngày để Scrum Master (Mentor) audit.
+- [x] **Học cách Daily Scrum hàng ngày:** Họp nhanh đầu giờ sáng để báo cáo tiến độ & tháo gỡ khó khăn (blocker).
+- [x] **Học cách viết Meeting Minutes bằng tiếng Anh:**
+  - [x] Phân công luân phiên mỗi ngày 01 thành viên viết biên bản họp.
+  - [x] Viết bằng **tiếng Anh 100%** (có thể dùng Google Translate hỗ trợ).
+  - [x] Tham khảo cấu trúc trong file mẫu `MockProject_DailyScrum_Management` (hoặc xem mẫu có sẵn tại [[Prep_Guide_Day1#🇬🇧 Mẫu Biên Bản Họp & Daily Scrum (English Templates)]]).
+  - [x] Tải biên bản họp lên thư mục Google Drive của nhóm hàng ngày để Scrum Master (Mentor) audit.
 
 ### 2. Quản Lý Tiến Độ Bằng GitHub Issues (Thay cho JIRA)
 
@@ -99,9 +99,19 @@ _Lưu ý: Thực tập sinh kiến tập có thể tự do lựa chọn nhóm mu
 
 - [ ] **Tạo file WBS cá nhân:** Mỗi thành viên tự tạo 01 file đặt tên theo định dạng `MockProject_WorkBreakDown_TenThanhVien.xlsx` (Ví dụ: `MockProject_WorkBreakDown_NguyenVanA.xlsx` - đổi tên thành viên viết không dấu).
 - [ ] Đưa file WBS lên thư mục Google Drive chung của nhóm.
+* **Cấu trúc bảng mẫu WBS cá nhân (mày có thể copy bảng này dán trực tiếp vào Excel/Google Sheets):**
+
+| Task (Đầu việc) | Deadline | Estimated Effort (hour) | Actual Effort (hour) | Status (Trạng thái) |
+| :--- | :--- | :--- | :--- | :--- |
+| Nghiên cứu tài liệu Scrum & Kanban | 2026-06-24 | 2 | 2 | Done |
+| Tham gia họp kick-off bầu nhóm trưởng | 2026-06-24 | 1 | 1 | Done |
+| Setup Git repository & GitHub project | 2026-06-24 | 1.5 | 1.5 | Done |
+| Tạo và cấu hình file WBS cá nhân | 2026-06-24 | 1 | 0.5 | Done |
+| Code login API (Issue #15) | 2026-06-25 | 3 | | In Progress |
+
 - [ ] **Cập nhật WBS hàng ngày:**
-  - [ ] **Đầu buổi sáng:** Điền thông tin vào 3 cột: `[Task]`, `[Deadline]`, `[Estimated Effort (hour)]`.
-  - [ ] **Cuối ngày/Sáng hôm sau:** Điền thời gian thực tế đã làm vào cột `[Actual Effort (hour)]` cho các task của ngày hôm trước.
+  - [ ] **Đầu buổi sáng:** Điền thông tin vào 3 cột đầu tiên: `[Task]`, `[Deadline]`, `[Estimated Effort (hour)]` cho các việc dự kiến làm trong ngày.
+  - [ ] **Cuối ngày/Sáng hôm sau:** Điền thời gian thực tế đã làm vào cột `[Actual Effort (hour)]` để phản ánh đúng thời gian đã bỏ ra cho các task của ngày hôm trước.
 
 ---
 
