@@ -15,19 +15,20 @@ Decorator là một tính năng siêu lập trình (meta-programming) cho phép 
 ## Core Concept
 
 ### 1. Bản Chất Của Decorator
+
 Decorator thực chất là các **hàm bậc cao (higher-order functions)**. Khi được áp dụng bằng ký hiệu `@decoratorName` phía trước một phần tử của Class, trình biên dịch TypeScript sẽ bọc phần tử đó lại bằng hàm decorator để theo dõi hoặc thay thế hành vi của phần tử đó trước khi nó thực sự được khởi tạo hoặc thực thi.
 
 ### 2. Sự Khác Biệt Giữa 2 Thế Hệ Decorator
 
 Sự tiến hóa của ECMAScript dẫn đến sự phân chia sâu sắc giữa 2 phiên bản Decorator trong hệ sinh thái TypeScript:
 
-| Đặc tính | `experimentalDecorators` (Legacy - Stage 2) | TS 5.0+ Standard (Modern - Stage 3) |
-| :--- | :--- | :--- |
-| **Compiler Flag** | Bắt buộc bật `"experimentalDecorators": true` trong `tsconfig.json`. | Chạy mặc định không cần bật flag. |
-| **Chữ ký Hàm (Signature)** | Nhận dạng theo vị trí: `(target, propertyKey, descriptor)` | Nhận dạng hướng ngữ cảnh: `(value, context)` |
-| **Đối tượng Context** | Không có (chỉ có property descriptor truyền thống). | Có `DecoratorContext` chứa loại phần tử (`kind`), tên (`name`), và hook khởi tạo (`addInitializer`). |
-| **Parameter Decorators** | **Hỗ trợ** (Trang trí tham số của hàm/constructor). | **Không hỗ trợ** (Bị loại bỏ trong đặc tả Stage 3). |
-| **Mục đích sử dụng** | Dành cho các framework cũ hoặc IOC/DI truyền thống (NestJS, Angular cũ, TypeORM). | Cú pháp JavaScript tiêu chuẩn, chạy trực tiếp trên các runtime hiện đại mà không cần compiler. |
+| Đặc tính                   | `experimentalDecorators` (Legacy - Stage 2)                                       | TS 5.0+ Standard (Modern - Stage 3)                                                                  |
+| :------------------------- | :-------------------------------------------------------------------------------- | :--------------------------------------------------------------------------------------------------- |
+| **Compiler Flag**          | Bắt buộc bật `"experimentalDecorators": true` trong `tsconfig.json`.              | Chạy mặc định không cần bật flag.                                                                    |
+| **Chữ ký Hàm (Signature)** | Nhận dạng theo vị trí: `(target, propertyKey, descriptor)`                        | Nhận dạng hướng ngữ cảnh: `(value, context)`                                                         |
+| **Đối tượng Context**      | Không có (chỉ có property descriptor truyền thống).                               | Có `DecoratorContext` chứa loại phần tử (`kind`), tên (`name`), và hook khởi tạo (`addInitializer`). |
+| **Parameter Decorators**   | **Hỗ trợ** (Trang trí tham số của hàm/constructor).                               | **Không hỗ trợ** (Bị loại bỏ trong đặc tả Stage 3).                                                  |
+| **Mục đích sử dụng**       | Dành cho các framework cũ hoặc IOC/DI truyền thống (NestJS, Angular cũ, TypeORM). | Cú pháp JavaScript tiêu chuẩn, chạy trực tiếp trên các runtime hiện đại mà không cần compiler.       |
 
 ---
 
@@ -42,10 +43,10 @@ Tùy vào việc mày muốn sử dụng phiên bản Decorator nào, mày cần
   "compilerOptions": {
     "target": "ES2022",
     "module": "NodeNext",
-    
+
     // Bật nếu sử dụng Decorator cũ (như NestJS, TypeORM, Inversify)
     "experimentalDecorators": true,
-    "emitDecoratorMetadata": true 
+    "emitDecoratorMetadata": true
   }
 }
 ```
@@ -57,18 +58,28 @@ Tùy vào việc mày muốn sử dụng phiên bản Decorator nào, mày cần
 Hàm Decorator theo chuẩn mới nhận vào 2 tham số: `value` (giá trị cần trang trí) và `context` (ngữ cảnh của phần tử đó).
 
 #### Ví dụ: Tạo `@Logged` cho Phương thức (Method Decorator)
+
 ```typescript
 function Logged<This, Args extends any[], Return>(
   target: (this: This, ...args: Args) => Return,
-  context: ClassMethodDecoratorContext<This, (this: This, ...args: Args) => Return>
+  context: ClassMethodDecoratorContext<
+    This,
+    (this: This, ...args: Args) => Return
+  >,
 ) {
   const methodName = String(context.name);
 
   // Trả về một hàm mới thay thế phương thức gốc
   return function (this: This, ...args: Args): Return {
-    console.log(`[LOG] Bắt đầu gọi phương thức: ${methodName} với tham số:`, args);
+    console.log(
+      `[LOG] Bắt đầu gọi phương thức: ${methodName} với tham số:`,
+      args,
+    );
     const result = target.call(this, ...args);
-    console.log(`[LOG] Kết thúc phương thức: ${methodName}, Kết quả trả về:`, result);
+    console.log(
+      `[LOG] Kết thúc phương thức: ${methodName}, Kết quả trả về:`,
+      result,
+    );
     return result;
   };
 }
@@ -81,7 +92,7 @@ class UserService {
 }
 
 const service = new UserService();
-service.getUserById(10); 
+service.getUserById(10);
 // Output console:
 // [LOG] Bắt đầu gọi phương thức: getUserById với tham số: [10]
 // [LOG] Kết thúc phương thức: getUserById, Kết quả trả về: { id: 10, name: 'Thành viên A' }
@@ -94,8 +105,13 @@ service.getUserById(10);
 Hệ thống cũ can thiệp trực tiếp vào `PropertyDescriptor` của phương thức.
 
 #### Ví dụ: Tạo `@ReadOnly` cho Thuộc tính
+
 ```typescript
-function ReadOnly(target: any, propertyKey: string, descriptor: PropertyDescriptor) {
+function ReadOnly(
+  target: any,
+  propertyKey: string,
+  descriptor: PropertyDescriptor,
+) {
   descriptor.writable = false;
   return descriptor;
 }
@@ -109,17 +125,20 @@ class Configuration {
 ```
 
 #### 🚨 Tại sao NestJS/TypeORM bắt buộc phải dùng chuẩn cũ?
+
 1. **Parameter Decorators (Trang trí tham số):** NestJS phụ thuộc hoàn toàn vào trang trí tham số để thực hiện Dependency Injection (ví dụ: `constructor(@InjectRepository(User) private userRepo: Repository<User>)`). Tiêu chuẩn mới (Stage 3) hiện tại **không hỗ trợ** trang trí tham số.
 2. **Metadata Emission:** NestJS cần flag `"emitDecoratorMetadata": true` của hệ thống cũ để tự động suy luận ra kiểu dữ liệu của class lúc runtime phục vụ cơ chế tự động inject instance (IoC Container).
 
 ---
 
 ### 4. Mẫu Câu Hỏi Phỏng Vấn (Flex)
+
 **Q: Sự khác biệt lớn nhất giữa Decorator mặc định của TS 5.0+ và Decorator cũ (experimentalDecorators) là gì? Trong NestJS bạn sẽ chọn loại nào?**
 
-**A:** 
-* Sự khác biệt lớn nhất nằm ở chữ ký hàm và khả năng tương thích. Decorator cũ (Stage 2) nhận đối số `(target, key, descriptor)` và cho phép trang trí tham số của hàm (parameter decorators). Decorator mới của TS 5.0 (Stage 3) là chuẩn ECMAScript chính thức, nhận đối số `(value, context)` giúp bảo vệ ngữ cảnh tốt hơn nhưng lại **không hỗ trợ parameter decorators**.
-* Vì vậy, trong **NestJS**, em bắt buộc phải cấu hình `"experimentalDecorators": true` và `"emitDecoratorMetadata": true` để NestJS có thể thực hiện Dependency Injection thông qua các parameter decorator ở constructor và suy luận kiểu dữ liệu phục vụ IoC Container lúc runtime.
+**A:**
+
+- Sự khác biệt lớn nhất nằm ở chữ ký hàm và khả năng tương thích. Decorator cũ (Stage 2) nhận đối số `(target, key, descriptor)` và cho phép trang trí tham số của hàm (parameter decorators). Decorator mới của TS 5.0 (Stage 3) là chuẩn ECMAScript chính thức, nhận đối số `(value, context)` giúp bảo vệ ngữ cảnh tốt hơn nhưng lại **không hỗ trợ parameter decorators**.
+- Vì vậy, trong **NestJS**, em bắt buộc phải cấu hình `"experimentalDecorators": true` và `"emitDecoratorMetadata": true` để NestJS có thể thực hiện Dependency Injection thông qua các parameter decorator ở constructor và suy luận kiểu dữ liệu phục vụ IoC Container lúc runtime.
 
 ---
 

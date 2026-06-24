@@ -48,7 +48,8 @@ Dưới đây là file `turbo.json` mẫu chuẩn hóa theo schema v2 (sử dụ
 }
 ```
 
-*Giải thích các từ khóa:*
+_Giải thích các từ khóa:_
+
 - **`tasks`**: Khai báo các task tương ứng với các lệnh npm scripts trong các package.
 - **`dependsOn: ["^build"]`**: Yêu cầu build tất cả các dependencies của package này trước rồi mới build chính nó. Dấu `^` chỉ định package phụ thuộc ở lớp dưới.
 - **`outputs`**: Khai báo thư mục/file được lưu vào bộ nhớ đệm (cache) khi task chạy thành công.
@@ -63,10 +64,7 @@ Dưới đây là file `turbo.json` mẫu chuẩn hóa theo schema v2 (sử dụ
 {
   "name": "my-monorepo",
   "private": true,
-  "workspaces": [
-    "apps/*",
-    "packages/*"
-  ],
+  "workspaces": ["apps/*", "packages/*"],
   "devDependencies": {
     "turbo": "^2.0.0"
   }
@@ -85,12 +83,14 @@ Khi ứng dụng `apps/frontend` (React) muốn sử dụng thư viện dùng ch
   }
 }
 ```
+
 Trình quản lý gói (Bun/npm/yarn) sẽ tự động tạo symlink trỏ trực tiếp `@repo/shared` về thư mục nguồn cục bộ, giúp cập nhật code tức thì khi dev.
 
 ### 4. Trade-offs & Phỏng vấn
 
 - **Trade-offs**: Cấu hình ban đầu có thể phức tạp. Nếu cấu hình caching sai (`inputs`, `outputs`) có thể dẫn đến việc code cũ bị kẹt trong bộ nhớ đệm (stale cache).
 - **Mẫu trả lời phỏng vấn (Flex)**: "Dự án của em có nhiều ứng dụng (Admin, Storefront) xài chung một Database schema và Types. Em dùng kiến trúc Monorepo với Turborepo để dễ dàng chia sẻ code qua protocol `workspace:*` giúp 100% Type-Safe ở mọi app. Điểm em thích nhất ở Turbo là khả năng định nghĩa Task Pipeline trong `turbo.json` giúp chạy các job song song theo đúng dependency graph, kết hợp với cơ chế Caching giúp bỏ qua việc build lại những package không bị thay đổi source code, từ đó tăng tốc độ CI/CD lên rất nhiều lần."
+
 ---
 
 **Related Notes:**
