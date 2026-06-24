@@ -97,8 +97,8 @@ _Lưu ý: Thực tập sinh kiến tập có thể tự do lựa chọn nhóm mu
 
 ### 3. Phân Rã Công Việc (Work Breakdown Structure - WBS)
 
-- [ ] **Tạo file WBS cá nhân:** Mỗi thành viên tự tạo 01 file đặt tên theo định dạng `MockProject_WorkBreakDown_TenThanhVien.xlsx` (Ví dụ: `MockProject_WorkBreakDown_NguyenVanA.xlsx` - đổi tên thành viên viết không dấu).
-- [ ] Đưa file WBS lên thư mục Google Drive chung của nhóm.
+- [x] **Tạo file WBS cá nhân:** Mỗi thành viên tự tạo 01 file đặt tên theo định dạng `MockProject_WorkBreakDown_TenThanhVien.xlsx` (Ví dụ: `MockProject_WorkBreakDown_NguyenVanA.xlsx` - đổi tên thành viên viết không dấu).
+- [x] Đưa file WBS lên thư mục Google Drive chung của nhóm.
 
 - **Cấu trúc bảng mẫu WBS cá nhân (mày có thể copy bảng này dán trực tiếp vào Excel/Google Sheets):**
 
@@ -110,9 +110,9 @@ _Lưu ý: Thực tập sinh kiến tập có thể tự do lựa chọn nhóm mu
 | Tạo và cấu hình file WBS cá nhân      | 2026-06-24 | 1                       | 0.5                  | Done                |
 | Code login API (Issue #15)            | 2026-06-25 | 3                       |                      | In Progress         |
 
-- [ ] **Cập nhật WBS hàng ngày:**
-  - [ ] **Đầu buổi sáng:** Điền thông tin vào 3 cột đầu tiên: `[Task]`, `[Deadline]`, `[Estimated Effort (hour)]` cho các việc dự kiến làm trong ngày.
-  - [ ] **Cuối ngày/Sáng hôm sau:** Điền thời gian thực tế đã làm vào cột `[Actual Effort (hour)]` để phản ánh đúng thời gian đã bỏ ra cho các task của ngày hôm trước.
+- [x] **Cập nhật WBS hàng ngày:**
+  - [x] **Đầu buổi sáng:** Điền thông tin vào 3 cột đầu tiên: `[Task]`, `[Deadline]`, `[Estimated Effort (hour)]` cho các việc dự kiến làm trong ngày.
+  - [x] **Cuối ngày/Sáng hôm sau:** Điền thời gian thực tế đã làm vào cột `[Actual Effort (hour)]` để phản ánh đúng thời gian đã bỏ ra cho các task của ngày hôm trước.
 
 #### 💡 Hướng dẫn phân rã và điền WBS đúng chuẩn (Granularity & Rules)
 

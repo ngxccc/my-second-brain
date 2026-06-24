@@ -1,7 +1,8 @@
 ---
 tags: [project/viettridao, type/checklist]
 date: 2026-06-25
-aliases: [Checklist Ngày 2 - Chuẩn bị kỹ thuật, Day 2 Technical Preparation Checklist]
+aliases:
+  [Checklist Ngày 2 - Chuẩn bị kỹ thuật, Day 2 Technical Preparation Checklist]
 ---
 
 # 📋 Checklist Hoạt Động Ngày 2 (Chuẩn Bị Kỹ Thuật) - 25/06/2026
@@ -28,11 +29,13 @@ Checklist chuẩn bị kỹ thuật và quy trình hoạt động cho ngày làm
 ## 🛠️ Nhiệm Vụ Chuyên Môn Trong Ngày
 
 ### 1. Tất cả các vai trò (DEV, TESTER, BA) - Tự học thiết kế
-- [ ] **Học kỹ năng vẽ FIGMA:**
-  - [ ] Chủ động tìm kiếm video hướng dẫn vẽ UI/UX trên Youtube.
-  - [ ] Thực hành các thao tác cơ bản: tạo frame, vẽ các element (button, input, card), sử dụng auto-layout và component.
+
+- [x] **Học kỹ năng vẽ FIGMA:**
+  - [x] Chủ động tìm kiếm video hướng dẫn vẽ UI/UX trên Youtube.
+  - [x] Thực hành các thao tác cơ bản: tạo frame, vẽ các element (button, input, card), sử dụng auto-layout và component.
 
 ### 2. Nhóm TESTER + BA - Ôn tập truy vấn SQL
+
 - [ ] **Thống nhất phiên bản SQL Server:**
   - [ ] Cả nhóm (bao gồm DEV, TESTER, BA) thảo luận và thống nhất cài đặt cùng 01 phiên bản SQL Server để đồng bộ code sau này (Khuyên dùng bản **2019** để tối ưu dung lượng và hiệu năng).
 - [ ] **Thực hành truy vấn SQL:**
@@ -41,7 +44,9 @@ Checklist chuẩn bị kỹ thuật và quy trình hoạt động cho ngày làm
   - [ ] Hoàn thành tối thiểu đến hết **câu 17** (bỏ qua câu 16 vì quá khó).
 
 ### 3. Nhóm DEV (Không phải AI) - Thảo luận & Thống nhất công nghệ
+
 Họp nhóm DEV để thảo luận, thống nhất các tiêu chí kỹ thuật và lập **tài liệu Coding Convention** (`[Coding_Convention.xlsx]` hoặc file Word tương tự) bao gồm các nội dung sau:
+
 - [ ] **Lựa chọn Framework & Thư viện:**
   - [ ] Thống nhất framework sử dụng (phải chọn công nghệ mà đa số thành viên trong nhóm làm được để tránh dự án phụ thuộc vào một cá nhân).
   - [ ] Xác định rõ phiên bản (version) cụ thể của framework và thư viện chính.
@@ -57,6 +62,7 @@ Họp nhóm DEV để thảo luận, thống nhất các tiêu chí kỹ thuật
   - [ ] Thống nhất các extension bổ trợ cần cài đặt chung.
 
 ### 4. Nhóm DEV (AI) - Ôn tập lập trình AI cơ bản
+
 - [ ] **Hệ thống hóa kiến thức:**
   - [ ] Ôn tập các khái niệm cốt lõi về Machine Learning, Deep Learning, và lập trình Python cơ bản.
   - [ ] Sẵn sàng cho buổi phỏng vấn thử (Mock Interview) về kiến thức AI cơ bản do Mentor phụ trách trong ngày hôm nay.
