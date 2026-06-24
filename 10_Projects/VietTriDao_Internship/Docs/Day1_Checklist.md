@@ -99,19 +99,40 @@ _Lưu ý: Thực tập sinh kiến tập có thể tự do lựa chọn nhóm mu
 
 - [ ] **Tạo file WBS cá nhân:** Mỗi thành viên tự tạo 01 file đặt tên theo định dạng `MockProject_WorkBreakDown_TenThanhVien.xlsx` (Ví dụ: `MockProject_WorkBreakDown_NguyenVanA.xlsx` - đổi tên thành viên viết không dấu).
 - [ ] Đưa file WBS lên thư mục Google Drive chung của nhóm.
-* **Cấu trúc bảng mẫu WBS cá nhân (mày có thể copy bảng này dán trực tiếp vào Excel/Google Sheets):**
 
-| Task (Đầu việc) | Deadline | Estimated Effort (hour) | Actual Effort (hour) | Status (Trạng thái) |
-| :--- | :--- | :--- | :--- | :--- |
-| Nghiên cứu tài liệu Scrum & Kanban | 2026-06-24 | 2 | 2 | Done |
-| Tham gia họp kick-off bầu nhóm trưởng | 2026-06-24 | 1 | 1 | Done |
-| Setup Git repository & GitHub project | 2026-06-24 | 1.5 | 1.5 | Done |
-| Tạo và cấu hình file WBS cá nhân | 2026-06-24 | 1 | 0.5 | Done |
-| Code login API (Issue #15) | 2026-06-25 | 3 | | In Progress |
+- **Cấu trúc bảng mẫu WBS cá nhân (mày có thể copy bảng này dán trực tiếp vào Excel/Google Sheets):**
+
+| Task (Đầu việc)                       | Deadline   | Estimated Effort (hour) | Actual Effort (hour) | Status (Trạng thái) |
+| :------------------------------------ | :--------- | :---------------------- | :------------------- | :------------------ |
+| Nghiên cứu tài liệu Scrum & Kanban    | 2026-06-24 | 2                       | 2                    | Done                |
+| Tham gia họp kick-off bầu nhóm trưởng | 2026-06-24 | 1                       | 1                    | Done                |
+| Setup Git repository & GitHub project | 2026-06-24 | 1.5                     | 1.5                  | Done                |
+| Tạo và cấu hình file WBS cá nhân      | 2026-06-24 | 1                       | 0.5                  | Done                |
+| Code login API (Issue #15)            | 2026-06-25 | 3                       |                      | In Progress         |
 
 - [ ] **Cập nhật WBS hàng ngày:**
   - [ ] **Đầu buổi sáng:** Điền thông tin vào 3 cột đầu tiên: `[Task]`, `[Deadline]`, `[Estimated Effort (hour)]` cho các việc dự kiến làm trong ngày.
   - [ ] **Cuối ngày/Sáng hôm sau:** Điền thời gian thực tế đã làm vào cột `[Actual Effort (hour)]` để phản ánh đúng thời gian đã bỏ ra cho các task của ngày hôm trước.
+
+#### 💡 Hướng dẫn phân rã và điền WBS đúng chuẩn (Granularity & Rules)
+
+Để tránh bị Scrum Master đánh giá không đạt quy trình, bạn cần tuân thủ các quy tắc sau:
+
+1. **Độ mịn của Task (Task Granularity):**
+   - Mỗi task nhỏ chỉ nên kéo dài từ **2 đến 4 tiếng**.
+   - **Tối đa 8 tiếng (1 ngày làm việc)** cho một task cực kỳ phức tạp.
+   - Nếu ước lượng một task mất trên 8 tiếng (ví dụ: "Code toàn bộ phần Authentication"), **bắt buộc phải phân rã thành các task nhỏ hơn** (ví dụ: "Thiết kế database users", "Viết API login", "Viết API register").
+
+2. **Cách đặt tên Task (Action-oriented):**
+   - Bắt đầu bằng một **động từ hành động cụ thể** (như: *Thiết kế, Viết, Vẽ, Code, Test, Setup, Cấu hình*).
+   - *Sai:* Ghi chung chung `"Login Screen"`, `"Database"`.
+   - *Đúng:* `"Vẽ giao diện Login trên Figma"`, `"Thiết kế database schema cho Module Profile"`.
+
+3. **Cách ước lượng và cập nhật Effort:**
+   - **Estimated Effort (hour):** Điền vào đầu buổi sáng trước khi làm việc. Đây là ước lượng mang tính dự đoán dựa trên năng lực cá nhân.
+   - **Actual Effort (hour):** Điền vào cuối ngày hoặc sáng hôm sau. Phản ánh đúng số giờ thực tế đã làm (ví dụ: ước lượng 2h nhưng code bị lỗi mất 4h thì điền đúng 4h).
+   - Việc chênh lệch giữa Estimated và Actual giúp bạn rèn luyện khả năng ước lượng tốt hơn qua từng ngày.
+   - Xem thêm các ví dụ thực tế phân rã công việc sâu hơn tại [[Prep_Guide_Day1#🌿 Phân Rã Công Việc (Work Breakdown Structure - WBS)]].
 
 ---
 
