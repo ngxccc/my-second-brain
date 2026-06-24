@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Agile & Scrum Quiz - Raycast Edition (20 Questions)</title>
+  <title>Agile & Scrum Quiz - Comprehensive Review (30 Questions)</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -11,7 +11,7 @@
   <div class="container">
     <header>
       <h1>AGILE & SCRUM</h1>
-      <p>Comprehensive Scrum Review (20 Questions)</p>
+      <p>Comprehensive Scrum Review (30 Questions)</p>
     </header>
 
     <div class="card" id="quiz-card">
@@ -20,7 +20,7 @@
       </div>
 
       <div class="quiz-screen" id="quiz-screen">
-        <div class="question-info" id="question-info">QUESTION 1 OF 20</div>
+        <div class="question-info" id="question-info">QUESTION 1 OF 30</div>
         <div class="question-text" id="question-text">Câu hỏi đang được tải...</div>
 
         <div class="options-list" id="options-list">
@@ -270,6 +270,116 @@
         ],
         correct: 1,
         explanation: "Daily Scrum là sự kiện hàng ngày để phát hiện blockers. Thành viên phải chủ động nêu khó khăn để Scrum Master hoặc các thành viên khác hỗ trợ tháo gỡ kịp thời, tránh trễ tiến độ Sprint."
+      },
+      {
+        question: "Khái niệm 'Sprint Goal' (Mục tiêu Sprint) trong Scrum đóng vai trò gì và do ai tạo ra?",
+        options: [
+          "Là mục tiêu duy nhất cho Sprint do PO và Developers cùng tạo ra trong Sprint Planning, đóng vai trò là kim chỉ nam cho Developers trong suốt Sprint.",
+          "Là bảng excel ghi nhận thời gian làm việc do Scrum Master tự động tạo ra.",
+          "Là danh sách các bug cần sửa do Tester đề xuất.",
+          "Là deadline của cả dự án 1 tháng do Mentor chỉ định."
+        ],
+        correct: 0,
+        explanation: "Sprint Goal là một cam kết chính thức của Scrum Team, cung cấp mục tiêu và định hướng cho các Developers trong Sprint. Nó được thảo luận và tạo ra trong buổi Sprint Planning."
+      },
+      {
+        question: "Sự khác biệt cơ bản về tính sở hữu và tính thay đổi giữa Product Backlog và Sprint Backlog là gì?",
+        options: [
+          "Product Backlog thuộc quyền sở hữu và quản lý của PO; Sprint Backlog thuộc quyền sở hữu của Developers và có thể được điều chỉnh linh hoạt trong Sprint để đạt Sprint Goal.",
+          "Product Backlog do Developers quản lý; Sprint Backlog do Scrum Master sở hữu và cấm thay đổi.",
+          "Cả hai backlog đều do PO sở hữu và cấm mọi thay đổi sau khi Sprint bắt đầu.",
+          "Cả hai backlog đều thuộc sở hữu của khách hàng."
+        ],
+        correct: 0,
+        explanation: "Product Backlog là danh sách yêu cầu chung của sản phẩm do PO quản lý. Sprint Backlog là kế hoạch thực thi cụ thể của Developers trong Sprint; Developers sở hữu Sprint Backlog và có thể thêm/bớt/sửa các task kỹ thuật trong suốt Sprint miễn là không ảnh hưởng đến Sprint Goal."
+      },
+      {
+        question: "Trong quy trình vận hành MockProject, khái niệm 'Sprint' được biểu diễn bằng tính năng nào trên GitHub?",
+        options: [
+          "GitHub Issues",
+          "GitHub Pull Requests",
+          "GitHub Milestones (Với tên gọi Sprint1 và deadline là 1 tháng)",
+          "GitHub Labels"
+        ],
+        correct: 2,
+        explanation: "Để mô phỏng quy trình Agile/Scrum mà không tốn chi phí dùng JIRA, MockProject quy định sử dụng tính năng GitHub Milestones để đại diện cho Sprints (Ví dụ tạo Milestone tên Sprint1 với thời gian chạy là 1 tháng)."
+      },
+      {
+        question: "Quy định bắt buộc về việc ghi Biên bản họp (Meeting Minutes) trong MockProject là gì?",
+        options: [
+          "Viết bằng tiếng Anh 100%, phân công luân phiên mỗi ngày 01 thư ký khác nhau, và upload file lên Google Drive của nhóm hàng ngày.",
+          "Viết bằng tiếng Việt, do nhóm trưởng viết cố định tất cả các ngày, và lưu ở máy cá nhân.",
+          "Chỉ cần ghi chép khi có tranh cãi giữa các thành viên.",
+          "Viết bằng tiếng Anh và gửi qua Zalo cho Mentor vào cuối tuần."
+        ],
+        correct: 0,
+        explanation: "Meeting Minutes bắt buộc viết bằng 100% tiếng Anh, phân công luân phiên mỗi ngày một thành viên khác nhau viết để luyện tập, và đưa lên Drive chung hàng ngày để mentor audit định kỳ."
+      },
+      {
+        question: "Định nghĩa chính xác về 'Increment' (Mảnh tăng trưởng) theo Scrum Guide 2020 là gì?",
+        options: [
+          "Là bản thiết kế Figma của toàn bộ hệ thống.",
+          "Là phần sản phẩm có thể sử dụng và chạy được (usable/releasable) được tích lũy từ các Sprint, và chỉ được ghi nhận khi thỏa mãn Definition of Done (DoD).",
+          "Là kế hoạch phân rã công việc WBS của nhóm.",
+          "Là các issue đã đóng trên GitHub Kanban."
+        ],
+        correct: 1,
+        explanation: "Increment là một mảnh tăng trưởng sản phẩm hoàn chỉnh, chạy được và có giá trị sử dụng. Nó là kết quả của các User Story đã hoàn thành đạt chuẩn Definition of Done (DoD) trong Sprint."
+      },
+      {
+        question: "5 giá trị cốt lõi của Scrum nâng đỡ 3 trụ cột thực nghiệm là gì?",
+        options: [
+          "Lập kế hoạch, Thực thi, Kiểm thử, Bàn giao, Cải tiến.",
+          "Cam kết (Commitment), Can đảm (Courage), Tập trung (Focus), Cởi mở (Openness), Tôn trọng (Respect).",
+          "Nhanh chóng, Linh hoạt, Minh bạch, Tiết kiệm, Hiệu quả.",
+          "Tự quản, Đa chức năng, Thích ứng, Tự tin, Tôn trọng."
+        ],
+        correct: 1,
+        explanation: "5 giá trị Scrum bao gồm: Cam kết (Commitment), Can đảm (Courage), Tập trung (Focus), Cởi mở (Openness), và Tôn trọng (Respect). Các giá trị này định hướng hành vi và giao tiếp của Scrum Team."
+      },
+      {
+        question: "Ai là người duy nhất có thẩm quyền hủy bỏ (Cancel) một Sprint đang diễn ra, và trong điều kiện nào?",
+        options: [
+          "Scrum Master, khi thấy Developers cãi nhau nhiều.",
+          "Product Owner (PO), khi thấy Mục tiêu Sprint (Sprint Goal) trở nên lỗi thời do thay đổi kinh doanh hoặc công nghệ.",
+          "Developers, khi thấy khối lượng việc quá nhiều không làm kịp.",
+          "Khách hàng, khi họ không muốn trả tiền nữa."
+        ],
+        correct: 1,
+        explanation: "Theo Scrum Guide, chỉ có Product Owner mới có quyền hủy Sprint nếu mục tiêu của Sprint đó không còn giá trị thực tế nữa."
+      },
+      {
+        question: "Khi khởi tạo một Task (Issue) trên GitHub Projects trong MockProject, những trường thông tin nào bắt buộc phải điền đầy đủ?",
+        options: [
+          "Chỉ cần viết tiêu đề task.",
+          "Tiêu đề, Mô tả chi tiết kèm tiêu chí nghiệm thu (Acceptance Criteria), gán Assignees thực hiện, chọn Milestone (Sprint1), và gán nhãn label 'Task'.",
+          "Tiêu đề, link code Git, và nhãn 'On-time'.",
+          "Tiêu đề và gán nhãn 'Bug'."
+        ],
+        correct: 1,
+        explanation: "Quy định vận hành GitHub Project yêu cầu khi tạo task dưới dạng Issue phải điền rõ: tiêu đề, đặc tả/mô tả kèm tiêu chí nghiệm thu (Acceptance Criteria), gán người làm (Assignee), gán vào Sprint (Milestone), và thêm nhãn 'Task' để phân loại."
+      },
+      {
+        question: "Quy định backup sản phẩm cá nhân hàng ngày trong MockProject yêu cầu cấu trúc thư mục như thế nào?",
+        options: [
+          "Upload tất cả tệp vào thư mục gốc của Drive cá nhân.",
+          "Sử dụng một thư mục cha cố định, bên trong chia các thư mục con theo ngày (Day1, Day2, Day3...), share quyền Public và gửi link cho mentor.",
+          "Chỉ cần copy code vào USB cá nhân.",
+          "Upload trực tiếp lên GitHub của mentor."
+        ],
+        correct: 1,
+        explanation: "Mỗi thành viên phải dùng một thư mục cố định trên Drive cá nhân, chia các thư mục con Day1, Day2... để backup sản phẩm mới nhất hàng ngày, share public link để mentor có thể vào review bất cứ lúc nào."
+      },
+      {
+        question: "Sự khác biệt chính về vai trò điều phối cuộc họp Daily Scrum giữa Scrum Guide cũ và Scrum Guide 2020 là gì?",
+        options: [
+          "Cấm Scrum Master tham gia cuộc họp.",
+          "Developers tự tổ chức và điều phối cuộc họp Daily Scrum; Scrum Master không còn là người bắt buộc phải điều hành hay làm chủ trì cuộc họp này nữa.",
+          "Product Owner là người bắt buộc phải chủ trì cuộc họp Daily Scrum.",
+          "Bắt buộc phải có đại diện khách hàng điều phối cuộc họp."
+        ],
+        correct: 1,
+        explanation: "Trong Scrum Guide 2020, Daily Scrum là sự kiện được thiết kế riêng dành cho các Developers để tự quản lý tiến độ. Scrum Master chỉ hướng dẫn quy trình và đảm bảo cuộc họp diễn ra trong giới hạn 15 phút chứ không điều hành trực tiếp."
       }
     ];
   </script>
