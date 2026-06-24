@@ -40,6 +40,7 @@ Bản đồ điều hướng trung tâm cho toàn bộ tri thức kỹ thuật. 
 - [[NextJS_Dynamic_Opt_Out_Connection]]: Cơ chế ngắt Prerender tĩnh và chuyển đổi sang Dynamic Rendering ở Next.js 15/16.
 - [[NextJS_Route_Groups_and_Nested_Layouts]]: Bản chất của Route Groups và cơ chế kế thừa layout (Nested Layouts) trong Next.js App Router.
 - [[NextJS_Monorepo_Package_Transpilation]]: Cơ chế biên dịch gói nội bộ (transpilePackages) và tối ưu hóa build trong Turborepo.
+- [[Turborepo]]: Công cụ xây dựng hiệu suất cao cho các dự án Monorepo sử dụng JavaScript/TypeScript.
 - [[WinForms_Layout_Optimization]]: Tối ưu hóa Layout Engine của WinForms bằng SuspendLayout và ResumeLayout.
 - [[React_Component_Declaration_Standards]]: Tiêu chuẩn khai báo React component (export function vs arrow function).
 
@@ -76,6 +77,7 @@ Bản đồ điều hướng trung tâm cho toàn bộ tri thức kỹ thuật. 
 - [[JS_Memory_Management_Stack_Heap_GC]]: Mô hình quản lý bộ nhớ (Stack vs Heap), cơ chế dọn rác phân thế hệ (Generational GC) và cách phòng ngừa rò rỉ bộ nhớ (Memory Leaks).
 - [[JS_Immer_Immutable_State]]: Quản lý trạng thái bất biến (Immutable State) thông qua cơ chế Copy-on-Write (COW) và ES6 Proxy, giải pháp tối ưu cho Zustand/Redux stores.
 - [[TS_Type_System_Structural_Type_Erasure]]: Hệ thống kiểu cấu trúc (Structural Typing), cơ chế xóa bỏ kiểu (Type Erasure) và cách thu hẹp kiểu an toàn với Type Predicates.
+- [[TS_Decorators]]: Phương pháp trang trí trong TypeScript chuẩn ES (Stage 3) vs cũ (experimentalDecorators).
 - [[10_Projects/Hyundai_Ecommerce/Docs/V8_Performance_Audit.md|V8_Performance_Audit]]: Báo cáo đánh giá hiệu năng V8 Engine và Memory (Cấp phát Stack/Heap, tối ưu hóa Hidden Classes, tránh delete/spread trên hot-path).
 - [[TS_Distributive_Conditional_Types]]: Cơ chế tự động xé lẻ Union Type trong các biểu thức Generic của TypeScript.
 - [[TS_Type_Utilities_Omit_Pick_Exclude]]: So sánh chi tiết bản chất và phân biệt các tiện ích kiểu Omit, Pick, Exclude.
