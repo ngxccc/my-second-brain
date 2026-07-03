@@ -38,6 +38,7 @@ Bản đồ điều hướng trung tâm cho toàn bộ tri thức kỹ thuật. 
 - [[NextJS_PPR_Platform_Support]]: Cơ chế và cách thức các Cloud Platform hỗ trợ triển khai Partial Prerendering.
 - [[NextJS_ISR]]: Cơ chế cập nhật và tái tạo các trang tĩnh ở runtime mà không cần rebuild toàn bộ site.
 - [[NextJS_Dynamic_Opt_Out_Connection]]: Cơ chế ngắt Prerender tĩnh và chuyển đổi sang Dynamic Rendering ở Next.js 15/16.
+- [[NextJS_after_API]]: Cơ chế lập lịch tác vụ nền không chặn (non-blocking) sau khi response đã được gửi về client.
 - [[NextJS_Route_Groups_and_Nested_Layouts]]: Bản chất của Route Groups và cơ chế kế thừa layout (Nested Layouts) trong Next.js App Router.
 - [[NextJS_Monorepo_Package_Transpilation]]: Cơ chế biên dịch gói nội bộ (transpilePackages) và tối ưu hóa build trong Turborepo.
 - [[Turborepo]]: Công cụ xây dựng hiệu suất cao cho các dự án Monorepo sử dụng JavaScript/TypeScript.
@@ -91,4 +92,5 @@ Bản đồ điều hướng trung tâm cho toàn bộ tri thức kỹ thuật. 
 - [[Tree_Shaking]]: Kỹ thuật phân tích tĩnh để loại bỏ dead code khi đóng gói Javascript.
 
 ---
-*Last updated: 2026-06*
+
+_Last updated: 2026-06_

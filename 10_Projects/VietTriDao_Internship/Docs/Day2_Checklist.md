@@ -15,10 +15,10 @@ Checklist chuẩn bị kỹ thuật và quy trình hoạt động cho ngày làm
 
 ## 📅 Quy Trình Bắt Buộc Đầu Buổi Sáng
 
-- [ ] **Họp Daily Scrum (Đầu giờ sáng):**
-  - [ ] Họp nhanh 10-15 phút để báo cáo tiến độ hôm qua, phân công việc hôm nay và nêu blockers.
-  - [ ] Phân công 01 thành viên viết biên bản họp (Meeting Minutes) bằng **tiếng Anh 100%**.
-  - [ ] Upload biên bản họp lên thư mục Google Drive chung của nhóm.
+- [x] **Họp Daily Scrum (Đầu giờ sáng):**
+  - [x] Họp nhanh 10-15 phút để báo cáo tiến độ hôm qua, phân công việc hôm nay và nêu blockers.
+  - [x] Phân công 01 thành viên viết biên bản họp (Meeting Minutes) bằng **tiếng Anh 100%**.
+  - [x] Upload biên bản họp lên thư mục Google Drive chung của nhóm.
 - [ ] **Quản lý Task trên GitHub & WBS:**
   - [ ] Cập nhật trạng thái các task của ngày hôm qua trên GitHub Kanban.
   - [ ] Mỗi thành viên tự làm và cập nhật file WBS cá nhân (`MockProject_WorkBreakDown_TenThanhVien.xlsx`). Điền cột `Task`, `Deadline`, và `Estimated Effort` cho các công việc trong ngày.
@@ -36,8 +36,8 @@ Checklist chuẩn bị kỹ thuật và quy trình hoạt động cho ngày làm
 
 ### 2. Nhóm TESTER + BA - Ôn tập truy vấn SQL
 
-- [ ] **Thống nhất phiên bản SQL Server:**
-  - [ ] Cả nhóm (bao gồm DEV, TESTER, BA) thảo luận và thống nhất cài đặt cùng 01 phiên bản SQL Server để đồng bộ code sau này (Khuyên dùng bản **2019** để tối ưu dung lượng và hiệu năng).
+- [x] **Thống nhất phiên bản SQL Server:**
+  - [x] Cả nhóm (bao gồm DEV, TESTER, BA) thảo luận và thống nhất cài đặt cùng 01 phiên bản SQL Server để đồng bộ code sau này (Khuyên dùng bản **2019** để tối ưu dung lượng và hiệu năng).
 - [ ] **Thực hành truy vấn SQL:**
   - [ ] Nghiên cứu tệp cơ sở dữ liệu mẫu `[SQLCoBan_DB_NghiepVu_1.xlsx]`.
   - [ ] Làm bài tập thực hành truy vấn trực tiếp trên SQL Server theo tài liệu `[SQLCoBan_ThucHanhSQL_DB1_PhanCoBan.doc]`.
@@ -47,19 +47,19 @@ Checklist chuẩn bị kỹ thuật và quy trình hoạt động cho ngày làm
 
 Họp nhóm DEV để thảo luận, thống nhất các tiêu chí kỹ thuật và lập **tài liệu Coding Convention** (`[Coding_Convention.xlsx]` hoặc file Word tương tự) bao gồm các nội dung sau:
 
-- [ ] **Lựa chọn Framework & Thư viện:**
-  - [ ] Thống nhất framework sử dụng (phải chọn công nghệ mà đa số thành viên trong nhóm làm được để tránh dự án phụ thuộc vào một cá nhân).
-  - [ ] Xác định rõ phiên bản (version) cụ thể của framework và thư viện chính.
-- [ ] **Quy ước đặt tên & Cấu trúc mã nguồn:**
-  - [ ] Quy ước cách đặt tên dự án (Project naming).
-  - [ ] Quy ước cấu trúc package (thư mục) trong mã nguồn.
-  - [ ] Quy ước đặt tên Class, Biến (Variable) và Method (CamelCase, PascalCase, snake_case...).
-- [ ] **Quy ước Comment & Hằng số (Constants):**
-  - [ ] Thống nhất quy tắc viết comment cho từng dòng (line), khối code (block) và hàm (method) bằng **tiếng Anh 100%**.
-  - [ ] Quy ước sử dụng các class Common để quản lý tập trung hằng số dùng chung (đường dẫn DB, tài khoản kết nối...).
-- [ ] **Môi trường lập trình (IDE):**
-  - [ ] Thống nhất IDE sử dụng (như VS Code, Visual Studio, IntelliJ...) và phiên bản cụ thể.
-  - [ ] Thống nhất các extension bổ trợ cần cài đặt chung.
+- [x] **Lựa chọn Framework & Thư viện:**
+  - [x] Thống nhất framework sử dụng (phải chọn công nghệ mà đa số thành viên trong nhóm làm được để tránh dự án phụ thuộc vào một cá nhân).
+  - [x] Xác định rõ phiên bản (version) cụ thể của framework và thư viện chính.
+- [x] **Quy ước đặt tên & Cấu trúc mã nguồn:**
+  - [x] Quy ước cách đặt tên dự án (Project naming).
+  - [x] Quy ước cấu trúc package (thư mục) trong mã nguồn.
+  - [x] Quy ước đặt tên Class, Biến (Variable) và Method (CamelCase, PascalCase, snake_case...).
+- [x] **Quy ước Comment & Hằng số (Constants):**
+  - [x] Thống nhất quy tắc viết comment cho từng dòng (line), khối code (block) và hàm (method) bằng **tiếng Anh 100%**.
+  - [x] Quy ước sử dụng các class Common để quản lý tập trung hằng số dùng chung (đường dẫn DB, tài khoản kết nối...).
+- [x] **Môi trường lập trình (IDE):**
+  - [x] Thống nhất IDE sử dụng (như VS Code, Visual Studio, IntelliJ...) và phiên bản cụ thể.
+  - [x] Thống nhất các extension bổ trợ cần cài đặt chung.
 
 ### 4. Nhóm DEV (AI) - Ôn tập lập trình AI cơ bản
 

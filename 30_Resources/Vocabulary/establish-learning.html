@@ -1,0 +1,1654 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Học Từ Vựng Thông Minh: Establish & Phương Pháp Học 1 Biết 10</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg-color: #0E0E12;
+            --surface-color: #16161C;
+            --border-color: #282834;
+            --text-color: #F4F4F4;
+            --text-muted: #959BA3;
+            --accent-color: #FF6363; /* Coral/Red */
+            --accent-hover: #E05353;
+            --success-color: #3CD070;
+            --info-color: #4DA3FF;
+            --font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            --mono-font: 'JetBrains Mono', monospace;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-family);
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            padding: 40px 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        header {
+            margin-bottom: 40px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 24px;
+            position: relative;
+        }
+
+        .badge-header {
+            display: inline-block;
+            background-color: rgba(255, 99, 99, 0.1);
+            color: var(--accent-color);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 12px;
+            border: 1px solid rgba(255, 99, 99, 0.2);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            letter-spacing: -0.03em;
+            margin-bottom: 8px;
+            color: #FFFFFF;
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            font-weight: 400;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #FFFFFF;
+            margin: 40px 0 20px 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        h2::before {
+            content: "";
+            display: inline-block;
+            width: 4px;
+            height: 24px;
+            background-color: var(--accent-color);
+            border-radius: 2px;
+        }
+
+        p {
+            color: var(--text-muted);
+            margin-bottom: 16px;
+        }
+
+        strong {
+            color: #FFFFFF;
+        }
+
+        code {
+            font-family: var(--mono-font);
+            background-color: rgba(255, 255, 255, 0.08);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 0.9em;
+            color: var(--accent-color);
+        }
+
+        /* Tabs / Navigation */
+        .nav-tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 30px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 12px;
+            overflow-x: auto;
+        }
+
+        .tab-btn {
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            font-family: var(--font-family);
+            font-size: 0.95rem;
+            font-weight: 500;
+            padding: 8px 16px;
+            cursor: pointer;
+            border-radius: 6px;
+            transition: all 0.2s;
+            white-space: nowrap;
+        }
+
+        .tab-btn:hover {
+            color: #FFFFFF;
+            background-color: rgba(255, 255, 255, 0.05);
+        }
+
+        .tab-btn.active {
+            color: #FFFFFF;
+            background-color: var(--accent-color);
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        /* Cards Layout */
+        .card {
+            background-color: var(--surface-color);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 24px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+        }
+
+        @media (max-width: 768px) {
+            .grid-2 {
+                grid-template-columns: 1fr;
+            }
+            h1 {
+                font-size: 2rem;
+            }
+        }
+
+        /* Custom UI Components */
+        .pronunciation-box {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-top: 10px;
+        }
+
+        .ipa-badge {
+            font-family: var(--mono-font);
+            font-size: 1.1rem;
+            color: var(--info-color);
+            background-color: rgba(77, 163, 255, 0.1);
+            padding: 4px 12px;
+            border-radius: 6px;
+            border: 1px solid rgba(77, 163, 255, 0.2);
+        }
+
+        .audio-btn {
+            background-color: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border-color);
+            color: #FFFFFF;
+            padding: 6px 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.9rem;
+            transition: background-color 0.2s;
+        }
+
+        .audio-btn:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        /* Root Tree Visualizer */
+        .root-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 30px 10px;
+            background-color: rgba(22, 22, 28, 0.5);
+            border: 1px dashed var(--border-color);
+            border-radius: 12px;
+            margin-bottom: 30px;
+        }
+
+        .root-core {
+            background: linear-gradient(135deg, var(--accent-color), #FF8585);
+            color: var(--bg-color);
+            padding: 16px 28px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.4rem;
+            box-shadow: 0 0 20px rgba(255, 99, 99, 0.4);
+            margin-bottom: 40px;
+            text-align: center;
+            position: relative;
+        }
+
+        .root-core span {
+            display: block;
+            font-size: 0.8rem;
+            font-weight: 500;
+            opacity: 0.8;
+            text-transform: uppercase;
+        }
+
+        .root-branches {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+            width: 100%;
+        }
+
+        @media (max-width: 900px) {
+            .root-branches {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .root-branches {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .branch-card {
+            background-color: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 16px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        .branch-card:hover {
+            transform: translateY(-5px);
+            background-color: rgba(255, 99, 99, 0.05);
+            border-color: rgba(255, 99, 99, 0.3);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+
+        .branch-card.active {
+            background-color: rgba(255, 99, 99, 0.1);
+            border-color: var(--accent-color);
+        }
+
+        .branch-word {
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: #FFFFFF;
+            margin-bottom: 6px;
+            font-family: var(--mono-font);
+        }
+
+        .branch-meaning {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .branch-detail-box {
+            margin-top: 24px;
+            background-color: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 20px;
+            width: 100%;
+            display: none;
+            animation: fadeIn 0.3s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Flashcards */
+        .flashcard-wrapper {
+            perspective: 1000px;
+            width: 100%;
+            max-width: 450px;
+            height: 280px;
+            margin: 20px auto;
+            cursor: pointer;
+        }
+
+        .flashcard {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            border-radius: 14px;
+        }
+
+        .flashcard.flipped {
+            transform: rotateY(180deg);
+        }
+
+        .card-face {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 14px;
+            border: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .card-front {
+            background-color: #1E1E26;
+            color: #FFFFFF;
+        }
+
+        .card-back {
+            background-color: #16161C;
+            transform: rotateY(180deg);
+            border-top: 4px solid var(--accent-color);
+            justify-content: space-between;
+        }
+
+        .card-hint {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-top: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .card-word {
+            font-size: 1.8rem;
+            font-weight: 700;
+            font-family: var(--mono-font);
+            color: var(--accent-color);
+            margin-bottom: 10px;
+        }
+
+        .card-def {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: #FFFFFF;
+            margin-bottom: 12px;
+        }
+
+        .card-ex {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            font-style: italic;
+        }
+
+        /* Quiz Styles */
+        .quiz-option {
+            background-color: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--border-color);
+            color: var(--text-color);
+            padding: 14px 20px;
+            border-radius: 8px;
+            margin-bottom: 12px;
+            cursor: pointer;
+            text-align: left;
+            width: 100%;
+            font-family: var(--font-family);
+            font-size: 0.95rem;
+            transition: all 0.2s;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .quiz-option:hover {
+            background-color: rgba(255, 255, 255, 0.06);
+            border-color: rgba(255, 255, 255, 0.15);
+        }
+
+        .quiz-option.correct {
+            background-color: rgba(60, 208, 112, 0.1);
+            border-color: var(--success-color);
+            color: var(--success-color);
+            font-weight: 600;
+        }
+
+        .quiz-option.incorrect {
+            background-color: rgba(255, 99, 99, 0.1);
+            border-color: var(--accent-color);
+            color: var(--accent-color);
+        }
+
+        .quiz-feedback {
+            margin-top: 15px;
+            padding: 15px;
+            border-radius: 8px;
+            display: none;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        .quiz-feedback.correct-bg {
+            background-color: rgba(60, 208, 112, 0.05);
+            border: 1px solid rgba(60, 208, 112, 0.2);
+            color: #FFFFFF;
+            display: block;
+        }
+
+        .quiz-feedback.incorrect-bg {
+            background-color: rgba(255, 99, 99, 0.05);
+            border: 1px solid rgba(255, 99, 99, 0.2);
+            color: #FFFFFF;
+            display: block;
+        }
+
+        /* Spaced Repetition Planner */
+        .sr-controls {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 24px;
+            align-items: flex-end;
+            flex-wrap: wrap;
+        }
+
+        .sr-input-group {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .sr-input-group label {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .sr-input {
+            background-color: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border-color);
+            color: #FFFFFF;
+            padding: 10px 14px;
+            border-radius: 6px;
+            font-family: var(--font-family);
+            font-size: 0.95rem;
+        }
+
+        .sr-btn {
+            background-color: var(--accent-color);
+            color: var(--bg-color);
+            border: none;
+            padding: 11px 20px;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.2s;
+            font-family: var(--font-family);
+            font-size: 0.95rem;
+        }
+
+        .sr-btn:hover {
+            background-color: var(--accent-hover);
+        }
+
+        .sr-timeline {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            margin-top: 20px;
+        }
+
+        .sr-step {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            background-color: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--border-color);
+            padding: 16px;
+            border-radius: 8px;
+            transition: all 0.2s;
+        }
+
+        .sr-step.completed {
+            border-color: rgba(60, 208, 112, 0.3);
+            background-color: rgba(60, 208, 112, 0.02);
+        }
+
+        .sr-step-checkbox {
+            width: 22px;
+            height: 22px;
+            accent-color: var(--success-color);
+            cursor: pointer;
+        }
+
+        .sr-step-info {
+            flex-grow: 1;
+        }
+
+        .sr-step-title {
+            font-weight: 600;
+            color: #FFFFFF;
+            margin-bottom: 2px;
+        }
+
+        .sr-step-date {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            font-family: var(--mono-font);
+        }
+
+        .sr-step-desc {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-top: 4px;
+        }
+
+        .sr-step-badge {
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 3px 8px;
+            border-radius: 4px;
+            text-transform: uppercase;
+        }
+
+        .badge-upcoming {
+            background-color: rgba(77, 163, 255, 0.1);
+            color: var(--info-color);
+            border: 1px solid rgba(77, 163, 255, 0.2);
+        }
+
+        .badge-today {
+            background-color: rgba(255, 99, 99, 0.1);
+            color: var(--accent-color);
+            border: 1px solid rgba(255, 99, 99, 0.2);
+            animation: pulse 2s infinite;
+        }
+
+        .badge-done {
+            background-color: rgba(60, 208, 112, 0.1);
+            color: var(--success-color);
+            border: 1px solid rgba(60, 208, 112, 0.2);
+        }
+
+        @keyframes pulse {
+            0% { opacity: 0.8; }
+            50% { opacity: 1; }
+            100% { opacity: 0.8; }
+        }
+
+        /* Collocation switcher styling */
+        .coll-item {
+            border-left: 2px solid var(--border-color);
+            padding-left: 15px;
+            margin-bottom: 18px;
+        }
+        .coll-item:hover {
+            border-left-color: var(--accent-color);
+        }
+        .coll-title {
+            font-weight: 600;
+            font-family: var(--mono-font);
+            color: #FFFFFF;
+        }
+        .coll-desc {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .context-switcher {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .context-btn {
+            background-color: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border-color);
+            color: var(--text-muted);
+            padding: 8px 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.2s;
+        }
+
+        .context-btn.active {
+            background-color: rgba(77, 163, 255, 0.1);
+            color: var(--info-color);
+            border-color: var(--info-color);
+        }
+
+        .context-display-box {
+            background-color: rgba(22, 22, 28, 0.8);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 20px;
+            font-family: var(--font-family);
+        }
+
+        .context-sentence {
+            font-size: 1.1rem;
+            color: #FFFFFF;
+            margin-bottom: 8px;
+            border-left: 3px solid var(--accent-color);
+            padding-left: 12px;
+        }
+
+        .context-translation {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            font-style: italic;
+        }
+        /* Floating TTS Widget */
+        .tts-floating-widget {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            font-family: var(--font-family);
+        }
+
+        .tts-toggle-btn {
+            background-color: var(--accent-color);
+            color: var(--bg-color);
+            border: none;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 4px 16px rgba(255, 99, 99, 0.4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.2s, background-color 0.2s;
+        }
+
+        .tts-toggle-btn:hover {
+            transform: scale(1.05);
+            background-color: var(--accent-hover);
+        }
+
+        .tts-panel {
+            background-color: var(--surface-color);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 18px;
+            width: 290px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+            margin-bottom: 12px;
+            display: none;
+            flex-direction: column;
+            gap: 12px;
+            animation: slideUp 0.25s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes pulseRecord {
+            0% { transform: scale(1); opacity: 0.5; }
+            50% { transform: scale(1.2); opacity: 0.2; }
+            100% { transform: scale(1.4); opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <span class="badge-header">Vocabulary & Methodology</span>
+        <h1>Establish /ɪˈstæblɪʃ/</h1>
+        <div class="subtitle">Trang học từ vựng chuyên sâu & Hướng dẫn phương pháp "Học 1 Hiểu 10, Nhớ Lâu"</div>
+    </header>
+
+    <!-- Nav Tabs -->
+    <div class="nav-tabs">
+        <button class="tab-btn active" onclick="switchTab('core')">1. Từ Vựng Core</button>
+        <button class="tab-btn" onclick="switchTab('root')">2. Học 1 Hiểu 10 (Word Root)</button>
+        <button class="tab-btn" onclick="switchTab('context')">3. Cụm Từ & Ngữ Cảnh</button>
+        <button class="tab-btn" onclick="switchTab('practice')">4. Ôn Tập Tương Tác</button>
+        <button class="tab-btn" onclick="switchTab('spaced')">5. Lập Lịch Nhớ Lâu (SR)</button>
+    </div>
+
+    <!-- Tab 1: Core Vocab -->
+    <div id="tab-core" class="tab-content active">
+        <div class="card">
+            <h2>Định nghĩa & Phát âm</h2>
+            <div class="pronunciation-box">
+                <span class="ipa-badge">/ɪˈstæblɪʃ/</span>
+                <button class="audio-btn" onclick="speak('establish')">
+                    <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                        <path d="M11.536 14.01A8.473 8.473 0 0 0 14.026 8a8.473 8.473 0 0 0-2.49-6.01l-.708.707A7.476 7.476 0 0 1 13.025 8c0 2.071-.84 3.946-2.197 5.303l.708.707z"/>
+                        <path d="M10.121 12.596A6.48 6.48 0 0 0 12.025 8a6.48 6.48 0 0 0-1.904-4.596l-.707.707A5.483 5.483 0 0 1 11.025 8a5.483 5.483 0 0 1-1.61 3.89l.707.706z"/>
+                        <path d="M8.707 11.182A4.486 4.486 0 0 0 10.025 8a4.486 4.486 0 0 0-1.318-3.182L8 5.525A3.489 3.489 0 0 1 9.025 8 3.49 3.49 0 0 1 8 10.475l.707.707zM6.717 3.55A.5.5 0 0 1 7 4v8a.5.5 0 0 1-.812.39L3.825 10.5H1.5A.5.5 0 0 1 1 10V6a.5.5 0 0 1 .5-.5h2.325l2.363-1.89a.5.5 0 0 1 .529-.06z"/>
+                    </svg>
+                    Nghe phát âm
+                </button>
+            </div>
+
+            <div style="margin-top: 20px;">
+                <p><strong>Loại từ:</strong> Động từ (Verb)</p>
+                <p><strong>Ý nghĩa (EN):</strong> To set up, start, or bring into existence (a system, organization, or relationship) on a firm or permanent basis; to prove or show to be true.</p>
+                <p><strong>Ý nghĩa (VI):</strong> Thiết lập, thành lập, kiến tạo một cái gì đó vững chắc và lâu dài; chứng minh hoặc xác thực một sự thật.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>Gia đình từ (Word Family)</h2>
+            <p>Học từ vựng theo họ từ giúp bạn chuyển đổi loại từ linh hoạt khi viết/nói:</p>
+            <div style="overflow-x: auto;">
+                <table style="width: 100%; border-collapse: collapse; margin-top: 10px;">
+                    <thead>
+                        <tr style="border-bottom: 2px solid var(--border-color); text-align: left;">
+                            <th style="padding: 10px;">Từ loại</th>
+                            <th style="padding: 10px;">Từ vựng</th>
+                            <th style="padding: 10px;">Phiên âm</th>
+                            <th style="padding: 10px;">Ý nghĩa</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="border-bottom: 1px solid var(--border-color);">
+                            <td style="padding: 12px; font-weight: 600;">Verb</td>
+                            <td style="padding: 12px; color: var(--accent-color); font-family: var(--mono-font);">
+                                establish
+                                <button onclick="speak('establish')" style="background:none; border:none; color:var(--text-muted); cursor:pointer; font-size:0.95rem; margin-left:4px;" title="Nghe phát âm">🔊</button>
+                            </td>
+                            <td style="padding: 12px; font-family: var(--mono-font); font-size: 0.9rem;">/ɪˈstæblɪʃ/</td>
+                            <td style="padding: 12px;">Thiết lập, thành lập</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid var(--border-color);">
+                            <td style="padding: 12px; font-weight: 600;">Noun</td>
+                            <td style="padding: 12px; color: var(--accent-color); font-family: var(--mono-font);">
+                                establishment
+                                <button onclick="speak('establishment')" style="background:none; border:none; color:var(--text-muted); cursor:pointer; font-size:0.95rem; margin-left:4px;" title="Nghe phát âm">🔊</button>
+                            </td>
+                            <td style="padding: 12px; font-family: var(--mono-font); font-size: 0.9rem;">/ɪˈstæblɪʃmənt/</td>
+                            <td style="padding: 12px;">Sự thiết lập, thiết chế, tổ chức hành chính</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid var(--border-color);">
+                            <td style="padding: 12px; font-weight: 600;">Adjective</td>
+                            <td style="padding: 12px; color: var(--accent-color); font-family: var(--mono-font);">
+                                established
+                                <button onclick="speak('established')" style="background:none; border:none; color:var(--text-muted); cursor:pointer; font-size:0.95rem; margin-left:4px;" title="Nghe phát âm">🔊</button>
+                            </td>
+                            <td style="padding: 12px; font-family: var(--mono-font); font-size: 0.9rem;">/ɪˈstæblɪʃt/</td>
+                            <td style="padding: 12px;">Đã vững mạnh, lâu đời, có uy tín</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid var(--border-color);">
+                            <td style="padding: 12px; font-weight: 600;">Verb (Ngược)</td>
+                            <td style="padding: 12px; color: var(--accent-color); font-family: var(--mono-font);">
+                                disestablish
+                                <button onclick="speak('disestablish')" style="background:none; border:none; color:var(--text-muted); cursor:pointer; font-size:0.95rem; margin-left:4px;" title="Nghe phát âm">🔊</button>
+                            </td>
+                            <td style="padding: 12px; font-family: var(--mono-font); font-size: 0.9rem;">/ˌdɪsɪˈstæblɪʃ/</td>
+                            <td style="padding: 12px;">Bãi bỏ (thiết chế hoặc tổ chức đã lập)</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 12px; font-weight: 600;">Noun (Siêu dài)</td>
+                            <td style="padding: 12px; color: var(--accent-color); font-family: var(--mono-font); font-size: 0.85rem;">
+                                antidisestablishmentarianism
+                                <button onclick="speak('antidisestablishmentarianism')" style="background:none; border:none; color:var(--text-muted); cursor:pointer; font-size:0.95rem; margin-left:4px;" title="Nghe phát âm">🔊</button>
+                            </td>
+                            <td style="padding: 12px; font-family: var(--mono-font); font-size: 0.85rem;">/ˌænti.dɪs.ɪˌstæb.lɪʃ.mənˈteə.ri.ə.nɪ.zəm/</td>
+                            <td style="padding: 12px; font-size: 0.85rem;">Phong trào chống bãi bỏ địa vị quốc giáo (Từ lịch sử tiếng Anh nổi tiếng)</td>
+                        </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tab 2: Word Root Learning -->
+    <div id="tab-root" class="tab-content">
+        <div class="card">
+            <h2>Gốc Từ (Word Root) - Chìa Khóa "Học 1 Biết 10"</h2>
+            <p>Từ <code>establish</code> xuất phát từ tiếng Latin <code>stabilire</code> (làm cho vững chắc), gốc từ Ấn-Âu cổ (PIE) là <strong>*sta-</strong> mang nghĩa là <strong>"ĐỨNG, ĐẶT, VỮNG CHẮC"</strong>.</p>
+            <p>Bằng cách hiểu gốc từ <strong>*sta-</strong>, bạn có thể dễ dàng hiểu nghĩa của hàng loạt từ tiếng Anh thông dụng khác mà không cần học vẹt:</p>
+
+            <div class="root-container">
+                <div class="root-core">
+                    *sta- / stare
+                    <span>Đứng, Đặt, Vững chắc</span>
+                </div>
+
+                <div class="root-branches">
+                    <div class="branch-card" onclick="showRootDetail('stable')">
+                        <div class="branch-word">stable</div>
+                        <div class="branch-meaning">Ổn định, vững vàng</div>
+                    </div>
+                    <div class="branch-card" onclick="showRootDetail('status')">
+                        <div class="branch-word">status</div>
+                        <div class="branch-meaning">Vị thế, trạng thái</div>
+                    </div>
+                    <div class="branch-card" onclick="showRootDetail('constitute')">
+                        <div class="branch-word">constitute</div>
+                        <div class="branch-meaning">Cấu thành, tạo nên</div>
+                    </div>
+                    <div class="branch-card" onclick="showRootDetail('obstacle')">
+                        <div class="branch-word">obstacle</div>
+                        <div class="branch-meaning">Chướng ngại vật</div>
+                    </div>
+                </div>
+
+                <div class="root-branches" style="margin-top: 16px;">
+                    <div class="branch-card" onclick="showRootDetail('constant')">
+                        <div class="branch-word">constant</div>
+                        <div class="branch-meaning">Bất biến, liên tục</div>
+                    </div>
+                    <div class="branch-card" onclick="showRootDetail('substitute')">
+                        <div class="branch-word">substitute</div>
+                        <div class="branch-meaning">Đứng thay thế</div>
+                    </div>
+                    <div class="branch-card" onclick="showRootDetail('distance')">
+                        <div class="branch-word">distance</div>
+                        <div class="branch-meaning">Khoảng cách</div>
+                    </div>
+                    <div class="branch-card" onclick="showRootDetail('substance')">
+                        <div class="branch-word">substance</div>
+                        <div class="branch-meaning">Vật chất, thực chất</div>
+                    </div>
+                </div>
+
+                <!-- Detail displays -->
+                <div id="root-detail-stable" class="branch-detail-box">
+                    <h3><code>stable</code> (adj) <button onclick="speak('stable')" style="background:none; border:none; color:var(--text-muted); cursor:pointer; font-size:1rem; margin-left:4px;" title="Nghe phát âm">🔊</button> - Ổn định, vững vàng</h3>
+                    <p style="margin-top: 10px;"><strong>Phân tích:</strong> Gốc <em>*sta-</em> (đứng) + đuôi chỉ khả năng <em>-able</em> &rarr; Có khả năng tự đứng vững vàng, không bị đổ ngã &rarr; <strong>Ổn định, chắc chắn</strong>.</p>
+                    <p><em>Ví dụ:</em> "We need a <strong>stable</strong> release before deploying to production." (Chúng ta cần một phiên bản phát hành ổn định trước khi đưa lên môi trường thực tế.)</p>
+                </div>
+                <div id="root-detail-status" class="branch-detail-box">
+                    <h3><code>status</code> (n) <button onclick="speak('status')" style="background:none; border:none; color:var(--text-muted); cursor:pointer; font-size:1rem; margin-left:4px;" title="Nghe phát âm">🔊</button> - Vị thế, trạng thái</h3>
+                    <p style="margin-top: 10px;"><strong>Phân tích:</strong> Gốc <em>*sta-</em> (đứng) &rarr; "Cách đứng" của bạn trong xã hội hoặc trạng thái "đứng" hiện tại của một quy trình &rarr; <strong>Vị thế, trạng thái</strong>.</p>
+                    <p><em>Ví dụ:</em> "Check the HTTP response status." (Kiểm tra trạng thái phản hồi HTTP.)</p>
+                </div>
+                <div id="root-detail-constitute" class="branch-detail-box">
+                    <h3><code>constitute</code> (v) <button onclick="speak('constitute')" style="background:none; border:none; color:var(--text-muted); cursor:pointer; font-size:1rem; margin-left:4px;" title="Nghe phát âm">🔊</button> - Cấu thành, tạo nên</h3>
+                    <p style="margin-top: 10px;"><strong>Phân tích:</strong> Tiền tố <em>con-</em> (cùng nhau) + <em>statuere</em> (cho đứng, thiết lập) &rarr; Cùng đứng chung với nhau để tạo dựng nên một khối vững chắc &rarr; <strong>Cấu thành, tạo nên</strong>.</p>
+                    <p><em>Ví dụ:</em> "These components <strong>constitute</strong> the core of the framework." (Những thành phần này cấu thành nên cốt lõi của thư viện framework.)</p>
+                </div>
+                <div id="root-detail-obstacle" class="branch-detail-box">
+                    <h3><code>obstacle</code> (n) <button onclick="speak('obstacle')" style="background:none; border:none; color:var(--text-muted); cursor:pointer; font-size:1rem; margin-left:4px;" title="Nghe phát âm">🔊</button> - Chướng ngại vật</h3>
+                    <p style="margin-top: 10px;"><strong>Phân tích:</strong> Tiền tố <em>ob-</em> (chống lại, chặn) + gốc <em>stare</em> (đứng) &rarr; Thứ đứng sừng sững chặn ngay trước mặt bạn &rarr; <strong>Chướng ngại vật, vật cản</strong>.</p>
+                    <p><em>Ví dụ:</em> "Lack of communication is a major <strong>obstacle</strong> to team success." (Thiếu giao tiếp là một chướng ngại lớn đối với thành công của đội ngũ.)</p>
+                </div>
+                <div id="root-detail-constant" class="branch-detail-box">
+                    <h3><code>constant</code> (adj) <button onclick="speak('constant')" style="background:none; border:none; color:var(--text-muted); cursor:pointer; font-size:1rem; margin-left:4px;" title="Nghe phát âm">🔊</button> - Bất biến, không đổi, liên tục</h3>
+                    <p style="margin-top: 10px;"><strong>Phân tích:</strong> Tiền tố <em>con-</em> (cùng nhau) + gốc <em>stare</em> (đứng vững) &rarr; Trạng thái đứng vững vàng cùng nhau qua thời gian mà không lay chuyển &rarr; <strong>Không đổi, liên tục</strong>.</p>
+                    <p><em>Ví dụ:</em> "In development, change is the only <strong>constant</strong>." (Trong ngành phát triển phần mềm, thay đổi là hằng số duy nhất.)</p>
+                </div>
+                <div id="root-detail-substitute" class="branch-detail-box">
+                    <h3><code>substitute</code> (n/v) <button onclick="speak('substitute')" style="background:none; border:none; color:var(--text-muted); cursor:pointer; font-size:1rem; margin-left:4px;" title="Nghe phát âm">🔊</button> - Đứng thay thế, người thay thế</h3>
+                    <p style="margin-top: 10px;"><strong>Phân tích:</strong> Tiền tố <em>sub-</em> (ở dưới) + gốc <em>statuere</em> (đặt đứng) &rarr; Đặt một thứ đứng ở dưới để sẵn sàng thế chỗ cho cái ở trên &rarr; <strong>Thay thế</strong>.</p>
+                    <p><em>Ví dụ:</em> "You cannot <strong>substitute</strong> hard work with shortcuts." (Bạn không thể thay thế sự chăm chỉ bằng những lối đi tắt.)</p>
+                </div>
+                <div id="root-detail-distance" class="branch-detail-box">
+                    <h3><code>distance</code> (n) <button onclick="speak('distance')" style="background:none; border:none; color:var(--text-muted); cursor:pointer; font-size:1rem; margin-left:4px;" title="Nghe phát âm">🔊</button> - Khoảng cách</h3>
+                    <p style="margin-top: 10px;"><strong>Phân tích:</strong> Tiền tố <em>dis-</em> (tách rời) + gốc <em>stare</em> (đứng) &rarr; Vị thế đứng tách rời nhau ra &rarr; <strong>Khoảng cách</strong>.</p>
+                    <p><em>Ví dụ:</em> "The distance between the client and server affects latency." (Khoảng cách giữa máy khách và máy chủ ảnh hưởng đến độ trễ.)</p>
+                </div>
+                <div id="root-detail-substance" class="branch-detail-box">
+                    <h3><code>substance</code> (n) <button onclick="speak('substance')" style="background:none; border:none; color:var(--text-muted); cursor:pointer; font-size:1rem; margin-left:4px;" title="Nghe phát âm">🔊</button> - Chất, vật chất, thực chất</h3>
+                    <p style="margin-top: 10px;"><strong>Phân tích:</strong> Tiền tố <em>sub-</em> (bên dưới) + gốc <em>stare</em> (đứng) &rarr; Cái bản chất nền tảng đứng ẩn mình ở bên dưới để nâng đỡ toàn bộ hình dạng bên ngoài &rarr; <strong>Thực chất, vật chất</strong>.</p>
+                    <p><em>Ví dụ:</em> "The report has no <strong>substance</strong>; it's just buzzwords." (Bản báo cáo không có thực chất; chỉ toàn những từ đao to búa lớn.)</p>
+                </div>
+            </div>
+            <p style="font-size: 0.9rem; font-style: italic; text-align: center;">💡 Nhấp chọn một từ bất kỳ ở trên để xem phân tích chi tiết!</p>
+        </div>
+    </div>
+
+    <!-- Tab 3: Collocations & Contexts -->
+    <div id="tab-context" class="tab-content">
+        <div class="grid-2">
+            <div class="card">
+                <h2>Cụm từ thường gặp (Collocations)</h2>
+                <p>Đừng học từ đơn độc. Hãy học các kết hợp từ tự nhiên mà người bản xứ sử dụng:</p>
+
+                <div class="coll-item">
+                    <div class="coll-title">establish a connection</div>
+                    <div class="coll-desc">Thiết lập một kết nối (mạng, API, cơ sở dữ liệu)</div>
+                </div>
+                <div class="coll-item">
+                    <div class="coll-title">establish a reputation</div>
+                    <div class="coll-desc">Xây dựng/Tạo dựng danh tiếng cho bản thân/tổ chức</div>
+                </div>
+                <div class="coll-item">
+                    <div class="coll-title">establish a business / company</div>
+                    <div class="coll-desc">Thành lập một doanh nghiệp / công ty</div>
+                </div>
+                <div class="coll-item">
+                    <div class="coll-title">establish guidelines / rules</div>
+                    <div class="coll-desc">Ban hành các quy định, hướng dẫn, nguyên tắc</div>
+                </div>
+                <div class="coll-item">
+                    <div class="coll-title">establish a relationship</div>
+                    <div class="coll-desc">Thiết lập mối quan hệ hợp tác hoặc xã hội</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>Ngữ cảnh áp dụng (Contexts)</h2>
+                <p>Chọn ngữ cảnh bạn muốn học để xem ví dụ thực tế:</p>
+
+                <div class="context-switcher">
+                    <button id="ctx-btn-it" class="context-btn active" onclick="switchContext('it')">IT & Công nghệ</button>
+                    <button id="ctx-btn-daily" class="context-btn" onclick="switchContext('daily')">Đời sống & Công việc</button>
+                </div>
+
+                <div class="context-display-box">
+                    <div id="context-content">
+                        <div class="context-sentence">"The system failed to <strong>establish</strong> a secure connection to the database server due to a credential mismatch."</div>
+                        <div class="context-translation">Hệ thống đã không thể thiết lập kết nối an toàn tới máy chủ cơ sở dữ liệu do sai lệch thông tin xác thực.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tab 4: Interactive Practice -->
+    <div id="tab-practice" class="tab-content">
+        <div class="grid-2">
+            <!-- Flashcard Section -->
+            <div class="card">
+                <h2>1. Flashcard Gợi Nhớ (Active Recall)</h2>
+                <p>Nhấp vào thẻ để lật ngược và kiểm tra ghi nhớ của bạn:</p>
+
+                <div class="flashcard-wrapper" onclick="toggleFlashcard()">
+                    <div id="flashcard-el" class="flashcard">
+                        <!-- Front -->
+                        <div class="card-face card-front">
+                            <span style="font-size: 0.9rem; color: var(--accent-color); font-weight: 600;">WORD OF THE DAY</span>
+                            <div class="card-word">establish</div>
+                            <span class="ipa-badge" style="font-size: 0.9rem;">/ɪˈstæblɪʃ/</span>
+                            <div class="card-hint">Nhấn để xem nghĩa và ví dụ</div>
+                        </div>
+                        <!-- Back -->
+                        <div class="card-face card-back">
+                            <div>
+                                <span style="font-size: 0.8rem; color: var(--success-color); font-weight:600;">MEANING & CONTEXT</span>
+                                <div class="card-def" style="margin-top: 10px;">Thiết lập, thành lập, chứng minh</div>
+                            </div>
+                            <div class="card-ex">
+                                "We need to establish clear rules for our codebase."<br>
+                                (Chúng ta cần thiết lập những quy tắc rõ ràng cho mã nguồn của mình.)
+                            </div>
+                            <div class="card-hint" style="color: var(--success-color)">Nhấp để lật lại</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quiz Section -->
+            <div class="card" id="quiz-card-container">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; border-bottom: 1px solid var(--border-color); padding-bottom: 8px;">
+                    <h2>2. Trắc nghiệm luyện não (Brain Quiz)</h2>
+                    <span id="quiz-progress-badge" style="background-color: rgba(255, 255, 255, 0.05); color: var(--text-muted); padding: 4px 10px; border-radius: 20px; font-size: 0.8rem; font-family: var(--mono-font);">Câu hỏi 1/8</span>
+                </div>
+                
+                <div id="quiz-question-box" style="margin-bottom: 18px; font-size: 1.05rem; font-weight: 500; min-height: 50px; text-align: left;">
+                    <!-- Question text injected here -->
+                </div>
+                
+                <div id="quiz-options-container" style="display: flex; flex-direction: column; gap: 10px;">
+                    <!-- Options buttons injected here -->
+                </div>
+
+                <div id="quiz-feedback-box" class="quiz-feedback"></div>
+                
+                <div style="display: flex; justify-content: flex-end; margin-top: 20px; min-height: 40px;">
+                    <button id="quiz-next-btn" class="sr-btn" onclick="nextQuizQuestion()" style="display: none; padding: 8px 16px; font-size: 0.9rem;">
+                        Câu tiếp theo &rarr;
+                    </button>
+                </div>
+            </div>
+    </div>
+
+    <!-- Tab 5: Spaced Repetition -->
+    <div id="tab-spaced" class="tab-content">
+        <div class="card">
+            <h2>Lập lịch ôn tập ngắt quãng (Spaced Repetition)</h2>
+            <p>Phương pháp <strong>Spaced Repetition (Lặp lại ngắt quãng)</strong> giúp chuyển thông tin từ trí nhớ ngắn hạn sang dài hạn bằng cách gợi nhớ lại thông tin vào những khoảng thời gian giãn cách tối ưu.</p>
+            <p>Hãy nhập ngày bạn bắt đầu học từ này để hệ thống tính toán lịch trình ôn tập tối ưu cho riêng bạn:</p>
+
+            <div class="sr-controls">
+                <div class="sr-input-group">
+                    <label for="start-date-input">Ngày bắt đầu học:</label>
+                    <input type="date" id="start-date-input" class="sr-input">
+                </div>
+                <button class="sr-btn" onclick="generateSchedule()">Tính lịch ôn tập</button>
+            </div>
+
+            <div class="sr-timeline" id="sr-timeline-container">
+                <!-- Calculated dates will be generated here -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Tab switching logic
+        function switchTab(tabName) {
+            const tabs = document.querySelectorAll('.tab-content');
+            const buttons = document.querySelectorAll('.tab-btn');
+
+            tabs.forEach(tab => {
+                tab.classList.remove('active');
+            });
+            buttons.forEach(btn => {
+                btn.classList.remove('active');
+            });
+
+            document.getElementById('tab-' + tabName).classList.add('active');
+
+            // Find active button
+            event.currentTarget.classList.add('active');
+        }
+
+        // TTS Settings state
+        let ttsRate = 0.9;
+        let ttsPitch = 1.0;
+        let ttsVolume = 1.0;
+        let ttsVoiceLang = 'en-US';
+
+        function toggleTTSPanel() {
+            const panel = document.getElementById('tts-floating-panel');
+            if (panel.style.display === 'none' || panel.style.display === '') {
+                panel.style.display = 'flex';
+                // Load voices if not already populated
+                loadVoices();
+            } else {
+                panel.style.display = 'none';
+            }
+        }
+
+        function updateTTSParams() {
+            const rateInput = document.getElementById('tts-rate');
+            const pitchInput = document.getElementById('tts-pitch');
+            const volInput = document.getElementById('tts-volume');
+            const voiceSelect = document.getElementById('tts-voice');
+
+            ttsRate = parseFloat(rateInput.value);
+            ttsPitch = parseFloat(pitchInput.value);
+            ttsVolume = parseFloat(volInput.value);
+            ttsVoiceLang = voiceSelect.value;
+
+            document.getElementById('tts-rate-val').innerText = ttsRate.toFixed(1) + 'x';
+            document.getElementById('tts-pitch-val').innerText = ttsPitch.toFixed(1) + 'x';
+            document.getElementById('tts-volume-val').innerText = Math.round(ttsVolume * 100) + '%';
+        }
+
+        // Initialize voices list
+        function loadVoices() {
+            if ('speechSynthesis' in window) {
+                const voiceSelect = document.getElementById('tts-voice');
+                const voicesList = window.speechSynthesis.getVoices();
+                
+                if (voicesList.length > 0) {
+                    const currentSelection = voiceSelect.value;
+                    voiceSelect.innerHTML = '';
+                    
+                    // Filter English voices
+                    const englishVoices = voicesList.filter(v => v.lang.toLowerCase().startsWith('en'));
+                    
+                    if (englishVoices.length > 0) {
+                        englishVoices.forEach(voice => {
+                            const option = document.createElement('option');
+                            option.value = voice.name;
+                            
+                            let displayName = voice.name;
+                            if (voice.name.includes('Google')) displayName = 'Google ' + (voice.lang.includes('US') ? 'US' : 'UK') + ' English';
+                            else if (voice.name.includes('Microsoft')) displayName = 'Microsoft ' + (voice.lang.includes('US') ? 'US' : 'UK') + ' English';
+                            
+                            option.textContent = `${displayName} (${voice.lang})`;
+                            
+                            if (voice.name === currentSelection || voice.lang === currentSelection) {
+                                option.selected = true;
+                            } else if (!currentSelection && voice.lang.toLowerCase() === 'en-us') {
+                                option.selected = true;
+                            }
+                            voiceSelect.appendChild(option);
+                        });
+                    } else {
+                        voiceSelect.innerHTML = `
+                            <option value="en-US">US English (Default)</option>
+                            <option value="en-GB">UK English</option>
+                        `;
+                    }
+                }
+            }
+        }
+
+        if ('speechSynthesis' in window) {
+            window.speechSynthesis.onvoiceschanged = loadVoices;
+            // Also call immediately in case they are preloaded
+            setTimeout(loadVoices, 200);
+        }
+
+        // TTS Speech Synthesis
+        function speak(text) {
+            if ('speechSynthesis' in window) {
+                window.speechSynthesis.cancel(); // Cancel any ongoing speech
+
+                const utterance = new SpeechSynthesisUtterance(text);
+                
+                const voiceSelect = document.getElementById('tts-voice');
+                const selectedVoiceName = voiceSelect.value;
+                const voicesList = window.speechSynthesis.getVoices();
+                const matchedVoice = voicesList.find(v => v.name === selectedVoiceName || v.lang === selectedVoiceName);
+                
+                if (matchedVoice) {
+                    utterance.voice = matchedVoice;
+                } else {
+                    utterance.lang = ttsVoiceLang;
+                }
+                
+                utterance.rate = ttsRate;
+                utterance.pitch = ttsPitch;
+                utterance.volume = ttsVolume;
+                
+                window.speechSynthesis.speak(utterance);
+            } else {
+                alert('Trình duyệt của bạn không hỗ trợ phát âm tự động.');
+            }
+        }
+
+        // Root Word interactive details display
+        let currentActiveRoot = null;
+        function showRootDetail(word) {
+            // Hide previous active
+            if (currentActiveRoot) {
+                document.getElementById('root-detail-' + currentActiveRoot).style.display = 'none';
+                const activeCards = document.querySelectorAll('.branch-card');
+                activeCards.forEach(card => card.classList.remove('active'));
+            }
+
+            // Show current active
+            if (currentActiveRoot !== word) {
+                document.getElementById('root-detail-' + word).style.display = 'block';
+                // Highlight the card
+                const clickedCard = Array.from(document.querySelectorAll('.branch-card')).find(c => c.querySelector('.branch-word').innerText === word);
+                if (clickedCard) clickedCard.classList.add('active');
+                currentActiveRoot = word;
+            } else {
+                currentActiveRoot = null;
+            }
+        }
+
+        // Context switcher logic
+        function switchContext(type) {
+            const btnIt = document.getElementById('ctx-btn-it');
+            const btnDaily = document.getElementById('ctx-btn-daily');
+            const content = document.getElementById('context-content');
+
+            if (type === 'it') {
+                btnIt.classList.add('active');
+                btnDaily.classList.remove('active');
+                content.innerHTML = `
+                    <div class="context-sentence">"The system failed to <strong>establish</strong> a secure connection to the database server due to a credential mismatch."</div>
+                    <div class="context-translation">Hệ thống đã không thể thiết lập kết nối an toàn tới máy chủ cơ sở dữ liệu do sai lệch thông tin xác thực.</div>
+                `;
+            } else {
+                btnIt.classList.remove('active');
+                btnDaily.classList.add('active');
+                content.innerHTML = `
+                    <div class="context-sentence">"It takes years of consistent high-quality delivery to <strong>establish</strong> a reputation as a trusted vendor."</div>
+                    <div class="context-translation">Phải mất nhiều năm liên tục cung cấp dịch vụ chất lượng cao để xây dựng danh tiếng là một nhà cung cấp đáng tin cậy.</div>
+                `;
+            }
+        }
+
+        // Flashcard toggle flip
+        function toggleFlashcard() {
+            const card = document.getElementById('flashcard-el');
+            card.classList.toggle('flipped');
+        }
+
+        // Brain Quiz Engine Data
+        const quizQuestions = [
+            {
+                question: "Từ 'establish' có nguồn gốc từ gốc Ấn-Âu (PIE) '*sta-', mang ý nghĩa cốt lõi là gì?",
+                options: [
+                    { text: "A. Chạy, di chuyển (to run)", isCorrect: false },
+                    { text: "B. Đứng, đặt, vững chắc (to stand, place, make firm)", isCorrect: true },
+                    { text: "C. Nói, giao tiếp (to speak)", isCorrect: false },
+                    { text: "D. Nghĩ, tư duy (to think)", isCorrect: false }
+                ],
+                explanation: "Gốc từ *sta- mang nghĩa cốt lõi là ĐỨNG, ĐẶT, VỮNG CHẮC. Đây là nền tảng tạo ra từ establish (làm cho đứng vững &rarr; thiết lập) và hàng loạt từ như stable, status, constitute..."
+            },
+            {
+                question: "Điền từ loại thích hợp: 'The company is a well-_______ player in the market, having operated for over 20 years.'",
+                options: [
+                    { text: "A. establish", isCorrect: false },
+                    { text: "B. establishment", isCorrect: false },
+                    { text: "C. established", isCorrect: true },
+                    { text: "D. disestablish", isCorrect: false }
+                ],
+                explanation: "Established (adj) có nghĩa là đã vững mạnh, lâu đời, được củng cố uy tín lớn sau một thời gian dài."
+            },
+            {
+                question: "Từ nào sau đây mang ý nghĩa trái ngược với 'establish' (Antonym)?",
+                options: [
+                    { text: "A. constitute", isCorrect: false },
+                    { text: "B. disestablish", isCorrect: true },
+                    { text: "C. stabilize", isCorrect: false },
+                    { text: "D. institute", isCorrect: false }
+                ],
+                explanation: "Disestablish (v) mang nghĩa giải tán, bãi bỏ (thiết chế/tổ chức đã lập), là từ trái nghĩa trực tiếp của establish."
+            },
+            {
+                question: "Từ 'obstacle' (chướng ngại vật) gồm tiền tố 'ob-' và gốc 'stare'. Tiền tố 'ob-' mang nghĩa là gì?",
+                options: [
+                    { text: "A. Cùng nhau, chung (together)", isCorrect: false },
+                    { text: "B. Chống lại, ngăn chặn (against, block)", isCorrect: true },
+                    { text: "C. Ở dưới, phía dưới (under)", isCorrect: false },
+                    { text: "D. Tách rời, ra xa (apart, away)", isCorrect: false }
+                ],
+                explanation: "Tiền tố ob- (chống lại, chặn) + gốc stare (đứng) tạo thành từ obstacle: vật đứng sừng sững chặn ngay trước mặt để cản bước đi của bạn."
+            },
+            {
+                question: "Trong ngành IT, cụm collocation nào thường được dùng nhất khi nói về kết nối?",
+                options: [
+                    { text: "A. establish a connection", isCorrect: true },
+                    { text: "B. establish a relationship", isCorrect: false },
+                    { text: "C. establish a business", isCorrect: false },
+                    { text: "D. establish a reputation", isCorrect: false }
+                ],
+                explanation: "Trong công nghệ thông tin, 'establish a connection' (thiết lập một kết nối) là cụm từ chuẩn mực khi nói về mạng, socket hay cơ sở dữ liệu."
+            },
+            {
+                question: "Từ 'constitute' (cấu thành) được tạo bởi tiền tố 'con-' (cùng nhau) và 'statuere' (cho đứng). Nghĩa thực tế của nó là gì?",
+                options: [
+                    { text: "A. Đứng tách rời nhau ra để tạo khoảng cách", isCorrect: false },
+                    { text: "B. Cùng đứng chung để tạo nên một bộ phận hoặc toàn thể", isCorrect: true },
+                    { text: "C. Đứng ở vị trí thấp hơn để nâng đỡ", isCorrect: false },
+                    { text: "D. Đứng thay thế cho vị trí của người khác", isCorrect: false }
+                ],
+                explanation: "con- (cùng nhau) + statuere (đứng) &rarr; cùng đứng bên nhau làm thành một thể thống nhất &rarr; cấu thành, tạo nên."
+            },
+            {
+                question: "Chọn câu có cách dùng từ 'establishment' chính xác nhất:",
+                options: [
+                    { text: "A. We need to establishment a connection.", isCorrect: false },
+                    { text: "B. The new commercial establishment will open tomorrow.", isCorrect: true },
+                    { text: "C. She felt establishment after the win.", isCorrect: false },
+                    { text: "D. The dev establishment the database.", isCorrect: false }
+                ],
+                explanation: "Establishment (n) ngoài nghĩa 'sự thiết lập' còn dùng để chỉ một cơ sở kinh doanh, cửa hàng, hoặc tổ chức hành chính đã được thành lập."
+            },
+            {
+                question: "Từ 'substitute' (thay thế) gồm tiền tố 'sub-' (ở dưới) và gốc 'statuere' (đặt đứng). Từ này liên quan thế nào đến gốc từ?",
+                options: [
+                    { text: "A. Đứng trên cao để điều hành", isCorrect: false },
+                    { text: "B. Đặt một người/vật đứng ở dưới để sẵn sàng thế chỗ cho cái chính", isCorrect: true },
+                    { text: "C. Đứng chặn đường không cho đi", isCorrect: false },
+                    { text: "D. Đứng ra ngoài vòng tròn thảo luận", isCorrect: false }
+                ],
+                explanation: "sub- (ở dưới) + statuere (đứng) &rarr; đặt sẵn một thứ ở dưới để sẵn sàng thế chỗ &rarr; thay thế, người thay thế."
+            }
+        ];
+
+        let currentQuestionIdx = 0;
+        let quizScore = 0;
+        let isQuestionAnswered = false;
+
+        function loadQuizQuestion() {
+            isQuestionAnswered = false;
+            
+            const nextBtn = document.getElementById('quiz-next-btn');
+            if (nextBtn) nextBtn.style.display = 'none';
+            
+            const feedbackBox = document.getElementById('quiz-feedback-box');
+            if (feedbackBox) {
+                feedbackBox.style.display = 'none';
+                feedbackBox.className = 'quiz-feedback';
+            }
+            
+            if (currentQuestionIdx >= quizQuestions.length) {
+                showQuizResults();
+                return;
+            }
+
+            const q = quizQuestions[currentQuestionIdx];
+            
+            // Update progress
+            const progress = document.getElementById('quiz-progress-badge');
+            if (progress) progress.innerText = `Câu hỏi ${currentQuestionIdx + 1}/${quizQuestions.length}`;
+            
+            // Set question text
+            const qBox = document.getElementById('quiz-question-box');
+            if (qBox) qBox.innerHTML = `<strong>Câu hỏi:</strong> ${q.question}`;
+            
+            // Set options
+            const optionsContainer = document.getElementById('quiz-options-container');
+            if (optionsContainer) {
+                optionsContainer.innerHTML = '';
+                q.options.forEach((opt, idx) => {
+                    const btn = document.createElement('button');
+                    btn.className = 'quiz-option';
+                    btn.innerHTML = `
+                        <span>${opt.text}</span>
+                        <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" style="display:none; flex-shrink:0;">
+                            <path class="svg-check" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                            <path class="svg-cross" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    `;
+                    btn.onclick = () => selectQuizAnswer(btn, opt.isCorrect, q.explanation);
+                    optionsContainer.appendChild(btn);
+                });
+            }
+        }
+
+        function selectQuizAnswer(selectedBtn, isCorrect, explanation) {
+            if (isQuestionAnswered) return;
+            isQuestionAnswered = true;
+
+            const options = document.querySelectorAll('.quiz-option');
+            options.forEach(opt => {
+                opt.style.cursor = 'default';
+            });
+
+            const feedbackBox = document.getElementById('quiz-feedback-box');
+            if (feedbackBox) feedbackBox.style.display = 'block';
+
+            if (isCorrect) {
+                quizScore++;
+                selectedBtn.classList.add('correct');
+                const svg = selectedBtn.querySelector('svg');
+                if (svg) {
+                    svg.style.display = 'block';
+                    svg.querySelector('.svg-check').setAttribute('display', 'block');
+                    svg.querySelector('.svg-cross').setAttribute('display', 'none');
+                    svg.style.color = 'var(--success-color)';
+                }
+                
+                if (feedbackBox) {
+                    feedbackBox.className = 'quiz-feedback correct-bg';
+                    feedbackBox.innerHTML = `<strong>Chính xác! 🎉</strong><br>${explanation}`;
+                }
+            } else {
+                selectedBtn.classList.add('incorrect');
+                const svg = selectedBtn.querySelector('svg');
+                if (svg) {
+                    svg.style.display = 'block';
+                    svg.querySelector('.svg-check').setAttribute('display', 'none');
+                    svg.querySelector('.svg-cross').setAttribute('display', 'block');
+                    svg.style.color = 'var(--accent-color)';
+                }
+
+                // Highlight correct option
+                const currentQ = quizQuestions[currentQuestionIdx];
+                const correctIdx = currentQ.options.findIndex(o => o.isCorrect);
+                if (correctIdx >= 0) {
+                    const correctBtn = options[correctIdx];
+                    correctBtn.classList.add('correct');
+                    const cSvg = correctBtn.querySelector('svg');
+                    if (cSvg) {
+                        cSvg.style.display = 'block';
+                        cSvg.querySelector('.svg-check').setAttribute('display', 'block');
+                        cSvg.querySelector('.svg-cross').setAttribute('display', 'none');
+                        cSvg.style.color = 'var(--success-color)';
+                    }
+                }
+
+                if (feedbackBox) {
+                    feedbackBox.className = 'quiz-feedback incorrect-bg';
+                    feedbackBox.innerHTML = `<strong>Chưa chính xác! ❌</strong><br>${explanation}`;
+                }
+            }
+
+            const nextBtn = document.getElementById('quiz-next-btn');
+            if (nextBtn) {
+                nextBtn.style.display = 'inline-block';
+                if (currentQuestionIdx === quizQuestions.length - 1) {
+                    nextBtn.innerHTML = 'Xem kết quả &rarr;';
+                } else {
+                    nextBtn.innerHTML = 'Câu tiếp theo &rarr;';
+                }
+            }
+        }
+
+        function nextQuizQuestion() {
+            currentQuestionIdx++;
+            loadQuizQuestion();
+        }
+
+        function showQuizResults() {
+            const container = document.getElementById('quiz-card-container');
+            
+            const percent = Math.round((quizScore / quizQuestions.length) * 100);
+            let rating = '';
+            let badgeColor = '';
+            
+            if (percent >= 85) {
+                rating = 'Siêu não bộ / Word Master 🧠';
+                badgeColor = 'var(--success-color)';
+            } else if (percent >= 60) {
+                rating = 'Học viên xuất sắc / Excellent Learner 🌟';
+                badgeColor = 'var(--info-color)';
+            } else {
+                rating = 'Cố gắng lên / Try Again! 📚';
+                badgeColor = 'var(--accent-color)';
+            }
+
+            container.innerHTML = `
+                <div style="text-align: center; padding: 20px 0;">
+                    <h2>Trắc nghiệm hoàn thành!</h2>
+                    <p style="margin-top: 10px; font-size: 1.1rem; color: var(--text-muted);">Bạn đã hoàn thành toàn bộ bài kiểm tra kiến thức tổng hợp.</p>
+                    
+                    <div style="margin: 30px 0;">
+                        <span style="font-size: 1.1rem; color: var(--text-muted);">Điểm số của bạn:</span>
+                        <div style="font-size: 3.5rem; font-weight: 700; color: ${badgeColor}; margin-top: 5px;">
+                            ${quizScore}/${quizQuestions.length}
+                        </div>
+                        <div style="font-size: 1.3rem; font-weight: 600; color: #FFFFFF; margin-top: 10px;">
+                            ${rating}
+                        </div>
+                    </div>
+
+                    <button class="sr-btn" onclick="restartQuiz()" style="padding: 10px 24px;">Làm lại Quiz</button>
+                </div>
+            `;
+        }
+
+        function restartQuiz() {
+            const container = document.getElementById('quiz-card-container');
+            container.innerHTML = `
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; border-bottom: 1px solid var(--border-color); padding-bottom: 8px;">
+                    <h2>2. Trắc nghiệm luyện não (Brain Quiz)</h2>
+                    <span id="quiz-progress-badge" style="background-color: rgba(255, 255, 255, 0.05); color: var(--text-muted); padding: 4px 10px; border-radius: 20px; font-size: 0.8rem; font-family: var(--mono-font);">Câu hỏi 1/8</span>
+                </div>
+                
+                <div id="quiz-question-box" style="margin-bottom: 18px; font-size: 1.05rem; font-weight: 500; min-height: 50px; text-align: left;"></div>
+                
+                <div id="quiz-options-container" style="display: flex; flex-direction: column; gap: 10px;"></div>
+
+                <div id="quiz-feedback-box" class="quiz-feedback"></div>
+                
+                <div style="display: flex; justify-content: flex-end; margin-top: 20px; min-height: 40px;">
+                    <button id="quiz-next-btn" class="sr-btn" onclick="nextQuizQuestion()" style="display: none; padding: 8px 16px; font-size: 0.9rem;">
+                        Câu tiếp theo &rarr;
+                    </button>
+                </div>
+            `;
+            currentQuestionIdx = 0;
+            quizScore = 0;
+            loadQuizQuestion();
+        }
+
+        // Spaced Repetition Logic
+        // Initialize start date in input to today
+        document.getElementById('start-date-input').valueAsDate = new Date();
+
+        function formatDate(date) {
+            const day = String(date.getDate()).padStart(2, '0');
+            const month = String(date.getMonth() + 1).padStart(2, '0');
+            const year = date.getFullYear();
+            return `${day}/${month}/${year}`;
+        }
+
+        function generateSchedule() {
+            const startDateVal = document.getElementById('start-date-input').value;
+            if (!startDateVal) {
+                alert('Vui lòng chọn ngày bắt đầu học.');
+                return;
+            }
+
+            const startDate = new Date(startDateVal);
+            const intervals = [
+                { days: 0, label: "Học lần đầu", desc: "Đọc hiểu nghĩa, cấu trúc gốc từ và viết câu ngữ cảnh.", code: "L0" },
+                { days: 1, label: "Ôn tập lần 1 (Sau 24h)", desc: "Sử dụng Active Recall (Flashcard & Quiz) để kích hoạt lại trí nhớ.", code: "L1" },
+                { days: 3, label: "Ôn tập lần 2 (Sau 3 ngày)", desc: "Kiểm tra xem bạn có nhớ gốc từ *sta- và các từ họ hàng của nó không.", code: "L2" },
+                { days: 7, label: "Ôn tập lần 3 (Sau 1 tuần)", desc: "Tự viết một câu ngữ cảnh IT hoặc đời sống mới chứa từ 'establish'.", code: "L3" },
+                { days: 15, label: "Ôn tập lần 4 (Sau 15 ngày)", desc: "Đọc lại các collocations và phản xạ nhanh nghĩa tiếng Việt khi nhìn từ.", code: "L4" },
+                { days: 30, label: "Ôn tập lần 5 (Sau 1 tháng)", desc: "Mốc quan trọng giúp khắc sâu kiến thức vĩnh viễn vào bộ nhớ dài hạn.", code: "L5" }
+            ];
+
+            const container = document.getElementById('sr-timeline-container');
+            container.innerHTML = '';
+
+            const today = new Date();
+            today.setHours(0, 0, 0, 0);
+
+            intervals.forEach((interval) => {
+                const reviewDate = new Date(startDate);
+                reviewDate.setDate(startDate.getDate() + interval.days);
+                reviewDate.setHours(0, 0, 0, 0);
+
+                const dateStr = formatDate(reviewDate);
+                const isCompleted = localStorage.getItem(`sr-establish-${interval.code}`) === 'true';
+
+                let badgeText = "Đang chờ";
+                let badgeClass = "badge-upcoming";
+
+                if (isCompleted) {
+                    badgeText = "Hoàn thành";
+                    badgeClass = "badge-done";
+                } else if (reviewDate.getTime() === today.getTime()) {
+                    badgeText = "Hôm nay";
+                    badgeClass = "badge-today";
+                }
+
+                const stepEl = document.createElement('div');
+                stepEl.className = `sr-step ${isCompleted ? 'completed' : ''}`;
+                stepEl.id = `step-${interval.code}`;
+                stepEl.innerHTML = `
+                    <input type="checkbox" class="sr-step-checkbox" id="chk-${interval.code}"
+                           ${isCompleted ? 'checked' : ''} onchange="toggleStep('${interval.code}')">
+                    <div class="sr-step-info">
+                        <div class="sr-step-title">${interval.label}</div>
+                        <div class="sr-step-date">${dateStr}</div>
+                        <div class="sr-step-desc">${interval.desc}</div>
+                    </div>
+                    <span class="sr-step-badge ${badgeClass}" id="badge-${interval.code}">${badgeText}</span>
+                `;
+                container.appendChild(stepEl);
+            });
+        }
+
+        function toggleStep(code) {
+            const chk = document.getElementById(`chk-${code}`);
+            const step = document.getElementById(`step-${code}`);
+            const badge = document.getElementById(`badge-${code}`);
+
+            localStorage.setItem(`sr-establish-${code}`, chk.checked);
+
+            if (chk.checked) {
+                step.classList.add('completed');
+                badge.innerText = "Hoàn thành";
+                badge.className = "sr-step-badge badge-done";
+            } else {
+                step.classList.remove('completed');
+
+                // Recalculate badge status
+                const startDateVal = document.getElementById('start-date-input').value;
+                const startDate = new Date(startDateVal);
+                const intervals = { L0: 0, L1: 1, L2: 3, L3: 7, L4: 15, L5: 30 };
+
+                const reviewDate = new Date(startDate);
+                reviewDate.setDate(startDate.getDate() + intervals[code]);
+                reviewDate.setHours(0,0,0,0);
+
+                const today = new Date();
+                today.setHours(0,0,0,0);
+
+                if (reviewDate.getTime() === today.getTime()) {
+                    badge.innerText = "Hôm nay";
+                    badge.className = "sr-step-badge badge-today";
+                } else {
+                    badge.innerText = "Đang chờ";
+                    badge.className = "sr-step-badge badge-upcoming";
+                }
+            }
+        }
+
+        // Generate schedule on load
+        generateSchedule();
+        
+        // Initialize Quiz Question
+        loadQuizQuestion();
+    </script>
+    <!-- Floating TTS Controls Widget -->
+    <div class="tts-floating-widget">
+        <div class="tts-panel" id="tts-floating-panel">
+            <div style="font-size: 0.9rem; font-weight: 600; color: #FFFFFF; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--border-color); padding-bottom: 8px; margin-bottom: 4px;">
+                <span style="display: flex; align-items: center; gap: 6px;">
+                    ⚙️ Cài đặt giọng đọc (TTS)
+                </span>
+                <button onclick="toggleTTSPanel()" style="background: none; border: none; color: var(--text-muted); cursor: pointer; font-size: 1.1rem; line-height: 1;">&times;</button>
+            </div>
+            
+            <div class="sr-input-group" style="display: flex; flex-direction: column; gap: 4px;">
+                <label for="tts-voice" style="font-size: 0.8rem; color: var(--text-muted);">Giọng đọc (Voice):</label>
+                <select id="tts-voice" class="sr-input" style="padding: 6px 8px; font-size: 0.8rem; background-color: rgba(255, 255, 255, 0.05); border: 1px solid var(--border-color); color: #FFFFFF; border-radius: 4px;" onchange="updateTTSParams()">
+                    <option value="en-US">Anh-Mỹ (US English)</option>
+                    <option value="en-GB">Anh-Anh (UK English)</option>
+                </select>
+            </div>
+
+            <div class="sr-input-group" style="display: flex; flex-direction: column; gap: 4px;">
+                <label for="tts-rate" style="font-size: 0.8rem; color: var(--text-muted); display: flex; justify-content: space-between;">
+                    <span>Tốc độ (Speed):</span>
+                    <span id="tts-rate-val" style="color: var(--accent-color); font-weight: 600;">0.9x</span>
+                </label>
+                <input type="range" id="tts-rate" min="0.5" max="1.5" step="0.1" value="0.9" style="accent-color: var(--accent-color); cursor: pointer; width: 100%;" oninput="updateTTSParams()">
+            </div>
+
+            <div class="sr-input-group" style="display: flex; flex-direction: column; gap: 4px;">
+                <label for="tts-pitch" style="font-size: 0.8rem; color: var(--text-muted); display: flex; justify-content: space-between;">
+                    <span>Cao độ (Pitch):</span>
+                    <span id="tts-pitch-val" style="color: var(--accent-color); font-weight: 600;">1.0x</span>
+                </label>
+                <input type="range" id="tts-pitch" min="0.5" max="2.0" step="0.1" value="1.0" style="accent-color: var(--accent-color); cursor: pointer; width: 100%;" oninput="updateTTSParams()">
+            </div>
+
+            <div class="sr-input-group" style="display: flex; flex-direction: column; gap: 4px;">
+                <label for="tts-volume" style="font-size: 0.8rem; color: var(--text-muted); display: flex; justify-content: space-between;">
+                    <span>Âm lượng (Volume):</span>
+                    <span id="tts-volume-val" style="color: var(--accent-color); font-weight: 600;">100%</span>
+                </label>
+                <input type="range" id="tts-volume" min="0" max="1" step="0.1" value="1" style="accent-color: var(--accent-color); cursor: pointer; width: 100%;" oninput="updateTTSParams()">
+            </div>
+        </div>
+        
+        <button class="tts-toggle-btn" onclick="toggleTTSPanel()" title="Cài đặt giọng đọc">
+            <svg width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+                <path d="M9.405 1.05c-.413-.213-.902-.114-1.21.23L4.3 5H1.5A1.5 1.5 0 0 0 0 6.5v3A1.5 1.5 0 0 0 1.5 11h2.8l3.895 3.72c.308.344.797.443 1.21.23.413-.213.695-.654.695-1.12V2.17c0-.466-.282-.907-.695-1.12zM8.5 2.378v11.244L5.196 10.25h-3.696a.5.5 0 0 1-.5-.5v-3a.5.5 0 0 1 .5-.5h3.696L8.5 2.378z"/>
+                <path d="M11.536 14.01A8.473 8.473 0 0 0 14.026 8a8.473 8.473 0 0 0-2.49-6.01l-.708.707A7.476 7.476 0 0 1 13.025 8c0 2.071-.84 3.946-2.197 5.303l.708.707z"/>
+            </svg>
+        </button>
+    </div>
+</body>
+</html>
