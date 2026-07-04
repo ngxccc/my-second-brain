@@ -3,6 +3,7 @@ tags: [type/moc, topic/productivity]
 date: 2026-04-29
 aliases: [Methods Index, Actionable Frameworks, The Toolbox]
 ---
+
 # Methods & Frameworks MOC
 
 ## TL;DR
@@ -32,6 +33,7 @@ Khung làm việc ép bản thân vào kỷ luật để không bị vỡ trận
 Kỹ năng bán mình và thuyết phục nhà tuyển dụng/đối tác:
 
 - [[STAR_Method_Tech]]: Framework kể chuyện (Situation-Task-Action-Result) để "flex" kinh nghiệm mượt mà trong các vòng phỏng vấn hành vi (Behavioral Interview).
+- [[IELTS_Simon_Writing_Method]]: Chiến thuật làm bài thi IELTS Writing đơn giản và mạch lạc để đạt band score cao.
 
 ## 4. Personal Finance (Tài chính cá nhân)
 
