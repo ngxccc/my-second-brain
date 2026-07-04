@@ -40,3 +40,4 @@ Bản đồ điều hướng trung tâm cho toàn bộ tri thức khái niệm l
 - [[Linguistic_False_Friends]]: Cạm bẫy từ đồng dạng và dịch chuyển trọng âm.
 - [[English_Learning_Roadmap]]: Lộ trình tự học tiếng Anh giao tiếp và chuyên ngành hàng ngày.
 - [[Herbert_Simon_Learning_Method]]: Phương pháp nhận thức dựa trên chunking và deliberate practice để thành thạo kỹ năng mới.
+- [[Evan_Wallace_Path]]: Con đường phát triển sự nghiệp của Evan Wallace (Figma CTO, esbuild creator) – chuyên môn sâu graphics/WebGL + timing + execution.
