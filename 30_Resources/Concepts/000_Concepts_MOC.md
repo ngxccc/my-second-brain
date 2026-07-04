@@ -3,6 +3,7 @@ tags: [type/moc, topic/concepts]
 date: 2026-06-22
 aliases: [Concepts Index, Concepts Map]
 ---
+
 # Concepts Knowledge Map of Content (MOC)
 
 ## TL;DR
@@ -38,3 +39,4 @@ Bản đồ điều hướng trung tâm cho toàn bộ tri thức khái niệm l
 - [[Phonetic_Chunking]]: Hack não học từ vựng bằng cách gom nhóm âm tiết.
 - [[Linguistic_False_Friends]]: Cạm bẫy từ đồng dạng và dịch chuyển trọng âm.
 - [[English_Learning_Roadmap]]: Lộ trình tự học tiếng Anh giao tiếp và chuyên ngành hàng ngày.
+- [[Herbert_Simon_Learning_Method]]: Phương pháp nhận thức dựa trên chunking và deliberate practice để thành thạo kỹ năng mới.

@@ -4,7 +4,9 @@ date: 2026-06-27
 aliases: [Lộ trình thiết lập và Checklist, Setup Roadmap and Checklist]
 ---
 
-# TL;DR
+# Setup Roadmap and Checklist
+
+## TL;DR
 
 This guide provides a complete roadmap, technical checklists, and a solo Kanban board for building a high-concurrency Ticket Booking / Flash Sale system using **NestJS, Bun, PostgreSQL (Drizzle ORM), and BullMQ**.
 
@@ -13,8 +15,11 @@ This guide provides a complete roadmap, technical checklists, and a solo Kanban 
 - [[Architecture_and_Spec]]
 - [[Auth_Schema_Design_Interview_Preparation]]
 - [[zero-downtime-deploy]]
+
 ---
+
 ## 🗺️ Lộ Trình & Checklist Thiết Lập Chi Tiết (Ticket Booking Backend)
+
 ---
 
 ## 📋 Bảng Kanban Ngoại Tuyến (Solo Kanban)
