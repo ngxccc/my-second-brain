@@ -52,6 +52,12 @@ created_at: 2026-06-27
 
 - Lộ trình thiết lập và checklist chi tiết: [[Setup_Roadmap_and_Checklist]]
 - Đặc tả thiết kế hệ thống chi tiết: [[Architecture_and_Spec]]
+- Sơ đồ cơ sở dữ liệu (DBML): [[Database_Schema.dbml]]
+- Luồng tích hợp dữ liệu phim (TMDB): [[Movie_Sync_Workflow]]
+- Chiến lược dịch thuật & Caching: [[Localization_and_Caching_Strategy]]
+- Chiến lược tách Refresh Token: [[Refresh_Token_Separation_Strategy]]
+- Kiểm định Index CSDL: [[Database_Index_Audit]]
+- Chiến lược thiết kế Enum CSDL: [[Database_Enum_Strategy]]
 - Mẫu thiết kế Transactional Outbox: [[Outbox_Pattern]]
 - Nguyên lý thiết kế mã nguồn sạch: [[Clean_Architecture]]
 - So sánh Nginx vs Caddy: [[nginx-vs-caddy]]
