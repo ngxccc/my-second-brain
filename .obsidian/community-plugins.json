@@ -2,5 +2,6 @@
   "templater-obsidian",
   "obsidian-linter",
   "dataview",
-  "obsidian-export-image"
+  "obsidian-export-image",
+  "yanki"
 ]
