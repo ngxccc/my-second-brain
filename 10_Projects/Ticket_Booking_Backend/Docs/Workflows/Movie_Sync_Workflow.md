@@ -4,7 +4,7 @@ date: 2026-07-04
 aliases: [Luồng tích hợp dữ liệu phim TMDB, Movie Data Sync Workflow]
 ---
 
-# 🎬 Luồng Tích Hợp Dữ Liệu Phim & TMDB Sync Service
+# Luồng Tích Hợp Dữ Liệu Phim & TMDB Sync Service
 
 ## TL;DR
 

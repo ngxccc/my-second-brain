@@ -4,7 +4,7 @@ date: 2026-07-04
 aliases: [Chiến lược tách Refresh Token, Refresh Token Separation Strategy]
 ---
 
-# 🔑 Chiến Lược Tách Refresh Token Ra Bảng Riêng
+# Chiến Lược Tách Refresh Token Ra Bảng Riêng
 
 ## TL;DR
 

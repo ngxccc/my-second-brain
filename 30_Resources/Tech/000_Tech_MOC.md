@@ -71,6 +71,7 @@ Bản đồ điều hướng trung tâm cho toàn bộ tri thức kỹ thuật. 
 - [[Serverless_Architecture]]: Hạ tầng thực thi auto-scale, không lưu state (Stateless).
 - [[Edge_Computing]]: Đưa code ra các node CDN gần user nhất để giảm latency.
 - [[Torrent_CLI_Download_Tools]]: So sánh các công cụ download torrent CLI thay thế aria2c; qBittorrent-nox là all-rounder hàng đầu cho server headless năm 2026.
+
 ## Web Client & Security (Trình duyệt & Bảo mật)
 
 - [[Client_Side_Encryption]]: Mã hóa LocalStorage/IndexedDB bằng thuật toán AES.

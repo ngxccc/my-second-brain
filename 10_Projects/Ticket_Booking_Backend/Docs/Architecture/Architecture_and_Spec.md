@@ -4,7 +4,7 @@ date: 2026-06-27
 aliases: [Đặc tả Kiến trúc Hệ thống Đặt Vé, Ticket Booking Architecture & Spec]
 ---
 
-# 📌 Đặc Tả Kiến Trúc & Thiết Kế Hệ Thống Đặt Vé
+# Đặc Tả Kiến Trúc & Thiết Kế Hệ Thống Đặt Vé
 
 ## TL;DR
 
@@ -22,7 +22,7 @@ graph TD
     Presentation[Presentation Layer<br>HTTP Controllers, WebSocket Gateways]
     Application[Application Layer<br>OrderService, RedlockService, OutboxService]
     Domain[Domain Layer<br>Entities: Order, Ticket, OutboxEvent<br>Core Business Invariants]
-    Infrastructure[Infrastructure Layer<br>TypeORM, BullMQ Workers, Redis Adapter]
+    Infrastructure[Infrastructure Layer<br>Drizzle ORM, BullMQ Workers, Redis Adapter]
 
     %% Hướng phụ thuộc (Inward Dependency)
     Presentation -->|Calls| Application
@@ -38,7 +38,7 @@ graph TD
 ### A. Domain Layer (Lớp Nghiệp Vụ Cốt Lõi)
 
 - **Nhiệm vụ:** Chứa các thực thể (Entities), giá trị (Value Objects) và các quy tắc nghiệp vụ bất biến (Invariants) của hệ thống đặt vé.
-- **Quy tắc:** Hoàn toàn tinh khiết (Pure TypeScript), không chứa bất kỳ decorator hay import nào từ NestJS, TypeORM, Prisma, hay Redis.
+- **Quy tắc:** Hoàn toàn tinh khiết (Pure TypeScript), không chứa bất kỳ decorator hay import nào từ NestJS, Drizzle ORM, Prisma, hay Redis.
 - **Ví dụ nghiệp vụ bất biến:**
   - Số lượng vé đặt mua trong một đơn hàng phải lớn hơn 0 và nhỏ hơn giới hạn tối đa cho mỗi lượt mua.
   - Số lượng vé còn lại của sự kiện không được phép âm dưới bất kỳ tình huống nào ($Inventory \ge 0$).
@@ -64,7 +64,7 @@ graph TD
 
 - **Nhiệm vụ:** Hiện thực hóa các interface ở lớp Application bằng công nghệ cụ thể.
 - **Thành phần chính:**
-  - **TypeORM/PostgreSQL Repositories:** Thực hiện lưu trữ dữ liệu vật lý và thực thi transaction.
+- **Drizzle ORM/PostgreSQL Repositories:** Thực hiện lưu trữ dữ liệu vật lý và thực thi transaction.
   - **Redis Adapter:** Triển khai cơ chế khóa phân tán thực tế bằng thư viện `redlock`.
   - **BullMQ Integration:** Chứa các background workers thực thi gửi email, sinh vé PDF từ hàng đợi Redis.
   - **Outbox Relayer Job:** Tiến trình chạy ngầm quét bảng `outbox_events` để đẩy sang BullMQ.

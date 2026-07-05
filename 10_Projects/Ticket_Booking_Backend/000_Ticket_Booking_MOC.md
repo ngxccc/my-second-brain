@@ -27,7 +27,7 @@ created_at: 2026-06-27
 
 - [ ] **Phase 1: Init & Redlock** (Deadline: 05/07/2026)
   - [ ] Khởi tạo NestJS project (`bun`) và Docker Compose (Postgres + Redis).
-  - [ ] Thiết kế Database Schema và kết nối ORM (TypeORM).
+  - [ ] Thiết kế Database Schema và kết nối ORM (Drizzle ORM).
   - [ ] Xây dựng Domain Model cho Ticket & Order (không dùng decorators).
   - [ ] Triển khai `RedlockService` (Distributed Lock) và tích hợp Pessimistic Locking (`SELECT ... FOR UPDATE`).
 - [ ] **Phase 2: Outbox & BullMQ** (Deadline: 12/07/2026)
@@ -50,14 +50,44 @@ created_at: 2026-06-27
 
 ## Related Resources
 
+### Architecture & Specs
+
 - Lộ trình thiết lập và checklist chi tiết: [[Setup_Roadmap_and_Checklist]]
 - Đặc tả thiết kế hệ thống chi tiết: [[Architecture_and_Spec]]
-- Sơ đồ cơ sở dữ liệu (DBML): [[Database_Schema.dbml]]
-- Luồng tích hợp dữ liệu phim (TMDB): [[Movie_Sync_Workflow]]
-- Chiến lược dịch thuật & Caching: [[Localization_and_Caching_Strategy]]
+- Chiến lược kiến trúc đa giao thức Hybrid: [[Hybrid_Architecture_Strategy]]
+- Luồng thực thi chi tiết NestJS Request Lifecycle: [[NestJS_Execution_Workflow_and_Lifecycle]]
+
+### Auth Strategy & Security
+
+- Phân tách Auth WBS (Register & Login): [[Auth_WBS_Deconstruction]]
 - Chiến lược tách Refresh Token: [[Refresh_Token_Separation_Strategy]]
+- Phỏng vấn Auth Schema Design: [[Auth_Schema_Design_Interview_Preparation]]
+
+### Database & Data Models
+
+- Sơ đồ cơ sở dữ liệu (DBML): [[Database_Schema.dbml]]
 - Kiểm định Index CSDL: [[Database_Index_Audit]]
 - Chiến lược thiết kế Enum CSDL: [[Database_Enum_Strategy]]
+- Phỏng vấn PostgreSQL 18: [[Postgres_18_Interview_Preparation]]
+- Quy chuẩn lập trình Drizzle ORM v1.0.0-rc.4: [[Drizzle_v1_RC4_Coding_Standards]]
+- Khái niệm Entity & Kiểm thử kết nối Database: [[Database_Entities_and_Connection_Testing]]
+
+### Workflows & Domain Features
+
+- Luồng tích hợp dữ liệu phim (TMDB): [[Movie_Sync_Workflow]]
+- Chiến lược dịch thuật & Caching: [[Localization_and_Caching_Strategy]]
+- Chiến lược đa ngôn ngữ i18n hệ thống: [[Multi_Language_i18n_Strategy]]
+- Giải thích cơ chế Custom Validator Match: [[Custom_Validation_Constraint_Match]]
+- Thiết kế cấu trúc Họ Tên người dùng: [[Name_Format_Design_Decision]]
+- Hướng dẫn kiểm thử bảo mật scrypt và XSS: [[Security_Testing_and_XSS_Prevention]]
+- Giải thích chi tiết tiện ích mã hóa mật khẩu: [[Cryptography_Utilities_Explanation]]
 - Mẫu thiết kế Transactional Outbox: [[Outbox_Pattern]]
 - Nguyên lý thiết kế mã nguồn sạch: [[Clean_Architecture]]
+
+### DevOps & Infrastructure
+
 - So sánh Nginx vs Caddy: [[nginx-vs-caddy]]
+- Hướng dẫn thiết lập HTTPS: [[https-setup-guide]]
+- Triển khai Zero-Downtime: [[zero-downtime-deploy]]
+- Giải thích Docker Compose: [[docker-compose-explained]]
+- Hướng dẫn triển khai Azure: [[azure-deploy-guide]]

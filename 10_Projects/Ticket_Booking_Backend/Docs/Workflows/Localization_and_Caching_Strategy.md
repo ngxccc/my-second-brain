@@ -4,7 +4,7 @@ date: 2026-07-04
 aliases: [Chiến lược dịch thuật & Caching, Localization and Caching Strategy]
 ---
 
-# 🌐 Chiến Lược Dịch Thuật & Caching CSDL Suất Chiếu Tải Cao
+# Chiến Lược Dịch Thuật & Caching CSDL Suất Chiếu Tải Cao
 
 ## TL;DR
 

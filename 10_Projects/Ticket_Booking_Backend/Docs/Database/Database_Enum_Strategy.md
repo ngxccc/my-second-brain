@@ -4,7 +4,7 @@ date: 2026-07-04
 aliases: [Chiến lược thiết kế Enum CSDL, Database Enum Strategy]
 ---
 
-# 🗂️ Chiến Lược Thiết Kế ENUM Hệ Thống Đặt Vé
+# Chiến Lược Thiết Kế ENUM Hệ Thống Đặt Vé
 
 ## TL;DR
 

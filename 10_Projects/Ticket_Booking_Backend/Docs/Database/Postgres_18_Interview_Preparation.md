@@ -9,7 +9,7 @@ aliases:
   ]
 ---
 
-# 🗂️ Hướng Dẫn Phỏng Vấn: Lý Do Lựa Chọn PostgreSQL 18 Cho Hệ Thống Đặt Vé Tải Cao
+# Hướng Dẫn Phỏng Vấn: Lý Do Lựa Chọn PostgreSQL 18 Cho Hệ Thống Đặt Vé Tải Cao
 
 ## TL;DR
 
@@ -33,19 +33,19 @@ Tài liệu này cung cấp kịch bản trả lời phỏng vấn chuyên sâu 
 
 Dưới đây là cách liên kết các tính năng mới của PostgreSQL 18 với các thách thức nghiệp vụ cụ thể trong dự án:
 
-#### 🟢 Thách thức 1: Tần suất ghi và cập nhật cực lớn ở các bảng `show_seats` & `outbox_events`
+#### Thách thức 1: Tần suất ghi và cập nhật cực lớn ở các bảng `show_seats` & `outbox_events`
 
 - **Bài toán nghiệp vụ:** Trong thời điểm Flash Sale ra mắt phim HOT, hàng chục ngàn người dùng đồng thời click đặt ghế. Bảng `show_seats` bị `UPDATE` liên tục (chuyển trạng thái từ `available` $\rightarrow$ `reserved` $\rightarrow$ `booked`), tạo ra hàng triệu Dead Tuples mỗi giờ.
 - **Giải pháp của PG 18:**
   - **Radix Tree Vacuum**: Cơ chế lưu trữ Dead Tuples bằng Radix Tree giúp Autovacuum dọn dẹp và đóng băng dữ liệu (Tuple Freezing) với bộ nhớ RAM cực thấp, không làm treo server hay ngốn CPU trong giờ cao điểm.
   - **64-bit Transaction ID (64-bit XID)**: Xóa bỏ hoàn toàn nguy cơ CSDL phải dừng hoạt động khẩn cấp do chạm ngưỡng 2 tỷ transaction ID (Wraparound).
 
-#### 🟢 Thách thức 2: Chống phình đĩa (Index Bloat) & Tối ưu I/O Ghi với Index Skip Scan
+#### Thách thức 2: Chống phình đĩa (Index Bloat) & Tối ưu I/O Ghi với Index Skip Scan
 
 - **Bài toán nghiệp vụ:** Các bảng `show_seats` và `bookings` có các chỉ mục tổ hợp như `show_seats(status, locked_until)` và `bookings(status, expires_at)`. Nếu ứng dụng có tác vụ quét dọn chỉ lọc theo cột thứ hai (`locked_until` hoặc `expires_at`), các phiên bản PG 15-17 buộc ta phải tạo thêm các Single Index độc lập, làm chậm các câu lệnh `INSERT/UPDATE` và làm tăng gấp đôi kích thước file chỉ mục trên đĩa.
 - **Giải pháp của PG 18:** **Index Skip Scan** cho phép Postgres 18 duyệt qua B-Tree của chỉ mục tổ hợp bằng cách "nhảy" qua 3-4 giá trị ENUM của cột `status`. Chúng ta **loại bỏ được các Single Index dư thừa**, giúp tiết kiệm 30-50% dung lượng đĩa và giảm chi phí I/O ghi cho toàn bộ hệ thống.
 
-#### 🟢 Thách thức 3: Bảo mật Phân quyền Dữ liệu đa rạp / Khách hàng (Row-Level Security - RLS)
+#### Thách thức 3: Bảo mật Phân quyền Dữ liệu đa rạp / Khách hàng (Row-Level Security - RLS)
 
 - **Bài toán nghiệp vụ:** Trong kiến trúc Multi-tenant hoặc khi áp dụng RLS để đảm bảo khách hàng chỉ xem được vé của chính mình, NestJS app phải truyền `userId` hoặc `tenantId` vào session trước khi query. Các phiên bản cũ phải dùng cú pháp hack `SET LOCAL app.current_user_id = '...'`.
 - **Giải pháp của PG 18:** Sử dụng **Biến phiên chuẩn SQL (`CREATE VARIABLE current_user_id UUID; LET current_user_id = '...';`)**. Giúp ép kiểu dữ liệu chặt chẽ (Strict Type Safety), loại bỏ rủi ro SQL Injection và tăng tốc độ kiểm tra quyền ở tầng CSDL.

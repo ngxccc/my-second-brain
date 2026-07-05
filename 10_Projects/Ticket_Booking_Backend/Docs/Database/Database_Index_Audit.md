@@ -4,7 +4,7 @@ date: 2026-07-04
 aliases: [Kiểm định Index CSDL, Database Index Audit]
 ---
 
-# 📊 Báo Cáo Kiểm Định & Thiết Kế Index Hệ Thống Đặt Vé Tải Cao
+# Báo Cáo Kiểm Định & Thiết Kế Index Hệ Thống Đặt Vé Tải Cao
 
 ## TL;DR
 
