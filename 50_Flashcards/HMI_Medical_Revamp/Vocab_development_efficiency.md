@@ -1,5 +1,5 @@
 ---
-noteId: 1783155004000
+noteId: 1783415599367
 ---
 
 development efficiency /dɪˈvel.əp.mənt ɪˈfɪʃ.ən.si/

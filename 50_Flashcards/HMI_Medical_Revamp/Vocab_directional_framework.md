@@ -1,5 +1,5 @@
 ---
-noteId: 1783155016000
+noteId: 1783415599382
 ---
 
 directional framework /daɪˈrek.ʃən.əl ˈfreɪm.wɜːk/

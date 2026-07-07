@@ -1,5 +1,5 @@
 ---
-noteId: 1783155019000
+noteId: 1783415599166
 ---
 
 Spell the word/phrase that means "Đề xuất các cải tiến/tinh chỉnh" (/ˌrek.əˈmend rɪˈfaɪn.mənts/):

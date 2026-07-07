@@ -1,5 +1,5 @@
 ---
-noteId: 1783155022000
+noteId: 1783415599682
 ---
 
 reusable component architecture /riːˈjuː.zə.bəl kəmˈpəʊ.nənt ˈɑː.kɪ.tek.tʃər/

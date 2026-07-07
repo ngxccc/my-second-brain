@@ -1,5 +1,5 @@
 ---
-noteId: 1783155032000
+noteId: 1783415599466
 ---
 
 improve governance /ɪmˈpruːv ˈɡʌv.ən.əns/

@@ -1,5 +1,5 @@
 ---
-noteId: 1783155023000
+noteId: 1783415599232
 ---
 
 Spell the word/phrase that means "Kiến trúc thành phần giao diện có thể tái sử dụng" (/riːˈjuː.zə.bəl kəmˈpəʊ.nənt ˈɑː.kɪ.tek.tʃər/):
