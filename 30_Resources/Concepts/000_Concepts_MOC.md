@@ -41,3 +41,10 @@ Bản đồ điều hướng trung tâm cho toàn bộ tri thức khái niệm l
 - [[English_Learning_Roadmap]]: Lộ trình tự học tiếng Anh giao tiếp và chuyên ngành hàng ngày.
 - [[Herbert_Simon_Learning_Method]]: Phương pháp nhận thức dựa trên chunking và deliberate practice để thành thạo kỹ năng mới.
 - [[Evan_Wallace_Path]]: Con đường phát triển sự nghiệp của Evan Wallace (Figma CTO, esbuild creator) – chuyên môn sâu graphics/WebGL + timing + execution.
+
+## Software Testing
+
+- [[Error_Defect_Failure]]: Định nghĩa và chu kỳ lỗi nhầm lẫn, lỗi sai sót, và sự cố phần mềm theo chuẩn ISTQB.
+- [[7_Principles_of_Testing]]: 7 nguyên lý kiểm thử phần mềm nền tảng định hình hoạt động kiểm định.
+- [[Black_Box_Testing_Techniques]]: Kỹ thuật kiểm thử hộp đen tập trung vào phân vùng tương đương (EP) và phân tích giá trị biên (BVA).
+- [[White_Box_Testing_Techniques]]: Kỹ thuật kiểm thử hộp trắng tập trung vào độ phủ dòng lệnh và độ phủ nhánh/quyết định.
