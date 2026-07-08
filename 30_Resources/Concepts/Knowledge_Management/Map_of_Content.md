@@ -3,6 +3,7 @@ tags: [type/concept, topic/knowledge-management]
 date: 2026-04-29
 aliases: [MOC, Index Note, Bản đồ định hướng]
 ---
+
 # Map of Content (MOC)
 
 ## TL;DR
@@ -21,10 +22,9 @@ Một node (ghi chú) đặc biệt đóng vai trò làm "mục lục động" �
 - **Code Snippet (Cấu trúc một MOC chuẩn):**
 
 ```markdown
-
 # 🏗️ Software Architecture MOC
 
-*Bản đồ các mẫu thiết kế cấu trúc hệ thống Backend.*
+_Bản đồ các mẫu thiết kế cấu trúc hệ thống Backend._
 
 ## 1. Core Patterns (Kiến trúc tổng thể)
 
@@ -42,6 +42,7 @@ Giữ cho các module không đấm nhau:
 ```
 
 ---
+
 **Related Notes:**
 
 - Nền tảng tạo ra các hạt kiến thức nhỏ để đắp vào MOC: [[Zettelkasten_Method]]

@@ -2,6 +2,7 @@
 created_at: Wednesday, April 8th 2026, 3:31:31 pm +07:00
 updated_at: Wednesday, April 8th 2026, 3:32:55 pm +07:00
 ---
+
 # 🚀 PROJECT SPECIFICATION: llm-wiki (Rust Version)
 
 ## 1. Project Overview
@@ -78,7 +79,7 @@ llm-wiki/
 - **Locality-Sensitive Hashing (LSH):** Do NOT use brute-force linear iteration for Cosine Similarity. Implement a basic LSH indexing structure (Random Projection hashes) to group similar quantized vectors into buckets.
 - **Execution & Dual-Threshold Asymmetric Search:** When a `query` comes, hash it -> find the bucket in $O(1)$ -> calculate Quantized Cosine Similarity ONLY for items in that specific bucket. Evaluate the score:
   - `Score >= 0.95`: **Sure Hit** -> Return cached result immediately.
-  - `0.85 <= Score < 0.95`: **Grey Zone** -> Semantic match is likely but carries the risk of "pixelation" (Hash Collision) from quantization. -> *Trigger Hybrid Lexical Heuristics*.
+  - `0.85 <= Score < 0.95`: **Grey Zone** -> Semantic match is likely but carries the risk of "pixelation" (Hash Collision) from quantization. -> _Trigger Hybrid Lexical Heuristics_.
   - `Score < 0.85`: **Miss** -> Bypass cache, hit Qdrant.
 - **Hybrid Lexical Heuristics (Zero-Allocation Character Trigrams):** To handle code snippets lacking whitespace (e.g., `Arc<RwLock<T>>` vs `Rc<RefCell<T>>`), do NOT use word-level splitting for Jaccard similarity. Implement **Hashed Character Trigrams**.
   - Convert the query into byte windows: `query.as_bytes().windows(3)`.
@@ -99,17 +100,15 @@ llm-wiki/
 You are acting as an autonomous developer agent with terminal access. You MUST follow this strict Git workflow:
 
 - **Branching Strategy:** Do NOT push code directly to `main`. Create a specific feature branch for each core pipeline before writing code.
-  - *Example:* `git checkout -b feature/ingestion-pipeline`
-  - *Example:* `git checkout -b feature/mcp-server`
+  - _Example:_ `git checkout -b feature/ingestion-pipeline`
+  - _Example:_ `git checkout -b feature/mcp-server`
 - **Atomic Commits:** Commit your work piece-by-piece (e.g., after completing a specific file, struct, or logical function). Do NOT write the entire project and submit one massive commit. I need granular control to review your work.
 - **Commit Message Convention:** Strictly use Conventional Commits, and include the **file name** or component in the scope for easy tracking.
   - Format: `<type>(<file_name_or_module>): <description>`
-  - *Example:* `feat(chunker.rs): implement sliding window text splitting`
-  - *Example:* `refactor(semantic.rs): optimize LSH hashing logic`
-  - *Example:* `chore(Cargo.toml): add tokio and reqwest dependencies`
-- **Automation & Merging:** 1. Execute `git add` and `git commit` automatically after completing a logical unit.
-  2. Push the branch to the remote repository.
-  3. **STOP AND ASK FOR MY APPROVAL** before merging the feature branch back into `main`. Do not auto-merge without explicitly asking me first.
+  - _Example:_ `feat(chunker.rs): implement sliding window text splitting`
+  - _Example:_ `refactor(semantic.rs): optimize LSH hashing logic`
+  - _Example:_ `chore(Cargo.toml): add tokio and reqwest dependencies`
+- **Automation & Merging:** 1. Execute `git add` and `git commit` automatically after completing a logical unit. 2. Push the branch to the remote repository. 3. **STOP AND ASK FOR MY APPROVAL** before merging the feature branch back into `main`. Do not auto-merge without explicitly asking me first.
 
 ### 🛡️ Layer 1: OS-Level Integrity Shield (Read-Only Isolation)
 
@@ -117,9 +116,9 @@ To prevent semantic hallucinations where you might accidentally write destructiv
 
 1. Create the data directory: `mkdir -p data/raw/`
 2. Apply OS-level Read-Only permissions to prevent accidental deletion by the application runtime:
-   - *Linux/macOS:* Run `chmod -R a-w data/raw/` (Remove write permissions for all).
-   - *Windows:* Run `icacls "data\raw" /deny Everyone:(W,D)` (Deny write and delete).
-*Note: The Rust app should only read from this directory. If your code attempts to write/delete here, it will crash with `PermissionDenied`, which is the intended security behavior.*
+   - _Linux/macOS:_ Run `chmod -R a-w data/raw/` (Remove write permissions for all).
+   - _Windows:_ Run `icacls "data\raw" /deny Everyone:(W,D)` (Deny write and delete).
+     _Note: The Rust app should only read from this directory. If your code attempts to write/delete here, it will crash with `PermissionDenied`, which is the intended security behavior._
 
 ### 🛡️ Layer 2: The Local Immune System (Pre-commit Hook)
 
@@ -127,33 +126,33 @@ To prevent semantic hallucinations where you might accidentally write destructiv
 
 1. Create a file at `.git/hooks/pre-commit` with the following bash script:
 
-    ```bash
-    #!/bin/bash
-    echo "🛡️ Running Local Immune System (Fmt, Clippy, Tests)..."
+   ```bash
+   #!/bin/bash
+   echo "🛡️ Running Local Immune System (Fmt, Clippy, Tests)..."
 
-    # 1. Check formatting
-    cargo fmt -- --check
-    if [ $? -ne 0 ]; then
-        echo "❌ Code formatting failed! Run 'cargo fmt' to fix it."
-        exit 1
-    fi
+   # 1. Check formatting
+   cargo fmt -- --check
+   if [ $? -ne 0 ]; then
+       echo "❌ Code formatting failed! Run 'cargo fmt' to fix it."
+       exit 1
+   fi
 
-    # 2. Strict Clippy (Deny warnings, catch concurrency bugs)
-    cargo clippy -- -D warnings -W clippy::pedantic -W clippy::await_holding_lock -W clippy::unwrap_used
-    if [ $? -ne 0 ]; then
-        echo "❌ Clippy found bad practices or concurrency risks! Fix them."
-        exit 1
-    fi
+   # 2. Strict Clippy (Deny warnings, catch concurrency bugs)
+   cargo clippy -- -D warnings -W clippy::pedantic -W clippy::await_holding_lock -W clippy::unwrap_used
+   if [ $? -ne 0 ]; then
+       echo "❌ Clippy found bad practices or concurrency risks! Fix them."
+       exit 1
+   fi
 
-    # 3. Run unit tests
-    cargo test
-    if [ $? -ne 0 ]; then
-        echo "❌ Unit tests failed! Code is broken."
-        exit 1
-    fi
+   # 3. Run unit tests
+   cargo test
+   if [ $? -ne 0 ]; then
+       echo "❌ Unit tests failed! Code is broken."
+       exit 1
+   fi
 
-    echo "✅ All checks passed! Committing..."
-    ```
+   echo "✅ All checks passed! Committing..."
+   ```
 
 2. Make it executable: `chmod +x .git/hooks/pre-commit`.
 

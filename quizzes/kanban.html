@@ -1,499 +1,584 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="vi">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kanban Quiz - Comprehensive Review (40 Questions)</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kanban Quiz - Comprehensive Review (40 Questions)</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>KANBAN METHODOLOGY</h1>
+        <p>Comprehensive Kanban Review (40 Questions)</p>
+      </header>
 
-  <div class="container">
-    <header>
-      <h1>KANBAN METHODOLOGY</h1>
-      <p>Comprehensive Kanban Review (40 Questions)</p>
-    </header>
-
-    <div class="card" id="quiz-card">
-      <div class="progress-bar-container">
-        <div class="progress-bar" id="progress-bar"></div>
-      </div>
-
-      <div class="quiz-screen" id="quiz-screen">
-        <div class="question-info" id="question-info">QUESTION 1 OF 40</div>
-        <div class="question-text" id="question-text">Câu hỏi đang được tải...</div>
-
-        <div class="options-list" id="options-list">
-          <!-- Options will be rendered dynamically -->
+      <div class="card" id="quiz-card">
+        <div class="progress-bar-container">
+          <div class="progress-bar" id="progress-bar"></div>
         </div>
 
-        <div class="controls">
-          <div style="color: var(--color-secondary); font-size: 0.85rem;" id="feedback-msg">Chọn câu trả lời và nhấn Submit</div>
-          <button class="btn-primary" id="action-btn" disabled>Submit</button>
+        <div class="quiz-screen" id="quiz-screen">
+          <div class="question-info" id="question-info">QUESTION 1 OF 40</div>
+          <div class="question-text" id="question-text">
+            Câu hỏi đang được tải...
+          </div>
+
+          <div class="options-list" id="options-list">
+            <!-- Options will be rendered dynamically -->
+          </div>
+
+          <div class="controls">
+            <div
+              style="color: var(--color-secondary); font-size: 0.85rem"
+              id="feedback-msg"
+            >
+              Chọn câu trả lời và nhấn Submit
+            </div>
+            <button class="btn-primary" id="action-btn" disabled>Submit</button>
+          </div>
+
+          <div class="explanation" id="explanation-box">
+            <div class="explanation-title" id="explanation-title">
+              Giải thích
+            </div>
+            <div id="explanation-text">...</div>
+          </div>
         </div>
 
-        <div class="explanation" id="explanation-box">
-          <div class="explanation-title" id="explanation-title">Giải thích</div>
-          <div id="explanation-text">...</div>
+        <div class="results-screen" id="results-screen">
+          <div class="score-circle">
+            <div class="score-num" id="final-score">0</div>
+            <div class="score-label">Đúng</div>
+          </div>
+          <div class="result-msg" id="result-msg">Hoàn thành tốt!</div>
+          <button class="btn-primary" onclick="restartQuiz()">
+            Làm lại Quiz
+          </button>
         </div>
-      </div>
-
-      <div class="results-screen" id="results-screen">
-        <div class="score-circle">
-          <div class="score-num" id="final-score">0</div>
-          <div class="score-label">Đúng</div>
-        </div>
-        <div class="result-msg" id="result-msg">Hoàn thành tốt!</div>
-        <button class="btn-primary" onclick="restartQuiz()">Làm lại Quiz</button>
       </div>
     </div>
-  </div>
 
-  <script>
-    const questions = [
-      {
-        question: "Từ 'Kanban' có nghĩa là gì trong tiếng Nhật và bắt nguồn từ đâu?",
-        options: [
-          "Có nghĩa là 'Lập trình tinh gọn', bắt nguồn từ hãng Honda vào năm 1950.",
-          "Có nghĩa là 'Vòng lặp ngắn', bắt nguồn từ dự án phát triển phần mềm của Microsoft.",
-          "Có nghĩa là 'Bảng trực quan' hoặc 'Thẻ báo hiệu', bắt nguồn từ hãng Toyota cuối những năm 1940.",
-          "Có nghĩa là 'Cải tiến liên tục', bắt nguồn từ ngành công nghiệp đóng tàu Nhật Bản."
-        ],
-        correct: 2,
-        explanation: "Kanban (看板) nghĩa là 'bảng trực quan' hoặc 'thẻ báo hiệu', bắt nguồn từ Taiichi Ohno tại hãng xe hơi Toyota cuối những năm 1940 để phục vụ sản xuất Just-in-Time."
-      },
-      {
-        question: "Ai là người đã áp dụng thành công các nguyên lý của Kanban vào ngành công nghiệp phát triển phần mềm và công việc tri thức vào năm 2004?",
-        options: [
-          "David J. Anderson",
-          "Jeff Sutherland",
-          "Ken Schwaber",
-          "Martin Fowler"
-        ],
-        correct: 0,
-        explanation: "David J. Anderson là người đi tiên phong trong việc áp dụng các nguyên lý sản xuất tinh gọn của Kanban vào phát triển phần mềm và công việc tri thức từ năm 2004."
-      },
-      {
-        question: "Mô hình vận hành của Kanban để quản lý dòng công việc (Workflow) là gì?",
-        options: [
-          "Mô hình Đẩy (Push system) - Công việc được giao ép từ trên xuống bất kể năng lực.",
-          "Mô hình Kéo (Pull system) - Chỉ nhận việc mới khi có nhu cầu thực tế và năng lực cho phép.",
-          "Mô hình Thác nước (Waterfall) - Hoàn thành tất cả các pha một cách tuần tự.",
-          "Mô hình Tự do (Ad-hoc) - Thành viên tự làm bất kỳ việc gì mình thích không cần quy trình."
-        ],
-        correct: 1,
-        explanation: "Kanban là một hệ thống 'Kéo' (Pull System), tức là công việc chỉ được kéo vào giai đoạn tiếp theo khi có tín hiệu trống (năng lực sẵn sàng) từ công đoạn đó."
-      },
-      {
-        question: "Đâu là một trong 4 Nguyên lý quản lý thay đổi (Change Management Principles) của Kanban theo chuẩn Kanban University?",
-        options: [
-          "Bắt đầu từ những gì bạn đang làm hiện tại (Start with what you do now).",
-          "Yêu cầu đổi mới toàn bộ vai trò và chức danh trong tổ chức ngay lập tức.",
-          "Cấm thay đổi quy trình cũ dù gặp bất kỳ lỗi hay cản trở nào.",
-          "Chỉ cho phép quản lý cấp cao đưa ra các đề xuất cải tiến quy trình."
-        ],
-        correct: 0,
-        explanation: "Nguyên lý đầu tiên của Kanban là 'Start with what you do now': Bắt đầu bằng việc trực quan hóa quy trình hiện tại mà không lập tức thay đổi cấu trúc vai trò hay chức danh hiện hành."
-      },
-      {
-        question: "Tại sao nguyên lý thứ 3 của Kanban yêu cầu 'Tôn trọng quy trình, vai trò, trách nhiệm & chức danh hiện hành'?",
-        options: [
-          "Để ngăn cản mọi sự cải tiến quy trình trong tương lai.",
-          "Để tránh gây xáo trộn tổ chức đột ngột, xây dựng lòng tin và giảm sự kháng cự của đội ngũ khi áp dụng phương pháp mới.",
-          "Vì quy trình hiện tại luôn hoàn hảo và không cần sửa đổi.",
-          "Để đảm bảo nhóm trưởng luôn giữ vững quyền lực tối cao."
-        ],
-        correct: 1,
-        explanation: "Bằng cách tôn trọng cấu trúc hiện tại, Kanban giảm thiểu tối đa sự phòng thủ hoặc phản kháng từ đội ngũ, tạo tiền đề để thực hiện các bước cải tiến tiến hóa sau đó."
-      },
-      {
-        question: "Thực hành 'Giới hạn công việc đang làm' (Limit Work in Progress - WIP Limit) có ý nghĩa cốt lõi gì?",
-        options: [
-          "Đặt số lượng task tối đa được phép xử lý cùng lúc tại mỗi giai đoạn/cột trên bảng Kanban.",
-          "Giới hạn số giờ làm việc tối đa của một thành viên trong một ngày.",
-          "Giới hạn số lượng bug tối đa mà tester được phép phát hiện.",
-          "Quy định số lượng thành viên tối đa được phép tham gia vào một dự án."
-        ],
-        correct: 0,
-        explanation: "WIP Limit là giới hạn trực tiếp số thẻ công việc được phép tồn tại ở mỗi cột trên bảng Kanban nhằm tập trung giải quyết dứt điểm công việc cũ trước khi bắt việc mới."
-      },
-      {
-        question: "Câu châm ngôn nào tóm tắt chính xác triết lý đằng sau thực hành giới hạn WIP?",
-        options: [
-          "\"Stop starting, start finishing\" (Ngừng bắt đầu, hãy bắt đầu hoàn thành).",
-          "\"Stop finishing, start starting\" (Ngừng hoàn thành, hãy bắt đầu bắt đầu).",
-          "\"Fail fast, fail often\" (Thất bại nhanh, thất bại nhiều).",
-          "\"Think big, act small\" (Nghĩ lớn, làm nhỏ)."
-        ],
-        correct: 0,
-        explanation: "Triết lý của WIP Limit là 'Stop starting, start finishing' - tập trung hoàn thành các công việc đang dang dở thay vì liên tục mở ra các công việc mới."
-      },
-      {
-        question: "WIP Limit giúp giải quyết vấn đề lớn nào dưới đây của thành viên trong nhóm phát triển?",
-        options: [
-          "Giúp lập trình viên viết code nhanh hơn mà không cần test.",
-          "Giảm thiểu lãng phí thời gian và giảm chất lượng do đa nhiệm (multitasking) và chuyển ngữ cảnh liên tục.",
-          "Giúp tăng số lượng cuộc họp Daily Scrum trong ngày.",
-          "Loại bỏ hoàn toàn vai trò của Scrum Master hoặc Nhóm trưởng."
-        ],
-        correct: 1,
-        explanation: "Đa nhiệm (làm nhiều việc một lúc) tốn rất nhiều thời gian chuyển ngữ cảnh. WIP Limit giữ số việc dang dở ở mức thấp để thành viên tập trung hoàn thành nhanh và chất lượng nhất."
-      },
-      {
-        question: "Khi số lượng thẻ trong một cột chạm ngưỡng WIP Limit, đây là tín hiệu của điều gì và đội ngũ nên phản ứng như thế nào?",
-        options: [
-          "Tín hiệu công việc đang trôi chảy, cứ tiếp tục kéo thêm việc mới vào cột đó.",
-          "Tín hiệu xuất hiện 'Điểm nghẽn' (Bottleneck). Cả nhóm cần ngưng nhận việc mới và tập trung hỗ trợ (swarming) giải quyết công việc ở cột đó để khơi thông dòng chảy.",
-          "Tín hiệu cho thấy thành viên ở cột đó làm việc kém hiệu quả, cần thay thế nhân sự ngay lập tức.",
-          "Không cần làm gì, cứ để thẻ ùn ứ vì cột Done không giới hạn WIP."
-        ],
-        correct: 1,
-        explanation: "Khi một cột chạm giới hạn WIP, đó là tín hiệu của bottleneck. Cả nhóm cần chung tay (swarming) để giải quyết các task bị tắc nghẽn ở cột đó trước khi có thể kéo thêm việc mới vào quy trình."
-      },
-      {
-        question: "Điểm cam kết (Commitment Point) trên bảng Kanban là gì?",
-        options: [
-          "Thời điểm khách hàng viết yêu cầu đưa vào Backlog.",
-          "Thời điểm team đồng ý tiếp nhận task từ backlog và bắt đầu thực hiện nó.",
-          "Thời điểm task hoàn thành toàn bộ kiểm thử và sẵn sàng bàn giao.",
-          "Thời điểm nhóm trưởng bàn giao code cho khách hàng."
-        ],
-        correct: 1,
-        explanation: "Commitment Point là thời điểm team cam kết thực hiện công việc và kéo thẻ từ backlog/yêu cầu vào quy trình xử lý thực tế (ví dụ: chuyển sang cột To do hoặc In Progress)."
-      },
-      {
-        question: "Điểm bàn giao (Delivery Point) trên bảng Kanban là gì?",
-        options: [
-          "Thời điểm lập trình viên code xong và chuyển sang Code Review.",
-          "Thời điểm tester bắt đầu viết testcase cho tính năng.",
-          "Thời điểm công việc được hoàn tất hoàn toàn, đạt Definition of Done và chuyển tới tay khách hàng/mentor.",
-          "Thời điểm nhóm trưởng tạo task trên GitHub Projects."
-        ],
-        correct: 2,
-        explanation: "Delivery Point là điểm cuối của quy trình Kanban, khi công việc đã hoàn thành 100% đạt chuẩn chất lượng và bàn giao thành công cho khách hàng/mentor."
-      },
-      {
-        question: "Chỉ số 'Lead Time' trong Kanban được tính như thế nào?",
-        options: [
-          "Từ khi bắt đầu code (Commitment Point) đến khi bàn giao (Delivery Point).",
-          "Từ khi khách hàng đưa yêu cầu vào Backlog đến khi bàn giao thành công (Delivery Point).",
-          "Từ khi bắt đầu Sprint Planning đến khi kết thúc Sprint Retrospective.",
-          "Thời gian lập trình viên viết code và sửa lỗi."
-        ],
-        correct: 1,
-        explanation: "Lead Time (Thời gian hoàn thành) tính từ lúc yêu cầu được tạo ra/ghi nhận ở backlog cho đến khi sản phẩm được bàn giao thực tế cho khách hàng."
-      },
-      {
-        question: "Chỉ số 'Cycle Time' trong Kanban được tính như thế nào?",
-        options: [
-          "Từ khi bắt đầu thực hiện task (Commitment Point) đến khi hoàn thành bàn giao (Delivery Point).",
-          "Từ khi khách hàng đưa yêu cầu vào Backlog đến khi bàn giao thành công (Delivery Point).",
-          "Khoảng thời gian họp Daily standup hàng ngày.",
-          "Khoảng thời gian sửa một bug phát sinh từ phía Tester."
-        ],
-        correct: 0,
-        explanation: "Cycle Time (Thời gian chu kỳ) đo lường thời gian thực tế để xử lý một task, tính từ lúc bắt đầu làm (Commitment Point) đến khi hoàn tất (Delivery Point)."
-      },
-      {
-        question: "Đâu là sự khác biệt cơ bản giữa Kanban và Scrum về cách quản lý sự thay đổi yêu cầu?",
-        options: [
-          "Scrum cho phép thay đổi yêu cầu bất kỳ lúc nào giữa Sprint; Kanban tuyệt đối cấm thay đổi.",
-          "Cả hai phương pháp đều cấm thay đổi yêu cầu sau khi dự án đã bắt đầu.",
-          "Scrum hạn chế thay đổi trong Sprint Backlog khi Sprint đang chạy; Kanban chấp nhận thay đổi bất kỳ lúc nào ở cột To do trước điểm cam kết.",
-          "Kanban yêu cầu họp bàn lại toàn bộ kiến trúc mỗi khi có thay đổi; Scrum tự động cập nhật code."
-        ],
-        correct: 2,
-        explanation: "Scrum cam kết một khối lượng việc cố định trong Sprint và tránh thay đổi dòng việc này. Kanban linh hoạt hơn, cho phép PO thay đổi thứ tự ưu tiên hoặc thay task mới ở cột To do bất kỳ lúc nào nếu task đó chưa được kéo vào làm."
-      },
-      {
-        question: "Trong quản lý dự án MockProject trên GitHub Projects, các cột trên bảng Kanban được quy định gồm những cột nào?",
-        options: [
-          "Backlog, Design, Code, Test, Deploy",
-          "To do, In Progress, Done",
-          "Sprint Backlog, Daily Tasks, Blocked, Done",
-          "Draft, Reviewing, Approved, Closed"
-        ],
-        correct: 1,
-        explanation: "MockProject quy định thiết lập bảng Kanban đơn giản trên GitHub Projects gồm 3 cột cơ bản: To do, In Progress và Done."
-      },
-      {
-        question: "Quy trình kéo thả và cập nhật bảng Kanban trên GitHub Projects được phân chia trách nhiệm như thế nào?",
-        options: [
-          "Thành viên tự tạo task và tự kéo sang Done; nhóm trưởng chỉ đứng xem.",
-          "Nhóm trưởng có trách nhiệm tạo task và đưa vào cột To do; các thành viên chịu trách nhiệm chuyển task sang In Progress khi làm và Done khi hoàn thành.",
-          "Mentor sẽ trực tiếp kéo thả tất cả các task của mọi nhóm.",
-          "Tester chịu trách nhiệm kéo tất cả các task từ To do sang In Progress và Done."
-        ],
-        correct: 1,
-        explanation: "Nhóm trưởng có vai trò quản lý chung, khởi tạo task đưa vào To do. Thành viên là người trực tiếp thực thi nên phải tự giác cập nhật trạng thái In Progress và Done của task mình phụ trách."
-      },
-      {
-        question: "Nhãn (Label) nào dưới đây dùng để đánh giá tiến độ của task trên GitHub Projects và nó được gán vào lúc nào?",
-        options: [
-          "Gán label 'On-time' ngay khi vừa tạo task ở cột To do.",
-          "Gán label 'Delayed' khi task đang làm trong cột In Progress được 1 tiếng.",
-          "Gán các label đánh giá như 'On-time', 'Delayed', hoặc 'Over-Progress' sau khi task đã hoàn thành và nằm ở cột Done (Closed).",
-          "Gán label 'Task' sau khi đã đóng issue."
-        ],
-        correct: 2,
-        explanation: "Chỉ tiến hành đánh giá hiệu suất tiến độ sau khi công việc đã thực sự hoàn thành (nằm ở cột Done/Closed). Nhóm trưởng sẽ vào audit để gắn nhãn tiến độ tương ứng."
-      },
-      {
-        question: "Thành viên dự án cần thực hiện quy trình 3 bước nào ngay sau khi hoàn thành 1 task?",
-        options: [
-          "Báo cáo Zalo/Email cho nhóm -> Upload sản phẩm lên GitHub/Drive -> Đóng (Close) Issue và đưa task sang cột Done trên GitHub.",
-          "Kéo task sang Done -> Xóa code trên máy local -> Đi ăn mừng.",
-          "Gửi mail cho mentor -> Tạo thêm task mới -> Chờ nhóm trưởng đóng task hộ.",
-          "Ghi nhật ký -> Đợi cuối tuần báo cáo họp Daily Scrum."
-        ],
-        correct: 0,
-        explanation: "Sau khi xong task, thành viên phải: 1. Báo cáo nhóm (Zalo/Email); 2. Đẩy sản phẩm lên GitHub/Drive; 3. Đóng issue và chuyển sang cột Done trên GitHub Kanban."
-      },
-      {
-        question: "Nếu ước lượng làm một task là 4 tiếng, nhưng thành viên nhận thấy mình không thể hoàn thành kịp deadline thì phải báo cáo trễ hạn vào lúc nào?",
-        options: [
-          "Báo cáo vào cuối ngày khi họp Daily Scrum ngày hôm sau.",
-          "Báo trước deadline ít nhất 1 tiếng (1/4 thời lượng ước lượng của task).",
-          "Báo ngay sau khi deadline đã trôi qua được 30 phút.",
-          "Không cần báo vì nhóm trưởng tự nhìn bảng Kanban sẽ biết."
-        ],
-        correct: 1,
-        explanation: "Quy định kỷ luật yêu cầu báo trước deadline ít nhất 1/4 thời lượng task. Với task 4 tiếng, thành viên phải báo trước deadline ít nhất 1 tiếng qua email gửi nhóm trưởng làm bằng chứng."
-      },
-      {
-        question: "Trong file WBS cá nhân (MockProject_WorkBreakDown_TenThanhVien.xlsx), cột Actual Effort (thời gian làm việc thực tế) được điền vào thời điểm nào?",
-        options: [
-          "Điền vào đầu buổi sáng cho các task sẽ làm trong ngày hôm nay.",
-          "Điền vào cuối ngày hôm đó hoặc đầu buổi sáng hôm sau để ghi nhận thời gian thực tế đã bỏ ra cho các task của ngày hôm trước.",
-          "Chỉ điền một lần vào cuối Sprint trước khi nộp toàn bộ dự án.",
-          "Chỉ điền khi bị nhóm trưởng nhắc nhở hoặc trừ điểm."
-        ],
-        correct: 1,
-        explanation: "Cột Estimated Effort được điền vào đầu buổi sáng cho các task của ngày hôm nay. Cột Actual Effort được điền vào cuối ngày hoặc sáng hôm sau để phản ánh chính xác thời gian thực tế đã làm cho ngày hôm trước."
-      },
-      {
-        question: "Theo định luật Little (Little's Law) trong Kanban, mối quan hệ giữa thời gian chu kỳ (Cycle Time), số lượng công việc đang làm (WIP) và năng suất đầu ra (Throughput) được biểu diễn bằng công thức nào?",
-        options: [
-          "Cycle Time = WIP / Throughput",
-          "Cycle Time = WIP * Throughput",
-          "Cycle Time = Throughput / WIP",
-          "Cycle Time = WIP + Throughput"
-        ],
-        correct: 0,
-        explanation: "Định luật Little phát biểu rằng: Thời gian chu kỳ trung bình (Cycle Time) bằng lượng công việc đang làm (WIP) chia cho năng suất đầu ra (Throughput). Muốn giảm Cycle Time, ta có thể giảm WIP hoặc tăng Throughput."
-      },
-      {
-        question: "Nhóm dịch vụ (Classes of Service) trong Kanban được dùng để làm gì?",
-        options: [
-          "Để phân công vai trò và phòng ban cho các lập trình viên.",
-          "Để phân loại công việc và thiết lập chính sách xử lý ưu tiên khác nhau cho các loại thẻ (ví dụ: việc Khẩn cấp, việc Thường, việc có Deadline cố định).",
-          "Để tính toán lương thưởng cuối tháng cho các thành viên dựa trên số lượng task.",
-          "Để phân chia và thiết lập số lượng cột trên bảng Kanban."
-        ],
-        correct: 1,
-        explanation: "Classes of Service phân loại công việc dựa trên mức độ rủi ro hoặc chi phí do chậm trễ (Cost of Delay), bao gồm các nhóm phổ biến như Expedite (Khẩn cấp), Fixed Date (Ngày cố định), Standard (Thường) và Intangible (Vô hình/Không khẩn cấp)."
-      },
-      {
-        question: "Nhóm dịch vụ 'Expedite' (Khẩn cấp/Hỏa tốc) trong Kanban có đặc điểm gì đặc biệt?",
-        options: [
-          "Được phép vượt qua mọi WIP Limit của các cột và cần được cả nhóm tập trung giải quyết ngay lập tức.",
-          "Bắt buộc phải có ít nhất 3 thành viên cùng viết code đồng thời.",
-          "Chỉ được phép thực hiện vào ngày cuối cùng của tuần làm việc.",
-          "Phải đợi tất cả các task khác trên bảng hoàn thành mới được phép bắt đầu."
-        ],
-        correct: 0,
-        explanation: "Thẻ Expedite đại diện cho công việc cực kỳ khẩn cấp (như sập server, lỗi bảo mật nghiêm trọng). Nó được phép bỏ qua WIP limit của các cột để cả nhóm tập trung xử lý ngay lập tức nhằm giảm thiểu thiệt hại."
-      },
-      {
-        question: "Biểu đồ luồng tích lũy (Cumulative Flow Diagram - CFD) trong Kanban dùng để theo dõi khía cạnh nào?",
-        options: [
-          "Số lượng dòng code được viết mỗi ngày của từng lập trình viên.",
-          "Trạng thái và số lượng các hạng mục công việc theo thời gian, giúp phân tích WIP, Lead Time, Cycle Time và phát hiện các điểm nghẽn.",
-          "Mức độ tương tác và thảo luận của thành viên trên group chat Zalo.",
-          "Số lượng lỗi phát hiện bởi từng tester trong suốt quá trình chạy thử nghiệm."
-        ],
-        correct: 1,
-        explanation: "Cumulative Flow Diagram (CFD) là một biểu đồ diện tích chồng phản ánh số lượng công việc ở từng trạng thái theo thời gian. Độ rộng của các vùng cho thấy WIP, độ dốc cho thấy Throughput và khoảng cách ngang cho biết Cycle Time ước tính."
-      },
-      {
-        question: "Các buổi họp/vòng lặp phản hồi định kỳ để duy trì quy trình trong Kanban được gọi chung là gì?",
-        options: [
-          "Sprints",
-          "Kanban Cadences (Các nhịp điệu Kanban)",
-          "Daily Standups",
-          "Sprint Retrospectives"
-        ],
-        correct: 1,
-        explanation: "Kanban có 7 nhịp điệu phản hồi (Kanban Cadences) để duy trì hoạt động và cải tiến hệ thống liên tục, bao gồm: Daily Meeting, Replenishment, Service Delivery Review, Operations Review, Risk Review, Strategy Review, và Delivery Planning."
-      },
-      {
-        question: "Trong Kanban, khi xử lý một thẻ bị khóa (Blocked Card - do thiếu thông tin hoặc đợi bên thứ ba), quy định tốt nhất là gì?",
-        options: [
-          "Xóa thẻ đó khỏi bảng ngay lập tức và tạo một thẻ mới thay thế.",
-          "Giữ nguyên thẻ ở cột hiện tại, đánh dấu blocker (màu đỏ) và thẻ đó vẫn được tính vào WIP Limit của cột.",
-          "Di chuyển thẻ đó sang cột Done để giải phóng WIP Limit cho cột hiện tại.",
-          "Đưa thẻ đó ngược lại Backlog và không giới hạn WIP nữa."
-        ],
-        correct: 1,
-        explanation: "Thẻ bị Blocked vẫn phải nằm ở cột hiện tại và tính vào WIP limit của cột đó. Việc này nhằm mục đích gây áp lực trực quan lên team để giải quyết khó khăn của task, tránh việc bỏ qua và tiếp tục kéo task mới làm tràn lan."
-      },
-      {
-        question: "Việc sử dụng Gmail dùng chung để tạo dự án GitHub và thư mục Google Drive trong MockProject nhằm mục đích gì?",
-        options: [
-          "Để tiết kiệm dung lượng lưu trữ cá nhân của từng thành viên.",
-          "Phòng trường hợp có thành viên nghỉ thực tập giữa chừng thì tài nguyên dự án không bị mất mát hay ảnh hưởng đến nhóm.",
-          "Để giúp Mentor dễ dàng kiểm tra lịch sử đăng nhập của nhóm.",
-          "Để các thành viên dùng chung tài khoản gửi mail cá nhân cho gia đình."
-        ],
-        correct: 1,
-        explanation: "Sử dụng một Gmail chung giúp nhóm làm chủ toàn bộ tài sản số (GitHub, Drive) độc lập với tài khoản cá nhân của bất kỳ thành viên nào, đảm bảo tính liên tục của dự án."
-      },
-      {
-        question: "Quy định về việc Backup sản phẩm hàng ngày của cá nhân yêu cầu sắp xếp cấu trúc thư mục như thế nào?",
-        options: [
-          "Upload tất cả sản phẩm đè lên nhau trong một thư mục gốc.",
-          "Sử dụng một thư mục cố định, mỗi ngày tạo một thư mục nhỏ bên trong đặt tên là Day1, Day2, Day3... để lưu trữ sản phẩm tương ứng.",
-          "Tạo thư mục mới trên ổ cứng máy tính cá nhân và không cần share với ai.",
-          "Mỗi tuần tạo một thư mục lớn và xóa hết dữ liệu cũ đi."
-        ],
-        correct: 1,
-        explanation: "Mỗi thành viên phải dùng một thư mục cố định và chia thư mục con theo ngày (Day1, Day2...) để mentor có thể vào xem và review tiến độ phát triển sản phẩm của từng người một cách rõ ràng."
-      },
-      {
-        question: "Tại sao Scrum Master (Mentor) lại kiểm tra biên bản họp (Meeting Minutes) của nhóm định kỳ trên Drive?",
-        options: [
-          "Để chấm điểm kỹ năng viết tiếng Anh của thư ký cuộc họp.",
-          "Để kiểm soát giờ giấc họp có đúng 9:45 AM không.",
-          "Để audit xem nhóm có nghiêm túc thực hiện Daily Scrum và đưa ra các quyết định, phân công công việc cụ thể hay không.",
-          "Để kiểm tra xem có ai dùng Google Dịch hay không."
-        ],
-        correct: 2,
-        explanation: "Meeting Minutes là bằng chứng cho thấy nhóm có vận hành Daily Scrum thực tế, có phân công rõ trách nhiệm và đưa ra các quyết định giải quyết vấn đề của dự án hay không."
-      },
-      {
-        question: "Trong Kanban, khái niệm 'Proto-Kanban' dùng để chỉ điều gì?",
-        options: [
-          "Phiên bản Kanban nâng cao chạy trên máy chủ đám mây.",
-          "Các hệ thống trực quan hóa công việc nhưng chưa thực sự giới hạn WIP (thiếu WIP Limits).",
-          "Mô hình Kanban áp dụng trong sản xuất ô tô của Toyota.",
-          "Công cụ vẽ sơ đồ Gantt trực tuyến."
-        ],
-        correct: 1,
-        explanation: "Proto-Kanban là các bảng Kanban sơ khai chỉ tập trung vào việc hiển thị/trực quan hóa công việc (như bảng Trello đơn giản) mà chưa áp dụng WIP Limit để quản lý dòng chảy và giới hạn công việc."
-      },
-      {
-        question: "Cách tốt nhất để giảm thời gian chu kỳ (Cycle Time) của các task trong Kanban là gì?",
-        options: [
-          "Tăng WIP Limit của tất cả các cột để làm được nhiều việc hơn cùng lúc.",
-          "Giảm WIP Limit (giới hạn số việc đang làm) để thúc đẩy dứt điểm nhanh các task hiện tại.",
-          "Yêu cầu lập trình viên tăng giờ làm việc lên 12 tiếng/ngày.",
-          "Bỏ qua bước Code Review và Testing để chuyển thẳng sang Done."
-        ],
-        correct: 1,
-        explanation: "Theo định luật Little, giảm WIP sẽ giúp giảm Cycle Time trực tiếp, giúp công việc di chuyển qua hệ thống nhanh hơn và nhận phản hồi sớm hơn."
-      },
-      {
-        question: "Vai trò 'Service Delivery Manager' (SDM) trong mô hình Kanban chuyên nghiệp tương đương nhất với vai trò nào trong Scrum?",
-        options: [
-          "Product Owner",
-          "Scrum Master (SDM giúp cải tiến dòng chảy và tháo gỡ khó khăn cho team).",
-          "Developers",
-          "Business Analyst"
-        ],
-        correct: 1,
-        explanation: "Service Delivery Manager (SDM) là một vai trò trong Kanban chịu trách nhiệm theo dõi chất lượng dòng chảy công việc, điều hành các buổi họp Kanban và giải quyết blockers (tương đương với Scrum Master)."
-      },
-      {
-        question: "Quyết định chuyển trạng thái của một thẻ công việc trên bảng Kanban từ cột này sang cột khác dựa trên điều gì?",
-        options: [
-          "Ý kiến chủ quan của lập trình viên làm task đó.",
-          "Các quy tắc và chính sách quy trình rõ ràng (Explicit Policies) đã được thống nhất từ trước.",
-          "Yêu cầu ngẫu hứng của nhóm trưởng.",
-          "Khi hết ngày làm việc thì tự động chuyển."
-        ],
-        correct: 1,
-        explanation: "Để đảm bảo tính nhất quán và chất lượng, việc chuyển thẻ phải tuân thủ các chính sách quy trình tường minh (Explicit Policies) như Definition of Done (DoD) hoặc các tiêu chuẩn chuyển giao đã thống nhất."
-      },
-      {
-        question: "Kỷ luật gửi email báo cáo trễ hạn cho nhóm trưởng phục vụ mục đích gì sau này?",
-        options: [
-          "Để nhóm trưởng có cớ trừ điểm thành viên đó.",
-          "Để làm bằng chứng đối soát khi Scrum Master (Mentor) audit tiến độ dự án của cả nhóm.",
-          "Để tự động chuyển task đó về cột To do.",
-          "Để gửi thông báo lỗi tự động lên GitHub."
-        ],
-        correct: 1,
-        explanation: "Việc gửi email trước 1/4 thời lượng task bị trễ hạn là quy định bắt buộc của dự án, nhằm lưu lại bằng chứng minh bạch phục vụ việc audit của Scrum Master sau này."
-      },
-      {
-        question: "File WBS cá nhân của bạn nên được đặt tên chính xác theo định dạng nào?",
-        options: [
-          "WBS_TenThanhVien.xlsx",
-          "MockProject_WorkBreakDown_TenThanhVien.xlsx (Đổi phần TenThanhVien thành tên của bạn viết KHÔNG có dấu).",
-          "MockProject_WBS_NguyenVanA.xlsx",
-          "WorkBreakDown_MockProject_VanA.xlsx"
-        ],
-        correct: 1,
-        explanation: "Quy định đặt tên file WBS cá nhân là: `MockProject_WorkBreakDown_TenThanhVien.xlsx` (viết không dấu). Ví dụ: `MockProject_WorkBreakDown_NguyenVanA.xlsx`."
-      },
-      {
-        question: "Khái niệm 'Swimlanes' (Đường bơi) trên bảng Kanban đại diện cho thành phần nào?",
-        options: [
-          "Là các đường kẻ ngang dùng để phân loại công việc theo mức độ ưu tiên (như Khẩn cấp - Expedite vs Thường - Standard), theo Module tính năng hoặc theo thành viên thực hiện.",
-          "Là các cột dọc đại diện cho trạng thái di chuyển của thẻ.",
-          "Là giới hạn số lượng task tối đa của một thành viên trong nhóm.",
-          "Là sơ đồ Gantt biểu diễn tiến độ thời gian của dự án."
-        ],
-        correct: 0,
-        explanation: "Swimlanes là các đường hàng ngang giúp tổ chức và phân loại các thẻ công việc trực quan trên bảng Kanban để dễ dàng quản trị theo độ ưu tiên (Classes of Service) hoặc các cấu phần khác nhau."
-      },
-      {
-        question: "Kanban khuyến khích việc cải tiến quy trình như thế nào thông qua Nguyên lý quản lý thay đổi thứ 2 và thứ 4?",
-        options: [
-          "Yêu cầu thay đổi toàn bộ cơ cấu quản lý ngay khi vừa áp dụng phương pháp.",
-          "Thống nhất theo đuổi sự cải tiến tiến hóa, liên tục (incremental) và khuyến khích tinh thần lãnh đạo ở mọi cấp độ (Kaizen).",
-          "Chỉ cho phép thay đổi quy trình nếu được PO/Mentor đồng ý bằng văn bản trước.",
-          "Cấm mọi thay đổi quy trình để duy trì tính ổn định tuyệt đối."
-        ],
-        correct: 1,
-        explanation: "Nguyên lý 2 (evolutionary change) và Nguyên lý 4 (leadership at all levels) thúc đẩy văn hóa Kaizen—cải tiến liên tục từ những hành động nhỏ và sự chủ động đóng góp của tất cả thành viên trong nhóm."
-      },
-      {
-        question: "Năng suất đầu ra (Throughput) là một chỉ số đo lường hiệu suất dòng chảy của Kanban. Định nghĩa chính xác của Throughput là gì?",
-        options: [
-          "Khoảng thời gian từ khi bắt đầu code đến khi hoàn thành task.",
-          "Số lượng hạng mục công việc (tasks/cards) hoàn thành hoàn toàn và bàn giao trong một đơn vị thời gian cố định.",
-          "Tổng số story points mà nhóm cam kết làm được trong một Sprint.",
-          "Số lượng dòng code được viết bởi lập trình viên trong một tuần."
-        ],
-        correct: 1,
-        explanation: "Throughput đo lường năng lực thực tế của hệ thống bằng cách đếm số lượng công việc đã chuyển giao thành công (Done) trên mỗi đơn vị thời gian (ví dụ: 10 tasks/tuần, 50 tasks/Sprint)."
-      },
-      {
-        question: "Thực hành cốt lõi thứ 6 của Kanban - 'Improve Collaboratively, Evolve Experimentally' (Cải tiến cộng tác, tiến hóa thực nghiệm) khuyên chúng ta nên làm gì?",
-        options: [
-          "Thay đổi quy trình theo linh cảm và ý kiến chủ quan của nhóm trưởng.",
-          "Sử dụng mô hình và dữ liệu thực tế đo lường được (như Cycle Time, Throughput) để đưa ra giả thuyết và thử nghiệm cải tiến quy trình theo nhóm.",
-          "Cấm các thành viên thảo luận về quy trình để tập trung viết code.",
-          "Bắt chước 100% quy trình của nhóm khác mà không cần tùy chỉnh."
-        ],
-        correct: 1,
-        explanation: "Thực hành thứ 6 khuyến khích việc sử dụng phương pháp khoa học và dữ liệu thực tế để thử nghiệm, đánh giá các thay đổi quy trình, đảm bảo cải tiến mang tính tiến hóa bền vững."
-      },
-      {
-        question: "Triết lý sản xuất Just-in-Time (JIT) bắt nguồn từ Toyota làm nền tảng cho Kanban được phát biểu như thế nào?",
-        options: [
-          "Sản xuất càng nhiều sản phẩm càng tốt để dự trữ sẵn cho tương lai.",
-          "Chỉ sản xuất những gì cần thiết, khi cần thiết và với số lượng cần thiết nhằm loại bỏ lãng phí.",
-          "Chỉ sản xuất sản phẩm khi lập trình viên cảm thấy sẵn sàng.",
-          "Sản xuất sản phẩm nhanh nhất có thể bất kể chất lượng sản phẩm."
-        ],
-        correct: 1,
-        explanation: "Just-in-Time (JIT) là cốt lõi của sản xuất tinh gọn, giúp tối ưu hóa luồng công việc bằng cách sản xuất đúng thứ cần thiết, đúng lúc và đúng lượng, loại bỏ lãng phí hàng tồn kho hay công việc ùn ứ."
-      }
-    ];
-  </script>
-  <script src="engine.js"></script>
-
-</body>
+    <script>
+      const questions = [
+        {
+          question:
+            "Từ 'Kanban' có nghĩa là gì trong tiếng Nhật và bắt nguồn từ đâu?",
+          options: [
+            "Có nghĩa là 'Lập trình tinh gọn', bắt nguồn từ hãng Honda vào năm 1950.",
+            "Có nghĩa là 'Vòng lặp ngắn', bắt nguồn từ dự án phát triển phần mềm của Microsoft.",
+            "Có nghĩa là 'Bảng trực quan' hoặc 'Thẻ báo hiệu', bắt nguồn từ hãng Toyota cuối những năm 1940.",
+            "Có nghĩa là 'Cải tiến liên tục', bắt nguồn từ ngành công nghiệp đóng tàu Nhật Bản.",
+          ],
+          correct: 2,
+          explanation:
+            "Kanban (看板) nghĩa là 'bảng trực quan' hoặc 'thẻ báo hiệu', bắt nguồn từ Taiichi Ohno tại hãng xe hơi Toyota cuối những năm 1940 để phục vụ sản xuất Just-in-Time.",
+        },
+        {
+          question:
+            "Ai là người đã áp dụng thành công các nguyên lý của Kanban vào ngành công nghiệp phát triển phần mềm và công việc tri thức vào năm 2004?",
+          options: [
+            "David J. Anderson",
+            "Jeff Sutherland",
+            "Ken Schwaber",
+            "Martin Fowler",
+          ],
+          correct: 0,
+          explanation:
+            "David J. Anderson là người đi tiên phong trong việc áp dụng các nguyên lý sản xuất tinh gọn của Kanban vào phát triển phần mềm và công việc tri thức từ năm 2004.",
+        },
+        {
+          question:
+            "Mô hình vận hành của Kanban để quản lý dòng công việc (Workflow) là gì?",
+          options: [
+            "Mô hình Đẩy (Push system) - Công việc được giao ép từ trên xuống bất kể năng lực.",
+            "Mô hình Kéo (Pull system) - Chỉ nhận việc mới khi có nhu cầu thực tế và năng lực cho phép.",
+            "Mô hình Thác nước (Waterfall) - Hoàn thành tất cả các pha một cách tuần tự.",
+            "Mô hình Tự do (Ad-hoc) - Thành viên tự làm bất kỳ việc gì mình thích không cần quy trình.",
+          ],
+          correct: 1,
+          explanation:
+            "Kanban là một hệ thống 'Kéo' (Pull System), tức là công việc chỉ được kéo vào giai đoạn tiếp theo khi có tín hiệu trống (năng lực sẵn sàng) từ công đoạn đó.",
+        },
+        {
+          question:
+            "Đâu là một trong 4 Nguyên lý quản lý thay đổi (Change Management Principles) của Kanban theo chuẩn Kanban University?",
+          options: [
+            "Bắt đầu từ những gì bạn đang làm hiện tại (Start with what you do now).",
+            "Yêu cầu đổi mới toàn bộ vai trò và chức danh trong tổ chức ngay lập tức.",
+            "Cấm thay đổi quy trình cũ dù gặp bất kỳ lỗi hay cản trở nào.",
+            "Chỉ cho phép quản lý cấp cao đưa ra các đề xuất cải tiến quy trình.",
+          ],
+          correct: 0,
+          explanation:
+            "Nguyên lý đầu tiên của Kanban là 'Start with what you do now': Bắt đầu bằng việc trực quan hóa quy trình hiện tại mà không lập tức thay đổi cấu trúc vai trò hay chức danh hiện hành.",
+        },
+        {
+          question:
+            "Tại sao nguyên lý thứ 3 của Kanban yêu cầu 'Tôn trọng quy trình, vai trò, trách nhiệm & chức danh hiện hành'?",
+          options: [
+            "Để ngăn cản mọi sự cải tiến quy trình trong tương lai.",
+            "Để tránh gây xáo trộn tổ chức đột ngột, xây dựng lòng tin và giảm sự kháng cự của đội ngũ khi áp dụng phương pháp mới.",
+            "Vì quy trình hiện tại luôn hoàn hảo và không cần sửa đổi.",
+            "Để đảm bảo nhóm trưởng luôn giữ vững quyền lực tối cao.",
+          ],
+          correct: 1,
+          explanation:
+            "Bằng cách tôn trọng cấu trúc hiện tại, Kanban giảm thiểu tối đa sự phòng thủ hoặc phản kháng từ đội ngũ, tạo tiền đề để thực hiện các bước cải tiến tiến hóa sau đó.",
+        },
+        {
+          question:
+            "Thực hành 'Giới hạn công việc đang làm' (Limit Work in Progress - WIP Limit) có ý nghĩa cốt lõi gì?",
+          options: [
+            "Đặt số lượng task tối đa được phép xử lý cùng lúc tại mỗi giai đoạn/cột trên bảng Kanban.",
+            "Giới hạn số giờ làm việc tối đa của một thành viên trong một ngày.",
+            "Giới hạn số lượng bug tối đa mà tester được phép phát hiện.",
+            "Quy định số lượng thành viên tối đa được phép tham gia vào một dự án.",
+          ],
+          correct: 0,
+          explanation:
+            "WIP Limit là giới hạn trực tiếp số thẻ công việc được phép tồn tại ở mỗi cột trên bảng Kanban nhằm tập trung giải quyết dứt điểm công việc cũ trước khi bắt việc mới.",
+        },
+        {
+          question:
+            "Câu châm ngôn nào tóm tắt chính xác triết lý đằng sau thực hành giới hạn WIP?",
+          options: [
+            '"Stop starting, start finishing" (Ngừng bắt đầu, hãy bắt đầu hoàn thành).',
+            '"Stop finishing, start starting" (Ngừng hoàn thành, hãy bắt đầu bắt đầu).',
+            '"Fail fast, fail often" (Thất bại nhanh, thất bại nhiều).',
+            '"Think big, act small" (Nghĩ lớn, làm nhỏ).',
+          ],
+          correct: 0,
+          explanation:
+            "Triết lý của WIP Limit là 'Stop starting, start finishing' - tập trung hoàn thành các công việc đang dang dở thay vì liên tục mở ra các công việc mới.",
+        },
+        {
+          question:
+            "WIP Limit giúp giải quyết vấn đề lớn nào dưới đây của thành viên trong nhóm phát triển?",
+          options: [
+            "Giúp lập trình viên viết code nhanh hơn mà không cần test.",
+            "Giảm thiểu lãng phí thời gian và giảm chất lượng do đa nhiệm (multitasking) và chuyển ngữ cảnh liên tục.",
+            "Giúp tăng số lượng cuộc họp Daily Scrum trong ngày.",
+            "Loại bỏ hoàn toàn vai trò của Scrum Master hoặc Nhóm trưởng.",
+          ],
+          correct: 1,
+          explanation:
+            "Đa nhiệm (làm nhiều việc một lúc) tốn rất nhiều thời gian chuyển ngữ cảnh. WIP Limit giữ số việc dang dở ở mức thấp để thành viên tập trung hoàn thành nhanh và chất lượng nhất.",
+        },
+        {
+          question:
+            "Khi số lượng thẻ trong một cột chạm ngưỡng WIP Limit, đây là tín hiệu của điều gì và đội ngũ nên phản ứng như thế nào?",
+          options: [
+            "Tín hiệu công việc đang trôi chảy, cứ tiếp tục kéo thêm việc mới vào cột đó.",
+            "Tín hiệu xuất hiện 'Điểm nghẽn' (Bottleneck). Cả nhóm cần ngưng nhận việc mới và tập trung hỗ trợ (swarming) giải quyết công việc ở cột đó để khơi thông dòng chảy.",
+            "Tín hiệu cho thấy thành viên ở cột đó làm việc kém hiệu quả, cần thay thế nhân sự ngay lập tức.",
+            "Không cần làm gì, cứ để thẻ ùn ứ vì cột Done không giới hạn WIP.",
+          ],
+          correct: 1,
+          explanation:
+            "Khi một cột chạm giới hạn WIP, đó là tín hiệu của bottleneck. Cả nhóm cần chung tay (swarming) để giải quyết các task bị tắc nghẽn ở cột đó trước khi có thể kéo thêm việc mới vào quy trình.",
+        },
+        {
+          question: "Điểm cam kết (Commitment Point) trên bảng Kanban là gì?",
+          options: [
+            "Thời điểm khách hàng viết yêu cầu đưa vào Backlog.",
+            "Thời điểm team đồng ý tiếp nhận task từ backlog và bắt đầu thực hiện nó.",
+            "Thời điểm task hoàn thành toàn bộ kiểm thử và sẵn sàng bàn giao.",
+            "Thời điểm nhóm trưởng bàn giao code cho khách hàng.",
+          ],
+          correct: 1,
+          explanation:
+            "Commitment Point là thời điểm team cam kết thực hiện công việc và kéo thẻ từ backlog/yêu cầu vào quy trình xử lý thực tế (ví dụ: chuyển sang cột To do hoặc In Progress).",
+        },
+        {
+          question: "Điểm bàn giao (Delivery Point) trên bảng Kanban là gì?",
+          options: [
+            "Thời điểm lập trình viên code xong và chuyển sang Code Review.",
+            "Thời điểm tester bắt đầu viết testcase cho tính năng.",
+            "Thời điểm công việc được hoàn tất hoàn toàn, đạt Definition of Done và chuyển tới tay khách hàng/mentor.",
+            "Thời điểm nhóm trưởng tạo task trên GitHub Projects.",
+          ],
+          correct: 2,
+          explanation:
+            "Delivery Point là điểm cuối của quy trình Kanban, khi công việc đã hoàn thành 100% đạt chuẩn chất lượng và bàn giao thành công cho khách hàng/mentor.",
+        },
+        {
+          question: "Chỉ số 'Lead Time' trong Kanban được tính như thế nào?",
+          options: [
+            "Từ khi bắt đầu code (Commitment Point) đến khi bàn giao (Delivery Point).",
+            "Từ khi khách hàng đưa yêu cầu vào Backlog đến khi bàn giao thành công (Delivery Point).",
+            "Từ khi bắt đầu Sprint Planning đến khi kết thúc Sprint Retrospective.",
+            "Thời gian lập trình viên viết code và sửa lỗi.",
+          ],
+          correct: 1,
+          explanation:
+            "Lead Time (Thời gian hoàn thành) tính từ lúc yêu cầu được tạo ra/ghi nhận ở backlog cho đến khi sản phẩm được bàn giao thực tế cho khách hàng.",
+        },
+        {
+          question: "Chỉ số 'Cycle Time' trong Kanban được tính như thế nào?",
+          options: [
+            "Từ khi bắt đầu thực hiện task (Commitment Point) đến khi hoàn thành bàn giao (Delivery Point).",
+            "Từ khi khách hàng đưa yêu cầu vào Backlog đến khi bàn giao thành công (Delivery Point).",
+            "Khoảng thời gian họp Daily standup hàng ngày.",
+            "Khoảng thời gian sửa một bug phát sinh từ phía Tester.",
+          ],
+          correct: 0,
+          explanation:
+            "Cycle Time (Thời gian chu kỳ) đo lường thời gian thực tế để xử lý một task, tính từ lúc bắt đầu làm (Commitment Point) đến khi hoàn tất (Delivery Point).",
+        },
+        {
+          question:
+            "Đâu là sự khác biệt cơ bản giữa Kanban và Scrum về cách quản lý sự thay đổi yêu cầu?",
+          options: [
+            "Scrum cho phép thay đổi yêu cầu bất kỳ lúc nào giữa Sprint; Kanban tuyệt đối cấm thay đổi.",
+            "Cả hai phương pháp đều cấm thay đổi yêu cầu sau khi dự án đã bắt đầu.",
+            "Scrum hạn chế thay đổi trong Sprint Backlog khi Sprint đang chạy; Kanban chấp nhận thay đổi bất kỳ lúc nào ở cột To do trước điểm cam kết.",
+            "Kanban yêu cầu họp bàn lại toàn bộ kiến trúc mỗi khi có thay đổi; Scrum tự động cập nhật code.",
+          ],
+          correct: 2,
+          explanation:
+            "Scrum cam kết một khối lượng việc cố định trong Sprint và tránh thay đổi dòng việc này. Kanban linh hoạt hơn, cho phép PO thay đổi thứ tự ưu tiên hoặc thay task mới ở cột To do bất kỳ lúc nào nếu task đó chưa được kéo vào làm.",
+        },
+        {
+          question:
+            "Trong quản lý dự án MockProject trên GitHub Projects, các cột trên bảng Kanban được quy định gồm những cột nào?",
+          options: [
+            "Backlog, Design, Code, Test, Deploy",
+            "To do, In Progress, Done",
+            "Sprint Backlog, Daily Tasks, Blocked, Done",
+            "Draft, Reviewing, Approved, Closed",
+          ],
+          correct: 1,
+          explanation:
+            "MockProject quy định thiết lập bảng Kanban đơn giản trên GitHub Projects gồm 3 cột cơ bản: To do, In Progress và Done.",
+        },
+        {
+          question:
+            "Quy trình kéo thả và cập nhật bảng Kanban trên GitHub Projects được phân chia trách nhiệm như thế nào?",
+          options: [
+            "Thành viên tự tạo task và tự kéo sang Done; nhóm trưởng chỉ đứng xem.",
+            "Nhóm trưởng có trách nhiệm tạo task và đưa vào cột To do; các thành viên chịu trách nhiệm chuyển task sang In Progress khi làm và Done khi hoàn thành.",
+            "Mentor sẽ trực tiếp kéo thả tất cả các task của mọi nhóm.",
+            "Tester chịu trách nhiệm kéo tất cả các task từ To do sang In Progress và Done.",
+          ],
+          correct: 1,
+          explanation:
+            "Nhóm trưởng có vai trò quản lý chung, khởi tạo task đưa vào To do. Thành viên là người trực tiếp thực thi nên phải tự giác cập nhật trạng thái In Progress và Done của task mình phụ trách.",
+        },
+        {
+          question:
+            "Nhãn (Label) nào dưới đây dùng để đánh giá tiến độ của task trên GitHub Projects và nó được gán vào lúc nào?",
+          options: [
+            "Gán label 'On-time' ngay khi vừa tạo task ở cột To do.",
+            "Gán label 'Delayed' khi task đang làm trong cột In Progress được 1 tiếng.",
+            "Gán các label đánh giá như 'On-time', 'Delayed', hoặc 'Over-Progress' sau khi task đã hoàn thành và nằm ở cột Done (Closed).",
+            "Gán label 'Task' sau khi đã đóng issue.",
+          ],
+          correct: 2,
+          explanation:
+            "Chỉ tiến hành đánh giá hiệu suất tiến độ sau khi công việc đã thực sự hoàn thành (nằm ở cột Done/Closed). Nhóm trưởng sẽ vào audit để gắn nhãn tiến độ tương ứng.",
+        },
+        {
+          question:
+            "Thành viên dự án cần thực hiện quy trình 3 bước nào ngay sau khi hoàn thành 1 task?",
+          options: [
+            "Báo cáo Zalo/Email cho nhóm -> Upload sản phẩm lên GitHub/Drive -> Đóng (Close) Issue và đưa task sang cột Done trên GitHub.",
+            "Kéo task sang Done -> Xóa code trên máy local -> Đi ăn mừng.",
+            "Gửi mail cho mentor -> Tạo thêm task mới -> Chờ nhóm trưởng đóng task hộ.",
+            "Ghi nhật ký -> Đợi cuối tuần báo cáo họp Daily Scrum.",
+          ],
+          correct: 0,
+          explanation:
+            "Sau khi xong task, thành viên phải: 1. Báo cáo nhóm (Zalo/Email); 2. Đẩy sản phẩm lên GitHub/Drive; 3. Đóng issue và chuyển sang cột Done trên GitHub Kanban.",
+        },
+        {
+          question:
+            "Nếu ước lượng làm một task là 4 tiếng, nhưng thành viên nhận thấy mình không thể hoàn thành kịp deadline thì phải báo cáo trễ hạn vào lúc nào?",
+          options: [
+            "Báo cáo vào cuối ngày khi họp Daily Scrum ngày hôm sau.",
+            "Báo trước deadline ít nhất 1 tiếng (1/4 thời lượng ước lượng của task).",
+            "Báo ngay sau khi deadline đã trôi qua được 30 phút.",
+            "Không cần báo vì nhóm trưởng tự nhìn bảng Kanban sẽ biết.",
+          ],
+          correct: 1,
+          explanation:
+            "Quy định kỷ luật yêu cầu báo trước deadline ít nhất 1/4 thời lượng task. Với task 4 tiếng, thành viên phải báo trước deadline ít nhất 1 tiếng qua email gửi nhóm trưởng làm bằng chứng.",
+        },
+        {
+          question:
+            "Trong file WBS cá nhân (MockProject_WorkBreakDown_TenThanhVien.xlsx), cột Actual Effort (thời gian làm việc thực tế) được điền vào thời điểm nào?",
+          options: [
+            "Điền vào đầu buổi sáng cho các task sẽ làm trong ngày hôm nay.",
+            "Điền vào cuối ngày hôm đó hoặc đầu buổi sáng hôm sau để ghi nhận thời gian thực tế đã bỏ ra cho các task của ngày hôm trước.",
+            "Chỉ điền một lần vào cuối Sprint trước khi nộp toàn bộ dự án.",
+            "Chỉ điền khi bị nhóm trưởng nhắc nhở hoặc trừ điểm.",
+          ],
+          correct: 1,
+          explanation:
+            "Cột Estimated Effort được điền vào đầu buổi sáng cho các task của ngày hôm nay. Cột Actual Effort được điền vào cuối ngày hoặc sáng hôm sau để phản ánh chính xác thời gian thực tế đã làm cho ngày hôm trước.",
+        },
+        {
+          question:
+            "Theo định luật Little (Little's Law) trong Kanban, mối quan hệ giữa thời gian chu kỳ (Cycle Time), số lượng công việc đang làm (WIP) và năng suất đầu ra (Throughput) được biểu diễn bằng công thức nào?",
+          options: [
+            "Cycle Time = WIP / Throughput",
+            "Cycle Time = WIP * Throughput",
+            "Cycle Time = Throughput / WIP",
+            "Cycle Time = WIP + Throughput",
+          ],
+          correct: 0,
+          explanation:
+            "Định luật Little phát biểu rằng: Thời gian chu kỳ trung bình (Cycle Time) bằng lượng công việc đang làm (WIP) chia cho năng suất đầu ra (Throughput). Muốn giảm Cycle Time, ta có thể giảm WIP hoặc tăng Throughput.",
+        },
+        {
+          question:
+            "Nhóm dịch vụ (Classes of Service) trong Kanban được dùng để làm gì?",
+          options: [
+            "Để phân công vai trò và phòng ban cho các lập trình viên.",
+            "Để phân loại công việc và thiết lập chính sách xử lý ưu tiên khác nhau cho các loại thẻ (ví dụ: việc Khẩn cấp, việc Thường, việc có Deadline cố định).",
+            "Để tính toán lương thưởng cuối tháng cho các thành viên dựa trên số lượng task.",
+            "Để phân chia và thiết lập số lượng cột trên bảng Kanban.",
+          ],
+          correct: 1,
+          explanation:
+            "Classes of Service phân loại công việc dựa trên mức độ rủi ro hoặc chi phí do chậm trễ (Cost of Delay), bao gồm các nhóm phổ biến như Expedite (Khẩn cấp), Fixed Date (Ngày cố định), Standard (Thường) và Intangible (Vô hình/Không khẩn cấp).",
+        },
+        {
+          question:
+            "Nhóm dịch vụ 'Expedite' (Khẩn cấp/Hỏa tốc) trong Kanban có đặc điểm gì đặc biệt?",
+          options: [
+            "Được phép vượt qua mọi WIP Limit của các cột và cần được cả nhóm tập trung giải quyết ngay lập tức.",
+            "Bắt buộc phải có ít nhất 3 thành viên cùng viết code đồng thời.",
+            "Chỉ được phép thực hiện vào ngày cuối cùng của tuần làm việc.",
+            "Phải đợi tất cả các task khác trên bảng hoàn thành mới được phép bắt đầu.",
+          ],
+          correct: 0,
+          explanation:
+            "Thẻ Expedite đại diện cho công việc cực kỳ khẩn cấp (như sập server, lỗi bảo mật nghiêm trọng). Nó được phép bỏ qua WIP limit của các cột để cả nhóm tập trung xử lý ngay lập tức nhằm giảm thiểu thiệt hại.",
+        },
+        {
+          question:
+            "Biểu đồ luồng tích lũy (Cumulative Flow Diagram - CFD) trong Kanban dùng để theo dõi khía cạnh nào?",
+          options: [
+            "Số lượng dòng code được viết mỗi ngày của từng lập trình viên.",
+            "Trạng thái và số lượng các hạng mục công việc theo thời gian, giúp phân tích WIP, Lead Time, Cycle Time và phát hiện các điểm nghẽn.",
+            "Mức độ tương tác và thảo luận của thành viên trên group chat Zalo.",
+            "Số lượng lỗi phát hiện bởi từng tester trong suốt quá trình chạy thử nghiệm.",
+          ],
+          correct: 1,
+          explanation:
+            "Cumulative Flow Diagram (CFD) là một biểu đồ diện tích chồng phản ánh số lượng công việc ở từng trạng thái theo thời gian. Độ rộng của các vùng cho thấy WIP, độ dốc cho thấy Throughput và khoảng cách ngang cho biết Cycle Time ước tính.",
+        },
+        {
+          question:
+            "Các buổi họp/vòng lặp phản hồi định kỳ để duy trì quy trình trong Kanban được gọi chung là gì?",
+          options: [
+            "Sprints",
+            "Kanban Cadences (Các nhịp điệu Kanban)",
+            "Daily Standups",
+            "Sprint Retrospectives",
+          ],
+          correct: 1,
+          explanation:
+            "Kanban có 7 nhịp điệu phản hồi (Kanban Cadences) để duy trì hoạt động và cải tiến hệ thống liên tục, bao gồm: Daily Meeting, Replenishment, Service Delivery Review, Operations Review, Risk Review, Strategy Review, và Delivery Planning.",
+        },
+        {
+          question:
+            "Trong Kanban, khi xử lý một thẻ bị khóa (Blocked Card - do thiếu thông tin hoặc đợi bên thứ ba), quy định tốt nhất là gì?",
+          options: [
+            "Xóa thẻ đó khỏi bảng ngay lập tức và tạo một thẻ mới thay thế.",
+            "Giữ nguyên thẻ ở cột hiện tại, đánh dấu blocker (màu đỏ) và thẻ đó vẫn được tính vào WIP Limit của cột.",
+            "Di chuyển thẻ đó sang cột Done để giải phóng WIP Limit cho cột hiện tại.",
+            "Đưa thẻ đó ngược lại Backlog và không giới hạn WIP nữa.",
+          ],
+          correct: 1,
+          explanation:
+            "Thẻ bị Blocked vẫn phải nằm ở cột hiện tại và tính vào WIP limit của cột đó. Việc này nhằm mục đích gây áp lực trực quan lên team để giải quyết khó khăn của task, tránh việc bỏ qua và tiếp tục kéo task mới làm tràn lan.",
+        },
+        {
+          question:
+            "Việc sử dụng Gmail dùng chung để tạo dự án GitHub và thư mục Google Drive trong MockProject nhằm mục đích gì?",
+          options: [
+            "Để tiết kiệm dung lượng lưu trữ cá nhân của từng thành viên.",
+            "Phòng trường hợp có thành viên nghỉ thực tập giữa chừng thì tài nguyên dự án không bị mất mát hay ảnh hưởng đến nhóm.",
+            "Để giúp Mentor dễ dàng kiểm tra lịch sử đăng nhập của nhóm.",
+            "Để các thành viên dùng chung tài khoản gửi mail cá nhân cho gia đình.",
+          ],
+          correct: 1,
+          explanation:
+            "Sử dụng một Gmail chung giúp nhóm làm chủ toàn bộ tài sản số (GitHub, Drive) độc lập với tài khoản cá nhân của bất kỳ thành viên nào, đảm bảo tính liên tục của dự án.",
+        },
+        {
+          question:
+            "Quy định về việc Backup sản phẩm hàng ngày của cá nhân yêu cầu sắp xếp cấu trúc thư mục như thế nào?",
+          options: [
+            "Upload tất cả sản phẩm đè lên nhau trong một thư mục gốc.",
+            "Sử dụng một thư mục cố định, mỗi ngày tạo một thư mục nhỏ bên trong đặt tên là Day1, Day2, Day3... để lưu trữ sản phẩm tương ứng.",
+            "Tạo thư mục mới trên ổ cứng máy tính cá nhân và không cần share với ai.",
+            "Mỗi tuần tạo một thư mục lớn và xóa hết dữ liệu cũ đi.",
+          ],
+          correct: 1,
+          explanation:
+            "Mỗi thành viên phải dùng một thư mục cố định và chia thư mục con theo ngày (Day1, Day2...) để mentor có thể vào xem và review tiến độ phát triển sản phẩm của từng người một cách rõ ràng.",
+        },
+        {
+          question:
+            "Tại sao Scrum Master (Mentor) lại kiểm tra biên bản họp (Meeting Minutes) của nhóm định kỳ trên Drive?",
+          options: [
+            "Để chấm điểm kỹ năng viết tiếng Anh của thư ký cuộc họp.",
+            "Để kiểm soát giờ giấc họp có đúng 9:45 AM không.",
+            "Để audit xem nhóm có nghiêm túc thực hiện Daily Scrum và đưa ra các quyết định, phân công công việc cụ thể hay không.",
+            "Để kiểm tra xem có ai dùng Google Dịch hay không.",
+          ],
+          correct: 2,
+          explanation:
+            "Meeting Minutes là bằng chứng cho thấy nhóm có vận hành Daily Scrum thực tế, có phân công rõ trách nhiệm và đưa ra các quyết định giải quyết vấn đề của dự án hay không.",
+        },
+        {
+          question:
+            "Trong Kanban, khái niệm 'Proto-Kanban' dùng để chỉ điều gì?",
+          options: [
+            "Phiên bản Kanban nâng cao chạy trên máy chủ đám mây.",
+            "Các hệ thống trực quan hóa công việc nhưng chưa thực sự giới hạn WIP (thiếu WIP Limits).",
+            "Mô hình Kanban áp dụng trong sản xuất ô tô của Toyota.",
+            "Công cụ vẽ sơ đồ Gantt trực tuyến.",
+          ],
+          correct: 1,
+          explanation:
+            "Proto-Kanban là các bảng Kanban sơ khai chỉ tập trung vào việc hiển thị/trực quan hóa công việc (như bảng Trello đơn giản) mà chưa áp dụng WIP Limit để quản lý dòng chảy và giới hạn công việc.",
+        },
+        {
+          question:
+            "Cách tốt nhất để giảm thời gian chu kỳ (Cycle Time) của các task trong Kanban là gì?",
+          options: [
+            "Tăng WIP Limit của tất cả các cột để làm được nhiều việc hơn cùng lúc.",
+            "Giảm WIP Limit (giới hạn số việc đang làm) để thúc đẩy dứt điểm nhanh các task hiện tại.",
+            "Yêu cầu lập trình viên tăng giờ làm việc lên 12 tiếng/ngày.",
+            "Bỏ qua bước Code Review và Testing để chuyển thẳng sang Done.",
+          ],
+          correct: 1,
+          explanation:
+            "Theo định luật Little, giảm WIP sẽ giúp giảm Cycle Time trực tiếp, giúp công việc di chuyển qua hệ thống nhanh hơn và nhận phản hồi sớm hơn.",
+        },
+        {
+          question:
+            "Vai trò 'Service Delivery Manager' (SDM) trong mô hình Kanban chuyên nghiệp tương đương nhất với vai trò nào trong Scrum?",
+          options: [
+            "Product Owner",
+            "Scrum Master (SDM giúp cải tiến dòng chảy và tháo gỡ khó khăn cho team).",
+            "Developers",
+            "Business Analyst",
+          ],
+          correct: 1,
+          explanation:
+            "Service Delivery Manager (SDM) là một vai trò trong Kanban chịu trách nhiệm theo dõi chất lượng dòng chảy công việc, điều hành các buổi họp Kanban và giải quyết blockers (tương đương với Scrum Master).",
+        },
+        {
+          question:
+            "Quyết định chuyển trạng thái của một thẻ công việc trên bảng Kanban từ cột này sang cột khác dựa trên điều gì?",
+          options: [
+            "Ý kiến chủ quan của lập trình viên làm task đó.",
+            "Các quy tắc và chính sách quy trình rõ ràng (Explicit Policies) đã được thống nhất từ trước.",
+            "Yêu cầu ngẫu hứng của nhóm trưởng.",
+            "Khi hết ngày làm việc thì tự động chuyển.",
+          ],
+          correct: 1,
+          explanation:
+            "Để đảm bảo tính nhất quán và chất lượng, việc chuyển thẻ phải tuân thủ các chính sách quy trình tường minh (Explicit Policies) như Definition of Done (DoD) hoặc các tiêu chuẩn chuyển giao đã thống nhất.",
+        },
+        {
+          question:
+            "Kỷ luật gửi email báo cáo trễ hạn cho nhóm trưởng phục vụ mục đích gì sau này?",
+          options: [
+            "Để nhóm trưởng có cớ trừ điểm thành viên đó.",
+            "Để làm bằng chứng đối soát khi Scrum Master (Mentor) audit tiến độ dự án của cả nhóm.",
+            "Để tự động chuyển task đó về cột To do.",
+            "Để gửi thông báo lỗi tự động lên GitHub.",
+          ],
+          correct: 1,
+          explanation:
+            "Việc gửi email trước 1/4 thời lượng task bị trễ hạn là quy định bắt buộc của dự án, nhằm lưu lại bằng chứng minh bạch phục vụ việc audit của Scrum Master sau này.",
+        },
+        {
+          question:
+            "File WBS cá nhân của bạn nên được đặt tên chính xác theo định dạng nào?",
+          options: [
+            "WBS_TenThanhVien.xlsx",
+            "MockProject_WorkBreakDown_TenThanhVien.xlsx (Đổi phần TenThanhVien thành tên của bạn viết KHÔNG có dấu).",
+            "MockProject_WBS_NguyenVanA.xlsx",
+            "WorkBreakDown_MockProject_VanA.xlsx",
+          ],
+          correct: 1,
+          explanation:
+            "Quy định đặt tên file WBS cá nhân là: `MockProject_WorkBreakDown_TenThanhVien.xlsx` (viết không dấu). Ví dụ: `MockProject_WorkBreakDown_NguyenVanA.xlsx`.",
+        },
+        {
+          question:
+            "Khái niệm 'Swimlanes' (Đường bơi) trên bảng Kanban đại diện cho thành phần nào?",
+          options: [
+            "Là các đường kẻ ngang dùng để phân loại công việc theo mức độ ưu tiên (như Khẩn cấp - Expedite vs Thường - Standard), theo Module tính năng hoặc theo thành viên thực hiện.",
+            "Là các cột dọc đại diện cho trạng thái di chuyển của thẻ.",
+            "Là giới hạn số lượng task tối đa của một thành viên trong nhóm.",
+            "Là sơ đồ Gantt biểu diễn tiến độ thời gian của dự án.",
+          ],
+          correct: 0,
+          explanation:
+            "Swimlanes là các đường hàng ngang giúp tổ chức và phân loại các thẻ công việc trực quan trên bảng Kanban để dễ dàng quản trị theo độ ưu tiên (Classes of Service) hoặc các cấu phần khác nhau.",
+        },
+        {
+          question:
+            "Kanban khuyến khích việc cải tiến quy trình như thế nào thông qua Nguyên lý quản lý thay đổi thứ 2 và thứ 4?",
+          options: [
+            "Yêu cầu thay đổi toàn bộ cơ cấu quản lý ngay khi vừa áp dụng phương pháp.",
+            "Thống nhất theo đuổi sự cải tiến tiến hóa, liên tục (incremental) và khuyến khích tinh thần lãnh đạo ở mọi cấp độ (Kaizen).",
+            "Chỉ cho phép thay đổi quy trình nếu được PO/Mentor đồng ý bằng văn bản trước.",
+            "Cấm mọi thay đổi quy trình để duy trì tính ổn định tuyệt đối.",
+          ],
+          correct: 1,
+          explanation:
+            "Nguyên lý 2 (evolutionary change) và Nguyên lý 4 (leadership at all levels) thúc đẩy văn hóa Kaizen—cải tiến liên tục từ những hành động nhỏ và sự chủ động đóng góp của tất cả thành viên trong nhóm.",
+        },
+        {
+          question:
+            "Năng suất đầu ra (Throughput) là một chỉ số đo lường hiệu suất dòng chảy của Kanban. Định nghĩa chính xác của Throughput là gì?",
+          options: [
+            "Khoảng thời gian từ khi bắt đầu code đến khi hoàn thành task.",
+            "Số lượng hạng mục công việc (tasks/cards) hoàn thành hoàn toàn và bàn giao trong một đơn vị thời gian cố định.",
+            "Tổng số story points mà nhóm cam kết làm được trong một Sprint.",
+            "Số lượng dòng code được viết bởi lập trình viên trong một tuần.",
+          ],
+          correct: 1,
+          explanation:
+            "Throughput đo lường năng lực thực tế của hệ thống bằng cách đếm số lượng công việc đã chuyển giao thành công (Done) trên mỗi đơn vị thời gian (ví dụ: 10 tasks/tuần, 50 tasks/Sprint).",
+        },
+        {
+          question:
+            "Thực hành cốt lõi thứ 6 của Kanban - 'Improve Collaboratively, Evolve Experimentally' (Cải tiến cộng tác, tiến hóa thực nghiệm) khuyên chúng ta nên làm gì?",
+          options: [
+            "Thay đổi quy trình theo linh cảm và ý kiến chủ quan của nhóm trưởng.",
+            "Sử dụng mô hình và dữ liệu thực tế đo lường được (như Cycle Time, Throughput) để đưa ra giả thuyết và thử nghiệm cải tiến quy trình theo nhóm.",
+            "Cấm các thành viên thảo luận về quy trình để tập trung viết code.",
+            "Bắt chước 100% quy trình của nhóm khác mà không cần tùy chỉnh.",
+          ],
+          correct: 1,
+          explanation:
+            "Thực hành thứ 6 khuyến khích việc sử dụng phương pháp khoa học và dữ liệu thực tế để thử nghiệm, đánh giá các thay đổi quy trình, đảm bảo cải tiến mang tính tiến hóa bền vững.",
+        },
+        {
+          question:
+            "Triết lý sản xuất Just-in-Time (JIT) bắt nguồn từ Toyota làm nền tảng cho Kanban được phát biểu như thế nào?",
+          options: [
+            "Sản xuất càng nhiều sản phẩm càng tốt để dự trữ sẵn cho tương lai.",
+            "Chỉ sản xuất những gì cần thiết, khi cần thiết và với số lượng cần thiết nhằm loại bỏ lãng phí.",
+            "Chỉ sản xuất sản phẩm khi lập trình viên cảm thấy sẵn sàng.",
+            "Sản xuất sản phẩm nhanh nhất có thể bất kể chất lượng sản phẩm.",
+          ],
+          correct: 1,
+          explanation:
+            "Just-in-Time (JIT) là cốt lõi của sản xuất tinh gọn, giúp tối ưu hóa luồng công việc bằng cách sản xuất đúng thứ cần thiết, đúng lúc và đúng lượng, loại bỏ lãng phí hàng tồn kho hay công việc ùn ứ.",
+        },
+      ];
+    </script>
+    <script src="engine.js"></script>
+  </body>
 </html>

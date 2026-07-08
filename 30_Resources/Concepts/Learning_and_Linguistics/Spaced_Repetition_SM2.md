@@ -3,6 +3,7 @@ tags: [type/algorithm, topic/learning, lang/typescript]
 date: 2026-04-29
 aliases: [SuperMemo 2, SRS, Forgetting Curve]
 ---
+
 # Spaced Repetition (SM-2 Algorithm)
 
 ## TL;DR
@@ -43,7 +44,7 @@ export const calculateSM2 = (state: Sm2State, grade: number): Sm2State => {
     interval = 1;
   }
 
-  easiness += 0.1 - (5 - grade) *(0.08 + (5 - grade)* 0.02);
+  easiness += 0.1 - (5 - grade) * (0.08 + (5 - grade) * 0.02);
 
   // BUG (Prevented): Hell loop clamping
   easiness = Math.max(1.3, easiness);
@@ -53,6 +54,7 @@ export const calculateSM2 = (state: Sm2State, grade: number): Sm2State => {
 ```
 
 ---
+
 **Related Notes:**
 
 - Áp dụng thuật toán này vào nhóm từ: [[Phonetic_Chunking]]

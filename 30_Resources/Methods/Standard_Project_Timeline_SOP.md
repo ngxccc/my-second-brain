@@ -3,6 +3,7 @@ tags: [type/method, topic/engineering-management, topic/sdlc]
 date: 2026-04-29
 aliases: [Capstone Roadmap, Software Dev Lifecycle, Project SOP]
 ---
+
 # Standard Project Timeline SOP
 
 ## TL;DR
@@ -17,15 +18,16 @@ Quy trình 16 tuần tiêu chuẩn (SOP) định hình Vòng đời Phát triể
 ## Practical Implementation
 
 - **Roadmap 16 Tuần:**
-  - *Phase 1: The Blueprint (Tuần 1-3):* Phân tích Requirement, chốt User Flow, thiết kế ERD Database, init repo và cấu trúc thư mục.
-  - *Phase 2: The Core / MVP (Tuần 4-8):* Xây dựng Auth (Gatekeeper), phân quyền Role, và hoàn thiện bộ CRUD cho các Entity lõi (Happy Path).
-  - *Phase 3: The Polish (Tuần 9-12):* Xử lý UI/UX (Skeleton, Error boundary), Responsive, và viết Integration Test cho luồng chính.
-  - *Phase 4: The Defense (Tuần 13-16):* Triển khai Deploy (Vercel/VPS), viết tài liệu (README, Báo cáo), thiết kế Slide và tập dượt Demo.
+  - _Phase 1: The Blueprint (Tuần 1-3):_ Phân tích Requirement, chốt User Flow, thiết kế ERD Database, init repo và cấu trúc thư mục.
+  - _Phase 2: The Core / MVP (Tuần 4-8):_ Xây dựng Auth (Gatekeeper), phân quyền Role, và hoàn thiện bộ CRUD cho các Entity lõi (Happy Path).
+  - _Phase 3: The Polish (Tuần 9-12):_ Xử lý UI/UX (Skeleton, Error boundary), Responsive, và viết Integration Test cho luồng chính.
+  - _Phase 4: The Defense (Tuần 13-16):_ Triển khai Deploy (Vercel/VPS), viết tài liệu (README, Báo cáo), thiết kế Slide và tập dượt Demo.
 - **Chiến thuật phòng ngự:**
-  - *Code Freeze:* Đóng băng trạng thái code, từ chối mọi Feature Creep trước deadline.
-  - *Tránh Demo Effect:* Lên kịch bản test (Scripted Demo) hạn chế sai số và luôn có Video Backup.
+  - _Code Freeze:_ Đóng băng trạng thái code, từ chối mọi Feature Creep trước deadline.
+  - _Tránh Demo Effect:_ Lên kịch bản test (Scripted Demo) hạn chế sai số và luôn có Video Backup.
 
 ---
+
 **Related Notes:**
 
 - Cấu trúc thư mục áp dụng ở tuần 3: [[Modular_Monolith_Architecture]]

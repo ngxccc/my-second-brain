@@ -3,6 +3,7 @@ tags: [type/concept, topic/backend, pattern/api-design]
 date: 2026-04-28
 aliases: [API Versioning, Backward Compatibility]
 ---
+
 # API Versioning Strategies
 
 ## TL;DR
@@ -34,16 +35,16 @@ src/
 
 ```typescript
 // src/app/api/v2/users/route.ts
-import { NextResponse } from 'next/server';
-import { UsersService } from '@/modules/users/users.service';
+import { NextResponse } from "next/server";
+import { UsersService } from "@/modules/users/users.service";
 
 export async function GET(request: Request) {
   // HACK: Format data theo chuẩn v2 contract để không làm gãy Frontend mới
   const users = await UsersService.getAll();
-  const v2Data = users.map(u => ({
+  const v2Data = users.map((u) => ({
     id: u.id,
     full_name: u.fullName, // Field mới đổi tên ở v2
-    created_timestamp: new Date(u.createdAt).getTime()
+    created_timestamp: new Date(u.createdAt).getTime(),
   }));
 
   return NextResponse.json({ data: v2Data });
@@ -51,6 +52,7 @@ export async function GET(request: Request) {
 ```
 
 ---
+
 **Related Notes:**
 
 - Nguyên lý thiết kế API chuẩn: [[REST_API_Design]]

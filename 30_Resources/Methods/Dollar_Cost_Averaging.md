@@ -3,6 +3,7 @@ tags: [type/method, topic/finance, topic/investing]
 date: 2026-04-29
 aliases: [DCA, Trung bình giá, Đầu tư định kỳ]
 ---
+
 # Dollar Cost Averaging (DCA)
 
 ## TL;DR
@@ -22,6 +23,7 @@ Chiến thuật chia nhỏ tổng vốn để giải ngân định kỳ (hàng t
 - **Out of Memory (Cạn tiền):** Không dùng tiền sinh hoạt phí hoặc Quỹ khẩn cấp để DCA. Nếu kẹt tiền giữa chừng, chuỗi DCA sẽ bị đứt gãy và bạn có nguy cơ phải bán giải chấp tài sản đúng vùng đáy.
 
 ---
+
 **Related Notes:**
 
 - Rủi ro ôm tài sản rác khi áp dụng sai DCA: [[Opportunity_Cost_Hold]]

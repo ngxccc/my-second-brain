@@ -3,6 +3,7 @@ tags: [type/concept, topic/architecture, pattern/clean-code]
 date: 2026-04-28
 aliases: [SDP, Stable Dependencies Principle, Circular Dependency]
 ---
+
 # Shared Module Dependency Rule
 
 ## TL;DR
@@ -22,7 +23,7 @@ Quy tắc kiến trúc quy định luồng phụ thuộc (import) một chiều 
 
 ```tsx
 // ❌ BAD: Shared Component vi phạm luật (Import từ Feature)
-import { navigateToProfile } from '@/features/users';
+import { navigateToProfile } from "@/features/users";
 
 export const SharedButton = ({ userId }) => {
   return <button onClick={() => navigateToProfile(userId)}>Click</button>;
@@ -38,6 +39,7 @@ export const SharedButton = ({ onClick }: ButtonProps) => {
 ```
 
 ---
+
 **Related Notes:**
 
 - Nơi áp dụng quy tắc này nhiều nhất: [[Modular_Monolith_Architecture]]

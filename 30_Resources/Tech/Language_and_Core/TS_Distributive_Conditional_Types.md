@@ -3,6 +3,7 @@ tags: [type/concept, topic/typescript, advanced-types]
 date: 2026-04-28
 aliases: [Distributive Conditionals, Disable Distribution]
 ---
+
 # TS Distributive Conditional Types
 
 ## TL;DR
@@ -40,6 +41,7 @@ type IsNever<T> = [T] extends [never] ? true : false;
 ```
 
 ---
+
 **Related Notes:**
 
 - Nguồn gốc của hành vi này: [[TS_Union_Types]]

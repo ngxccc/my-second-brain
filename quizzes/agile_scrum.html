@@ -1,389 +1,458 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="vi">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Agile & Scrum Quiz - Comprehensive Review (30 Questions)</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Agile & Scrum Quiz - Comprehensive Review (30 Questions)</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>AGILE & SCRUM</h1>
+        <p>Comprehensive Scrum Review (30 Questions)</p>
+      </header>
 
-  <div class="container">
-    <header>
-      <h1>AGILE & SCRUM</h1>
-      <p>Comprehensive Scrum Review (30 Questions)</p>
-    </header>
-
-    <div class="card" id="quiz-card">
-      <div class="progress-bar-container">
-        <div class="progress-bar" id="progress-bar"></div>
-      </div>
-
-      <div class="quiz-screen" id="quiz-screen">
-        <div class="question-info" id="question-info">QUESTION 1 OF 30</div>
-        <div class="question-text" id="question-text">Câu hỏi đang được tải...</div>
-
-        <div class="options-list" id="options-list">
-          <!-- Options will be rendered dynamically -->
+      <div class="card" id="quiz-card">
+        <div class="progress-bar-container">
+          <div class="progress-bar" id="progress-bar"></div>
         </div>
 
-        <div class="controls">
-          <div style="color: var(--color-secondary); font-size: 0.85rem;" id="feedback-msg">Chọn câu trả lời và nhấn Submit</div>
-          <button class="btn-primary" id="action-btn" disabled>Submit</button>
+        <div class="quiz-screen" id="quiz-screen">
+          <div class="question-info" id="question-info">QUESTION 1 OF 30</div>
+          <div class="question-text" id="question-text">
+            Câu hỏi đang được tải...
+          </div>
+
+          <div class="options-list" id="options-list">
+            <!-- Options will be rendered dynamically -->
+          </div>
+
+          <div class="controls">
+            <div
+              style="color: var(--color-secondary); font-size: 0.85rem"
+              id="feedback-msg"
+            >
+              Chọn câu trả lời và nhấn Submit
+            </div>
+            <button class="btn-primary" id="action-btn" disabled>Submit</button>
+          </div>
+
+          <div class="explanation" id="explanation-box">
+            <div class="explanation-title" id="explanation-title">
+              Giải thích
+            </div>
+            <div id="explanation-text">...</div>
+          </div>
         </div>
 
-        <div class="explanation" id="explanation-box">
-          <div class="explanation-title" id="explanation-title">Giải thích</div>
-          <div id="explanation-text">...</div>
+        <div class="results-screen" id="results-screen">
+          <div class="score-circle">
+            <div class="score-num" id="final-score">0</div>
+            <div class="score-label">Đúng</div>
+          </div>
+          <div class="result-msg" id="result-msg">Hoàn thành tốt!</div>
+          <button class="btn-primary" onclick="restartQuiz()">
+            Làm lại Quiz
+          </button>
         </div>
-      </div>
-
-      <div class="results-screen" id="results-screen">
-        <div class="score-circle">
-          <div class="score-num" id="final-score">0</div>
-          <div class="score-label">Đúng</div>
-        </div>
-        <div class="result-msg" id="result-msg">Hoàn thành tốt!</div>
-        <button class="btn-primary" onclick="restartQuiz()">Làm lại Quiz</button>
       </div>
     </div>
-  </div>
 
-  <script>
-    const questions = [
-      {
-        question: "Trong Scrum, vai trò nào chịu trách nhiệm chính trong việc quản lý Product Backlog và tối ưu hóa giá trị của sản phẩm?",
-        options: [
-          "Scrum Master (SM)",
-          "Product Owner (PO)",
-          "Development Team",
-          "Technical Leader"
-        ],
-        correct: 1,
-        explanation: "Theo Scrum Guide, Product Owner (PO) chịu trách nhiệm tối đa hóa giá trị của sản phẩm được tạo ra bởi Scrum Team, đồng thời quản lý hiệu quả Product Backlog (như định nghĩa User Story, sắp xếp thứ tự ưu tiên)."
-      },
-      {
-        question: "Đâu là định dạng chuẩn của một User Story dùng để định nghĩa yêu cầu trong Product Backlog?",
-        options: [
-          "Tôi muốn làm [chức năng] trong thời gian [deadline] để [kết quả].",
-          "Là [vai trò], tôi muốn [chức năng] để [lợi ích].",
-          "Hệ thống phải có chức năng [chức năng] cho đối tượng [vai trò].",
-          "Mentor yêu cầu làm [chức năng] để dự án [đạt điểm cao]."
-        ],
-        correct: 1,
-        explanation: "User Story được viết dưới dạng ngôn ngữ tự nhiên từ góc nhìn của người dùng cuối: 'Là [vai trò/actor], tôi muốn [chức năng/action] để [lợi ích/value]'."
-      },
-      {
-        question: "Theo Scrum Guide 2020, Daily Scrum dành cho đối tượng nào và giới hạn thời gian (time-box) là bao lâu?",
-        options: [
-          "Dành cho cả Scrum Team (PO, SM, Dev) - Họp trong 30 phút.",
-          "Dành riêng cho Developers của Scrum Team - Họp tối đa 15 phút.",
-          "Dành cho Developers và Scrum Master - Họp trong 20 phút.",
-          "Dành cho Product Owner và Khách hàng - Họp trong 15 phút."
-        ],
-        correct: 1,
-        explanation: "Daily Scrum là sự kiện dài tối đa 15 phút dành riêng cho các Developers của Scrum Team để kiểm tra tiến độ hướng tới Sprint Goal và điều chỉnh Sprint Backlog."
-      },
-      {
-        question: "Thay đổi quan trọng nào đối với Daily Scrum được cập nhật trong phiên bản Scrum Guide 2020?",
-        options: [
-          "Bắt buộc viết biên bản họp bằng tiếng Anh gửi cho PO.",
-          "Lược bỏ cấu trúc bắt buộc '3 câu hỏi' truyền thống nhằm tăng tính chủ động và tập trung cho Developers.",
-          "Yêu cầu Scrum Master trực tiếp điều phối và phân công công việc hàng ngày.",
-          "Chuyển từ họp hàng ngày sang họp 2 ngày một lần."
-        ],
-        correct: 1,
-        explanation: "Scrum Guide 2020 lược bỏ cấu trúc bắt buộc 3 câu hỏi ('Hôm qua làm gì, hôm nay làm gì, blocker gì') nhằm giúp Developers tự chọn cách họp thích hợp để tập trung vào Sprint Goal."
-      },
-      {
-        question: "Đâu là 3 trụ cột chính cấu thành nên sự vận hành của Chủ nghĩa thực nghiệm (Empiricism) trong Scrum?",
-        options: [
-          "Planning (Kế hoạch), Execution (Thực thi), Review (Đánh giá)",
-          "Tính minh bạch (Transparency), Tính thanh tra (Inspection), Tính thích ứng (Adaptation)",
-          "Product Owner, Scrum Master, Development Team",
-          "Sprint Backlog, Product Backlog, Increment"
-        ],
-        correct: 1,
-        explanation: "Ba trụ cột của lý thuyết quản lý thực nghiệm nâng đỡ Scrum là: Transparency (Minh bạch), Inspection (Thanh tra), và Adaptation (Thích ứng)."
-      },
-      {
-        question: "Trong cuộc họp nào thì Development Team tiến hành Demo các tính năng đã hoàn thành (working software) để PO nghiệm thu?",
-        options: [
-          "Sprint Planning",
-          "Daily Scrum",
-          "Sprint Review",
-          "Sprint Retrospective"
-        ],
-        correct: 2,
-        explanation: "Sprint Review diễn ra vào cuối Sprint. Tại đây, team trình diễn (Demo) kết quả công việc đã hoàn thành để PO nghiệm thu dựa trên Acceptance Criteria."
-      },
-      {
-        question: "Mục tiêu cốt lõi của cuộc họp cải tiến Sprint Retrospective là gì?",
-        options: [
-          "Báo cáo tiến độ hoàn thành code cho Product Owner.",
-          "Đánh giá và lập kế hoạch cải tiến về con người, quy trình làm việc và công cụ cho Sprint tiếp theo.",
-          "Phân rã các User Story thành các task kỹ thuật nhỏ.",
-          "Thuyết trình slide tiếng Anh và quay video gửi cho khách hàng."
-        ],
-        correct: 1,
-        explanation: "Sprint Retrospective là cơ hội để Scrum Team tự nhìn nhận lại bản thân, đánh giá những điểm tốt/chưa tốt về quy trình, công cụ, con người để tìm giải pháp cải tiến cho Sprint kế tiếp."
-      },
-      {
-        question: "Ai là người chịu trách nhiệm loại bỏ các trở ngại (blockers) và giúp Scrum Team tuân thủ quy trình Scrum?",
-        options: [
-          "Product Owner (PO)",
-          "Scrum Master (SM)",
-          "Technical Leader",
-          "Project Manager"
-        ],
-        correct: 1,
-        explanation: "Scrum Master (SM) là người phục vụ Scrum Team bằng cách loại bỏ các rào cản (blockers), bảo vệ team khỏi các tác động bên ngoài và đảm bảo mọi người hiểu, tuân thủ Scrum."
-      },
-      {
-        question: "Theo quy định của Scrum Guide, giới hạn thời gian (time-box) tối đa cho một Sprint là bao lâu?",
-        options: [
-          "Chính xác là 2 tuần.",
-          "1 tháng hoặc ít hơn.",
-          "Tùy thuộc vào thời gian bàn giao dự án của khách hàng.",
-          "Chính xác là 1 tuần."
-        ],
-        correct: 1,
-        explanation: "Theo Scrum Guide, Sprint là một chu kỳ lặp lại cố định có thời lượng tối đa là 1 tháng (hoặc ngắn hơn) để duy trì sự nhất quán."
-      },
-      {
-        question: "Trong cuộc họp lập kế hoạch Sprint Planning, Scrum Team phải giải quyết hai câu hỏi cốt lõi nào?",
-        options: [
-          "Ai sẽ làm nhóm trưởng và tạo các group chat ở đâu?",
-          "Sprint này có thể bàn giao cái gì (What) và làm thế nào để đạt được phần việc đó (How)?",
-          "Dự án dùng công nghệ gì và thiết kế database ra sao?",
-          "Làm cách nào để fix bug và làm slide báo cáo?"
-        ],
-        correct: 1,
-        explanation: "Sprint Planning tập trung trả lời 2 câu hỏi chính: 1) What can be delivered in this Sprint? (Sprint này có thể bàn giao phần gia tăng sản phẩm nào?) và 2) How will the work needed be achieved? (Làm thế nào để hoàn thành công việc đó?)."
-      },
-      {
-        question: "Điều gì xảy ra với các User Story chưa hoàn thành khi Sprint kết thúc?",
-        options: [
-          "Được tự động coi là 'Xong' nếu đã hoàn thành trên 80% code.",
-          "Được đưa ngược trở lại Product Backlog để Product Owner tái đánh giá và sắp xếp ưu tiên.",
-          "Bắt buộc cả team phải OT làm cho xong trước khi mở Sprint mới.",
-          "Xóa bỏ hoàn toàn khỏi dự án."
-        ],
-        correct: 1,
-        explanation: "Mọi phần việc chưa hoàn thành (chưa đạt Definition of Done) tại thời điểm kết thúc Sprint sẽ không được demo, không được tính vào Increment và phải được đưa trở lại Product Backlog để PO xử lý."
-      },
-      {
-        question: "Phương pháp Phân rã công việc (WBS) khuyến nghị thời gian thực hiện lý tưởng cho mỗi Task kỹ thuật là bao lâu?",
-        options: [
-          "Từ 15 đến 30 phút để cập nhật liên tục.",
-          "Từ 2 đến 4 tiếng (Nếu task lớn hơn 8 tiếng thì bắt đầu có rủi ro vỡ tiến độ và cần phân rã thêm).",
-          "Khoảng 1 đến 2 ngày để dễ quản lý.",
-          "Càng dài càng tốt để tránh áp lực cập nhật."
-        ],
-        correct: 1,
-        explanation: "Thời gian lý tưởng cho một task kỹ thuật sau khi phân rã là 2-4 tiếng. Quy tắc này giúp ước lượng chính xác tiến độ trong ngày và phát hiện sớm rủi ro tắc nghẽn."
-      },
-      {
-        question: "Ai là người quyết định thời lượng (chiều dài) của Sprint và thời lượng này có được thay đổi giữa chừng không?",
-        options: [
-          "Do khách hàng áp đặt và thay đổi tùy thuộc vào độ khó của task.",
-          "Cả Scrum Team thống nhất lựa chọn và thời lượng này phải được cố định xuyên suốt, không thay đổi giữa chừng trong một Sprint.",
-          "Nhóm trưởng Dev tự quyết định mỗi tuần một thời lượng khác nhau.",
-          "Scrum Master thay đổi linh hoạt mỗi ngày."
-        ],
-        correct: 1,
-        explanation: "Thời lượng Sprint (ví dụ: 1 tuần, 2 tuần) do cả Scrum Team thống nhất chọn lựa từ đầu để tạo nhịp điệu làm việc ổn định (cadence) và tuyệt đối không được thay đổi giữa chừng khi Sprint đang chạy."
-      },
-      {
-        question: "Trong Scrum, vai trò nào thực hiện việc tự tổ chức (self-organizing) và chịu trách nhiệm kỹ thuật để tạo ra một Increment chạy được?",
-        options: [
-          "Product Owner",
-          "Scrum Master",
-          "Developers (Development Team)",
-          "Project Manager"
-        ],
-        correct: 2,
-        explanation: "Developers (nhóm phát triển bao gồm Dev, Tester, BA) là những người trực tiếp tự tổ chức công việc và chịu trách nhiệm kỹ thuật hoàn toàn đối với việc tạo ra Increment chạy được ở cuối Sprint."
-      },
-      {
-        question: "Ai có thẩm quyền mời các bên liên quan (stakeholders) bên ngoài tham dự cuộc họp Sprint Review để lấy phản hồi?",
-        options: [
-          "Scrum Master",
-          "Product Owner (PO)",
-          "Bất kỳ ai trong nhóm Dev",
-          "Nhóm trưởng Dev"
-        ],
-        correct: 1,
-        explanation: "Product Owner là người làm việc trực tiếp với khách hàng và stakeholders. Do đó, PO có quyền hạn quyết định mời những stakeholders nào tham gia Sprint Review."
-      },
-      {
-        question: "Những ai bắt buộc phải tham gia vào cuộc họp rút kinh nghiệm cải tiến Sprint Retrospective?",
-        options: [
-          "Chỉ có Developers và Scrum Master.",
-          "Toàn bộ Scrum Team (bao gồm Product Owner, Scrum Master và Developers).",
-          "Chỉ có Scrum Master và Product Owner.",
-          "Toàn bộ Scrum Team cùng với tất cả khách hàng bên ngoài."
-        ],
-        correct: 1,
-        explanation: "Sprint Retrospective là cuộc họp nội bộ của Scrum Team để tự soi chiếu và cải tiến. Do đó, bắt buộc phải có đầy đủ 3 vai trò: PO, SM, và Developers tham gia."
-      },
-      {
-        question: "Bảng quản lý công việc (Kanban/Scrum Board) nên được cập nhật vào thời điểm nào để đảm bảo tính Minh Bạch (Transparency)?",
-        options: [
-          "Chỉ cập nhật 1 lần vào cuối Sprint trước khi demo.",
-          "Cập nhật ngay lập tức và liên tục khi có sự thay đổi trạng thái của task.",
-          "Cập nhật định kỳ 2 ngày một lần.",
-          "Đợi Scrum Master nhắc nhở mới cập nhật."
-        ],
-        correct: 1,
-        explanation: "Để đảm bảo tính Minh Bạch (trụ cột Transparency), thông tin trên Scrum Board phải phản ánh đúng thực tế thời gian thực. Bất kỳ khi nào một task chuyển trạng thái, thành viên phải cập nhật ngay."
-      },
-      {
-        question: "Định nghĩa Hoàn thành (Definition of Done - DoD) đóng vai trò gì trong khung làm việc Scrum?",
-        options: [
-          "Là danh sách các công việc mà PO muốn làm trong tương lai.",
-          "Là sự thống nhất chung của team về các tiêu chí kỹ thuật cần đạt để một phần công việc được coi là hoàn thành hoàn toàn và sẵn sàng tích hợp.",
-          "Là bảng mô tả nghiệp vụ viết bởi BA.",
-          "Là checklist các câu hỏi kiểm tra của Scrum Master."
-        ],
-        correct: 1,
-        explanation: "Definition of Done (DoD) tạo ra sự hiểu biết chung về mặt chất lượng kỹ thuật (ví dụ: đã test, đã review code, không lỗi bảo mật). Một công việc chỉ được coi là hoàn thành và đưa vào Increment khi nó thỏa mãn DoD."
-      },
-      {
-        question: "Scrum Master phục vụ Product Owner (PO) thông qua các hành động nào dưới đây?",
-        options: [
-          "Viết code thay và vẽ Figma cho PO.",
-          "Giúp tìm kiếm các kỹ thuật quản lý Product Backlog hiệu quả và hỗ trợ PO hiểu về việc lập kế hoạch sản phẩm thực nghiệm.",
-          "Trực tiếp quản lý và phân chia task cho đội Dev thay cho PO.",
-          "Thay PO đưa ra quyết định về nghiệp vụ của sản phẩm."
-        ],
-        correct: 1,
-        explanation: "Scrum Master hỗ trợ PO bằng cách hướng dẫn các kỹ thuật quản lý backlog hiệu quả, tổ chức cuộc họp lên kế hoạch thực nghiệm, và đảm bảo PO hiểu rõ quy trình Scrum."
-      },
-      {
-        question: "Nếu một thành viên trong nhóm gặp khó khăn (blocker) làm ngưng trệ tiến độ công việc, họ nên xử lý thế nào?",
-        options: [
-          "Âm thầm tự tìm cách giải quyết trong nhiều ngày để tránh làm phiền người khác.",
-          "Chủ động báo cáo ngay tại Daily Scrum gần nhất hoặc liên hệ trực tiếp với Scrum Master để được hỗ trợ tháo gỡ sớm.",
-          "Chờ đợi đến cuối Sprint họp Retrospective mới đem ra thảo luận.",
-          "Bỏ qua task đó và chuyển sang làm task khác mà không báo cáo."
-        ],
-        correct: 1,
-        explanation: "Daily Scrum là sự kiện hàng ngày để phát hiện blockers. Thành viên phải chủ động nêu khó khăn để Scrum Master hoặc các thành viên khác hỗ trợ tháo gỡ kịp thời, tránh trễ tiến độ Sprint."
-      },
-      {
-        question: "Khái niệm 'Sprint Goal' (Mục tiêu Sprint) trong Scrum đóng vai trò gì và do ai tạo ra?",
-        options: [
-          "Là mục tiêu duy nhất cho Sprint do PO và Developers cùng tạo ra trong Sprint Planning, đóng vai trò là kim chỉ nam cho Developers trong suốt Sprint.",
-          "Là bảng excel ghi nhận thời gian làm việc do Scrum Master tự động tạo ra.",
-          "Là danh sách các bug cần sửa do Tester đề xuất.",
-          "Là deadline của cả dự án 1 tháng do Mentor chỉ định."
-        ],
-        correct: 0,
-        explanation: "Sprint Goal là một cam kết chính thức của Scrum Team, cung cấp mục tiêu và định hướng cho các Developers trong Sprint. Nó được thảo luận và tạo ra trong buổi Sprint Planning."
-      },
-      {
-        question: "Sự khác biệt cơ bản về tính sở hữu và tính thay đổi giữa Product Backlog và Sprint Backlog là gì?",
-        options: [
-          "Product Backlog thuộc quyền sở hữu và quản lý của PO; Sprint Backlog thuộc quyền sở hữu của Developers và có thể được điều chỉnh linh hoạt trong Sprint để đạt Sprint Goal.",
-          "Product Backlog do Developers quản lý; Sprint Backlog do Scrum Master sở hữu và cấm thay đổi.",
-          "Cả hai backlog đều do PO sở hữu và cấm mọi thay đổi sau khi Sprint bắt đầu.",
-          "Cả hai backlog đều thuộc sở hữu của khách hàng."
-        ],
-        correct: 0,
-        explanation: "Product Backlog là danh sách yêu cầu chung của sản phẩm do PO quản lý. Sprint Backlog là kế hoạch thực thi cụ thể của Developers trong Sprint; Developers sở hữu Sprint Backlog và có thể thêm/bớt/sửa các task kỹ thuật trong suốt Sprint miễn là không ảnh hưởng đến Sprint Goal."
-      },
-      {
-        question: "Trong quy trình vận hành MockProject, khái niệm 'Sprint' được biểu diễn bằng tính năng nào trên GitHub?",
-        options: [
-          "GitHub Issues",
-          "GitHub Pull Requests",
-          "GitHub Milestones (Với tên gọi Sprint1 và deadline là 1 tháng)",
-          "GitHub Labels"
-        ],
-        correct: 2,
-        explanation: "Để mô phỏng quy trình Agile/Scrum mà không tốn chi phí dùng JIRA, MockProject quy định sử dụng tính năng GitHub Milestones để đại diện cho Sprints (Ví dụ tạo Milestone tên Sprint1 với thời gian chạy là 1 tháng)."
-      },
-      {
-        question: "Quy định bắt buộc về việc ghi Biên bản họp (Meeting Minutes) trong MockProject là gì?",
-        options: [
-          "Viết bằng tiếng Anh 100%, phân công luân phiên mỗi ngày 01 thư ký khác nhau, và upload file lên Google Drive của nhóm hàng ngày.",
-          "Viết bằng tiếng Việt, do nhóm trưởng viết cố định tất cả các ngày, và lưu ở máy cá nhân.",
-          "Chỉ cần ghi chép khi có tranh cãi giữa các thành viên.",
-          "Viết bằng tiếng Anh và gửi qua Zalo cho Mentor vào cuối tuần."
-        ],
-        correct: 0,
-        explanation: "Meeting Minutes bắt buộc viết bằng 100% tiếng Anh, phân công luân phiên mỗi ngày một thành viên khác nhau viết để luyện tập, và đưa lên Drive chung hàng ngày để mentor audit định kỳ."
-      },
-      {
-        question: "Định nghĩa chính xác về 'Increment' (Mảnh tăng trưởng) theo Scrum Guide 2020 là gì?",
-        options: [
-          "Là bản thiết kế Figma của toàn bộ hệ thống.",
-          "Là phần sản phẩm có thể sử dụng và chạy được (usable/releasable) được tích lũy từ các Sprint, và chỉ được ghi nhận khi thỏa mãn Definition of Done (DoD).",
-          "Là kế hoạch phân rã công việc WBS của nhóm.",
-          "Là các issue đã đóng trên GitHub Kanban."
-        ],
-        correct: 1,
-        explanation: "Increment là một mảnh tăng trưởng sản phẩm hoàn chỉnh, chạy được và có giá trị sử dụng. Nó là kết quả của các User Story đã hoàn thành đạt chuẩn Definition of Done (DoD) trong Sprint."
-      },
-      {
-        question: "5 giá trị cốt lõi của Scrum nâng đỡ 3 trụ cột thực nghiệm là gì?",
-        options: [
-          "Lập kế hoạch, Thực thi, Kiểm thử, Bàn giao, Cải tiến.",
-          "Cam kết (Commitment), Can đảm (Courage), Tập trung (Focus), Cởi mở (Openness), Tôn trọng (Respect).",
-          "Nhanh chóng, Linh hoạt, Minh bạch, Tiết kiệm, Hiệu quả.",
-          "Tự quản, Đa chức năng, Thích ứng, Tự tin, Tôn trọng."
-        ],
-        correct: 1,
-        explanation: "5 giá trị Scrum bao gồm: Cam kết (Commitment), Can đảm (Courage), Tập trung (Focus), Cởi mở (Openness), và Tôn trọng (Respect). Các giá trị này định hướng hành vi và giao tiếp của Scrum Team."
-      },
-      {
-        question: "Ai là người duy nhất có thẩm quyền hủy bỏ (Cancel) một Sprint đang diễn ra, và trong điều kiện nào?",
-        options: [
-          "Scrum Master, khi thấy Developers cãi nhau nhiều.",
-          "Product Owner (PO), khi thấy Mục tiêu Sprint (Sprint Goal) trở nên lỗi thời do thay đổi kinh doanh hoặc công nghệ.",
-          "Developers, khi thấy khối lượng việc quá nhiều không làm kịp.",
-          "Khách hàng, khi họ không muốn trả tiền nữa."
-        ],
-        correct: 1,
-        explanation: "Theo Scrum Guide, chỉ có Product Owner mới có quyền hủy Sprint nếu mục tiêu của Sprint đó không còn giá trị thực tế nữa."
-      },
-      {
-        question: "Khi khởi tạo một Task (Issue) trên GitHub Projects trong MockProject, những trường thông tin nào bắt buộc phải điền đầy đủ?",
-        options: [
-          "Chỉ cần viết tiêu đề task.",
-          "Tiêu đề, Mô tả chi tiết kèm tiêu chí nghiệm thu (Acceptance Criteria), gán Assignees thực hiện, chọn Milestone (Sprint1), và gán nhãn label 'Task'.",
-          "Tiêu đề, link code Git, và nhãn 'On-time'.",
-          "Tiêu đề và gán nhãn 'Bug'."
-        ],
-        correct: 1,
-        explanation: "Quy định vận hành GitHub Project yêu cầu khi tạo task dưới dạng Issue phải điền rõ: tiêu đề, đặc tả/mô tả kèm tiêu chí nghiệm thu (Acceptance Criteria), gán người làm (Assignee), gán vào Sprint (Milestone), và thêm nhãn 'Task' để phân loại."
-      },
-      {
-        question: "Quy định backup sản phẩm cá nhân hàng ngày trong MockProject yêu cầu cấu trúc thư mục như thế nào?",
-        options: [
-          "Upload tất cả tệp vào thư mục gốc của Drive cá nhân.",
-          "Sử dụng một thư mục cha cố định, bên trong chia các thư mục con theo ngày (Day1, Day2, Day3...), share quyền Public và gửi link cho mentor.",
-          "Chỉ cần copy code vào USB cá nhân.",
-          "Upload trực tiếp lên GitHub của mentor."
-        ],
-        correct: 1,
-        explanation: "Mỗi thành viên phải dùng một thư mục cố định trên Drive cá nhân, chia các thư mục con Day1, Day2... để backup sản phẩm mới nhất hàng ngày, share public link để mentor có thể vào review bất cứ lúc nào."
-      },
-      {
-        question: "Sự khác biệt chính về vai trò điều phối cuộc họp Daily Scrum giữa Scrum Guide cũ và Scrum Guide 2020 là gì?",
-        options: [
-          "Cấm Scrum Master tham gia cuộc họp.",
-          "Developers tự tổ chức và điều phối cuộc họp Daily Scrum; Scrum Master không còn là người bắt buộc phải điều hành hay làm chủ trì cuộc họp này nữa.",
-          "Product Owner là người bắt buộc phải chủ trì cuộc họp Daily Scrum.",
-          "Bắt buộc phải có đại diện khách hàng điều phối cuộc họp."
-        ],
-        correct: 1,
-        explanation: "Trong Scrum Guide 2020, Daily Scrum là sự kiện được thiết kế riêng dành cho các Developers để tự quản lý tiến độ. Scrum Master chỉ hướng dẫn quy trình và đảm bảo cuộc họp diễn ra trong giới hạn 15 phút chứ không điều hành trực tiếp."
-      }
-    ];
-  </script>
-  <script src="engine.js"></script>
-
-</body>
+    <script>
+      const questions = [
+        {
+          question:
+            "Trong Scrum, vai trò nào chịu trách nhiệm chính trong việc quản lý Product Backlog và tối ưu hóa giá trị của sản phẩm?",
+          options: [
+            "Scrum Master (SM)",
+            "Product Owner (PO)",
+            "Development Team",
+            "Technical Leader",
+          ],
+          correct: 1,
+          explanation:
+            "Theo Scrum Guide, Product Owner (PO) chịu trách nhiệm tối đa hóa giá trị của sản phẩm được tạo ra bởi Scrum Team, đồng thời quản lý hiệu quả Product Backlog (như định nghĩa User Story, sắp xếp thứ tự ưu tiên).",
+        },
+        {
+          question:
+            "Đâu là định dạng chuẩn của một User Story dùng để định nghĩa yêu cầu trong Product Backlog?",
+          options: [
+            "Tôi muốn làm [chức năng] trong thời gian [deadline] để [kết quả].",
+            "Là [vai trò], tôi muốn [chức năng] để [lợi ích].",
+            "Hệ thống phải có chức năng [chức năng] cho đối tượng [vai trò].",
+            "Mentor yêu cầu làm [chức năng] để dự án [đạt điểm cao].",
+          ],
+          correct: 1,
+          explanation:
+            "User Story được viết dưới dạng ngôn ngữ tự nhiên từ góc nhìn của người dùng cuối: 'Là [vai trò/actor], tôi muốn [chức năng/action] để [lợi ích/value]'.",
+        },
+        {
+          question:
+            "Theo Scrum Guide 2020, Daily Scrum dành cho đối tượng nào và giới hạn thời gian (time-box) là bao lâu?",
+          options: [
+            "Dành cho cả Scrum Team (PO, SM, Dev) - Họp trong 30 phút.",
+            "Dành riêng cho Developers của Scrum Team - Họp tối đa 15 phút.",
+            "Dành cho Developers và Scrum Master - Họp trong 20 phút.",
+            "Dành cho Product Owner và Khách hàng - Họp trong 15 phút.",
+          ],
+          correct: 1,
+          explanation:
+            "Daily Scrum là sự kiện dài tối đa 15 phút dành riêng cho các Developers của Scrum Team để kiểm tra tiến độ hướng tới Sprint Goal và điều chỉnh Sprint Backlog.",
+        },
+        {
+          question:
+            "Thay đổi quan trọng nào đối với Daily Scrum được cập nhật trong phiên bản Scrum Guide 2020?",
+          options: [
+            "Bắt buộc viết biên bản họp bằng tiếng Anh gửi cho PO.",
+            "Lược bỏ cấu trúc bắt buộc '3 câu hỏi' truyền thống nhằm tăng tính chủ động và tập trung cho Developers.",
+            "Yêu cầu Scrum Master trực tiếp điều phối và phân công công việc hàng ngày.",
+            "Chuyển từ họp hàng ngày sang họp 2 ngày một lần.",
+          ],
+          correct: 1,
+          explanation:
+            "Scrum Guide 2020 lược bỏ cấu trúc bắt buộc 3 câu hỏi ('Hôm qua làm gì, hôm nay làm gì, blocker gì') nhằm giúp Developers tự chọn cách họp thích hợp để tập trung vào Sprint Goal.",
+        },
+        {
+          question:
+            "Đâu là 3 trụ cột chính cấu thành nên sự vận hành của Chủ nghĩa thực nghiệm (Empiricism) trong Scrum?",
+          options: [
+            "Planning (Kế hoạch), Execution (Thực thi), Review (Đánh giá)",
+            "Tính minh bạch (Transparency), Tính thanh tra (Inspection), Tính thích ứng (Adaptation)",
+            "Product Owner, Scrum Master, Development Team",
+            "Sprint Backlog, Product Backlog, Increment",
+          ],
+          correct: 1,
+          explanation:
+            "Ba trụ cột của lý thuyết quản lý thực nghiệm nâng đỡ Scrum là: Transparency (Minh bạch), Inspection (Thanh tra), và Adaptation (Thích ứng).",
+        },
+        {
+          question:
+            "Trong cuộc họp nào thì Development Team tiến hành Demo các tính năng đã hoàn thành (working software) để PO nghiệm thu?",
+          options: [
+            "Sprint Planning",
+            "Daily Scrum",
+            "Sprint Review",
+            "Sprint Retrospective",
+          ],
+          correct: 2,
+          explanation:
+            "Sprint Review diễn ra vào cuối Sprint. Tại đây, team trình diễn (Demo) kết quả công việc đã hoàn thành để PO nghiệm thu dựa trên Acceptance Criteria.",
+        },
+        {
+          question:
+            "Mục tiêu cốt lõi của cuộc họp cải tiến Sprint Retrospective là gì?",
+          options: [
+            "Báo cáo tiến độ hoàn thành code cho Product Owner.",
+            "Đánh giá và lập kế hoạch cải tiến về con người, quy trình làm việc và công cụ cho Sprint tiếp theo.",
+            "Phân rã các User Story thành các task kỹ thuật nhỏ.",
+            "Thuyết trình slide tiếng Anh và quay video gửi cho khách hàng.",
+          ],
+          correct: 1,
+          explanation:
+            "Sprint Retrospective là cơ hội để Scrum Team tự nhìn nhận lại bản thân, đánh giá những điểm tốt/chưa tốt về quy trình, công cụ, con người để tìm giải pháp cải tiến cho Sprint kế tiếp.",
+        },
+        {
+          question:
+            "Ai là người chịu trách nhiệm loại bỏ các trở ngại (blockers) và giúp Scrum Team tuân thủ quy trình Scrum?",
+          options: [
+            "Product Owner (PO)",
+            "Scrum Master (SM)",
+            "Technical Leader",
+            "Project Manager",
+          ],
+          correct: 1,
+          explanation:
+            "Scrum Master (SM) là người phục vụ Scrum Team bằng cách loại bỏ các rào cản (blockers), bảo vệ team khỏi các tác động bên ngoài và đảm bảo mọi người hiểu, tuân thủ Scrum.",
+        },
+        {
+          question:
+            "Theo quy định của Scrum Guide, giới hạn thời gian (time-box) tối đa cho một Sprint là bao lâu?",
+          options: [
+            "Chính xác là 2 tuần.",
+            "1 tháng hoặc ít hơn.",
+            "Tùy thuộc vào thời gian bàn giao dự án của khách hàng.",
+            "Chính xác là 1 tuần.",
+          ],
+          correct: 1,
+          explanation:
+            "Theo Scrum Guide, Sprint là một chu kỳ lặp lại cố định có thời lượng tối đa là 1 tháng (hoặc ngắn hơn) để duy trì sự nhất quán.",
+        },
+        {
+          question:
+            "Trong cuộc họp lập kế hoạch Sprint Planning, Scrum Team phải giải quyết hai câu hỏi cốt lõi nào?",
+          options: [
+            "Ai sẽ làm nhóm trưởng và tạo các group chat ở đâu?",
+            "Sprint này có thể bàn giao cái gì (What) và làm thế nào để đạt được phần việc đó (How)?",
+            "Dự án dùng công nghệ gì và thiết kế database ra sao?",
+            "Làm cách nào để fix bug và làm slide báo cáo?",
+          ],
+          correct: 1,
+          explanation:
+            "Sprint Planning tập trung trả lời 2 câu hỏi chính: 1) What can be delivered in this Sprint? (Sprint này có thể bàn giao phần gia tăng sản phẩm nào?) và 2) How will the work needed be achieved? (Làm thế nào để hoàn thành công việc đó?).",
+        },
+        {
+          question:
+            "Điều gì xảy ra với các User Story chưa hoàn thành khi Sprint kết thúc?",
+          options: [
+            "Được tự động coi là 'Xong' nếu đã hoàn thành trên 80% code.",
+            "Được đưa ngược trở lại Product Backlog để Product Owner tái đánh giá và sắp xếp ưu tiên.",
+            "Bắt buộc cả team phải OT làm cho xong trước khi mở Sprint mới.",
+            "Xóa bỏ hoàn toàn khỏi dự án.",
+          ],
+          correct: 1,
+          explanation:
+            "Mọi phần việc chưa hoàn thành (chưa đạt Definition of Done) tại thời điểm kết thúc Sprint sẽ không được demo, không được tính vào Increment và phải được đưa trở lại Product Backlog để PO xử lý.",
+        },
+        {
+          question:
+            "Phương pháp Phân rã công việc (WBS) khuyến nghị thời gian thực hiện lý tưởng cho mỗi Task kỹ thuật là bao lâu?",
+          options: [
+            "Từ 15 đến 30 phút để cập nhật liên tục.",
+            "Từ 2 đến 4 tiếng (Nếu task lớn hơn 8 tiếng thì bắt đầu có rủi ro vỡ tiến độ và cần phân rã thêm).",
+            "Khoảng 1 đến 2 ngày để dễ quản lý.",
+            "Càng dài càng tốt để tránh áp lực cập nhật.",
+          ],
+          correct: 1,
+          explanation:
+            "Thời gian lý tưởng cho một task kỹ thuật sau khi phân rã là 2-4 tiếng. Quy tắc này giúp ước lượng chính xác tiến độ trong ngày và phát hiện sớm rủi ro tắc nghẽn.",
+        },
+        {
+          question:
+            "Ai là người quyết định thời lượng (chiều dài) của Sprint và thời lượng này có được thay đổi giữa chừng không?",
+          options: [
+            "Do khách hàng áp đặt và thay đổi tùy thuộc vào độ khó của task.",
+            "Cả Scrum Team thống nhất lựa chọn và thời lượng này phải được cố định xuyên suốt, không thay đổi giữa chừng trong một Sprint.",
+            "Nhóm trưởng Dev tự quyết định mỗi tuần một thời lượng khác nhau.",
+            "Scrum Master thay đổi linh hoạt mỗi ngày.",
+          ],
+          correct: 1,
+          explanation:
+            "Thời lượng Sprint (ví dụ: 1 tuần, 2 tuần) do cả Scrum Team thống nhất chọn lựa từ đầu để tạo nhịp điệu làm việc ổn định (cadence) và tuyệt đối không được thay đổi giữa chừng khi Sprint đang chạy.",
+        },
+        {
+          question:
+            "Trong Scrum, vai trò nào thực hiện việc tự tổ chức (self-organizing) và chịu trách nhiệm kỹ thuật để tạo ra một Increment chạy được?",
+          options: [
+            "Product Owner",
+            "Scrum Master",
+            "Developers (Development Team)",
+            "Project Manager",
+          ],
+          correct: 2,
+          explanation:
+            "Developers (nhóm phát triển bao gồm Dev, Tester, BA) là những người trực tiếp tự tổ chức công việc và chịu trách nhiệm kỹ thuật hoàn toàn đối với việc tạo ra Increment chạy được ở cuối Sprint.",
+        },
+        {
+          question:
+            "Ai có thẩm quyền mời các bên liên quan (stakeholders) bên ngoài tham dự cuộc họp Sprint Review để lấy phản hồi?",
+          options: [
+            "Scrum Master",
+            "Product Owner (PO)",
+            "Bất kỳ ai trong nhóm Dev",
+            "Nhóm trưởng Dev",
+          ],
+          correct: 1,
+          explanation:
+            "Product Owner là người làm việc trực tiếp với khách hàng và stakeholders. Do đó, PO có quyền hạn quyết định mời những stakeholders nào tham gia Sprint Review.",
+        },
+        {
+          question:
+            "Những ai bắt buộc phải tham gia vào cuộc họp rút kinh nghiệm cải tiến Sprint Retrospective?",
+          options: [
+            "Chỉ có Developers và Scrum Master.",
+            "Toàn bộ Scrum Team (bao gồm Product Owner, Scrum Master và Developers).",
+            "Chỉ có Scrum Master và Product Owner.",
+            "Toàn bộ Scrum Team cùng với tất cả khách hàng bên ngoài.",
+          ],
+          correct: 1,
+          explanation:
+            "Sprint Retrospective là cuộc họp nội bộ của Scrum Team để tự soi chiếu và cải tiến. Do đó, bắt buộc phải có đầy đủ 3 vai trò: PO, SM, và Developers tham gia.",
+        },
+        {
+          question:
+            "Bảng quản lý công việc (Kanban/Scrum Board) nên được cập nhật vào thời điểm nào để đảm bảo tính Minh Bạch (Transparency)?",
+          options: [
+            "Chỉ cập nhật 1 lần vào cuối Sprint trước khi demo.",
+            "Cập nhật ngay lập tức và liên tục khi có sự thay đổi trạng thái của task.",
+            "Cập nhật định kỳ 2 ngày một lần.",
+            "Đợi Scrum Master nhắc nhở mới cập nhật.",
+          ],
+          correct: 1,
+          explanation:
+            "Để đảm bảo tính Minh Bạch (trụ cột Transparency), thông tin trên Scrum Board phải phản ánh đúng thực tế thời gian thực. Bất kỳ khi nào một task chuyển trạng thái, thành viên phải cập nhật ngay.",
+        },
+        {
+          question:
+            "Định nghĩa Hoàn thành (Definition of Done - DoD) đóng vai trò gì trong khung làm việc Scrum?",
+          options: [
+            "Là danh sách các công việc mà PO muốn làm trong tương lai.",
+            "Là sự thống nhất chung của team về các tiêu chí kỹ thuật cần đạt để một phần công việc được coi là hoàn thành hoàn toàn và sẵn sàng tích hợp.",
+            "Là bảng mô tả nghiệp vụ viết bởi BA.",
+            "Là checklist các câu hỏi kiểm tra của Scrum Master.",
+          ],
+          correct: 1,
+          explanation:
+            "Definition of Done (DoD) tạo ra sự hiểu biết chung về mặt chất lượng kỹ thuật (ví dụ: đã test, đã review code, không lỗi bảo mật). Một công việc chỉ được coi là hoàn thành và đưa vào Increment khi nó thỏa mãn DoD.",
+        },
+        {
+          question:
+            "Scrum Master phục vụ Product Owner (PO) thông qua các hành động nào dưới đây?",
+          options: [
+            "Viết code thay và vẽ Figma cho PO.",
+            "Giúp tìm kiếm các kỹ thuật quản lý Product Backlog hiệu quả và hỗ trợ PO hiểu về việc lập kế hoạch sản phẩm thực nghiệm.",
+            "Trực tiếp quản lý và phân chia task cho đội Dev thay cho PO.",
+            "Thay PO đưa ra quyết định về nghiệp vụ của sản phẩm.",
+          ],
+          correct: 1,
+          explanation:
+            "Scrum Master hỗ trợ PO bằng cách hướng dẫn các kỹ thuật quản lý backlog hiệu quả, tổ chức cuộc họp lên kế hoạch thực nghiệm, và đảm bảo PO hiểu rõ quy trình Scrum.",
+        },
+        {
+          question:
+            "Nếu một thành viên trong nhóm gặp khó khăn (blocker) làm ngưng trệ tiến độ công việc, họ nên xử lý thế nào?",
+          options: [
+            "Âm thầm tự tìm cách giải quyết trong nhiều ngày để tránh làm phiền người khác.",
+            "Chủ động báo cáo ngay tại Daily Scrum gần nhất hoặc liên hệ trực tiếp với Scrum Master để được hỗ trợ tháo gỡ sớm.",
+            "Chờ đợi đến cuối Sprint họp Retrospective mới đem ra thảo luận.",
+            "Bỏ qua task đó và chuyển sang làm task khác mà không báo cáo.",
+          ],
+          correct: 1,
+          explanation:
+            "Daily Scrum là sự kiện hàng ngày để phát hiện blockers. Thành viên phải chủ động nêu khó khăn để Scrum Master hoặc các thành viên khác hỗ trợ tháo gỡ kịp thời, tránh trễ tiến độ Sprint.",
+        },
+        {
+          question:
+            "Khái niệm 'Sprint Goal' (Mục tiêu Sprint) trong Scrum đóng vai trò gì và do ai tạo ra?",
+          options: [
+            "Là mục tiêu duy nhất cho Sprint do PO và Developers cùng tạo ra trong Sprint Planning, đóng vai trò là kim chỉ nam cho Developers trong suốt Sprint.",
+            "Là bảng excel ghi nhận thời gian làm việc do Scrum Master tự động tạo ra.",
+            "Là danh sách các bug cần sửa do Tester đề xuất.",
+            "Là deadline của cả dự án 1 tháng do Mentor chỉ định.",
+          ],
+          correct: 0,
+          explanation:
+            "Sprint Goal là một cam kết chính thức của Scrum Team, cung cấp mục tiêu và định hướng cho các Developers trong Sprint. Nó được thảo luận và tạo ra trong buổi Sprint Planning.",
+        },
+        {
+          question:
+            "Sự khác biệt cơ bản về tính sở hữu và tính thay đổi giữa Product Backlog và Sprint Backlog là gì?",
+          options: [
+            "Product Backlog thuộc quyền sở hữu và quản lý của PO; Sprint Backlog thuộc quyền sở hữu của Developers và có thể được điều chỉnh linh hoạt trong Sprint để đạt Sprint Goal.",
+            "Product Backlog do Developers quản lý; Sprint Backlog do Scrum Master sở hữu và cấm thay đổi.",
+            "Cả hai backlog đều do PO sở hữu và cấm mọi thay đổi sau khi Sprint bắt đầu.",
+            "Cả hai backlog đều thuộc sở hữu của khách hàng.",
+          ],
+          correct: 0,
+          explanation:
+            "Product Backlog là danh sách yêu cầu chung của sản phẩm do PO quản lý. Sprint Backlog là kế hoạch thực thi cụ thể của Developers trong Sprint; Developers sở hữu Sprint Backlog và có thể thêm/bớt/sửa các task kỹ thuật trong suốt Sprint miễn là không ảnh hưởng đến Sprint Goal.",
+        },
+        {
+          question:
+            "Trong quy trình vận hành MockProject, khái niệm 'Sprint' được biểu diễn bằng tính năng nào trên GitHub?",
+          options: [
+            "GitHub Issues",
+            "GitHub Pull Requests",
+            "GitHub Milestones (Với tên gọi Sprint1 và deadline là 1 tháng)",
+            "GitHub Labels",
+          ],
+          correct: 2,
+          explanation:
+            "Để mô phỏng quy trình Agile/Scrum mà không tốn chi phí dùng JIRA, MockProject quy định sử dụng tính năng GitHub Milestones để đại diện cho Sprints (Ví dụ tạo Milestone tên Sprint1 với thời gian chạy là 1 tháng).",
+        },
+        {
+          question:
+            "Quy định bắt buộc về việc ghi Biên bản họp (Meeting Minutes) trong MockProject là gì?",
+          options: [
+            "Viết bằng tiếng Anh 100%, phân công luân phiên mỗi ngày 01 thư ký khác nhau, và upload file lên Google Drive của nhóm hàng ngày.",
+            "Viết bằng tiếng Việt, do nhóm trưởng viết cố định tất cả các ngày, và lưu ở máy cá nhân.",
+            "Chỉ cần ghi chép khi có tranh cãi giữa các thành viên.",
+            "Viết bằng tiếng Anh và gửi qua Zalo cho Mentor vào cuối tuần.",
+          ],
+          correct: 0,
+          explanation:
+            "Meeting Minutes bắt buộc viết bằng 100% tiếng Anh, phân công luân phiên mỗi ngày một thành viên khác nhau viết để luyện tập, và đưa lên Drive chung hàng ngày để mentor audit định kỳ.",
+        },
+        {
+          question:
+            "Định nghĩa chính xác về 'Increment' (Mảnh tăng trưởng) theo Scrum Guide 2020 là gì?",
+          options: [
+            "Là bản thiết kế Figma của toàn bộ hệ thống.",
+            "Là phần sản phẩm có thể sử dụng và chạy được (usable/releasable) được tích lũy từ các Sprint, và chỉ được ghi nhận khi thỏa mãn Definition of Done (DoD).",
+            "Là kế hoạch phân rã công việc WBS của nhóm.",
+            "Là các issue đã đóng trên GitHub Kanban.",
+          ],
+          correct: 1,
+          explanation:
+            "Increment là một mảnh tăng trưởng sản phẩm hoàn chỉnh, chạy được và có giá trị sử dụng. Nó là kết quả của các User Story đã hoàn thành đạt chuẩn Definition of Done (DoD) trong Sprint.",
+        },
+        {
+          question:
+            "5 giá trị cốt lõi của Scrum nâng đỡ 3 trụ cột thực nghiệm là gì?",
+          options: [
+            "Lập kế hoạch, Thực thi, Kiểm thử, Bàn giao, Cải tiến.",
+            "Cam kết (Commitment), Can đảm (Courage), Tập trung (Focus), Cởi mở (Openness), Tôn trọng (Respect).",
+            "Nhanh chóng, Linh hoạt, Minh bạch, Tiết kiệm, Hiệu quả.",
+            "Tự quản, Đa chức năng, Thích ứng, Tự tin, Tôn trọng.",
+          ],
+          correct: 1,
+          explanation:
+            "5 giá trị Scrum bao gồm: Cam kết (Commitment), Can đảm (Courage), Tập trung (Focus), Cởi mở (Openness), và Tôn trọng (Respect). Các giá trị này định hướng hành vi và giao tiếp của Scrum Team.",
+        },
+        {
+          question:
+            "Ai là người duy nhất có thẩm quyền hủy bỏ (Cancel) một Sprint đang diễn ra, và trong điều kiện nào?",
+          options: [
+            "Scrum Master, khi thấy Developers cãi nhau nhiều.",
+            "Product Owner (PO), khi thấy Mục tiêu Sprint (Sprint Goal) trở nên lỗi thời do thay đổi kinh doanh hoặc công nghệ.",
+            "Developers, khi thấy khối lượng việc quá nhiều không làm kịp.",
+            "Khách hàng, khi họ không muốn trả tiền nữa.",
+          ],
+          correct: 1,
+          explanation:
+            "Theo Scrum Guide, chỉ có Product Owner mới có quyền hủy Sprint nếu mục tiêu của Sprint đó không còn giá trị thực tế nữa.",
+        },
+        {
+          question:
+            "Khi khởi tạo một Task (Issue) trên GitHub Projects trong MockProject, những trường thông tin nào bắt buộc phải điền đầy đủ?",
+          options: [
+            "Chỉ cần viết tiêu đề task.",
+            "Tiêu đề, Mô tả chi tiết kèm tiêu chí nghiệm thu (Acceptance Criteria), gán Assignees thực hiện, chọn Milestone (Sprint1), và gán nhãn label 'Task'.",
+            "Tiêu đề, link code Git, và nhãn 'On-time'.",
+            "Tiêu đề và gán nhãn 'Bug'.",
+          ],
+          correct: 1,
+          explanation:
+            "Quy định vận hành GitHub Project yêu cầu khi tạo task dưới dạng Issue phải điền rõ: tiêu đề, đặc tả/mô tả kèm tiêu chí nghiệm thu (Acceptance Criteria), gán người làm (Assignee), gán vào Sprint (Milestone), và thêm nhãn 'Task' để phân loại.",
+        },
+        {
+          question:
+            "Quy định backup sản phẩm cá nhân hàng ngày trong MockProject yêu cầu cấu trúc thư mục như thế nào?",
+          options: [
+            "Upload tất cả tệp vào thư mục gốc của Drive cá nhân.",
+            "Sử dụng một thư mục cha cố định, bên trong chia các thư mục con theo ngày (Day1, Day2, Day3...), share quyền Public và gửi link cho mentor.",
+            "Chỉ cần copy code vào USB cá nhân.",
+            "Upload trực tiếp lên GitHub của mentor.",
+          ],
+          correct: 1,
+          explanation:
+            "Mỗi thành viên phải dùng một thư mục cố định trên Drive cá nhân, chia các thư mục con Day1, Day2... để backup sản phẩm mới nhất hàng ngày, share public link để mentor có thể vào review bất cứ lúc nào.",
+        },
+        {
+          question:
+            "Sự khác biệt chính về vai trò điều phối cuộc họp Daily Scrum giữa Scrum Guide cũ và Scrum Guide 2020 là gì?",
+          options: [
+            "Cấm Scrum Master tham gia cuộc họp.",
+            "Developers tự tổ chức và điều phối cuộc họp Daily Scrum; Scrum Master không còn là người bắt buộc phải điều hành hay làm chủ trì cuộc họp này nữa.",
+            "Product Owner là người bắt buộc phải chủ trì cuộc họp Daily Scrum.",
+            "Bắt buộc phải có đại diện khách hàng điều phối cuộc họp.",
+          ],
+          correct: 1,
+          explanation:
+            "Trong Scrum Guide 2020, Daily Scrum là sự kiện được thiết kế riêng dành cho các Developers để tự quản lý tiến độ. Scrum Master chỉ hướng dẫn quy trình và đảm bảo cuộc họp diễn ra trong giới hạn 15 phút chứ không điều hành trực tiếp.",
+        },
+      ];
+    </script>
+    <script src="engine.js"></script>
+  </body>
 </html>

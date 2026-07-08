@@ -3,6 +3,7 @@ tags: [type/concept, topic/security, topic/frontend]
 date: 2026-01-29
 aliases: [AES Encryption, Secure Local Storage]
 ---
+
 # Client-Side Encryption (Data at Rest)
 
 ## TL;DR
@@ -21,8 +22,8 @@ Sử dụng thuật toán (thường là AES) để mã hóa dữ liệu thành 
 - **Code Snippet (crypto-js):**
 
 ```typescript
-import AES from 'crypto-js/aes';
-import CryptoJS from 'crypto-js';
+import AES from "crypto-js/aes";
+import CryptoJS from "crypto-js";
 
 // WARNING: Hardcoding key is a bad practice. Consider deriving from user session.
 const SECRET_KEY = process.env.NEXT_PUBLIC_APP_SECRET;
@@ -43,6 +44,7 @@ export const decrypt = (ciphertext: string) => {
 ```
 
 ---
+
 **Related Notes:**
 
 - Nơi tiêu thụ logic này: [[Offline_Sync_Queue]]

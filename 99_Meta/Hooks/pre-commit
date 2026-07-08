@@ -8,7 +8,7 @@ set -e
 mapfile -t STAGED_FILES < <(git diff --cached --name-only --diff-filter=ACM)
 
 if [ ${#STAGED_FILES[@]} -eq 0 ]; then
-  exit 0
+    exit 0
 fi
 
 # Filter markdown and js/mjs files
@@ -16,26 +16,27 @@ MD_FILES=()
 JS_FILES=()
 
 for FILE in "${STAGED_FILES[@]}"; do
-  if [[ "$FILE" =~ \.md$ ]]; then
-    MD_FILES+=("$FILE")
-  elif [[ "$FILE" =~ \.(js|mjs)$ ]]; then
-    JS_FILES+=("$FILE")
-  fi
+    if [[ "$FILE" =~ \.md$ ]]; then
+        MD_FILES+=("$FILE")
+    elif [[ "$FILE" =~ \.(js|mjs)$ ]]; then
+        JS_FILES+=("$FILE")
+    fi
 done
 
 # Run Biome check (formatter & linter) for JS/MJS files
 if [ ${#JS_FILES[@]} -gt 0 ]; then
-  echo "Formatting and Linting JavaScript/TypeScript files with Biome..."
-  biome check --write "${JS_FILES[@]}"
-  git add "${JS_FILES[@]}"
+    echo "Formatting and Linting JavaScript/TypeScript files with Biome..."
+    biome check --write "${JS_FILES[@]}"
+    git add "${JS_FILES[@]}"
 fi
 
 # Run Prettier formatter for Markdown files
-if [ ${#MD_FILES[@]} -gt 0 ]; then
-  echo "Formatting Markdown files with Prettier..."
-  bunx prettier --write "${MD_FILES[@]}"
-  git add "${MD_FILES[@]}"
-fi
+# if [ ${#MD_FILES[@]} -gt 0 ]; then
+# fi
+
+echo "Formatting Markdown files with Prettier..."
+bunx prettier --write .
+git add .
 
 # Run Note Validator
 echo "Running note validation..."

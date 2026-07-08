@@ -1,13 +1,13 @@
 :root {
-  --color-primary: #F4F4F4;
-  --color-secondary: #959BA3;
-  --color-tertiary: #FF6363;
-  --color-neutral: #0E0E12;
-  --color-surface: #16161C;
-  --color-on-primary: #0E0E12;
+  --color-primary: #f4f4f4;
+  --color-secondary: #959ba3;
+  --color-tertiary: #ff6363;
+  --color-neutral: #0e0e12;
+  --color-surface: #16161c;
+  --color-on-primary: #0e0e12;
   --color-border: #282834;
-  --font-display: 'Inter', sans-serif;
-  --font-mono: 'JetBrains Mono', monospace;
+  --font-display: "Inter", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
 }
 
 * {
@@ -94,7 +94,9 @@ h1 {
   display: flex;
   padding: 2px 0;
   opacity: 0.6;
-  transition: opacity 0.2s, background-color 0.2s;
+  transition:
+    opacity 0.2s,
+    background-color 0.2s;
   border-radius: 4px;
 }
 
@@ -130,7 +132,9 @@ button {
   padding: 12px 20px;
   cursor: pointer;
   border: none;
-  transition: background-color 0.2s, opacity 0.2s;
+  transition:
+    background-color 0.2s,
+    opacity 0.2s;
 }
 
 button:disabled {
@@ -237,11 +241,11 @@ button:disabled {
 }
 
 .var-val {
-  color: #92E3A9; /* Green color for values */
+  color: #92e3a9; /* Green color for values */
 }
 
 .var-val.ref {
-  color: #72C7FF; /* Blue color for references */
+  color: #72c7ff; /* Blue color for references */
   cursor: pointer;
   text-decoration: underline;
 }
@@ -320,7 +324,7 @@ button:disabled {
   flex-direction: column;
   justify-content: space-between;
   position: relative;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
   transition: all 0.5s ease-in-out;
   animation: popIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
@@ -352,7 +356,7 @@ button:disabled {
 }
 
 .obj-type {
-  color: #72C7FF;
+  color: #72c7ff;
   font-weight: 500;
 }
 

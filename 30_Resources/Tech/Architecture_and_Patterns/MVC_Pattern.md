@@ -3,6 +3,7 @@ tags: [type/concept, topic/backend, pattern/architectural]
 date: 2026-02-08
 aliases: [Model-View-Controller, Classical MVC]
 ---
+
 # MVC Pattern
 
 ## TL;DR
@@ -33,12 +34,13 @@ export const getProfileController = async (req: Request, res: Response) => {
   // VIEW: Khối JSON này chính là "View" trong kiến trúc API hiện đại
   return res.json({
     message: "Success",
-    data: { email: user.email, role: user.role }
+    data: { email: user.email, role: user.role },
   });
 };
 ```
 
 ---
+
 **Related Notes:**
 
 - Biến thể hiện đại có thêm tầng xử lý logic: [[Layered_Architecture]]

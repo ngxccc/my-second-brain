@@ -3,6 +3,7 @@ tags: [type/concept, topic/tech, pattern/design]
 date: 2026-04-28
 aliases: [DI, Inversion of Control, IoC]
 ---
+
 # Dependency Injection (DI)
 
 ## TL;DR
@@ -25,14 +26,18 @@ Kỹ thuật thiết kế trong đó một đối tượng nhận các phụ thu
 // ❌ BAD: Tight Coupling (Khó test, khó sửa)
 class OrderController {
   private service = new OrderService(); // Dính chặt vào OrderService cụ thể
-  async handle() { return this.service.create(); }
+  async handle() {
+    return this.service.create();
+  }
 }
 
 // ✅ GOOD: Dependency Injection (Linh hoạt)
 class OrderController {
   // Nhận interface từ ngoài vào, không quan tâm nó được khởi tạo ra sao
   constructor(private readonly service: IOrderService) {}
-  async handle() { return this.service.create(); }
+  async handle() {
+    return this.service.create();
+  }
 }
 
 // Khi chạy thật: new OrderController(new RealOrderService())
@@ -40,6 +45,7 @@ class OrderController {
 ```
 
 ---
+
 **Related Notes:**
 
 - Mục tiêu của DI: [[Dependency_Inversion_Principle_DIP]]

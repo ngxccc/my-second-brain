@@ -2,10 +2,11 @@
 created_at: Tuesday, March 31st 2026, 8:14:18 pm +07:00
 updated_at: Tuesday, March 31st 2026, 8:20:37 pm +07:00
 ---
+
 ## Phase 0: Bản Vẽ Kiến Trúc & User Stories (~1 tuần)
 
 - [x] **Viết User Stories cốt lõi:**
-  Ví dụ:* "Là chủ xưởng (User), tôi muốn lọc máy phát điện theo số pha (1 pha/3 pha) và nhiên liệu (Dầu/Xăng) để tìm đúng máy tương thích hạ tầng."
+      Ví dụ:* "Là chủ xưởng (User), tôi muốn lọc máy phát điện theo số pha (1 pha/3 pha) và nhiên liệu (Dầu/Xăng) để tìm đúng máy tương thích hạ tầng."
 - [x] **Vẽ ERD (Entity Relationship Diagram):** Dùng dbdiagram.io. Chốt hạ các bảng: products, users, orders, order_items, categories.
 - [x] **Vẽ Sequence Diagram (Thanh toán & AI):** Dùng Mermaid.js hoặc PlantUML. Vẽ luồng User hỏi Chatbot -> Chatbot lookup DB -> Trả kết quả.
 - [x] **Chốt Stack Công Nghệ:** Next.js 16 (App Router), Bun, Drizzle ORM, PostgreSQL (Neon), Zustand, TailwindCSS, **LangChain/LangGraph** (Cho AI DAG chatbot).

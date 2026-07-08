@@ -19,7 +19,7 @@ Quy trình quản lý dự án linh hoạt (Agile) áp dụng khung làm việc 
   - Các dự án yêu cầu bàn giao sản phẩm chạy được (working software) định kỳ để lấy phản hồi từ khách hàng hoặc mentor.
   - Các nhóm làm việc tự quản (self-organizing teams) muốn tối ưu hóa tốc độ và quy trình giao tiếp.
 - **Điều kiện tiên quyết (Prerequisites):**
-  - Phân chia rõ ràng 3 vai trò: Product Owner (PO), Scrum Master (SM), và Development Team.
+  - Phân chia rõ ràng các vai trò trong Scrum Team: Product Owner (PO), Scrum Master (SM), và Developers.
   - Có danh sách các yêu cầu (Product Backlog) được viết dưới dạng **User Story**.
 
 ### 🌟 3 Trụ Cột Cốt Lõi Của Scrum (Empiricism)
@@ -29,6 +29,33 @@ Scrum vận hành dựa trên chủ nghĩa thực nghiệm với 3 trụ cột c
 1. **Tính Minh Bạch (Transparency):** Mọi thông tin (tiến độ, lỗi, yêu cầu thay đổi) phải được hiển thị rõ ràng cho tất cả các thành viên và mentor.
 2. **Tính Thanh Tra (Inspection):** Định kỳ kiểm tra sản phẩm và quy trình làm việc (thông qua các cuộc họp Daily, Review, Retro) để phát hiện sớm các sai lệch.
 3. **Tính Thích Ứng (Adaptation):** Sẵn sàng thay đổi quy trình làm việc hoặc sản phẩm ngay khi phát hiện sai lệch để giảm thiểu rủi ro (ví dụ: thích ứng khi có Change Requirement - CR ở Day 12).
+
+### 💎 5 Giá Trị Của Scrum (Scrum Values)
+
+Scrum Team cần cam kết thực hiện 5 giá trị cốt lõi để xây dựng lòng tin và sự hiệu quả:
+
+1. **Cam Kết (Commitment):** Mỗi thành viên cá nhân cam kết đạt được các mục tiêu của Scrum Team và hỗ trợ lẫn nhau.
+2. **Tập Trung (Focus):** Tập trung tối đa vào công việc của Sprint để đạt tiến độ tốt nhất hướng tới các mục tiêu.
+3. **Cởi Mở (Openness):** Cởi mở chia sẻ về tiến độ công việc cũng như các khó khăn, thách thức gặp phải.
+4. **Tôn Trọng (Respect):** Tôn trọng khả năng độc lập, chuyên môn và ý kiến của nhau.
+5. **Dũng Cảm (Courage):** Dũng cảm đối mặt với thử thách, làm điều đúng đắn và giải quyết các vấn đề khó khăn.
+
+### 📦 3 Hiện Vật & 3 Cam Kết (Artifacts & Commitments)
+
+Mỗi hiện vật trong Scrum đi kèm với một cam kết nhằm tăng tính minh bạch và cung cấp mục tiêu để đo lường tiến độ:
+
+1. **Product Backlog** (Cam kết: **Product Goal - Mục tiêu Sản phẩm**)
+   - Mô tả trạng thái tương lai của sản phẩm, đóng vai trò là mục tiêu dài hạn của Scrum Team.
+2. **Sprint Backlog** (Cam kết: **Sprint Goal - Mục tiêu Sprint**)
+   - Mục tiêu duy nhất của Sprint hiện tại, mang lại sự tập trung và định hướng cho Developers.
+3. **Increment - Phần tăng trưởng** (Cam kết: **Definition of Done - Định nghĩa Hoàn thành**)
+   - Mô tả chính thức và rõ ràng về trạng thái của sản phẩm khi nó đáp ứng đầy đủ các tiêu chuẩn chất lượng bắt buộc.
+
+> 💡 **Phân biệt DoD (Definition of Done) và AC (Acceptance Criteria):**
+>
+> - **Definition of Done (DoD):** Là bộ quy chuẩn chất lượng **chung** áp dụng cho _mọi_ User Story/chức năng (ví dụ: code sạch, đã qua review chéo, đã kiểm thử không lỗi, đã deploy thành công). Do cả team thống nhất và tuân thủ.
+> - **Acceptance Criteria (AC):** Là tiêu chí nghiệm thu **riêng** cho _từng_ User Story cụ thể (ví dụ: với Story "Đăng nhập", AC là đăng nhập thành công qua Google, báo lỗi khi nhập sai định dạng email). Do PO định nghĩa.
+>   _Một User Story chỉ được coi là hoàn thành (Done) khi nó thỏa mãn cả AC riêng của nó và DoD chung của team._
 
 ---
 
@@ -41,12 +68,19 @@ Scrum vận hành dựa trên chủ nghĩa thực nghiệm với 3 trụ cột c
   - PO thu thập yêu cầu từ khách hàng và phân rã thành các **User Story** theo mẫu: _"Là [vai trò], tôi muốn [chức năng] để [lợi ích]."_
   - Sắp xếp thứ tự ưu tiên cho các User Story từ cao xuống thấp.
 
+### 1.5. Cải Tiến Product Backlog (Backlog Refinement / Grooming)
+
+- **Thời điểm:** Diễn ra định kỳ trong suốt Sprint (thường là giữa Sprint hoặc trước Sprint Planning).
+- **Hành động:**
+  - Cả team cùng PO rà soát lại Product Backlog, làm rõ nghiệp vụ và chi tiết hóa các User Story sắp thực hiện ở Sprint tiếp theo.
+  - Developers tiến hành ước lượng kích thước công việc (Story Point) cho các story để chuẩn bị tốt nhất cho buổi Sprint Planning.
+
 ### 2. Họp Kế Hoạch Sprint (Sprint Planning)
 
 - **Thời điểm:** Đầu mỗi Sprint (chu kỳ từ 1 đến 4 tuần, thông thường là 1 tuần cho dự án ngắn hạn).
 - **Hành động:**
-  1. Cả team họp cùng PO để chọn ra các User Story ưu tiên hàng đầu mà team cam kết sẽ hoàn thành trong Sprint này (đưa vào **Sprint Backlog**).
-  2. Development Team thực hiện phân rã các User Story được chọn thành các task kỹ thuật cụ thể (WBS - Work Breakdown Structure) với thời gian hoàn thành từ 2 - 4 tiếng mỗi task.
+  1. Cả team họp cùng PO để chọn ra các User Story ưu tiên hàng đầu mà team cam kết sẽ hoàn thành trong Sprint này (đưa vào **Sprint Backlog**) và xác định **Sprint Goal**.
+  2. Developers thực hiện phân rã các User Story được chọn thành các task kỹ thuật cụ thể (WBS - Work Breakdown Structure) với thời gian hoàn thành từ 2 - 4 tiếng mỗi task.
 
 ### 3. Thực Hiện Sprint & Họp Hàng Ngày (Daily Scrum / Standup)
 
@@ -63,8 +97,8 @@ Scrum vận hành dựa trên chủ nghĩa thực nghiệm với 3 trụ cột c
 
 - **Thời điểm:** Cuối Sprint.
 - **Hành động:**
-  1. Development Team thực hiện **Demo** các tính năng đã hoàn thành và chạy được trực quan trước PO và khách hàng (hoặc Mentor).
-  2. PO nghiệm thu sản phẩm dựa trên tiêu chí chấp nhận (Acceptance Criteria) của từng User Story. Các User Story chưa hoàn thành sẽ được đẩy ngược lại Product Backlog để làm sau.
+  1. Developers thực hiện **Demo** các tính năng đã hoàn thành và chạy được trực quan trước PO và khách hàng (hoặc Mentor).
+  2. PO nghiệm thu sản phẩm dựa trên tiêu chí chấp nhận (Acceptance Criteria) riêng của từng User Story và Định nghĩa Hoàn thành (DoD) chung của team. Các User Story chưa hoàn thành sẽ được đẩy ngược lại Product Backlog để làm sau.
 
 ### 5. Họp Rút Kinh Nghiệm Sprint (Sprint Retrospective)
 
@@ -79,9 +113,11 @@ Scrum vận hành dựa trên chủ nghĩa thực nghiệm với 3 trụ cột c
 
 ## Verification / Testing
 
-- [ ] Product Backlog có đầy đủ User Stories được sắp xếp thứ tự ưu tiên.
-- [ ] Sprint Backlog được thiết lập và phân chia task cụ thể trên bảng Kanban (GitHub Projects, Jira hoặc Trello).
-- [ ] Báo cáo Daily Standup được thực hiện đầy đủ hàng ngày.
+- [ ] Product Backlog có đầy đủ User Stories, Product Goal rõ ràng và được sắp xếp thứ tự ưu tiên.
+- [ ] Hoạt động Backlog Refinement được thực hiện đều đặn trước mỗi đợt Planning.
+- [ ] Sprint Backlog có Sprint Goal cụ thể, được thiết lập và phân chia task cụ thể trên bảng Kanban (GitHub Projects, Jira hoặc Trello).
+- [ ] Có bộ Định nghĩa Hoàn thành (Definition of Done - DoD) chung được cả team thống nhất.
+- [ ] Báo cáo Daily Standup được thực hiện đầy đủ hàng ngày hướng tới Sprint Goal.
 - [ ] Tổ chức đầy đủ cuộc họp Sprint Review và Sprint Retrospective kèm biên bản họp (Meeting Minutes).
 
 ---

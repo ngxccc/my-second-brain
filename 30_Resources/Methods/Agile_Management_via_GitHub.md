@@ -1,6 +1,11 @@
 ---
 tags: [type/method, topic/engineering, topic/productivity]
-aliases: [Quản lý dự án Agile bằng GitHub, Agile Management via GitHub, GitHub Project Board SOP]
+aliases:
+  [
+    Quản lý dự án Agile bằng GitHub,
+    Agile Management via GitHub,
+    GitHub Project Board SOP,
+  ]
 date: 2026-06-24
 ---
 
@@ -26,6 +31,7 @@ Hướng dẫn cấu hình và vận hành quy trình quản lý tiến độ, q
 ## Step-by-Step Guideline
 
 ### 1. Thiết Lập Bảng Kanban (GitHub Projects)
+
 - Tạo một Project mới (chọn mẫu Board) liên kết trực tiếp với Repository của dự án.
 - Thiết lập 3 cột (Columns) cơ bản để quản lý dòng chảy công việc (Workflow):
   - **To do:** Chứa các task đang chờ thực hiện.
@@ -33,12 +39,14 @@ Hướng dẫn cấu hình và vận hành quy trình quản lý tiến độ, q
   - **Done:** Chứa các task đã hoàn thành và nghiệm thu.
 
 ### 2. Định Nghĩa Sprint (GitHub Milestones)
+
 - Trong mô hình Scrum, dự án được chia làm nhiều chu kỳ ngắn bằng nhau gọi là **Sprint** (thông thường từ 1 đến 4 tuần).
 - Trên GitHub, sử dụng tính năng **Milestones** để đại diện cho Sprint:
   - Tạo Milestone mới với tên dạng `Sprint1`, `Sprint2`...
   - Thiết lập ngày đến hạn (Due Date) chính xác tương ứng với deadline của Sprint đó.
 
 ### 3. Tạo và Phân Phối Task (GitHub Issues)
+
 - Mỗi công việc kỹ thuật hoặc nghiệp vụ (sau khi đã được làm Work Breakdown Structure - WBS) phải được cụ thể hóa thành 01 **Issue** trên GitHub:
   - **Tiêu đề:** Ngắn gọn, mô tả rõ hành động cần làm.
   - **Mô tả (Description):** Mô tả chi tiết yêu cầu, bối cảnh và tiêu chí nghiệm thu (Acceptance Criteria).
@@ -47,17 +55,19 @@ Hướng dẫn cấu hình và vận hành quy trình quản lý tiến độ, q
   - **Labels:** Thêm nhãn `Task` ngay khi tạo mới để phân biệt với bug hoặc tài liệu.
 
 ### 4. Vận Hành Hàng Ngày (Workflow Rules)
+
 - **Quy tắc di chuyển trạng thái:**
   - Nhóm trưởng có trách nhiệm tạo task và đặt ở cột **To do**.
   - Khi bắt đầu làm việc, thành viên thực hiện kéo task sang cột **In Progress**.
   - Sau khi hoàn thành và bàn giao sản phẩm (mã nguồn lên Git, tài liệu lên Drive), thành viên kéo task sang cột **Done** và đóng (Close) issue trên GitHub.
 
 ### 5. Đánh Giá Hiệu Suất Tiến Độ (Performance Auditing)
+
 - Sau khi task được đóng và di chuyển sang cột **Done**, Nhóm trưởng tiến hành audit chất lượng và thời gian thực hiện để gắn các nhãn (Labels) đánh giá tiến độ sau:
   - `On-time`: Hoàn thành đúng hạn so với deadline ước lượng.
   - `Delayed`: Bị trễ hạn so với deadline ban đầu.
   - `Over-Progress`: Hoàn thành xuất sắc trước thời hạn đề ra.
-- *Lưu ý quan trọng:* Chỉ gán nhãn đánh giá tiến độ sau khi task đã hoàn tất hoàn toàn và nằm ở cột **Done**.
+- _Lưu ý quan trọng:_ Chỉ gán nhãn đánh giá tiến độ sau khi task đã hoàn tất hoàn toàn và nằm ở cột **Done**.
 
 ---
 

@@ -1,7 +1,8 @@
 ---
 tags: [type/concept, topic/psychology, topic/decision-making]
 date: 2026-06-22
-aliases: [Swimmer's Body Illusion, Ảo tưởng vóc dáng kình ngư, Selection Bias Fallacy]
+aliases:
+  [Swimmer's Body Illusion, Ảo tưởng vóc dáng kình ngư, Selection Bias Fallacy]
 ---
 
 # Swimmer's Body Illusion
@@ -15,8 +16,8 @@ aliases: [Swimmer's Body Illusion, Ảo tưởng vóc dáng kình ngư, Selectio
 ## Core Concept
 
 - **Bản chất lỗi tư duy:** Sự đảo ngược hoặc nhầm lẫn giữa nguyên nhân và kết quả trong quá trình chọn lọc.
-  - *Ảo tưởng:* Tập bơi sẽ có vóc dáng đẹp như kình ngư.
-  - *Thực tế:* Kình ngư chuyên nghiệp bơi giỏi và có vóc dáng thon gọn vì họ vốn có kết cấu cơ thể bẩm sinh phù hợp cho việc bơi lội (chiều cao, sải tay, cấu trúc xương). Vóc dáng đẹp là **tiêu chí để được chọn lọc/tối ưu**, không phải hoàn toàn là **kết quả của hoạt động**.
+  - _Ảo tưởng:_ Tập bơi sẽ có vóc dáng đẹp như kình ngư.
+  - _Thực tế:_ Kình ngư chuyên nghiệp bơi giỏi và có vóc dáng thon gọn vì họ vốn có kết cấu cơ thể bẩm sinh phù hợp cho việc bơi lội (chiều cao, sải tay, cấu trúc xương). Vóc dáng đẹp là **tiêu chí để được chọn lọc/tối ưu**, không phải hoàn toàn là **kết quả của hoạt động**.
 - **Nguồn gốc:** Khái niệm này được phổ biến bởi nhà tiểu luận và nhà giao dịch Nassim Nicholas Taleb.
 - **Các biểu hiện phổ biến trong đời sống:**
   - **Quảng cáo mỹ phẩm:** Tin rằng dùng mỹ phẩm sẽ đẹp như người mẫu. Thực tế, các cô người mẫu vốn đã có vẻ đẹp bẩm sinh nổi bật nên mới được chọn để quảng cáo mỹ phẩm.
@@ -31,10 +32,10 @@ aliases: [Swimmer's Body Illusion, Ảo tưởng vóc dáng kình ngư, Selectio
 Để tránh rơi vào ảo tưởng này trong công việc và cuộc sống, hãy áp dụng các nguyên tắc sau:
 
 - **Phân biệt rõ ràng Đầu vào (Selection Criteria) và Đầu ra (Result):**
-  - Trước khi đầu tư thời gian hoặc tiền bạc vào một phương pháp, khóa học hoặc sản phẩm, hãy tự hỏi: *"Những người thành công nhờ cái này vốn đã có sẵn những phẩm chất gì từ trước khi tham gia?"*
+  - Trước khi đầu tư thời gian hoặc tiền bạc vào một phương pháp, khóa học hoặc sản phẩm, hãy tự hỏi: _"Những người thành công nhờ cái này vốn đã có sẵn những phẩm chất gì từ trước khi tham gia?"_
 - **Sử dụng Tư duy không điểm tựa (Zero-Based Thinking) và Đối chứng:**
   - So sánh nhóm tham gia với một nhóm đối chứng có cùng xuất phát điểm nhưng không tham gia hoạt động đó.
-  - Ví dụ: Trong phát triển phần mềm, khi thấy một công nghệ mới (như Rust, Next.js Server Actions) được quảng cáo giúp các startup phát triển cực nhanh và ổn định, hãy tự hỏi: *"Có phải công nghệ đó giúp họ thành công, hay là vì các kỹ sư giỏi/nhạy bén nhất mới là những người sớm tiếp cận và ứng dụng công nghệ này?"*
+  - Ví dụ: Trong phát triển phần mềm, khi thấy một công nghệ mới (như Rust, Next.js Server Actions) được quảng cáo giúp các startup phát triển cực nhanh và ổn định, hãy tự hỏi: _"Có phải công nghệ đó giúp họ thành công, hay là vì các kỹ sư giỏi/nhạy bén nhất mới là những người sớm tiếp cận và ứng dụng công nghệ này?"_
 - **Thành thật với thực tại:**
   - Nhìn vào gương và đánh giá thực lực hiện tại của bản thân thay vì mù quáng tin vào các hình mẫu lý tưởng được quảng cáo. Tập trung tối ưu hóa những thế mạnh bẩm sinh của mình thay vì cố gắng ép mình vào một khuôn mẫu không phù hợp.
 

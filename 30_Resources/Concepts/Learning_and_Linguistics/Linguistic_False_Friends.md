@@ -3,6 +3,7 @@ tags: [type/concept, topic/english, pronunciation]
 date: 2026-01-29
 aliases: [Homographs, Word Stress Shift]
 ---
+
 # Linguistic False Friends
 
 ## TL;DR
@@ -20,9 +21,9 @@ Các từ vựng tiếng Anh có mặt chữ (spelling) giống hệt nhau nhưn
 ## Practical Implementation
 
 - **Tử huyệt (Context Ambiguity):** Có những lúc ngữ cảnh (Context) cũng không thể cứu được lỗi phát âm của em.
-  - Ví dụ: *"We need to focus on the content"*.
-  - Nếu đọc `/ˈkɑːn.tent/` (Nhấn âm 1): "Chúng ta cần tập trung vào *nội dung*".
-  - Nếu đọc `/kənˈtent/` (Nhấn âm 2): "Chúng ta cần tập trung vào *sự hài lòng*".
+  - Ví dụ: _"We need to focus on the content"_.
+  - Nếu đọc `/ˈkɑːn.tent/` (Nhấn âm 1): "Chúng ta cần tập trung vào _nội dung_".
+  - Nếu đọc `/kənˈtent/` (Nhấn âm 2): "Chúng ta cần tập trung vào _sự hài lòng_".
   - $\rightarrow$ Đọc sai trọng âm dẫn đến sai lệch hoàn toàn về nghiệp vụ.
 - **The Bug List (Các cặp từ nguy hiểm thường gặp nhất):**
   - `Project`: Noun `/ˈprɑː.dʒekt/` (Dự án) $\leftrightarrow$ Verb `/prəˈdʒekt/` (Chiếu lên/Phóng lên)
@@ -30,6 +31,7 @@ Các từ vựng tiếng Anh có mặt chữ (spelling) giống hệt nhau nhưn
   - `Present`: Noun `/ˈprez.ənt/` (Hiện tại/Món quà) $\leftrightarrow$ Verb `/prɪˈzent/` (Thuyết trình)
 
 ---
+
 **Related Notes:**
 
 - Phương pháp dễ bị dính bẫy này: [[Phonetic_Chunking]]

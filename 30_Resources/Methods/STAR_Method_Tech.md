@@ -3,6 +3,7 @@ tags: [type/concept, topic/career, skill/communication]
 date: 2026-04-29
 aliases: [STAR Framework, Kỹ thuật phỏng vấn hành vi]
 ---
+
 # STAR Method (Interview Technique)
 
 ## TL;DR
@@ -18,10 +19,11 @@ Khung kể chuyện chiến lược (Situation -> Task -> Action -> Result) giú
 
 - **Tranh công hợp lý (The "I" Factor):** Tách bạch rõ ràng sự cống hiến. Thay vì nói "Chúng tôi đã tối ưu DB", hãy nói "Team chốt phương án X, nhưng **tôi trực tiếp** refactor module Y và optimize query...".
 - **Cú chốt định lượng (Result):** Phải có con số để đóng nắp quan tài sự nghi ngờ của người phỏng vấn.
-  - *Có data:* "Response time giảm 70%, chịu tải thêm 5000 CCU".
-  - *Không có data (Cấm fake số liệu):* Dùng định tính hợp lý. "Dù không có tool đo chính xác, nhưng team Sales phản hồi khách hàng không còn phàn nàn về lỗi timeout nữa".
+  - _Có data:_ "Response time giảm 70%, chịu tải thêm 5000 CCU".
+  - _Không có data (Cấm fake số liệu):_ Dùng định tính hợp lý. "Dù không có tool đo chính xác, nhưng team Sales phản hồi khách hàng không còn phàn nàn về lỗi timeout nữa".
 
 ---
+
 **Related Notes:**
 
 - Công cụ để tư duy ra phần Action xuất sắc: [[First_Principles_Thinking]]

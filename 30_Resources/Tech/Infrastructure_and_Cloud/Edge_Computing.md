@@ -3,6 +3,7 @@ tags: [type/concept, topic/tech, architecture, network]
 date: 2026-04-28
 aliases: [Edge Functions, Cloudflare Workers]
 ---
+
 # Edge Computing
 
 ## TL;DR
@@ -20,6 +21,7 @@ Phiên bản "tốc độ cao" của Serverless. Đưa mã nguồn ra thực thi
 - **Trade-off (Giới hạn môi trường):** Đánh đổi lại tốc độ, Edge runtime bị lược bỏ các API nặng. Em KHÔNG THỂ dùng các hàm Node.js thuần tuý (như `fs` để đọc/ghi file ổ cứng) hoặc các thư viện yêu cầu native binaries.
 
 ---
+
 **Related Notes:**
 
 - Nguồn gốc kiến trúc: [[Serverless_Architecture]]

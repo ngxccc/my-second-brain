@@ -3,6 +3,7 @@ tags: [type/concept, topic/finance, topic/macro-economics]
 date: 2026-01-30
 aliases: [Safe Haven, Tài sản trú ẩn, Vàng]
 ---
+
 # Safe Haven Asset
 
 ## TL;DR
@@ -21,6 +22,7 @@ Tài sản trú ẩn (như Vàng) là loại tài sản có khả năng giữ ng
 - **Vị thế danh mục (Portfolio Sizing):** Chỉ nên phân bổ một tỷ trọng nhỏ (5-10%) như một hợp đồng bảo hiểm rủi ro vĩ mô. Mục tiêu là bán nó lúc nó được đẩy giá cao nhất do tâm lý hoảng loạn, lấy tiền đó đi gom mua các tài sản sinh lời đang bị định giá rẻ mạt.
 
 ---
+
 **Related Notes:**
 
 - Rủi ro không thể bán được lúc cần thiết: [[Liquidity_Trap_Spread]]

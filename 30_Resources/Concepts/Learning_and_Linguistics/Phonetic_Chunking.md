@@ -3,6 +3,7 @@ tags: [type/concept, topic/english, learning-method]
 date: 2026-04-29
 aliases: [Gom nhóm ngữ âm, Sound Clustering]
 ---
+
 # Phonetic Chunking
 
 ## TL;DR
@@ -20,6 +21,7 @@ Kỹ thuật tối ưu hóa trí nhớ bằng cách gom các từ vựng có chu
 - **Sự dịch chuyển trọng âm:** Cùng một mặt chữ, nhưng nếu trọng âm (Word stress) rơi vào vị trí khác nhau, nguyên âm gốc có thể bị biến đổi. Ví dụ: Hậu tố `-age` trong `Percentage` (/ɪdʒ/) khác hoàn toàn với `Teenager` (/eɪ.dʒɚ/).
 
 ---
+
 **Related Notes:**
 
 - Ngoại lệ mặt chữ giống nhưng đọc khác: [[Linguistic_False_Friends]]

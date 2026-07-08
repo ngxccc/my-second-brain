@@ -1,379 +1,536 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="vi">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>JS Memory Engine Visualizer</title>
-  <!-- Load Inter & JetBrains Mono fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  
-  <!-- Shared stylesheet for reusability -->
-  <link rel="stylesheet" href="visuals-shared.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS Memory Engine Visualizer</title>
+    <!-- Load Inter & JetBrains Mono fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
 
-  <header>
-    <h1>JS Memory Engine Visualizer</h1>
-    <div class="subtitle">Trực quan hóa hoạt động cấp phát ô nhớ (Stack & Heap) và cơ chế dọn rác phân thế hệ (Garbage Collection)</div>
-  </header>
-
-  <div class="grid-container">
-    
-    <!-- Left Column: Controls & Code -->
-    <div class="left-panel">
-      
-      <!-- Control Panel -->
-      <div class="card">
-        <div class="code-title">
-          <span>Điều khiển</span>
-          <span id="step-indicator" style="color: var(--color-tertiary);">Bước 0 / 6</span>
-        </div>
-        
-        <div class="btn-group">
-          <button id="btn-next" class="btn-primary" onclick="nextStep()">Bước Tiếp Theo</button>
-          <button id="btn-reset" class="btn-secondary" onclick="resetVisualizer()">Khởi Động Lại</button>
-        </div>
+    <!-- Shared stylesheet for reusability -->
+    <link rel="stylesheet" href="visuals-shared.css" />
+  </head>
+  <body>
+    <header>
+      <h1>JS Memory Engine Visualizer</h1>
+      <div class="subtitle">
+        Trực quan hóa hoạt động cấp phát ô nhớ (Stack & Heap) và cơ chế dọn rác
+        phân thế hệ (Garbage Collection)
       </div>
+    </header>
 
-      <!-- Interactive Code Card -->
-      <div class="card" style="flex: 1; display: flex; flex-direction: column;">
-        <div class="code-title">Mã nguồn JavaScript</div>
-        <div class="code-container" style="flex: 1;">
-          <div class="code-line" id="line-1"><span class="code-num">1</span><span class="code-text"><span style="color: #ff79c6;">let</span> age = <span style="color: #bd93f9;">22</span>;</span></div>
-          <div class="code-line" id="line-2"><span class="code-num">2</span><span class="code-text"><span style="color: #ff79c6;">let</span> user = { name: <span style="color: #f1fa8c;">"Ngọc"</span>, age: age };</span></div>
-          <div class="code-line" id="line-3"><span class="code-num">3</span><span class="code-text"><span style="color: #ff79c6;">let</span> items = [<span style="color: #bd93f9;">1</span>, <span style="color: #bd93f9;">2</span>, <span style="color: #bd93f9;">3</span>];</span></div>
-          <div class="code-line" id="line-4"><span class="code-num">4</span><span class="code-text"><span style="color: #ff79c6;">let</span> getInfo = () => user.name;</span></div>
-          <div class="code-line" id="line-5"><span class="code-num">5</span><span class="code-text">items = <span style="color: #ff79c6;">null</span>; <span style="color: #6272a4;">// Hủy tham chiếu array</span></span></div>
-          <div class="code-line" id="line-6"><span class="code-num">6</span><span class="code-text">runGarbageCollection(); <span style="color: #6272a4;">// Chạy GC</span></span></div>
+    <div class="grid-container">
+      <!-- Left Column: Controls & Code -->
+      <div class="left-panel">
+        <!-- Control Panel -->
+        <div class="card">
+          <div class="code-title">
+            <span>Điều khiển</span>
+            <span id="step-indicator" style="color: var(--color-tertiary)"
+              >Bước 0 / 6</span
+            >
+          </div>
+
+          <div class="btn-group">
+            <button id="btn-next" class="btn-primary" onclick="nextStep()">
+              Bước Tiếp Theo
+            </button>
+            <button
+              id="btn-reset"
+              class="btn-secondary"
+              onclick="resetVisualizer()"
+            >
+              Khởi Động Lại
+            </button>
+          </div>
         </div>
-      </div>
 
-      <!-- Explanation Card -->
-      <div class="card" style="min-height: 180px;">
-        <div class="explanation-title" id="exp-title">Bắt đầu học</div>
-        <div class="explanation-body" id="exp-body">
-          Nhấn nút <strong>"Bước Tiếp Theo"</strong> để quan sát quá trình Engine JS thực thi từng dòng mã, cấp phát ô nhớ lên Stack/Heap và cách trình thu gom rác tự động giải phóng bộ nhớ.
-        </div>
-      </div>
-
-    </div>
-
-    <!-- Right Column: Visualization Visual Zones -->
-    <div class="right-panel">
-      
-      <!-- Stack Zone -->
-      <div class="stack-zone">
-        <div class="zone-title">Stack Memory (LIFO)</div>
-        <div class="stack-container" id="stack-container">
-          <!-- Stack frames will be rendered here dynamically -->
-        </div>
-      </div>
-
-      <!-- Heap Zone -->
-      <div class="heap-zone">
-        <div class="zone-title">Heap Memory (Dynamic & Garbage Collected)</div>
-        
-        <div class="heap-spaces">
-          
-          <!-- Young Generation (New Space) -->
-          <div class="heap-space-card">
-            <div class="space-header">
-              <span>New Space (Young Generation)</span>
-              <span class="space-subtitle">Thuật toán Scavenger (Copying)</span>
+        <!-- Interactive Code Card -->
+        <div
+          class="card"
+          style="flex: 1; display: flex; flex-direction: column"
+        >
+          <div class="code-title">Mã nguồn JavaScript</div>
+          <div class="code-container" style="flex: 1">
+            <div class="code-line" id="line-1">
+              <span class="code-num">1</span
+              ><span class="code-text"
+                ><span style="color: #ff79c6">let</span> age =
+                <span style="color: #bd93f9">22</span>;</span
+              >
             </div>
-            
-            <div class="new-space-split">
-              <!-- From Space -->
-              <div class="semi-space active-from" id="from-space">
-                <div style="position: absolute; bottom: 8px; right: 8px; font-family: var(--font-mono); font-size: 0.65rem; color: var(--color-secondary); opacity: 0.5;">FROM SPACE</div>
-                <!-- Objects dynamically rendered here -->
+            <div class="code-line" id="line-2">
+              <span class="code-num">2</span
+              ><span class="code-text"
+                ><span style="color: #ff79c6">let</span> user = { name:
+                <span style="color: #f1fa8c">"Ngọc"</span>, age: age };</span
+              >
+            </div>
+            <div class="code-line" id="line-3">
+              <span class="code-num">3</span
+              ><span class="code-text"
+                ><span style="color: #ff79c6">let</span> items = [<span
+                  style="color: #bd93f9"
+                  >1</span
+                >, <span style="color: #bd93f9">2</span>,
+                <span style="color: #bd93f9">3</span>];</span
+              >
+            </div>
+            <div class="code-line" id="line-4">
+              <span class="code-num">4</span
+              ><span class="code-text"
+                ><span style="color: #ff79c6">let</span> getInfo = () =>
+                user.name;</span
+              >
+            </div>
+            <div class="code-line" id="line-5">
+              <span class="code-num">5</span
+              ><span class="code-text"
+                >items = <span style="color: #ff79c6">null</span>;
+                <span style="color: #6272a4"
+                  >// Hủy tham chiếu array</span
+                ></span
+              >
+            </div>
+            <div class="code-line" id="line-6">
+              <span class="code-num">6</span
+              ><span class="code-text"
+                >runGarbageCollection();
+                <span style="color: #6272a4">// Chạy GC</span></span
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- Explanation Card -->
+        <div class="card" style="min-height: 180px">
+          <div class="explanation-title" id="exp-title">Bắt đầu học</div>
+          <div class="explanation-body" id="exp-body">
+            Nhấn nút <strong>"Bước Tiếp Theo"</strong> để quan sát quá trình
+            Engine JS thực thi từng dòng mã, cấp phát ô nhớ lên Stack/Heap và
+            cách trình thu gom rác tự động giải phóng bộ nhớ.
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column: Visualization Visual Zones -->
+      <div class="right-panel">
+        <!-- Stack Zone -->
+        <div class="stack-zone">
+          <div class="zone-title">Stack Memory (LIFO)</div>
+          <div class="stack-container" id="stack-container">
+            <!-- Stack frames will be rendered here dynamically -->
+          </div>
+        </div>
+
+        <!-- Heap Zone -->
+        <div class="heap-zone">
+          <div class="zone-title">
+            Heap Memory (Dynamic & Garbage Collected)
+          </div>
+
+          <div class="heap-spaces">
+            <!-- Young Generation (New Space) -->
+            <div class="heap-space-card">
+              <div class="space-header">
+                <span>New Space (Young Generation)</span>
+                <span class="space-subtitle"
+                  >Thuật toán Scavenger (Copying)</span
+                >
               </div>
-              
-              <!-- To Space -->
-              <div class="semi-space" id="to-space">
-                <div style="position: absolute; bottom: 8px; right: 8px; font-family: var(--font-mono); font-size: 0.65rem; color: var(--color-secondary); opacity: 0.5;">TO SPACE</div>
-                <!-- Objects copied here during Minor GC -->
+
+              <div class="new-space-split">
+                <!-- From Space -->
+                <div class="semi-space active-from" id="from-space">
+                  <div
+                    style="
+                      position: absolute;
+                      bottom: 8px;
+                      right: 8px;
+                      font-family: var(--font-mono);
+                      font-size: 0.65rem;
+                      color: var(--color-secondary);
+                      opacity: 0.5;
+                    "
+                  >
+                    FROM SPACE
+                  </div>
+                  <!-- Objects dynamically rendered here -->
+                </div>
+
+                <!-- To Space -->
+                <div class="semi-space" id="to-space">
+                  <div
+                    style="
+                      position: absolute;
+                      bottom: 8px;
+                      right: 8px;
+                      font-family: var(--font-mono);
+                      font-size: 0.65rem;
+                      color: var(--color-secondary);
+                      opacity: 0.5;
+                    "
+                  >
+                    TO SPACE
+                  </div>
+                  <!-- Objects copied here during Minor GC -->
+                </div>
+              </div>
+            </div>
+
+            <!-- Old Generation (Old Space) -->
+            <div class="heap-space-card">
+              <div class="space-header">
+                <span>Old Space (Old Generation)</span>
+                <span class="space-subtitle"
+                  >Thuật toán Mark-Sweep-Compact</span
+                >
+              </div>
+
+              <div class="old-space-container" id="old-space">
+                <!-- Promoted objects here -->
+              </div>
+
+              <!-- Legend for Old Space marking state -->
+              <div class="legend">
+                <div class="legend-item">
+                  <div class="legend-box" style="border-color: #50fa7b"></div>
+                  <span>Reachable (Được đánh dấu sống)</span>
+                </div>
+                <div class="legend-item">
+                  <div
+                    class="legend-box"
+                    style="border-color: var(--color-tertiary)"
+                  ></div>
+                  <span>Unreachable (Rò rỉ/Hủy - Sẽ dọn)</span>
+                </div>
               </div>
             </div>
           </div>
-
-          <!-- Old Generation (Old Space) -->
-          <div class="heap-space-card">
-            <div class="space-header">
-              <span>Old Space (Old Generation)</span>
-              <span class="space-subtitle">Thuật toán Mark-Sweep-Compact</span>
-            </div>
-            
-            <div class="old-space-container" id="old-space">
-              <!-- Promoted objects here -->
-            </div>
-
-            <!-- Legend for Old Space marking state -->
-            <div class="legend">
-              <div class="legend-item">
-                <div class="legend-box" style="border-color: #50fa7b;"></div>
-                <span>Reachable (Được đánh dấu sống)</span>
-              </div>
-              <div class="legend-item">
-                <div class="legend-box" style="border-color: var(--color-tertiary);"></div>
-                <span>Unreachable (Rò rỉ/Hủy - Sẽ dọn)</span>
-              </div>
-            </div>
-
-          </div>
-
         </div>
       </div>
-
     </div>
 
-  </div>
+    <script>
+      let currentStep = 0;
 
-  <script>
-    let currentStep = 0;
+      // Simulation Data Structures
+      const stepsData = [
+        {
+          step: 1,
+          title: "Bước 1: Khởi tạo biến nguyên thủy",
+          body: "Dòng lệnh <code>let age = 22;</code> được thực thi. Biến <code>age</code> chứa giá trị nguyên thủy (number). Bộ nhớ được cấp phát trực tiếp trên <strong>Stack Frame</strong> hiện tại (Global Context). Do kích thước cố định, CPU xử lý biến này với tốc độ tối đa.",
+          stack: [{ name: "age", val: "22", type: "primitive" }],
+          heap: {
+            from: [],
+            to: [],
+            old: [],
+          },
+        },
+        {
+          step: 2,
+          title: "Bước 2: Khởi tạo đối tượng phức tạp",
+          body: "Dòng lệnh <code>let user = { name: 'Ngọc', age: age };</code> được thực thi. Vì đối tượng <code>user</code> có kích thước động, V8 cấp phát bộ nhớ cho nó trên <strong>Heap (From Space của New Space)</strong> tại địa chỉ <code>@0x01</code>. Ở <strong>Stack</strong>, biến <code>user</code> chỉ lưu địa chỉ tham chiếu <code>@0x01</code> trỏ sang Heap.",
+          stack: [
+            { name: "age", val: "22", type: "primitive" },
+            { name: "user", val: "@0x01", type: "ref" },
+          ],
+          heap: {
+            from: [
+              {
+                id: "obj-0x01",
+                addr: "@0x01",
+                type: "Object",
+                props: ["name: 'Ngọc'", "age: 22"],
+                state: "",
+              },
+            ],
+            to: [],
+            old: [],
+          },
+        },
+        {
+          step: 3,
+          title: "Bước 3: Cấp phát Mảng lớn",
+          body: "Dòng lệnh <code>let items = [1, 2, 3];</code> tạo ra mảng. Tương tự như object, mảng là kiểu dữ liệu động nên được cấp phát trong <strong>From Space</strong> của New Space tại địa chỉ <code>@0x02</code>. Biến <code>items</code> trên <strong>Stack</strong> giữ con trỏ trỏ tới địa chỉ này.",
+          stack: [
+            { name: "age", val: "22", type: "primitive" },
+            { name: "user", val: "@0x01", type: "ref" },
+            { name: "items", val: "@0x02", type: "ref" },
+          ],
+          heap: {
+            from: [
+              {
+                id: "obj-0x01",
+                addr: "@0x01",
+                type: "Object",
+                props: ["name: 'Ngọc'", "age: 22"],
+                state: "",
+              },
+              {
+                id: "obj-0x02",
+                addr: "@0x02",
+                type: "Array",
+                props: ["0: 1", "1: 2", "2: 3"],
+                state: "",
+              },
+            ],
+            to: [],
+            old: [],
+          },
+        },
+        {
+          step: 4,
+          title: "Bước 4: Closure giữ tham chiếu",
+          body: "Hàm closure <code>let getInfo = () => user.name;</code> được khai báo. Hàm này đóng gói và giữ tham chiếu tới biến <code>user</code>. Bản thân closure là một Function Object nên nó được tạo trên Heap tại <code>@0x03</code>, giữ liên kết sống đến đối tượng <code>@0x01</code>.",
+          stack: [
+            { name: "age", val: "22", type: "primitive" },
+            { name: "user", val: "@0x01", type: "ref" },
+            { name: "items", val: "@0x02", type: "ref" },
+            { name: "getInfo", val: "@0x03", type: "ref" },
+          ],
+          heap: {
+            from: [
+              {
+                id: "obj-0x01",
+                addr: "@0x01",
+                type: "Object",
+                props: ["name: 'Ngọc'", "age: 22"],
+                state: "",
+              },
+              {
+                id: "obj-0x02",
+                addr: "@0x02",
+                type: "Array",
+                props: ["0: 1", "1: 2", "2: 3"],
+                state: "",
+              },
+              {
+                id: "obj-0x03",
+                addr: "@0x03",
+                type: "Closure",
+                props: ["scopes -> @0x01"],
+                state: "",
+              },
+            ],
+            to: [],
+            old: [],
+          },
+        },
+        {
+          step: 5,
+          title: "Bước 5: Hủy liên kết (Hủy tham chiếu)",
+          body: "Dòng lệnh <code>items = null;</code> được thực thi. Lúc này biến <code>items</code> trên <strong>Stack</strong> bị gán thành <code>null</code>. Con trỏ đến địa chỉ <code>@0x02</code> bị đứt. Mảng Array tại <code>@0x02</code> trên Heap chính thức trở thành <strong>đối tượng mồ côi (Unreachable)</strong> vì không còn bất kỳ biến nào trên Stack hay Closure nào trỏ tới nó nữa.",
+          stack: [
+            { name: "age", val: "22", type: "primitive" },
+            { name: "user", val: "@0x01", type: "ref" },
+            { name: "items", val: "null", type: "primitive" },
+            { name: "getInfo", val: "@0x03", type: "ref" },
+          ],
+          heap: {
+            from: [
+              {
+                id: "obj-0x01",
+                addr: "@0x01",
+                type: "Object",
+                props: ["name: 'Ngọc'", "age: 22"],
+                state: "marked",
+              },
+              {
+                id: "obj-0x02",
+                addr: "@0x02",
+                type: "Array",
+                props: ["0: 1", "1: 2", "2: 3"],
+                state: "unmarked",
+              },
+              {
+                id: "obj-0x03",
+                addr: "@0x03",
+                type: "Closure",
+                props: ["scopes -> @0x01"],
+                state: "marked",
+              },
+            ],
+            to: [],
+            old: [],
+          },
+        },
+        {
+          step: 6,
+          title: "Bước 6: Thu gom rác (Garbage Collection - Scavenger)",
+          body: "Bộ thu gom rác chạy (Minor GC). Nó duyệt đồ thị từ Stack và đánh dấu <code>@0x01</code> và <code>@0x03</code> là <strong>được kết nối (Reachable - màu xanh lá)</strong>, còn <code>@0x02</code> là **không thể kết nối (Unreachable - màu đỏ)**. Thuật toán **Scavenger** lập tức copy các đối tượng sống sang <strong>To Space</strong> (đồng thời nâng cấp chúng vì đã sống lâu) và xóa sạch From Space (đối tượng <code>@0x02</code> bị hủy vĩnh viễn khỏi bộ nhớ).",
+          stack: [
+            { name: "age", val: "22", type: "primitive" },
+            { name: "user", val: "@0x01", type: "ref" },
+            { name: "items", val: "null", type: "primitive" },
+            { name: "getInfo", val: "@0x03", type: "ref" },
+          ],
+          heap: {
+            from: [],
+            to: [],
+            old: [
+              {
+                id: "obj-0x01",
+                addr: "@0x01",
+                type: "Object",
+                props: ["name: 'Ngọc'", "age: 22"],
+                state: "marked",
+              },
+              {
+                id: "obj-0x03",
+                addr: "@0x03",
+                type: "Closure",
+                props: ["scopes -> @0x01"],
+                state: "marked",
+              },
+            ],
+          },
+        },
+      ];
 
-    // Simulation Data Structures
-    const stepsData = [
-      {
-        step: 1,
-        title: "Bước 1: Khởi tạo biến nguyên thủy",
-        body: "Dòng lệnh <code>let age = 22;</code> được thực thi. Biến <code>age</code> chứa giá trị nguyên thủy (number). Bộ nhớ được cấp phát trực tiếp trên <strong>Stack Frame</strong> hiện tại (Global Context). Do kích thước cố định, CPU xử lý biến này với tốc độ tối đa.",
-        stack: [
-          { name: "age", val: "22", type: "primitive" }
-        ],
-        heap: {
-          from: [],
-          to: [],
-          old: []
+      function resetVisualizer() {
+        currentStep = 0;
+        document.getElementById("btn-next").disabled = false;
+        document.getElementById("btn-next").innerText = "Bắt Đầu";
+        document.getElementById("step-indicator").innerText = "Bước 0 / 6";
+        document.getElementById("exp-title").innerText = "Bắt đầu học";
+        document.getElementById("exp-body").innerHTML =
+          'Nhấn nút <strong>"Bước Tiếp Theo"</strong> để quan sát quá trình Engine JS thực thi từng dòng mã, cấp phát ô nhớ lên Stack/Heap và cách trình thu gom rác tự động giải phóng bộ nhớ.';
+
+        // Clean highlighted lines
+        for (let i = 1; i <= 6; i++) {
+          document.getElementById(`line-${i}`).classList.remove("active");
         }
-      },
-      {
-        step: 2,
-        title: "Bước 2: Khởi tạo đối tượng phức tạp",
-        body: "Dòng lệnh <code>let user = { name: 'Ngọc', age: age };</code> được thực thi. Vì đối tượng <code>user</code> có kích thước động, V8 cấp phát bộ nhớ cho nó trên <strong>Heap (From Space của New Space)</strong> tại địa chỉ <code>@0x01</code>. Ở <strong>Stack</strong>, biến <code>user</code> chỉ lưu địa chỉ tham chiếu <code>@0x01</code> trỏ sang Heap.",
-        stack: [
-          { name: "age", val: "22", type: "primitive" },
-          { name: "user", val: "@0x01", type: "ref" }
-        ],
-        heap: {
-          from: [
-            { id: "obj-0x01", addr: "@0x01", type: "Object", props: ["name: 'Ngọc'", "age: 22"], state: "" }
-          ],
-          to: [],
-          old: []
-        }
-      },
-      {
-        step: 3,
-        title: "Bước 3: Cấp phát Mảng lớn",
-        body: "Dòng lệnh <code>let items = [1, 2, 3];</code> tạo ra mảng. Tương tự như object, mảng là kiểu dữ liệu động nên được cấp phát trong <strong>From Space</strong> của New Space tại địa chỉ <code>@0x02</code>. Biến <code>items</code> trên <strong>Stack</strong> giữ con trỏ trỏ tới địa chỉ này.",
-        stack: [
-          { name: "age", val: "22", type: "primitive" },
-          { name: "user", val: "@0x01", type: "ref" },
-          { name: "items", val: "@0x02", type: "ref" }
-        ],
-        heap: {
-          from: [
-            { id: "obj-0x01", addr: "@0x01", type: "Object", props: ["name: 'Ngọc'", "age: 22"], state: "" },
-            { id: "obj-0x02", addr: "@0x02", type: "Array", props: ["0: 1", "1: 2", "2: 3"], state: "" }
-          ],
-          to: [],
-          old: []
-        }
-      },
-      {
-        step: 4,
-        title: "Bước 4: Closure giữ tham chiếu",
-        body: "Hàm closure <code>let getInfo = () => user.name;</code> được khai báo. Hàm này đóng gói và giữ tham chiếu tới biến <code>user</code>. Bản thân closure là một Function Object nên nó được tạo trên Heap tại <code>@0x03</code>, giữ liên kết sống đến đối tượng <code>@0x01</code>.",
-        stack: [
-          { name: "age", val: "22", type: "primitive" },
-          { name: "user", val: "@0x01", type: "ref" },
-          { name: "items", val: "@0x02", type: "ref" },
-          { name: "getInfo", val: "@0x03", type: "ref" }
-        ],
-        heap: {
-          from: [
-            { id: "obj-0x01", addr: "@0x01", type: "Object", props: ["name: 'Ngọc'", "age: 22"], state: "" },
-            { id: "obj-0x02", addr: "@0x02", type: "Array", props: ["0: 1", "1: 2", "2: 3"], state: "" },
-            { id: "obj-0x03", addr: "@0x03", type: "Closure", props: ["scopes -> @0x01"], state: "" }
-          ],
-          to: [],
-          old: []
-        }
-      },
-      {
-        step: 5,
-        title: "Bước 5: Hủy liên kết (Hủy tham chiếu)",
-        body: "Dòng lệnh <code>items = null;</code> được thực thi. Lúc này biến <code>items</code> trên <strong>Stack</strong> bị gán thành <code>null</code>. Con trỏ đến địa chỉ <code>@0x02</code> bị đứt. Mảng Array tại <code>@0x02</code> trên Heap chính thức trở thành <strong>đối tượng mồ côi (Unreachable)</strong> vì không còn bất kỳ biến nào trên Stack hay Closure nào trỏ tới nó nữa.",
-        stack: [
-          { name: "age", val: "22", type: "primitive" },
-          { name: "user", val: "@0x01", type: "ref" },
-          { name: "items", val: "null", type: "primitive" },
-          { name: "getInfo", val: "@0x03", type: "ref" }
-        ],
-        heap: {
-          from: [
-            { id: "obj-0x01", addr: "@0x01", type: "Object", props: ["name: 'Ngọc'", "age: 22"], state: "marked" },
-            { id: "obj-0x02", addr: "@0x02", type: "Array", props: ["0: 1", "1: 2", "2: 3"], state: "unmarked" },
-            { id: "obj-0x03", addr: "@0x03", type: "Closure", props: ["scopes -> @0x01"], state: "marked" }
-          ],
-          to: [],
-          old: []
-        }
-      },
-      {
-        step: 6,
-        title: "Bước 6: Thu gom rác (Garbage Collection - Scavenger)",
-        body: "Bộ thu gom rác chạy (Minor GC). Nó duyệt đồ thị từ Stack và đánh dấu <code>@0x01</code> và <code>@0x03</code> là <strong>được kết nối (Reachable - màu xanh lá)</strong>, còn <code>@0x02</code> là **không thể kết nối (Unreachable - màu đỏ)**. Thuật toán **Scavenger** lập tức copy các đối tượng sống sang <strong>To Space</strong> (đồng thời nâng cấp chúng vì đã sống lâu) và xóa sạch From Space (đối tượng <code>@0x02</code> bị hủy vĩnh viễn khỏi bộ nhớ).",
-        stack: [
-          { name: "age", val: "22", type: "primitive" },
-          { name: "user", val: "@0x01", type: "ref" },
-          { name: "items", val: "null", type: "primitive" },
-          { name: "getInfo", val: "@0x03", type: "ref" }
-        ],
-        heap: {
-          from: [],
-          to: [],
-          old: [
-            { id: "obj-0x01", addr: "@0x01", type: "Object", props: ["name: 'Ngọc'", "age: 22"], state: "marked" },
-            { id: "obj-0x03", addr: "@0x03", type: "Closure", props: ["scopes -> @0x01"], state: "marked" }
-          ]
-        }
+
+        // Clear visualization containers
+        document.getElementById("stack-container").innerHTML = "";
+        document.getElementById("from-space").innerHTML =
+          `<div style="position: absolute; bottom: 8px; right: 8px; font-family: var(--font-mono); font-size: 0.65rem; color: var(--color-secondary); opacity: 0.5;">FROM SPACE</div>`;
+        document.getElementById("to-space").innerHTML =
+          `<div style="position: absolute; bottom: 8px; right: 8px; font-family: var(--font-mono); font-size: 0.65rem; color: var(--color-secondary); opacity: 0.5;">TO SPACE</div>`;
+        document.getElementById("old-space").innerHTML = "";
       }
-    ];
 
-    function resetVisualizer() {
-      currentStep = 0;
-      document.getElementById("btn-next").disabled = false;
-      document.getElementById("btn-next").innerText = "Bắt Đầu";
-      document.getElementById("step-indicator").innerText = "Bước 0 / 6";
-      document.getElementById("exp-title").innerText = "Bắt đầu học";
-      document.getElementById("exp-body").innerHTML = "Nhấn nút <strong>\"Bước Tiếp Theo\"</strong> để quan sát quá trình Engine JS thực thi từng dòng mã, cấp phát ô nhớ lên Stack/Heap và cách trình thu gom rác tự động giải phóng bộ nhớ.";
-      
-      // Clean highlighted lines
-      for (let i = 1; i <= 6; i++) {
-        document.getElementById(`line-${i}`).classList.remove("active");
-      }
+      function renderStep(stepIndex) {
+        const data = stepsData[stepIndex];
 
-      // Clear visualization containers
-      document.getElementById("stack-container").innerHTML = "";
-      document.getElementById("from-space").innerHTML = `<div style="position: absolute; bottom: 8px; right: 8px; font-family: var(--font-mono); font-size: 0.65rem; color: var(--color-secondary); opacity: 0.5;">FROM SPACE</div>`;
-      document.getElementById("to-space").innerHTML = `<div style="position: absolute; bottom: 8px; right: 8px; font-family: var(--font-mono); font-size: 0.65rem; color: var(--color-secondary); opacity: 0.5;">TO SPACE</div>`;
-      document.getElementById("old-space").innerHTML = "";
-    }
+        // Update indicators & explanations
+        document.getElementById("step-indicator").innerText =
+          `Bước ${data.step} / 6`;
+        document.getElementById("btn-next").innerText =
+          data.step === 6 ? "Hoàn Thành" : "Bước Tiếp Theo";
+        document.getElementById("exp-title").innerText = data.title;
+        document.getElementById("exp-body").innerHTML = data.body;
 
-    function renderStep(stepIndex) {
-      const data = stepsData[stepIndex];
-      
-      // Update indicators & explanations
-      document.getElementById("step-indicator").innerText = `Bước ${data.step} / 6`;
-      document.getElementById("btn-next").innerText = data.step === 6 ? "Hoàn Thành" : "Bước Tiếp Theo";
-      document.getElementById("exp-title").innerText = data.title;
-      document.getElementById("exp-body").innerHTML = data.body;
-
-      // Highlight active code line
-      for (let i = 1; i <= 6; i++) {
-        const line = document.getElementById(`line-${i}`);
-        if (i === data.step) {
-          line.classList.add("active");
-        } else {
-          line.classList.remove("active");
+        // Highlight active code line
+        for (let i = 1; i <= 6; i++) {
+          const line = document.getElementById(`line-${i}`);
+          if (i === data.step) {
+            line.classList.add("active");
+          } else {
+            line.classList.remove("active");
+          }
         }
-      }
 
-      // Render Stack Frame
-      const stackContainer = document.getElementById("stack-container");
-      stackContainer.innerHTML = "";
-      
-      if (data.stack.length > 0) {
-        const frame = document.createElement("div");
-        frame.className = "stack-frame";
-        frame.innerHTML = `<div class="frame-title">Global Execution Context</div>`;
-        
-        data.stack.forEach(variable => {
-          const row = document.createElement("div");
-          row.className = "variable-row";
-          
-          const isRef = variable.type === "ref";
-          row.innerHTML = `
+        // Render Stack Frame
+        const stackContainer = document.getElementById("stack-container");
+        stackContainer.innerHTML = "";
+
+        if (data.stack.length > 0) {
+          const frame = document.createElement("div");
+          frame.className = "stack-frame";
+          frame.innerHTML = `<div class="frame-title">Global Execution Context</div>`;
+
+          data.stack.forEach((variable) => {
+            const row = document.createElement("div");
+            row.className = "variable-row";
+
+            const isRef = variable.type === "ref";
+            row.innerHTML = `
             <span class="var-name">${variable.name}</span>
-            <span class="var-val ${isRef ? 'ref' : ''}">${variable.val}</span>
+            <span class="var-val ${isRef ? "ref" : ""}">${variable.val}</span>
           `;
-          frame.appendChild(row);
-        });
-        
-        stackContainer.appendChild(frame);
-      }
+            frame.appendChild(row);
+          });
 
-      // Render From Space (Heap Young Gen)
-      const fromSpace = document.getElementById("from-space");
-      // Keep background labels
-      fromSpace.innerHTML = `<div style="position: absolute; bottom: 8px; right: 8px; font-family: var(--font-mono); font-size: 0.65rem; color: var(--color-secondary); opacity: 0.5;">FROM SPACE</div>`;
-      
-      data.heap.from.forEach(obj => {
-        const objEl = document.createElement("div");
-        objEl.className = `heap-object ${obj.state}`;
-        objEl.id = obj.id;
-        objEl.innerHTML = `
+          stackContainer.appendChild(frame);
+        }
+
+        // Render From Space (Heap Young Gen)
+        const fromSpace = document.getElementById("from-space");
+        // Keep background labels
+        fromSpace.innerHTML = `<div style="position: absolute; bottom: 8px; right: 8px; font-family: var(--font-mono); font-size: 0.65rem; color: var(--color-secondary); opacity: 0.5;">FROM SPACE</div>`;
+
+        data.heap.from.forEach((obj) => {
+          const objEl = document.createElement("div");
+          objEl.className = `heap-object ${obj.state}`;
+          objEl.id = obj.id;
+          objEl.innerHTML = `
           <div style="display: flex; justify-content: space-between; border-bottom: 1px solid var(--color-border); padding-bottom: 2px;">
             <span class="obj-type">${obj.type}</span>
             <span class="obj-addr">${obj.addr}</span>
           </div>
           <div style="flex: 1; padding-top: 4px; display: flex; flex-direction: column; gap: 2px;">
-            ${obj.props.map(p => `<div class="obj-prop">${p}</div>`).join('')}
+            ${obj.props.map((p) => `<div class="obj-prop">${p}</div>`).join("")}
           </div>
         `;
-        fromSpace.appendChild(objEl);
-      });
+          fromSpace.appendChild(objEl);
+        });
 
-      // Special animation handling for step 6 (Garbage Collection in action)
-      if (data.step === 6) {
-        // Render step 6 logic: copy objects to To-space first, then promote
-        const toSpace = document.getElementById("to-space");
-        toSpace.innerHTML = `<div style="position: absolute; bottom: 8px; right: 8px; font-family: var(--font-mono); font-size: 0.65rem; color: var(--color-secondary); opacity: 0.5;">TO SPACE</div>`;
-        
-        // Render old space (promoting animation)
-        const oldSpace = document.getElementById("old-space");
-        oldSpace.innerHTML = "";
-        
-        data.heap.old.forEach(obj => {
-          const objEl = document.createElement("div");
-          objEl.className = `heap-object marked`;
-          objEl.id = obj.id;
-          objEl.innerHTML = `
+        // Special animation handling for step 6 (Garbage Collection in action)
+        if (data.step === 6) {
+          // Render step 6 logic: copy objects to To-space first, then promote
+          const toSpace = document.getElementById("to-space");
+          toSpace.innerHTML = `<div style="position: absolute; bottom: 8px; right: 8px; font-family: var(--font-mono); font-size: 0.65rem; color: var(--color-secondary); opacity: 0.5;">TO SPACE</div>`;
+
+          // Render old space (promoting animation)
+          const oldSpace = document.getElementById("old-space");
+          oldSpace.innerHTML = "";
+
+          data.heap.old.forEach((obj) => {
+            const objEl = document.createElement("div");
+            objEl.className = `heap-object marked`;
+            objEl.id = obj.id;
+            objEl.innerHTML = `
             <div style="display: flex; justify-content: space-between; border-bottom: 1px solid var(--color-border); padding-bottom: 2px;">
               <span class="obj-type">${obj.type}</span>
               <span class="obj-addr">${obj.addr}</span>
             </div>
             <div style="flex: 1; padding-top: 4px; display: flex; flex-direction: column; gap: 2px;">
-              ${obj.props.map(p => `<div class="obj-prop">${p}</div>`).join('')}
+              ${obj.props.map((p) => `<div class="obj-prop">${p}</div>`).join("")}
             </div>
             <div style="font-size: 0.55rem; color: #50fa7b; border-top: 1px solid var(--color-border); text-align: right; padding-top: 2px;">Promoted (Old Gen)</div>
           `;
-          oldSpace.appendChild(objEl);
-        });
-      } else {
-        // Clear To-space and Old-space on normal steps
-        document.getElementById("to-space").innerHTML = `<div style="position: absolute; bottom: 8px; right: 8px; font-family: var(--font-mono); font-size: 0.65rem; color: var(--color-secondary); opacity: 0.5;">TO SPACE</div>`;
-        document.getElementById("old-space").innerHTML = "";
+            oldSpace.appendChild(objEl);
+          });
+        } else {
+          // Clear To-space and Old-space on normal steps
+          document.getElementById("to-space").innerHTML =
+            `<div style="position: absolute; bottom: 8px; right: 8px; font-family: var(--font-mono); font-size: 0.65rem; color: var(--color-secondary); opacity: 0.5;">TO SPACE</div>`;
+          document.getElementById("old-space").innerHTML = "";
+        }
       }
-    }
 
-    function nextStep() {
-      if (currentStep < stepsData.length) {
-        renderStep(currentStep);
-        currentStep++;
-      } else {
-        document.getElementById("btn-next").disabled = true;
-        document.getElementById("exp-title").innerText = "Hoàn thành bài học!";
-        document.getElementById("exp-body").innerHTML = "Chúc mừng bạn đã hoàn thành bài học trực quan! Bây giờ bạn đã hiểu rõ ranh giới giữa <strong>Stack Frame</strong> và <strong>Heap</strong>, cũng như cách V8 thực hiện đánh dấu sống/chết để quét dọn bộ nhớ.";
+      function nextStep() {
+        if (currentStep < stepsData.length) {
+          renderStep(currentStep);
+          currentStep++;
+        } else {
+          document.getElementById("btn-next").disabled = true;
+          document.getElementById("exp-title").innerText =
+            "Hoàn thành bài học!";
+          document.getElementById("exp-body").innerHTML =
+            "Chúc mừng bạn đã hoàn thành bài học trực quan! Bây giờ bạn đã hiểu rõ ranh giới giữa <strong>Stack Frame</strong> và <strong>Heap</strong>, cũng như cách V8 thực hiện đánh dấu sống/chết để quét dọn bộ nhớ.";
+        }
       }
-    }
 
-    // Initialize on load
-    resetVisualizer();
-  </script>
-</body>
+      // Initialize on load
+      resetVisualizer();
+    </script>
+  </body>
 </html>

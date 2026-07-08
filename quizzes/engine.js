@@ -29,7 +29,7 @@ function loadQuestion() {
   const currentQ = questions[currentQuestionIdx];
   questionInfoEl.textContent = `QUESTION ${currentQuestionIdx + 1} OF ${questions.length}`;
   questionTextEl.textContent = currentQ.question;
-  
+
   // Update progress bar
   const progressPercent = (currentQuestionIdx / questions.length) * 100;
   progressBarEl.style.width = `${progressPercent}%`;
@@ -37,26 +37,26 @@ function loadQuestion() {
   optionsListEl.innerHTML = "";
   currentQ.options.forEach((option, idx) => {
     const letter = String.fromCharCode(65 + idx); // A, B, C, D
-    
+
     const optionItem = document.createElement("div");
     optionItem.className = "option-item";
     optionItem.onclick = () => selectOption(idx);
-    
+
     optionItem.innerHTML = `
       <div class="option-letter">${letter}</div>
       <div class="option-text">${escapeHtml(option)}</div>
     `;
-    
+
     optionsListEl.appendChild(optionItem);
   });
 }
 
 function selectOption(idx) {
   if (hasSubmitted) return;
-  
+
   selectedOptionIdx = idx;
   actionBtnEl.disabled = false;
-  
+
   const items = optionsListEl.querySelectorAll(".option-item");
   items.forEach((item, i) => {
     if (i === idx) {
@@ -83,7 +83,7 @@ function submitAnswer() {
   hasSubmitted = true;
   const currentQ = questions[currentQuestionIdx];
   const items = optionsListEl.querySelectorAll(".option-item");
-  
+
   items.forEach((item, i) => {
     item.classList.remove("selected");
     if (i === currentQ.correct) {
@@ -127,9 +127,11 @@ function showResults() {
 
   const percentage = (score / questions.length) * 100;
   if (percentage === 100) {
-    resultMsgEl.textContent = "Xuất sắc! Mày đã nắm rõ toàn bộ kiến thức ôn tập.";
+    resultMsgEl.textContent =
+      "Xuất sắc! Mày đã nắm rõ toàn bộ kiến thức ôn tập.";
   } else if (percentage >= 80) {
-    resultMsgEl.textContent = "Rất tốt! Mày đã sẵn sàng cho các buổi làm việc thực tế.";
+    resultMsgEl.textContent =
+      "Rất tốt! Mày đã sẵn sàng cho các buổi làm việc thực tế.";
   } else if (percentage >= 50) {
     resultMsgEl.textContent = "Tạm ổn, nên đọc lại tài liệu để củng cố thêm.";
   } else {
@@ -155,6 +157,6 @@ function escapeHtml(text) {
 }
 
 // Start on load
-if (typeof questions !== 'undefined' && questions.length > 0) {
+if (typeof questions !== "undefined" && questions.length > 0) {
   loadQuestion();
 }

@@ -9,8 +9,9 @@ aliases: [TypeScript Type Utilities, So sánh Omit Pick Exclude]
 ## TL;DR
 
 Các Utility Types của TypeScript được chia thành hai nhóm chính dựa trên kiểu dữ liệu đầu vào:
-* **Object Types (Interface/Type):** Sử dụng `Pick` (lấy ra các thuộc tính) và `Omit` (loại bỏ các thuộc tính).
-* **Union Types (Tập hợp các kiểu dữ liệu/String literals):** Sử dụng `Exclude` (loại bỏ phần tử khỏi Union) và `Extract` (giữ lại phần tử trong Union).
+
+- **Object Types (Interface/Type):** Sử dụng `Pick` (lấy ra các thuộc tính) và `Omit` (loại bỏ các thuộc tính).
+- **Union Types (Tập hợp các kiểu dữ liệu/String literals):** Sử dụng `Exclude` (loại bỏ phần tử khỏi Union) và `Extract` (giữ lại phần tử trong Union).
 
 Sai lầm phổ biến nhất là sử dụng `Omit` lên một Union type, dẫn đến việc TypeScript hiểu sai mục đích và gây lỗi biên dịch.
 
@@ -18,17 +19,17 @@ Sai lầm phổ biến nhất là sử dụng `Omit` lên một Union type, dẫ
 
 ### 1. Phân nhóm Utility Types
 
-| Utility Type | Đầu vào (Input) | Tác vụ (Operation) | Bản chất bên dưới |
-| :--- | :--- | :--- | :--- |
-| **`Pick<T, K>`** | Object Type `T` | **Lấy ra** các key `K` | `{ [P in K]: T[P] }` |
-| **`Omit<T, K>`** | Object Type `T` | **Loại bỏ** các key `K` | `Pick<T, Exclude<keyof T, K>>` |
-| **`Exclude<T, U>`**| Union Type `T` | **Loại bỏ** các thành viên `U` | `T extends U ? never : T` |
-| **`Extract<T, U>`**| Union Type `T` | **Lấy ra** các thành viên `U` | `T extends U ? T : never` |
+| Utility Type        | Đầu vào (Input) | Tác vụ (Operation)             | Bản chất bên dưới              |
+| :------------------ | :-------------- | :----------------------------- | :----------------------------- |
+| **`Pick<T, K>`**    | Object Type `T` | **Lấy ra** các key `K`         | `{ [P in K]: T[P] }`           |
+| **`Omit<T, K>`**    | Object Type `T` | **Loại bỏ** các key `K`        | `Pick<T, Exclude<keyof T, K>>` |
+| **`Exclude<T, U>`** | Union Type `T`  | **Loại bỏ** các thành viên `U` | `T extends U ? never : T`      |
+| **`Extract<T, U>`** | Union Type `T`  | **Lấy ra** các thành viên `U`  | `T extends U ? T : never`      |
 
 ### 2. Sự khác biệt cốt lõi giữa Omit và Exclude
 
-* **`Omit`** nhận đầu vào là một cấu trúc Object (có các cặp key-value). Nó sử dụng `keyof T` để lấy danh sách key và loại bỏ key được chỉ định.
-* **`Exclude`** hoạt động trên danh sách các kiểu dữ liệu độc lập (Union). Nó sử dụng cơ chế **Distributive Conditional Type** để duyệt qua từng phần tử của Union và loại bỏ phần tử khớp điều kiện.
+- **`Omit`** nhận đầu vào là một cấu trúc Object (có các cặp key-value). Nó sử dụng `keyof T` để lấy danh sách key và loại bỏ key được chỉ định.
+- **`Exclude`** hoạt động trên danh sách các kiểu dữ liệu độc lập (Union). Nó sử dụng cơ chế **Distributive Conditional Type** để duyệt qua từng phần tử của Union và loại bỏ phần tử khớp điều kiện.
 
 ## Practical Implementation
 
@@ -76,6 +77,8 @@ type WrongPaymentMethod = Omit<PaymentMethod, "TRADE_CREDIT">;
 TypeScript sẽ tiến hành loại bỏ thuộc tính `"TRADE_CREDIT"` ra khỏi đối tượng `String` chứ không loại bỏ phần tử `"TRADE_CREDIT"` ra khỏi Union. Kết quả là kiểu `WrongPaymentMethod` không thể gán bằng `"PAYOS"` hay `"CASH"`.
 
 ---
+
 **Related Notes:**
-* Cơ chế duyệt Union tự động: [[TS_Distributive_Conditional_Types]]
-* Bản đồ tri thức lập trình: [[000_Tech_MOC]]
+
+- Cơ chế duyệt Union tự động: [[TS_Distributive_Conditional_Types]]
+- Bản đồ tri thức lập trình: [[000_Tech_MOC]]

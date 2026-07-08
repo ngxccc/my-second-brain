@@ -1,7 +1,14 @@
 ---
 tags: [type/concept, topic/architecture, anti-pattern]
 date: 2026-05-01
-aliases: [Circular Dependency, Cyclic Dependency, Phụ thuộc vòng tròn, Vòng lặp phụ thuộc, Dependency Cycle]
+aliases:
+  [
+    Circular Dependency,
+    Cyclic Dependency,
+    Phụ thuộc vòng tròn,
+    Vòng lặp phụ thuộc,
+    Dependency Cycle,
+  ]
 ---
 
 # Circular Dependency
@@ -30,14 +37,14 @@ Circular Dependency (Phụ thuộc vòng tròn) xảy ra khi hai hoặc nhiều 
 ```typescript
 // ❌ BAD - Circular Dependency
 // user.service.ts
-import { PostService } from '../posts/post.service';
+import { PostService } from "../posts/post.service";
 
 export class UserService {
   constructor(private postService: PostService) {}
 }
 
 // post.service.ts
-import { UserService } from '../users/user.service';
+import { UserService } from "../users/user.service";
 
 export class PostService {
   constructor(private userService: UserService) {}
@@ -55,6 +62,7 @@ export class PasswordHasher {
 ```
 
 ---
+
 **Related Notes:**
 
 - [[Shared_Module_Dependency_Rule]]

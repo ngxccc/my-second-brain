@@ -3,6 +3,7 @@ tags: [type/concept, topic/backend, pattern/architectural, framework/express]
 date: 2026-02-08
 aliases: [N-Tier Architecture, Monolithic Architecture]
 ---
+
 # Layered Architecture
 
 ## TL;DR
@@ -14,9 +15,9 @@ Cách tổ chức code bằng cách chia cắt ứng dụng theo chiều ngang d
 - **Separation of Concerns (SoC):** Mỗi tầng chỉ làm đúng nhiệm vụ của mình. Controller không tính toán nghiệp vụ, Model không xử lý HTTP Request.
 - **Unidirectional Data Flow (Dòng chảy một chiều):** Request đi theo thứ tự chuẩn: **Controller $\rightarrow$ Service $\rightarrow$ Model**.
 - **Phân chia trách nhiệm:**
-  - *Presentation Layer (Controller):* "Lễ tân". Nhận request, validate input (bằng DTO/Zod), gọi Service, và trả về JSON.
-  - *Business Logic Layer (Service):* "Bộ não". Chứa 100% logic if/else nghiệp vụ, gọi API bên thứ 3, xử lý dữ liệu.
-  - *Data Access Layer (Model/Repository):* "Thủ kho". Nơi duy nhất được phép chọc vào Database để thực thi thao tác CRUD.
+  - _Presentation Layer (Controller):_ "Lễ tân". Nhận request, validate input (bằng DTO/Zod), gọi Service, và trả về JSON.
+  - _Business Logic Layer (Service):_ "Bộ não". Chứa 100% logic if/else nghiệp vụ, gọi API bên thứ 3, xử lý dữ liệu.
+  - _Data Access Layer (Model/Repository):_ "Thủ kho". Nơi duy nhất được phép chọc vào Database để thực thi thao tác CRUD.
 
 ## Practical Implementation
 
@@ -46,6 +47,7 @@ class UsersService {
 ```
 
 ---
+
 **Related Notes:**
 
 - Giải pháp thay thế khi dự án phình to: [[Modular_Monolith_Architecture]]

@@ -17,11 +17,11 @@ TDD (Test-Driven Design) là hệ tư tưởng "viết test trước, code sau" 
 - **Giải quyết bài toán gì?** Thiết lập vòng lặp feedback tức thì (`Red -> Green -> Refactor`). Ép kỹ sư phải định nghĩa contract rành mạch (input, output, hành vi) trước khi nhảy vào implement chi tiết thuật toán.
 - **Nó có thay thế cái gì hay không?** Tiễn quy trình "Code & Fix" truyền thống vào dĩ vãng. Thay thế tư duy thiết kế thác nước "Big Design Up Front" (vẽ UML rườm rà) bằng kiến trúc tiến hóa (Evolutionary Architecture) — hệ thống tự scale và hoàn thiện qua từng bài test.
 - **Áp dụng dụng vào những dự án nào?** Phụ thuộc vào vòng đời và độ phức tạp của domain:
-    - *Tuyệt đối KHÔNG:* Dự án MVP, Outsource mì ăn liền (thay đổi requirement theo ngày) hoặc Frontend UI/Components.
-    - *Bắt buộc CÓ:* Core Product (lifespan > 2 năm), logic phức tạp. Tỏa sáng rực rỡ ở Backend (xử lý logic, API contract) và phần State Management của Frontend.
-- **Cơ chế hoạt động (How it works under the hood).** 
-    - TDD là công cụ thực chiến của `Interface-Driven Design (IDD)`. Gọi một method chưa tồn tại ép bạn phải đẻ ra `Interface` của nó trước.
-    - *Pragmatic TDD:* Phân lô codebase. Áp dụng 100% TDD cho "Lòng đỏ" (Core Domain/Use Cases - thuần logic, không I/O). Bỏ qua TDD hoàn toàn cho "Lòng trắng" (Infrastructure/Database/UI - nơi logic mỏng nhưng thay đổi công nghệ liên tục) để né bẫy over-mocking.
+  - _Tuyệt đối KHÔNG:_ Dự án MVP, Outsource mì ăn liền (thay đổi requirement theo ngày) hoặc Frontend UI/Components.
+  - _Bắt buộc CÓ:_ Core Product (lifespan > 2 năm), logic phức tạp. Tỏa sáng rực rỡ ở Backend (xử lý logic, API contract) và phần State Management của Frontend.
+- **Cơ chế hoạt động (How it works under the hood).**
+  - TDD là công cụ thực chiến của `Interface-Driven Design (IDD)`. Gọi một method chưa tồn tại ép bạn phải đẻ ra `Interface` của nó trước.
+  - _Pragmatic TDD:_ Phân lô codebase. Áp dụng 100% TDD cho "Lòng đỏ" (Core Domain/Use Cases - thuần logic, không I/O). Bỏ qua TDD hoàn toàn cho "Lòng trắng" (Infrastructure/Database/UI - nơi logic mỏng nhưng thay đổi công nghệ liên tục) để né bẫy over-mocking.
 
 ## Practical Implementation
 
@@ -32,33 +32,35 @@ import { describe, it, expect } from "bun:test";
 
 // Contract Definition
 export interface IPostRepository {
-    getTrending(limit: number): Promise<PostEntity[]>;
+  getTrending(limit: number): Promise<PostEntity[]>;
 }
 
 // Unit Test Setup (Red -> Green)
 describe("TimelineFeed Logic", () => {
-    it("should fetch trending posts correctly", async () => {
-        // Space/Time Complexity of mock setup: O(1) Time / O(N) Space
-        const mockRepo: IPostRepository = {
-            getTrending: async () => [{ id: "1", content: "Pragmatic TDD strict mode" }]
-        };
-        
-        const feedService = new FeedService(mockRepo);
-        const posts = await feedService.getFeed();
-        
-        expect(posts.length).toBeGreaterThan(0);
-    });
+  it("should fetch trending posts correctly", async () => {
+    // Space/Time Complexity of mock setup: O(1) Time / O(N) Space
+    const mockRepo: IPostRepository = {
+      getTrending: async () => [
+        { id: "1", content: "Pragmatic TDD strict mode" },
+      ],
+    };
+
+    const feedService = new FeedService(mockRepo);
+    const posts = await feedService.getFeed();
+
+    expect(posts.length).toBeGreaterThan(0);
+  });
 });
 
 // Implementation (Refactor)
 export class FeedService {
-    constructor(private readonly repo: IPostRepository) {}
+  constructor(private readonly repo: IPostRepository) {}
 
-    // PERF: Implement Redis caching layer here if RPS throughput exceeds infrastructure limits
-    // Time Complexity: O(1) from service abstraction
-    public async getFeed(): Promise<PostEntity[]> {
-        return await this.repo.getTrending(50);
-    }
+  // PERF: Implement Redis caching layer here if RPS throughput exceeds infrastructure limits
+  // Time Complexity: O(1) from service abstraction
+  public async getFeed(): Promise<PostEntity[]> {
+    return await this.repo.getTrending(50);
+  }
 }
 ```
 

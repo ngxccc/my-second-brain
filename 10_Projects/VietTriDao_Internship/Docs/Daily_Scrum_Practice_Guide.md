@@ -69,7 +69,7 @@ _Mẫu soạn thảo bằng tiếng Anh:_
 ### Bước 4: Viết và Nộp Biên Bản Họp (Thư ký thực hiện)
 
 - Trong lúc cả nhóm họp, Thư ký ghi chép lại toàn bộ diễn biến vào file biên bản họp bằng **tiếng Anh 100%**.
-- Sử dụng đúng mẫu tiêu chuẩn Meeting Minutes (Tham khảo mẫu tại [[Prep_Guide_Day1#Mẫu 1: Meeting Minutes Template (Biên bản họp nhóm)]]).
+- Sử dụng đúng mẫu tiêu chuẩn Meeting Minutes (Tham khảo mẫu tại [[Prep_Guide_Day1#Mẫu 1]]).
 - Nộp file biên bản lên thư mục chung của nhóm trên Google Drive trước **10:00 AM** hàng ngày để mentor tiến hành audit.
 
 ---

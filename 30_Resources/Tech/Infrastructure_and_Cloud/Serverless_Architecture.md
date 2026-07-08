@@ -3,6 +3,7 @@ tags: [type/concept, topic/tech, architecture, cloud]
 date: 2026-04-28
 aliases: [Lambda, Cloud Functions]
 ---
+
 # Serverless Architecture
 
 ## TL;DR
@@ -21,6 +22,7 @@ Mô hình điện toán đám mây nơi nhà cung cấp (AWS, Vercel) tự độ
 - **Tử huyệt Database:** Dễ làm sập Database truyền thống do mở quá nhiều kết nối TCP cùng lúc. (Xem thêm cách giải quyết ở note Connection Pooling).
 
 ---
+
 **Related Notes:**
 
 - Nâng cấp tốc độ khởi động: [[Edge_Computing]]

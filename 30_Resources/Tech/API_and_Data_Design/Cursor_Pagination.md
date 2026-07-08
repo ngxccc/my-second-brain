@@ -3,6 +3,7 @@ tags: [type/concept, topic/backend, pattern/api-design]
 date: 2026-02-08
 aliases: [Cursor Pagination, Offset Pagination]
 ---
+
 # REST API Pagination & Filtering
 
 ## TL;DR
@@ -12,9 +13,9 @@ Kỹ thuật cắt nhỏ dữ liệu lớn thành từng chunk (Phân trang) và
 ## Core Concept (Lý thuyết)
 
 - **Offset Pagination (The Cost of $O(N)$):** Dùng `LIMIT 10 OFFSET 1000`.
-  - *Bản chất:* Database vẫn phải quét (scan) qua 1,000 dòng đầu tiên rồi mới vớt lấy 10 dòng cuối. Càng scroll sâu, query càng chậm $\rightarrow$ Không scale được với data khổng lồ.
+  - _Bản chất:_ Database vẫn phải quét (scan) qua 1,000 dòng đầu tiên rồi mới vớt lấy 10 dòng cuối. Càng scroll sâu, query càng chậm $\rightarrow$ Không scale được với data khổng lồ.
 - **Cursor Pagination (The Power of $O(1)$ / $O(\log N)$):** Dùng `WHERE id > last_seen_id LIMIT 10`.
-  - *Bản chất:* Dựa vào Index của Database (B-Tree), query nhảy thẳng đến vị trí của con trỏ (Cursor) ngay lập tức. Hiệu suất ổn định (Deterministic) bất chấp bảng có hàng triệu records.
+  - _Bản chất:_ Dựa vào Index của Database (B-Tree), query nhảy thẳng đến vị trí của con trỏ (Cursor) ngay lập tức. Hiệu suất ổn định (Deterministic) bất chấp bảng có hàng triệu records.
 
 ## Practical Implementation (Thực chiến)
 
@@ -24,17 +25,22 @@ Kỹ thuật cắt nhỏ dữ liệu lớn thành từng chunk (Phân trang) và
 
 ```typescript
 // Encode/Decode cursor (Base64) để giấu logic DB khỏi Client
-const encodeCursor = (date: Date, id: string) => Buffer.from(`${date.toISOString()}_${id}`).toString('base64');
+const encodeCursor = (date: Date, id: string) =>
+  Buffer.from(`${date.toISOString()}_${id}`).toString("base64");
 
 export const getProducts = async (req: Request, res: Response) => {
   const limit = parseInt(req.query.limit as string) || 10;
   const cursor = req.query.cursor as string;
 
   // Hack: Fetch (limit + 1) để biết có trang tiếp theo (hasNextPage) hay không
-  let query = db.select().from(products).orderBy(desc(products.createdAt), desc(products.id)).limit(limit + 1);
+  let query = db
+    .select()
+    .from(products)
+    .orderBy(desc(products.createdAt), desc(products.id))
+    .limit(limit + 1);
 
   if (cursor) {
-    const [lastDate, lastId] = decodeCursor(cursor).split('_');
+    const [lastDate, lastId] = decodeCursor(cursor).split("_");
     // Logic nhảy thẳng tới đích dựa trên Index
     query = query.where(sql`(created_at, id) < (${lastDate}, ${lastId})`);
   }
@@ -46,13 +52,16 @@ export const getProducts = async (req: Request, res: Response) => {
   res.json({
     data,
     meta: {
-      next_cursor: hasNextPage ? encodeCursor(data.at(-1).createdAt, data.at(-1).id) : null
-    }
+      next_cursor: hasNextPage
+        ? encodeCursor(data.at(-1).createdAt, data.at(-1).id)
+        : null,
+    },
   });
 };
 ```
 
 ---
+
 **Related Notes:**
 
 - Tối ưu hóa truy xuất Cursor: [[Database_Indexing_BTree]]

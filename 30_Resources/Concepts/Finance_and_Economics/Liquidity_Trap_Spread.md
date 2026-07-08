@@ -3,6 +3,7 @@ tags: [type/concept, topic/finance, topic/economics]
 date: 2026-01-30
 aliases: [Bid-Ask Spread, Bẫy thanh khoản, Paper Profit]
 ---
+
 # Liquidity Trap & Bid-Ask Spread
 
 ## TL;DR
@@ -22,6 +23,7 @@ Hiện tượng chênh lệch giữa giá Mua vào (Bid) và giá Bán ra (Ask) 
   - Phải chấp nhận hold dài hạn (Bag holding). Chờ đợi thị trường qua cơn hoảng loạn, Spread co hẹp lại về mức bình thường (1-2 triệu) rồi mới tiến hành cắt lỗ hoặc chốt lời.
 
 ---
+
 **Related Notes:**
 
 - Công cụ tính toán điểm rơi vốn: [[Dollar_Cost_Averaging]]

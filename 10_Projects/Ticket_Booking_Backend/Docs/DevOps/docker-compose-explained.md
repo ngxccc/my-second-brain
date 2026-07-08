@@ -93,7 +93,7 @@ services:
 
 ---
 
-```yaml
+````yaml
 redis:
   image: redis:8-alpine
   container_name: ticket-booking-redis
@@ -171,13 +171,13 @@ caddy:
   depends_on:
     - postgres
     - redis
-```
+````
 
 -- **`image: caddy:2-alpine`**: Sử dụng Caddy Web Server phiên bản 2 trên nền Alpine Linux siêu nhẹ.
 -- **`ports: - '80:80'` và `- '443:443'`**: Ánh xạ cổng HTTP (80) và HTTPS (443) ra ngoài máy ảo để nhận traffic công cộng.
 -- **`volumes`**:
-  +- `./Caddyfile:/etc/caddy/Caddyfile`: Mount file cấu hình định tuyến của Caddy từ máy thật vào container.
-  +- `caddy_data:/data` và `caddy_config:/config`: Lưu trữ dữ liệu chứng chỉ Let's Encrypt đã cấp xuống đĩa của máy thật để tránh bị xin cấp lại (rate limit) khi khởi động lại container.
++- `./Caddyfile:/etc/caddy/Caddyfile`: Mount file cấu hình định tuyến của Caddy từ máy thật vào container.
++- `caddy_data:/data` và `caddy_config:/config`: Lưu trữ dữ liệu chứng chỉ Let's Encrypt đã cấp xuống đĩa của máy thật để tránh bị xin cấp lại (rate limit) khi khởi động lại container.
 -- **`deploy.resources`**: Giới hạn Caddy dùng tối đa **15% CPU** và **128MB RAM**, cam kết tối thiểu **64MB RAM** chạy ổn định.
 -- **`depends_on`**: Đảm bảo Postgres và Redis khởi chạy trước Caddy.
 

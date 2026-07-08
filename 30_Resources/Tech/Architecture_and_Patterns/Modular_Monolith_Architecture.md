@@ -3,6 +3,7 @@ tags: [type/concept, topic/backend, pattern/architectural, framework/express]
 date: 2026-02-08
 aliases: [Modular Architecture, Feature-Based Architecture]
 ---
+
 # Modular Monolith Architecture
 
 ## TL;DR
@@ -12,8 +13,8 @@ Kiến trúc tổ chức codebase bằng cách gom nhóm file theo chức năng 
 ## Core Concept
 
 - **Giải quyết Shotgun Surgery:** Trong kiến trúc cũ (Layered), để sửa một tính năng đăng nhập, em phải mở 4 thư mục khác nhau. Với Modular, mọi thứ liên quan đến `Auth` (API, Logic, Mongoose Schema) nằm gọn trong một thư mục `src/modules/auth`. (Co-location - Những gì thay đổi cùng nhau thì ở cùng nhau).
-- **High Cohesion & Low Coupling:** - *Kết dính cao:* Logic của module nào nằm trọn trong module đó.
-  - *Phụ thuộc thấp:* Các module giao tiếp với nhau như những "mini-app" độc lập, không được phép chọc sâu vào logic nội bộ của nhau.
+- **High Cohesion & Low Coupling:** - _Kết dính cao:_ Logic của module nào nằm trọn trong module đó.
+  - _Phụ thuộc thấp:_ Các module giao tiếp với nhau như những "mini-app" độc lập, không được phép chọc sâu vào logic nội bộ của nhau.
 - **Dependency Rule (Quy tắc phụ thuộc):** Tách biệt logic hạ tầng (Database connection, Logger, Error Handler) vào thư mục `src/common`. Quy tắc bất di bất dịch: `Modules` được phép gọi `Common`, nhưng `Common` CẤM được gọi ngược lại `Modules`.
 
 ## Practical Implementation
@@ -41,6 +42,7 @@ src/
 ```
 
 ---
+
 **Related Notes:**
 
 - Đối trọng (Kiến trúc cũ): [[Layered_Architecture]]

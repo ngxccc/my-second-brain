@@ -15,13 +15,13 @@ IDD (Interface-Driven Design) là hệ tư tưởng "chốt kèo trên giấy tr
 
 - **Tại sao nó tồn tại?** Trị tận gốc căn bệnh "code bám dính" (tight-coupling) khi các class phụ thuộc trực tiếp vào implementation của nhau. Ngăn chặn thói quen làm việc theo kiểu "waterfall cục bộ" (ông A phải code xong class X thì ông B mới có cái để code class Y).
 - **Giải quyết bài toán gì?** Đảm bảo nguyên lý Dependency Inversion (chữ D trong SOLID): High-level modules và Low-level modules đều phải phụ thuộc vào Abstraction. Đồng thời phá bỏ nút thắt cổ chai (bottleneck) trong giao tiếp team — chỉ cần chốt Swagger/Interface là Front-end có thể tự mock data chạy trước, Back-end cứ từ từ tà tà mà code.
-- **Nó có thay thế cái gì hay không?** Tiễn tư duy "Implementation-First" (vừa nghĩ vừa gõ logic lộn xộn) ra chuồng gà. Xóa sổ thói quen giao tiếp API/method bằng mồm hoặc qua mấy file docs Word/Excel lỗi thời. 
-- **Áp dụng dụng vào những dự án nào?** 
-    - *Bắt buộc CÓ:* Kiến trúc Microservices, dự án có Front-end/Back-end tách biệt, dự án chia nhiều team làm chung một codebase, hoặc khi build open-source Libraries/SDKs.
-    - *Tuyệt đối KHÔNG:* Các đoạn script vứt đi chạy một lần (cron jobs nhỏ), dự án MVP 1 thành viên tự lo từ A-Z cần go-to-market tốc độ bàn thờ.
-- **Cơ chế hoạt động (How it works under the hood).** 
-    - Tạo ra một vách ngăn (boundary) vô hình giữa các layer. Khi Layer A muốn gọi Layer B, nó không gọi thẳng thằng `PostgresDB` mà gọi thằng `IDatabase`. 
-    - Nhờ vậy, lúc testing hoặc đổi công nghệ, bạn có thể swap nóng (dependency injection) cái ruột bên trong từ `PostgresDB` sang `RedisCache` hoặc `MockDB` mà hệ thống không hề bị vỡ rạn.
+- **Nó có thay thế cái gì hay không?** Tiễn tư duy "Implementation-First" (vừa nghĩ vừa gõ logic lộn xộn) ra chuồng gà. Xóa sổ thói quen giao tiếp API/method bằng mồm hoặc qua mấy file docs Word/Excel lỗi thời.
+- **Áp dụng dụng vào những dự án nào?**
+  - _Bắt buộc CÓ:_ Kiến trúc Microservices, dự án có Front-end/Back-end tách biệt, dự án chia nhiều team làm chung một codebase, hoặc khi build open-source Libraries/SDKs.
+  - _Tuyệt đối KHÔNG:_ Các đoạn script vứt đi chạy một lần (cron jobs nhỏ), dự án MVP 1 thành viên tự lo từ A-Z cần go-to-market tốc độ bàn thờ.
+- **Cơ chế hoạt động (How it works under the hood).**
+  - Tạo ra một vách ngăn (boundary) vô hình giữa các layer. Khi Layer A muốn gọi Layer B, nó không gọi thẳng thằng `PostgresDB` mà gọi thằng `IDatabase`.
+  - Nhờ vậy, lúc testing hoặc đổi công nghệ, bạn có thể swap nóng (dependency injection) cái ruột bên trong từ `PostgresDB` sang `RedisCache` hoặc `MockDB` mà hệ thống không hề bị vỡ rạn.
 
 ## Practical Implementation
 
@@ -30,35 +30,35 @@ IDD (Interface-Driven Design) là hệ tư tưởng "chốt kèo trên giấy tr
 ```typescript
 // Contract/Boundary Definition
 export interface ISocialGraphRepository {
-    getFollowers(userId: string): Promise<string[]>;
+  getFollowers(userId: string): Promise<string[]>;
 }
 
 // Implementation A: The real deal for Production
 export class Neo4jSocialGraph implements ISocialGraphRepository {
-    // WHY: Using Neo4j here over Postgres because deep graph traversal (friends of friends) causes exponential join explosion in SQL.
-    // Time Complexity: O(log N) for traversal / Space: O(V + E)
-    public async getFollowers(userId: string): Promise<string[]> {
-        // ... Neo4j cypher query logic ...
-        return ["user_2", "user_3"];
-    }
+  // WHY: Using Neo4j here over Postgres because deep graph traversal (friends of friends) causes exponential join explosion in SQL.
+  // Time Complexity: O(log N) for traversal / Space: O(V + E)
+  public async getFollowers(userId: string): Promise<string[]> {
+    // ... Neo4j cypher query logic ...
+    return ["user_2", "user_3"];
+  }
 }
 
 // Implementation B: The Mock for local testing / TDD
 export class MockSocialGraph implements ISocialGraphRepository {
-    public async getFollowers(userId: string): Promise<string[]> {
-        return ["mock_user_a", "mock_user_b"];
-    }
+  public async getFollowers(userId: string): Promise<string[]> {
+    return ["mock_user_a", "mock_user_b"];
+  }
 }
 
 // Core Domain Logic - depends ONLY on Abstraction
 export class RecommendFriendService {
-    constructor(private readonly graphRepo: ISocialGraphRepository) {}
+  constructor(private readonly graphRepo: ISocialGraphRepository) {}
 
-    // PERF: Consider paginating the result if the user has > 10,000 followers to avoid Node.js Event Loop block.
-    public async generateSuggestions(userId: string): Promise<string[]> {
-        const followers = await this.graphRepo.getFollowers(userId);
-        return followers.filter(id => id.startsWith("user_"));
-    }
+  // PERF: Consider paginating the result if the user has > 10,000 followers to avoid Node.js Event Loop block.
+  public async generateSuggestions(userId: string): Promise<string[]> {
+    const followers = await this.graphRepo.getFollowers(userId);
+    return followers.filter((id) => id.startsWith("user_"));
+  }
 }
 ```
 
