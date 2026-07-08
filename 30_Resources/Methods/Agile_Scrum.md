@@ -22,6 +22,10 @@ Quy trình quản lý dự án linh hoạt (Agile) áp dụng khung làm việc 
   - Phân chia rõ ràng các vai trò trong Scrum Team: Product Owner (PO), Scrum Master (SM), và Developers.
   - Có danh sách các yêu cầu (Product Backlog) được viết dưới dạng **User Story**.
 
+### 🕒 Lịch Sử & Tiến Hóa (Evolutionary History)
+
+Agile (chính thức hóa năm 2001 qua Agile Manifesto) ra đời như một cuộc cách mạng nhằm giải quyết triệt để sự kém linh hoạt, chi phí thay đổi cao và tình trạng đóng băng yêu cầu của các mô hình truyền thống trước đó (như [[Waterfall]], [[V_Model]], [[Spiral_Model]]). Thay vì tập trung vào quy trình và tài liệu, Agile/Scrum tập trung vào con người, sự thích ứng và bàn giao giá trị liên tục qua từng chu kỳ ngắn. Xem chi tiết lược sử tiến hóa tại [[SDLC_Methodologies_Evolution]].
+
 ### 🌟 3 Trụ Cột Cốt Lõi Của Scrum (Empiricism)
 
 Scrum vận hành dựa trên chủ nghĩa thực nghiệm với 3 trụ cột cốt lõi:
@@ -124,6 +128,7 @@ Mỗi hiện vật trong Scrum đi kèm với một cam kết nhằm tăng tính
 
 **Related Notes:**
 
+- [[SDLC_Methodologies_Evolution]]
 - [[Standard_Project_Timeline_SOP]]
 
 ## Sources / References
