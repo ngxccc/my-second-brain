@@ -44,6 +44,8 @@ Bản đồ điều hướng trung tâm cho toàn bộ tri thức kỹ thuật. 
 - [[Turborepo]]: Công cụ xây dựng hiệu suất cao cho các dự án Monorepo sử dụng JavaScript/TypeScript.
 - [[WinForms_Layout_Optimization]]: Tối ưu hóa Layout Engine của WinForms bằng SuspendLayout và ResumeLayout.
 - [[React_Component_Declaration_Standards]]: Tiêu chuẩn khai báo React component (export function vs arrow function).
+- [[React_State]]: Trạng thái nội bộ của component, quản lý dữ liệu động thay đổi theo thời gian.
+- [[React_Props]]: Thuộc tính truyền từ component cha xuống, mang tính chất bất biến (read-only).
 
 ## Backend Frameworks (Cấu trúc & Framework Backend)
 
@@ -77,8 +79,13 @@ Bản đồ điều hướng trung tâm cho toàn bộ tri thức kỹ thuật. 
 - [[Client_Side_Encryption]]: Mã hóa LocalStorage/IndexedDB bằng thuật toán AES.
 - [[Offline_Sync_Queue]]: Kỹ thuật Outbox Pattern ở phía client cho ứng dụng Offline-First.
 - [[Cognitive_Strain_UX]]: Áp dụng tâm lý học tạo độ khó chủ đích vào UI/UX.
+- [[Multi_Layer_Rate_Limiting_DDoS_Prevention]]: Chiến lược rate limit đa lớp (IP/Email) và chống DDoS/Credential Stuffing.
+- [[Trust_Proxy_Configuration]]: Cấu hình tin tưởng proxy trong Express & NestJS để lấy client IP chính xác.
 
 ## Language & Core (Cốt lõi Ngôn ngữ)
+
+- [[Rust_Hybrid_Roadmap]]: Lộ trình học Rust thực chiến kết hợp hệ thống & an ninh mạng.
+- [[Go_Learning_Roadmap]]: Lộ trình học Go thực chiến từ cơ bản đến microservices & production.
 
 - [[JS_Runtimes_Bun_vs_NodeJS]]: So sánh kiến trúc runtime Bun (JavaScriptCore + Zig) vs Node.js (V8 + Libuv) và cơ chế Event Loop cốt lõi.
 - [[JS_Temporal_API]]: API xử lý ngày giờ thế hệ mới chính thức của JavaScript (ECMAScript 2026).
