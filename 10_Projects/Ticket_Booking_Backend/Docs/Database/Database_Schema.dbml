@@ -22,6 +22,7 @@ enum user_status {
   active
   inactive
   suspended
+  pending_verification
 }
 
 enum show_seat_status {
@@ -86,7 +87,9 @@ Table users {
   google_id varchar(255) [unique, note: 'Nullable, unique OAuth ID']
   facebook_id varchar(255) [unique, note: 'Nullable, unique OAuth ID']
   role user_role [not null, default: 'user']
-  status user_status [not null, default: 'active']
+  status user_status [not null, default: 'pending_verification']
+  verification_token varchar(255) [unique, note: 'Token or OTP code for email verification (plain text or hashed)']
+  verification_expires_at timestamptz [note: 'Expiration time of the verification token/OTP']
 
   Note: 'Unified User table containing local auth & social OAuth fields'
 
@@ -94,6 +97,8 @@ Table users {
     email [unique, name: "users_email_uidx"]
     google_id [unique, name: "users_google_id_uidx"]
     facebook_id [unique, name: "users_facebook_id_uidx"]
+    verification_token [unique, name: "users_verification_token_uidx"]
+    verification_expires_at [name: "users_verification_expires_at_idx", note: "Partial index: WHERE status = 'pending_verification'"]
     phone_number [name: "users_phone_number_idx"]
   }
 }
