@@ -31,12 +31,11 @@ if [ ${#JS_FILES[@]} -gt 0 ]; then
 fi
 
 # Run Prettier formatter for Markdown files
-# if [ ${#MD_FILES[@]} -gt 0 ]; then
-# fi
-
-echo "Formatting Markdown files with Prettier..."
-bunx prettier --write .
-git add .
+if [ ${#MD_FILES[@]} -gt 0 ]; then
+    echo "Formatting Markdown files with Prettier..."
+    bunx prettier --write "${MD_FILES[@]}"
+    git add "${MD_FILES[@]}"
+fi
 
 # Run Note Validator
 echo "Running note validation..."
