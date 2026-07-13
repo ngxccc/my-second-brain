@@ -48,3 +48,4 @@ Bản đồ điều hướng trung tâm cho toàn bộ tri thức khái niệm l
 - [[7_Principles_of_Testing]]: 7 nguyên lý kiểm thử phần mềm nền tảng định hình hoạt động kiểm định.
 - [[Black_Box_Testing_Techniques]]: Kỹ thuật kiểm thử hộp đen tập trung vào phân vùng tương đương (EP) và phân tích giá trị biên (BVA).
 - [[White_Box_Testing_Techniques]]: Kỹ thuật kiểm thử hộp trắng tập trung vào độ phủ dòng lệnh và độ phủ nhánh/quyết định.
+- [[Test_Case]]: Khái niệm cơ bản về kịch bản kiểm thử và 3 bước cấu thành cốt lõi.
