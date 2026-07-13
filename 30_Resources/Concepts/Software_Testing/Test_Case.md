@@ -44,6 +44,19 @@ graph TD
     TC1 --> S2[Test Step 2]
 ```
 
+### Tài liệu đầu vào để thiết kế Test Case (Inputs)
+
+Để viết và thiết kế được các trường hợp kiểm thử chính xác, người kiểm thử cần nghiên cứu các tài liệu và nguồn thông tin đầu vào sau:
+
+- **Test plan (Kế hoạch kiểm thử):** Tài liệu định hướng phạm vi, tài nguyên và chiến lược kiểm thử.
+- **Test design (Thiết kế kiểm thử):** Các đặc tả phương pháp và kỹ thuật thiết kế test case.
+- **Requirement Specification (Tài liệu đặc tả yêu cầu):** Nguồn thông tin cốt lõi mô tả tính năng hệ thống (SRS, User Story).
+- **GUI design (Thiết kế giao diện):** Các bản vẽ mockup, Figma giúp đối chiếu giao diện trực quan.
+- **Database design (Thiết kế cơ sở dữ liệu):** Cấu trúc bảng, kiểu dữ liệu phục vụ thiết kế test data.
+- **Prototype (Bản mẫu):** Bản thử nghiệm thô giúp hình dung rõ luồng tương tác thực tế.
+- **User manual, technical manual (Tài liệu hướng dẫn sử dụng/kỹ thuật):** Tài liệu mô tả cách vận hành và cài đặt hệ thống.
+- **Domain knowledge, business experience (Kiến thức nghiệp vụ & Kinh nghiệm):** Hiểu biết sâu về ngành (Tài chính, Y tế...) giúp phát hiện lỗi logic ngoài đặc tả.
+
 ---
 
 ## Concrete Examples
