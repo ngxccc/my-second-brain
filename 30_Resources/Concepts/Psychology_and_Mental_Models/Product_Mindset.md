@@ -22,6 +22,11 @@ Tư duy sản phẩm (Product Mindset) là sự chuyển dịch từ việc tậ
   - Tư duy sản phẩm đòi hỏi lập trình viên phải hiểu rõ "công việc" mà người dùng đang thuê phần mềm giải quyết là gì, từ đó thiết kế tính năng phục vụ trực tiếp cho công việc đó.
 - **Vòng lặp Phản hồi liên tục (Build - Measure - Learn):**
   - Không có sản phẩm nào hoàn hảo ngay từ phiên bản đầu tiên. Sản phẩm phát triển bằng cách tung ra các bản thử nghiệm nhỏ (MVP), đo lường hành vi người dùng bằng số liệu thực tế, và liên tục học hỏi để tối ưu hóa.
+- **Lãng phí Tính năng (Feature Waste - Martin Fowler):**
+  - Việc phát triển những tính năng không ai dùng đến là sự lãng phí lớn nhất trong phần mềm. Nó không chỉ tốn tài nguyên phát triển ban đầu mà còn tạo ra gánh nặng bảo trì (maintenance burden) lâu dài.
+  - Tư duy sản phẩm yêu cầu sự dũng cảm loại bỏ hoặc thu gọn các tính năng kém hiệu quả để giữ hệ thống tinh gọn.
+- **Dịch chuyển Số đo (Metrics Shift):**
+  - Dịch chuyển từ chỉ số Output (Velocity points, số dòng code, số lượng task hoàn thành) sang chỉ số Outcome (Tỷ lệ giữ chân người dùng - Retention, tỷ lệ kích hoạt - Activation, giảm thiểu chi phí vận hành server, hoặc tỷ lệ chuyển đổi đơn hàng).
 
 ---
 

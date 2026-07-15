@@ -55,6 +55,14 @@ $$f_{\text{frac}} = \lambda \cdot f^* \quad (0 < \lambda < 1)$$
   - Với **Half-Kelly ($\lambda = 0.5$)**, nhà đầu tư giữ lại được $0.5 \times (2 - 0.5) = 75\%$ tốc độ tăng trưởng của Full Kelly.
   - Trong khi đó, biến động (volatility/standard deviation) của danh mục giảm đi một nửa ($50\%$), giúp hạn chế đáng kể các pha sụt giảm tài sản cực hạn và tăng tính ổn định tâm lý.
 
+### 4. Shannon's Demon (Con quỷ của Shannon)
+
+Một ứng dụng kinh điển của tư duy Kelly trong việc tái cân bằng danh mục đầu tư (portfolio rebalancing) được phát triển bởi Claude Shannon:
+
+- **Kịch bản:** Giả sử có một tài sản biến động ngẫu nhiên (chuyển động đi ngang, không có xu hướng tăng trưởng dài hạn, kỳ vọng sinh lời dài hạn bằng 0) và một lượng tiền mặt.
+- **Chiến thuật:** Định kỳ tái cân bằng danh mục để luôn duy trì tỷ lệ **50% tài sản rủi ro và 50% tiền mặt** (tương ứng với mức phân bổ tối ưu theo Kelly cho loại tài sản đi ngang nhưng có độ biến động cao).
+- **Kết quả:** Bằng cách liên tục bán ra khi tài sản tăng giá và mua vào khi tài sản giảm giá để giữ vững tỷ lệ 50/50, danh mục tổng thể sẽ tăng trưởng dương theo cấp số nhân trong dài hạn. Đây là minh chứng thực tế cho việc tạo ra lợi nhuận bền vững chỉ nhờ quản trị quy mô vị thế và kỷ luật tái cân bằng.
+
 ## Concrete Examples
 
 ### Ví dụ 1: Cá cược nhị phân (Tung đồng xu lệch)

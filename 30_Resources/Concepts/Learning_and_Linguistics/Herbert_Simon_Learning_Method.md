@@ -44,12 +44,13 @@ Trước khi bắt đầu học, hãy bóc tách kỹ năng lớn thành các ph
 - Áp dụng ngay kiến thức vào thực tế (viết code, giải bài tập, làm dự án nhỏ).
 - Nhận phản hồi lập tức để sửa lỗi (Self-test, code review, spaced repetition).
 
-### 4. Công thức Heuristic: Mô hình học tập 6 tháng
+### 4. Thời gian hình thành chuyên môn (Ten-Year Rule vs. 6-Month Heuristic)
 
-Mô hình ước lượng tốc độ hình thành 50.000 chunks để đạt mức chuyên gia trong một phân vùng kiến thức cụ thể:
-$$\text{Động cơ} \times \text{Phương pháp hiệu quả (Chunking)} \times \text{Thời gian liên tục (~1000 giờ)} = \text{Thành thạo}$$
+Nghiên cứu của Chase & Simon (1973) chỉ ra sự tích lũy chuyên môn là một hành trình dài hạn:
 
-- 1.000 giờ thực hành tập trung cao độ phân bổ trong 6 tháng (khoảng 40 giờ/tuần) có thể giúp một người có nền tảng cơ bản làm chủ một kỹ năng mới.
+- **Quy tắc 10 năm (Academic Ten-Year Rule):** Để đạt mức chuyên gia xuất sắc hàng đầu thế giới (World-Class Expertise) trong một lĩnh vực (như cờ vua hay âm nhạc), não bộ cần ít nhất 10 năm thực hành có chủ đích (khoảng 10.000 giờ) để tích lũy đủ ~50.000 chunks.
+- **Khung Heuristic 6 tháng (Mô hình học tập 6 tháng phổ biến):** Để đạt mức thành thạo cơ bản hoặc sẵn sàng làm việc (Professional Proficiency) trong một phân vùng kiến thức nhỏ (ví dụ: lập trình Frontend với React), một người có thể dồn 1.000 giờ thực hành tập trung cao độ trong 6 tháng (khoảng 40 giờ/tuần).
+  $$\text{Động cơ} \times \text{Phương pháp hiệu quả (Chunking)} \times \text{Thời gian liên tục (~1000 giờ)} = \text{Thành thạo}$$
 
 ---
 

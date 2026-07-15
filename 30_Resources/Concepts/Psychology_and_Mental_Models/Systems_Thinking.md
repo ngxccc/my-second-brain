@@ -15,6 +15,16 @@ Tư duy hệ thống (Systems Thinking) là kỹ năng phân tích phần mềm 
 - Doanh nghiệp trả tiền để giải quyết bài toán kinh doanh dưới sức ép cực đại của các **Ràng buộc** (thời gian, tiền bạc, tài nguyên server).
 - AI (Copilot, Cursor) gen code rất nhanh nhưng mù tịt về ngữ cảnh kinh doanh. Sử dụng tư duy hệ thống giúp lập trình viên "out trình" AI bằng cách thiết kế kiến trúc chuẩn xác trước khi viết dòng code đầu tiên.
 
+## Core System Dynamics (Động lực học Hệ thống)
+
+Theo Donella Meadows (tác giả cuốn "Thinking in Systems"), một hệ thống được cấu thành bởi 3 yếu tố cốt lõi: **Phần tử (Elements)**, **Mối liên kết (Interconnections)**, và **Mục tiêu/Chức năng (Function/Purpose)**. Trong kỹ nghệ phần mềm, động lực học hệ thống được thể hiện qua:
+
+- **Stocks (Tích lũy):** Lượng tài nguyên tích tụ trong hệ thống tại một thời điểm (ví dụ: số tin nhắn đang chờ trong Message Queue, số lượng DB connections đang mở, dung lượng RAM/CPU đã tiêu thụ).
+- **Flows (Dòng chảy):** Tốc độ thay đổi của Stocks qua thời gian (ví dụ: tốc độ đẩy request vào queue - Inflow, tốc độ workers xử lý và lưu DB - Outflow).
+- **Feedback Loops (Vòng lặp Phản hồi):**
+  - **Vòng lặp Tăng cường (Reinforcing Loop - Positive):** Thúc đẩy sự thay đổi tăng theo cấp số nhân (ví dụ: Database bị overload $\rightarrow$ câu lệnh truy vấn bị chậm $\rightarrow$ giữ connection lâu hơn $\rightarrow$ nghẽn connection pool $\rightarrow$ DB sập hoàn toàn).
+  - **Vòng lặp Cân bằng (Balancing Loop - Negative):** Giúp hệ thống tự điều chỉnh về trạng thái ổn định (ví dụ: Auto-scaling tự động tăng số lượng Pods khi CPU vượt ngưỡng 80%, hoặc Rate Limiter tự động chặn bớt request khi hàng đợi (Queue) quá đầy).
+
 ## 6 Systems Thinking Lenses (Hệ quy chiếu 6 lăng kính)
 
 Khi tiếp cận một hệ thống, quét qua các khía cạnh:

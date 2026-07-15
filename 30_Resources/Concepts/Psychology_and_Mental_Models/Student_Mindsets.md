@@ -14,6 +14,12 @@ Cẩm nang tổng hợp các mô hình tư duy (Mental Models) cốt lõi dành 
 
 Mỗi sinh viên cần xây dựng một "mạng lưới mô hình tư duy" (Latticework of Mental Models) để đưa ra các quyết định sáng suốt khi nguồn lực (tiền bạc, kinh nghiệm) còn hạn chế nhưng quỹ thời gian và năng lượng học hỏi đang ở đỉnh cao.
 
+- **Khung 4 niềm tin học tập cốt lõi (Farrington et al. - Chicago Consortium):**
+  1. _Belonging (Sự thuộc về):_ "Tôi thuộc về cộng đồng học thuật này." (Giúp chế ngự hội chứng kẻ giả mạo - Imposter Syndrome).
+  2. _Growth Mindset (Tư duy phát triển):_ "Năng lực của tôi phát triển thông qua nỗ lực và sự kiên trì." (Không tự giới hạn bản thân bởi định kiến thông minh bẩm sinh).
+  3. _Self-Efficacy (Hiệu năng tự thân):_ "Tôi có thể thành công trong việc này." (Tin tưởng vào khả năng giải quyết các vấn đề và bài tập khó).
+  4. _Relevance/Value (Giá trị thực tế):_ "Nội dung học này có giá trị thực tiễn đối với tôi." (Chuyển từ học đối phó thi cử sang học để ứng dụng giải quyết bài toán thực tế).
+
 ### 1. Trụ cột 1: Học tập & Tư duy Nhận thức (Cognitive & Learning)
 
 - **First-Principles Thinking (Tư duy nguyên bản):** Không học vẹt hay sao chép lời giải có sẵn. Hãy bóc tách kiến thức xuống các định lý, định nghĩa hoặc quy luật cơ bản nhất.
