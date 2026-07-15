@@ -21,8 +21,10 @@ Bản đồ điều hướng trung tâm cho toàn bộ tri thức khái niệm l
 
 - [[Critical_Thinking_Models]]: Các lăng kính lọc nhiễu thông tin.
 - [[Systems_Thinking]]: Tư duy hệ thống và quy chiếu 6 lăng kính trong kỹ nghệ phần mềm.
+- [[Cognitive_Stack_Framework]]: Khung phân cấp nhận thức 5 tầng đi từ bộ lọc thiên kiến đến đưa ra quyết định thực thi tối ưu.
 - [[Kanban_Methodology]]: Phương pháp và bảng Kanban quản lý dòng công việc trực quan theo mô hình Kéo (Pull).
 - [[Swimmers_Body_Illusion]]: Nhầm lẫn giữa tiêu chí chọn lọc và kết quả thực tế.
+- [[Confirmation_Bias]]: Thiên kiến xác nhận - Lỗi tư duy chỉ tập trung tìm kiếm thông tin ủng hộ niềm tin sẵn có và bác bỏ bằng chứng trái chiều.
 - [[Product_Mindset]]: Chuyển dịch trọng tâm từ hoàn thành dự án sang tối ưu hóa giá trị sản phẩm.
 - [[Customer_Outcome_Thinking]]: Tập trung vào thay đổi hành vi tích cực của người dùng (Outcomes) thay vì tính năng (Outputs).
 - [[Student_Mindsets]]: Mô hình tư duy tối ưu hóa học tập, tài chính và sự nghiệp cho sinh viên.

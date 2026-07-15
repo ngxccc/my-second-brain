@@ -16,6 +16,7 @@ Công cụ để bóc tách sự thật và mổ xẻ logic:
 
 - [[First_Principles_Thinking]]: Phá vỡ vấn đề thành các "hạt nguyên tử" sự thật để tìm giải pháp đột phá từ con số 0.
 - [[Socratic_Questioning_Method]]: Bộ 6 câu hỏi truy vấn để bóc mẽ các giả định (assumptions) ngầm và tránh bị dắt mũi.
+- [[Top_University_Mindset]]: Lộ trình rèn luyện tư duy phản biện, giải quyết vấn đề và truy vết nguồn gốc thông tin theo tiêu chuẩn đại học top đầu.
 
 ## 2. Engineering & Execution (Quản trị dự án & Code)
 

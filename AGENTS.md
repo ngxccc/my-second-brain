@@ -35,6 +35,7 @@ Each mode has strict boundaries:
 - **Atomic Note Definition**: An atomic note is a highly focused, self-contained piece of knowledge dedicated to **exactly one concept or idea**.
 - **Core Constraints for Atomic Notes**:
   - **Single Responsibility**: One note = One idea. If a note starts addressing multiple distinct topics, refactor and split it.
+  - **File Naming**: All atomic note filenames MUST use **Pascal_Snake_Case** (e.g., `First_Principles_Thinking.md`, `Systems_Thinking.md`). Do not use lowercase snake_case, camelCase, or spaces.
   - **Structured Layout**: Every atomic note MUST follow a consistent structure:
     1. **Frontmatter YAML**: Include `tags` (e.g. `[type/concept, topic/...]`), `date` (YYYY-MM-DD), and `aliases` (Vietnamese and English names).
     2. **TL;DR**: A 2-3 sentence high-level summary at the top.
