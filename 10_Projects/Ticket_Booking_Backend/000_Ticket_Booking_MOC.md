@@ -62,6 +62,7 @@ created_at: 2026-06-27
 - Phân tách Auth WBS (Register & Login): [[Auth_WBS_Deconstruction]]
 - Chiến lược tách Refresh Token: [[Refresh_Token_Separation_Strategy]]
 - Phỏng vấn Auth Schema Design: [[Auth_Schema_Design_Interview_Preparation]]
+- Quá trình Quên & Đặt lại mật khẩu: [[Forget_Password_Workflow]]
 
 ### Database & Data Models
 
@@ -83,6 +84,12 @@ created_at: 2026-06-27
 - Giải thích chi tiết tiện ích mã hóa mật khẩu: [[Cryptography_Utilities_Explanation]]
 - Mẫu thiết kế Transactional Outbox: [[Outbox_Pattern]]
 - Nguyên lý thiết kế mã nguồn sạch: [[Clean_Architecture]]
+
+### Testing & Automation
+
+- Tích hợp Apidog trong dự án OMP: [[OMP_Apidog_Setup]]
+- Hướng dẫn dùng Apidog MCP Server: [[Apidog_MCP]]
+- Thiết kế kịch bản kiểm thử trong Apidog: [[API_Testing_Scenarios_in_Apidog]]
 
 ### DevOps & Infrastructure
 
