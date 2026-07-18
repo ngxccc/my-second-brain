@@ -42,3 +42,6 @@ created_at: 2026-07-13
 ### Architecture & Specs
 
 - Đặc tính mới của Laravel 13 & Eloquent Attributes: [[Laravel_13_Core_Features]]
+- Hướng dẫn & So sánh Blade Component Layouts (x-layout) vs Legacy Inheritance (@extends): [[Laravel_Blade_Layouts]]
+- Best Practices cho Laravel Routing & Named Routes: [[Laravel_Routing_Best_Practices]]
+- So sánh Kiến trúc MVC Lab 03 vs Chuẩn Modern Laravel: [[Laravel_MVC_Lab03_vs_Modern]]
