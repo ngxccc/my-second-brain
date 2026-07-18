@@ -98,8 +98,9 @@ Bản đồ điều hướng trung tâm cho toàn bộ tri thức kỹ thuật. 
 - [[TS_Type_Utilities_Omit_Pick_Exclude]]: So sánh chi tiết bản chất và phân biệt các tiện ích kiểu Omit, Pick, Exclude.
 - [[JS_Destructuring]]: Kỹ thuật bóc tách dữ liệu mảng và đối tượng trong ES6.
 - [[CSharp_WinForms_Thread_Invoke]]: Cơ chế Invoke đa luồng an toàn tránh lỗi Cross-thread trong WinForms.
+- [[Dotnet_10_and_11_New_Features]]: So sánh các tính năng mới cốt lõi của .NET 10 (LTS) & .NET 11 (Preview) so với .NET 9.
 - [[Tree_Shaking]]: Kỹ thuật phân tích tĩnh để loại bỏ dead code khi đóng gói Javascript.
 
 ---
 
-_Last updated: 2026-06_
+_Last updated: 2026-07_
