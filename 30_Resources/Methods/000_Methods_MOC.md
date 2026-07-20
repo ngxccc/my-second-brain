@@ -41,3 +41,4 @@ Kỹ năng bán mình và thuyết phục nhà tuyển dụng/đối tác:
 Thuật toán quản trị rủi ro tiền bạc:
 
 - [[Dollar_Cost_Averaging]]: Chiến thuật trung bình giá để triệt tiêu tâm lý FOMO/Panic, biến việc đầu tư thành một Cron Job tự động vô tri.
+- [[Short_Term_Income_and_Defensive_Saving]]: Chiến lược tăng thu nhập ngắn hạn và xây dựng quỹ khẩn cấp phòng thủ ở tầng nhu cầu sinh tồn/an toàn.
