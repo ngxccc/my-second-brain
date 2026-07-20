@@ -259,6 +259,7 @@ sequenceDiagram
 - **Quyết định thiết kế (Huỷ phiên vật lý vs. Thu hồi mềm):**
   - Hệ thống sử dụng phương án xóa vật lý (`DELETE`) tất cả các refresh token của người dùng khi đặt lại mật khẩu để đồng bộ với cách thức xoá session của luồng `logout` và `refreshToken` hiện có. Giải pháp này giúp triệt tiêu hoàn toàn rủi ro tích lũy rác dữ liệu, đơn giản hóa schema DB và không yêu cầu quản lý logic soft-revoke phức tạp.
   - **Cơ chế quét dọn tự động:** Dù không sử dụng cờ `isRevoked`, cơ sở dữ liệu vẫn sẽ tích tụ các refresh token hết hạn tự nhiên (do người dùng đóng trình duyệt không click logout). Do đó, ở Giai đoạn 3 hệ thống vẫn cần triển khai một Cronjob / Worker tự động dọn dẹp để quét định kỳ:
+
     ```sql
     DELETE FROM refresh_tokens WHERE expires_at < NOW();
     ```
@@ -344,9 +345,9 @@ $ eslint . --fix --cache
 
 ### Lỗi Race Condition trong Outbox Service
 
-+- **Hiện tượng:** CSDL ghi nhận trạng thái outbox event là `failed` nhưng thực tế người dùng vẫn nhận được email khôi phục/xác nhận thành công. Ngoài ra, bản ghi bị `failed` nhưng cột `processedAt` lại có giá trị thời gian.
-+- **Nguyên nhân:** Khi chạy đa server (ví dụ: NestJS dev server chạy nền song song với test runner), cả hai cùng lúc truy cập một bản ghi `pending` do truy vấn select thiếu khóa dòng. Một tiến trình cập nhật thành công thành `processed` kèm `processedAt`, trong khi tiến trình kia bị lỗi và ghi đè trạng thái thành `failed` nhưng không xoá `processedAt`.
-+- **Giải pháp:**
+- **Hiện tượng:** CSDL ghi nhận trạng thái outbox event là `failed` nhưng thực tế người dùng vẫn nhận được email khôi phục/xác nhận thành công. Ngoài ra, bản ghi bị `failed` nhưng cột `processedAt` lại có giá trị thời gian.
+- **Nguyên nhân:** Khi chạy đa server (ví dụ: NestJS dev server chạy nền song song với test runner), cả hai cùng lúc truy cập một bản ghi `pending` do truy vấn select thiếu khóa dòng. Một tiến trình cập nhật thành công thành `processed` kèm `processedAt`, trong khi tiến trình kia bị lỗi và ghi đè trạng thái thành `failed` nhưng không xoá `processedAt`.
+- **Giải pháp:**
 
 1. Thay đổi truy vấn select của `OutboxService` sử dụng `.for("update", { skipLocked: true })` để khóa dòng (Row-level Locking) và bỏ qua các bản ghi đang được xử lý bởi tiến trình khác.
 2. Đóng gói toàn bộ chu trình truy vấn, xử lý và cập nhật trạng thái vào trong một database transaction duy nhất.
@@ -354,18 +355,18 @@ $ eslint . --fix --cache
 
 ### Lỗi Gửi Nhầm Email Xác Thực Khi Quên Mật Khẩu
 
-+- **Hiện tượng:** Bản ghi `outbox_events` có loại sự kiện là `auth.reset_password_email_requested` nhưng người dùng thực tế lại nhận được email "Xác thực tài khoản của bạn" thay vì email "Khôi phục mật khẩu".
-+- **Nguyên nhân:** Tiến trình máy chủ chạy nền NestJS dev server (`bun dev`) đang chạy phiên bản mã nguồn cũ (chưa được đồng bộ/rebuild hoặc hot-reload bị kẹt). Trong mã nguồn cũ, file `mail.processor.ts` được viết cứng chỉ gọi duy nhất hàm `sendVerificationEmail` cho mọi tác vụ trong hàng đợi mà không phân chia định tuyến.
-+- **Giải pháp:**
+- **Hiện tượng:** Bản ghi `outbox_events` có loại sự kiện là `auth.reset_password_email_requested` nhưng người dùng thực tế lại nhận được email "Xác thực tài khoản của bạn" thay vì email "Khôi phục mật khẩu".
+- **Nguyên nhân:** Tiến trình máy chủ chạy nền NestJS dev server (`bun dev`) đang chạy phiên bản mã nguồn cũ (chưa được đồng bộ/rebuild hoặc hot-reload bị kẹt). Trong mã nguồn cũ, file `mail.processor.ts` được viết cứng chỉ gọi duy nhất hàm `sendVerificationEmail` cho mọi tác vụ trong hàng đợi mà không phân chia định tuyến.
+- **Giải pháp:**
 
 1. Thực hiện dừng hoàn toàn các tiến trình cũ chạy ngầm và khởi động lại dev server sạch sẽ để đồng bộ hóa mã nguồn mới nhất (có hỗ trợ định tuyến switch-case cho `send-reset-password` và `send-verification`).
 2. Refactor logic định tuyến sự kiện trong `OutboxService` từ việc sử dụng switch-case sang một cấu trúc bản đồ tường minh **`EVENT_TO_JOB_MAP`** để liên kết chặt chẽ sự kiện CSDL với job BullMQ, tăng cường khả năng kiểm duyệt (auditability) và loại bỏ hoàn toàn rủi ro sai sót/fall-through.
 
 ### Cơ Chế Tự Động Thử Lại (Automatic Retry) Khi Xử Lý Outbox Thất Bại
 
-+- **Hiện tượng:** Khi có lỗi tạm thời phát sinh trong quá trình chuyển tiếp sự kiện (ví dụ: mất kết nối Redis tạm thời khi chạy lệnh `mailQueue.add`), bản ghi outbox lập tức bị chuyển trạng thái thành `failed` và không bao giờ được gửi lại. Điều này dẫn đến nguy cơ người dùng bị mất email kích hoạt hoặc email đặt lại mật khẩu.
-+- **Nguyên nhân:** Phiên bản đầu tiên của `OutboxService` chưa thiết kế cơ chế tự động thử lại (retry) khi gặp lỗi ngoại lệ (`exception`) trong chu trình định tuyến.
-+- **Giải pháp:**
+- **Hiện tượng:** Khi có lỗi tạm thời phát sinh trong quá trình chuyển tiếp sự kiện (ví dụ: mất kết nối Redis tạm thời khi chạy lệnh `mailQueue.add`), bản ghi outbox lập tức bị chuyển trạng thái thành `failed` và không bao giờ được gửi lại. Điều này dẫn đến nguy cơ người dùng bị mất email kích hoạt hoặc email đặt lại mật khẩu.
+- **Nguyên nhân:** Phiên bản đầu tiên của `OutboxService` chưa thiết kế cơ chế tự động thử lại (retry) khi gặp lỗi ngoại lệ (`exception`) trong chu trình định tuyến.
+- **Giải pháp:**
 
 1. Thực hiện bổ sung thêm hai cột mới vào bảng `outbox_events` trong CSDL:
    - `attempts` (số lần đã thử gửi, mặc định bằng `0`, kiểu dữ liệu `integer`).
