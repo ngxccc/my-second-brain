@@ -28,6 +28,7 @@ Bản đồ điều hướng trung tâm cho toàn bộ tri thức khái niệm l
 - [[Product_Mindset]]: Chuyển dịch trọng tâm từ hoàn thành dự án sang tối ưu hóa giá trị sản phẩm.
 - [[Customer_Outcome_Thinking]]: Tập trung vào thay đổi hành vi tích cực của người dùng (Outcomes) thay vì tính năng (Outputs).
 - [[Student_Mindsets]]: Mô hình tư duy tối ưu hóa học tập, tài chính và sự nghiệp cho sinh viên.
+- [[Maslow_Hierarchy_and_Brain_Structure]]: Phân tầng thần kinh học của tháp nhu cầu Maslow theo tiến hóa não bộ (Brainstem, Limbic, PFC).
 
 ## Knowledge Management
 
@@ -51,3 +52,4 @@ Bản đồ điều hướng trung tâm cho toàn bộ tri thức khái niệm l
 - [[Black_Box_Testing_Techniques]]: Kỹ thuật kiểm thử hộp đen tập trung vào phân vùng tương đương (EP) và phân tích giá trị biên (BVA).
 - [[White_Box_Testing_Techniques]]: Kỹ thuật kiểm thử hộp trắng tập trung vào độ phủ dòng lệnh và độ phủ nhánh/quyết định.
 - [[Test_Case]]: Khái niệm cơ bản về kịch bản kiểm thử và 3 bước cấu thành cốt lõi.
+- [[Equivalence_Partitioning]]: Kỹ thuật phân hoạch tương đương chia miền dữ liệu thành các tập rời nhau để tối ưu số lượng test case.

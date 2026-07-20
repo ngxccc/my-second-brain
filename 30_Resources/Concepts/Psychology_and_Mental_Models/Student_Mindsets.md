@@ -10,6 +10,16 @@ aliases: [Tư duy sinh viên, Student Mindsets, Mô hình tư duy sinh viên]
 
 Cẩm nang tổng hợp các mô hình tư duy (Mental Models) cốt lõi dành cho sinh viên để tối ưu hóa ba trụ cột: Phương pháp học tập hiệu suất cao (Learning), Quản lý tài chính cá nhân ở quy mô vốn nhỏ (Finance), và Định hướng phát triển sự nghiệp sớm (Career).
 
+## Application Context & Maslow Alignment
+
+- **Phân tầng Maslow phù hợp**: **Trải dài từ Tầng 1/2 đến Tầng 4/5**.
+  - _Trụ cột Tài chính phòng thủ (DCA, Tránh rủi ro sụp đổ)_: Giải quyết Tầng 1 & 2 (Sinh lý & An toàn tài chính cá nhân).
+  - _Trụ cột Học tập & Sự nghiệp (First-Principles, Feynman, STAR)_: Xây dựng Tầng 3 (Belonging), Tầng 4 (Esteem) và hướng tới Tầng 5 (Self-Actualization).
+- **Điều kiện tiên quyết**: Đòi hỏi duy trì an toàn tối thiểu (nơi ở, sinh hoạt cơ bản). Sinh viên cần ưu tiên giải tỏa nỗi lo tài chính ngắn hạn (bằng công việc bán thời gian hoặc học bổng) trước khi ép bản thân vào các lộ trình học sâu kéo dài.
+- **Đối tượng áp dụng**: Học sinh, sinh viên, lập trình viên trẻ và người mới chuyển ngành.
+
+---
+
 ## Core Concept
 
 Mỗi sinh viên cần xây dựng một "mạng lưới mô hình tư duy" (Latticework of Mental Models) để đưa ra các quyết định sáng suốt khi nguồn lực (tiền bạc, kinh nghiệm) còn hạn chế nhưng quỹ thời gian và năng lượng học hỏi đang ở đỉnh cao.

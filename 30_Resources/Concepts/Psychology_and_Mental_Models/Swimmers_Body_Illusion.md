@@ -13,6 +13,14 @@ aliases:
 
 ---
 
+## Application Context & Maslow Alignment
+
+- **Phân tầng Maslow phù hợp**: **Tầng 2 (Safety - Nhận diện quảng cáo lừa đảo & Rủi ro đầu tư)** và **Tầng 4 (Esteem - Nhận thức thực chất năng lực bản thân)**.
+- **Điều kiện tiên quyết**: Áp dụng ở mọi tầng lớp xã hội. Đặc biệt quan trọng đối với cá nhân đang muốn bứt phá tầng lớp (từ nghèo/trung bình lên an toàn tài chính), giúp tránh cạm bẫy chi tiền cho các khóa học làm giàu nhanh hay các sản phẩm thần thánh hóa "kết quả kẻ sống sót".
+- **Đối tượng áp dụng**: Người tiêu dùng, Học viên, Nhà đầu tư F0, Nhà tuyển dụng, Lập trình viên chọn công nghệ.
+
+---
+
 ## Core Concept
 
 - **Bản chất lỗi tư duy:** Sự đảo ngược hoặc nhầm lẫn giữa nguyên nhân và kết quả trong quá trình chọn lọc.

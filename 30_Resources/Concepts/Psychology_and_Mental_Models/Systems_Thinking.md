@@ -10,6 +10,14 @@ aliases: [Tư duy hệ thống, Systems Thinking, 9 Lăng kính Hệ thống]
 
 Tư duy hệ thống (Systems Thinking) là kỹ năng phân tích phần mềm dưới góc nhìn toàn cảnh, coi ứng dụng là sự kết hợp của các phần tử và các ràng buộc phi chức năng thay vì chỉ gõ code đơn thuần. Áp dụng hệ quy chiếu 6 lăng kính hệ thống cốt lõi và bài học thực chiến để giải quyết các vấn đề tải cao, giới hạn tài nguyên một cách tối ưu.
 
+## Application Context & Maslow Alignment
+
+- **Phân tầng Maslow phù hợp**: **Tầng 4 (Esteem - Năng lực chuyên môn cao)** và **Tầng 5 (Cognitive & Self-Actualization)**.
+- **Điều kiện tiên quyết**: Nhu cầu an toàn dự án/hệ thống cơ bản phải được giải tỏa (không ở trong tình trạng hệ thống sập liên tục khiến Amygdala báo động dập cháy ngắn hạn). Cần có băng thông nhận thức rảnh rỗi ở Vỏ não trước trán (PFC) để quan sát bức tranh toàn cảnh và các vòng lặp phản hồi lâu dài.
+- **Đối tượng áp dụng**: Solution Architects, System Engineers, Technical Directors, Business Analysts, Lead Developers.
+
+---
+
 ## Core Principles
 
 - Doanh nghiệp trả tiền để giải quyết bài toán kinh doanh dưới sức ép cực đại của các **Ràng buộc** (thời gian, tiền bạc, tài nguyên server).

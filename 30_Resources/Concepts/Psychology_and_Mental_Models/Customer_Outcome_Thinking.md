@@ -17,6 +17,14 @@ Tư duy hướng kết quả khách hàng (Customer-Outcome Thinking) là phươ
 
 ---
 
+## Application Context & Maslow Alignment
+
+- **Phân tầng Maslow phù hợp**: **Tầng 3 (Belonging - Thấu hiểu khách hàng)**, **Tầng 4 (Esteem - Uy tín chất lượng)** và **Tầng 5 (Self-Actualization - Tạo giá trị thực)**.
+- **Điều kiện tiên quyết**: Đội ngũ phát triển hoặc cá nhân đã qua giai đoạn sinh tồn ngắn hạn (không bị ép KPI chạy deadline mù quáng/chữa cháy hệ thống liên tục ở Tầng 1/2), có đủ bệ đỡ an toàn tài chính và thời gian để nghiên cứu nỗi đau thực tế của khách hàng.
+- **Đối tượng áp dụng**: Product Managers, Tech Leads, Senior Developers, UI/UX Designers.
+
+---
+
 ## Core Concept
 
 - **Phân biệt rạch ròi giữa Output và Outcome:**

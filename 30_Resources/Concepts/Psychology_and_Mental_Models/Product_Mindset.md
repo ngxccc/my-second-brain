@@ -12,6 +12,14 @@ Tư duy sản phẩm (Product Mindset) là sự chuyển dịch từ việc tậ
 
 ---
 
+## Application Context & Maslow Alignment
+
+- **Phân tầng Maslow phù hợp**: **Tầng 4 (Esteem - Uy tín & Lợi thế cạnh tranh)** và **Tầng 5 (Self-Actualization - Kiến tạo sản phẩm có sức ảnh hưởng)**.
+- **Điều kiện tiên quyết**: Tổ chức hoặc cá nhân phải có nguồn lực an toàn tối thiểu (Tầng 1 & 2 đã đáp ứng). Khi doanh nghiệp đang cận kề phá sản hoặc lập trình viên lo bị cắt lương tháng tới, họ thường bị ép rơi vào _Project Mindset_ ngắn hạn (chạy kpi bàn giao output nhanh nhất có thể) thay vì _Product Mindset_ lâu dài.
+- **Đối tượng áp dụng**: Founders, Product Owners, Software Architects, Senior Developers.
+
+---
+
 ## Core Concept
 
 - **Sự chuyển dịch từ Dự án sang Sản phẩm:**

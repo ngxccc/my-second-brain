@@ -18,6 +18,12 @@ Khung phân cấp nhận thức (Cognitive Stack Framework) là hệ quy chiếu
 
 ---
 
+## Application Context & Maslow Alignment
+
+- **Phân tầng Maslow phù hợp**: **Tầng 4 (Esteem - Tôn trọng)** và **Tầng 5 (Self-Actualization / Cognitive Needs - Tự thể hiện & Nhận thức)**.
+- **Điều kiện tiên quyết (Prerequisite)**: Yêu cầu các nhu cầu ở Tầng 1 (Sinh lý), Tầng 2 (An toàn tài chính/môi trường) và Tầng 3 (Gắn kết xã hội) đã được đáp ứng ổn định. Không thể xây dựng hoặc vận hành Cognitive Stack 5 tầng khi cá nhân đang rơi vào trạng thái Amygdala Hijack hoặc bận lo áp lực cơm áo gạo tiền ngắn hạn.
+- **Đối tượng áp dụng**: Giới tri thức, Kỹ sư phần mềm cao cấp, Nhà quản trị chiến lược, Sinh viên giai đoạn học nâng cao và Nhà đầu tư cá nhân.
+
 ## Core Concept
 
 Khung phân cấp nhận thức giải quyết bài toán "quá tải thông tin" và "tê liệt phân tích" (Analysis Paralysis) bằng cách sắp xếp các công cụ tư duy theo đúng chu trình xử lý tự nhiên của não bộ.
