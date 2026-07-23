@@ -67,6 +67,7 @@ Bản đồ điều hướng trung tâm cho toàn bộ tri thức kỹ thuật. 
 - [[Database_Indexing_Guidelines]]: Hướng dẫn chi tiết khi nào dùng Index thường, Composite Index và Partial Index.
 - [[Index_BPlusTree]]: Bản chất của Index, cấu trúc B+Tree và lý do tại sao Disk I/O quyết định kiến trúc Database.
 - [[Postgres_18_New_Features]]: Tổng hợp các tính năng mới và cải tiến kiến trúc nhân (Meson build, AIO, Failover Slots, Radix Tree Vacuum) của PostgreSQL 18.
+- [[Postgres_Select_For_Update_Pessimistic_Locking]]: Cơ chế Row-Level Exclusive Lock trong PostgreSQL chống tranh chấp đồng thời (TOCTOU / Race Condition).
 
 ## Infrastructure & Cloud (Hạ tầng & Đám mây)
 
