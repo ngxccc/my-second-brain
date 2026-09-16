@@ -1,5 +1,5 @@
 ---
-noteId: 1787480000001
+noteId: 1787478456968
 ---
 
 How do you use the structure **"It has been [Time] since [Subject + Past Simple]"** to express duration since an event last occurred?

@@ -1,5 +1,5 @@
 ---
-noteId: 1787480100001
+noteId: 1787478456912
 ---
 
 How do you correctly align **Time Adverbs (Currently, Lately, Recently, At that time)** with their corresponding **Verb Tenses**?

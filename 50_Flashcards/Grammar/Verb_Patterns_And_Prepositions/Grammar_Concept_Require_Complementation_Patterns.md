@@ -1,5 +1,5 @@
 ---
-noteId: 1786700600101
+noteId: 1787478456995
 ---
 
 What are the valid complementation patterns and common traps for the transitive verb **require** in technical English?

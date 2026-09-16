@@ -1,5 +1,5 @@
 ---
-noteId: 1787479900001
+noteId: 1787478456724
 ---
 
 What is the fundamental difference between **Simple Past ($V_2$)** and **Past Participle ($V_3$)** in irregular verbs (e.g., **choose / chose / chosen**), and how do you use them correctly?

@@ -1,5 +1,5 @@
 ---
-noteId: 1787480300001
+noteId: 1787478456825
 ---
 
 How do you correctly express **Measurements with Adjectives (e.g., 500 lines long, 2 meters high)** and use the **"It is [Adj] for [Object] to-V"** pattern?

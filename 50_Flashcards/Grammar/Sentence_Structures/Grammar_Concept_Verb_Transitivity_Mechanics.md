@@ -1,5 +1,5 @@
 ---
-noteId: 1786700500101
+noteId: 1787478456925
 ---
 
 What are the first-principles mechanics of **Verb Transitivity (Intransitive vs Transitive vs Ergative Verbs)** in English clauses?

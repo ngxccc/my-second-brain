@@ -1,5 +1,5 @@
 ---
-noteId: 1786698560101
+noteId: 1787478456686
 ---
 
 What are the core mechanics, rule, and 3 tests for **Head Noun Extraction in Compound Noun Phrases**?

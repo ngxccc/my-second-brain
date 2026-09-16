@@ -1,5 +1,5 @@
 ---
-noteId: 1786698780101
+noteId: 1787478456766
 ---
 
 What is the first-principles mechanic and formula of **Dummy Subjects (Chủ ngữ giả 'It' / 'There') & The Non-Pro-Drop Invariant** in English?

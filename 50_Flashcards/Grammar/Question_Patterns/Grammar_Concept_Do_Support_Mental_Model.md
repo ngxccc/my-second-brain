@@ -1,5 +1,5 @@
 ---
-noteId: 1786698120101
+noteId: 1787478456742
 ---
 
 What is the First-Principles mental model (Header Flag & Workload Division) explaining why English requires **Do-Support (`do / does / did`)** in questions?

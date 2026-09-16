@@ -1,5 +1,5 @@
 ---
-noteId: 1786700700101
+noteId: 1787478456979
 ---
 
 What are the 2 valid complementation patterns and common preposition traps for the transitive verb **provide** in technical English?

@@ -1,5 +1,5 @@
 ---
-noteId: 1787479800001
+noteId: 1787478456661
 ---
 
 How do you correctly use singular countable nouns and articles in software engineering commands and prompts (such as **commit**, **folder**, **endpoint**, **branch**)?

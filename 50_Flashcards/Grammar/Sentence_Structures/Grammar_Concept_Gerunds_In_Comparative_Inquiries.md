@@ -1,5 +1,5 @@
 ---
-noteId: 1787480400001
+noteId: 1787478456796
 ---
 
 How do you correctly formulate **Comparative Questions with Gerunds ($V\text{-ing}$)** when asking for opinions (such as **"Do you find reading data from X more complex than Y?"**)?

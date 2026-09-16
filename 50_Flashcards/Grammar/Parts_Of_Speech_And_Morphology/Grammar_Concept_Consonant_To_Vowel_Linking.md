@@ -1,5 +1,5 @@
 ---
-noteId: 1786697780101
+noteId: 1787478456550
 ---
 
 What is the phonetic mechanism and formula of **Consonant-to-Vowel (C-V) Linking / Resyllabification**?
@@ -18,6 +18,8 @@ What is the phonetic mechanism and formula of **Consonant-to-Vowel (C-V) Linking
   - `depend on` (/dɪˈpend/ + /ɑːn/) $\rightarrow$ **`/dɪˈpen.dɑːn/`** (nghe như: _"depen-don"_).
   - `think of` (/θɪŋk/ + /əv/) $\rightarrow$ **`/θɪŋ.kəv/`** (nghe như: _"thin-kəv"_).
   - `hold on` (/hoʊld/ + /ɑːn/) $\rightarrow$ **`/hoʊl.dɑːn/`** (nghe như: _"hole-don"_).
+  - `delivers our` (/dɪˈlɪv.əz/ + /aʊər/) $\rightarrow$ **`/dɪˈlɪv.ə.zaʊər/`** (nghe như: _"delive-zour"_).
+  - `gives us` (/ɡɪvz/ + /əs/) $\rightarrow$ **`/ɡɪv.zəs/`** (nghe như: _"give-zus"_).
 - **Usage Drill**:
   - _`As detailed on (/ˈdiː.teɪl.dɑːn/) this slide, the architecture ensures high availability.`_
   - _`The services depend on (/dɪˈpen.dɑːn/) an isolated caching layer.`_

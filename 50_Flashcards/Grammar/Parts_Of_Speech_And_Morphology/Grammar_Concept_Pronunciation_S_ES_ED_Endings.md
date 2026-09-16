@@ -18,6 +18,9 @@ What are the core phonetic rules (Voicing Assimilation) for pronouncing **-s / -
   - **`/t/` (Vô thanh)**: Sau âm vô thanh `/p, k, f, s, ʃ, tʃ/` (vd: `looked` /lʊkt/, `watched` /wɑːtʃt/, `stopped` /stɑːpt/).
   - **`/d/` (Hữu thanh - Rung)**: Sau tất cả nguyên âm và phụ âm hữu thanh `/b, ɡ, v, z, m, n, l, r/` (vd: `detailed` /ˈdiː.teɪld/, `cleaned` /kliːnd/, `applied` /əˈplaɪd/). _Giữ nguyên số âm tiết, không đọc tách_.
   - **`/ɪd/` (Âm đệm)**: CHỈ KHI kết thúc bằng `/t/` hoặc `/d/` (vd: `needed` /ˈniː.dɪd/, `wanted` /ˈwɑːn.tɪd/, `decided` /dɪˈsaɪ.dɪd/).
-- **Concrete Examples**:
+- **Concrete Examples & Connected Speech**:
+  - `happens if` (/ˈhæp.ənz/ + /ɪf/) $\rightarrow$ **`/ˈhæp.ən.zɪf/`** (_"happen-zif"_).
+  - `companies rely` (/ˈkʌm.pə.niz/ + /rɪˈlaɪ/) $\rightarrow$ **`/ˈkʌm.pə.niz rɪˈlaɪ/`** (đuôi `/z/` rung nhẹ lướt sang `/r/`).
+  - _`What happens if (/wʌt ˈhæp.ən.zɪf/) companies rely on AI?`_
   - _`Software companies (/ˈkʌm.pə.niz/) provide detailed (/ˈdiː.teɪld/) documentation.`_
   - _`The team tested (/ˈtes.tɪd/) the system and fixed (/fɪkst/) all critical bugs.`_

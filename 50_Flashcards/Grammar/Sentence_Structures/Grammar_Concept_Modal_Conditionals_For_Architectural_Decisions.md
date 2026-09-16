@@ -1,5 +1,5 @@
 ---
-noteId: 1787480500002
+noteId: 1787478456845
 ---
 
 How do you correctly use **Modal Conditionals (Should I vs. Would it be beneficial to-V)** when evaluating architectural decisions and technical trade-offs?
