@@ -6,7 +6,13 @@ What is the definition, type, pronunciation, and usage of the term **grinding my
 
 ---
 
-- **Type**: Noun Phrase
-- **Meaning**: The definition and usage of grinding my way through in software engineering and professional communication.
-- **Example**:
-  - _grinding my way through advanced backend patterns_
+- **Type**: Idiomatic Phrasal Verb Expression
+- **Pronunciation**: /ˈɡraɪn.dɪŋ maɪ weɪ θruː/
+- **Meaning**: Working steadily and persistently through a long, demanding, or repetitive task with discipline (kiên trì cày ải qua một quá trình gian nan).
+- **Collocations**:
+  - `grind one's way through LeetCode` (kiên trì cày thuật toán LeetCode)
+  - `grind through legacy code` (miệt mài xử lý codebase cũ)
+  - `grind through documentation` (kiên nhẫn đọc hết tài liệu kỹ thuật)
+- **Concrete Examples**:
+  - _I spent the entire weekend **grinding my way through** distributed systems papers._
+  - _She is **grinding her way through** daily Anki flashcards to achieve technical English fluency._

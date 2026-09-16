@@ -7,6 +7,11 @@ What is the definition, type, pronunciation, and usage of the term **distinguish
 ---
 
 - **Type**: Verb Phrase
-- **Meaning**: To recognize or point out the differences between two or more items or concepts.
-- **Example**:
-  - _It is crucial to **distinguish between** arrays and slices when optimizing memory in Go._
+- **Pronunciation**: /dɪˈstɪŋ.ɡwɪʃ bɪˌtwiːn/
+- **Meaning**: To recognize or point out the difference between two or more items, concepts, or states (phân biệt giữa hai đối tượng).
+- **Collocations**:
+  - `distinguish between concurrency and parallelism`
+  - `distinguish between nil and empty`
+  - `easily distinguish between`
+- **Concrete Examples**:
+  - _Engineers must **distinguish between** CPU-bound bottlenecks and I/O wait times._

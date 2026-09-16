@@ -7,6 +7,11 @@ What is the definition, type, pronunciation, and usage of the term **dynamic win
 ---
 
 - **Type**: Noun Phrase
-- **Meaning**: A flexible viewport pointing to a segment of an underlying array that can change length.
-- **Example**:
-  - _A slice acts as a **dynamic window** over an underlying array._
+- **Pronunciation**: /daɪˈnæm.ɪk ˈwɪn.doʊ/
+- **Meaning**: A flexible, resizable viewport pointing to a segment of an underlying array that can shift length and capacity (khung nhìn động trỏ vào một đoạn mảng).
+- **Collocations**:
+  - `act as a dynamic window`
+  - `dynamic window over memory`
+  - `adjust dynamic window bounds`
+- **Concrete Examples**:
+  - _A slice in Go acts as a **dynamic window** over a contiguous underlying array._

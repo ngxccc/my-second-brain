@@ -6,8 +6,13 @@ What is the definition, type, pronunciation, and usage of the term **deviate fro
 
 ---
 
-- **Type**: Verb Phrase
-- **Pronunciation**: /ˈdiː.vi.eɪt frɒm/
-- **Meaning**: To depart or diverge from an established course, rule, or standard.
-- **Example**:
-  - _The term **deviate from** is widely used in software development and professional communication._
+- **Type**: Verb Phrase / Phrasal Pattern
+- **Pronunciation**: /ˈdiː.vi.eɪt frəm/
+- **Meaning**: To depart or diverge noticeably from an established course, accepted standard, principle, or expected behavior (đi trệch khỏi, sai lệch so với tiêu chuẩn).
+- **Collocations**:
+  - `deviate from the baseline` (đi trệch khỏi đường chuẩn ban đầu)
+  - `deviate from standard architecture` (sai lệch so với kiến trúc chuẩn)
+  - `never deviate from security invariants` (không bao giờ được đi trệch khỏi các bất biến bảo mật)
+- **Concrete Examples**:
+  - _If microservice payloads **deviate from** the Protobuf contract, client deserialization fails._
+  - _Do not **deviate from** the atomic note standard when capturing technical mechanics._

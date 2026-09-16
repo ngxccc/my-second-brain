@@ -6,8 +6,13 @@ What is the definition, type, pronunciation, and usage of the term **underneath 
 
 ---
 
-- **Type**: Prepositional Phrase / Idiom.
-- **Pronunciation**: /(Idiom/
-- **Meaning**: The definition and usage of underneath the covers in software engineering and professional communication.
-- **Example**:
-  - _The term **underneath the covers** is widely used in software development and professional communication._
+- **Type**: Idiomatic Prepositional Phrase
+- **Pronunciation**: /ˌʌn.dɚˈniːθ ðə ˈkʌv.ɚz/
+- **Meaning**: Operating beneath superficial outward appearances; referring to internal engineering plumbing and hidden runtime mechanics (phía sau hậu trường, bản chất ngầm bên dưới).
+- **Collocations**:
+  - `what happens underneath the covers` (những gì thực sự diễn ra phía sau hậu trường)
+  - `hidden underneath the covers` (ẩn sâu bên dưới bề mặt)
+  - `inspect underneath the covers` (kiểm tra cơ chế ẩn ngầm)
+- **Concrete Examples**:
+  - _Framework abstractions look simple, but **underneath the covers** they execute complex reflection queries._
+  - _Peeking **underneath the covers** of Go channels reveals lock-free ring buffers and waiting queues._

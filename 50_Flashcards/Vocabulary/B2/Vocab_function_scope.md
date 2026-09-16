@@ -7,6 +7,12 @@ What is the definition, type, pronunciation, and usage of the term **function sc
 ---
 
 - **Type**: Noun Phrase
-- **Meaning**: The definition and usage of function scope in software engineering and professional communication.
-- **Example**:
-  - _Variables allocated on the stack are cleaned up when the **function scope** ends._
+- **Pronunciation**: /ˈfʌŋk.ʃən ˌskoʊp/
+- **Meaning**: The lexical boundary within a programming function inside which declared variables are visible, accessible, and live (phạm vi hàm).
+- **Collocations**:
+  - `within function scope` (nằm trong phạm vi hàm)
+  - `escape function scope` (thoát ra khỏi phạm vi hàm)
+  - `limit variables to function scope` (giới hạn biến trong phạm vi hàm)
+- **Concrete Examples**:
+  - _Variables declared within **function scope** are deallocated automatically when the stack frame returns unless they escape._
+  - _Keeping variable lifetimes limited to narrow **function scope** makes code easier to reason about._

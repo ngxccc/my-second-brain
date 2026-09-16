@@ -7,6 +7,12 @@ What is the definition, type, pronunciation, and usage of the term **interface b
 ---
 
 - **Type**: Noun Phrase
-- **Meaning**: The definition and usage of interface boxing in software engineering and professional communication.
-- **Example**:
-  - _Passing concrete values to fmt.Println triggers **interface boxing**, causing values to escape._
+- **Pronunciation**: /ˈɪn.tɚ.feɪs ˈbɑːk.sɪŋ/
+- **Meaning**: The runtime process of wrapping a concrete value inside an interface value, which copies the data to heap memory unless small enough to inline (đóng gói kiểu dữ liệu vào interface).
+- **Collocations**:
+  - `cost of interface boxing` (chi phí của việc đóng gói interface)
+  - `interface boxing allocation` (cấp phát bộ nhớ do interface boxing)
+  - `avoid unnecessary interface boxing` (tránh đóng gói interface không cần thiết)
+- **Concrete Examples**:
+  - _Passing concrete structs to `any` (`interface{}`) causes **interface boxing**, allocating heap memory._
+  - _Zero-allocation APIs avoid **interface boxing** by accepting concrete types or generic type parameters._

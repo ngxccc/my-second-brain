@@ -7,6 +7,11 @@ What is the definition, type, pronunciation, and usage of the term **fundamental
 ---
 
 - **Type**: Noun Phrase
-- **Meaning**: The core rules, underlying laws, or baseline behavior of how a system works.
-- **Example**:
-  - _To write high-performance code, you must understand the **fundamental mechanics** of memory allocation._
+- **Pronunciation**: /ˌfʌn.dəˈmen.t̬əl məˈkæn.ɪks/
+- **Meaning**: The core, foundational operating principles and inner workings of a technical system or architecture (cơ chế vận hành nền tảng).
+- **Collocations**:
+  - `master fundamental mechanics`
+  - `explain fundamental mechanics`
+  - `underlying fundamental mechanics`
+- **Concrete Examples**:
+  - _Understanding the **fundamental mechanics** of Go goroutines enables writing high-throughput servers._

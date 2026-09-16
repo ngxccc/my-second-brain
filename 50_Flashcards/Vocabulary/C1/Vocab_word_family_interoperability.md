@@ -1,5 +1,5 @@
 ---
-noteId: 1787480500001
+noteId: 1787478457700
 ---
 
 What is the Word Family Matrix, types, pronunciation, and usage of **interoperability**?

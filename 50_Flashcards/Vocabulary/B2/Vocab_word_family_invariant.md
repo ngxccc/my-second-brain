@@ -1,5 +1,5 @@
 ---
-noteId: 1786698890101
+noteId: 1787478457398
 ---
 
 What is the Word Family Matrix, types, pronunciation, and usage of **invariant**?

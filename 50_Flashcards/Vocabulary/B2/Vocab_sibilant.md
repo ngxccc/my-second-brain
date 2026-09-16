@@ -7,6 +7,11 @@ What is the definition, type, pronunciation, and usage of the term **sibilant**?
 ---
 
 - **Type**: Noun
-- **Meaning**: A consonant sound produced by forcing air through a narrow channel, creating a hissing or hushing noise like /s/, /z/, /ʃ/, /ʒ/, /tʃ/, or /dʒ/.
-- **Example**:
-  - _Words ending in a **sibilant** require an extra syllable /ɪz/ when adding -s or -es._
+- **Pronunciation**: /ˈsɪb.əl.ənt/
+- **Meaning**: A fricative speech sound produced with a hissing sound by directing a stream of air against the edge of the teeth (/s/, /z/, /ʃ/, /ʒ/, /tʃ/, /dʒ/) (phụ âm huýt xì hơi).
+- **Collocations**:
+  - `sibilant sound`
+  - `pronounce the sibilant ending`
+  - `sibilant consonants requiring /ɪz/`
+- **Concrete Examples**:
+  - _Nouns ending in a **sibilant** require the plural suffix to be pronounced as `/ɪz/`._

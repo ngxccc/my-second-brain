@@ -1,5 +1,5 @@
 ---
-noteId: 1786698340101
+noteId: 1787478457214
 ---
 
 What is the Word Family Matrix, types, pronunciation, and usage of **determine**?

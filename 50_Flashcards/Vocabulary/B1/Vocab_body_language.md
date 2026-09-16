@@ -7,6 +7,12 @@ What is the definition, type, pronunciation, and usage of the term **body langua
 ---
 
 - **Type**: Noun Phrase
-- **Meaning**: The definition and usage of body language in software engineering and professional communication.
-- **Example**:
-  - _Good **body language** helps you project confidence during a whiteboard session._
+- **Pronunciation**: /ˈbɑː.di ˌlæŋ.ɡwɪdʒ/
+- **Meaning**: The non-verbal signals, postures, and gestures that people use to communicate intentions and emotions (ngôn ngữ cơ thể).
+- **Collocations**:
+  - `confident body language` (ngôn ngữ cơ thể tự tin)
+  - `non-verbal body language` (ngôn ngữ cơ thể phi ngôn từ)
+  - `read someone's body language` (đọc ngôn ngữ cơ thể của ai đó)
+- **Concrete Examples**:
+  - _Confident **body language** projects authority when presenting system designs to senior engineers._
+  - _Maintaining open **body language** creates rapport with the interview panel._

@@ -1,5 +1,5 @@
 ---
-noteId: 1787480300002
+noteId: 1787478457461
 ---
 
 What is the Word Family Matrix, types, pronunciation, and usage of **monolithic**?

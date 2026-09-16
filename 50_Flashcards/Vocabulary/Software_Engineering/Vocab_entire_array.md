@@ -7,6 +7,11 @@ What is the definition, type, pronunciation, and usage of the term **entire arra
 ---
 
 - **Type**: Noun Phrase
-- **Meaning**: The whole array containing all elements without omitting any.
-- **Example**:
-  - _Passing an array by value copies the **entire array** into a new stack frame._
+- **Pronunciation**: /ɪnˈtaɪ.ɚ əˈreɪ/
+- **Meaning**: The complete fixed-size contiguous memory block comprising all elements of an array without truncation (toàn bộ khối mảng liên tục).
+- **Collocations**:
+  - `copy the entire array`
+  - `pass the entire array by value`
+  - `allocate the entire array`
+- **Concrete Examples**:
+  - _Passing an array by value copies the **entire array** into the called function's stack frame._

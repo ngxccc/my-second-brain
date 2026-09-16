@@ -7,6 +7,11 @@ What is the definition, type, pronunciation, and usage of the term **separation 
 ---
 
 - **Type**: Noun Phrase
-- **Meaning**: A design principle of separating a computer program into distinct sections so that each section addresses a separate responsibility.
-- **Example**:
-  - _Go applies **separation of concerns**: arrays handle raw memory storage, while slices handle dynamic viewports._
+- **Pronunciation**: /ˌsep.əˈreɪ.ʃən əv kənˈsɝːnz/
+- **Meaning**: A software architecture design principle that divides a computer program into distinct sections, each addressing a separate concern (nguyên lý phân tách mối quan tâm).
+- **Collocations**:
+  - `enforce separation of concerns`
+  - `architectural separation of concerns`
+  - `maintain separation of concerns across layers`
+- **Concrete Examples**:
+  - _Applying **separation of concerns** decouples the HTTP transport layer from business domain logic._

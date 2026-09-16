@@ -1,5 +1,5 @@
 ---
-noteId: 1786699450101
+noteId: 1787478457308
 ---
 
 What is the Word Family Matrix, types, pronunciation, and usage of **encrypt**?

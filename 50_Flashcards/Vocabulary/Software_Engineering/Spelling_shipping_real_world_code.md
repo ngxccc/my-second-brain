@@ -2,7 +2,7 @@
 noteId: 1786852037500
 ---
 
-Spell the word/phrase that means "The definition and usage of shipping real world code in software engineering and professional communication.":
+Spell the word/phrase that means "Deploying functional software into actual production environments for real users (phát hành mã nguồn thực chiến)":
 
 ---
 

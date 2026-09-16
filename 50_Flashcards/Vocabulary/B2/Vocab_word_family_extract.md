@@ -1,5 +1,5 @@
 ---
-noteId: 1786698670101
+noteId: 1787478457360
 ---
 
 What is the Word Family Matrix, types, pronunciation, and usage of **extract**?

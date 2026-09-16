@@ -7,6 +7,11 @@ What is the definition, type, pronunciation, and usage of the term **unify into 
 ---
 
 - **Type**: Verb Phrase
-- **Meaning**: To merge or combine multiple separate data structures into one single uniform type.
-- **Example**:
-  - _Instead of **unifying them into a single type**, Go keeps arrays and slices distinct for performance and control._
+- **Pronunciation**: /ˈjuː.nə.faɪ ˈɪn.tuː ə ˈsɪŋ.ɡəl ˌtaɪp/
+- **Meaning**: To merge or combine multiple distinct data structures or abstractions into one single uniform type (hợp nhất thành một kiểu dữ liệu duy nhất).
+- **Collocations**:
+  - `unify into a single type`
+  - `avoid unifying into a single type`
+  - `unify models across services`
+- **Concrete Examples**:
+  - _Instead of **unifying into a single type**, Go intentionally keeps fixed arrays and dynamic slices distinct for optimal performance._

@@ -1,5 +1,5 @@
 ---
-noteId: 1786697450101
+noteId: 1787478457174
 ---
 
 What is the Word Family Matrix, types, pronunciation, and usage of **deprecate**?

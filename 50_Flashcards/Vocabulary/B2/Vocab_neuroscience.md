@@ -7,6 +7,11 @@ What is the definition, type, pronunciation, and usage of the term **neuroscienc
 ---
 
 - **Type**: Noun
-- **Meaning**: To acquire knowledge or skill through study.
-- **Example**:
-  - _**Neuroscience** proves that whispering activates speech motor pathways in the brain._
+- **Pronunciation**: /ˈnʊr.oʊˌsaɪ.əns/
+- **Meaning**: The scientific multidisciplinary study of the structure, development, and function of the nervous system and brain (khoa học thần kinh).
+- **Collocations**:
+  - `advances in neuroscience`
+  - `cognitive neuroscience`
+  - `neuroscience of motor learning`
+- **Concrete Examples**:
+  - _**Neuroscience** demonstrates that multimodal learning with visuals and speech accelerates skill acquisition._

@@ -1,5 +1,5 @@
 ---
-noteId: 1786699230101
+noteId: 1787478457328
 ---
 
 What is the Word Family Matrix, types, pronunciation, and usage of **expire**?

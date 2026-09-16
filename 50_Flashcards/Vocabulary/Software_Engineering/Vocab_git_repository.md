@@ -6,7 +6,13 @@ What is the definition, type, pronunciation, and usage of the term **git reposit
 
 ---
 
-- **Type**: Noun Phrase.
-- **Meaning**: The definition and usage of git repository in software engineering and professional communication.
-- **Example**:
-  - _The term **git repository** is widely used in software development and professional communication._
+- **Type**: Noun Phrase
+- **Pronunciation**: /ˈɡɪt rɪˌpɑː.zə.tɔːr.i/
+- **Meaning**: A central digital storage directory tracked by Git containing project files, commit history, branches, and version metadata (kho lưu trữ mã nguồn Git).
+- **Collocations**:
+  - `clone a git repository` (nhân bản kho lưu trữ Git)
+  - `remote git repository` (kho lưu trữ Git từ xa)
+  - `initialize a git repository` (khởi tạo kho Git)
+- **Concrete Examples**:
+  - _Every microservice has its own dedicated **git repository** with automated CI/CD workflows._
+  - _We moved our documentation into the main **git repository** to keep architecture docs in sync with code._

@@ -1,5 +1,5 @@
 ---
-noteId: 1786700710101
+noteId: 1787478457058
 ---
 
 What is the Word Family Matrix, types, pronunciation, and usage of **provide**?

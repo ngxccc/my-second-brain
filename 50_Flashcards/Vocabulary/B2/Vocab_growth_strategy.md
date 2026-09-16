@@ -7,6 +7,12 @@ What is the definition, type, pronunciation, and usage of the term **growth stra
 ---
 
 - **Type**: Noun Phrase
-- **Meaning**: The definition and usage of growth strategy in software engineering and professional communication.
-- **Example**:
-  - _Go's slice **growth strategy** doubles the capacity when appending to a full slice below threshold._
+- **Pronunciation**: /ˈɡroʊθ ˌstræt̬.ə.dʒi/
+- **Meaning**: An intentional, structured long-term plan designed to expand capabilities, scale systems, or advance professional skills (chiến lược tăng trưởng/phát triển).
+- **Collocations**:
+  - `execute a growth strategy` (thực thi chiến lược tăng trưởng)
+  - `personal growth strategy` (chiến lược phát triển cá nhân)
+  - `engineering growth strategy` (chiến lược phát triển năng lực kỹ thuật)
+- **Concrete Examples**:
+  - _His professional **growth strategy** focuses on leveling up from backend engineering to distributed systems architecture._
+  - _A disciplined daily practice schedule is the cornerstone of any sustainable **growth strategy**._

@@ -2,7 +2,7 @@
 noteId: 1786852036632
 ---
 
-Spell the word/phrase that means "The definition and usage of messing around with in software engineering and professional communication.":
+Spell the word/phrase that means "Casually experimenting or tinkering with a tool or technology (vọc vạch, thử nghiệm tùy hứng)":
 
 ---
 

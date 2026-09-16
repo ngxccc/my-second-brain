@@ -7,6 +7,11 @@ What is the definition, type, pronunciation, and usage of the term **phonetic li
 ---
 
 - **Type**: Noun Phrase
-- **Meaning**: The smooth linking or connecting of the final sound of one word to the initial sound of the following word in speech.
-- **Example**:
-  - _Applying **phonetic liaison** makes your spoken English flow naturally without unnatural pauses._
+- **Pronunciation**: /fəˈnet̬.ɪk liˈeɪ.zɑːn/
+- **Meaning**: The smooth linking or connecting of the final sound of one word to the initial sound of the next word in speech (hiện tượng nối âm trong ngữ âm).
+- **Collocations**:
+  - `apply phonetic liaison`
+  - `rules of phonetic liaison`
+  - `consonant-to-vowel phonetic liaison`
+- **Concrete Examples**:
+  - _Using **phonetic liaison** makes your English rhythm sound continuous and effortless._

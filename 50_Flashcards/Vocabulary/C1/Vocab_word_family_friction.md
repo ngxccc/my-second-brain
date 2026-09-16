@@ -1,5 +1,5 @@
 ---
-noteId: 1787480400002
+noteId: 1787478457678
 ---
 
 What is the Word Family Matrix, types, pronunciation, and usage of **friction**?

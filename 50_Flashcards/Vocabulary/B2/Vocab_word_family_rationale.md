@@ -1,5 +1,5 @@
 ---
-noteId: 1786697670101
+noteId: 1787478457571
 ---
 
 What is the Word Family Matrix, types, pronunciation, and usage of **rationale**?

@@ -1,5 +1,5 @@
 ---
-noteId: 1786698230101
+noteId: 1787478457377
 ---
 
 What is the Word Family Matrix, types, pronunciation, and usage of **inflect**?
