@@ -40,10 +40,15 @@ date: 2026-08-09
 │   ├── Life/                         # Nghiên cứu sinh lý, giấc ngủ, sức khỏe (2 domain folders)
 │   └── Excalidraw/                   # Sơ đồ kiến trúc & whiteboard
 ├── 40_Archives/                      # Lưu trữ lạnh dự án hoàn tất / tài liệu cũ
-├── 50_Flashcards/                    # Anki Flashcards (Yanki plugin)
+├── 50_Flashcards/                    # Anki Flashcards (Yanki plugin - chuẩn phẳng 2 cấp)
+│   ├── Database_and_Storage/         # Thẻ cơ sở dữ liệu & storage engine
+│   ├── Architecture_and_Patterns/    # Thẻ kiến trúc hệ thống & design patterns
+│   ├── Language_and_Runtime/         # Thẻ runtime (V8, Go memory, compiler)
+│   ├── Software_Testing/             # Thẻ kiểm thử ISTQB, WhiteBox, BlackBox
+│   ├── SDLC/                         # Thẻ vòng đời phát triển phần mềm & Agile
+│   ├── Psychology/                   # Thẻ tâm lý học, mental models, đàm phán
 │   ├── Vocabulary/                   # Thẻ từ vựng theo CEFR & chuyên ngành
 │   └── Grammar/                      # Thẻ ngữ pháp thực chiến & cấu trúc câu
-└── 99_Meta/                          # Cấu hình hệ thống, Templates, Validator Scripts
 ```
 
 ---
@@ -62,7 +67,7 @@ date: 2026-08-09
   - `Life/`: `Health_and_Dermatology/`, `Sleep_and_Recovery/`.
   - `Excalidraw/`: Sơ đồ kiến trúc & whiteboard.
 - **`40_Archives/`**: Đóng băng dự án và tài liệu tham khảo cũ.
-- **`50_Flashcards/`**: Thẻ học Anki theo chuẩn phân tách `---` của Yanki (`Vocabulary/`, `Grammar/`).
+- **`50_Flashcards/`**: Thẻ học Anki theo chuẩn phân tách `---` của Yanki (`Database_and_Storage/`, `Architecture_and_Patterns/`, `Language_and_Runtime/`, `Software_Testing/`, `SDLC/`, `Psychology/`, `Vocabulary/`, `Grammar/`). Tuân thủ nghiêm ngặt giới hạn độ sâu 2 cấp.
 - **`99_Meta/`**: Quản trị hệ thống (`Templates/`, `Scripts/`, `Quizzes/`, `Visuals/`, `Tag_Taxonomy_SSOT.md`).
 
 ---
