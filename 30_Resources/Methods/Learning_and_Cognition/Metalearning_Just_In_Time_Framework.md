@@ -77,3 +77,4 @@ $$\text{Mental Model (20\%)} + \text{Build Something} + \text{Just-In-Time Looku
 - Kỹ thuật đặt câu hỏi truy vấn: [[Socratic_Questioning_Method]]
 - Tư duy phương pháp luận đại học top đầu: [[Top_University_Mindset]]
 - Bản đồ điều hướng khái niệm: [[000_System_Structure]]
+- Phương pháp neo bài toán dự án để làm chủ kỹ thuật: [[Project_Anchored_Technical_Mastery]]
