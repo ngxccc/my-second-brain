@@ -56,7 +56,11 @@ Bản chất của `git reset HEAD~1` là: **Di chuyển con trỏ HEAD lùi v�
 | **`--mixed`** _(Mặc định)_ | **Di chuyển lùi** | **BỊ RESET** (Unstaged)            | **GIỮ NGUYÊN**                          | Huỷ commit cũ, đưa toàn bộ thay đổi về dạng Unstaged để phân loại lại. |
 | **`--hard`**               | **Di chuyển lùi** | **BỊ RESET**                       | **BỊ XÓA SỔ** (Ghi đè bằng commit đích) | **HỦY DIỆT**: Xóa bỏ toàn bộ thay đổi rác không muốn giữ lại.          |
 
-> **Cảnh báo nguy hiểm:** `git reset --hard` là lệnh có tính hủy hoại đối với các file chưa từng được `git add`. Nếu file đã từng commit hoặc staged, `git reflog` vẫn có thể cứu được.
+> **Cơ chế An toàn & Ranh giới Hủy diệt của `git reset --hard`:**
+>
+> 1. **Đối với Untracked Files (File mới chưa từng `git add`):** `git reset --hard` **KHÔNG chạm vào và KHÔNG xóa** các file này. Chúng vẫn nằm nguyên trên ổ cứng (chỉ lệnh `git clean -f` mới xóa).
+> 2. **Đối với Tracked Files (File đã được Git theo dõi từ trước):** Mọi sửa đổi chưa commit trên các file này sẽ bị **ghi đè và xóa sổ vĩnh viễn**, không thể cứu lại bằng `git reflog`.
+> 3. **Đối với Commits đã tạo:** Dù bị `--hard` lùi lại bao nhiêu bước, commit cũ vẫn nằm trong Object Store và **được cứu lại 100% qua `git reflog`**.
 
 ---
 
