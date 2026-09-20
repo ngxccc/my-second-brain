@@ -1,5 +1,5 @@
 ---
-noteId: 1789566005004
+noteId: 1789914103802
 ---
 
 [Phỏng vấn Git]: "Một lập trình viên lỡ tay gõ `git reset --hard HEAD~1` làm mất một commit chứa tính năng quan trọng chưa kịp đẩy lên remote. Commit đó có thực sự bị xóa khỏi máy không? Quy trình khôi phục lại 100% là gì?"

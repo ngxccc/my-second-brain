@@ -1,5 +1,5 @@
 ---
-noteId: 1789566005002
+noteId: 1789914103675
 ---
 
 Về mặt kiến trúc hệ thống, đối tượng Branch trong Git thực chất được lưu trữ như thế nào bên trong thư mục `.git/`? Tại sao việc tạo nhánh trong Git lại gần như có chi phí bằng $0$?

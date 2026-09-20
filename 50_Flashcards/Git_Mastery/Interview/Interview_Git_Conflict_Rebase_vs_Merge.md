@@ -1,5 +1,5 @@
 ---
-noteId: 1789566005003
+noteId: 1789914103776
 ---
 
 [Phỏng vấn Git / DevOps]: "Khi giải quyết xung đột (Conflict) trong `git rebase` và `git merge`, có 2 điểm khác biệt chí mạng nào về cơ chế xảy ra và ý nghĩa của các nhãn `OURS` / `THEIRS`?"

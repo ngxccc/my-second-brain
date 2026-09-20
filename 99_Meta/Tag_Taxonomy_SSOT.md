@@ -40,7 +40,8 @@ Mỗi note (ngoại trừ Daily Logs và Flashcards) bắt buộc chứa ít nh�
 
 ### Software Engineering & Architecture
 
-- Core Backend: `topic/backend`, `topic/architecture`, `topic/system-design`, `topic/engineering`, `topic/devops`, `topic/infrastructure`, `topic/git`.
+- Core Backend: `topic/backend`, `topic/architecture`, `topic/system-design`, `topic/engineering`, `topic/devops`, `topic/infrastructure`.
+- Developer Tooling & VCS: `topic/git`, `topic/linux`, `topic/docker`, `topic/vim`.
 - Data & Storage: `topic/database`, `topic/sql`, `topic/dsa`, `topic/leetcode`, `topic/memory-management`.
 - Quality & Lifecycle: `topic/testing`, `topic/sdlc`, `topic/security`, `topic/engineering-management`, `topic/project-management`.
 - Web & Client: `topic/frontend`, `topic/web`, `topic/rendering`, `topic/seo`, `topic/i18n`.

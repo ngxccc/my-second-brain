@@ -1,5 +1,5 @@
 ---
-noteId: 1789566005001
+noteId: 1789914103698
 ---
 
 Trong thuật toán Three-Way Merge của Git, cơ chế so sánh giữa 3 điểm `BASE`, `OURS`, và `THEIRS` diễn ra như thế nào? Khi nào Git tự động gộp (Auto-merge) và khi nào bắt buộc xảy ra CONFLICT?
