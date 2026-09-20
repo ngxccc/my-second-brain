@@ -41,9 +41,13 @@ date: 2026-08-09
 │   └── Excalidraw/                   # Sơ đồ kiến trúc & whiteboard
 ├── 40_Archives/                      # Lưu trữ lạnh dự án hoàn tất / tài liệu cũ
 ├── 50_Flashcards/                    # Anki Flashcards (Yanki plugin - chuẩn phẳng 2 cấp)
-│   ├── Database_and_Storage/         # Thẻ cơ sở dữ liệu & storage engine
-│   ├── Architecture_and_Patterns/    # Thẻ kiến trúc hệ thống & design patterns
-│   ├── Language_and_Runtime/         # Thẻ runtime (V8, Go memory, compiler)
+│   ├── Operating_Systems/            # Thẻ hệ điều hành (Hardware, Memory, OS Core)
+│   ├── Go_Runtime/                   # Thẻ Go runtime (Escape analysis, Inlining, Pointer)
+│   ├── Go_Slice/                     # Thẻ Go slice internals (Header, Leak, Value trap)
+│   ├── V8_Engine/                    # Thẻ JavaScript V8 (Hidden classes, Inline caching)
+│   ├── Database_Indexing/            # Thẻ chỉ mục Database (B-Tree, Skip scan, Leftmost prefix)
+│   ├── Database_Concurrency/         # Thẻ đồng thời & khóa (MVCC, Lock ordering, OCC)
+│   ├── Architecture_Patterns/        # Thẻ kiến trúc (Clean Architecture, Outbox, Boundaries)
 │   ├── Software_Testing/             # Thẻ kiểm thử ISTQB, WhiteBox, BlackBox
 │   ├── SDLC/                         # Thẻ vòng đời phát triển phần mềm & Agile
 │   ├── Psychology/                   # Thẻ tâm lý học, mental models, đàm phán
@@ -67,7 +71,7 @@ date: 2026-08-09
   - `Life/`: `Health_and_Dermatology/`, `Sleep_and_Recovery/`.
   - `Excalidraw/`: Sơ đồ kiến trúc & whiteboard.
 - **`40_Archives/`**: Đóng băng dự án và tài liệu tham khảo cũ.
-- **`50_Flashcards/`**: Thẻ học Anki theo chuẩn phân tách `---` của Yanki (`Database_and_Storage/`, `Architecture_and_Patterns/`, `Language_and_Runtime/`, `Software_Testing/`, `SDLC/`, `Psychology/`, `Vocabulary/`, `Grammar/`). Tuân thủ nghiêm ngặt giới hạn độ sâu 2 cấp.
+- **`50_Flashcards/`**: Thẻ học Anki theo chuẩn phân tách `---` của Yanki, cấu trúc phẳng 2 cấp gồm các cặp `Core/` (nguyên lý) và `Interview/` (phản xạ phỏng vấn): `Operating_Systems/`, `Go_Runtime/`, `Go_Slice/`, `V8_Engine/`, `Database_Indexing/`, `Database_Concurrency/`, `Architecture_Patterns/`, `Software_Testing/`, `SDLC/`, `Psychology/`, `Vocabulary/`, `Grammar/`.
 - **`99_Meta/`**: Quản trị hệ thống (`Templates/`, `Scripts/`, `Quizzes/`, `Visuals/`, `Tag_Taxonomy_SSOT.md`).
 
 ---
