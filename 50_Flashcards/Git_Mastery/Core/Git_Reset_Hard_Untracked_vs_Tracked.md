@@ -1,5 +1,5 @@
 ---
-noteId: 1789566005005
+noteId: 1789915064958
 ---
 
 Khi thực thi lệnh `git reset --hard HEAD~1`, các tập tin mới tạo chưa từng được `git add` (Untracked files) có bị xóa khỏi ổ cứng không? Còn các sửa đổi trên các tập tin đã được theo dõi (Tracked files) thì sao?
