@@ -29,7 +29,7 @@
 
 - **Single Responsibility**: One note = One idea. Split multi-topic notes into dedicated atomic files.
 - **Naming**: Use `Pascal_Snake_Case.md` for all note filenames (e.g., `First_Principles_Thinking.md`).
-- **Terminology**: Use standard English technical terms directly inline. Maintain explanations in clear, developer-friendly Vietnamese. Keep technical terms unadorned (omit parenthetical translations).
+- **Terminology (Strict Invariant)**: Use standard English technical terms directly inline (e.g., `Process`, `Thread`, `Context Switch`, `Virtual Memory Space`, `Page Table`, `Race Condition`, `Heap`, `Stack`, `Lock Contention`). Maintain surrounding explanations in natural developer-friendly Vietnamese. NEVER translate technical terms into Vietnamese or attach parenthetical Vietnamese translations (e.g., write `Process`, NOT `Process (Tiến trình)` or `Tiến trình`).
 - **Classification (Litmus Test)**:
   - `30_Resources/Methods/` (Actionable): Checklists, SOPs, workflows, step-by-step guides, code templates.
   - `30_Resources/Concepts/` (Cognitive): Definitions, theories, mental models, core mechanics.
