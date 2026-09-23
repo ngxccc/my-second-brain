@@ -51,8 +51,10 @@ Mọi dữ liệu trong Git được nén bằng `zlib` và định danh bằng 
 
 ### 3. Bản chất của Branch và con trỏ HEAD
 
-- **Branch là gì?** Branch không phải là một bản sao chép thư mục. **Một branch thực chất chỉ là một file text 41 bytes** trong `.git/refs/heads/<branch-name>` chứa đúng chuỗi mã băm SHA của commit đỉnh nhánh.
-- **Con trỏ `HEAD`**: Là con trỏ đặc biệt trỏ vào branch bạn đang làm việc (ví dụ: `ref: refs/heads/main`).
+- **Branch là gì?** Branch không phải là một bản sao chép thư mục và cũng không lưu danh sách commit. **Một branch thực chất chỉ là một file text 41 bytes** trong `.git/refs/heads/<branch-name>` chứa đúng chuỗi mã băm SHA của commit đỉnh nhánh.
+- **Git biết commit nào thuộc về branch bằng Reachability**: Git bắt đầu từ commit đỉnh mà branch đang trỏ tới, rồi lần ngược qua chuỗi `parent` của từng commit cho tới Initial Commit hoặc Merge Base. Tập commit của một branch không được lưu sẵn; nó được suy ra bằng phép duyệt đồ thị: `reachable(feature_tip)`.
+- **Commit mới luôn trỏ về commit cũ**: Khi tạo commit mới, commit mới lưu mã SHA của commit đang là `HEAD` làm `parent`. Commit cũ không biết gì về commit mới vì object cũ là bất biến.
+- **Con trỏ `HEAD`**: Là con trỏ đặc biệt trỏ vào branch bạn đang làm việc (ví dụ: `ref: refs/heads/main`). Khi commit mới được tạo, Git cập nhật branch hiện tại để trỏ sang commit mới.
 - **Trạng thái Detached HEAD**: Xảy ra khi bạn checkout trực tiếp vào một Commit SHA thay vì tên Branch (`git checkout <commit-hash>`). Lúc này `HEAD` trỏ thẳng vào commit nút, không có branch nào quản lý. Các commit tạo ra trong trạng thái này sẽ bị "mồ côi" nếu chuyển sang nhánh khác.
 
 ---
@@ -66,6 +68,19 @@ Mọi dữ liệu trong Git được nén bằng `zlib` và định danh bằng 
 | **Fast-Forward Merge**       | Chỉ cần di chuyển con trỏ Branch tiến về phía trước. Không tạo commit mới.         | Tuyến tính thẳng hàng (Linear).           |
 | **Non-Fast-Forward (3-Way)** | Tạo một nút Commit mới trong DAG với 2 con trỏ cha (`Parent 1`, `Parent 2`).       | Giữ nguyên vết tích phân nhánh và hội tụ. |
 | **Rebase**                   | Sao chép các commit cũ thành các nút commit MỚI (SHA mới) gắn vào đỉnh nhánh đích. | Viết lại lịch sử thành đường thẳng.       |
+
+### Khôi phục sau Rebase nhầm
+
+- **Sau rebase thành công**, commit cũ không bị xóa ngay. Các commit cũ chỉ trở thành **unreachable commits** nếu không còn branch/tag nào trỏ tới.
+- **Không dùng `git reset HEAD~1` để quay lại trạng thái trước rebase**: `HEAD~1` chỉ lùi đúng 1 commit từ đỉnh hiện tại (ví dụ từ `C'` về `B'`), không quay về commit gốc `C` trước rebase.
+- **Cách đúng**: Dùng `git reflog` để tìm vị trí cũ của branch trước rebase, rồi reset branch về đúng SHA đó:
+
+```bash
+git reflog
+git reset --hard <old-feature-tip-sha>
+```
+
+- **Nếu rebase đang chạy dở và chưa hoàn tất**, dùng `git rebase --abort` để quay về trạng thái trước khi bắt đầu rebase.
 
 ---
 
