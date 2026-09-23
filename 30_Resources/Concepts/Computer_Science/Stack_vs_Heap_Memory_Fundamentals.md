@@ -49,53 +49,14 @@ description: "Nguyên lý khoa học máy tính cốt lõi của bộ nhớ Stac
 
 ## Practical Implementation
 
-### Bảng đúc kết so sánh bản chất
+### Mô hình 2 bước kiểm chứng Escape Analysis trong Go
 
-| Tiêu chí                       | STACK Memory                                       | HEAP Memory                                                |
-| :----------------------------- | :------------------------------------------------- | :--------------------------------------------------------- |
-| **Quản lý cấp phát**           | Phần cứng CPU (Thanh ghi Stack Pointer `RSP`)      | Phần mềm (Runtime Memory Allocator / GC / OS)              |
-| **Tốc độ cấp phát/thu hồi**    | Cực nhanh ($O(1)$ - dịch chuyển con trỏ thanh ghi) | Chậm hơn (tìm ô nhớ trống, dọn phân mảnh)                  |
-| **Vị trí dữ liệu**             | Tuyến tính liên tục, tỷ lệ CPU Cache Hit cao       | Phân tán, truy cập thông qua con trỏ (Pointer dereference) |
-| **Thời gian sống (Lifecycle)** | Gắn chặt với Scope của hàm thực thi                | Độc lập ngoài Scope hàm, sống đến khi GC thu hồi           |
-| **Ngữ nghĩa con trỏ**          | Không an toàn nếu trả về địa chỉ cục bộ (Dangling) | An toàn để chia sẻ trạng thái dùng chung (Shared State)    |
-| **Chi phí Garbage Collector**  | Bằng 0 (Không liên quan đến GC)                    | Gây tải trực tiếp lên Garbage Collector                    |
-| **Lỗi hệ thống tiêu biểu**     | Stack Overflow (đệ quy sâu, mảng quá lớn)          | Memory Leak / Out of Memory (OOM Killer)                   |
-
-### Thử nghiệm Thực chứng: Escape Analysis trong Go
-
-#### 1. Đoạn mã thí nghiệm (`02_memory/escape.go`)
-
-```go
-package main
-
-func createInt() int {
-	x := 42
-	return x
-}
-
-func createPointer() *int {
-	x := 42
-	return &x
-}
-
-func main() {
-	_ = createInt()
-	_ = createPointer()
-}
-```
-
-#### 2. Kết quả phân tích Compiler (`go build -gcflags="-m" ./02_memory/escape.go`)
-
-- **Inlining Optimization:**
-  - `can inline createInt`, `can inline createPointer`: Compiler nhận diện hàm ngắn và tối ưu hóa bằng cách dán thẳng thân hàm vào nơi gọi (`inlining call`) nhằm triệt tiêu chi phí gọi hàm qua Stack Frame.
-- **Escape Decision:**
-  - `moved to heap: x`: Biến `x` trong hàm `createPointer` bị buộc phải thoát lên Heap vì địa chỉ `&x` được trả ra ngoài scope hàm. Nếu giữ ở Stack, con trỏ trả về sẽ trỏ vào vùng nhớ rác sau khi Stack Frame bị hủy.
-  - Ngược lại, hàm `createInt` trả về giá trị (Pass-by-value), CPU chỉ copy giá trị `42` sang thanh ghi `RAX` nên biến `x` ở lại Stack 100%.
-
-#### 3. Chứng minh ở tầng Hợp ngữ Assembly (`go tool compile -l -S`)
-
-- `createInt`: Không hề có lời gọi cấp phát bộ nhớ nào, giá trị được nạp trực tiếp vào thanh ghi.
-- `createPointer`: Xuất hiện lệnh `CALL runtime.newobject(SB)`, chứng minh Go Runtime phải kích hoạt hàm cấp phát ô nhớ trên Heap.
+1. **Kiểm chứng Escape Decision (`go build -gcflags="-m"`):**
+   - Hàm trả về giá trị (`return x`): Compiler giữ biến `x` 100% trên Stack vì chỉ cần copy giá trị qua thanh ghi CPU.
+   - Hàm trả về con trỏ (`return &x`): Compiler đưa ra quyết định `moved to heap: x` để tránh lỗi Dangling Pointer khi Stack Frame bị hủy.
+2. **Kiểm chứng Machine Assembly (`go tool compile -l -S`):**
+   - Hàm trên Stack: Không có bất kỳ lời gọi cấp phát nào.
+   - Hàm trên Heap: Xuất hiện chỉ thị `CALL runtime.newobject(SB)` chứng minh Runtime phải cấp phát ô nhớ động trên RAM.
 
 ---
 

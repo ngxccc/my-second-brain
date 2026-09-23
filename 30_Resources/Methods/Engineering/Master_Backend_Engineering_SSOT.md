@@ -62,7 +62,7 @@ _Cây lộ trình 4 tầng nhận thức - Đánh dấu `[x]` khi đã nghiệm 
 #### Computer Science & OS Process / Memory Execution
 
 - [x] [[Stack_vs_Heap_Memory_Fundamentals]]
-- [ ] [[Process_vs_Thread_and_Context_Switching]]
+- [x] [[Process_vs_Thread_and_Context_Switching]]
 - [ ] [[Concurrency_Primitives_Mutex_Semaphore_Atomic]]
 - [ ] [[Garbage_Collection_Fundamentals]]
 - [ ] [[Memory_Leaks_Core_Mechanics]]
@@ -72,6 +72,7 @@ _Cây lộ trình 4 tầng nhận thức - Đánh dấu `[x]` khi đã nghiệm 
 #### JavaScript Engine & V8 Internals
 
 - [ ] [[JS_Stack_vs_Heap_Memory]]
+- [ ] [[JS_Event_Loop]]
 - [ ] [[JS_Generational_Garbage_Collection]]
 - [ ] [[JS_Memory_Leaks_and_Mitigation]]
 - [ ] [[JS_V8_Hidden_Classes_Inline_Caching]]
