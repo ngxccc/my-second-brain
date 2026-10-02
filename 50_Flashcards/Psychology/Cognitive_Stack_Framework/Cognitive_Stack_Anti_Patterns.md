@@ -2,11 +2,9 @@
 noteId: 1785165552669
 ---
 
-Bẫy gây Tê liệt phân tích (Analysis Paralysis) và sai lầm lớn nhất khi vận dụng Cognitive Stack là gì?
+Hai Anti-pattern nhận thức nguy hiểm nhất trong Cognitive Stack và cách giải quyết là gì?
 
 ---
 
-- **Nguyên nhân:** Áp dụng sai công cụ ở sai tầng nhận thức của bộ não.
-- **2 Sai lầm điển hình:**
-  1. _Dùng tư duy phản biện ép Hệ thống 2 quá sớm ở Tầng 4:_ Khiến dập tắt các ý tưởng sáng tạo non trẻ (_Divergent Thinking_).
-  2. _Dùng trực giác Hệ thống 1 ở Tầng 5:_ Đưa ra quyết định đầu tư/hành động cảm tính thay vì tính toán xác suất toán học và đánh giá chi phí cơ hội.
+- **Emotional Hijacking (Chiếm quyền cảm xúc):** Tầng 2 Amygdala kích hoạt báo động khẩn cấp, cắt đứt hoàn toàn băng thông tư duy của Tầng 3 PFC. _Giải pháp:_ Dừng lại 60 giây, thở chậm để hạ nhịp tim trước khi đưa ra quyết định.
+- **Premature Rationalization (Hợp lý hóa non):** Dùng Tầng 3 logic để ngụy biện bảo vệ cho một định kiến cảm xúc sai lầm ở Tầng 2. _Giải pháp:_ Sử dụng [[Inversion_Thinking]] và tìm bằng chứng phản bác giả thuyết của chính mình.

@@ -2,12 +2,12 @@
 noteId: 1785165552627
 ---
 
-Khung Cognitive Stack (Hệ thống phân cấp nhận thức) 5 tầng bao gồm những tầng nào và vai trò của từng tầng?
+Năm tầng nhận thức trong mô hình Cognitive Stack Framework và ý nghĩa của từng tầng là gì?
 
 ---
 
-- **Tầng 1 (Intuition & Bias Filtering):** Trực giác & Lọc nhiễu (Confirmation Bias, Survivorship Bias, Sunk Cost).
-- **Tầng 2 (Inquiry & Deconstruction):** Truy vấn & Bóc tách nguyên bản (First Principles, Socratic Questioning).
-- **Tầng 3 (Systems Thinking & Synthesizing):** Tư duy Hệ thống & Quan hệ liên kết (Systems Thinking, Second-Order Thinking).
-- **Tầng 4 (Innovation & Divergent Thinking):** Sáng tạo & Đa chiều (Lateral Thinking, Design Thinking).
-- **Tầng 5 (Strategic Decision & Execution):** Quyết định Chiến lược & Thực thi (Probabilistic Thinking, Opportunity Cost, Deliberate Practice).
+- **Tầng 1 (Sensory / Baseline):** Dữ liệu thô từ các giác quan và cảm nhận thể chất.
+- **Tầng 2 (Emotional / Amygdala):** Phản xạ phòng vệ bản năng và trạng thái cảm xúc tức thì.
+- **Tầng 3 (Rational / Logical):** Tư duy logic phân tích nguyên nhân - kết quả ở Vỏ não trước trán (PFC).
+- **Tầng 4 (Strategic / Meta-Cognition):** Quan sát bức tranh toàn cảnh và điều chỉnh tư duy bậc hai (Second-Order Thinking).
+- **Tầng 5 (Values / Purpose):** Hệ giá trị cốt lõi và mục tiêu tối thượng dẫn dắt hành động dài hạn.

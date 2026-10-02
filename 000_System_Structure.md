@@ -47,12 +47,14 @@ date: 2026-08-09
 │   ├── V8_Engine/                    # Thẻ JavaScript V8 (Hidden classes, Inline caching)
 │   ├── Database_Indexing/            # Thẻ chỉ mục Database (B-Tree, Skip scan, Leftmost prefix)
 │   ├── Database_Concurrency/         # Thẻ đồng thời & khóa (MVCC, Lock ordering, OCC)
+│   ├── Redis_Architecture/           # Thẻ kiến trúc Redis (Event Loop, Memory, Persistence, Clustered HA)
 │   ├── Architecture_Patterns/        # Thẻ kiến trúc (Clean Architecture, Outbox, Boundaries)
-│   ├── Git_Mastery/                  # Thẻ Git (DAG, 3-Way Merge, Conflict, Reset, Reflog)
+│   ├── Git_Internals/                 # Thẻ cấu trúc lõi Git (DAG, 3-Way Merge, Conflict, Reset, Reflog)
 │   ├── Software_Testing/             # Thẻ kiểm thử ISTQB, WhiteBox, BlackBox
 │   ├── SDLC/                         # Thẻ vòng đời phát triển phần mềm & Agile
 │   ├── Psychology/                   # Thẻ tâm lý học, mental models, đàm phán
 │   ├── Vocabulary/                   # Thẻ từ vựng theo CEFR & chuyên ngành
+│   ├── ASPDOTNET/                    # Thẻ ASP.NET Core MVC, EF Core, Identity, Web API & JWT
 │   └── Grammar/                      # Thẻ ngữ pháp thực chiến & cấu trúc câu
 ```
 
@@ -72,7 +74,7 @@ date: 2026-08-09
   - `Life/`: `Health_and_Dermatology/`, `Sleep_and_Recovery/`.
   - `Excalidraw/`: Sơ đồ kiến trúc & whiteboard.
 - **`40_Archives/`**: Đóng băng dự án và tài liệu tham khảo cũ.
-- **`50_Flashcards/`**: Thẻ học Anki theo chuẩn phân tách `---` của Yanki, cấu trúc phẳng 2 cấp gồm các cặp `Core/` (nguyên lý) và `Interview/` (phản xạ phỏng vấn): `Operating_Systems/`, `Go_Runtime/`, `Go_Slice/`, `V8_Engine/`, `Database_Indexing/`, `Database_Concurrency/`, `Architecture_Patterns/`, `Git_Mastery/`, `Software_Testing/`, `SDLC/`, `Psychology/`, `Vocabulary/`, `Grammar/`.
+- **`50_Flashcards/`**: Thẻ học Anki theo chuẩn phân tách `---` của Yanki, cấu trúc phẳng 2 cấp gồm các cặp `Core/` (nguyên lý) và `Interview/` (phản xạ phỏng vấn): `ASPDOTNET/`, `Operating_Systems/`, `Go_Runtime/`, `Go_Slice/`, `V8_Engine/`, `Database_Indexing/`, `Database_Concurrency/`, `Architecture_Patterns/`, `Git_Mastery/`, `Software_Testing/`, `SDLC/`, `Psychology/`, `Vocabulary/`, `Grammar/`.
 - **`99_Meta/`**: Quản trị hệ thống (`Templates/`, `Scripts/`, `Quizzes/`, `Visuals/`, `Tag_Taxonomy_SSOT.md`).
 
 ---
