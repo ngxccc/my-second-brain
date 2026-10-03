@@ -2,16 +2,13 @@
 noteId: 1790774286684
 ---
 
-Lỗi "Captive Dependency" trong ASP.NET Core DI là gì, và tại sao inject `DbContext` vào `Singleton` lại nguy hiểm?
+Lỗi Captive Dependency trong ASP.NET Core DI là gì và tại sao inject `DbContext` vào `Singleton` lại nguy hiểm?
 
 ---
 
-- **Bản chất lỗi:** Service sống lâu (`Singleton`) "bắt giữ" service sống ngắn (`Scoped`/`Transient`), khiến service sống ngắn bị kéo dài tuổi thọ bất đắc dĩ suốt vòng đời app.
-- **Hiểm họa khi inject `DbContext` vào `Singleton`:**
-  - **Lỗi đa luồng (Not Thread-Safe):** `DbContext` không an toàn đa luồng. Hàng trăm HTTP request chạy song song gọi chung 1 instance sẽ văng ngoại lệ `InvalidOperationException`.
-  - **Tràn RAM (Memory Leak):** Change Tracker lưu vết vĩnh viễn mọi Entity đã query mà không bao giờ giải phóng.
-  - **Dữ liệu rác (Stale Data):** Cache cấp 1 trả dữ liệu cũ từ RAM thay vì đọc dữ liệu mới từ CSDL.
+- **Bản chất lỗi**: Service sống lâu (`Singleton`) giữ tham chiếu service sống ngắn (`Scoped`), kéo dài tuổi thọ của service sống ngắn suốt vòng đời ứng dụng.
+- **Hiểm họa với DbContext**: Gây lỗi đa luồng (`DbContext` không thread-safe), rò rỉ RAM (Change Tracker phình to) và trả về dữ liệu cũ (Stale Data).
 
 ---
 
-Extra: ASP.NET Core ở chế độ `Development` mặc định bật `ValidateScopes = true` để ném ngoại lệ và dừng app ngay khi khởi động nếu phát hiện lỗi này.
+Extra: Môi trường Development mặc định bật `ValidateScopes = true` để ném ngoại lệ InvalidOperationException ngay khi khởi động nếu phát hiện lỗi này.

@@ -1,15 +1,14 @@
 ---
-noteId: 1783427319919
+noteId: 1790994334333
 ---
 
-"Failure" (Sự cố) theo chuẩn ISTQB là gì, và có phải mọi Defect đều sẽ dẫn đến Failure không?
-
----
-
-**Failure (Sự cố)** là một **sự kiện động** xảy ra khi một thành phần hoặc hệ thống chạy sai lệch so với hành vi mong đợi hoặc đặc tả kỹ thuật.
-
-**Không phải mọi Defect đều gây ra Failure**: Một Defect chỉ dẫn đến Failure nếu điều kiện kích hoạt đoạn code đó xảy ra. Ngoài ra, Failure còn có thể xảy ra mà không do Defect trong code (ví dụ: mất điện, đứt cáp mạng, phần cứng hỏng).
+Định nghĩa Failure (Sự cố) theo chuẩn ISTQB và điều kiện để một Failure xuất hiện?
 
 ---
 
-Extra: Khách hàng và người dùng cuối chỉ nhìn thấy và phàn nàn về Failure, trong khi lập trình viên phải truy ngược từ Failure để tìm và sửa Defect nằm trong mã nguồn.
+- **Định nghĩa Failure**: Sự sai lệch giữa hành vi quan sát được của phần mềm khi chạy thực tế so với hành vi kỳ vọng trong tài liệu đặc tả.
+- **Điều kiện xuất hiện**: Khi đoạn code chứa Defect (Bug) được CPU thực thi và biểu hiện ra kết quả sai lệch ra ngoài.
+
+---
+
+Extra: Một Defect nằm trong code không bao giờ trở thành Failure nếu đường dẫn rẽ nhánh (Path) chứa nó không bao giờ được kích hoạt trong suốt quá trình chạy.

@@ -2,15 +2,13 @@
 noteId: 1790738820486
 ---
 
-Bốn thuộc tính ACID trong Database giao dịch được bảo đảm bằng các cơ chế kỹ thuật nào?
+Trong hệ quản trị CSDL giao dịch, hai cơ chế kỹ thuật cốt lõi nào bảo đảm tính Atomicity và Durability?
 
 ---
 
-- **Atomicity (Nguyên tử):** Đảm bảo qua Undo Log / Write-Ahead Logging (WAL) để rollback khi lỗi.
-- **Consistency (Nhất quán):** Đảm bảo qua Foreign Keys, Unique Constraints và Application Rules.
-- **Isolation (Cô lập):** Đảm bảo qua MVCC (Multi-Version Concurrency Control) và 2-Phase Locking (2PL).
-- **Durability (Bền vững):** Đảm bảo qua việc ghi Redo Log / WAL xuống đĩa trước khi commit (Flush-to-disk).
+- **Atomicity**: Write-Ahead Logging (WAL) / Undo Log cho phép rollback toàn bộ thay đổi khi giao dịch bị lỗi.
+- **Durability**: Ghi fsync WAL xuống đĩa trước khi trả về kết quả commit thành công.
 
 ---
 
-Extra: Trong PostgreSQL, mức cô lập mặc định là `READ COMMITTED`. Để chống Race Condition tuyệt đối khi đọc-sửa-ghi, ta kết hợp thêm `SELECT ... FOR UPDATE` (Pessimistic Locking).
+Extra: Isolation được bảo đảm qua MVCC / 2PL; Consistency phụ thuộc Schema Constraints và Application Invariants. Mức cô lập mặc định trong Postgres là READ COMMITTED.

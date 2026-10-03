@@ -1,0 +1,28 @@
+---
+noteId: 1787111654679
+---
+
+What is the core meaning and primary technical collocation of **prevent**?
+
+---
+
+- **Meaning**: To stop something from happening or someone from doing something (ngăn chặn sự cố/lỗi).
+- **Primary Collocation**: `prevent race conditions` / `prevent double-booking`
+
+---
+
+Extra:
+- Pronunciation: /prɪˈvent/
+- Type: Verb (Word Family)
+- Word Family:
+  - **Verb**: `prevent` (/prɪˈvent/ - ngăn chặn)
+  - **Noun**: `prevention` (/prɪˈven.ʃən/ - sự phòng ngừa)
+  - **Adjective**: `preventable` (/prɪˈven.tə.bəl/ - có thể ngăn chặn được), `preventative` / `preventive` (/prɪˈven.tɪv/ - mang tính phòng ngừa)
+  - **Adverb**: `preventively` (/prɪˈven.tɪv.li/ - một cách phòng ngừa)
+- Collocations:
+  - `prevent race conditions` (ngăn chặn tương tranh dữ liệu)
+  - `prevent double-booking` (ngăn chặn đặt trùng chỗ)
+- Examples:
+  - _Verb: Distributed locks **prevented** seat double-booking under heavy concurrent load._
+  - _Noun: Error **prevention** is a core objective of compile-time type checking._
+  - _Adjective: The crash was entirely **preventable** with proper memory caps._

@@ -9,8 +9,13 @@ What are the core phonetic rules (Voicing Assimilation) for pronouncing **-s / -
 - **Core Principle (Voicing Assimilation - Đồng hoá thanh tính)**:
   - Cổ họng rung (Voiced sound) $\rightarrow$ Đuôi rung theo (Voiced: `/z/` hoặc `/d/`).
   - Cổ họng KHÔNG rung (Voiceless sound) $\rightarrow$ Đuôi không rung (Voiceless: `/s/` hoặc `/t/`).
-  - Đụng độ cùng nhóm âm (Sibilants / Alveolar stops) $\rightarrow$ Thêm nguyên âm đệm `/ɪ/` để tách âm (`/ɪz/` hoặc `/ɪd/`).
-- **Formula 1: Đuôi `-s / -es` (3 biến thể âm)**:
+- **Formula ...
+
+---
+
+Extra:
+
+- Đụng độ cùng nhóm âm (Sibilants / Alveolar stops) $\rightarrow$ Thêm nguyên âm đệm `/ɪ/` để tách âm (`/ɪz/` hoặc `/ɪd/`).
   - **`/s/` (Vô thanh)**: Sau âm vô thanh `/p, t, k, f, θ/` (vd: `risks` /rɪsks/, `cats` /kæts/, `develops` /dɪˈvel.əps/).
   - **`/z/` (Hữu thanh - Rung)**: Sau tất cả nguyên âm và phụ âm hữu thanh `/b, d, ɡ, v, ð, m, n, ŋ, l, r/` (vd: `companies` /ˈkʌm.pə.niz/, `runs` /rʌnz/, `reads` /riːdz/). _TUYỆT ĐỐI không đọc xì `/s/`_.
   - **`/ɪz/` (Âm đệm)**: Sau âm gió/xuýt (Sibilants) `/s, z, ʃ, ʒ, tʃ, dʒ/` (vd: `boxes` /ˈbɑːk.sɪz/, `watches` /ˈwɑː.tʃɪz/, `changes` /ˈtʃeɪn.dʒɪz/).

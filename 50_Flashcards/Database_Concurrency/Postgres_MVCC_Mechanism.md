@@ -1,1 +1,14 @@
----noteId: 1789565951238---Nguyên lý vận hành cốt lõi của PostgreSQL MVCC và lý do tại sao lệnh READ không bao giờ khóa lệnh WRITE?---- **Bản chất MVCC:** Lưu trữ nhiều phiên bản (Multi-Version) của cùng một bản ghi thay vì ghi đè trực tiếp lên đĩa.- **Non-blocking Reads:** Lệnh `SELECT` đọc phiên bản snapshot quá khứ của dữ liệu tại thời điểm giao dịch bắt đầu, trong khi lệnh `UPDATE/INSERT` tạo phiên bản mới độc lập $ightarrow$ Đọc và Ghi không bao giờ chặn nhau.- **Hệ quả (Trade-off):** Tạo ra các dòng dữ liệu chết (Dead Tuples), đòi hỏi tiến trình **VACUUM** ngầm để thu hồi không gian đĩa.---Extra: Hệ quả vật lý là sinh ra **Dead Tuples** chiếm dụng đĩa và đòi hỏi tiến trình ngầm **AutoVacuum** phải quét dọn định kỳ.
+---
+noteId: 1789565951238
+---
+
+Nguyên lý cốt lõi của PostgreSQL MVCC giúp lệnh READ không bao giờ khóa lệnh WRITE là gì?
+
+---
+
+- **Multi-Version Tuples**: Mỗi lệnh `UPDATE`/`INSERT` tạo tuple mới độc lập thay vì ghi đè lên đĩa.
+- **Snapshot Isolation**: Lệnh `SELECT` đọc snapshot quá khứ tại thời điểm giao dịch bắt đầu nên không chặn Ghi.
+
+---
+
+Extra: Hệ quả vật lý là sinh ra Dead Tuples chiếm dụng đĩa, đòi hỏi tiến trình ngầm AutoVacuum phải quét dọn định kỳ.

@@ -2,16 +2,13 @@
 noteId: 1790774286731
 ---
 
-Tấn công CSRF lợi dụng điều gì của trình duyệt, và ASP.NET Core ngăn chặn nó bằng cơ chế nào?
+Tấn công CSRF lợi dụng hành vi nào của trình duyệt và ASP.NET Core phòng thủ bằng cách nào?
 
 ---
 
-- **Bản chất CSRF:** Kẻ gian lừa người dùng bấm vào web độc hại. Web độc hại ngầm gửi request `POST /admin/delete` về server bạn. Trình duyệt **tự động đính kèm Cookie đăng nhập hợp lệ** của người dùng, khiến server tưởng đó là lệnh thật của nạn nhân.
-- **Cơ chế Antiforgery Token phòng thủ:**
-  - Tag Helper `<form method="post">` tự động sinh 1 token ẩn `<input type="hidden" name="__RequestVerificationToken">` và 1 cookie song song.
-  - Thuộc tính `[ValidateAntiForgeryToken]` trên Controller đối chiếu 2 token này.
-  - Web độc hại của kẻ gian **hoàn toàn không thể đọc hoặc chèn được token ẩn hợp lệ** vào form body -> Server chặn ngay lập tức.
+- **Bản chất CSRF**: Lừa trình duyệt tự động đính kèm Cookie xác thực hợp lệ khi gửi request ngầm đến server nạn nhân.
+- **Cơ chế phòng thủ**: Tag Helper `<form>` tự động sinh token ẩn (`__RequestVerificationToken`); thuộc tính `[ValidateAntiForgeryToken]` đối chiếu token này với cookie.
 
 ---
 
-Extra: Tag Helper `<form>` trong ASP.NET Core mặc định TỰ ĐỘNG chèn token chống CSRF mà không cần gõ hàm thủ công.
+Extra: Kẻ tấn công không thể đọc hoặc chèn được token ẩn hợp lệ từ trang web độc hại khác nguồn (Same-Origin Policy bảo vệ), giúp server chặn request giả mạo.

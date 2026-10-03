@@ -2,18 +2,13 @@
 noteId: 1790774286706
 ---
 
-Sự khác biệt cốt lõi giữa phân quyền theo Role và phân quyền theo Claim & Policy là gì?
+Điểm khác biệt cốt lõi giữa phân quyền theo Role và phân quyền theo Claim & Policy trong ASP.NET Core là gì?
 
 ---
 
-- **Role-based (`[Authorize(Roles = "Admin")]`):**
-  - Kiểm tra xem user có thuộc nhóm vai trò đó không.
-  - _Hạn chế:_ Bùng nổ vai trò (Role Explosion) khi nghiệp vụ phức tạp (`AdminView`, `AdminEdit`, `ManagerDeptA`...), code cứng Role rải rác khắp Controller.
-- **Claims & Policy-based (`[Authorize(Policy = "CanDeleteInvoice")]`):**
-  - **Claim:** Đặc điểm của user (ví dụ `Department = "IT"`, `Permission = "Invoice.Delete"`).
-  - **Policy:** Luật nghiệp vụ tập trung trong `Program.cs` gom nhiều Claim lại.
-  - _Lợi ích:_ Tách rời code Controller khỏi logic phân quyền. Nghiệp vụ đổi thì chỉ sửa trong Policy.
+- **Role-based**: Kiểm tra người dùng có thuộc nhóm vai trò không (`Roles = "Admin"`); dễ gây bùng nổ vai trò và hardcode rải rác khắp Controller.
+- **Claims & Policy**: Policy tập trung các luật nghiệp vụ gom nhiều Claim lại (`Policy = "CanDelete"`); tách rời code Controller khỏi logic phân quyền.
 
 ---
 
-Extra: User trong ASP.NET Core được biểu diễn bằng `ClaimsPrincipal`, chứa danh sách các `Claim`.
+Extra: User trong ASP.NET Core được biểu diễn bằng ClaimsPrincipal, chứa danh sách các Claim (ví dụ Department = "IT", Permission = "Invoice.Delete").

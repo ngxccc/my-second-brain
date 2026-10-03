@@ -6,12 +6,9 @@ Cơ chế duy trì trạng thái Session trong ASP.NET Core kết hợp Cookie v
 
 ---
 
-- **Bản chất:** Giao thức HTTP hoàn toàn **Stateless** (không nhớ client giữa các request).
-- **Luồng hoạt động 3 bước:**
-  1. **Sinh ID:** Server tạo chuỗi ngẫu nhiên **Session ID** và gửi về Client qua Cookie (`.AspNetCore.Session` có cờ `HttpOnly`).
-  2. **Lưu dữ liệu:** Dữ liệu thật (giỏ hàng, user id) được lưu **trên Server RAM** (hoặc Redis), gắn với Session ID đó.
-  3. **Khôi phục trạng thái:** Mỗi request tiếp theo, Client gửi kèm Cookie Session ID -> Middleware tra cứu RAM server để khôi phục lại trạng thái.
+- **Session ID qua Cookie**: Server sinh Session ID ngẫu nhiên gửi về Client qua Cookie HttpOnly (`.AspNetCore.Session`).
+- **Dữ liệu thật trên Server**: Trạng thái (giỏ hàng, user) lưu trên RAM server hoặc Redis; mỗi request Client gửi Cookie kèm theo để Middleware tra cứu.
 
 ---
 
-Extra: Session dùng cơ chế thời gian trượt (`IdleTimeout`, mặc định 20 phút). Có request mới thì bộ đếm giờ tự reset về 20 phút.
+Extra: HTTP vốn hoàn toàn Stateless. Session dùng cơ chế thời gian trượt IdleTimeout (mặc định 20 phút), có request mới thì đồng hồ tự reset về 20 phút.

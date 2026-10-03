@@ -2,13 +2,12 @@
 noteId: 1783153909180
 ---
 
-Khi tạo Composite B-Tree Index `(created_at DESC, id ASC)` trong PostgreSQL, tại sao việc chỉ định rõ chiều sắp xếp (`ASC`/`DESC`) lại quan trọng đối với các truy vấn phân trang?
+Khi Composite Index là `(created_at, id)` (mặc định ASC), tại sao truy vấn `ORDER BY created_at DESC, id ASC` lại gây suy giảm hiệu năng?
 
 ---
 
-Vì B-Tree Index mặc định có thể duyệt xuôi hoặc ngược, nhưng **chỉ duyệt hiệu quả một chiều cố định cho toàn bộ tuple**.
-
-Nếu câu lệnh `ORDER BY created_at DESC, id ASC` mà Index là `(created_at, id)` (mặc định cả hai đều `ASC`), Database Engine **không thể dùng Index để sắp xếp hai cột ngược chiều nhau** và bắt buộc phải dùng thêm bước **Sort Node trong bộ nhớ RAM** (gây chậm và tốn tài nguyên).
+- **Xung đột chiều duyệt**: B-Tree chỉ duyệt hiệu quả một chiều cố định cho toàn bộ tuple; không thể vừa duyệt xuôi một cột vừa duyệt ngược cột kia.
+- **Chi phí Sort Node**: Database Engine bắt buộc phải dùng thêm Sort Node trong RAM để sắp xếp lại kết quả thay vì tận dụng thứ tự sẵn có của Index.
 
 ---
 

@@ -2,14 +2,12 @@
 noteId: 1790159214054
 ---
 
-So sánh chi phí phần cứng CPU khi Context Switching giữa: (1) Hai Process, (2) Hai Kernel Thread, (3) Hai Goroutine?
+Về mặt phần cứng CPU, tại sao Context Switch giữa hai Process lại tốn kém hơn nhiều so với giữa hai Kernel Thread?
 
 ---
 
-1. **Process Switch (Nặng nhất, ~1,000–3,000 ns):** Đổi Page Table (ghi đè thanh ghi CR3), làm mất hiệu lực toàn bộ **TLB (Translation Lookaside Buffer)** và gây Cold CPU Cache.
-2. **Kernel Thread Switch (Trung bình, ~500–1,000 ns):** Bẫy vào Kernel Space (Ring 0) để lưu/khôi phục Registers và TCB, nhưng **giữ nguyên Page Table và TLB**.
-3. **Goroutine Switch (Siêu nhẹ, ~10–100 ns):** Diễn ra hoàn toàn ở **User Space** qua Go Runtime Scheduler; chỉ lưu/khôi phục đúng 3 thanh ghi (PC, SP, DX); kích thước Stack ban đầu chỉ 2KB.
+- **Đổi Page Table & Flush TLB**: Đổi Process phải ghi đè thanh ghi `CR3`, làm mất hiệu lực toàn bộ TLB cache và gây Cold CPU Cache; đổi Thread giữ nguyên Page Table và TLB.
 
 ---
 
-Extra: Hiện tượng "TLB Flush" khi đổi Process là nguyên nhân số một khiến CPU mất hàng trăm chu kỳ xung nhịp để nạp lại các bản dịch địa chỉ ảo sang địa chỉ vật lý.
+Extra: Goroutine Switch siêu nhẹ (~10-100ns) vì diễn ra hoàn toàn ở User Space và chỉ lưu 3 thanh ghi (PC, SP, DX). Kernel Thread tốn ~500-1000ns; Process tốn ~1000-3000ns.

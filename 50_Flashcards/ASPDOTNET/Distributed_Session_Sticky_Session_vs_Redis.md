@@ -2,15 +2,13 @@
 noteId: 1790774286756
 ---
 
-Khi chạy nhiều Server (Scale Out), tại sao Session mặc định bị lỗi và 2 cách khắc phục là gì?
+Khi mở rộng nhiều Server (Scale Out), tại sao Session mặc định bị mất và giải pháp chuẩn Cloud là gì?
 
 ---
 
-- **Nguyên nhân lỗi:** Session mặc định lưu **In-Memory** (trong RAM của từng server). Khi Load Balancer điều phối Request 1 vào Server A (lưu giỏ hàng), Request 2 vào Server B -> Server B không có Session trong RAM -> Người dùng bị mất sạch giỏ hàng.
-- **Hai cách khắc phục:**
-  - **Sticky Session (Cấu hình trên Load Balancer):** Luôn ép cùng 1 Client về đúng 1 Server ban đầu. _(Nhược điểm: Server chết là mất session, không cân bằng tải đều)._
-  - **Distributed Cache (Chuẩn Cloud - Redis):** Tách Session lưu tập trung vào Redis Server qua `AddStackExchangeRedisCache()`. Mọi server đều đọc/ghi chung 1 nguồn.
+- **Nguyên nhân lỗi**: Session mặc định lưu trong RAM của từng máy; Load Balancer điều phối request sang server khác sẽ không tìm thấy session cũ.
+- **Giải pháp Distributed Cache**: Tách session lưu tập trung vào Redis Server qua `AddStackExchangeRedisCache()`, mọi instance đều đọc/ghi chung một nguồn.
 
 ---
 
-Extra: Trong kiến trúc Microservices/Web API hiện đại, giải pháp tối ưu nhất là chuyển sang dùng JWT (Stateless) để không tốn bộ nhớ lưu Session.
+Extra: Sticky Session trên Load Balancer ép client về cùng 1 server nhưng không cân bằng tải đều và mất dữ liệu khi server đó sập. Web API hiện đại ưu tiên dùng JWT Stateless.

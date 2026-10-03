@@ -6,9 +6,9 @@ Tại sao trên Shared Branch (`main`, `develop`) bắt buộc dùng `git revert
 
 ---
 
-- **Cấm `git reset`:** Lùi con trỏ `HEAD` và xóa commit $\rightarrow$ buộc phải `push --force`, làm gãy đồ thị DAG của đồng nghiệp và gây xung đột/hồi sinh commit khi họ `pull`.
-- **Bắt buộc `git revert`:** Tạo một commit MỚI đảo ngược thay đổi, lịch sử luôn tăng dần (Append-only), đồng nghiệp `pull` về mượt mà không xung đột.
+- **Cấm `git reset`**: Lùi `HEAD` và xóa commit buộc phải `push --force`, làm gãy đồ thị DAG và gây xung đột lịch sử của đồng nghiệp.
+- **Bắt buộc `git revert`**: Tạo một commit MỚI đảo ngược thay đổi (Append-only history), giúp mọi người `pull` về mượt mà không xung đột.
 
 ---
 
-Extra: Khi revert một **Merge Commit** (commit có 2 parent), bắt buộc phải truyền cờ `git revert -m 1 <sha>` để chọn giữ lại đường đi của nhánh chính (Parent 1).
+Extra: Khi revert một Merge Commit (có 2 parent), bắt buộc truyền cờ `git revert -m 1 <sha>` để chọn giữ lại đường đi của nhánh chính (Parent 1).

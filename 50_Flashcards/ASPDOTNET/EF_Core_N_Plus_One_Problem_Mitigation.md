@@ -2,15 +2,13 @@
 noteId: 1790774286783
 ---
 
-Lỗi N+1 Query trong EF Core phát sinh thế nào và 2 cách giải quyết triệt để là gì?
+Lỗi N+1 Query trong EF Core phát sinh thế nào và phương án khắc phục tối ưu nhất là gì?
 
 ---
 
-- **Bản chất lỗi:** Truy vấn 1 danh sách cha $N$ phần tử (`1` query), sau đó duyệt `foreach` từng phần tử rồi lại gọi tiếp quan hệ con (`N` query riêng lẻ) -> Gửi tổng cộng $1 + N$ câu SQL xuống database gây nghẽn mạng và sập DB.
-- **Hai cách giải quyết triệt để:**
-  - **Eager Loading với `.Include()`:** `context.Products.Include(p => p.Category).ToListAsync()` -> EF Core sinh 1 câu SQL `LEFT JOIN` lấy cả cha lẫn con trong 1 lần gọi.
-  - **Projection với `.Select()` (Tối ưu nhất):** `context.Products.Select(p => new Dto { Name = p.Name, Cat = p.Category.Name })` -> Chỉ kéo đúng các cột cần dùng, không thừa dữ liệu.
+- **Bản chất phát sinh**: Truy vấn 1 danh sách cha (1 query), sau đó vòng lặp duyệt từng phần tử lại bắn tiếp query con (N queries), gây nghẽn mạng và sập DB.
+- **Khắc phục tối ưu**: Dùng Eager Loading (`.Include(p => p.Category)`) để gộp 1 câu `LEFT JOIN`, hoặc dùng Projection (`.Select(p => new Dto { ... })`) chỉ kéo cột cần thiết.
 
 ---
 
-Extra: Không bao giờ duyệt `foreach` trên danh sách rồi gọi DB bên trong vòng lặp. Luôn nạp dữ liệu liên quan trước (Eager) hoặc map trực tiếp sang DTO.
+Extra: Tuyệt đối không bao giờ gọi truy vấn DB bên trong vòng lặp foreach. Projection với .Select() là phương án tối ưu I/O nhất vì loại bỏ dữ liệu thừa.

@@ -2,21 +2,12 @@
 noteId: 1789565951214
 ---
 
-Hiện tượng Deadlock (Khóa chết) giữa 2 Transaction xảy ra khi nào, và nguyên tắc bất biến (Invariant) nào giúp lập trình viên triệt tiêu Deadlock 100%?
+Nguyên tắc bất biến (Invariant) nào giúp lập trình viên triệt tiêu hoàn toàn nguy cơ Deadlock khi khóa nhiều bản ghi?
 
 ---
 
-**Hiện tượng**: Transaction 1 khóa tài nguyên A và chờ B; cùng lúc đó Transaction 2 khóa tài nguyên B và chờ A $\rightarrow$ Hai bên chờ nhau vĩnh viễn cho đến khi bị `deadlock_timeout` ép hủy (Abort).
-
-**Giải pháp triệt để**: **Lock Ordering Invariant** (Luôn sắp xếp thứ tự khóa tài nguyên theo chiều tăng dần của ID):
-
-```typescript
-// Luôn sort ID trước khi SELECT FOR UPDATE
-const [firstId, secondId] = [userA, userB].sort((a, b) => a - b);
-await lock(firstId);
-await lock(secondId);
-```
+- **Lock Ordering Invariant**: Luôn sắp xếp thứ tự khóa tài nguyên theo một chiều cố định (ví dụ theo chiều tăng dần của ID) trên mọi luồng giao dịch.
 
 ---
 
-Extra: "Muốn không bao giờ bị tắc đường, tất cả xe cộ phải đi chung một chiều" $\rightarrow$ Luôn sắp xếp ID trước khi Lock!
+Extra: Hiện tượng Deadlock xảy ra khi Tx1 giữ A chờ B, còn Tx2 giữ B chờ A $\rightarrow$ Chờ nhau vĩnh viễn đến khi timeout. Luôn sort ID trước khi thực hiện `SELECT ... FOR UPDATE`.

@@ -1,17 +1,14 @@
 ---
-noteId: 1783427319869
+noteId: 1790994334310
 ---
 
-Chuỗi nhân quả liên kết giữa Error (Sai sót), Defect (Khuyết tật/Lỗi) và Failure (Sự cố) theo chuẩn ISTQB là gì?
-
----
-
-Theo chuỗi nhân quả 3 bước:
-
-1. **Error (Mistake)**: Sai sót do con người tạo ra (lập trình viên mệt mỏi, hiểu sai yêu cầu).
-2. $\rightarrow$ Dẫn đến **Defect (Bug / Fault)**: Điểm khuyết tật nằm ẩn trong tài liệu hoặc mã nguồn.
-3. $\rightarrow$ Khi mã nguồn chứa Defect được thực thi, nó gây ra **Failure**: Sự cố sai lệch quan sát được giữa hành vi thực tế và hành vi mong đợi của phần mềm.
+Phân biệt ba khái niệm Error (Sai lầm), Defect/Bug (Khuyết tật), và Failure (Sự cố) theo chuẩn ISTQB?
 
 ---
 
-Extra: Không phải mọi Defect đều dẫn đến Failure; nếu đoạn code bị lỗi không bao giờ được kích hoạt thực thi thì Failure sẽ không bao giờ xuất hiện.
+- **Error $\rightarrow$ Defect**: Error là sai lầm của con người; Defect (Bug) là khuyết tật trong mã nguồn do Error sinh ra.
+- **Failure**: Sự cố xảy ra khi chương trình thực thi đoạn code chứa Defect và cho kết quả sai lệch ra ngoài.
+
+---
+
+Extra: Chuỗi nhân quả: Con người tạo ra Error $\rightarrow$ Sinh ra Defect trong code $\rightarrow$ Khi runtime thực thi đoạn code đó dẫn đến Failure.

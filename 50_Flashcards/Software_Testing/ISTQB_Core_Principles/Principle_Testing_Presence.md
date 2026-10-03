@@ -6,9 +6,7 @@ Nguyên lý ISTQB số 1: "Kiểm thử chứng minh sự hiện diện của l�
 
 ---
 
-Kiểm thử có thể chứng minh rằng phần mềm **đang chứa lỗi (Defects)**, nhưng **không bao giờ có thể chứng minh phần mềm sạch 100% không có lỗi**.
-
-Việc chạy qua toàn bộ test suite mà không tìm thấy con bug nào không đồng nghĩa với việc phần mềm đã đúng đắn tuyệt đối; nó chỉ chứng tỏ rằng bộ kịch bản test hiện tại chưa kích hoạt được những lỗi còn tiềm ẩn.
+- **Không bao giờ chứng minh 100% sạch bug**: Kiểm thử chỉ chứng minh phần mềm đang có lỗi; bộ test chạy qua hết chỉ chứng tỏ test case chưa kích hoạt được lỗi tiềm ẩn.
 
 ---
 

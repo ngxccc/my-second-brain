@@ -6,13 +6,8 @@ Bốn góc phần tư (4 Quadrants) trong mỗi vòng lặp của Mô hình Xo�
 
 ---
 
-Thực thi theo đúng thứ tự 4 góc:
-
-1. **Xác định mục tiêu (Determine Objectives)**: Làm rõ mục tiêu, các giải pháp thay thế và ràng buộc.
-2. **Đánh giá và giải quyết rủi ro (Identify & Resolve Risks)**: Phân tích rủi ro, xây dựng bản mẫu (Prototype) để kiểm chứng.
-3. **Phát triển và kiểm thử (Development & Testing)**: Lập trình và kiểm thử sản phẩm tương ứng của vòng lặp đó.
-4. **Lập kế hoạch vòng tiếp theo (Plan Next Phase)**: Đánh giá kết quả và lên kế hoạch cho vòng xoắn ốc kế tiếp.
+- **Bốn góc tuần tự**: (1) Xác định mục tiêu $\rightarrow$ (2) Đánh giá & giải quyết rủi ro $\rightarrow$ (3) Phát triển & kiểm thử $\rightarrow$ (4) Lập kế hoạch vòng tiếp theo.
 
 ---
 
-Extra: Trục góc tọa độ thể hiện sự gia tăng chi phí lũy kế (Cumulative Cost) khi vòng xoắn ốc ngày càng nở rộng ra ngoài.
+Extra: Mỗi vòng xoắn ốc hoàn thành một mức độ trưởng thành của sản phẩm. Trục bán kính thể hiện chi phí lũy kế (Cumulative Cost) nở rộng ra ngoài.

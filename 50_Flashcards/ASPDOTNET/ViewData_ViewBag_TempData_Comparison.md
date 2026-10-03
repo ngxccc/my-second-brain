@@ -2,14 +2,13 @@
 noteId: 1790761562030
 ---
 
-So sánh `ViewData`, `ViewBag` và `TempData` trong ASP.NET Core về cơ chế dữ liệu và vòng đời?
+So sánh cơ chế dữ liệu và vòng đời giữa ViewData/ViewBag và TempData trong ASP.NET Core?
 
 ---
 
-- **`ViewData`:** Dictionary kiểu `ViewDataDictionary<string, object>`; yêu cầu ép kiểu (type-casting); sống trong 1 HTTP request hiện tại.
-- **`ViewBag`:** Dynamic wrapper bọc quanh `ViewData`; không cần ép kiểu tường minh; sống trong 1 HTTP request hiện tại.
-- **`TempData`:** Lưu trữ bằng Session/Cookie ngầm; tồn tại qua một bước chuyển hướng **Redirect (PRG Pattern)** và tự động bị hủy sau khi được đọc 1 lần.
+- **ViewData & ViewBag**: Sống trong 1 HTTP request hiện tại; ViewData là Dictionary yêu cầu ép kiểu, ViewBag là dynamic wrapper bọc quanh ViewData.
+- **TempData**: Lưu trữ ngầm qua Cookie/Session; tồn tại qua một bước chuyển hướng Redirect (PRG Pattern) và tự động bị hủy sau khi được đọc 1 lần.
 
 ---
 
-Extra: Nếu muốn đọc dữ liệu trong `TempData` mà không làm nó bị đánh dấu xóa ở request kế tiếp, sử dụng phương thức `TempData.Peek(key)` hoặc `TempData.Keep(key)`.
+Extra: Muốn đọc dữ liệu trong TempData mà không làm nó bị đánh dấu xóa ở request tiếp theo, sử dụng phương thức `TempData.Peek(key)` hoặc `TempData.Keep(key)`.

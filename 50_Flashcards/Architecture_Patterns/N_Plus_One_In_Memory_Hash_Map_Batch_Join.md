@@ -2,14 +2,12 @@
 noteId: 1790738820413
 ---
 
-So sánh tác động I/O của 3 phương án xử lý quan hệ 1-N (ví dụ: `Quote` và `QuoteItem`): (1) Vòng lặp queries lẻ, (2) Một câu `LEFT JOIN` khổng lồ, (3) Batch `IN (...)` kết hợp In-Memory Map?
+Giải pháp tối ưu I/O nhất để giải quyết bài toán N+1 truy vấn quan hệ 1-N giữa Parent và Children là gì?
 
 ---
 
-1. **Vòng lặp lẻ ($2N+1$ queries):** Bùng nổ Network Round-trips, nghẽn Connection Pool và tăng vọt độ trễ hệ thống ($N=20 \rightarrow 41$ round-trips).
-2. **Một câu `LEFT JOIN` lớn:** Gây hiệu ứng **Cartesian Product** (nhân bản dữ liệu bản ghi cha trên đường truyền mạng) và làm hỏng phân trang `LIMIT / OFFSET`.
-3. **Batch `IN (...)` + In-Memory Map:** Cố định đúng 3 câu truy vấn song song (`Promise.all()`), dùng `Map` gom nhóm trên RAM với chi phí $O(1)$, triệt tiêu cả 2 điểm nghẽn trên.
+- **Batch `IN (...)` + In-Memory Map**: Gom toàn bộ ID cha để truy vấn con trong 1 câu `SELECT ... WHERE parent_id IN (...)`, rồi dùng Hash Map trên RAM gom nhóm con về cha với chi phí $O(1)$.
 
 ---
 
-Extra: Kỹ thuật này chính là nguyên lý hoạt động bên dưới của thư viện nổi tiếng **DataLoader** trong kiến trúc GraphQL/REST API.
+Extra: Tránh vòng lặp $2N+1$ queries gây nghẽn Connection Pool; tránh `LEFT JOIN` lớn gây hiệu ứng Cartesian Product nhân bản dữ liệu trên mạng. Đây là nguyên lý của DataLoader.

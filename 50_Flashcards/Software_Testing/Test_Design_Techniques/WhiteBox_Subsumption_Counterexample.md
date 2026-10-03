@@ -1,18 +1,13 @@
 ---
-noteId: 1783427811355
+noteId: 1790994334759
 ---
 
-Tại sao đạt 100% Statement Coverage lại KHÔNG bảo đảm đạt 100% Decision Coverage? Nêu ví dụ phản chứng qua cấu trúc code.
-
----
-
-Vì một nhánh rẽ có thể **không chứa câu lệnh thực thi nào bên trong** (ví dụ: câu lệnh `if (x > 0)` mà **không có khối `else`**).
-
-Nếu ta chỉ chạy một test case với `x = 5` (nhánh True):
-
-- Toàn bộ câu lệnh trong thân `if` đều được chạy $\rightarrow$ **100% Statement Coverage**.
-- Nhưng nhánh khi `x <= 0` (nhánh False) không hề được kiểm tra $\rightarrow$ **Chỉ đạt 50% Decision Coverage**.
+Đoạn mã `if (x > 0) print(x);` chứng minh quan hệ Subsumption giữa Decision Coverage và Statement Coverage như thế nào?
 
 ---
 
-Extra: Lỗi logic thường ẩn nấp ở nhánh False bị bỏ quên (ví dụ: biến không được khởi tạo nếu không thỏa mãn điều kiện `if`).
+- **Ví dụ phản chứng**: Test case `x = 1` đạt 100% Statement Coverage (in ra `x`), nhưng chỉ đạt 50% Decision Coverage vì chưa từng kiểm tra nhánh False (`x <= 0`).
+
+---
+
+Extra: Để đạt 100% Decision Coverage, bắt buộc phải thêm test case thứ hai với `x <= 0` (nhánh ngầm đi thẳng không in).

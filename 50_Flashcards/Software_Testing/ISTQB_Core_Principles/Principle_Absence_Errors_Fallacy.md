@@ -6,9 +6,7 @@ Ngụy biện "Vắng bóng lỗi" (Absence-of-errors fallacy) theo chuẩn ISTQ
 
 ---
 
-Việc tìm và sửa hết mọi lỗi để tạo ra một phần mềm "hoàn toàn sạch bug" sẽ trở thành **vô nghĩa nếu sản phẩm đó không đáp ứng đúng nhu cầu thực tế của người dùng** hoặc không giải quyết được bài toán kinh doanh ban đầu.
-
-Một hệ thống chạy trơn tru 100% không có lỗi kỹ thuật nhưng người dùng thấy khó dùng hoặc làm sai quy trình nghiệp vụ thì sản phẩm đó vẫn thất bại.
+- **Sạch bug nhưng vô dụng**: Phần mềm chạy 100% không có lỗi kỹ thuật vẫn thất bại nếu không đáp ứng đúng nhu cầu người dùng hoặc bài toán kinh doanh.
 
 ---
 

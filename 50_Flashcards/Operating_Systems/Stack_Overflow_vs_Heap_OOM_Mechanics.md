@@ -2,13 +2,13 @@
 noteId: 1789871406183
 ---
 
-Khi nào một chương trình gặp lỗi Stack Overflow và khi nào gặp lỗi Heap Out-Of-Memory (OOM)?
+Điểm khác biệt bản chất giữa lỗi Stack Overflow và Heap Out-Of-Memory (OOM) là gì?
 
 ---
 
-- **Stack Overflow:** Xảy ra khi con trỏ `RSP` vượt quá giới hạn kích thước Stack Frame (do đệ quy vô hạn hoặc khai báo mảng cục bộ quá lớn trên Stack).
-- **Heap Out-Of-Memory (OOM):** Xảy ra khi Runtime Allocator yêu cầu thêm bộ nhớ nhưng hệ điều hành từ chối cấp phát (do rò rỉ bộ nhớ Memory Leaks, giữ tham chiếu đối tượng không dùng, hoặc tải payload quá lớn vào RAM).
+- **Stack Overflow**: Con trỏ phần cứng `RSP` vượt quá giới hạn kích thước Stack Frame (do đệ quy sâu hoặc biến cục bộ quá lớn).
+- **Heap OOM**: Trình cấp phát yêu cầu thêm bộ nhớ nhưng hệ điều hành từ chối cấp phát (do rò rỉ bộ nhớ hoặc tải payload quá lớn).
 
 ---
 
-Extra: Stack Overflow xảy ra do vi phạm ranh giới con trỏ phần cứng (Hardware RSP limit), còn OOM xảy ra do cạn kiệt tài nguyên bộ nhớ hệ thống.
+Extra: Stack Overflow vi phạm ranh giới con trỏ phần cứng; Heap OOM cạn kiệt tài nguyên bộ nhớ hệ thống.

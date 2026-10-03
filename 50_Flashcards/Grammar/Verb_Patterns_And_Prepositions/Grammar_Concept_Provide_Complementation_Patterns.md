@@ -8,9 +8,13 @@ What are the 2 valid complementation patterns and common preposition traps for t
 
 - **Core Invariant (Luật bất biến của Transitive Verb 'provide')**:
   - `provide` là một **Ngoại động từ (Transitive Verb)**, bắt buộc phải có một Danh từ làm Direct Object đứng ngay liền kề sau nó.
-  - **FATAL ERROR TRAP**: Nhồi nhét cả 2 giới từ `to` và `with` vào cùng một câu:
-    - ❌ `The service provides to developers with tokens.` (Sai nghiêm trọng: thừa giới từ `to`).
-- **2 Valid Syntactic Patterns (2 Cấu trúc Cú pháp Đúng)**:
+  - **FATAL ERROR TRAP**: Nhồi nhét cả 2 giới từ `to` và `with` vào cùn...
+
+---
+
+Extra:
+
+- ❌ `The service provides to developers with tokens.` (Sai nghiêm trọng: thừa giới từ `to`).
   1. **Pattern A (`provide + [THING] + to + [PERSON / ENTITY]` - Cung cấp CÁI GÌ cho AI)**:
      - Direct Object là **vật/dịch vụ** (`THING`), theo sau bởi giới từ `to` chỉ người/thực thể nhận.
      - Formula: `Subject + provide + [Thing (Noun)] + to + [Recipient]`

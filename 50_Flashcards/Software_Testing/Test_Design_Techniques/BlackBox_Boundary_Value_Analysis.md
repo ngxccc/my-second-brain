@@ -1,15 +1,13 @@
 ---
-noteId: 1783427319706
+noteId: 1790994334606
 ---
 
-Phân tích Giá trị Biên (Boundary Value Analysis - BVA) là gì và tại sao chúng ta phải tập trung kiểm thử tại các điểm biên của phân vùng?
-
----
-
-**Boundary Value Analysis (BVA)** là kỹ thuật thiết kế kiểm thử tập trung khảo sát hành vi của hệ thống tại **các điểm biên tiếp giáp (Edges)** của các phân vùng tương đương.
-
-Chúng ta tập trung test ở biên vì theo tâm lý học nhận thức và kinh nghiệm thực nghiệm, **lập trình viên dễ phạm sai lầm nhất tại các điểm biên** do nhầm lẫn toán tử so sánh (ví dụ: gõ nhầm `>` thành `>=`, hoặc lỗi vòng lặp `off-by-one`).
+Nguyên lý cốt lõi của kỹ thuật Phân tích giá trị biên (Boundary Value Analysis - BVA) là gì?
 
 ---
 
-Extra: BVA chỉ áp dụng được cho các phân vùng có thứ tự (Ordered Partitions) như số nguyên, ngày tháng, độ dài chuỗi; không áp dụng được cho các giá trị rời rạc vô thứ tự (ví dụ: quốc gia, màu sắc).
+- **Lỗi tập trung ở biên**: Lỗi thường xuất hiện tại các ranh giới của phân vùng dữ liệu hơn là ở giữa; BVA tập trung test tại các điểm biên và giá trị lân cận.
+
+---
+
+Extra: BVA là phần mở rộng tự nhiên của Phân vùng tương đương (EP), áp dụng cho các kiểu dữ liệu có thứ tự (số nguyên, khoảng thời gian, độ dài chuỗi).

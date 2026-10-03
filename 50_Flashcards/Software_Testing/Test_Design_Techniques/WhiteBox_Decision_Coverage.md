@@ -6,10 +6,8 @@ noteId: 1783427811287
 
 ---
 
-**Decision Coverage (Độ bao phủ nhánh quyết định)** đo lường tỷ lệ phần trăm các kết quả rẽ nhánh logic (cả hai nhánh True và False tại các điểm điều kiện như `if`, `switch`, vòng lặp) được thực thi bởi bộ test case.
-
-**Công thức tính**:
-$$\text{Decision Coverage} = \left( \frac{\text{Số kết quả nhánh đã thực thi}}{\text{Tổng số kết quả nhánh có thể xảy ra}} \right) \times 100\%$$
+- **Decision Coverage**: Tỷ lệ phần trăm các kết quả rẽ nhánh logic (cả hai nhánh True và False) được thực thi bởi bộ test case.
+- **Công thức**: $\text{Decision Coverage} = (\text{Số kết quả nhánh thực thi} / \text{Tổng số kết quả nhánh}) \times 100\%$.
 
 ---
 

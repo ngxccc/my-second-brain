@@ -6,13 +6,15 @@ What is the preposition pattern for moving components from one place to another 
 
 ---
 
-- **Formula / Pattern**:
-  - `move + [Object] + from [Location A] + to [Location B]`
-- **Core Explanation**:
-  - Khi nói về việc di chuyển file, component hay tài nguyên từ nguồn A sang đích B, bắt buộc dùng cặp giới từ `from ... to ...`.
-- **Usage & Anchor Cues**:
-  - ❌ `move nav at main content to header navbar`
+- **Formula**: `move + [Object] + from [Location A] + to [Location B]`
+- **Core Usage**: - Khi nói về việc di chuyển file, component hay tài nguyên từ nguồn A sang đích B, bắt buộc dùng cặp giới từ `from...
+
+---
+
+Extra:
+
+- Usage: - ❌ `move nav at main content to header navbar`
   - ✅ `Move the navigation from the main content to the header navbar.`
-- **Concrete Examples**:
+- Examples:
   - _`Move the navigation menu from the sidebar to the header navbar.`_ (Chuyển menu điều hướng từ thanh bên sang thanh navbar.)
   - _`We migrated the data from MySQL to PostgreSQL.`_ (Chúng tôi đã di chuyển dữ liệu từ MySQL sang PostgreSQL.)

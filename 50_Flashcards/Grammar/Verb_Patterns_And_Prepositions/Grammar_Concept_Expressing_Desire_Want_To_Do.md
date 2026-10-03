@@ -6,14 +6,15 @@ What are the verb patterns for expressing desires or instructing someone to perf
 
 ---
 
-- **Formula / Pattern**:
-  - `Pattern 1 (Polite)`: `I would like you to + V-bare`
-  - `Pattern 2 (Direct)`: `I want you to + V-bare`
-- **Core Explanation**:
-  - Cấu trúc giao tiếp để yêu cầu ai đó làm một nhiệm vụ cụ thể. `would like you to` trang trọng hơn `want you to`.
-- **Usage & Anchor Cues**:
-  - ❌ `I want that you do...`
+- **Formula**: `Pattern 1 (Polite)`: `I would like you to + V-bare`; `Pattern 2 (Direct)`: `I want you to + V-bare`
+- **Core Usage**: - Cấu trúc giao tiếp để yêu cầu ai đó làm một nhiệm vụ cụ thể. `would like you to` trang trọng hơn `want you to`.
+
+---
+
+Extra:
+
+- Usage: - ❌ `I want that you do...`
   - ✅ `I would like you to implement Lab 4.`
-- **Concrete Examples**:
+- Examples:
   - _`Right now, I would like you to implement the entire Lab 4.`_ (Bây giờ tôi muốn bạn triển khai toàn bộ Lab 4.)
   - _`I want you to review the pull request by end of day.`_ (Tôi muốn bạn review pull request trước cuối ngày.)

@@ -2,14 +2,13 @@
 noteId: 1789871406159
 ---
 
-Trong hệ thống xử lý hàng trăm nghìn requests/giây, làm thế nào để tối ưu hóa bộ nhớ tránh quá tải Garbage Collector?
+Hai kỹ thuật cốt lõi giúp hệ thống High-Throughput giảm áp lực Garbage Collector là gì?
 
 ---
 
-- **Tái sử dụng bộ nhớ (Object Pooling):** Dùng `sync.Pool` (Go) hoặc ArrayPool (C#/.NET) để tái sử dụng buffer/struct thay vì cấp phát mới.
-- **Zero-Allocation Practices:** Tránh ép kiểu interface (Boxing), sử dụng slice/span trỏ trực tiếp trên buffer có sẵn thay vì copy chuỗi.
-- **Memory Pre-allocation:** Cấp phát trước kích thước Slice/Map (`make([]T, 0, capacity)`) để loại bỏ hoàn toàn các lần co giãn tái cấp phát bộ nhớ.
+- **Object Pooling**: Dùng `sync.Pool` (Go) hoặc `ArrayPool` (.NET) để tái sử dụng buffer thay vì cấp phát mới.
+- **Pre-allocation & Zero-Copy**: Cấp phát trước dung lượng (`make([]T, 0, cap)`) và dùng slice/span trỏ trực tiếp trên buffer có sẵn.
 
 ---
 
-Extra: Trong Go, kỹ sư dùng `go test -benchmem` để đo chỉ số `allocs/op` (số lần cấp phát Heap trên mỗi thao tác). Mục tiêu tối ưu high-throughput là kéo `allocs/op` về bằng **0**.
+Extra: Trong Go, dùng `go test -benchmem` để đo chỉ số `allocs/op` với mục tiêu kéo về 0 trên hot-path.

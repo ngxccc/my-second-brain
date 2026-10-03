@@ -6,10 +6,8 @@ noteId: 1783498212590
 
 ---
 
-Là mô hình phát triển phần mềm **Điều khiển bằng Rủi ro (Risk-driven Model)**.
-
-Mô hình này kết hợp tính lặp đi lặp lại của Prototyping với sự kiểm soát có hệ thống của Waterfall. Dự án tiến triển qua các vòng xoắn ốc (Loops), mỗi vòng đều bắt buộc phải trải qua bước phân tích và giảm thiểu rủi ro kỹ thuật/kinh doanh trước khi bước sang vòng tiếp theo.
+- **Điều khiển bằng Rủi ro (Risk-driven)**: Dự án tiến triển qua các vòng xoắn ốc (Loops); mỗi vòng lặp bắt buộc phải phân tích và giải quyết rủi ro trước khi bước sang vòng tiếp theo.
 
 ---
 
-Extra: Được tạo ra bởi Barry Boehm vào năm 1986, đặc biệt phù hợp cho các siêu dự án quy mô lớn, phức tạp và có tính bất định cao.
+Extra: Được đề xuất bởi Barry Boehm (1986); kết hợp tính lặp của Prototyping với sự kiểm soát của Waterfall, đặc biệt phù hợp cho các siêu dự án quy mô lớn và bất định cao.

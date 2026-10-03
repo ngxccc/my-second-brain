@@ -2,18 +2,13 @@
 noteId: 1790159213882
 ---
 
-Lệnh `git branch -d` khác gì `-D`? Khi xóa một nhánh, commit có bị xóa mất không và làm sao để khôi phục nhánh đã xóa?
+Khi xóa một nhánh bằng `git branch -D`, dữ liệu commit có bị mất khỏi Git Object Store không và làm thế nào để khôi phục?
 
 ---
 
-- **`-d` vs `-D`:**
-  - `git branch -d`: Xóa an toàn. Git chặn xóa nếu nhánh chưa được merge.
-  - `git branch -D`: Xóa ép buộc, bỏ qua kiểm tra merge.
-- **Commit không hề bị mất:** Xóa branch chỉ xóa con trỏ 41 bytes trong `.git/refs/heads/`. Toàn bộ commit vẫn nằm nguyên trong `.git/objects/`.
-- **Quy trình 2 bước khôi phục:**
-  1. Chạy `git reflog` tìm lại Commit SHA cuối cùng của nhánh vừa xóa.
-  2. Chạy `git branch <tên-nhánh> <commit-sha>` để tạo lại con trỏ branch.
+- **Không mất commit**: Xóa branch chỉ xóa con trỏ 41 bytes trong `.git/refs/heads/`; các commit object vẫn nằm nguyên trong `.git/objects/`.
+- **Khôi phục qua Reflog**: Chạy `git reflog` lấy lại Commit SHA của đỉnh nhánh cũ, rồi tạo lại bằng `git branch <tên-nhánh> <commit-sha>`.
 
 ---
 
-Extra: Các commit mồ côi (Dangling Commits) vẫn tồn tại ít nhất 30 đến 90 ngày trước khi lệnh dọn rác ngầm `git gc` xóa vĩnh viễn.
+Extra: Cờ `-d` xóa an toàn (chặn nếu chưa merge); `-D` ép xóa vô điều kiện. Các commit mồ côi (dangling) được `git gc` giữ tối thiểu 30-90 ngày.

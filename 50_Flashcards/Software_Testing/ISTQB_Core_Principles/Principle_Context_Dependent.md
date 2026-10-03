@@ -6,10 +6,8 @@ Nguyên lý "Kiểm thử phụ thuộc vào ngữ cảnh" (Testing is context-d
 
 ---
 
-Không có một phương pháp hay chiến lược kiểm thử nào áp dụng giống hệt nhau cho mọi dự án. Cách thức kiểm thử phải **thay đổi linh hoạt tùy theo bối cảnh cụ thể của ứng dụng**.
-
-Ví dụ: Một hệ thống phần mềm y tế hoặc lõi ngân hàng đòi hỏi kiểm thử nghiêm ngặt về tính toàn vẹn dữ liệu và bảo mật; trong khi một trang Landing Page quảng cáo thì tập trung vào trải nghiệm người dùng, tốc độ tải trang và tính tương thích trên trình duyệt.
+- **Chiến lược theo bối cảnh**: Không có phương pháp kiểm thử nào áp dụng giống hệt cho mọi dự án; phần mềm y tế/ngân hàng đòi hỏi tính toàn vẹn cao hơn landing page.
 
 ---
 
-Extra: Áp dụng một quy trình kiểm thử cồng kềnh cho một dự án nhỏ sẽ gây lãng phí; ngược lại, kiểm thử qua loa cho một hệ thống tài chính sẽ dẫn đến thảm họa.
+Extra: Áp dụng một quy trình kiểm thử cồng kềnh cho một dự án nhỏ gây lãng phí; ngược lại, kiểm thử qua loa cho một hệ thống tài chính sẽ dẫn đến thảm họa.

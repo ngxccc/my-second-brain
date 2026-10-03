@@ -6,14 +6,18 @@ What are the placement rules, modifier targets, and patterns for **Adjectives** 
 
 ---
 
-- **Core Rules**:
-  - **Adjective (Tính từ)**: Modifies Nouns. Position: Before Nouns (`Adjective + Noun`) or after Linking Verbs (`Subject + be/feel/become + Adjective`).
-  - **Adverb (Trạng từ)**: Modifies Verbs, Adjectives, or other Adverbs. Position: After/before Verbs (`Verb + Adverb` / `Adverb + Verb`) or before Adjectives (`Adverb + Adjective`).
-- **Comparison Matrix**:
-  - Noun (Object/System): `Adjective` -> _a **sluggish** service_
-  - Noun (Subject): `Adjective` -> _The service was **laggy**._
-  - Action (Verb): `Adverb` -> _The application ran **sluggishly**._
-  - Degree of Quality: `Adverb` -> _an **extremely** laggy system_
-- **Concrete Examples**:
-  - _`The Go garbage collector ran sluggishly during heavy benchmark runs.`_ (Trình thu gom rác Go chạy chậm chạp trong các bài benchmark nặng.)
-  - _`Discord's latency spiked suddenly after the database migration.`_ (Độ trễ của Discord tăng đột ngột sau đợt migration cơ sở dữ liệu.)
+- **Adjective**: Bổ nghĩa cho Danh từ; đứng trước danh từ (`Adjective + Noun`) hoặc sau Linking Verb (`be + Adjective`).
+- **Adverb**: Bổ nghĩa cho Động từ, Tính từ hoặc Trạng từ khác (`Verb + Adverb` hoặc `Adverb + Adjective`).
+
+---
+
+Extra:
+
+- Contrast Patterns:
+  - Noun modifier: `a sluggish service` (Adjective)
+  - Subject state: `The service was laggy.` (Adjective after copula be)
+  - Action modifier: `The application ran sluggishly.` (Adverb)
+  - Degree modifier: `an extremely laggy system` (Adverb modifying adjective)
+- Examples:
+  - `The Go garbage collector ran sluggishly during heavy benchmark runs.`
+  - `Discord's latency spiked suddenly after the database migration.`

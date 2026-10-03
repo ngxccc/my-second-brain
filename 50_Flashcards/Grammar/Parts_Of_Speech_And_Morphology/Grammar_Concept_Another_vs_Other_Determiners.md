@@ -12,6 +12,11 @@ What is the difference in usage and syntax between **another**, **other**, and *
 ⎧ another + Singular Countable Noun (an + other: một cái khác, bất kỳ)
 ⎪ other   + Plural Noun / Uncountable Noun (những cái khác, nói chung)
 ⎩ the other + Specific Noun / the others (cái còn lại / những cái còn lại đã xác định)
+- ❌ _Another v...
+
+---
+
+Extra:
 ```
 
 ### Core Explanation
@@ -22,8 +27,6 @@ What is the difference in usage and syntax between **another**, **other**, and *
 
 ### Usage & Anchor Cues
 
-- ❌ _Another vocabulary isn't created._
-- ✅ _The other vocabulary items were not created._ / _The other words haven't been created yet._
 - ❌ _We should check another options._
 - ✅ _We should check other options._ / _We should check another option._
 
