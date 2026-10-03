@@ -70,6 +70,7 @@ Từ đuôi `-ing` đứng trước danh từ để bổ nghĩa, biểu thị t�
 
 ## Related Notes
 
-- Lộ trình học tiếng Anh cốt lõi: [[English_Learning_Roadmap]]
+- Lộ trình học tiếng Anh cốt lõi: [[English_Mastery_80_20_Roadmap]]
+- Hồ sơ năng lực tiếng Anh: [[English_Learner_Profile]]
 - Cơ chế ghi nhớ từ vựng: [[Phonetic_Chunking]]
-- Học ngữ pháp và các thì cốt lõi: [[Grammar_Basics]]
+- Phương pháp họ từ và hình thái: [[Word_Family_and_Morphology_Method]]

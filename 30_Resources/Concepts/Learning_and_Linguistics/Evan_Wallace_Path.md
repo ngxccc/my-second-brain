@@ -40,5 +40,5 @@ Evan Wallace là co-founder & cựu CTO Figma, người xây dựng rendering en
 ## Related Notes
 
 - [[000_Concepts_MOC]]
-- [[Learning_and_Linguistics]]
-- [[Zettelkasten_Method]]
+- [[Master_Backend_Engineering_SSOT]]
+- [[M_Shaped_Polymath_Skill_Stacking]]

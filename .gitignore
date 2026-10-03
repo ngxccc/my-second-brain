@@ -1,6 +1,7 @@
 # System Files (Rác hệ thống)
 .DS_Store
 Thumbs.db
+node_modules/
 
 # Obsidian Internals (Rác của App)
 .obsidian/workspace
@@ -15,3 +16,4 @@ Thumbs.db
 .trash/
 
 .claude
+.AGENTS

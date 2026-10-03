@@ -100,4 +100,3 @@ Thực chất việc muốn "ngủ ít" là để "làm được nhiều hơn". 
 
 - [[First_Principles_Thinking]]
 - [[Systems_Thinking]]
-- [[Standard_Project_Timeline_SOP]]

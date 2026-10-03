@@ -11,7 +11,7 @@ aliases:
 
 ## TL;DR
 
-Hồ sơ cá nhân và **Single Source of Truth (SSOT)** theo dõi lộ trình phát triển năng lực tiếng Anh (CEFR A2 $\rightarrow$ B1 $\rightarrow$ B2). Phân cấp rõ ràng: Ưu tiên số 1 là **Technical English Communication** phục vụ phỏng vấn Backend Developer trước ngày 06/12/2026; các lộ trình luyện thi chứng chỉ như TOEIC/IELTS chỉ đóng vai trò bài tập bổ trợ phương pháp nghe/viết.
+Hồ sơ cá nhân và **Single Source of Truth (SSOT)** theo dõi lộ trình phát triển năng lực tiếng Anh (CEFR A2 $\rightarrow$ B1 $\rightarrow$ B2). Phân cấp rõ ràng: Ưu tiên số 1 là **Technical English Communication** phục vụ mục tiêu nghề nghiệp (xem chi tiết mục tiêu vai trò và mốc thời gian tại [[Master_Backend_Engineering_SSOT]]); các lộ trình luyện thi chứng chỉ như TOEIC/IELTS chỉ đóng vai trò bài tập bổ trợ phương pháp nghe/viết.
 
 ---
 
