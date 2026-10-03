@@ -1,0 +1,23 @@
+version: 2
+updates:
+  # ── Bun Packages (Oxlint, Oxfmt) ──
+  - package-ecosystem: "bun"
+    directory: "/"
+    schedule:
+      interval: "daily"
+    open-pull-requests-limit: 10
+    groups:
+      security-updates:
+        patterns: ["*"]
+        update-types: ["patch"]
+        applies-to: "security-updates"
+      development-dependencies:
+        patterns: ["*"]
+        update-types: ["minor", "patch"]
+
+  # ── GitHub Actions workflows (vault-ci.yml) ──
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 5
