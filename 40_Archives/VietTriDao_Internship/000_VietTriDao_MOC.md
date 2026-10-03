@@ -55,7 +55,7 @@ Lịch trình chi tiết và lộ trình dự án từng ngày được theo dõ
 - Tài liệu chuẩn bị và biểu mẫu họp tiếng Anh (Day 1 Prep): [[Prep_Guide_Day1]]
 - Vở bài tập thực hành viết biên bản họp (Meeting Minutes): [[Meeting_Minutes_Practice_Guide]]
 - Báo cáo quyết định công nghệ & các hạng mục cần thống nhất: [[Tech_Stack_Decisions]]
-- So sánh các framework backend Node.js kết nối SQL Server: [[Backend_Frameworks_Comparison]]
+- So sánh các framework backend Node.js kết nối SQL Server: [[VietTriDao_Backend_Frameworks_Evaluation]]
 - Vở bài tập câu hỏi vấn đáp SQL (Q&A): [[SQL_Interview_QnA]]
 - Nghiên cứu nghiệp vụ & công nghệ Viện dưỡng lão Mỹ: [[Nursing_Home_System_Research]]
 - Phân tích khả thi hệ thống y tế Mỹ vs Việt Nam: [[Nursing_Home_System_Feasibility_Analysis]]

@@ -92,4 +92,4 @@ Trái ngược với Mỹ, thị trường Việt Nam là một "đại dương 
 
 - [[000_VietTriDao_MOC]] — Bản đồ thông tin dự án Viet Tri Dao.
 - [[Docs/Nursing_Home_System_Research]] — Nghiên cứu chi tiết nghiệp vụ và kiến trúc kỹ thuật của hệ thống EMR Mỹ.
-- [[Backend_Frameworks_Comparison]] — So sánh lựa chọn framework backend tối ưu cho hệ thống (NestJS, Fastify, ElysiaJS).
+- [[VietTriDao_Backend_Frameworks_Evaluation]] — So sánh lựa chọn framework backend tối ưu cho hệ thống (NestJS, Fastify, ElysiaJS).

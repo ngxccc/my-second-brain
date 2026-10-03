@@ -11,9 +11,6 @@ description: "Bản đồ quy tụ các quy trình, thuật toán và framework 
 
 Bản đồ quy tụ các quy trình, thuật toán và framework thực chiến có thể lấy ra áp dụng ngay để giải quyết vấn đề (Actionable Toolbox). Tự động truy vấn dữ liệu động bằng DataviewJS.
 
-> [!IMPORTANT]
-> **Master Strategic Compass**: [[Master_Backend_Engineering_SSOT]] - Kim chỉ nam chiến lược và lộ trình 4 tầng nhận thức Backend.
-
 ---
 
 ```dataviewjs

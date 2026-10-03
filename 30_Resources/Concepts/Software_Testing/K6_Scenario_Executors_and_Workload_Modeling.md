@@ -2,8 +2,8 @@
 tags: [type/concept, topic/testing, topic/engineering, layer/quality]
 date: 2026-08-28
 aliases:
-  [k6 Scenarios, k6 Executors, Workload Modeling, Concurrency vs Arrival Rate]
-description: "Phân loại các cơ chế điều phối Executor, tham số gracefulStop và mô hình hóa tải trọng trong Grafana k6."
+  [k6 Scenarios, k6 Executors, Scenario Executors, Concurrency vs Arrival Rate]
+description: "Phân loại các cơ chế điều phối Executor, tham số gracefulStop và kiến trúc thực thi Scenarios trong Grafana k6."
 ---
 
 # k6 Scenario Executors & Workload Modeling
@@ -20,11 +20,11 @@ description: "Phân loại các cơ chế điều phối Executor, tham số gra
 
 ### 1. Phân loại k6 Executors
 
-| Nhóm Executor          | Loại cụ thể                                       | Đặc điểm điều phối                                                            | Trường hợp sử dụng chuẩn                                     |
-| :--------------------- | :------------------------------------------------ | :---------------------------------------------------------------------------- | :----------------------------------------------------------- |
-| **Iteration-based**    | `per-vu-iterations`<br>`shared-iterations`        | Cố định số lần chạy (`iterations`) cho từng VU hoặc chia sẻ chung.            | Race Condition, Flash-Sale Burst, Data Partitioning.         |
-| **VU-based**           | `constant-vus`<br>`ramping-vus`                   | Duy trì hoặc biến thiên số lượng VU chạy theo các mốc thời gian (`stages`).   | Tìm điểm gãy (Breaking Point), Soak Testing (tìm rò rỉ RAM). |
-| **Arrival-rate-based** | `constant-arrival-rate`<br>`ramping-arrival-rate` | Cố định số request mỗi giây (RPS) độc lập với thời gian phản hồi của backend. | Đo lường SLA chuẩn xác, loại trừ lỗi Coordinated Omission.   |
+| Nhóm Executor          | Loại cụ thể                                       | Đặc điểm điều phối                                                                                                                                                                 | Trường hợp sử dụng chuẩn                                     |
+| :--------------------- | :------------------------------------------------ | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :----------------------------------------------------------- |
+| **Iteration-based**    | `per-vu-iterations`<br>`shared-iterations`        | Cố định số lần chạy (`iterations`) cho từng VU hoặc chia sẻ chung.                                                                                                                 | Race Condition, Flash-Sale Burst, Data Partitioning.         |
+| **VU-based**           | `constant-vus`<br>`ramping-vus`                   | Duy trì hoặc biến thiên số lượng VU chạy theo các mốc thời gian (`stages`).                                                                                                        | Tìm điểm gãy (Breaking Point), Soak Testing (tìm rò rỉ RAM). |
+| **Arrival-rate-based** | `constant-arrival-rate`<br>`ramping-arrival-rate` | Cố định số request mỗi giây (RPS) độc lập với thời gian phản hồi của backend. Áp dụng Open Model loại trừ lỗi Coordinated Omission (chi tiết: [[Open_vs_Closed_Workload_Models]]). |
 
 ---
 
@@ -105,6 +105,7 @@ export function rateLimitScenario(): void {
 ## Related Notes
 
 - Kiến trúc bộ nhớ và vòng đời k6: [[K6_Execution_Lifecycle_and_Memory_Architecture]]
+- Mô hình Open vs Closed Workload và Coordinated Omission: [[Open_vs_Closed_Workload_Models]]
 - Hệ thống đo lường và ngưỡng kiểm định k6: [[K6_Telemetry_Metrics_and_Threshold_Gates]]
 - Quy chuẩn kiểm thử tải Concurrency: [[K6_High_Concurrency_Load_Testing_SOP]]
 - Cơ chế khóa phân tán Redis Redlock: [[Redis_Redlock]]

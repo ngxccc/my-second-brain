@@ -53,7 +53,7 @@ Mỗi note (ngoại trừ Daily Logs và Flashcards) bắt buộc chứa ít nh�
 - Mental Models: `topic/mental-models`, `topic/decision-making`, `topic/psychology`, `topic/game-theory`.
 - Systems & Workflow: `topic/knowledge-management`, `topic/documentation`, `topic/workflow`, `topic/productivity`.
 - Communication & Career: `topic/communication`, `topic/negotiation`, `topic/product-management`, `topic/career`, `topic/freelance`.
-- Learning & Mastery: `topic/learning`, `topic/self-study`, `topic/personal-rules`, `topic/personal-development`.
+- Learning & Mastery: `topic/learning`, `topic/self-study`, `topic/personal-rules`, `topic/personal-development`, `topic/polymathy`.
 
 ### Linguistics & English
 

@@ -57,6 +57,8 @@ Nghiên cứu của Chase & Simon (1973) chỉ ra sự tích lũy chuyên môn l
 
 ## Related Notes
 
+- Bản chất Polymath và Modern Generalist: [[Polymathy_and_Modern_Generalist]]
+- Quy trình đào sâu đa ngành tuần tự: [[M_Shaped_Polymath_Skill_Stacking]]
 - Ứng dụng chunking trong việc học tiếng Anh: [[Phonetic_Chunking]]
 - Thuật toán sắp xếp lịch ôn tập củng cố các chunk: [[Spaced_Repetition_SM2]]
 

@@ -31,7 +31,7 @@ description: "Nguyên lý thuật toán Three-Way Merge, phân tích mâu thuẫ
 
 ### 1. Thuật toán Three-Way Merge: BASE, OURS và THEIRS
 
-Khi thực thi thao tác gộp nhánh, Git tìm kiếm commit tổ tiên chung gần nhất (Merge Base / Common Ancestor):
+Khi thực thi thao tác gộp nhánh, Git tìm kiếm commit tổ tiên chung gần nhất (`BASE` / Common Ancestor) thông qua giải thuật tìm kiếm Lowest Common Ancestor (xem chi tiết cơ chế hoạt động tại [[Git_Merge_Base_Algorithm]]):
 
 ```
           ┌──> [Commit B] ──> [Commit C (THEIRS: feature)]

@@ -25,9 +25,9 @@ Quy trình phát triển phần mềm theo mô hình thác nước (Waterfall) l
   - Các tài liệu thiết kế hệ thống (HLD, LLD) được xây dựng kỹ lưỡng trước khi bắt đầu lập trình.
   - Có quy trình kiểm soát thay đổi (Change Control Board - CCB) chặt chẽ nếu phát sinh yêu cầu mới.
 
-### Lịch Sử & Tiến Hóa
+### Bối Cảnh Lịch Sử & Vị Trí Trong SDLC
 
-Mô hình Waterfall là phương pháp SDLC đầu tiên (1970), đặt nền móng cho kỹ nghệ phần mềm. Tuy nhiên, tính chất tuyến tính và việc đóng băng yêu cầu từ sớm của nó đã bộc lộ nhiều hạn chế về mặt linh hoạt, dẫn đến sự ra đời của các mô hình cải tiến tiếp theo như [[V_Model]], [[Prototype_Model]], và sau này là [[Agile_Scrum]]. Xem chi tiết tại [[SDLC_Methodologies_Evolution]].
+Waterfall là mô hình SDLC nền tảng đầu tiên (1970). Để hiểu chi tiết hành trình chuyển dịch từ Waterfall sang V-Model, Spiral và Agile, xem tại [[SDLC_Methodologies_Evolution]].
 
 ### Nguyên Tắc Cốt Lõi Của Waterfall
 

@@ -34,10 +34,9 @@ V-Model chia quy trình thành hai nhánh song song nối nhau bởi pha Lập t
    - _Câu hỏi cốt lõi:_ "Chúng ta có đang xây dựng đúng sản phẩm khách hàng cần?" (Are we building the right product?).
    - _Hành động:_ Đánh giá động bằng cách chạy phần mềm trên các kịch bản kiểm thử (Test Cases) thực tế.
 
-### Lịch Sử & Tiến Hóa
+### Bối Cảnh Lịch Sử & Vị Trí Trong SDLC
 
-V-Model tiến hóa trực tiếp từ Waterfall vào những năm 1980 nhằm giải quyết điểm yếu lớn nhất của Waterfall là _"kiểm thử quá muộn"_. Bằng cách song song hóa việc lập kế hoạch kiểm thử ngay từ khâu thiết kế, V-Model giúp phát hiện lỗi sớm hơn rất nhiều. Xem chi tiết hành trình tiến hóa tại [[SDLC_Methodologies_Evolution]].
-
+V-Model ra đời trong thập niên 1980 nhằm khắc phục hạn chế kiểm thử muộn của Waterfall. Chi tiết bức tranh tiến hóa các mô hình kiểm thử xem tại [[SDLC_Methodologies_Evolution]].
 ---
 
 ## Step-by-Step Guideline

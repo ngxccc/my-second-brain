@@ -213,5 +213,5 @@ volumes:
 
 ## Related Notes
 
-- [[Docs/Backend_Frameworks_Comparison]] — So sánh chi tiết các framework Node.js và hướng dẫn cấu hình SQL Server.
+- [[VietTriDao_Backend_Frameworks_Evaluation]] — So sánh chi tiết các framework Node.js và hướng dẫn cấu hình SQL Server.
 - [[000_VietTriDao_MOC]] — Bản đồ thông tin tổng quan của dự án thực tập.

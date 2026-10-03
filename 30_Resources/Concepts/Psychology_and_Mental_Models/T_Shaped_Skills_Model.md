@@ -59,7 +59,9 @@ Một lập trình viên áp dụng chiến lược Skill Stacking để tạo r
 
 ## Related Notes
 
+- [[30_Resources/Concepts/Psychology_and_Mental_Models/Polymathy_and_Modern_Generalist.md|Polymathy and Modern Generalist]]
+- [[30_Resources/Methods/Learning_and_Cognition/M_Shaped_Polymath_Skill_Stacking.md|M-Shaped Polymath Skill Stacking]]
 - [[30_Resources/Concepts/Psychology_and_Mental_Models/Systems_Thinking.md|Systems Thinking]]
 - [[30_Resources/Concepts/Psychology_and_Mental_Models/Critical_Thinking_Models.md|Critical Thinking Models]]
-- [[30_Resources/Methods/First_Principles_Thinking.md|First Principles Thinking]]
+- [[30_Resources/Methods/Learning_and_Cognition/First_Principles_Thinking.md|First Principles Thinking]]
 - [[30_Resources/Concepts/000_Concepts_MOC.md|Concepts MOC]]
