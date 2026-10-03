@@ -1,5 +1,5 @@
 ---
-tags: [type/method, topic/engineering]
+tags: [type/method, status/permanent]
 aliases: []
 date: <% tp.file.creation_date("YYYY-MM-DD") %>
 description: "Tóm tắt ngắn gọn 1-2 câu về quy trình/phương pháp này (để DataviewJS hiển thị trên MOC)."

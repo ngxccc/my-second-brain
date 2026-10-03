@@ -5,23 +5,17 @@ import { validate as validateAudit } from "./validators/audit.mjs";
 import { validate as validateChecklist } from "./validators/checklist.mjs";
 import { validate as validateConcept } from "./validators/concept.mjs";
 import { validate as validateGuide } from "./validators/guide.mjs";
-import { validate as validateMeeting } from "./validators/meeting.mjs";
-import { validate as validateMentalModel } from "./validators/mental_model.mjs";
 import { validate as validateMethod } from "./validators/method.mjs";
 import { validate as validatePattern } from "./validators/pattern.mjs";
 import { validate as validateProject } from "./validators/project.mjs";
 import { validate as validateStrategy } from "./validators/strategy.mjs";
 import { validate as validateTechnique } from "./validators/technique.mjs";
-import { validate as validateVocab } from "./validators/vocab.mjs";
 
 const rootDir = process.cwd();
 const validatorsRegistry = {
 	"type/concept": validateConcept,
 	"type/pattern": validatePattern,
-	"type/mental-model": validateMentalModel,
-	"type/vocab": validateVocab,
 	"type/project": validateProject,
-	"type/meeting": validateMeeting,
 	"type/method": validateMethod,
 	"type/checklist": validateChecklist,
 	"type/guide": validateGuide,

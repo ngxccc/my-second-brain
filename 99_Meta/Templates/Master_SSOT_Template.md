@@ -1,5 +1,5 @@
 ---
-tags: [type/guide, type/strategy, topic/backend, topic/productivity]
+tags: [type/guide, status/permanent]
 status: permanent
 date: <% tp.file.creation_date("YYYY-MM-DD") %>
 aliases:

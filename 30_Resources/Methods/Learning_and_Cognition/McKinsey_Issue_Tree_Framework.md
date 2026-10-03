@@ -70,6 +70,6 @@ Một cây vấn đề thuần túy chỉ liệt kê câu hỏi sẽ dẫn đế
 ## Related Notes
 
 - Phương pháp ghim mục tiêu ban đầu: [[GPS_Goal_Problem_Solution_Framework]]
-- Mẫu ghi chú phân rã bài toán: [[Problem_Note_Template]]
+- Khung tư duy giải quyết vấn đề: [[Problem_Solving_Mental_Model_Pipeline]]
 - Quy trình 5 bước đánh giá vấn đề: [[Problem_Solving_Mental_Model_Pipeline]]
 - Tư duy thiết kế kiến trúc tiến hóa: [[Problem_Driven_System_Design_Framework]]

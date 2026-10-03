@@ -1,5 +1,5 @@
 ---
-tags: [type/concept, topic/tech]
+tags: [type/concept, status/permanent]
 aliases: []
 date: <% tp.file.creation_date("YYYY-MM-DD") %>
 description: "Tóm tắt ngắn gọn 1-2 câu nội dung cốt lõi của ghi chú (để DataviewJS hiển thị trên MOC)."

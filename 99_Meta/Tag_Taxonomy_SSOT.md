@@ -22,13 +22,10 @@ description: "Tag Taxonomy SSOT tinh gọn: giới hạn tối đa 2 functional 
 
 Mỗi atomic note (ngoại trừ Daily Logs và Flashcards) bắt buộc chứa đúng 1 `type/*` tag:
 
-- `type/concept`: Định nghĩa, lý thuyết, nguyên lý cơ chế, kiến trúc (`30_Resources/Concepts/`).
+- `type/concept`: Định nghĩa, lý thuyết, nguyên lý cơ chế, kiến trúc, mental models (`30_Resources/Concepts/`).
 - `type/method`: SOP, quy trình thực thi, roadmap, framework hành động (`30_Resources/Methods/`).
 - `type/pattern`: Design patterns, architectural patterns.
-- `type/mental-model`: Mô hình tư duy, khung phân tích nhận thức.
-- `type/vocab`: Thẻ từ vựng, cấu trúc ngôn ngữ tiếng Anh.
 - `type/project`: Ghi chú dự án thực hiện (`10_Projects/`).
-- `type/meeting`: Biên bản cuộc họp, trao đổi kỹ thuật.
 - `type/checklist`: Danh sách kiểm tra công việc, tiêu chuẩn kiểm thử.
 - `type/guide`: Hướng dẫn cấu hình, cheatsheet, tài liệu kỹ thuật.
 - `type/algorithm`: Giải thuật, bài toán LeetCode, cấu trúc dữ liệu.

@@ -69,7 +69,7 @@ Khi làm việc ở Tầng 2 hoặc Tầng 3, trước khi chuyển sang một s
 
 ## Related Notes
 
-- Mẫu ghi chú áp dụng khung GPS: [[Problem_Note_Template]]
+- Quy trình chuẩn hóa xử lý vấn đề: [[Problem_Solving_Mental_Model_Pipeline]]
 - Khung bóc tách cây vấn đề: [[McKinsey_Issue_Tree_Framework]]
 - Quy trình 5 bước đánh giá vấn đề: [[Problem_Solving_Mental_Model_Pipeline]]
 - Tư duy kiến trúc theo nhu cầu thực tế: [[Problem_Driven_System_Design_Framework]]
