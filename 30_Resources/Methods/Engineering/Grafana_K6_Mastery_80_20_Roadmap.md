@@ -1,12 +1,5 @@
 ---
-tags:
-  [
-    type/method,
-    topic/testing,
-    topic/backend,
-    topic/infrastructure,
-    layer/core-mechanics,
-  ]
+tags: [type/method, status/permanent]
 date: 2026-10-02
 aliases:
   [

@@ -1,12 +1,5 @@
 ---
-tags:
-  [
-    type/concept,
-    topic/testing,
-    topic/engineering,
-    topic/infrastructure,
-    layer/infrastructure,
-  ]
+tags: [type/concept, status/permanent]
 date: 2026-08-28
 aliases:
   [k6 OS Tuning, k6 Tag Cardinality, k6 System Tags, k6 Large Tests Performance]

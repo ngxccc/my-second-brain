@@ -1,5 +1,5 @@
 ---
-tags: [type/method, topic/backend, topic/dsa, topic/leetcode, topic/career]
+tags: [type/method, status/permanent]
 date: 2026-08-07
 aliases:
   [

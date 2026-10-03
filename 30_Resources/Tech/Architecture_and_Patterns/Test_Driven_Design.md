@@ -1,5 +1,5 @@
 ---
-tags: [type/concept, topic/tech, layer/quality]
+tags: [type/concept, status/permanent]
 aliases: [Test-Driven Development]
 created_at: Saturday, May 23rd 2026, 6:23:01 pm +07:00
 updated_at: Saturday, May 23rd 2026, 7:18:36 pm +07:00

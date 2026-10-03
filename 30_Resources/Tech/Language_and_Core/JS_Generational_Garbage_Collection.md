@@ -1,12 +1,5 @@
 ---
-tags:
-  [
-    type/concept,
-    topic/tech,
-    layer/core-mechanics,
-    topic/javascript,
-    topic/memory-management,
-  ]
+tags: [type/concept, status/permanent]
 aliases: [Generational Garbage Collection, V8 GC Orinoco, Minor and Major GC]
 date: 2026-08-09
 description: "Cơ chế dọn rác phân thế hệ (Generational GC) trong V8 Engine gồm Scavenger và Mark-Sweep-Compact."

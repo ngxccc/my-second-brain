@@ -1,5 +1,5 @@
 ---
-tags: [type/concept, topic/testing, layer/quality]
+tags: [type/concept, status/permanent]
 date: 2026-06-09
 aliases: [Trường hợp kiểm thử, Ca kiểm thử, Test Case Basics]
 description: "Khái niệm cơ bản về kịch bản kiểm thử và 3 bước cấu thành cốt lõi."

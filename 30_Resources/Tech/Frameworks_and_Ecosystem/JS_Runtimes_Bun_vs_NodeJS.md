@@ -1,12 +1,5 @@
 ---
-tags:
-  [
-    type/concept,
-    topic/tech,
-    layer/core-mechanics,
-    topic/backend,
-    topic/javascript,
-  ]
+tags: [type/concept, status/permanent]
 aliases: [Bun vs Node.js, JS Runtimes, Event Loop Runtime, JSC vs V8]
 date: 2026-06-20
 description: "So sánh kiến trúc runtime Bun (JavaScriptCore + Zig) vs Node.js (V8 + Libuv) và cơ chế Event Loop cốt lõi."

@@ -1,12 +1,5 @@
 ---
-tags:
-  [
-    type/concept,
-    topic/tech,
-    layer/core-mechanics,
-    topic/javascript,
-    topic/memory-management,
-  ]
+tags: [type/concept, status/permanent]
 aliases: [Stack vs Heap Memory, JS Stack vs Heap, Stack and Heap]
 date: 2026-08-09
 description: "Mô hình phân tầng bộ nhớ Stack (LIFO) và Heap (Dynamic Allocation) trong JavaScript."

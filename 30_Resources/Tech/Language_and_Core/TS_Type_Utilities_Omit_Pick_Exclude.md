@@ -1,5 +1,5 @@
 ---
-tags: [type/concept, topic/typescript, topic/tech, layer/core-mechanics]
+tags: [type/concept, status/permanent]
 date: 2026-06-18
 aliases: [TypeScript Type Utilities, So sánh Omit Pick Exclude]
 description: "So sánh chi tiết bản chất và phân biệt các tiện ích kiểu Omit, Pick, Exclude."

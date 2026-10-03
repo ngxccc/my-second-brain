@@ -1,5 +1,5 @@
 ---
-tags: [type/method, topic/engineering, topic/productivity, layer/quality]
+tags: [type/method, status/permanent]
 aliases: [Quy trình xoắn ốc, Mô hình xoắn ốc, Spiral Model]
 date: 2026-07-08
 description: "Quy trình phát triển phần mềm theo mô hình xoắn ốc (Spiral Model) là phương pháp kết hợp tính lặp lại (iterative) của Prototype và tính kiểm soát tuần tự của Waterfall, với trọng tâm là quản lý và ..."

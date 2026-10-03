@@ -1,13 +1,5 @@
 ---
-tags:
-  [
-    type/concept,
-    topic/tech,
-    topic/database,
-    status/permanent,
-    layer/architecture,
-    layer/infrastructure,
-  ]
+tags: [type/concept, status/permanent]
 date: 2026-06-27
 aliases: [Outbox Pattern, Transactional Outbox, Mẫu thiết kế Outbox]
 description: "Mẫu thiết kế xử lý Dual-Write tin cậy bằng bảng Outbox và Worker."

@@ -1,6 +1,5 @@
 ---
-tags:
-  [type/concept, topic/concepts, layer/core-mechanics, topic/memory-management]
+tags: [type/concept, status/permanent]
 aliases:
   [
     Memory Leaks Core Mechanics,

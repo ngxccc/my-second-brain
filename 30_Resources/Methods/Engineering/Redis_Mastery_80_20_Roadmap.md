@@ -1,14 +1,5 @@
 ---
-tags:
-  [
-    type/method,
-    topic/database,
-    topic/backend,
-    topic/memory-management,
-    topic/infrastructure,
-    layer/core-mechanics,
-    layer/infrastructure,
-  ]
+tags: [type/method, status/permanent]
 date: 2026-10-02
 aliases:
   [

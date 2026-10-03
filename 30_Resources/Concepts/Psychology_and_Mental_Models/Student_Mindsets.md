@@ -1,5 +1,5 @@
 ---
-tags: [type/concept, topic/psychology, topic/finance, topic/learning]
+tags: [type/concept, status/permanent]
 date: 2026-06-23
 aliases: [Tư duy sinh viên, Student Mindsets, Mô hình tư duy sinh viên]
 description: "Mô hình tư duy tối ưu hóa học tập, tài chính và sự nghiệp cho sinh viên."

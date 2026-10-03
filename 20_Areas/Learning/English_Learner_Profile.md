@@ -1,6 +1,6 @@
 ---
 docType: learning-profile
-tags: [topic/english, topic/learning, topic/knowledge-management]
+tags: [type/concept, status/permanent]
 date: 2026-08-06
 aliases:
   - English Learner Profile
@@ -114,3 +114,12 @@ Hồ sơ cá nhân và **Single Source of Truth (SSOT)** theo dõi lộ trình p
 - **2026-08-06**: Completed vault flashcard standardization (Strategy A: Pure English Immersion with English Front, IPA Pronunciation, Meaning, and Example).
 - **2026-08-05**: Mastered Feynman Whiteboard Presentation blueprint, Subvocalization speaking technique, and Go Memory Mechanics vocabulary.
 - **2026-07-28**: Profile initialized. Baseline evaluation: A2 $\rightarrow$ B1.
+
+---
+
+## Related Notes
+
+- [[Master_Backend_Engineering_SSOT]]: Kế hoạch mục tiêu kỹ thuật tổng thể kết nối với năng lực tiếng Anh.
+- [[English_Mastery_80_20_Roadmap]]: Lộ trình phương pháp luận tiếng Anh 80/20 theo khung Paul Nation.
+- [[TOEIC_Self_Study_Roadmap_0_To_900]]: Lộ trình tự học TOEIC 0 đến 900+ phục vụ bài tập bổ trợ.
+- [[Master_Roadmaps_Index]]: Bản đồ điều hướng trung tâm các lộ trình học tập trong vault.

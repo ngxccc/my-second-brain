@@ -1,6 +1,5 @@
 ---
-tags:
-  [type/concept, topic/concepts, layer/core-mechanics, topic/memory-management]
+tags: [type/concept, status/permanent]
 aliases:
   - Heap Memory Size Classes and Alignment
   - Ô Nhớ Tiêu Chuẩn Heap Allocator

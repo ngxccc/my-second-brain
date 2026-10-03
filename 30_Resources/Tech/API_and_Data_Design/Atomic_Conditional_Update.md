@@ -1,7 +1,6 @@
 ---
 title: Atomic Conditional Update
-tags:
-  [type/concept, topic/backend, topic/database, topic/sql, layer/infrastructure]
+tags: [type/concept, status/permanent]
 aliases: [Atomic Update, Conditional Update, Compare-and-Swap SQL]
 date: 2026-09-16
 description: "Cơ chế cập nhật nguyên tử có điều kiện trong Database để triệt tiêu Race Condition mà không cần giữ khóa giao dịch dài."

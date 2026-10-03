@@ -1,5 +1,5 @@
 ---
-tags: [type/guide, topic/go, topic/learning]
+tags: [type/guide, status/permanent]
 date: 2026-07-09
 aliases: [Go Learning Roadmap, Lộ trình học Go thực chiến]
 description: "Lộ trình học Go thực chiến từ cơ bản đến microservices & production."

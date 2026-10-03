@@ -1,12 +1,5 @@
 ---
-tags:
-  [
-    type/concept,
-    topic/tech,
-    topic/frontend,
-    topic/rendering,
-    layer/infrastructure,
-  ]
+tags: [type/concept, status/permanent]
 aliases:
   [NextJS 16 Cache Components, NextJS 16 Caching, use cache, Cache Components]
 date: 2026-06-20

@@ -1,5 +1,5 @@
 ---
-tags: [type/guide, topic/engineering, topic/testing, layer/quality]
+tags: [type/guide, status/permanent]
 date: 2026-06-07
 aliases:
   [Stress Test Local, Kế hoạch Stress Test, k6 Benchmark, Phỏng vấn Stress Test]

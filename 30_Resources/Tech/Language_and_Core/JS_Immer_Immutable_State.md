@@ -1,13 +1,5 @@
 ---
-tags:
-  [
-    type/concept,
-    topic/tech,
-    topic/javascript,
-    topic/frontend,
-    topic/memory-management,
-    layer/core-mechanics,
-  ]
+tags: [type/concept, status/permanent]
 aliases: [Immer, ImmerJS, Copy-on-Write, Structural Sharing, Immutable State]
 date: 2026-06-20
 description: "Quản lý trạng thái bất biến (Immutable State) thông qua cơ chế Copy-on-Write (COW) và ES6 Proxy, giải pháp tối ưu cho Zustand/Redux stores."

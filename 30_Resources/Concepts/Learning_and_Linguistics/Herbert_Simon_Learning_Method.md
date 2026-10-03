@@ -1,5 +1,5 @@
 ---
-tags: [type/concept, topic/psychology, topic/learning]
+tags: [type/concept, status/permanent]
 date: 2026-07-04
 aliases:
   [

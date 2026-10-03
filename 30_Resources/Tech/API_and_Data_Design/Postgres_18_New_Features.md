@@ -1,5 +1,5 @@
 ---
-tags: [type/concept, topic/tech, status/permanent, layer/infrastructure]
+tags: [type/concept, status/permanent]
 date: 2026-07-04
 aliases:
   [PostgreSQL 18 Features, Cập nhật PostgreSQL 18, Postgres 18 Stable Features]

@@ -1,11 +1,5 @@
 ---
-tags:
-  [
-    type/concept,
-    topic/knowledge-management,
-    topic/documentation,
-    topic/workflow,
-  ]
+tags: [type/concept, status/permanent]
 date: 2026-07-24
 aliases:
   [

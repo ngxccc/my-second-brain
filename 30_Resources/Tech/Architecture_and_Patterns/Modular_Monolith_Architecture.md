@@ -1,5 +1,5 @@
 ---
-tags: [type/concept, topic/backend, topic/architecture, layer/architecture]
+tags: [type/concept, status/permanent]
 date: 2026-02-08
 aliases: [Modular Architecture, Feature-Based Architecture]
 description: "Kiến trúc chia theo Domain/Feature (High Cohesion, Low Coupling)."

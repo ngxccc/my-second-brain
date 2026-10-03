@@ -1,12 +1,5 @@
 ---
-tags:
-  [
-    type/concept,
-    topic/mental-models,
-    topic/polymathy,
-    topic/career,
-    status/permanent,
-  ]
+tags: [type/concept, status/permanent]
 date: 2026-10-01
 aliases:
   [

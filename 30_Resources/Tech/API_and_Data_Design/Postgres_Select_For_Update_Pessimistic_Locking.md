@@ -1,6 +1,6 @@
 ---
 title: Postgres SELECT FOR UPDATE (Pessimistic Locking)
-tags: [type/concept, topic/tech, layer/infrastructure, topic/database]
+tags: [type/concept, status/permanent]
 aliases: [SELECT FOR UPDATE, Row-Level Locking, Pessimistic Locking]
 date: 2026-06-08
 description: "Cơ chế Row-Level Exclusive Lock trong PostgreSQL chống tranh chấp đồng thời (TOCTOU / Race Condition)."

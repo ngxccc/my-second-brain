@@ -1,5 +1,5 @@
 ---
-tags: [type/concept, topic/architecture, topic/engineering, layer/architecture]
+tags: [type/concept, status/permanent]
 date: 2026-04-28
 aliases: [SDP, Stable Dependencies Principle, Circular Dependency]
 description: "Quy tắc mũi tên một chiều chống Circular Dependency."

@@ -1,13 +1,5 @@
 ---
-tags:
-  [
-    type/concept,
-    topic/backend,
-    topic/infrastructure,
-    topic/iot,
-    layer/core-mechanics,
-    status/permanent,
-  ]
+tags: [type/concept, status/permanent]
 aliases: [MQTT QoS Mechanics, MQTT Quality of Service, MQTT Delivery Guarantees]
 date: 2026-09-24
 description: "Nguyên lý tầng sâu của MQTT QoS: giải pháp The Two Generals' Problem, phân rã State Machine của QoS 0, QoS 1, QoS 2 (Two-Phase Commit Handshake), Inflight Window và cơ chế Idempotency."

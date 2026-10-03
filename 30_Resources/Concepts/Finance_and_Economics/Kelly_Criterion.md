@@ -1,5 +1,5 @@
 ---
-tags: [type/concept, topic/finance, topic/math]
+tags: [type/concept, status/permanent]
 date: 2026-06-23
 aliases: [Công thức Kelly, Kelly Criterion, Kelly Formula, Tỷ lệ Kelly]
 description: "Tối ưu hóa quy mô vị thế vốn trong đầu tư tài chính."

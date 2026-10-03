@@ -1,5 +1,5 @@
 ---
-tags: [type/concept, topic/health, topic/life]
+tags: [type/concept, status/permanent]
 date: 2026-06-24
 aliases:
   [

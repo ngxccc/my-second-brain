@@ -1,5 +1,5 @@
 ---
-tags: [type/concept, topic/git, topic/concepts, topic/dsa, layer/core-mechanics]
+tags: [type/concept, status/permanent]
 aliases:
   [
     Git Merge Base Algorithm,

@@ -1,6 +1,6 @@
 ---
 docType: area-index
-tags: [topic/documentation, topic/knowledge-management]
+tags: [type/concept, status/permanent]
 description: "Thư mục lưu trữ các file phác thảo Excalidraw, sơ đồ tư duy, và hình minh họa khái niệm kỹ thuật trong Second Brain."
 ---
 

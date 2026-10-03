@@ -1,5 +1,5 @@
 ---
-tags: [type/concept, topic/tech, layer/infrastructure]
+tags: [type/concept, status/permanent]
 date: 2026-07-27
 aliases:
   - Thuật toán Redis Redlock

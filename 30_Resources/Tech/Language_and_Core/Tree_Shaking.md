@@ -1,10 +1,5 @@
 ---
-tags:
-  - type/concept
-  - topic/javascript
-  - topic/typescript
-  - topic/frontend
-  - layer/core-mechanics
+tags: [type/concept, status/permanent]
 date: 2026-06-07
 aliases:
   - Tree Shaking

@@ -1,5 +1,5 @@
 ---
-tags: [type/concept, topic/backend, layer/architecture, topic/architecture]
+tags: [type/concept, status/permanent]
 date: 2026-02-08
 aliases: [N-Tier Architecture, Monolithic Architecture]
 description: "Kiến trúc N-Tier truyền thống chia theo Technical Concerns."

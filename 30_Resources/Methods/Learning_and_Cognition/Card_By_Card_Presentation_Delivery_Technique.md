@@ -1,5 +1,5 @@
 ---
-tags: [type/method, topic/english, topic/knowledge-management]
+tags: [type/method, status/permanent]
 date: 2026-08-04
 aliases:
   - Kỹ thuật thuyết trình 2 thẻ slide

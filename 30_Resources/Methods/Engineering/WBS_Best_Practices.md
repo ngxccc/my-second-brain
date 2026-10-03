@@ -1,5 +1,5 @@
 ---
-tags: [type/method, topic/project-management]
+tags: [type/method, status/permanent]
 date: 2026-06-24
 aliases: [Phương pháp phân rã công việc WBS, WBS Best Practices]
 description: "Phương pháp phân rã công việc WBS chuẩn PMBOK (PMI) và cách phân rã task cá nhân."

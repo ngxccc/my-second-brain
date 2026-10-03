@@ -1,5 +1,5 @@
 ---
-tags: [type/concept, topic/tech, topic/devops, layer/infrastructure]
+tags: [type/concept, status/permanent]
 aliases: [Monorepo, Turbo]
 description: "Công cụ xây dựng hiệu suất cao cho các dự án Monorepo sử dụng JavaScript/TypeScript."
 ---

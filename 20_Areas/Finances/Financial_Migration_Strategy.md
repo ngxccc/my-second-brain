@@ -1,5 +1,5 @@
 ---
-tags: [type/strategy, topic/finance, topic/personal-development]
+tags: [type/strategy, status/permanent]
 status: sapling
 created_at: Friday, January 30th 2026, 9:47:49 am +07:00
 updated_at: Friday, January 30th 2026, 9:49:47 am +07:00

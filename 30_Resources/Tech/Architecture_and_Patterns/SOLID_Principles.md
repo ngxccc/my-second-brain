@@ -1,5 +1,5 @@
 ---
-tags: [type/concept, topic/tech, layer/architecture]
+tags: [type/concept, status/permanent]
 aliases: [SOLID, 5 nguyên lý thiết kế hướng đối tượng, SOLID Principles]
 created_at: Saturday, May 23rd 2026, 7:35:12 pm +07:00
 updated_at: Saturday, May 23rd 2026, 7:35:12 pm +07:00

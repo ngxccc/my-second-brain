@@ -1,5 +1,5 @@
 ---
-tags: [type/method, topic/go, layer/quality]
+tags: [type/method, status/permanent]
 status: permanent
 date: 2026-08-14
 description: RFC for High-Performance UI Navigation and Asynchronous Storage Engine in Gorss

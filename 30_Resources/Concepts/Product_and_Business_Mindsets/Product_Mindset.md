@@ -1,5 +1,5 @@
 ---
-tags: [type/concept, topic/psychology, topic/product-management]
+tags: [type/concept, status/permanent]
 date: 2026-06-22
 aliases: [Product Mindset, Tư duy sản phẩm, Product-led Thinking]
 description: "Chuyển dịch trọng tâm từ hoàn thành dự án sang tối ưu hóa giá trị sản phẩm."

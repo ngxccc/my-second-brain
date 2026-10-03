@@ -1,5 +1,5 @@
 ---
-tags: [type/concept, topic/psychology, topic/mental-models, topic/finance]
+tags: [type/concept, status/permanent]
 date: 2026-08-07
 aliases:
   [

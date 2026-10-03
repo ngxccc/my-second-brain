@@ -1,5 +1,5 @@
 ---
-tags: [type/concept, topic/architecture, layer/architecture]
+tags: [type/concept, status/permanent]
 date: 2026-04-28
 aliases: [Module Facade, Boundary Interface]
 description: "Cổng giao tiếp an toàn giữa các module (Facade)."

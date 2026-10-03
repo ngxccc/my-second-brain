@@ -1,6 +1,5 @@
 ---
-tags:
-  [type/method, topic/workflow, topic/polymathy, topic/career, status/permanent]
+tags: [type/method, status/permanent]
 date: 2026-10-01
 aliases:
   [

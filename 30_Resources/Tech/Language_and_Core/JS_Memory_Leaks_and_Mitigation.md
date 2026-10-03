@@ -1,12 +1,5 @@
 ---
-tags:
-  [
-    type/concept,
-    topic/tech,
-    layer/core-mechanics,
-    topic/javascript,
-    topic/memory-management,
-  ]
+tags: [type/concept, status/permanent]
 aliases: [JS Memory Leaks, Memory Leaks Mitigation, Memory Leaks Backend]
 date: 2026-08-09
 description: "Các mô hình gây rò rỉ bộ nhớ (Memory Leaks) phổ biến trong JavaScript và phương pháp phòng ngừa."

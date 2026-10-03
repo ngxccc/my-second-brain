@@ -1,6 +1,6 @@
 ---
 title: Unified Fullstack Architecture vs Split Repository Architecture
-tags: [type/concept, topic/tech, topic/architecture, layer/architecture]
+tags: [type/concept, status/permanent]
 created: 2026-06-20
 description: "Phân tích so sánh chi tiết giữa mô hình Fullstack gộp (Next.js Monorepo) và mô hình chia tách repo Backend/Frontend."
 ---

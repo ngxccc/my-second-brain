@@ -1,5 +1,5 @@
 ---
-tags: [type/concept, topic/psychology, topic/decision-making]
+tags: [type/concept, status/permanent]
 date: 2026-01-30
 aliases: [Mental Models, Khuôn mẫu tư duy]
 description: "Các lăng kính lọc nhiễu thông tin."

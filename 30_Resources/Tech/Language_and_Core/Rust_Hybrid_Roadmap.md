@@ -1,5 +1,5 @@
 ---
-tags: [type/guide, topic/rust, topic/learning]
+tags: [type/guide, status/permanent]
 date: 2026-07-09
 aliases: [Rust Hybrid Roadmap, Lộ trình học Rust thực chiến]
 description: "Lộ trình học Rust thực chiến kết hợp hệ thống & an ninh mạng."

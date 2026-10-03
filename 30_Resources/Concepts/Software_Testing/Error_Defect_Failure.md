@@ -1,5 +1,5 @@
 ---
-tags: [type/concept, topic/testing, layer/quality]
+tags: [type/concept, status/permanent]
 date: 2026-07-07
 aliases: [Lỗi nhầm lẫn sự cố, Error Defect Failure]
 description: "Định nghĩa và chu kỳ lỗi nhầm lẫn, lỗi sai sót, và sự cố phần mềm theo chuẩn ISTQB."

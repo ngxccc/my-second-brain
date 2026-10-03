@@ -1,5 +1,5 @@
 ---
-tags: [type/concept, topic/knowledge-management]
+tags: [type/concept, status/permanent]
 date: 2026-04-29
 aliases: [MOC, Index Note, Bản đồ định hướng]
 description: "Nút giao thông điều hướng hệ thống."

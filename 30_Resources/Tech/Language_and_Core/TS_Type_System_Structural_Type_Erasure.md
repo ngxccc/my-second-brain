@@ -1,5 +1,5 @@
 ---
-tags: [type/concept, topic/typescript, topic/concepts, layer/core-mechanics]
+tags: [type/concept, status/permanent]
 aliases:
   [Structural Typing, Type Erasure, Type Guards, Type Predicates, Duck Typing]
 date: 2026-06-20

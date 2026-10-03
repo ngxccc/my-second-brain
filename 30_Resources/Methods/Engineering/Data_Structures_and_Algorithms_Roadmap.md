@@ -1,5 +1,5 @@
 ---
-tags: [type/method, topic/dsa, topic/learning]
+tags: [type/method, status/permanent]
 date: 2026-07-28
 aliases:
   [

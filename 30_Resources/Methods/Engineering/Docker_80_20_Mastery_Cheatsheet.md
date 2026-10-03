@@ -1,13 +1,5 @@
 ---
-tags:
-  [
-    type/method,
-    topic/docker,
-    topic/devops,
-    topic/linux,
-    layer/infrastructure,
-    status/permanent,
-  ]
+tags: [type/method, status/permanent]
 aliases:
   [
     Docker 80-20 Mastery Cheatsheet,

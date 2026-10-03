@@ -1,18 +1,5 @@
 ---
-tags:
-  [
-    type/guide,
-    type/strategy,
-    topic/backend,
-    topic/career,
-    topic/productivity,
-    topic/architecture,
-    topic/system-design,
-    layer/architecture,
-    layer/core-mechanics,
-    layer/infrastructure,
-    layer/quality,
-  ]
+tags: [type/guide, status/permanent]
 status: permanent
 date: 2026-08-16
 aliases:

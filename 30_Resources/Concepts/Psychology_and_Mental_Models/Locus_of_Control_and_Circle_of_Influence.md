@@ -1,12 +1,5 @@
 ---
-tags:
-  [
-    type/concept,
-    topic/psychology,
-    topic/decision-making,
-    topic/personal-development,
-    topic/mental-models,
-  ]
+tags: [type/concept, status/permanent]
 date: 2026-08-22
 aliases:
   [

@@ -1,5 +1,5 @@
 ---
-tags: [type/method, topic/health, topic/productivity]
+tags: [type/method, status/permanent]
 date: 2026-08-01
 aliases:
   [

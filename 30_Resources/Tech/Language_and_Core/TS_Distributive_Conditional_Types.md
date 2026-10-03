@@ -1,5 +1,5 @@
 ---
-tags: [type/concept, topic/typescript, layer/core-mechanics]
+tags: [type/concept, status/permanent]
 date: 2026-04-28
 aliases: [Distributive Conditionals, Disable Distribution]
 description: "Cơ chế tự động xé lẻ Union Type trong các biểu thức Generic của TypeScript."

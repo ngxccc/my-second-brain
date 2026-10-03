@@ -1,5 +1,5 @@
 ---
-tags: [type/concept, topic/tech, topic/database, layer/infrastructure]
+tags: [type/concept, status/permanent]
 date: 2026-06-07
 aliases:
   [RFC Caching Trending, Sorted Sets Redis Leaderboard, Realtime Ranking Cache]

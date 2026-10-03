@@ -1,5 +1,5 @@
 ---
-tags: [type/concept, topic/tech, topic/rendering]
+tags: [type/concept, status/permanent]
 aliases:
   [
     NextJS PPR Platform Support,

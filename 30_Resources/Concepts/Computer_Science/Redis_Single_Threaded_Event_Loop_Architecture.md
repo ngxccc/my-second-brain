@@ -1,13 +1,5 @@
 ---
-tags:
-  [
-    type/concept,
-    topic/backend,
-    topic/infrastructure,
-    topic/database,
-    layer/core-mechanics,
-    status/permanent,
-  ]
+tags: [type/concept, status/permanent]
 aliases:
   [
     Redis Event Loop Architecture,

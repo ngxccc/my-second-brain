@@ -1,5 +1,5 @@
 ---
-tags: [type/concept, topic/web, topic/seo]
+tags: [type/concept, status/permanent]
 date: 2026-07-07
 aliases: [SEO, Search Engine Optimization, Tối ưu hóa công cụ tìm kiếm]
 description: "Tối ưu hóa công cụ tìm kiếm (SEO) là tập hợp các kỹ thuật tối ưu hóa website để tăng thứ hạng tự nhiên trên trang kết quả tìm kiếm (SERPs). Mục tiêu là thu hút lượng truy cập tự nhiên (organic traf..."

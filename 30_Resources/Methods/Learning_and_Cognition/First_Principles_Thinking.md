@@ -1,5 +1,5 @@
 ---
-tags: [type/method, topic/decision-making, topic/mental-models]
+tags: [type/method, status/permanent]
 date: 2026-04-29
 aliases:
   [Reasoning from First Principles, Tư duy nguyên bản, Nguyên lý đầu tiên]

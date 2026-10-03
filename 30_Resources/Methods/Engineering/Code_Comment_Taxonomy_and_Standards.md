@@ -1,12 +1,5 @@
 ---
-tags:
-  [
-    type/method,
-    topic/engineering,
-    topic/programming/standards,
-    topic/documentation,
-    layer/architecture,
-  ]
+tags: [type/method, status/permanent]
 aliases:
   [Comment Taxonomy, Code Commenting Standards, Code Documentation Policy]
 date: 2026-08-21

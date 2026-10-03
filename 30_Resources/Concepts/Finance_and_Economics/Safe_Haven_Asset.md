@@ -1,5 +1,5 @@
 ---
-tags: [type/concept, topic/finance, topic/macro-economics]
+tags: [type/concept, status/permanent]
 date: 2026-01-30
 aliases: [Safe Haven, Tài sản trú ẩn, Vàng]
 description: "Bản chất của tài sản trú ẩn (Vàng)."

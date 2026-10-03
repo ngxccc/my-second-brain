@@ -1,12 +1,5 @@
 ---
-tags:
-  [
-    type/method,
-    topic/git,
-    topic/engineering,
-    topic/workflow,
-    layer/core-mechanics,
-  ]
+tags: [type/method, status/permanent]
 aliases:
   [
     Git Conflict and Three-Way Merge Mechanics,

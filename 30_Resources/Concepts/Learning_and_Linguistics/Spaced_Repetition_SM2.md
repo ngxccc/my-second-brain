@@ -1,5 +1,5 @@
 ---
-tags: [type/algorithm, topic/learning, topic/typescript]
+tags: [type/algorithm, status/permanent]
 date: 2026-04-29
 aliases: [SuperMemo 2, SRS, Forgetting Curve]
 description: "Thuật toán chống quên lãng bằng toán học."

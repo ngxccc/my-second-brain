@@ -1,6 +1,5 @@
 ---
-tags:
-  [type/concept, topic/backend, topic/database, topic/dsa, layer/architecture]
+tags: [type/concept, status/permanent]
 aliases:
   [
     N Plus One Query Optimization via In-Memory Hash Map,

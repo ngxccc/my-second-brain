@@ -1,5 +1,5 @@
 ---
-tags: [type/concept, topic/testing, layer/quality]
+tags: [type/concept, status/permanent]
 date: 2026-07-07
 aliases: [7 nguyên lý kiểm thử, Seven Principles of Testing]
 description: "7 nguyên lý kiểm thử phần mềm nền tảng định hình hoạt động kiểm định."

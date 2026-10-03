@@ -1,5 +1,5 @@
 ---
-tags: [type/concept, topic/tech, topic/security, layer/infrastructure]
+tags: [type/concept, status/permanent]
 date: 2026-07-09
 aliases:
   [Trust Proxy Express, Trust Proxy NestJS, X-Forwarded-For Configuration]

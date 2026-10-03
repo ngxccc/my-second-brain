@@ -1,6 +1,5 @@
 ---
-tags:
-  [type/concept, topic/backend, topic/concepts, topic/testing, layer/quality]
+tags: [type/concept, status/permanent]
 aliases:
   [
     Latency Percentiles and Throughput Fundamentals,

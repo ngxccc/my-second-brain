@@ -1,5 +1,5 @@
 ---
-tags: [type/concept, topic/finance, topic/economics]
+tags: [type/concept, status/permanent]
 date: 2026-01-30
 aliases: [Bid-Ask Spread, Bẫy thanh khoản, Paper Profit]
 description: "Rủi ro thanh khoản khi thị trường hoảng loạn."

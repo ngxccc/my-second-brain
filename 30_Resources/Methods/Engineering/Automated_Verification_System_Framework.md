@@ -1,5 +1,5 @@
 ---
-tags: [type/method, topic/engineering, topic/testing, layer/quality]
+tags: [type/method, status/permanent]
 date: 2026-08-12
 aliases:
   [

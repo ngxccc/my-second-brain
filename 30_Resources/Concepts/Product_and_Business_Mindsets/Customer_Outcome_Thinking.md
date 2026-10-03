@@ -1,5 +1,5 @@
 ---
-tags: [type/concept, topic/psychology, topic/product-management]
+tags: [type/concept, status/permanent]
 date: 2026-06-22
 aliases:
   [

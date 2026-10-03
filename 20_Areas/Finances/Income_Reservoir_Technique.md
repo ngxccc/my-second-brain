@@ -1,5 +1,5 @@
 ---
-tags: [type/technique, topic/finance, topic/freelance]
+tags: [type/technique, status/permanent]
 status: sapling
 created_at: Friday, January 30th 2026, 9:51:15 am +07:00
 updated_at: Friday, January 30th 2026, 9:51:59 am +07:00

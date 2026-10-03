@@ -1,5 +1,5 @@
 ---
-tags: [type/method, topic/psychology, topic/learning, topic/communication]
+tags: [type/method, status/permanent]
 date: 2026-07-27
 aliases:
   [

@@ -1,12 +1,5 @@
 ---
-tags:
-  [
-    type/method,
-    topic/english,
-    topic/linguistics,
-    topic/learning,
-    layer/core-mechanics,
-  ]
+tags: [type/method, status/permanent]
 date: 2026-10-03
 aliases:
   [

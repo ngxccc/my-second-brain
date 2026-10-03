@@ -81,7 +81,8 @@ async function getMarkdownFiles(dir) {
 			file.isFile() &&
 			file.name.endsWith(".md") &&
 			!file.name.includes("MOC") &&
-			!file.name.includes("Template")
+			!file.name.includes("Template") &&
+			!file.name.endsWith("README.md")
 		) {
 			const relative = path.relative(rootDir, res);
 			// Only include files in subfolders, skip root level notes/meta-files
@@ -166,9 +167,7 @@ async function validateFile(filePath) {
 				errors.push("'tags' is empty");
 			}
 
-			// Validate tags against Tag_Taxonomy_SSOT.md
-			const declared = await getDeclaredTags();
-			if (declared.size > 0 && frontmatter.tags) {
+			if (frontmatter.tags) {
 				let rawTagsList = [];
 				if (Array.isArray(frontmatter.tags)) {
 					rawTagsList = frontmatter.tags;
@@ -179,11 +178,20 @@ async function validateFile(filePath) {
 						.map((t) => t.trim())
 						.filter(Boolean);
 				}
+
+				// Lean taxonomy invariant: Maximum 2 tags (1 type, 1 optional status)
+				if (rawTagsList.length > 2) {
+					errors.push(
+						`Too many tags (${rawTagsList.length}). Maximum allowed is 2 tags (1 'type/*', 1 optional 'status/*') to prevent taxonomy bloat.`,
+					);
+				}
+
+				const declared = await getDeclaredTags();
 				for (const tagItem of rawTagsList) {
 					const cleanTag = tagItem.toLowerCase();
-					if (cleanTag && !declared.has(cleanTag)) {
-						warnings.push(
-							`Undeclared tag '${tagItem}' in frontmatter. Please declare it in 99_Meta/Tag_Taxonomy_SSOT.md`,
+					if (cleanTag && declared.size > 0 && !declared.has(cleanTag)) {
+						errors.push(
+							`Undeclared or disallowed tag '${tagItem}' in frontmatter. Please use only declared 'type/*' and 'status/*' tags from 99_Meta/Tag_Taxonomy_SSOT.md`,
 						);
 					}
 				}

@@ -1,5 +1,5 @@
 ---
-tags: [layer/core-mechanics, type/concept, topic/go, topic/memory-management]
+tags: [type/concept, status/permanent]
 date: 2026-08-06
 aliases:
   - Phân Biệt Mảng Và Slice Trong Go

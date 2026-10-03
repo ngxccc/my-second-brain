@@ -1,5 +1,5 @@
 ---
-tags: [type/method, topic/security, layer/infrastructure]
+tags: [type/method, status/permanent]
 date: 2026-07-09
 aliases:
   [Rate Limiting Strategies, DDoS Prevention, Defense in Depth Rate Limiting]

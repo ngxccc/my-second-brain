@@ -1,5 +1,5 @@
 ---
-tags: [type/method, topic/engineering, topic/productivity, layer/quality]
+tags: [type/method, status/permanent]
 aliases: [Quy trình Waterfall, Mô hình thác nước, Waterfall Model]
 date: 2026-07-08
 description: "Quy trình phát triển phần mềm theo mô hình thác nước (Waterfall) là phương pháp quản lý dự án tuyến tính và tuần tự. Trong đó, mỗi giai đoạn của vòng đời phát triển phần mềm (SDLC) phải được hoàn t..."

@@ -1,13 +1,5 @@
 ---
-tags:
-  [
-    type/method,
-    topic/backend,
-    topic/database,
-    topic/sql,
-    topic/career,
-    layer/infrastructure,
-  ]
+tags: [type/method, status/permanent]
 date: 2026-08-07
 aliases:
   [

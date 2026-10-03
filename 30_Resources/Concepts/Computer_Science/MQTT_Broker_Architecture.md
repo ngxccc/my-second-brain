@@ -1,13 +1,5 @@
 ---
-tags:
-  [
-    type/concept,
-    topic/backend,
-    topic/infrastructure,
-    topic/iot,
-    layer/infrastructure,
-    status/permanent,
-  ]
+tags: [type/concept, status/permanent]
 aliases:
   [
     MQTT Broker Architecture,

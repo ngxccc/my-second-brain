@@ -1,5 +1,5 @@
 ---
-tags: [type/concept, topic/javascript, topic/tech, layer/core-mechanics]
+tags: [type/concept, status/permanent]
 aliases: [Hidden Classes, Shapes, Inline Caching, JS Optimization]
 date: 2026-06-20
 description: "Trong JavaScript, các đối tượng (Objects) thực chất là các Hash Map động, khiến việc truy cập thuộc tính (property lookup) theo mặc định rất chậm do phải băm chuỗi. Để tối ưu hóa, các JS Engine hiệ..."

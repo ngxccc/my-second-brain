@@ -1,5 +1,5 @@
 ---
-tags: [type/concept, topic/tech, topic/frontend, layer/infrastructure]
+tags: [type/concept, status/permanent]
 date: 2026-06-20
 aliases:
   [RSC, React Server Components vs Client Components, RSC vs Client Components]

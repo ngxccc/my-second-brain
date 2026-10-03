@@ -1,5 +1,5 @@
 ---
-tags: [type/concept, topic/tech, topic/architecture, layer/architecture]
+tags: [type/concept, status/permanent]
 date: 2026-04-28
 aliases: [DI, Inversion of Control, IoC]
 description: "Kỹ thuật đảo ngược luồng điều khiển (IoC) để giảm tight-coupling và dễ test."

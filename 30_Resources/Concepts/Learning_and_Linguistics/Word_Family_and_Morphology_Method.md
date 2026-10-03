@@ -1,6 +1,5 @@
 ---
-tags:
-  [type/concept, topic/grammar, topic/linguistics, topic/knowledge-management]
+tags: [type/concept, status/permanent]
 date: 2026-08-06
 aliases:
   - Word Family Matrix & Morphemic Anchor Method

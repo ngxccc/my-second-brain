@@ -1,5 +1,5 @@
 ---
-tags: [type/method, topic/learning, topic/backend, topic/mental-models]
+tags: [type/method, status/permanent]
 date: 2026-09-13
 aliases:
   - Project-Anchored Technical Mastery

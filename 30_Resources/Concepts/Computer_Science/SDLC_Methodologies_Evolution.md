@@ -1,5 +1,5 @@
 ---
-tags: [type/concept, topic/engineering, topic/productivity, layer/quality]
+tags: [type/concept, status/permanent]
 aliases: [Lịch sử tiến hóa SDLC, Tiến trình phát triển SDLC, SDLC Evolution]
 date: 2026-07-08
 description: "Lịch sử phát triển các mô hình Vòng đời Phát triển Phần mềm (SDLC) là một tiến trình chuyển dịch từ các phương pháp lập kế hoạch tuyến tính, cứng nhắc (Plan-driven như Waterfall, V-Model) sang các ..."

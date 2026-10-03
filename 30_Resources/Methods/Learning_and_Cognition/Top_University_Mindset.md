@@ -1,5 +1,5 @@
 ---
-tags: [type/method, topic/learning, topic/psychology]
+tags: [type/method, status/permanent]
 aliases:
   [
     Tư duy trường top,

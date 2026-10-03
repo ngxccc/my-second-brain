@@ -1,5 +1,5 @@
 ---
-tags: [type/concept, topic/git, topic/concepts, layer/core-mechanics]
+tags: [type/concept, status/permanent]
 aliases:
   [
     Git DAG and Object Storage Model,

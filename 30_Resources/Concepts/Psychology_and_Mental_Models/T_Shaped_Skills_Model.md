@@ -1,5 +1,5 @@
 ---
-tags: [type/concept, topic/productivity, topic/career]
+tags: [type/concept, status/permanent]
 date: 2026-08-09
 aliases: [Mô hình kỹ năng chữ T, Skill Stacking Strategy, T-Shaped Polymath]
 description: "Mô hình Kỹ năng Chữ T (T-Shaped Skills Model) và Chiến lược Xếp chồng Kỹ năng (Skill Stacking) là phương pháp phát triển sự nghiệp tối ưu cho kỷ nguyên hiện đại. Bằng cách kết hợp một chuyên môn sâ..."

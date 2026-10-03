@@ -1,6 +1,5 @@
 ---
-tags:
-  [type/concept, topic/concepts, layer/core-mechanics, topic/memory-management]
+tags: [type/concept, status/permanent]
 aliases:
   [Garbage Collection Fundamentals, Cơ chế Dọn rác Bộ nhớ Gốc, GC Fundamentals]
 date: 2026-08-09

@@ -1,12 +1,5 @@
 ---
-tags:
-  [
-    type/concept,
-    topic/backend,
-    topic/concepts,
-    topic/architecture,
-    layer/architecture,
-  ]
+tags: [type/concept, status/permanent]
 aliases:
   [
     Finite State Machine and Concurrency Guard,

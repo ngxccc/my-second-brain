@@ -1,5 +1,5 @@
 ---
-tags: [type/concept, topic/tech]
+tags: [type/concept, status/permanent]
 date: 2026-06-07
 aliases:
   [

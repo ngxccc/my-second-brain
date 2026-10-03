@@ -1,10 +1,5 @@
 ---
-tags:
-  - type/concept
-  - topic/database
-  - topic/sql
-  - topic/security
-  - layer/core-mechanics
+tags: [type/concept, status/permanent]
 date: 2026-06-07
 aliases:
   - Prepare Statements in DB

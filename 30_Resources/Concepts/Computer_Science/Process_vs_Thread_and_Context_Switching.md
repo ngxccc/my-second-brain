@@ -1,12 +1,5 @@
 ---
-tags:
-  [
-    type/concept,
-    topic/backend,
-    topic/concepts,
-    topic/memory-management,
-    layer/core-mechanics,
-  ]
+tags: [type/concept, status/permanent]
 aliases:
   [
     Process vs Thread and Context Switching,

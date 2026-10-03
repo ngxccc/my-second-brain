@@ -1,12 +1,5 @@
 ---
-tags:
-  [
-    type/concept,
-    topic/testing,
-    topic/engineering,
-    topic/memory-management,
-    layer/core-mechanics,
-  ]
+tags: [type/concept, status/permanent]
 date: 2026-08-28
 aliases:
   [

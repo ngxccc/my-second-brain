@@ -1,5 +1,5 @@
 ---
-tags: [type/method, topic/english, topic/toeic, topic/self-study]
+tags: [type/method, status/permanent]
 date: 2026-08-04
 aliases:
   - Lộ trình tự học TOEIC 0 đến 900

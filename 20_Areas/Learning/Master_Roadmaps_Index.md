@@ -1,12 +1,5 @@
 ---
-tags:
-  [
-    type/moc,
-    topic/learning,
-    topic/engineering,
-    topic/career,
-    topic/knowledge-management,
-  ]
+tags: [type/concept, status/permanent]
 date: 2026-10-03
 aliases:
   [

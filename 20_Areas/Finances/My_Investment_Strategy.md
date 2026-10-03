@@ -1,5 +1,5 @@
 ---
-tags: [type/strategy, topic/finance, topic/personal-rules]
+tags: [type/strategy, status/permanent]
 status: active
 created_at: Friday, January 30th 2026, 9:17:00 am +07:00
 updated_at: Friday, January 30th 2026, 11:04:30 am +07:00

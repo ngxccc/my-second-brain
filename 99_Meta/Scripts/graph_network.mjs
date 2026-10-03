@@ -75,6 +75,9 @@ function classifyDomain(relPath, tags = []) {
 	if (
 		lowerPath.includes("learning_and_linguistics") ||
 		lowerPath.includes("english") ||
+		lowerPath.includes("toeic") ||
+		lowerPath.includes("ielts") ||
+		lowerPath.includes("presentation_delivery") ||
 		tags.some(
 			(t) =>
 				t.includes("topic/english") ||

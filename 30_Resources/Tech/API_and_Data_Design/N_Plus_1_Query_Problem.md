@@ -1,5 +1,5 @@
 ---
-tags: [type/concept, topic/tech, topic/database, layer/infrastructure]
+tags: [type/concept, status/permanent]
 date: 2026-07-31
 aliases: [Vấn đề truy vấn N+1, N+1 Query Problem, Solution for N+1 Selects]
 description: "N+1 Query Problem là sự cố hiệu năng phổ biến khi làm việc với ORM (Object-Relational Mapping), xảy ra khi ứng dụng thực thi $1$ câu truy vấn ban đầu để lấy danh sách $N$ bản ghi cha, sau đó tiếp t..."

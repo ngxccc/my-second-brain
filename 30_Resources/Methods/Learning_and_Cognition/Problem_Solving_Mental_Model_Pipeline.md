@@ -1,5 +1,5 @@
 ---
-tags: [type/method, topic/psychology, topic/decision-making]
+tags: [type/method, status/permanent]
 date: 2026-08-07
 aliases:
   [

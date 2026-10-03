@@ -1,5 +1,5 @@
 ---
-tags: [type/concept, topic/tech, topic/frontend]
+tags: [type/concept, status/permanent]
 date: 2026-07-10
 aliases: [React State, Trạng thái trong React]
 description: "Trạng thái nội bộ của component, quản lý dữ liệu động thay đổi theo thời gian."

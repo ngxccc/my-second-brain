@@ -1,5 +1,5 @@
 ---
-tags: [type/method, topic/engineering, topic/productivity, layer/quality]
+tags: [type/method, status/permanent]
 aliases: [Quy trình Agile Scrum, Agile Scrum Process]
 date: 2026-06-23
 description: "Quy trình quản lý và phát triển phần mềm linh hoạt thông qua các chu kỳ ngắn (Sprints) và cải tiến quy trình liên tục."

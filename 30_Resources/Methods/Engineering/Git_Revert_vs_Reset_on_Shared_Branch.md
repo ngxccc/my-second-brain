@@ -1,5 +1,5 @@
 ---
-tags: [type/method, topic/git, topic/workflow, layer/core-mechanics]
+tags: [type/method, status/permanent]
 aliases:
   [
     Git Revert vs Reset on Shared Branch,

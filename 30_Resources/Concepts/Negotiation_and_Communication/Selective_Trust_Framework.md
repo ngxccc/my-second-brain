@@ -1,5 +1,5 @@
 ---
-tags: [type/concept, topic/psychology, topic/mental-models, topic/communication]
+tags: [type/concept, status/permanent]
 date: 2026-07-31
 aliases:
   [

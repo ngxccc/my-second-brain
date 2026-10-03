@@ -1,6 +1,5 @@
 ---
-tags:
-  [type/concept, topic/concepts, layer/core-mechanics, topic/memory-management]
+tags: [type/concept, status/permanent]
 aliases:
   - Dynamic Array Exponential Growth
   - Thuật Toán Tăng Trưởng Lũy Thừa Mảng Động

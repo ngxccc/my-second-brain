@@ -1,5 +1,5 @@
 ---
-tags: [type/method, topic/engineering, topic/productivity, layer/quality]
+tags: [type/method, status/permanent]
 aliases: [Quy trình V-Model, Mô hình chữ V, V-Model]
 date: 2026-07-08
 description: "Mô hình V-Model (mô hình chữ V) là bản mở rộng kỷ luật của mô hình thác nước (Waterfall), trong đó mỗi giai đoạn phát triển (Verification) đều đi kèm với một giai đoạn kiểm thử tương ứng (Validatio..."

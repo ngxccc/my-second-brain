@@ -1,5 +1,5 @@
 ---
-tags: [type/method, topic/engineering, topic/productivity, layer/quality]
+tags: [type/method, status/permanent]
 aliases: [Quy trình bản mẫu, Mô hình bản mẫu, Prototype Model, Prototyping]
 date: 2026-07-08
 description: "Quy trình phát triển phần mềm theo mô hình bản mẫu (Prototype Model) là phương pháp xây dựng một phiên bản thử nghiệm sớm (prototype) của sản phẩm để trình diễn, thu thập phản hồi và làm rõ yêu cầu..."

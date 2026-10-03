@@ -1,13 +1,5 @@
 ---
-tags:
-  [
-    type/method,
-    topic/devops,
-    topic/infrastructure,
-    topic/backend,
-    layer/core-mechanics,
-    layer/infrastructure,
-  ]
+tags: [type/method, status/permanent]
 date: 2026-08-22
 aliases:
   [

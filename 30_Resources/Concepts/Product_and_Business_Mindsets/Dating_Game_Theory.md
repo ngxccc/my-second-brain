@@ -1,5 +1,5 @@
 ---
-tags: [type/concept, topic/mental-models, topic/game-theory, status/permanent]
+tags: [type/concept, status/permanent]
 date: 2026-07-25
 aliases: [Lý thuyết trò chơi trong Hẹn hò, Dating Game Theory, The Dating Game]
 description: "Lý thuyết trò chơi trong Hẹn hò (Dating Game Theory) giải thích thị trường tìm kiếm bạn đời thông qua mô hình 3 yếu tố: Người chơi (Players), Ràng buộc (Rules/Constraints) và Động cơ (Incentives). ..."

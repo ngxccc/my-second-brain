@@ -1,13 +1,5 @@
 ---
-tags:
-  [
-    type/concept,
-    topic/tech,
-    topic/frontend,
-    topic/infrastructure,
-    topic/backend,
-    layer/infrastructure,
-  ]
+tags: [type/concept, status/permanent]
 aliases: [Next.js after(), next/server after(), after()]
 description: "Cơ chế lập lịch tác vụ nền không chặn (non-blocking) sau khi response đã được gửi về client."
 ---

@@ -1,7 +1,6 @@
 ---
 title: Postgres MVCC Tuple Visibility
-tags:
-  [type/concept, topic/backend, topic/database, topic/sql, layer/core-mechanics]
+tags: [type/concept, status/permanent]
 aliases:
   [
     MVCC,

@@ -1,5 +1,5 @@
 ---
-tags: [type/concept, topic/security, topic/frontend, layer/infrastructure]
+tags: [type/concept, status/permanent]
 date: 2026-01-29
 aliases: [AES Encryption, Secure Local Storage]
 description: "Mã hóa LocalStorage/IndexedDB bằng thuật toán AES."

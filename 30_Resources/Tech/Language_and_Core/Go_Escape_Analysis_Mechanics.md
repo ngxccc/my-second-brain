@@ -1,5 +1,5 @@
 ---
-tags: [layer/core-mechanics, type/concept, topic/go, topic/memory-management]
+tags: [type/concept, status/permanent]
 date: 2026-08-05
 aliases:
   - Bản Chất Escape Analysis Trong Go

@@ -1,5 +1,5 @@
 ---
-tags: [type/concept, topic/tech, layer/architecture]
+tags: [type/concept, status/permanent]
 aliases: [CA, Kiến trúc sạch, Clean Architecture]
 created_at: Saturday, May 23rd 2026, 7:37:45 pm +07:00
 updated_at: Saturday, May 23rd 2026, 7:37:45 pm +07:00
