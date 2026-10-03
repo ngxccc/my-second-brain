@@ -1,0 +1,37 @@
+name: Vault Quality Gates
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v7
+
+      - name: Setup Bun Environment
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+
+      - name: Install Tooling
+        run: bun install --frozen-lockfile || bun install
+
+      - name: Code Linting
+        run: bun run lint
+
+      - name: Code Formatting Check
+        run: bun run fmt
+
+      - name: Validate Atomic Notes
+        run: bun run validate:notes
+
+      - name: Validate Flashcards
+        run: bun run validate:flashcards
+
+      - name: Validate Graph Network
+        run: bun run validate:graph

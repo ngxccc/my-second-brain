@@ -1,0 +1,30 @@
+{
+  "$schema": "./node_modules/oxlint/configuration_schema.json",
+  "plugins": [
+    "typescript",
+    "unicorn",
+    "oxc"
+  ],
+  "categories": {
+    "correctness": "error"
+  },
+  "rules": {
+    "no-unused-vars": "warn"
+  },
+  "env": {
+    "builtin": true,
+    "node": true
+  },
+  "ignorePatterns": [
+    ".git",
+    ".obsidian",
+    "node_modules",
+    "50_Flashcards",
+    "30_Resources",
+    "20_Areas",
+    "10_Projects",
+    "00_Inbox",
+    "40_Archives",
+    ".trash"
+  ]
+}

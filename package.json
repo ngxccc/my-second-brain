@@ -1,0 +1,19 @@
+{
+  "name": "my-second-brain",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "lint": "oxlint 99_Meta/Scripts",
+    "fmt": "oxfmt --check 99_Meta/Scripts",
+    "fmt:write": "oxfmt 99_Meta/Scripts",
+    "validate:notes": "bun 99_Meta/Scripts/validate_notes.mjs",
+    "validate:flashcards": "bun 99_Meta/Scripts/validate-flashcards.mjs",
+    "validate:graph": "bun 99_Meta/Scripts/graph_network.mjs validate",
+    "validate:all": "bun run validate:notes && bun run validate:flashcards && bun run validate:graph"
+  },
+  "devDependencies": {
+    "oxfmt": "^0.71.0",
+    "oxlint": "^1.86.0"
+  }
+}
