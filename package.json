@@ -5,8 +5,7 @@
   "type": "module",
   "scripts": {
     "lint": "oxlint 99_Meta/Scripts",
-    "fmt": "oxfmt --check 99_Meta/Scripts",
-    "fmt:write": "oxfmt --write 99_Meta/Scripts",
+    "fmt": "oxfmt --write 99_Meta/Scripts",
     "validate:notes": "bun 99_Meta/Scripts/validate_notes.mjs",
     "validate:flashcards": "bun 99_Meta/Scripts/validate-flashcards.mjs",
     "validate:graph": "bun 99_Meta/Scripts/graph_network.mjs validate",

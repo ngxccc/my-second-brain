@@ -21,10 +21,10 @@ jobs:
       - name: Install Tooling
         run: bun install --frozen-lockfile || bun install
 
-      - name: Code Linting
+      - name: Lint Code with oxlint
         run: bun run lint
 
-      - name: Code Formatting Check
+      - name: Format Code with oxfmt
         run: bun run fmt
 
       - name: Validate Atomic Notes
