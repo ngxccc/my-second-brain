@@ -12,11 +12,16 @@ const targetDest = process.argv[2]
 const publicDataDest = process.argv[3]
 	? path.resolve(process.argv[3])
 	: path.resolve(vaultRoot, "../../20-projects/ngxccc.github.io/public/data");
+const publicAssetsDest = path.resolve(
+	vaultRoot,
+	"../../20-projects/ngxccc.github.io/public/assets",
+);
 
 console.log(`=== Exporting Public Notes from Second Brain ===`);
 console.log(`Source Vault: ${vaultRoot}`);
 console.log(`Target Content Dir: ${targetDest}`);
 console.log(`Target Public Data Dir: ${publicDataDest}`);
+console.log(`Target Public Assets Dir: ${publicAssetsDest}`);
 
 // 1. Chỉ xuất 30_Resources (Loại trừ toàn bộ 20_Areas/Finances, Health, Daily_Logs, 10_Projects)
 const allowedSourceDirs = [
@@ -77,19 +82,38 @@ function parseFrontmatterAndBody(fileContent) {
 	return { meta, body };
 }
 
+// Ensure target directories exist
 await fs.mkdir(targetDest, { recursive: true });
 await fs.mkdir(publicDataDest, { recursive: true });
+await fs.mkdir(publicAssetsDest, { recursive: true });
 
-// Clean previous notes
+// Sao chép toàn bộ file media / diagram từ 30_Resources/Excalidraw sang public/assets/
+const excalidrawDir = path.join(vaultRoot, "30_Resources/Excalidraw");
 try {
-	const existing = await fs.readdir(targetDest);
-	for (const file of existing) {
-		if (file.endsWith(".md") || file.endsWith(".mdx")) {
-			await fs.unlink(path.join(targetDest, file));
+	const excalidrawEntries = await fs.readdir(excalidrawDir, {
+		withFileTypes: true,
+	});
+	for (const entry of excalidrawEntries) {
+		if (entry.isFile() && /\.(svg|png|jpg|jpeg|webp|gif)$/i.test(entry.name)) {
+			const srcPath = path.join(excalidrawDir, entry.name);
+			const dstPath = path.join(publicAssetsDest, entry.name);
+			await fs.copyFile(srcPath, dstPath);
 		}
 	}
 } catch {
-	// targetDest might not exist yet
+	// Ignore if Excalidraw dir does not exist
+}
+
+// Xóa sạch thư mục notes đích để loại bỏ các note cũ bị xóa
+try {
+	const existingDestFiles = await fs.readdir(targetDest);
+	for (const f of existingDestFiles) {
+		if (f.endsWith(".md")) {
+			await fs.unlink(path.join(targetDest, f));
+		}
+	}
+} catch {
+	// Ignore
 }
 
 const allFiles = [];
@@ -130,7 +154,11 @@ for (const filePath of allFiles) {
 	const links = [];
 	for (const match of wikilinkMatches) {
 		const rawTarget = match[1].split("|")[0].split("#")[0].trim();
-		if (rawTarget && rawTarget !== baseName) {
+		if (
+			rawTarget &&
+			rawTarget !== baseName &&
+			!/\.(svg|png|jpg|jpeg|webp|gif)$/i.test(rawTarget)
+		) {
 			links.push(rawTarget);
 		}
 	}
@@ -169,7 +197,20 @@ for (const filePath of allFiles) {
 	].join("\n");
 
 	// Thay dataviewjs bằng javascript để Shiki parse đúng chuẩn
-	const sanitizedBody = body.replace(/```dataviewjs/g, "```javascript");
+	let sanitizedBody = body.replace(/```dataviewjs/g, "```javascript");
+
+	// Chuyển đổi nhúng ảnh Obsidian ![[path/to/image.ext]] hoặc ![[image.ext]] sang thẻ markdown chuẩn ![alt](/assets/image.ext)
+	sanitizedBody = sanitizedBody.replace(
+		/!\[\[(.*?\.(?:svg|png|jpg|jpeg|webp|gif))(?:\s*\|\s*([^\]]*))?\]\]/gi,
+		(_match, imgPath, alt) => {
+			const fileName = path.basename(imgPath);
+			const altText = alt ? alt.trim() : fileName;
+			return `![${altText}](/assets/${fileName})`;
+		},
+	);
+
+	// Loại bỏ H1 trùng lặp ở đầu bài viết vì NoteLayout đã render header h1 chuẩn terminal
+	sanitizedBody = sanitizedBody.replace(/^#\s+[^\r\n]+(?:\r?\n)+/, "");
 
 	const exportFileContent = newYaml + sanitizedBody;
 	const destPath = path.join(targetDest, `${baseName}.md`);
@@ -207,7 +248,6 @@ await fs.writeFile(
 	"utf8",
 );
 
-console.log(`✓ Exported ${exportedCount} notes to ${targetDest}`);
 console.log(
-	`✓ Exported graph data (${graphNodes.length} nodes, ${graphLinks.length} links) to notes_graph.json`,
+	`Successfully exported ${exportedCount} notes to Astro and generated notes_graph.json with ${graphNodes.length} nodes and ${graphLinks.length} links.`,
 );
