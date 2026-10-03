@@ -168,7 +168,10 @@ for (const filePath of allFiles) {
 		"",
 	].join("\n");
 
-	const exportFileContent = newYaml + body;
+	// Thay dataviewjs bằng javascript để Shiki parse đúng chuẩn
+	const sanitizedBody = body.replace(/```dataviewjs/g, "```javascript");
+
+	const exportFileContent = newYaml + sanitizedBody;
 	const destPath = path.join(targetDest, `${baseName}.md`);
 	await fs.writeFile(destPath, exportFileContent, "utf8");
 	exportedCount++;
