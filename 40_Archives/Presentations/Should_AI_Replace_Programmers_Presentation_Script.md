@@ -1,44 +1,46 @@
 # Presentation Script: Should AI Replace Human Programmers?
 
-> **Target Standard**: Stage-ready College / Conference Presentation Script (17 Atomic Slides).
+> **Target Standard**: Stage-ready College / Conference Presentation Script.
 > **Tone & Style**: Plain English, conversational, crisp, developer-friendly. Zero academic jargon or filler.
 > **Pacing Markers**: `//` indicates a natural breath pause; `[PAUSE]` marks an intentional pause for key points to sink in.
 
 ---
 
-## Slide Scripts (Full 17 Slides)
+## Slide Scripts
 
 ### Slide 1: Cover Slide
 
+- **Speaker**: Trần Văn Ngọc
 - **Slide Title**: Should AI Replace Human Programmers?
 - **Subtitle**: Empirical evidence from Stanford, METR, and 153 million lines of production code
 - **Metadata**: Instructor: Ms. Đào Thị Yến Thu | Team: Ngọc, Linh, Bảo, Quân, Đương, Tài, Lam, Nghĩa
 
-#### Presenter Script (English)
+#### Presenter Script
 
 > _"Good morning Ms. Thu // and everyone. [PAUSE]_
 >
-> _Today, // our team explores one of the most defining questions in computer science: // 'Should AI replace human programmers?' [PAUSE]_
+> _I am Văn Ngọc, // and on behalf of our team—including Hoài Linh, // Gia Bảo, // Minh Quân, // Quốc Đương, // Minh Tài, // Duy Lam, // and Thế Nghĩa—// we are excited to explore one of the most defining debates in modern computing: // 'Should AI replace human programmers?' [PAUSE]_
 >
-> _Instead of speculating on hype or headlines, // our presentation brings real empirical evidence // from Stanford University, // METR randomized trials, // and over 153 million lines of production code."_
+> _Instead of speculating on commercial hype or alarmist headlines, // our presentation brings concrete empirical findings // from Stanford University, // METR randomized trials, // and over 153 million lines of production code."_
 
 #### Slide Transition Script
 
 > _"Let's look at our roadmap for today's session."_
 
-#### Vietnamese Note / Vietsub
+#### Vietsub
 
-> _Chào cô và các bạn. Hôm nay nhóm chúng em sẽ cùng mọi người giải đáp câu hỏi đang được thảo luận sôi nổi nhất: Liệu AI có nên thay thế lập trình viên con người? Bài thuyết trình không dựa trên phỏng đoán cảm tính, mà đưa ra bằng chứng thực nghiệm khách quan từ Đại học Stanford, thử nghiệm đối chứng của METR và phân tích trên 153 triệu dòng code thực tế._
+> _Kính chào cô Thu và toàn thể các bạn. Em là Văn Ngọc, và đại diện cho nhóm gồm 8 thành viên: em, bạn Hoài Linh, Gia Bảo, Minh Quân, Quốc Đương, Minh Tài, Duy Lam và Thế Nghĩa—chúng em xin phép được cùng mọi người làm rõ chủ đề đang thu hút nhiều sự quan tâm nhất hiện nay: Liệu AI có nên thay thế lập trình viên con người? Bài thuyết trình hôm nay hoàn toàn không dựa trên cảm tính hay lời đồn thổi truyền thông, mà đối chiếu trực tiếp các số liệu thực nghiệm khoa học từ Đại học Stanford, thử nghiệm của viện METR và phân tích trên hơn 153 triệu dòng code thực tế._
 
 ---
 
 ### Slide 2: Agenda (Track 01 Highlight)
 
+- **Speaker**: Trần Văn Ngọc
 - **Slide Title**: What we'll cover
 - **Active Section**: `[01] The Big Claims` (Will programmers go extinct?)
 - **Roadmap**: 01 The Big Claims | 02 The Hidden Cost | 03 The Real Superpower | 04 The Winning Formula
 
-#### Presenter Script (English)
+#### Presenter Script
 
 > _"Here is our plan for today. [PAUSE]_
 >
@@ -48,7 +50,7 @@
 
 > _"Let's begin by looking at the bold claims that shook the industry."_
 
-#### Vietnamese Note / Vietsub
+#### Vietsub
 
 > _Đây là 4 phần chính của bài thuyết trình. Chúng em bắt đầu với Phần 1: 'The Big Claims' - Đối chiếu những tuyên bố gây sốc của các lãnh đạo công nghệ với số liệu đo lường thực tế trên lập trình viên._
 
@@ -56,13 +58,15 @@
 
 ### Slide 3: Extreme Predictions from Tech Leaders
 
+- **Speaker**: Trần Văn Ngọc
 - **Slide Title**: Extreme Predictions from Tech Leaders
 - **Subtitle**: The death of human coding became the dominant tech narrative in 2024
+- **Visuals**: Chân dung & Trích dẫn phát biểu của 2 CEO Big Tech
 - **Key Quotes**:
   - Jensen Huang (CEO Nvidia): _"Kids shouldn't learn to code. It's our job to create computers so nobody has to program."_
   - Matt Garman (CEO AWS): _"In 24 months, most developers will not be coding."_
 
-#### Presenter Script (English)
+#### Presenter Script
 
 > _"Throughout 2024, // tech leaders made dramatic predictions about the death of human programming. [PAUSE]_
 >
@@ -72,313 +76,365 @@
 >
 > _These bold statements made many people believe human programmers would become obsolete almost overnight. // But what happens when researchers actually put developer productivity to the test?"_
 
-#### Slide Transition Script
+#### Slide Transition Script (Hand-off to Hoài Linh)
 
-> _"Let's examine the landmark controlled experiment from METR."_
+> _"To test whether these claims survive scientific scrutiny, // I invite Hoài Linh to walk us through the landmark METR trial."_
 
-#### Vietnamese Note / Vietsub
+#### Vietsub
 
-> _Năm 2024, các lãnh đạo công nghệ vẽ nên viễn cảnh lập trình viên con người sắp tuyệt chủng: CEO Nvidia nói trẻ em không cần học code nữa, CEO AWS tuyên bố hầu hết lập trình viên sẽ không còn gõ code trong 24 tháng tới. Nhưng khi kiểm chứng bằng thử nghiệm khoa học, thực tế hoàn toàn khác._
+> _Năm 2024, các lãnh đạo công nghệ vẽ nên viễn cảnh lập trình viên con người sắp tuyệt chủng: CEO Nvidia nói trẻ em không cần học code nữa, CEO AWS tuyên bố hầu hết lập trình viên sẽ không còn gõ code trong 24 tháng tới. Nhưng khi kiểm chứng bằng thử nghiệm khoa học, thực tế hoàn toàn khác. Để xem các số liệu đo lường thực tế, xin mời bạn Hoài Linh trình bày thử nghiệm METR._
 
 ---
 
 ### Slide 4: METR Randomized Controlled Trial: 2025 vs 2026
 
+- **Speaker**: Nguyễn Hoài Linh
 - **Slide Title**: METR Randomized Controlled Trial: 2025 vs 2026
-- **Visuals**: Sơ đồ thử nghiệm 57 lập trình viên (`METR_Study_Design_2026.png`) + Biểu đồ thời gian METR
+- **Visuals**: Sơ đồ thử nghiệm (`METR_Study_Design_2026.png`) + Biểu đồ tốc độ 3 cột (`METR_Speed_Impact_Slide4.png`)
+- **Visual Walkthrough**:
+  - Đường kẻ giữa: Mốc 0% lập trình thủ công bằng tay (Human baseline).
+  - Cột đỏ (trái): -19% SLOWER (Đầu năm 2025, Cursor & Claude 3.5 làm chậm tiến độ).
+  - Cột xanh lá (giữa): +18% FASTER (Cuối 2025 - 2026, Autonomous Agents đảo ngược thế cờ).
+  - Cột xanh teal (phải): +4% FASTER (Nhóm mới, bị kéo giảm bởi thiên lệch chọn lọc).
+  - Hộp ghi chú đáy: 'The Uber Effect' — 30% đến 50% dev từ chối làm bài nếu cấm AI.
 - **Key Finding**: AI makes developers 18% faster today, but creates heavy cognitive dependency ('The Uber Effect').
 - **Source**: METR RCT Study (arXiv:2507.09089) & 2026 Follow-up Update (metr.org, Feb 2026)
 
-#### Presenter Script (English)
+#### Presenter Script
 
-> _"To test these claims, // researchers at METR ran randomized controlled trials on experienced open-source engineers. [PAUSE]_
+> _"To test whether AI truly replaces programmers, // researchers at METR ran randomized controlled trials on senior open-source engineers across large repositories. [PAUSE]_
 >
-> _In early 2025, // developers using AI were actually 19% SLOWER on large codebases. // Why? // Because reading, verifying, and debugging subtle bugs took more cognitive effort than writing clean code directly. [PAUSE]_
+> _Look at the three bars on this chart: // the black line in the middle is our human baseline—zero percent, completing tasks completely by hand. [PAUSE]_
 >
-> _By 2026, // newer agentic tools improved, // giving engineers an 18% speedup. [PAUSE]_
+> _The first red bar represents early 2025: // developers using AI assistants like Cursor and Claude 3.5 were actually **19% SLOWER**. // Why does the bar point down? // Because engineers spent more time reading prompt outputs and debugging subtle AI mistakes than writing clean code directly. [PAUSE]_
 >
-> _YET, // researchers discovered a serious side effect: // 'The Uber Effect'. // Between 30 and 50% of developers refused to finish difficult tasks if AI was disallowed, // comparing manual coding to being forced to walk across the city after getting used to Uber. // When developers become this dependent on AI, // what happens to code quality?"_
+> _Now look at the middle green bar: // in late 2025 and 2026, // newer autonomous agents reversed the gap, // making experienced engineers **18% FASTER**. // The third bar shows new participants gained **4% speedup**, // though damped by selection bias. [PAUSE]_
+>
+> _BUT look at the footnote at the bottom: // researchers discovered a psychological trap called **'The Uber Effect'**. // Between 30 and 50% of engineers refused to work if AI was turned off, // saying manual coding felt like being forced to walk across the city after getting used to Uber! // When developers become this addicted to AI, // what happens to code quality?"_
 
 #### Slide Transition Script
 
 > _"That brings us directly to Part 2: // The Hidden Cost."_
 
-#### Vietnamese Note / Vietsub
+#### Vietsub
 
-> _Viện nghiên cứu METR đã đo giờ thực tế trên các lập trình viên. Đầu năm 2025, dev dùng AI bị chậm đi 19% vì tốn quá nhiều thời gian đọc và sửa lỗi ngầm. Đến đầu năm 2026, công cụ mới giúp dev nhanh hơn 18%, nhưng lại sinh ra 'Hiệu ứng Uber': phân nửa lập trình viên từ chối làm bài nếu bị cấm dùng AI, vì quen ỷ lại nên ngại tư duy thủ công. Vậy khi dev quá phụ thuộc vào AI, chất lượng code sẽ ra sao?_
+> _Để kiểm chứng AI có thay thế được dev không, Viện METR đã đo giờ thực nghiệm trên các kỹ sư kỳ cựu với dự án lớn. Nhìn vào biểu đồ 3 cột này: đường kẻ đen ở giữa là mốc lập trình thủ công (0%). Cột màu đỏ đầu tiên đầu năm 2025 cắm xuống âm 19%: dev dùng AI bị CHẬM HƠN 19% vì mất quá nhiều thời gian đọc code AI sinh ra và đi sửa lỗi vặt. Sang năm 2026 ở cột xanh lá giữa, các agent tự động mới giúp dev NHANH HƠN 18%, và nhóm mới nhanh hơn 4%. Nhưng nhìn vào dòng ghi chú bên dưới: các nhà nghiên cứu phát hiện ra 'Hiệu ứng Uber'. 30% đến 50% dev từ chối làm bài nếu bị cấm dùng AI, vì quen ỷ lại, cảm giác như đã quen đi xe công nghệ mà bắt đi bộ qua thành phố! Vậy khi dev phụ thuộc vào AI đến mức này, chất lượng code sẽ ra sao?_
 
 ---
 
 ### Slide 5: Agenda (Track 02 Highlight)
 
+- **Speaker**: Nguyễn Hoài Linh
 - **Slide Title**: What we'll cover
 - **Active Section**: `[02] The Hidden Cost` (Bugs, security, and rework)
 - **Roadmap**: 01 The Big Claims | 02 The Hidden Cost | 03 The Real Superpower | 04 The Winning Formula
 
-#### Presenter Script (English)
+#### Presenter Script
 
 > _"Moving to Part 2: // 'The Hidden Cost'—bugs, security, and rework. [PAUSE]_
 >
 > _Typing code fast is completely meaningless if that code breaks in production. // Let's examine what happens to code quality across hundreds of companies."_
 
-#### Slide Transition Script
+#### Slide Transition Script (Hand-off to Gia Bảo)
 
-> _"Let's look at the landmark data from Stanford University."_
+> _"To uncover how AI impacts software quality in production, // Gia Bảo will present the empirical findings from Stanford and GitClear."_
 
-#### Vietnamese Note / Vietsub
+#### Vietsub
 
-> _Chuyển sang Phần 2: 'The Hidden Cost' - Cái giá phải trả về chất lượng code, lỗi phần mềm và nợ kỹ thuật. Gõ code nhanh vô nghĩa nếu đoạn code đó làm sập hệ thống. Chúng ta bắt đầu với số liệu thực tế từ Đại học Stanford._
+> _Chuyển sang Phần 2: 'The Hidden Cost' - Cái giá phải trả về chất lượng code, lỗi phần mềm và nợ kỹ thuật. Gõ code nhanh vô nghĩa nếu đoạn code đó làm sập hệ thống. Tiếp theo, xin mời bạn Gia Bảo trình bày những con số rủi ro thực tế từ Đại học Stanford và GitClear._
 
 ---
 
 ### Slide 6: Code Quality Drops, Rework Surges
 
+- **Speaker**: Ngô Gia Bảo
 - **Slide Title**: Code Quality Drops, Rework Surges
-- **Visuals**: Sơ đồ mẫu (`Stanford_Study_Design_Slide6.png`) + Biểu đồ 3 cột Python (`Stanford_Metrics_Slide6.png`)
+- **Visuals**: Sơ đồ mẫu (`Stanford_Study_Design_Slide6.png`) + Biểu đồ 3 cột (`Stanford_Metrics_Slide6.png`)
+- **Visual Walkthrough**:
+  - Cột 1 (trái, xanh dương): **+14% PR Volume** (Khối lượng code tạo ra tăng vọt, tạo cảm giác năng suất ảo).
+  - Cột 2 (giữa, đỏ): **-9% Code Quality** (Điểm chất lượng code sụt giảm trên diện rộng).
+  - Cột 3 (phải, cam nổi bật): **+160% Rework Load (2.6× Surge)** (Khối lượng công việc đập đi sửa lại tăng gấp 2.6 lần).
+  - Dòng ghi chú dưới: Độ biến động chất lượng code tăng gấp 3.6 lần (Quality Variance 3.6×).
 - **Key Finding**: AI increases pull request volume by 14% but degrades quality by 9%, surging rework load by 2.6x on human reviewers.
 - **Source**: Denisov-Blanch et al., Stanford University (arXiv:2409.15152)
 
-#### Presenter Script (English)
+#### Presenter Script
 
-> _"This landmark Stanford University study analyzed over 100,000 engineers across 600 companies. [PAUSE]_
+> _"This landmark Stanford University study tracked over 100,000 engineers across 600 companies. [PAUSE]_
 >
-> _The data reveals a severe trade-off. // While AI tools increased pull request count by 14%, // overall code quality DROPPED by 9%. [PAUSE]_
+> _Please look at the three bars on the right: [PAUSE]_
+> _The first blue bar shows PR volume jumped by **14%**—developers were shipping code faster than ever. [PAUSE]_
+> _HOWEVER, // look at the middle red bar: // overall code quality dropped by **9%**. [PAUSE]_
+> _And look at the alarming orange bar on the right: // maintenance rework SURGED by **2.6 times**! [PAUSE]_
 >
-> _Even more alarming: // Maintenance rework surged by 2.6 times! // And code quality was 3.6 times more volatile. [PAUSE]_
->
-> _In short: // AI flooded repositories with fast code, // but senior reviewers had to spend more than double the effort cleaning it up."_
+> _In short: // AI flooded repositories with fast code, // but senior reviewers had to spend more than double the effort cleaning up the mess."_
 
 #### Slide Transition Script
 
-> _"What did this do to system architecture over time?"_
+> _"What did this constant copy-pasting do to system architecture over time? Let's check the GitClear findings."_
 
-#### Vietnamese Note / Vietsub
+#### Vietsub
 
-> _Nghiên cứu của Đại học Stanford trên 100,000 kỹ sư tại 600 doanh nghiệp: Số lượng pull request tăng 14% tạo cảm giác năng suất ảo, nhưng chất lượng code giảm 9%, khối lượng công việc phải đập đi sửa lại tăng gấp 2.6 lần và độ bất ổn định tăng 3.6 lần, dồn gánh nặng kiểm duyệt khổng lồ lên các reviewer._
+> _Nghiên cứu của Đại học Stanford trên 100,000 kỹ sư tại 600 công ty. Mọi người hãy nhìn vào biểu đồ 3 cột: Cột xanh dương đầu tiên cho thấy số lượng Pull Request tăng 14%—ai cũng tưởng năng suất tăng. Nhưng nhìn sang cột đỏ ở giữa: chất lượng code thực tế GIẢM 9%. Và nguy hiểm nhất là cột cam bên phải: khối lượng việc phải đập đi làm lại TĂNG GẤP 2.6 LẦN! Tóm lại: AI tuôn ra một lượng code khổng lồ rất nhanh, nhưng các reviewer thâm niên phải è cổ ra dọn rác gấp đôi._
 
 ---
 
 ### Slide 7: Technical Debt: The Collapse of Refactoring
 
+- **Speaker**: Ngô Gia Bảo
 - **Slide Title**: Technical Debt: The Collapse of Refactoring
 - **Visuals**: Biểu đồ 3 cột GitClear (`GitClear_Metrics_Slide7.png`)
+- **Visual Walkthrough**:
+  - Cột 1 (đỏ): **Refactoring sụp đổ từ 25% xuống dưới 10%** (Lập trình viên lười tối ưu hóa module).
+  - Cột 2 (cam): **Code trùng lặp copy-paste tăng +48%** (Thói quen append thêm code mới của AI).
+  - Cột 3 (đỏ sẫm): **Code Churn tăng gấp 2 lần (2.0×)** (Code vừa viết xong bị xóa hoặc đập đi sửa lại trong vòng 14 ngày tăng vọt).
 - **Key Finding**: AI encourages append-only copy-paste patterns over modular refactoring, doubling codebase churn within 2 weeks.
 - **Source**: GitClear Research (153M+ lines of code)
 
-#### Presenter Script (English)
+#### Presenter Script
 
 > _"GitClear analyzed 153 million lines of real production code across thousands of projects. [PAUSE]_
 >
-> _Look at the first bar: // The percentage of refactoring collapsed from 25% down to under 10%. // Meanwhile, // copy-pasted duplicate code surged by 48%. // And code churn—code rewritten or deleted within 14 days—DOUBLED. [PAUSE]_
+> _Look closely at the three columns on this chart: [PAUSE]_
+> _The first red bar shows refactoring collapsed from 25% down to **under 10%**. // Engineers stopped restructuring shared code. [PAUSE]_
+> _Instead, // look at the middle bar: // copy-pasted duplicate code surged by **48%**. [PAUSE]_
+> _And the third bar reveals code churn—lines rewritten or deleted within 14 days—literally **DOUBLED (2.0×)**! [PAUSE]_
 >
-> _Why? // Because AI models incentivize developers to append new lines of code // rather than refactoring shared modules. // This piles up dangerous technical debt."_
+> _Why? // Because AI models incentivize an 'append-only' habit: // dumping new snippets instead of refactoring existing architecture. // This is accumulating massive technical debt."_
 
-#### Slide Transition Script
+#### Slide Transition Script (Hand-off to Minh Quân)
 
-> _"Beyond messy architecture, // what about cybersecurity risks?"_
+> _"Beyond degraded architecture, // what about cybersecurity threats? // Minh Quân will walk us through the dangerous Slopsquatting vector."_
 
-#### Vietnamese Note / Vietsub
+#### Vietsub
 
-> _Nghiên cứu của GitClear trên 153 triệu dòng code: Tỷ lệ dọn dẹp và tối ưu hóa code (refactoring) giảm từ 25% xuống dưới 10%. Ngược lại, code trùng lặp copy-paste tăng gần một nửa (+48%) và lượng code bị xóa/viết lại sau 2 tuần tăng gấp đôi. AI khuyến khích thói quen dán thêm code mới thay vì tái cấu trúc module dùng chung, làm hệ thống ngày càng phình to nợ kỹ thuật._
+> _GitClear phân tích hơn 153 triệu dòng code thực tế. Nhìn vào 3 cột trên biểu đồ: Cột 1 cho thấy tỷ lệ refactor (dọn dẹp, tái cấu trúc code) rơi thẳng đứng từ 25% xuống dưới 10%. Thay vào đó, ở cột 2, lượng code copy-paste thừa thãi tăng tới 48%. Và ở cột 3, tỷ lệ Code Churn—tức code vừa viết xong bị xóa hoặc viết lại trong 2 tuần—TĂNG GẤP ĐÔI. Lý do là AI tập cho dev thói quen dán thêm code mới thay vì tối ưu code cũ. Tiếp theo, bạn Minh Quân sẽ phân tích hiểm họa bảo mật Slopsquatting._
 
 ---
 
 ### Slide 8: Silent Vulnerabilities & Slopsquatting Risks
 
+- **Speaker**: Lê Minh Quân
 - **Slide Title**: Silent Vulnerabilities & Slopsquatting Risks
-- **Visuals**: Sơ đồ chuỗi tấn công 4 bước (`Slopsquatting_Flowchart_Slide8.png` / Hộp quy trình Phase 01-03 & Outcome)
-- **Key Stages**:
-  - Phase 01: Package Hallucination (AI model invents fake dependency names like `express-jwt-auth`)
-  - Phase 02: Slopsquatting Attack (Threat actors register fake packages on npm/PyPI with malware)
-  - Phase 03: Automated Installation (Developer blindly executes `npm install`)
-  - Outcome: Supply Chain Breach (Trojan in CI/CD, Company Servers Infected)
+- **Visuals**: Sơ đồ chuỗi tấn công 4 giai đoạn (`Slopsquatting_Flowchart_Slide8.png`)
+- **Visual Walkthrough**:
+  - Phase 01: **Package Hallucination** (AI tự bịa ra tên thư viện không tồn tại, ví dụ: `express-jwt-auth`).
+  - Phase 02: **Slopsquatting Attack** (Hacker phát hiện quy luật và tải package mã độc lên npm/PyPI chiếm tên đó).
+  - Phase 03: **Automated Installation** (Dev tin AI, gõ thẳng `npm install express-jwt-auth`).
+  - Outcome: **Supply Chain Breach** (Mã độc xâm nhập máy chủ công ty và luồng CI/CD).
 - **Key Takeaway**: Controlled experiments show active skepticism cuts security risks by 80%.
 - **Source**: Perry et al., Stanford ACM CCS & Snyk Research
 
-#### Presenter Script (English)
+#### Presenter Script
 
-> _"In cybersecurity, // AI introduces an emerging attack vector known as 'Slopsquatting'. [PAUSE]_
+> _"In cybersecurity, // passive reliance on AI introduces a dangerous supply chain attack called 'Slopsquatting'. [PAUSE]_
 >
-> _Here is how it unfolds in four steps: [PAUSE]_
-> _In Phase 1: // The AI model hallucinates a plausible package name that does not exist—such as `express-jwt-auth`. [PAUSE]_
-> _In Phase 2: // Attackers scan these prompts and register fake packages containing malware on public registries like npm and PyPI. [PAUSE]_
-> _In Phase 3: // A developer trusts the AI and blindly executes `npm install`. [PAUSE]_
-> _Outcome: // The malware infects the company's servers and CI/CD pipeline! [PAUSE]_
+> _Follow the four stages on this flowchart: [PAUSE]_
+> _In Phase 1, Package Hallucination: // The AI model hallucinates a plausible package name that does not exist—like `express-jwt-auth`. [PAUSE]_
+> _In Phase 2, Slopsquatting: // Attackers spot this common hallucination, // craft a malicious package, // and publish it to npm or PyPI under that exact name. [PAUSE]_
+> _In Phase 3: // An unsuspecting developer blindly runs `npm install`. [PAUSE]_
+> _The Outcome: // A catastrophic supply chain breach—malware infects the company's servers and CI/CD pipelines! [PAUSE]_
 >
 > _Stanford researchers proved that active developer skepticism cuts these vulnerabilities by 80%."_
 
 #### Slide Transition Script
 
-> _"What happens when engineers rely passively on AI day after day?"_
+> _"What happens when developers stop double-checking AI outputs day after day? Let's look at enterprise delivery data."_
 
-#### Vietnamese Note / Vietsub
+#### Vietsub
 
-> _Về mặt an ninh mạng, AI tạo ra nguy cơ tấn công chuỗi cung ứng gọi là Slopsquatting qua 4 bước: Đầu tiên AI tự bịa ra một tên package không có thật. Tin tặc phát hiện quy luật này liền đăng ký ngay package chứa mã độc đúng tên đó lên npm/PyPI. Lập trình viên tin tưởng chạy lệnh cài đặt vào máy. Kết quả là máy chủ công ty bị nhiễm mã độc. Nghiên cứu của Stanford chứng minh: Thái độ thận trọng và rà soát chủ động giúp giảm tới 80% rủi ro bảo mật._
+> _Về an ninh mạng, việc ỷ lại vào AI mở ra hình thức tấn công chuỗi cung ứng gọi là Slopsquatting. Hãy nhìn vào 4 bước trên sơ đồ: Bước 1, AI tự bịa ra một tên package nghe rất hợp lý nhưng không có thật, ví dụ 'express-jwt-auth'. Bước 2, tin tặc phát hiện ra, liền tạo package chứa mã độc và đăng ký đúng tên đó trên npm/PyPI. Bước 3, lập trình viên tin tưởng AI, gõ ngay lệnh npm install vào dự án. Kết quả ở bước cuối cùng: Toàn bộ máy chủ công ty và đường ống CI/CD bị nhiễm độc! Nghiên cứu của Stanford chứng minh: Rà soát chủ động giúp giảm 80% rủi ro này._
 
 ---
 
 ### Slide 9: The Cost of Blind Reliance: Bugs Surge, Speed Flatlines
 
+- **Speaker**: Lê Minh Quân
 - **Slide Title**: The Cost of Blind Reliance: Bugs Surge, Speed Flatlines
 - **Visuals**: Biểu đồ đối nghịch 2 bảng Uplevel & DORA (`Uplevel_DORA_Metrics_Slide9.png`)
+- **Visual Walkthrough**:
+  - Bảng trái (Màu đỏ, Uplevel RCT): **Bug Rate +41%** (Tỷ lệ lỗi trong PR tăng vọt 41%).
+  - Bảng phải (Màu xám, DORA 2024): **PR Throughput +0% (Zero Velocity Gain)** (Tốc độ bàn giao thực tế không hề tăng).
+  - Chú thích dưới: _Individual typing speed != Organizational delivery velocity_ (Gõ phím nhanh không đồng nghĩa với bàn giao phần mềm nhanh).
 - **Key Finding**: Typing code faster does not mean shipping software faster.
 - **Source**: Google Cloud DORA & Uplevel 2024
 
-#### Presenter Script (English)
+#### Presenter Script
 
-> _"When developers stop thinking critically, // downstream bugs multiply. [PAUSE]_
+> _"When developers stop thinking critically, // downstream bugs multiply rapidly. [PAUSE]_
 >
-> _A 2024 enterprise study by Uplevel found that after giving developers AI tools, // bug rates in pull requests jumped by 41%! [PAUSE]_
+> _Look at the two contrasting panels on this chart: [PAUSE]_
+> _On the left, from Uplevel's study: // Pull requests from developers using AI suffered a **41% surge in bug rate**! [PAUSE]_
+> _Now look at the right panel: // Did features reach users any faster? // The net speedup was **EXACTLY ZERO PERCENT**! [PAUSE]_
 >
-> _And look at delivery speed: // Did features actually reach users any faster? // The net improvement was ZERO percent! [PAUSE]_
->
-> _Google Cloud's DORA report explains why: // Typing code faster at your desk does NOT mean shipping software faster. // When pull requests contain more bugs, // triage and debugging wipe out all the time saved."_
+> _Google Cloud's DORA report explains this paradox: // Typing syntax faster at your keyboard does NOT mean shipping software faster. // When code is filled with subtle bugs, // the time saved typing is completely erased by triage, // debugging, // and emergency hotfixes."_
 
-#### Slide Transition Script
+#### Slide Transition Script (Hand-off to Quốc Đương)
 
-> _"Let's trace how unchecked code escalates into a production failure."_
+> _"To understand how this unchecked cycle leads to production disasters, // Quốc Đương will explain the Production Failure Chain."_
 
-#### Vietnamese Note / Vietsub
+#### Vietsub
 
-> _Khi lập trình viên ỷ lại vào AI và giảm tư duy phản biện, lỗi bắt đầu xuất hiện nhiều hơn. Nghiên cứu của Uplevel cho thấy tỷ lệ lỗi trong pull request tăng tới 41%. Nhưng tốc độ đưa sản phẩm đến tay người dùng có tăng không? Bằng 0%! Báo cáo DORA của Google giải thích: Bạn gõ phím nhanh hơn ở bàn làm việc không có nghĩa là công ty bàn giao phần mềm nhanh hơn, vì thời gian gõ nhanh đã bị bù trừ vào thời gian đi tìm và vá lỗi ngầm._
+> _Khi lập trình viên giảm tư duy phản biện, lỗi bắt đầu nhân lên. Hãy nhìn vào 2 bảng đối chiếu trên màn hình: Bảng màu đỏ bên trái từ nghiên cứu Uplevel cho thấy tỷ lệ bug trong PR tăng tới 41%. Nhưng nhìn sang bảng bên phải từ báo cáo Google DORA: Tốc độ bàn giao phần mềm thực tế tăng bao nhiêu? Bằng đúng 0%! Gõ code nhanh hơn ở bàn làm việc không có nghĩa là công ty release nhanh hơn, vì thời gian gõ nhanh đã bị nuốt chửng bởi thời gian đi tìm và vá lỗi ngầm. Xin mời bạn Quốc Đương tiếp nối với chuỗi sự cố sập hệ thống._
 
 ---
 
 ### Slide 10: The Production Failure Chain
 
+- **Speaker**: Nguyễn Quốc Đương
 - **Slide Title**: The Production Failure Chain
-- **Visuals**: Sơ đồ 4 công đoạn (`Production_Failure_Chain_Slide10.png` / Chuỗi State 01-03 & Outcome)
-- **Key Stages**:
-  - State 01: AI guesses code without knowing the full system
-  - State 02: Code passes unit tests but breaks the database
-  - State 03: Tired reviewer merges clean-looking code
-  - Outcome: Server crashes at 2 AM. AI has zero liability; humans take the blame.
+- **Visuals**: Sơ đồ chuỗi sự cố 4 công đoạn (`Production_Failure_Chain_Slide10.png`)
+- **Visual Walkthrough**:
+  - State 01: **Local Prompt Generation** (AI đoán code cục bộ mà không hiểu kiến trúc hệ sinh thái).
+  - State 02: **Superficial Green Tests** (Code vượt qua unit test đơn giản nhưng phá vỡ ràng buộc cơ sở dữ liệu).
+  - State 03: **Fatigued Code Review** (Reviewer quá tải, nhìn lướt thấy code đẹp nên bấm Merge).
+  - Outcome: **Production Outage at 2 AM** (Hệ thống sập lúc 2h sáng, AI phủi tay vô can, kỹ sư chịu toàn bộ trách nhiệm).
 - **Footnote**: Large Language Models have no legal identity and provide zero SLA guarantees.
 
-#### Presenter Script (English)
+#### Presenter Script
 
-> _"Here is the complete failure chain in four stages: [PAUSE]_
+> _"Here is the complete failure chain visualized across four steps: [PAUSE]_
 >
-> _In State 1: // AI predicts code based on text probabilities, // without understanding the full system. [PAUSE]_
-> _In State 2: // The code passes small unit tests, // but quietly breaks database invariants. [PAUSE]_
-> _In State 3: // A tired reviewer sees clean-looking syntax // and clicks 'Merge'. [PAUSE]_
-> _Outcome: // At 2 AM, the production server crashes! [PAUSE]_
+> _In State 1: // AI generates code based on word probabilities, // completely blind to system-wide database constraints. [PAUSE]_
+> _In State 2: // The code passes simple unit tests, // creating a false sense of security while breaking core invariants. [PAUSE]_
+> _In State 3: // A tired human reviewer skims the clean-looking syntax // and clicks 'Merge'. [PAUSE]_
+> _The Outcome: // At 2 AM, the production server crashes! [PAUSE]_
 >
-> _And here is the critical takeaway: // Large Language Models have zero legal identity and provide zero SLA guarantees. // When systems fail, // human engineers take 100% of the liability."_
+> _And look at the crucial legal takeaway at the bottom: // AI models have zero legal identity and provide ZERO SLA guarantees. // When systems fail, // human engineers carry 100% of the liability."_
 
 #### Slide Transition Script
 
-> _"Despite these risks, // why is AI adoption surging? // Because when used correctly, // AI has extraordinary power. Let's look at Part 3."_
+> _"Despite all these risks, // why is AI adoption exploding? // Because when applied to the right tasks, // AI has extraordinary power. Let's enter Part 3."_
 
-#### Vietnamese Note / Vietsub
+#### Vietsub
 
-> _Sơ đồ này tóm tắt chuỗi sự cố qua 4 bước: Bước 1, AI đoán code theo xác suất từ ngữ mà không hiểu toàn bộ hệ thống. Bước 2, code chạy thử cục bộ thì qua nhưng ngầm làm sai lệch cơ sở dữ liệu. Bước 3, người review mệt mỏi thấy code đẹp nên bấm duyệt. Kết quả: Nửa đêm hệ thống sập! Điểm mấu chốt là: AI không có tư cách pháp nhân và không cam kết SLA. Khi sự cố xảy ra, con người phải chịu trách nhiệm 100%._
+> _Đây là chuỗi sự cố 4 bước dẫn đến thảm họa vận hành: Bước 1, AI đoán code theo xác suất từ ngữ mà không hiểu ràng buộc toàn hệ thống. Bước 2, code vượt qua unit test cục bộ nhưng âm thầm phá vỡ cấu trúc database. Bước 3, reviewer quá tải thấy cú pháp sáng sủa liền bấm Merge. Kết quả: Nửa đêm 2h sáng server sập! Hãy chú ý dòng dưới cùng: AI không có tư cách pháp nhân và không có cam kết SLA. Khi hệ thống sập, con người phải chịu 100% trách nhiệm. Dù rủi ro như vậy, tại sao AI vẫn phát triển bùng nổ? Chúng ta cùng bước sang Phần 3._
 
 ---
 
 ### Slide 11: Agenda (Track 03 Highlight)
 
+- **Speaker**: Nguyễn Quốc Đương
 - **Slide Title**: What we'll cover
 - **Active Section**: `[03] The Real Superpower` (How AI actually saves your time)
 - **Roadmap**: 01 The Big Claims | 02 The Hidden Cost | 03 The Real Superpower | 04 The Winning Formula
 
-#### Presenter Script (English)
+#### Presenter Script
 
 > _"Turning to Part 3: // 'The Real Superpower'—how AI actually saves your time. [PAUSE]_
 >
 > _We are not against AI. // On the contrary, // for specific isolated tasks, // AI is an extraordinary accelerator. Let's examine the numbers."_
 
-#### Slide Transition Script
+#### Slide Transition Script (Hand-off to Minh Tài)
 
-> _"Let's look at the landmark GitHub and Microsoft trial."_
+> _"To show us where AI truly shines with solid data, // Minh Tài will present the GitHub RCT benchmark and bandwidth reallocation."_
 
-#### Vietnamese Note / Vietsub
+#### Vietsub
 
-> _Chuyển sang Phần 3: 'The Real Superpower' - AI thực sự giúp chúng ta tiết kiệm thời gian ở đâu. Chúng em hoàn toàn không phủ nhận AI; trái lại, ở những tác vụ cụ thể, AI là một trợ thủ cực kỳ mạnh mẽ._
+> _Chuyển sang Phần 3: 'The Real Superpower' - AI thực sự giúp chúng ta tiết kiệm thời gian ở đâu. Nhóm hoàn toàn không bài trừ AI; trái lại, ở những tác vụ cụ thể, AI là một siêu năng lực thực sự. Tiếp theo, xin mời bạn Minh Tài trình bày các số liệu tăng tốc ấn tượng từ GitHub và Microsoft._
 
 ---
 
 ### Slide 12: The Real Superpower: Where AI Saves Your Time
 
+- **Speaker**: Lê Minh Tài
 - **Slide Title**: The Real Superpower: Where AI Saves Your Time
-- **Visuals**: Biểu đồ tốc độ GitHub RCT (`GitHub_Speedup_Slide12.png`)
+- **Visuals**: Biểu đồ 2 bảng GitHub RCT (`GitHub_Speedup_Slide12.png`)
+- **Visual Walkthrough**:
+  - Bảng trái (Thời gian hoàn thành tác vụ Web Server): Cột xám (không có AI) mất **161 phút** $\rightarrow$ Cột xanh lá (có Copilot) chỉ mất **71 phút** (Tiết kiệm **55.8% thời gian**, nhanh hơn **2.26×**).
+  - Bảng phải (Độ phân kỳ vận tốc - Velocity Divergence): Cột đỏ (Codebase cũ bảo trì) bị chậm **-19%**, nhưng Cột xanh lá (Dự án mới Greenfield) tăng vọt **+55.8%**.
 - **Key Metrics**:
   - Web Server Task Time: 161 mins without AI $\rightarrow$ 71 mins with Copilot (55.8% time saved, 2.26x faster).
   - Velocity Divergence: Legacy Maintenance (-19% slowdown) vs Greenfield Scaffolding (+55.8% speedup).
 - **Source**: Peng et al., GitHub / Microsoft Research
 
-#### Presenter Script (English)
+#### Presenter Script
 
-> _"In this landmark study by Microsoft and GitHub, // developers built a web server from scratch. [PAUSE]_
+> _"In this landmark randomized trial by Microsoft and GitHub, // developers were tasked with building an HTTP web server from scratch. [PAUSE]_
 >
-> _Look at the green bar: // Developers without AI took 161 minutes. // Developers with AI finished in just 71 minutes! // That is nearly 56% time saved—more than twice as fast! [PAUSE]_
+> _Look at the two panels on this chart: [PAUSE]_
+> _On the left panel: // The gray bar shows developers without AI took **161 minutes**. // But look at the green bar: // with GitHub Copilot, // they finished in just **71 minutes**! // That is nearly **56% time saved**—more than twice as fast! [PAUSE]_
 >
-> _Notice the velocity divergence on the right: // In complex legacy codebases, AI can slow you down by 19%. // But for new project scaffolding, // boilerplate CRUD, // and test setup, // AI is an unbeatable superpower."_
+> _Now look at the right panel showing the Velocity Divergence: // In complex legacy systems, AI can slow you down by 19%. // But for greenfield projects—scaffolding boilerplate, // CRUD endpoints, // and test harness setup—AI is an unbeatable superpower."_
 
 #### Slide Transition Script
 
-> _"How does this superpower reshape our daily working hours?"_
+> _"How does this superpower reshape our daily working hours as engineers?"_
 
-#### Vietnamese Note / Vietsub
+#### Vietsub
 
-> _Thử nghiệm của Microsoft và GitHub: Lập trình viên viết một máy chủ web mới từ đầu. Nhóm làm thủ công mất 161 phút, nhóm có Copilot chỉ mất 71 phút, tiết kiệm gần 56% thời gian (nhanh hơn gấp 2.2 lần). Biểu đồ bên phải chỉ rõ: Với codebase cũ phức tạp thì AI gây chậm 19%, nhưng với khởi tạo dự án mới (greenfield), sinh code mẫu và dựng khung test thì AI phát huy tốc độ vượt trội._
+> _Thử nghiệm của Microsoft và GitHub: Lập trình viên viết một máy chủ web mới từ đầu. Nhìn vào bảng bên trái: Cột màu xám không dùng AI mất 161 phút, nhưng cột màu xanh lá có Copilot chỉ mất 71 phút—tiết kiệm gần 56% thời gian (nhanh hơn gấp 2.2 lần). Nhìn sang bảng phân kỳ bên phải: Với hệ thống cũ phức tạp thì AI gây chậm 19%, nhưng với khởi tạo dự án mới, sinh boilerplate và dựng khung test thì AI phát huy tốc độ vượt trội._
 
 ---
 
 ### Slide 13: Reallocating Engineering Bandwidth
 
+- **Speaker**: Lê Minh Tài
 - **Slide Title**: Reallocating Engineering Bandwidth
+- **Visuals**: Sơ đồ đối chiếu 2 mô hình (Truyền thống vs Hiện đại) + Trích dẫn của Martin Fowler & Kent Beck
+- **Visual Walkthrough**:
+  - Mô hình truyền thống (Creation-oriented): Dành **70% thời gian** gõ cú pháp, tra cứu API, nhớ tên hàm cơ học.
+  - Mô hình hiện đại (Supervisory Engineering): Giải phóng thời gian gõ, dành **80% thời gian** cho thiết kế kiến trúc, đánh giá an ninh và tối ưu nghiệp vụ.
+  - Câu nói đinh: _"When typing code becomes cheap, the skill of good system design becomes 1,000x more valuable."_
 - **Comparison**:
   - Traditional Model (Creation-oriented): 70% time typing syntax and APIs. Most mental energy spent on mechanical boilerplate.
   - Modern Model (Supervisory Engineering): 80% time auditing architecture. System design, security auditing, and problem-solving.
 - **Quote**: _"When typing code becomes cheap, the skill of good system design becomes 1,000x more valuable."_ (Kent Beck & Martin Fowler)
 - **Source**: Kent Beck & Martin Fowler
 
-#### Presenter Script (English)
+#### Presenter Script
 
-> _"Because AI generates repetitive code so quickly, // our daily role as software engineers is evolving. [PAUSE]_
+> _"Because AI generates repetitive code so quickly, // our daily role as software engineers is undergoing a massive shift. [PAUSE]_
 >
-> _In the traditional model, // engineers spent up to 70% of their day typing syntax and boilerplate. [PAUSE]_
+> _Look at the contrast between the two models on the slide: [PAUSE]_
+> _In the traditional model, // engineers spent up to **70% of their day** on the mechanical act of typing syntax and memorizing APIs. [PAUSE]_
+> _In the modern model, // AI absorbs that mechanical typing. // Engineers now shift **80% of their bandwidth** to what truly matters: // system architecture, // security boundaries, // and edge-case validation. [PAUSE]_
 >
-> _In the modern model, // AI handles mechanical typing. // Engineers can now spend 80% of their time on what truly matters: // system design, // security auditing, // and solving business problems. [PAUSE]_
->
-> _As software pioneers Kent Beck and Martin Fowler noted: // When typing code becomes cheap, // the skill of good system design becomes a thousand times more valuable."_
+> _As software pioneers Kent Beck and Martin Fowler stated: // 'When typing code becomes cheap, // the skill of good system design becomes a thousand times more valuable.'"_
 
-#### Slide Transition Script
+#### Slide Transition Script (Hand-off to Duy Lam)
 
-> _"This brings us to our final chapter: // How humans and AI work together."_
+> _"So how do humans and AI collaborate without falling into the traps we saw earlier? // Duy Lam will guide us through Part 4: The Winning Formula."_
 
-#### Vietnamese Note / Vietsub
+#### Vietsub
 
-> _Vì AI đảm nhận việc gõ code cơ học, vai trò của kỹ sư phần mềm đang dịch chuyển tích cực. Trước đây ta mất 70% thời gian để gõ cú pháp và nhớ tên hàm. Ngày nay, kỹ sư dành 80% thời gian cho việc thiết kế kiến trúc, kiểm tra an ninh và giải quyết bài toán nghiệp vụ. Đúng như nhận định của Martin Fowler: Khi việc gõ code trở nên rẻ hơn, kỹ năng thiết kế hệ thống tốt càng trở nên đáng giá gấp ngàn lần._
+> _Nhìn vào 2 mô hình trên slide: Trước đây, kỹ sư mất 70% thời gian ngồi gõ cú pháp cơ học và nhớ tên hàm. Ngày nay, AI đảm nhận phần việc gõ phím đó, giúp kỹ sư tái phân bổ 80% năng lượng trí tuệ cho thiết kế kiến trúc hệ thống, kiểm toán an ninh và giải quyết bài toán nghiệp vụ. Đúng như Martin Fowler đã đúc kết: Khi việc gõ code trở nên rẻ, kỹ năng thiết kế kiến trúc tốt càng trở nên đáng giá gấp ngàn lần. Tiếp theo, xin mời bạn Duy Lam trình bày công thức hiệp đồng ở Phần 4._
 
 ---
 
 ### Slide 14: Agenda (Track 04 Highlight)
 
+- **Speaker**: Đặng Duy Lam
 - **Slide Title**: What we'll cover
 - **Active Section**: `[04] The Winning Formula` (Human conductor, AI orchestra)
 - **Roadmap**: 01 The Big Claims | 02 The Hidden Cost | 03 The Real Superpower | 04 The Winning Formula
 
-#### Presenter Script (English)
+#### Presenter Script
 
 > _"We now arrive at Part 4: // 'The Winning Formula'—Human conductor, AI orchestra. [PAUSE]_
 >
-> _The future is neither human without AI, // nor AI without human. // The winning formula is learning how humans direct AI to build reliable software."_
+> _The future is neither human without AI, // nor AI without human. // The winning formula is understanding the fundamental boundary between AI statistics and human engineering."_
 
 #### Slide Transition Script
 
-> _"Let's look at the technical boundary between AI tokens and human logic."_
+> _"Let's look at the technical boundary between AI tokens and deterministic logic."_
 
-#### Vietnamese Note / Vietsub
+#### Vietsub
 
-> _Chúng ta bước vào Phần 4: 'The Winning Formula' - Công thức chiến thắng: Con người là nhạc trưởng, AI là dàn nhạc. Tương lai không phải là con người bài trừ AI, cũng không phải AI thay thế con người, mà là cách con người chỉ huy AI để tạo ra phần mềm an toàn và đáng tin cậy._
+> _Chúng ta bước vào Phần 4: 'The Winning Formula' - Công thức chiến thắng: Con người là nhạc trưởng, AI là dàn nhạc. Tương lai không phải là con người bài trừ AI, cũng không phải AI thay thế con người, mà là cách chúng ta phân định ranh giới kỹ thuật để hợp tác hiệu quả._
 
 ---
 
 ### Slide 15: Statistical Patterns vs Deterministic Logic
 
+- **Speaker**: Đặng Duy Lam
 - **Slide Title**: Statistical Patterns vs Deterministic Logic
+- **Visuals**: Bảng đối chiếu 4 khía cạnh kỹ thuật (AI thống kê vs Kỹ sư con người)
+- **Visual Walkthrough**:
+  - Hàng 1 (Cơ chế cốt lõi): AI đoán từ tiếp theo theo xác suất (`Token Probability`) vs Con người tư duy logic tất định từng bước (`Deterministic Logic`).
+  - Hàng 2 (Tầm nhìn bối cảnh): AI nhìn cục bộ ngữ cảnh prompt ngắn hạn vs Con người bao quát kiến trúc toàn hệ thống.
+  - Hàng 3 (Thế mạnh): AI mạnh về boilerplate & regex vs Con người mạnh về thiết kế kiến trúc & xử lý ngoại lệ (Edge Cases).
+  - Hàng 4 (Trách nhiệm pháp lý): AI hoàn toàn vô can (0% SLA) vs Con người chịu trách nhiệm 100% khi hệ thống sập.
 - **Table Structure**:
   - Core Mechanism: Predicts the next most likely word vs Strict step-by-step logic
   - Optimal Scope: Small context in front of it vs The entire big picture & system flow
@@ -386,73 +442,82 @@
   - Operational Liability: Zero responsibility vs Full accountability when systems break
 - **Takeaway**: _"Anyone can generate code. Only software engineers own the system."_
 
-#### Presenter Script (English)
+#### Presenter Script
 
-> _"Here is the fundamental divide between AI tools and software engineers. [PAUSE]_
+> _"Look at the four comparative rows on this technical divide: [PAUSE]_
 >
-> _First, Mechanism: // AI predicts the next most likely word using statistical patterns. // Humans build deterministic, step-by-step logic. [PAUSE]_
-> _Second, Scope: // AI only sees the small context in front of it. // Humans understand the entire big picture—how databases, APIs, and business rules connect. [PAUSE]_
-> _Finally, Liability: // AI has zero legal responsibility. // Humans carry full accountability when systems go down. [PAUSE]_
+> _Row 1, Mechanism: // AI predicts the next most likely token based on statistical training weights. // Humans design deterministic, step-by-step logic. [PAUSE]_
+> _Row 2, Scope: // AI only sees the local prompt in front of it. // Humans maintain the mental model of the entire system—how distributed databases, cache layers, and business rules interact. [PAUSE]_
+> _Row 3, Strength: // AI excels at boilerplate and regex. // Humans excel at architectural trade-offs and edge-case resilience. [PAUSE]_
+> _Row 4, Liability: // AI has zero legal standing. // Humans carry full operational ownership. [PAUSE]_
+>
 > _Remember this principle: // Anyone can generate code. // Only software engineers own the system."_
 
-#### Slide Transition Script
+#### Slide Transition Script (Hand-off to Thế Nghĩa)
 
-> _"How do we organize this in actual engineering teams?"_
+> _"How do we translate this divide into real team workflows? // Thế Nghĩa will present our 3-tier framework and deliver our final verdict."_
 
-#### Vietnamese Note / Vietsub
+#### Vietsub
 
-> _Đây là ranh giới kỹ thuật rõ ràng giữa AI và con người: AI đoán chữ tiếp theo theo xác suất thống kê; con người xây dựng logic tất định chặt chẽ. AI chỉ nhìn đoạn prompt trước mắt; con người bao quát toàn bộ bức tranh hệ thống kết nối ra sao. Và quan trọng nhất: AI không chịu trách nhiệm gì cả, còn con người phải chịu trách nhiệm khi hệ thống gặp sự cố. Ai cũng có thể sinh ra code, nhưng chỉ kỹ sư phần mềm mới làm chủ hệ thống._
+> _Hãy nhìn vào 4 hàng đối chiếu trên slide: Hàng 1, cơ chế: AI đoán chữ theo xác suất thống kê; con người xây dựng logic tất định. Hàng 2, tầm nhìn: AI chỉ thấy prompt trước mắt; con người bao quát toàn bộ hệ thống từ database, cache đến nghiệp vụ. Hàng 3, thế mạnh: AI mạnh ở boilerplate, con người mạnh ở kiến trúc và xử lý ngoại lệ. Hàng 4, trách nhiệm: AI không chịu trách nhiệm gì cả, con người chịu 100% khi hệ thống gặp sự cố. Ai cũng có thể sinh ra code, nhưng chỉ kỹ sư phần mềm mới làm chủ hệ thống. Tiếp theo, xin mời bạn Thế Nghĩa kết luận bài thuyết trình với mô hình tháp 3 tầng._
 
 ---
 
 ### Slide 16: Human Conductor, AI Orchestra
 
+- **Speaker**: Huỳnh Thế Nghĩa
 - **Slide Title**: Human Conductor, AI Orchestra
-- **Visuals**: Sơ đồ tháp phân tầng 3 lớp (`Tiered_Framework_Slide16.png` / Tháp 3 tầng với hình ảnh nhạc trưởng)
+- **Visuals**: Sơ đồ kim tự tháp 3 tầng (`Tiered_Framework_Slide16.png`)
+- **Visual Walkthrough**:
+  - Tầng 1 (Đáy tháp, Màu xanh lá): **Mechanical Syntax (80% Automated by AI)** — Tạo khung sườn, sinh CRUD, viết unit test mẫu.
+  - Tầng 2 (Thân tháp, Màu vàng hổ phách): **Verification & Security (50/50 Hybrid)** — Rà soát code, quét lỗ hổng Slopsquatting, kiểm thử tích hợp.
+  - Tầng 3 (Đỉnh tháp, Màu xanh navy): **Strategy & Ownership (100% Human)** — Thiết kế kiến trúc, cam kết SLA, chịu trách nhiệm vận hành.
 - **Tiers**:
   - Tier 1: Mechanical Syntax (Boilerplate & Test Setup) $\rightarrow$ 80% Automated
   - Tier 2: Verification & Security (Code Review & Vulnerability Check) $\rightarrow$ 50 / 50 Hybrid
   - Tier 3: Strategy & Ownership (System Architecture & SLA Liability) $\rightarrow$ 100% Human
 - **Takeaway**: _"Human-in-the-Loop: Engineers direct the system instead of typing raw syntax."_
 
-#### Presenter Script (English)
+#### Presenter Script
 
-> _"We put this into practice through a 3-tier framework: [PAUSE]_
+> _"We put this collaboration into practice through a 3-tier pyramid framework: [PAUSE]_
 >
-> _At the base, Tier 1: // Mechanical syntax. Demos, boilerplates, and test setup. // Here, AI automates 80% of the workload. [PAUSE]_
-> _In the middle, Tier 2: // Verification and security. Code reviews and vulnerability scans. // Here, humans and AI work fifty-fifty as partners. [PAUSE]_
-> _At the top, Tier 3: // Strategy and ownership. System architecture, trade-off decisions, and SLA liability. // This tier is ONE HUNDRED PERCENT human. [PAUSE]_
+> _Look at Tier 1 at the base: // Mechanical syntax. CRUD boilerplate and mock data. // Here, AI automates **80% of the workload**, saving hours of typing. [PAUSE]_
+> _Look at Tier 2 in the middle: // Verification and security. Code review, security auditing, and regression checks. // Here, humans and AI work **fifty-fifty as co-pilots**. [PAUSE]_
+> _Now look at Tier 3 at the very top: // Strategy and ownership. System architecture, domain decomposition, and SLA liability. // This tier is **ONE HUNDRED PERCENT human**! [PAUSE]_
 >
 > _The software engineer is the conductor; // AI is the orchestra."_
 
 #### Slide Transition Script
 
-> _"And that leads us to our final verdict."_
+> _"And that brings us to our final conclusion."_
 
-#### Vietnamese Note / Vietsub
+#### Vietsub
 
-> _Mô hình kim tự tháp 3 tầng: Dưới đáy là Tầng 1 - Cú pháp cơ học: tạo khung sườn, sinh dữ liệu test, phần này AI tự động hóa 80%. Ở giữa là Tầng 2 - Thẩm định và bảo mật: rà soát code, quét lỗ hổng, người và AI phối hợp 50/50. Trên đỉnh là Tầng 3 - Chiến lược và trách nhiệm: kiến trúc hệ thống, lựa chọn đánh đổi và cam kết chất lượng, tầng này 100% là con người. Kỹ sư là nhạc trưởng, AI là dàn nhạc._
+> _Mọi người hãy nhìn vào mô hình kim tự tháp 3 tầng trên màn hình: Dưới đáy là Tầng 1 (Màu xanh) - Cú pháp cơ học: sinh code mẫu, dựng khung API, phần này AI tự động hóa 80%. Ở giữa là Tầng 2 (Màu vàng) - Thẩm định và bảo mật: rà soát code, bắt lỗi Slopsquatting, người và AI phối hợp 50/50. Và trên đỉnh tháp là Tầng 3 (Màu xanh navy) - Chiến lược và trách nhiệm: kiến trúc hệ thống, lựa chọn đánh đổi và cam kết SLA, tầng này 100% là con người. Kỹ sư là nhạc trưởng, AI là dàn nhạc._
 
 ---
 
 ### Slide 17: Strategic Verdict & Conclusion
 
+- **Speaker**: Huỳnh Thế Nghĩa (Chốt hạ & Điều phối Q&A)
 - **Slide Title**: Strategic Verdict & Conclusion
+- **Visuals**: Thông điệp trung tâm nổi bật (Hero Quote Card)
 - **Hero Quote**: _"AI will not replace software engineers. Engineers who master AI will replace those who don't."_
 - **Subtext**: Software engineering is the art of managing complexity and owning outcomes for humans.
 
-#### Presenter Script (English)
+#### Presenter Script
 
-> _"To wrap up our presentation, // we leave you with one defining truth: [PAUSE]_
+> _"To conclude our presentation today, // we leave you with one defining truth: [PAUSE]_
 >
-> _'AI will not replace software engineers. // Engineers who master AI will replace those who don't.' [PAUSE]_
+> _**'AI will not replace software engineers. // Engineers who master AI will replace those who don't.'** [PAUSE]_
 >
-> _Software engineering has never been just about typing code into an editor. // It is the art of managing complexity and owning outcomes for humans. [PAUSE]_
+> _Software engineering has never been just about typing characters into a code editor. // It is the art of managing complexity and owning outcomes for humans. [PAUSE]_
 >
-> _Use AI as your superpower, // but always remain the conductor. [PAUSE]_
+> _Embrace AI as your superpower, // but always remain the conductor. [PAUSE]_
 >
-> _Thank you Ms. Thu and everyone for your time! // We would love to take any questions."_
+> _Thank you Ms. Thu and everyone for your time and attention!"_
 
-#### Vietnamese Note / Vietsub
+#### Vietsub
 
-> _Để kết thúc bài thuyết trình, nhóm chúng em muốn gửi gắm một thông điệp: AI sẽ không thay thế kỹ sư phần mềm, nhưng những kỹ sư làm chủ được AI sẽ thay thế những người không chịu học hỏi. Bản chất của ngành kỹ thuật phần mềm chưa bao giờ chỉ là việc ngồi gõ code vào màn hình, mà là nghệ thuật quản lý độ phức tạp và chịu trách nhiệm về kết quả cho con người. Hãy dùng AI như một siêu năng lực, nhưng hãy luôn là người nhạc trưởng điều phối. Cảm ơn cô và các bạn đã chú ý lắng nghe!_
+> _Để kết thúc bài thuyết trình hôm nay, nhóm chúng em xin gửi gắm một thông điệp cốt lõi: 'AI sẽ không thay thế kỹ sư phần mềm, nhưng những kỹ sư làm chủ được AI sẽ thay thế những người không chịu học hỏi'. Bản chất của kỹ thuật phần mềm chưa bao giờ chỉ là việc ngồi gõ code vào màn hình, mà là nghệ thuật quản lý độ phức tạp và chịu trách nhiệm về kết quả cho con người. Hãy dùng AI như một siêu năng lực, nhưng hãy luôn giữ vai trò người nhạc trưởng điều phối. Cảm ơn cô và các bạn đã chú ý lắng nghe!._

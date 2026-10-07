@@ -1,7 +1,7 @@
 # Research Base: Should AI Replace Human Programmers?
 
-> **Document Type**: Technical Research Dossier & Empirical Knowledge Base  
-> **Topic**: Empirical Analysis of Generative AI Capabilities, System Limitations, Enterprise Risks, and the Human-in-the-Loop Synergistic Paradigm in Modern Software Engineering  
+> **Document Type**: Technical Research Dossier & Empirical Knowledge Base
+> **Topic**: Empirical Analysis of Generative AI Capabilities, System Limitations, Enterprise Risks, and the Human-in-the-Loop Synergistic Paradigm in Modern Software Engineering
 > **Target Standards**: Academic Conference Rigor (Verified Primary Citations & DOIs)
 
 ---
@@ -43,7 +43,7 @@ Kết luận chiến lược: **AI không thay thế kỹ sư phần mềm, như
 
 - **Tên công trình**: _Measuring the Impact of Early-2025 AI on Experienced Open-Source Developer Productivity_ (2025) & _We are Changing our Developer Productivity Experiment Design_ (2026).
 - **Tổ chức & Tác giả**: METR (Model Evaluation & Threat Research) — Joel Becker, Nate Rush, Tom Cunningham, David Rein, Khalid Mahamud.
-- **Mã lưu trữ & Nguồn tài liệu**: [arXiv:2507.09089](https://arxiv.org/abs/2507.09089) | [METR 2026 Report](https://metr.org/blog/2026-02-24-developer-productivity-experiment-design/) | [METR Research Portal](https://metr.org/research/)
+- **Mã lưu trữ & Nguồn tài liệu**: [arXiv:2507.09089](https://arxiv.org/abs/2507.09089) | [METR 2026 Report](https://metr.org/blog/2026-02-24-uplift-update/) | [METR Research Portal](https://metr.org/research/)
 - **Giai đoạn 1 (Initial Study - Early 2025, arXiv:2507.09089)**:
   - **Quy mô**: 16 Senior Engineers kỳ cựu (trung bình 5 năm kinh nghiệm đóng góp trực tiếp cho repository), 246 task backlog thực tế trên các Open-Source Repositories phức tạp (>1 triệu dòng code, >22,000 GitHub stars).
   - **Công cụ**: Cursor Pro sử dụng Claude 3.5 và Claude 3.7 Sonnet.
@@ -204,9 +204,9 @@ Nội dung Slide 10 (_The Production Failure Chain: Zero Legal Liability_) là m
 
 ## 5. 17-Slide Presentation Architecture Specification
 
-Cấu trúc 17 slide theo mô hình Storytelling chuẩn hóa (đồng bộ 100% với file slide thực tế):
+Cấu trúc 17 slide theo mô hình Storytelling:
 
-```
+```text
 PHẦN 01: THE BIG CLAIMS (LỜI ĐỒN VS SỰ THẬT)
 Slide 1:  [Cover] Should AI Replace Human Programmers?
 Slide 2:  [Agenda] What we'll cover (Highlight: [01] The Big Claims - Will programmers go extinct?)
