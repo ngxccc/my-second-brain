@@ -1,637 +1,458 @@
 # Presentation Script: Should AI Replace Human Programmers?
 
-> **Target English Level**: CEFR B1 $\rightarrow$ B2 (Natural, conversational, developer-focused English).  
-> **Key Delivery Markers**: `//` indicates a natural breath pause; `[PAUSE]` marks an intentional rhetorical pause for audience absorption; capitalized words indicate vocal emphasis.
-
-## TL;DR
-
-Kịch bản thuyết trình tiếng Anh đầy đủ 13 slide khớp chính xác từng nội dung trong bộ slide `sile_chuan.pdf`. Toàn bộ tài liệu được định dạng bằng Native Markdown, không chứa emoji hay biểu tượng đồ họa, tối ưu nhịp thở phát âm thực tế (Spoken Cadence), phân đoạn ngắt nghỉ `//`, bổ sung câu chuyển slide dẫn dắt tự nhiên và phần dịch nghĩa bằng tiếng Việt bám sát chuẩn thuật ngữ kỹ thuật.
+> **Target Standard**: Stage-ready College / Conference Presentation Script (17 Atomic Slides).
+> **Tone & Style**: Plain English, conversational, crisp, developer-friendly. Zero academic jargon or filler.
+> **Pacing Markers**: `//` indicates a natural breath pause; `[PAUSE]` marks an intentional pause for key points to sink in.
 
 ---
 
-## Slide Scripts (Full 13 Slides)
+## Slide Scripts (Full 17 Slides)
 
-### Slide 1: Topic Overview & Title Slide
+### Slide 1: Cover Slide
 
-- **Section Badge**: `00 / STRATEGIC OVERVIEW`
 - **Slide Title**: Should AI Replace Human Programmers?
-- **Subtitle**: A Strategic Analysis on AI Capabilities, Human Critical Thinking, Academic Research & The Future of Software Engineering
-- **Instructor**: Ms. Đào Thị Yến Thu
-- **Members**:
-  - 0306241131 - Trần Văn Ngọc
-  - 0306241090 - Ngô Gia Bảo
-  - 0306241102 - Nguyễn Quốc Đương
-  - 0306241125 - Đặng Duy Lam
-  - 0306241126 - Nguyễn Hoài Linh
-  - 0306241143 - Lê Minh Quân
-  - 0306241145 - Lê Minh Tài
-  - 0306241130 - Huỳnh Thế Nghĩa
-- **Layout**: Title Cover Layout
-
-#### On-Screen Text
-
-- **Title**: Should AI Replace Human Programmers?
-- **Instructor**: Ms. Đào Thị Yến Thu
-- **Members**: Trần Văn Ngọc, Ngô Gia Bảo, Nguyễn Quốc Đương, Đặng Duy Lam, Nguyễn Hoài Linh, Lê Minh Quân, Lê Minh Tài, Huỳnh Thế Nghĩa
+- **Subtitle**: Empirical evidence from Stanford, METR, and 153 million lines of production code
+- **Metadata**: Instructor: Ms. Đào Thị Yến Thu | Team: Ngọc, Linh, Bảo, Quân, Đương, Tài, Lam, Nghĩa
 
 #### Presenter Script (English)
 
-> _"Good morning everyone, // and welcome Ms. Đào Thị Yến Thu and fellow classmates to our presentation today. [PAUSE]_
+> _"Good morning Ms. Thu // and everyone. [PAUSE]_
 >
-> _Our team consists of eight members, // and together, // we are addressing one of the most critical debates in technology right now: // 'Should AI Replace Human Programmers?' [PAUSE]_
+> _Today, // our team explores one of the most defining questions in computer science: // 'Should AI replace human programmers?' [PAUSE]_
 >
-> _With the explosive rise of Generative AI, // many people wonder whether software engineers will become obsolete. // Today, // we will present a strategic analysis // exploring AI capabilities, // the necessity of human critical thinking, // academic research, // and the future of software engineering."_
+> _Instead of speculating on hype or headlines, // our presentation brings real empirical evidence // from Stanford University, // METR randomized trials, // and over 153 million lines of production code."_
 
-#### Slide Transition Script (Nói khi bấm chuyển sang Slide 2)
+#### Slide Transition Script
 
-> _"To set the right context, // let's look at the broad strategic outlook of our industry."_
+> _"Let's look at our roadmap for today's session."_
 
 #### Vietnamese Note / Vietsub
 
-> _"Kính chào cô Đào Thị Yến Thu và các bạn đã đến với buổi thuyết trình của nhóm chúng em ngày hôm nay._
->
-> _Nhóm chúng em gồm tám thành viên, và hôm nay chúng em sẽ cùng thảo luận về một trong những câu hỏi cấp thiết nhất của ngành công nghệ hiện nay: 'Liệu AI có nên thay thế lập trình viên con người không?'_
->
-> _Trước sự bùng nổ của Generative AI, rất nhiều người lo ngại rằng kỹ sư phần mềm sẽ bị thay thế. Hôm nay, chúng em sẽ mang đến một phân tích chiến lược toàn diện về năng lực thực tế của AI, tính tất yếu của tư duy phản biện con người, các nghiên cứu học thuật thực nghiệm và tương lai của ngành kỹ thuật phần mềm._
->
-> _(Chuyển Slide 2): Để có góc nhìn đúng đắn nhất, trước hết chúng ta hãy cùng nhìn vào bức tranh chiến lược tổng quan của ngành."_
+> _Chào cô và các bạn. Hôm nay nhóm chúng em sẽ cùng mọi người giải đáp câu hỏi đang được thảo luận sôi nổi nhất: Liệu AI có nên thay thế lập trình viên con người? Bài thuyết trình không dựa trên phỏng đoán cảm tính, mà đưa ra bằng chứng thực nghiệm khách quan từ Đại học Stanford, thử nghiệm đối chứng của METR và phân tích trên 153 triệu dòng code thực tế._
 
 ---
 
-### Slide 2: Strategic Software Engineering Outlook
+### Slide 2: Agenda (Track 01 Highlight)
 
-- **Section Badge**: `00 / STRATEGIC OUTLOOK`
-- **Slide Title**: Strategic Software Engineering Outlook
-- **Core Summary**: A strategic analysis on AI capabilities, human critical thinking, academic research, and the future of software engineering.
-- **Key Focus Areas**:
-  - AI & LLM Capabilities
-  - Human Oversight
-  - IT Job Market Dynamics
-  - Future of Software Engineering
-- **Layout**: Strategic Focus Card Grid
-
-#### On-Screen Text
-
-- **Section Badge**: `STRATEGIC SOFTWARE ENGINEERING OUTLOOK`
-- **Core Analysis**: A strategic analysis on AI capabilities, human critical thinking, academic research, and the future of software engineering.
-- **Pillars**: AI & LLM Capabilities | Human Oversight | IT Job Market Dynamics | Future of Software Engineering
+- **Slide Title**: What we'll cover
+- **Active Section**: `[01] The Big Claims` (Will programmers go extinct?)
+- **Roadmap**: 01 The Big Claims | 02 The Hidden Cost | 03 The Real Superpower | 04 The Winning Formula
 
 #### Presenter Script (English)
 
-> _"As we look at the strategic software engineering outlook on Slide 2, // the conversation around AI has matured beyond hype. [PAUSE]_
+> _"Here is our plan for today. [PAUSE]_
 >
-> _We are not just talking about quick code snippets; // we are examining four interconnected pillars: // first, // the true capabilities of Large Language Models; // second, // the irreplaceable role of human oversight; // third, // the structural shifts in the IT job market; // and finally, // how the entire discipline of software engineering will evolve over the next decade. [PAUSE]_
->
-> _This multidimensional perspective allows us to make evidence-based conclusions rather than relying on fear or speculation."_
+> _We divide our investigation into four straightforward chapters. // We start with Part 1: // 'The Big Claims'—testing extreme predictions made by tech executives against actual developer benchmarks."_
 
-#### Slide Transition Script (Nói khi bấm chuyển sang Slide 3)
+#### Slide Transition Script
 
-> _"Now, // let's walk through the overall structure and key agenda of our presentation."_
+> _"Let's begin by looking at the bold claims that shook the industry."_
 
 #### Vietnamese Note / Vietsub
 
-> _"Nhìn vào bức tranh chiến lược ngành kỹ thuật phần mềm trên Slide 2, cuộc thảo luận về AI giờ đây đã vượt qua giai đoạn thổi phồng truyền thông._
->
-> _Chúng ta không chỉ bàn về những đoạn code mẫu đơn giản; chúng ta đang phân tích bốn trụ cột liên kết chặt chẽ: thứ nhất là năng lực thực tế của LLM; thứ hai là vai trò không thể thay thế của sự giám sát từ con người; thứ ba là những chuyển dịch cơ cấu trên thị trường việc làm IT; và cuối cùng là cách ngành kỹ thuật phần mềm sẽ tiến hóa trong thập kỷ tới._
->
-> _Góc nhìn đa chiều này giúp chúng ta đưa ra những kết luận dựa trên bằng chứng xác thực thay vì cảm xúc lo lắng hay suy đoán vô căn cứ._
->
-> _(Chuyển Slide 3): Sau đây, chúng ta hãy cùng điểm qua cấu trúc tổng thể và các nội dung cốt lõi của bài thuyết trình."_
+> _Đây là 4 phần chính của bài thuyết trình. Chúng em bắt đầu với Phần 1: 'The Big Claims' - Đối chiếu những tuyên bố gây sốc của các lãnh đạo công nghệ với số liệu đo lường thực tế trên lập trình viên._
 
 ---
 
-### Slide 3: Presentation Structure & Key Pillars
+### Slide 3: Extreme Predictions from Tech Leaders
 
-- **Section Badge**: `00 / PRESENTATION STRUCTURE`
-- **Slide Title**: Presentation Structure (Executive Summary & Key Pillars)
-- **Layout**: 4-Pillar Grid Layout
-- **Key Agenda Items**:
-  1. Foundations & Assistance: Comparing traditional software logic vs. generative AI tools & productivity boosts.
-  2. Limitations & Oversight: Inherent AI vulnerabilities and why human critical thinking remains mandatory.
-  3. Market & Skillsets: Shift in IT hiring trends, emerging roles, and essential future developer competencies.
-  4. Risks & Outlook: Enterprise dependency risks and a strategic 10-year outlook on human developers.
-
-#### On-Screen Text
-
-- **Title**: Executive Summary & Key Pillars
-- **1. Foundations & Assistance**: Comparing traditional software logic vs. generative AI tools & productivity boosts.
-- **2. Limitations & Oversight**: Inherent AI vulnerabilities and why human critical thinking remains mandatory.
-- **3. Market & Skillsets**: Shift in IT hiring trends, emerging roles, and essential future developer competencies.
-- **4. Risks & Outlook**: Enterprise dependency risks and a strategic 10-year outlook on human developers.
+- **Slide Title**: Extreme Predictions from Tech Leaders
+- **Subtitle**: The death of human coding became the dominant tech narrative in 2024
+- **Key Quotes**:
+  - Jensen Huang (CEO Nvidia): _"Kids shouldn't learn to code. It's our job to create computers so nobody has to program."_
+  - Matt Garman (CEO AWS): _"In 24 months, most developers will not be coding."_
 
 #### Presenter Script (English)
 
-> _"Slide 3 outlines our presentation structure across four strategic pillars. [PAUSE]_
+> _"Throughout 2024, // tech leaders made dramatic predictions about the death of human programming. [PAUSE]_
 >
-> _In Pillar 1, // we compare traditional software logic with modern generative AI tools and analyze developer productivity boosts. [PAUSE]_
+> _Jensen Huang, // CEO of Nvidia, // told world leaders that children should stop learning how to code, // claiming AI will do all the programming for us. [PAUSE]_
 >
-> _In Pillar 2, // we investigate inherent AI limitations and explain why human critical thinking and oversight remain mandatory. [PAUSE]_
+> _A few months later, // Matt Garman, // CEO of AWS, // stated that within 24 months, // most developers will no longer write code. [PAUSE]_
 >
-> _In Pillar 3, // we explore the IT job market dynamics, // highlighting declining jobs, // emerging career paths, // and future competencies. [PAUSE]_
->
-> _Finally, in Pillar 4, // we examine the severe enterprise risks of replacing human engineers // and deliver our 10-year outlook."_
+> _These bold statements made many people believe human programmers would become obsolete almost overnight. // But what happens when researchers actually put developer productivity to the test?"_
 
-#### Slide Transition Script (Nói khi bấm chuyển sang Slide 4)
+#### Slide Transition Script
 
-> _"Let's begin with Pillar 1 // by examining the fundamental differences between traditional programs and AI models."_
+> _"Let's examine the landmark controlled experiment from METR."_
 
 #### Vietnamese Note / Vietsub
 
-> _"Slide 3 phác thảo cấu trúc bài thuyết trình qua bốn trụ cột chiến lược._
->
-> _Ở Trụ cột 1, chúng ta so sánh logic phần mềm truyền thống với các công cụ Generative AI hiện đại và phân tích sự bứt phá năng suất của lập trình viên._
->
-> _Ở Trụ cột 2, chúng ta xem xét các giới hạn cố hữu của AI và lý giải tại sao sự giám sát cùng tư duy phản biện của con người là bắt buộc._
->
-> _Ở Trụ cột 3, chúng ta phân tích động lực thị trường việc làm IT, chỉ rõ những vị trí suy giảm, các hướng đi sự nghiệp mới và những năng lực cần trang bị._
->
-> _Cuối cùng, ở Trụ cột 4, chúng ta đánh giá các rủi ro doanh nghiệp nghiêm trọng khi phụ thuộc hoàn toàn vào AI và đưa ra nhận định chiến lược cho 10 năm tới._
->
-> _(Chuyển Slide 4): Hãy cùng bắt đầu với Trụ cột 1 bằng việc tìm hiểu sự khác biệt bản chất giữa lập trình truyền thống và các mô hình AI."_
+> _Năm 2024, các lãnh đạo công nghệ vẽ nên viễn cảnh lập trình viên con người sắp tuyệt chủng: CEO Nvidia nói trẻ em không cần học code nữa, CEO AWS tuyên bố hầu hết lập trình viên sẽ không còn gõ code trong 24 tháng tới. Nhưng khi kiểm chứng bằng thử nghiệm khoa học, thực tế hoàn toàn khác._
 
 ---
 
-### Slide 4: Technical Foundations: Traditional Programs vs. AI Models
+### Slide 4: METR Randomized Controlled Trial: 2025 vs 2026
 
-- **Section Badge**: `01 / TECHNICAL FOUNDATIONS`
-- **Slide Title**: Traditional Programs vs. AI Models
-- **Layout**: Two-Column Card Layout (Left: Traditional Programming / Right: Generative AI Models)
-
-#### On-Screen Text
-
-- **Section Badge**: `01. TECHNICAL FOUNDATIONS`
-- **Title**: Traditional Programs vs. AI Models
-
-**[Left Card: Traditional Programming]**
-
-- **Explicit Rules**: Written manually step-by-step by human engineers.
-- **Deterministic Logic**: Strict execution paths (`if/else` conditionals).
-- **Fixed Output**: Identical inputs strictly guarantee identical outputs.
-
-**[Right Card: Generative AI Models]**
-
-- **Pattern Recognition**: Learns from massive repository training data.
-- **Prompt Generation**: Synthesizes code dynamically from natural language.
-- **Industry Stack**: Powered by LLMs, GPUs (ChatGPT, Copilot, Cursor).
+- **Slide Title**: METR Randomized Controlled Trial: 2025 vs 2026
+- **Visuals**: Sơ đồ thử nghiệm 57 lập trình viên (`METR_Study_Design_2026.png`) + Biểu đồ thời gian METR
+- **Key Finding**: AI makes developers 18% faster today, but creates heavy cognitive dependency ('The Uber Effect').
+- **Source**: METR RCT Study (arXiv:2507.09089) & 2026 Follow-up Update (metr.org, Feb 2026)
 
 #### Presenter Script (English)
 
-> _"On Slide 4, // we explore the fundamental technical foundations distinguishing traditional programs from AI models. [PAUSE]_
+> _"To test these claims, // researchers at METR ran randomized controlled trials on experienced open-source engineers. [PAUSE]_
 >
-> _Look at the left card: // Traditional Programming is built on EXPLICIT RULES written manually step-by-step by human engineers. // It follows DETERMINISTIC LOGIC with strict execution paths—like if-else branches—where identical inputs strictly guarantee identical outputs every single time. [PAUSE]_
+> _In early 2025, // developers using AI were actually 19% SLOWER on large codebases. // Why? // Because reading, verifying, and debugging subtle bugs took more cognitive effort than writing clean code directly. [PAUSE]_
 >
-> _Now look at the right card: // Generative AI Models work on statistical PATTERN RECOGNITION. // They learn from billions of lines of repository training data // and dynamically synthesize code from natural language prompts. // Powered by LLMs and GPUs, // modern tools like ChatGPT, GitHub Copilot, and Cursor // assist developers by generating code on the fly."_
+> _By 2026, // newer agentic tools improved, // giving engineers an 18% speedup. [PAUSE]_
+>
+> _YET, // researchers discovered a serious side effect: // 'The Uber Effect'. // Between 30 and 50% of developers refused to finish difficult tasks if AI was disallowed, // comparing manual coding to being forced to walk across the city after getting used to Uber. // When developers become this dependent on AI, // what happens to code quality?"_
 
-#### Slide Transition Script (Nói khi bấm chuyển sang Slide 5)
+#### Slide Transition Script
 
-> _"Because AI models can synthesize code from prompts, // how do they assist developers in real-world workflows? // Let's check Slide 5."_
+> _"That brings us directly to Part 2: // The Hidden Cost."_
 
 #### Vietnamese Note / Vietsub
 
-> _"Trên Slide 4, chúng ta làm rõ nền tảng kỹ thuật khác biệt giữa các chương trình truyền thống và mô hình AI._
->
-> _Hãy nhìn vào thẻ bên trái: Lập trình truyền thống vận hành dựa trên các quy tắc tường minh do kỹ sư con người viết thủ công từng bước một. Nó tuân theo logic xác định với các nhánh rẽ nhánh nghiêm ngặt (như câu lệnh if-else), đảm bảo đầu vào giống nhau thì kết quả đầu ra luôn đồng nhất tuyệt đối._
->
-> _Bây giờ hãy nhìn sang thẻ bên phải: Các mô hình Generative AI hoạt động dựa trên khả năng nhận diện mẫu thống kê. Chúng học từ khối lượng dữ liệu khổng lồ từ các kho lưu trữ mã nguồn và tổng hợp mã nguồn động từ prompt ngôn ngữ tự nhiên. Được hỗ trợ bởi LLM và phần cứng GPU, các công cụ như ChatGPT, Copilot hay Cursor giúp lập trình viên sinh mã nhanh chóng."_
->
-> _(Chuyển Slide 5): Vì AI có thể sinh mã từ prompt, chúng đang hỗ trợ lập trình viên trong công việc thực tế ra sao? Hãy cùng xem Slide 5."_
+> _Viện nghiên cứu METR đã đo giờ thực tế trên các lập trình viên. Đầu năm 2025, dev dùng AI bị chậm đi 19% vì tốn quá nhiều thời gian đọc và sửa lỗi ngầm. Đến đầu năm 2026, công cụ mới giúp dev nhanh hơn 18%, nhưng lại sinh ra 'Hiệu ứng Uber': phân nửa lập trình viên từ chối làm bài nếu bị cấm dùng AI, vì quen ỷ lại nên ngại tư duy thủ công. Vậy khi dev quá phụ thuộc vào AI, chất lượng code sẽ ra sao?_
 
 ---
 
-### Slide 5: Developer Assistance: AI as a Powerful Force Multiplier
+### Slide 5: Agenda (Track 02 Highlight)
 
-- **Section Badge**: `01 / DEVELOPER ASSISTANCE`
-- **Slide Title**: AI as a Powerful Force Multiplier
-- **Speed Metric**: `+20% to 50%` Average Increase in Developer Coding Speed
-- **Core Summary**: Saves hours spent on manual boilerplate syntax, freeing mental bandwidth for complex system design.
-- **Layout**: 3-Column Card Layout (Boilerplate Code | Refactoring & Cleanup | Tests & Debugging)
-
-#### On-Screen Text
-
-- **Section Badge**: `01. DEVELOPER ASSISTANCE`
-- **Title**: AI as a Powerful Force Multiplier
-- **Speed Metric**: `+20% to 50%` Average Increase in Developer Coding Speed
-- **Benefit**: Saves hours spent on manual boilerplate syntax, freeing mental bandwidth for complex system design.
-- **Card 1: Boilerplate Code**: Generates setup code, standard APIs, and data formatting.
-- **Card 2: Refactoring & Cleanup**: Cleans up legacy syntax and modularizes complex functions.
-- **Card 3: Tests & Debugging**: Writes automated unit tests and explains error trace logs instantly.
+- **Slide Title**: What we'll cover
+- **Active Section**: `[02] The Hidden Cost` (Bugs, security, and rework)
+- **Roadmap**: 01 The Big Claims | 02 The Hidden Cost | 03 The Real Superpower | 04 The Winning Formula
 
 #### Presenter Script (English)
 
-> _"Slide 5 demonstrates how AI acts as a powerful force multiplier for software engineers. [PAUSE]_
+> _"Moving to Part 2: // 'The Hidden Cost'—bugs, security, and rework. [PAUSE]_
 >
-> _Industry studies show an average coding speed boost of 20% to 50%. // By handling mechanical syntax, // AI saves developers hours of manual effort, // freeing mental bandwidth for complex system design. [PAUSE]_
->
-> _We see this in three major areas: [PAUSE]_
->
-> _First, // Boilerplate Code: // AI instantly generates project configuration, // standard CRUD APIs, // and routine data formatting. [PAUSE]_
->
-> _Second, // Refactoring & Cleanup: // It cleans up legacy syntax and breaks large functions into clean, // modular components. [PAUSE]_
->
-> _And third, // Tests & Debugging: // It automatically writes unit test suites // and decodes confusing stack traces in seconds."_
+> _Typing code fast is completely meaningless if that code breaks in production. // Let's examine what happens to code quality across hundreds of companies."_
 
-#### Slide Transition Script (Nói khi bấm chuyển sang Slide 6)
+#### Slide Transition Script
 
-> _"While AI boosts speed dramatically, // does speed equal correctness? // Let's examine the critical capabilities that AI still lacks."_
+> _"Let's look at the landmark data from Stanford University."_
 
 #### Vietnamese Note / Vietsub
 
-> _"Slide 5 minh họa vai trò của AI như một đòn bẩy năng suất mạnh mẽ cho kỹ sư phần mềm._
->
-> _Các báo cáo ngành chỉ ra tốc độ lập trình tăng trung bình từ 20% đến 50%. Bằng cách giải quyết cú pháp rập khuôn, AI tiết kiệm hàng giờ gõ phím thủ công, giải phóng năng lực tư duy để kỹ sư tập trung vào thiết kế hệ thống phức tạp._
->
-> _Sức mạnh này thể hiện rõ qua ba khía cạnh:_
->
-> _Thứ nhất là Boilerplate: AI sinh cấu hình khởi tạo, các API CRUD chuẩn và định dạng dữ liệu chỉ trong vài giây._
->
-> _Thứ hai là Refactoring: AI hỗ trợ dọn dẹp cú pháp cũ và module hóa các hàm phức tạp thành các khối mạch lạc._
->
-> _Thứ ba là Testing và Debugging: AI hỗ trợ viết Unit Test tự động và giải thích chi tiết các file trace log khi gặp lỗi._
->
-> _(Chuyển Slide 6): Tốc độ sinh mã nhanh là thế, nhưng tốc độ có đồng nghĩa với sự chính xác tuyệt đối không? Hãy cùng xem những giới hạn mà AI vẫn đang vấp phải."_
+> _Chuyển sang Phần 2: 'The Hidden Cost' - Cái giá phải trả về chất lượng code, lỗi phần mềm và nợ kỹ thuật. Gõ code nhanh vô nghĩa nếu đoạn code đó làm sập hệ thống. Chúng ta bắt đầu với số liệu thực tế từ Đại học Stanford._
 
 ---
 
-### Slide 6: AI Limitations: Critical Capabilities AI Still Lacks
+### Slide 6: Code Quality Drops, Rework Surges
 
-- **Section Badge**: `02 / AI LIMITATIONS`
-- **Slide Title**: Critical Capabilities AI Still Lacks
-- **Layout**: 4-Block Warning Card Layout
-- **Key Limitations**:
-  1. Lack of True Innovation: Recombines historical training data; cannot invent novel paradigms.
-  2. Hallucinations: Generates non-existent APIs, invalid imports, and insecure code patterns.
-  3. No Business Context: Lacks user empathy, domain nuances, and strategic product goals.
-  4. Statistical Probability: Predicts next tokens probabilistically without understanding software systems.
-
-#### On-Screen Text
-
-- **Section Badge**: `02. AI LIMITATIONS`
-- **Title**: Critical Capabilities AI Still Lacks
-- **1. Lack of True Innovation**: Recombines historical training data; cannot invent novel paradigms.
-- **2. Hallucinations**: Generates non-existent APIs, invalid imports, and insecure code patterns.
-- **3. No Business Context**: Lacks user empathy, domain nuances, and strategic product goals.
-- **4. Statistical Probability**: Predicts next tokens probabilistically without understanding software systems.
+- **Slide Title**: Code Quality Drops, Rework Surges
+- **Visuals**: Sơ đồ mẫu (`Stanford_Study_Design_Slide6.png`) + Biểu đồ 3 cột Python (`Stanford_Metrics_Slide6.png`)
+- **Key Finding**: AI increases pull request volume by 14% but degrades quality by 9%, surging rework load by 2.6x on human reviewers.
+- **Source**: Denisov-Blanch et al., Stanford University (arXiv:2409.15152)
 
 #### Presenter Script (English)
 
-> _"Moving to Pillar 2 on Slide 6, // we must recognize the four critical capabilities that AI fundamentally lacks. [PAUSE]_
+> _"This landmark Stanford University study analyzed over 100,000 engineers across 600 companies. [PAUSE]_
 >
-> _Number 1: // Lack of True Innovation. // AI can only recombine existing code patterns from historical training sets; // it cannot invent new architectural paradigms or revolutionary algorithms. [PAUSE]_
+> _The data reveals a severe trade-off. // While AI tools increased pull request count by 14%, // overall code quality DROPPED by 9%. [PAUSE]_
 >
-> _Number 2: // Hallucinations. // AI frequently fabricates non-existent library functions, // broken package imports, // and vulnerable security holes. [PAUSE]_
+> _Even more alarming: // Maintenance rework surged by 2.6 times! // And code quality was 3.6 times more volatile. [PAUSE]_
 >
-> _Number 3: // No Business Context. // AI has zero real-world empathy; // it cannot understand client pain points, // regulatory requirements, // or strategic business tradeoffs. [PAUSE]_
->
-> _And Number 4: // Statistical Probability. // Under the hood, // an LLM simply predicts the next most likely token. // It has NO real conceptual understanding of how a distributed software system operates."_
+> _In short: // AI flooded repositories with fast code, // but senior reviewers had to spend more than double the effort cleaning it up."_
 
-#### Slide Transition Script (Nói khi bấm chuyển sang Slide 7)
+#### Slide Transition Script
 
-> _"Because AI operates purely on statistical probabilities without real understanding, // why is human oversight absolutely mandatory? // Let's examine Slide 7."_
+> _"What did this do to system architecture over time?"_
 
 #### Vietnamese Note / Vietsub
 
-> _"Bước sang Trụ cột 2 ở Slide 6, chúng ta cần nhìn thẳng vào bốn hạn chế cốt lõi mà AI chưa thể vượt qua._
->
-> _Thứ nhất là thiếu sự sáng tạo đột phá: AI chỉ có thể tổng hợp và phối hợp lại các mẫu code đã có trong tập dữ liệu huấn luyện lịch sử; nó không thể tự phát minh ra các kiến trúc phần mềm mới hay giải thuật mang tính cách mạng._
->
-> _Thứ hai là Hallucination: AI thường xuyên tự bịa ra các hàm thư viện không có thật, import sai gói phụ thuộc hoặc đưa ra các đoạn code tiềm ẩn lỗ hổng bảo mật._
->
-> _Thứ ba là không có ngữ cảnh kinh doanh: AI hoàn toàn thiếu sự thấu cảm với người dùng cuối; nó không nắm bắt được bài toán nghiệp vụ, yêu cầu tuân thủ hay định hướng sản phẩm._
->
-> _Thứ tư là bản chất xác suất thống kê: LLM bản chất chỉ dự đoán token tiếp theo có xác suất xuất hiện cao nhất. Nó không hề có tư duy nhận thức thực sự về cách một hệ thống phần mềm hoàn chỉnh vận hành._
->
-> _(Chuyển Slide 7): Do AI chỉ dựa trên xác suất thống kê mà không có tư duy hệ thống, tại sao vai trò giám sát của con người lại là bắt buộc? Hãy cùng sang Slide 7."_
+> _Nghiên cứu của Đại học Stanford trên 100,000 kỹ sư tại 600 doanh nghiệp: Số lượng pull request tăng 14% tạo cảm giác năng suất ảo, nhưng chất lượng code giảm 9%, khối lượng công việc phải đập đi sửa lại tăng gấp 2.6 lần và độ bất ổn định tăng 3.6 lần, dồn gánh nặng kiểm duyệt khổng lồ lên các reviewer._
 
 ---
 
-### Slide 7: Human Oversight: Critical Capabilities & Accountability
+### Slide 7: Technical Debt: The Collapse of Refactoring
 
-- **Section Badge**: `02 / HUMAN OVERSIGHT`
-- **Slide Title**: Human Oversight & Critical Thinking
-- **Layout**: 3-Row Strategic Card Layout
-- **Key Themes**:
-  1. Edge Case & Failure Mode Management: Unpredictable real-world user inputs easily break unvalidated AI-generated logic.
-  2. High-Stakes Security & Reliability: Fintech and healthcare system errors cause catastrophic financial & legal losses.
-  3. Ultimate Professional Accountability: Only human engineers hold final accountability to clients, regulators, and users.
-
-#### On-Screen Text
-
-- **Section Badge**: `02. HUMAN OVERSIGHT`
-- **Title**: Human Oversight & Critical Thinking
-- **1. Edge Case & Failure Mode Management**: Unpredictable real-world user inputs easily break unvalidated AI-generated logic.
-- **2. High-Stakes Security & Reliability**: Fintech and healthcare system errors cause catastrophic financial & legal losses.
-- **3. Ultimate Professional Accountability**: Only human engineers hold final accountability to clients, regulators, and users.
+- **Slide Title**: Technical Debt: The Collapse of Refactoring
+- **Visuals**: Biểu đồ 3 cột GitClear (`GitClear_Metrics_Slide7.png`)
+- **Key Finding**: AI encourages append-only copy-paste patterns over modular refactoring, doubling codebase churn within 2 weeks.
+- **Source**: GitClear Research (153M+ lines of code)
 
 #### Presenter Script (English)
 
-> _"Slide 7 reinforces why human oversight and critical thinking remain strictly non-negotiable. [PAUSE]_
+> _"GitClear analyzed 153 million lines of real production code across thousands of projects. [PAUSE]_
 >
-> _First, // Edge Case and Failure Mode Management: // Real-world user behavior is chaotic. // Unpredictable inputs and race conditions easily break unvalidated AI code. // Only human engineers possess the foresight to test bizarre boundary conditions. [PAUSE]_
+> _Look at the first bar: // The percentage of refactoring collapsed from 25% down to under 10%. // Meanwhile, // copy-pasted duplicate code surged by 48%. // And code churn—code rewritten or deleted within 14 days—DOUBLED. [PAUSE]_
 >
-> _Second, // High-Stakes Security and Reliability: // In mission-critical environments like Fintech, // banking, // or Healthcare, // a single logic bug or unhandled exception can trigger millions of dollars in financial losses // or threaten patient lives. [PAUSE]_
->
-> _And third, // Ultimate Professional Accountability: // When a production incident occurs, // an algorithm cannot be held liable. // Only licensed, // professional human engineers carry legal and ethical accountability to clients, // regulators, // and end users."_
+> _Why? // Because AI models incentivize developers to append new lines of code // rather than refactoring shared modules. // This piles up dangerous technical debt."_
 
-#### Slide Transition Script (Nói khi bấm chuyển sang Slide 8)
+#### Slide Transition Script
 
-> _"Is there academic evidence backing up this need for human critical thinking? // Let's look at recent empirical research from Anthropic."_
+> _"Beyond messy architecture, // what about cybersecurity risks?"_
 
 #### Vietnamese Note / Vietsub
 
-> _"Slide 7 khẳng định lý do tại sao sự giám sát và tư duy phản biện của con người là điều kiện tiên quyết không thể thỏa hiệp._
->
-> _Thứ nhất là quản trị Edge Case và các kịch bản lỗi: Thực tế vận hành người dùng vô cùng phức tạp. Những đầu vào bất thường và xung đột luồng xử lý rất dễ làm sụp đổ các đoạn logic do AI sinh ra nếu không được kiểm thử. Chỉ kỹ sư con người mới có đủ kinh nghiệm để dự đoán các trường hợp biên khắc nghiệt._
->
-> _Thứ hai là bảo mật và độ tin cậy trong các hệ thống rủi ro cao: Trong các lĩnh vực quan trọng như Fintech, ngân hàng hay y tế, một lỗi logic nhỏ cũng có thể gây thiệt hại hàng triệu USD hoặc đe dọa trực tiếp đến tính mạng người bệnh._
->
-> _Thứ ba là trách nhiệm nghề nghiệp cuối cùng: Khi xảy ra Production Incident, thuật toán không thể đứng ra chịu trách nhiệm. Chỉ kỹ sư con người mới có tư cách pháp lý và đạo đức nghề nghiệp để cam kết với khách hàng và cơ quan quản lý._
->
-> _(Chuyển Slide 8): Liệu có bằng chứng nghiên cứu học thuật nào chứng minh cho tầm quan trọng của tư duy con người? Hãy cùng xem nghiên cứu thực nghiệm từ Anthropic ở Slide 8."_
+> _Nghiên cứu của GitClear trên 153 triệu dòng code: Tỷ lệ dọn dẹp và tối ưu hóa code (refactoring) giảm từ 25% xuống dưới 10%. Ngược lại, code trùng lặp copy-paste tăng gần một nửa (+48%) và lượng code bị xóa/viết lại sau 2 tuần tăng gấp đôi. AI khuyến khích thói quen dán thêm code mới thay vì tái cấu trúc module dùng chung, làm hệ thống ngày càng phình to nợ kỹ thuật._
 
 ---
 
-### Slide 8: Empirical Research Proof: Anthropic Study (2026)
+### Slide 8: Silent Vulnerabilities & Slopsquatting Risks
 
-- **Section Badge**: `02 / EMPIRICAL RESEARCH PROOF`
-- **Slide Title**: Anthropic Study (2026): AI Impact on Skill Acquisition
+- **Slide Title**: Silent Vulnerabilities & Slopsquatting Risks
+- **Visuals**: Sơ đồ chuỗi tấn công 4 bước (`Slopsquatting_Flowchart_Slide8.png` / Hộp quy trình Phase 01-03 & Outcome)
+- **Key Stages**:
+  - Phase 01: Package Hallucination (AI model invents fake dependency names like `express-jwt-auth`)
+  - Phase 02: Slopsquatting Attack (Threat actors register fake packages on npm/PyPI with malware)
+  - Phase 03: Automated Installation (Developer blindly executes `npm install`)
+  - Outcome: Supply Chain Breach (Trojan in CI/CD, Company Servers Infected)
+- **Key Takeaway**: Controlled experiments show active skepticism cuts security risks by 80%.
+- **Source**: Perry et al., Stanford ACM CCS & Snyk Research
+
+#### Presenter Script (English)
+
+> _"In cybersecurity, // AI introduces an emerging attack vector known as 'Slopsquatting'. [PAUSE]_
+>
+> _Here is how it unfolds in four steps: [PAUSE]_
+> _In Phase 1: // The AI model hallucinates a plausible package name that does not exist—such as `express-jwt-auth`. [PAUSE]_
+> _In Phase 2: // Attackers scan these prompts and register fake packages containing malware on public registries like npm and PyPI. [PAUSE]_
+> _In Phase 3: // A developer trusts the AI and blindly executes `npm install`. [PAUSE]_
+> _Outcome: // The malware infects the company's servers and CI/CD pipeline! [PAUSE]_
+>
+> _Stanford researchers proved that active developer skepticism cuts these vulnerabilities by 80%."_
+
+#### Slide Transition Script
+
+> _"What happens when engineers rely passively on AI day after day?"_
+
+#### Vietnamese Note / Vietsub
+
+> _Về mặt an ninh mạng, AI tạo ra nguy cơ tấn công chuỗi cung ứng gọi là Slopsquatting qua 4 bước: Đầu tiên AI tự bịa ra một tên package không có thật. Tin tặc phát hiện quy luật này liền đăng ký ngay package chứa mã độc đúng tên đó lên npm/PyPI. Lập trình viên tin tưởng chạy lệnh cài đặt vào máy. Kết quả là máy chủ công ty bị nhiễm mã độc. Nghiên cứu của Stanford chứng minh: Thái độ thận trọng và rà soát chủ động giúp giảm tới 80% rủi ro bảo mật._
+
+---
+
+### Slide 9: The Cost of Blind Reliance: Bugs Surge, Speed Flatlines
+
+- **Slide Title**: The Cost of Blind Reliance: Bugs Surge, Speed Flatlines
+- **Visuals**: Biểu đồ đối nghịch 2 bảng Uplevel & DORA (`Uplevel_DORA_Metrics_Slide9.png`)
+- **Key Finding**: Typing code faster does not mean shipping software faster.
+- **Source**: Google Cloud DORA & Uplevel 2024
+
+#### Presenter Script (English)
+
+> _"When developers stop thinking critically, // downstream bugs multiply. [PAUSE]_
+>
+> _A 2024 enterprise study by Uplevel found that after giving developers AI tools, // bug rates in pull requests jumped by 41%! [PAUSE]_
+>
+> _And look at delivery speed: // Did features actually reach users any faster? // The net improvement was ZERO percent! [PAUSE]_
+>
+> _Google Cloud's DORA report explains why: // Typing code faster at your desk does NOT mean shipping software faster. // When pull requests contain more bugs, // triage and debugging wipe out all the time saved."_
+
+#### Slide Transition Script
+
+> _"Let's trace how unchecked code escalates into a production failure."_
+
+#### Vietnamese Note / Vietsub
+
+> _Khi lập trình viên ỷ lại vào AI và giảm tư duy phản biện, lỗi bắt đầu xuất hiện nhiều hơn. Nghiên cứu của Uplevel cho thấy tỷ lệ lỗi trong pull request tăng tới 41%. Nhưng tốc độ đưa sản phẩm đến tay người dùng có tăng không? Bằng 0%! Báo cáo DORA của Google giải thích: Bạn gõ phím nhanh hơn ở bàn làm việc không có nghĩa là công ty bàn giao phần mềm nhanh hơn, vì thời gian gõ nhanh đã bị bù trừ vào thời gian đi tìm và vá lỗi ngầm._
+
+---
+
+### Slide 10: The Production Failure Chain
+
+- **Slide Title**: The Production Failure Chain
+- **Visuals**: Sơ đồ 4 công đoạn (`Production_Failure_Chain_Slide10.png` / Chuỗi State 01-03 & Outcome)
+- **Key Stages**:
+  - State 01: AI guesses code without knowing the full system
+  - State 02: Code passes unit tests but breaks the database
+  - State 03: Tired reviewer merges clean-looking code
+  - Outcome: Server crashes at 2 AM. AI has zero liability; humans take the blame.
+- **Footnote**: Large Language Models have no legal identity and provide zero SLA guarantees.
+
+#### Presenter Script (English)
+
+> _"Here is the complete failure chain in four stages: [PAUSE]_
+>
+> _In State 1: // AI predicts code based on text probabilities, // without understanding the full system. [PAUSE]_
+> _In State 2: // The code passes small unit tests, // but quietly breaks database invariants. [PAUSE]_
+> _In State 3: // A tired reviewer sees clean-looking syntax // and clicks 'Merge'. [PAUSE]_
+> _Outcome: // At 2 AM, the production server crashes! [PAUSE]_
+>
+> _And here is the critical takeaway: // Large Language Models have zero legal identity and provide zero SLA guarantees. // When systems fail, // human engineers take 100% of the liability."_
+
+#### Slide Transition Script
+
+> _"Despite these risks, // why is AI adoption surging? // Because when used correctly, // AI has extraordinary power. Let's look at Part 3."_
+
+#### Vietnamese Note / Vietsub
+
+> _Sơ đồ này tóm tắt chuỗi sự cố qua 4 bước: Bước 1, AI đoán code theo xác suất từ ngữ mà không hiểu toàn bộ hệ thống. Bước 2, code chạy thử cục bộ thì qua nhưng ngầm làm sai lệch cơ sở dữ liệu. Bước 3, người review mệt mỏi thấy code đẹp nên bấm duyệt. Kết quả: Nửa đêm hệ thống sập! Điểm mấu chốt là: AI không có tư cách pháp nhân và không cam kết SLA. Khi sự cố xảy ra, con người phải chịu trách nhiệm 100%._
+
+---
+
+### Slide 11: Agenda (Track 03 Highlight)
+
+- **Slide Title**: What we'll cover
+- **Active Section**: `[03] The Real Superpower` (How AI actually saves your time)
+- **Roadmap**: 01 The Big Claims | 02 The Hidden Cost | 03 The Real Superpower | 04 The Winning Formula
+
+#### Presenter Script (English)
+
+> _"Turning to Part 3: // 'The Real Superpower'—how AI actually saves your time. [PAUSE]_
+>
+> _We are not against AI. // On the contrary, // for specific isolated tasks, // AI is an extraordinary accelerator. Let's examine the numbers."_
+
+#### Slide Transition Script
+
+> _"Let's look at the landmark GitHub and Microsoft trial."_
+
+#### Vietnamese Note / Vietsub
+
+> _Chuyển sang Phần 3: 'The Real Superpower' - AI thực sự giúp chúng ta tiết kiệm thời gian ở đâu. Chúng em hoàn toàn không phủ nhận AI; trái lại, ở những tác vụ cụ thể, AI là một trợ thủ cực kỳ mạnh mẽ._
+
+---
+
+### Slide 12: The Real Superpower: Where AI Saves Your Time
+
+- **Slide Title**: The Real Superpower: Where AI Saves Your Time
+- **Visuals**: Biểu đồ tốc độ GitHub RCT (`GitHub_Speedup_Slide12.png`)
 - **Key Metrics**:
-  - Cognitive Offloading (Bad): `-17%`
-  - Cognitive Engagement (Good): `$\ge 65\%$` Retention
-- **Layout**: Comparative Metric Card Layout
-
-#### On-Screen Text
-
-- **Section Badge**: `02. EMPIRICAL RESEARCH PROOF`
-- **Title**: Anthropic Study (2026): AI Impact on Skill Acquisition
-- **Metric Highlight**: Cognitive Offloading: `-17%`
-- **Cognitive Offloading (Bad)**:
-  - Copying AI output without understanding degrades fundamental debugging muscle memory.
-  - Lower theoretical comprehension when passively copy-pasting AI code.
-- **Cognitive Engagement (Good)**:
-  - Asking AI 'why' code works retains high skill mastery ($\ge 65\%$) and concept retention.
+  - Web Server Task Time: 161 mins without AI $\rightarrow$ 71 mins with Copilot (55.8% time saved, 2.26x faster).
+  - Velocity Divergence: Legacy Maintenance (-19% slowdown) vs Greenfield Scaffolding (+55.8% speedup).
+- **Source**: Peng et al., GitHub / Microsoft Research
 
 #### Presenter Script (English)
 
-> _"On Slide 8, // we examine rigorous empirical proof from a 2026 Anthropic study on how AI impacts skill acquisition. [PAUSE]_
+> _"In this landmark study by Microsoft and GitHub, // developers built a web server from scratch. [PAUSE]_
 >
-> _The research highlights a stark contrast between two learning behaviors: [PAUSE]_
+> _Look at the green bar: // Developers without AI took 161 minutes. // Developers with AI finished in just 71 minutes! // That is nearly 56% time saved—more than twice as fast! [PAUSE]_
 >
-> _On the negative side: // 'Cognitive Offloading'. // When programmers passively copy and paste AI code without comprehension, // their theoretical understanding drops by 17%, // severely damaging their fundamental debugging muscle memory. // If you do not understand the underlying logic, // you cannot debug when the system breaks. [PAUSE]_
->
-> _On the positive side: // 'Cognitive Engagement'. // When developers use AI interactively—asking 'why' a pattern was chosen // or how a function handles memory—they maintain high skill mastery above 65% alongside long-term concept retention. [PAUSE]_
->
-> _The takeaway is clear: // AI is a catalyst for learning only when paired with active critical thinking."_
+> _Notice the velocity divergence on the right: // In complex legacy codebases, AI can slow you down by 19%. // But for new project scaffolding, // boilerplate CRUD, // and test setup, // AI is an unbeatable superpower."_
 
-#### Slide Transition Script (Nói khi bấm chuyển sang Slide 9)
+#### Slide Transition Script
 
-> _"Now that we understand both the power and risks of AI, // how is this impacting the real-world IT job market? // Let's move to Pillar 3."_
+> _"How does this superpower reshape our daily working hours?"_
 
 #### Vietnamese Note / Vietsub
 
-> _"Tại Slide 8, chúng ta phân tích bằng chứng nghiên cứu thực nghiệm từ nghiên cứu năm 2026 của Anthropic về tác động của AI đối với việc tiếp thu kỹ năng._
->
-> _Nghiên cứu chỉ ra sự tương phản rõ rệt giữa hai hành vi học tập và làm việc:_
->
-> _Ở mặt tiêu cực là hành vi Cognitive Offloading: Khi lập trình viên chỉ sao chép và dán mã nguồn từ AI một cách thụ động mà không đào sâu bản chất, điểm số hiểu biết lý thuyết sụt giảm tới 17%, đồng thời làm mai một phản xạ debug nền tảng. Khi không hiểu bản chất code, lập trình viên sẽ hoàn toàn bất lực khi hệ thống gặp sự cố._
->
-> _Ngược lại, ở mặt tích cực là Cognitive Engagement: Khi kỹ sư chủ động tương tác với AI bằng cách chất vấn lý do lựa chọn giải thuật hay cách quản lý bộ nhớ, họ duy trì mức độ thành thạo kỹ năng vượt trội trên 65% và ghi nhớ kiến trúc lâu dài._
->
-> _Kết luận rất rõ ràng: AI chỉ phát huy giá trị đòn bẩy khi song hành cùng tư duy phản biện chủ động._
->
-> _(Chuyển Slide 9): Khi đã hiểu rõ cả sức mạnh lẫn rủi ro của AI, điều này đang tác động ra sao đến thị trường tuyển dụng IT thực tế? Hãy cùng bước sang Trụ cột 3."_
+> _Thử nghiệm của Microsoft và GitHub: Lập trình viên viết một máy chủ web mới từ đầu. Nhóm làm thủ công mất 161 phút, nhóm có Copilot chỉ mất 71 phút, tiết kiệm gần 56% thời gian (nhanh hơn gấp 2.2 lần). Biểu đồ bên phải chỉ rõ: Với codebase cũ phức tạp thì AI gây chậm 19%, nhưng với khởi tạo dự án mới (greenfield), sinh code mẫu và dựng khung test thì AI phát huy tốc độ vượt trội._
 
 ---
 
-### Slide 9: IT Job Market Dynamics: Impact on the IT Job Market
+### Slide 13: Reallocating Engineering Bandwidth
 
-- **Section Badge**: `03 / IT JOB MARKET DYNAMICS`
-- **Slide Title**: Impact on the IT Job Market
-- **Layout**: Two-Column Market Trend Layout (Declining Demand Roles vs. High-Demand Safe Roles)
-
-#### On-Screen Text
-
-- **Section Badge**: `03. IT JOB MARKET DYNAMICS`
-- **Title**: Impact on the IT Job Market
-
-**[Left Card: Declining Demand Roles]**
-
-- **Pure Code Typers**: Simple implementation of basic UI/UX mockups.
-- **Basic Syntax Fixers**: Routine debugging tasks now automated by AI.
-
-**[Right Card: High-Demand Safe Roles]**
-
-- **Software Architects**: Designing scalable & reliable infrastructure.
-- **Security & DevOps Engineers**: Safeguard deployment pipelines.
-- **AI Supervisors**: Engineers who review and orchestrate AI outputs.
+- **Slide Title**: Reallocating Engineering Bandwidth
+- **Comparison**:
+  - Traditional Model (Creation-oriented): 70% time typing syntax and APIs. Most mental energy spent on mechanical boilerplate.
+  - Modern Model (Supervisory Engineering): 80% time auditing architecture. System design, security auditing, and problem-solving.
+- **Quote**: _"When typing code becomes cheap, the skill of good system design becomes 1,000x more valuable."_ (Kent Beck & Martin Fowler)
+- **Source**: Kent Beck & Martin Fowler
 
 #### Presenter Script (English)
 
-> _"Slide 9 illustrates the major restructuring underway across the IT job market. [PAUSE]_
+> _"Because AI generates repetitive code so quickly, // our daily role as software engineers is evolving. [PAUSE]_
 >
-> _On the left side, // roles seeing declining demand are 'Pure Code Typers' and 'Basic Syntax Fixers'. // If a developer's only job is translating basic UI/UX mockups into CSS // or fixing routine syntax bugs, // AI can already automate those tasks faster and cheaper. [PAUSE]_
+> _In the traditional model, // engineers spent up to 70% of their day typing syntax and boilerplate. [PAUSE]_
 >
-> _However, look at the right side: // High-Demand Safe Roles are thriving. [PAUSE]_
+> _In the modern model, // AI handles mechanical typing. // Engineers can now spend 80% of their time on what truly matters: // system design, // security auditing, // and solving business problems. [PAUSE]_
 >
-> _Companies desperately need Software Architects to design resilient, // distributed infrastructure; // Security and DevOps Engineers to safeguard CI/CD pipelines; // and AI Supervisors who understand how to audit, // benchmark, // and orchestrate multi-agent AI workflows. [PAUSE]_
->
-> _The market is not shrinking software engineering; // it is elevating it to higher-level architecture."_
+> _As software pioneers Kent Beck and Martin Fowler noted: // When typing code becomes cheap, // the skill of good system design becomes a thousand times more valuable."_
 
-#### Slide Transition Script (Nói khi bấm chuyển sang Slide 10)
+#### Slide Transition Script
 
-> _"Beyond elevating existing roles, // AI is also creating entirely new career specializations. // Let's examine Slide 10."_
+> _"This brings us to our final chapter: // How humans and AI work together."_
 
 #### Vietnamese Note / Vietsub
 
-> _"Slide 9 phản ánh sự tái cơ cấu mạnh mẽ đang diễn ra trên thị trường lao động IT._
->
-> _Ở cột bên trái là các vai trò đang suy giảm nhu cầu tuyển dụng: Pure Code Typers và Basic Syntax Fixers. Nếu một lập trình viên chỉ đơn thuần chuyển đổi giao diện UI/UX thành mã hiển thị hay sửa lỗi cú pháp cơ bản, AI hoàn toàn có thể tự động hóa việc đó nhanh hơn và tiết kiệm hơn._
->
-> _Tuy nhiên, ở cột bên phải, các vai trò an toàn và có nhu cầu tuyển dụng cao đang phát triển mạnh mẽ:_
->
-> _Các doanh nghiệp rất cần Software Architect để thiết kế hệ thống phân tán chịu tải cao; Security và DevOps Engineer để bảo vệ đường ống triển khai CI/CD; và các AI Supervisor có đủ trình độ để thẩm định, đo lường và phối hợp các luồng công việc từ AI._
->
-> _Thị trường không hề loại bỏ ngành kỹ thuật phần mềm, mà đang nâng tầm lập trình viên lên tầng kiến trúc cao hơn._
->
-> _(Chuyển Slide 10): Không dừng lại ở việc nâng cấp các vị trí hiện có, AI còn mở ra những nhánh chuyên môn hoàn toàn mới. Hãy cùng tìm hiểu ở Slide 10."_
+> _Vì AI đảm nhận việc gõ code cơ học, vai trò của kỹ sư phần mềm đang dịch chuyển tích cực. Trước đây ta mất 70% thời gian để gõ cú pháp và nhớ tên hàm. Ngày nay, kỹ sư dành 80% thời gian cho việc thiết kế kiến trúc, kiểm tra an ninh và giải quyết bài toán nghiệp vụ. Đúng như nhận định của Martin Fowler: Khi việc gõ code trở nên rẻ hơn, kỹ năng thiết kế hệ thống tốt càng trở nên đáng giá gấp ngàn lần._
 
 ---
 
-### Slide 10: Emerging Career Paths: New Specialized Roles Created by AI
+### Slide 14: Agenda (Track 04 Highlight)
 
-- **Section Badge**: `03 / EMERGING CAREER PATHS`
-- **Slide Title**: New Specialized Roles Created by AI
-- **Layout**: 3-Pillar Specialized Career Layout
-- **Key Roles**:
-  - AI Prompt & Context Engineer: Optimizing system prompts and context windows for LLMs.
-  - AI Integration Specialist: Connecting LLM capabilities with enterprise database systems.
-  - AI Security & Safety Auditor: Auditing AI outputs for security vulnerabilities, compliance, and hallucination risks.
-
-#### On-Screen Text
-
-- **Section Badge**: `03. EMERGING CAREER PATHS`
-- **Title**: New Specialized Roles Created by AI
-- **AI Prompt & Context Engineer**: Optimizing system prompts and context windows for LLMs.
-- **AI Integration Specialist**: Connecting LLM capabilities with enterprise database systems.
-- **AI Security & Safety Auditor**: Auditing AI outputs for security vulnerabilities, compliance, and hallucination risks.
+- **Slide Title**: What we'll cover
+- **Active Section**: `[04] The Winning Formula` (Human conductor, AI orchestra)
+- **Roadmap**: 01 The Big Claims | 02 The Hidden Cost | 03 The Real Superpower | 04 The Winning Formula
 
 #### Presenter Script (English)
 
-> _"Slide 10 highlights three exciting new engineering specializations born directly from the AI revolution. [PAUSE]_
+> _"We now arrive at Part 4: // 'The Winning Formula'—Human conductor, AI orchestra. [PAUSE]_
 >
-> _First: // The 'AI Prompt & Context Engineer'. // This is not casual prompt typing; // it involves designing structured system prompts, // managing dynamic Context Windows, // and reducing token costs across enterprise applications. [PAUSE]_
->
-> _Second: // The 'AI Integration Specialist'. // These engineers build robust data pipelines, // connecting LLM reasoning engines with enterprise SQL databases, // Vector Stores, // and microservice APIs via retrieval frameworks. [PAUSE]_
->
-> _Third: // The 'AI Security & Safety Auditor'. // They specialize in vulnerability scanning, // preventing prompt injection attacks, // enforcing compliance, // and ensuring AI models never leak sensitive intellectual property."_
+> _The future is neither human without AI, // nor AI without human. // The winning formula is learning how humans direct AI to build reliable software."_
 
-#### Slide Transition Script (Nói khi bấm chuyển sang Slide 11)
+#### Slide Transition Script
 
-> _"To secure these high-value opportunities, // what specific skillsets must developers master? // Let's examine Pillar 4 on Slide 11."_
+> _"Let's look at the technical boundary between AI tokens and human logic."_
 
 #### Vietnamese Note / Vietsub
 
-> _"Slide 10 giới thiệu ba hướng đi chuyên môn mới mẻ được tạo ra từ làn sóng AI._
->
-> _Thứ nhất là AI Prompt & Context Engineer: Đây không phải là việc đặt câu hỏi thông thường, mà là kỹ nghệ thiết kế System Prompt bài bản, quản trị Context Window động và tối ưu chi phí token cho các hệ thống doanh nghiệp lớn._
->
-> _Thứ hai là AI Integration Specialist: Các chuyên gia này chịu trách nhiệm xây dựng đường ống dữ liệu, kết nối năng lực của LLM với hệ thống cơ sở dữ liệu doanh nghiệp, Vector Database và các kiến trúc Microservices qua các cơ chế truy xuất dữ liệu._
->
-> _Thứ ba là AI Security & Safety Auditor: Kỹ sư kiểm toán an toàn và bảo mật cho AI, chuyên rà soát lỗ hổng bảo mật, phòng chống tấn công Prompt Injection, đảm bảo tuân thủ pháp lý và ngăn chặn rò rỉ dữ liệu mật._
->
-> _(Chuyển Slide 11): Để nắm bắt được những cơ hội giá trị cao này, lập trình viên cần trang bị bộ kỹ năng cụ thể nào? Hãy cùng tìm hiểu Trụ cột 4 trên Slide 11."_
+> _Chúng ta bước vào Phần 4: 'The Winning Formula' - Công thức chiến thắng: Con người là nhạc trưởng, AI là dàn nhạc. Tương lai không phải là con người bài trừ AI, cũng không phải AI thay thế con người, mà là cách con người chỉ huy AI để tạo ra phần mềm an toàn và đáng tin cậy._
 
 ---
 
-### Slide 11: Essential Future Skills: Core Competencies for Modern Programmers
+### Slide 15: Statistical Patterns vs Deterministic Logic
 
-- **Section Badge**: `04 / ESSENTIAL FUTURE SKILLS`
-- **Slide Title**: Core Competencies for Modern Programmers
-- **Layout**: Two-Column Balanced Competency Layout (Technical Mastery vs. Soft Skills & Mindset)
-
-#### On-Screen Text
-
-- **Section Badge**: `04. ESSENTIAL FUTURE SKILLS`
-- **Title**: Core Competencies for Modern Programmers
-
-**[Left Card: Core Technical Mastery]**
-
-- **Data Structures & Algorithms**: Foundational knowledge required to inspect AI outputs.
-- **System Architecture**: Designing distributed, fault-tolerant cloud infrastructures.
-- **Security & Networking**: Database indexing, API protocols, and threat mitigation.
-
-**[Right Card: Soft Skills & Mindset]**
-
-- **Product Thinking**: Understanding customer pain points and business goals.
-- **Communication & Teamwork**: Aligning stakeholder demands with engineering.
-- **English Proficiency**: Essential for global tech jobs, docs, and AI prompts.
+- **Slide Title**: Statistical Patterns vs Deterministic Logic
+- **Table Structure**:
+  - Core Mechanism: Predicts the next most likely word vs Strict step-by-step logic
+  - Optimal Scope: Small context in front of it vs The entire big picture & system flow
+  - Key Strength: Scaffolding & regex boilerplate vs System design & edge cases
+  - Operational Liability: Zero responsibility vs Full accountability when systems break
+- **Takeaway**: _"Anyone can generate code. Only software engineers own the system."_
 
 #### Presenter Script (English)
 
-> _"On Slide 11, // we outline the essential competencies every modern programmer must cultivate, // divided into technical mastery and human soft skills. [PAUSE]_
+> _"Here is the fundamental divide between AI tools and software engineers. [PAUSE]_
 >
-> _On the technical side: // Deep foundations in Data Structures and Algorithms are critical // because you cannot evaluate AI code quality without understanding algorithmic complexity. // Engineers also need System Architecture expertise to build fault-tolerant cloud systems, // along with robust knowledge of Networking, // Database Indexing, // and Security. [PAUSE]_
->
-> _On the human side: // Product Thinking is vital—understanding customer pain points to build things that actually matter. // Teamwork and Communication ensure engineers can align stakeholder goals with technical design. // And finally, // English Proficiency is essential // for reading cutting-edge documentation, // engineering precise prompts, // and working in global distributed teams."_
+> _First, Mechanism: // AI predicts the next most likely word using statistical patterns. // Humans build deterministic, step-by-step logic. [PAUSE]_
+> _Second, Scope: // AI only sees the small context in front of it. // Humans understand the entire big picture—how databases, APIs, and business rules connect. [PAUSE]_
+> _Finally, Liability: // AI has zero legal responsibility. // Humans carry full accountability when systems go down. [PAUSE]_
+> _Remember this principle: // Anyone can generate code. // Only software engineers own the system."_
 
-#### Slide Transition Script (Nói khi bấm chuyển sang Slide 12)
+#### Slide Transition Script
 
-> _"What happens if an organization ignores these human skills and attempts to replace engineers entirely with AI? // Let's examine the enterprise risks on Slide 12."_
+> _"How do we organize this in actual engineering teams?"_
 
 #### Vietnamese Note / Vietsub
 
-> _"Trên Slide 11, chúng ta hệ thống hóa các năng lực cốt lõi mà lập trình viên hiện đại cần rèn luyện, chia thành hai nhóm: năng lực kỹ thuật và kỹ năng mềm._
->
-> _Về mặt kỹ thuật: Nền tảng vững chắc về Data Structures & Algorithms là tối quan trọng, bởi vì bạn không thể thẩm định chất lượng code của AI nếu không hiểu về độ phức tạp thuật toán. Kỹ sư cũng cần làm chủ System Architecture để xây dựng hệ thống đám mây có khả năng chịu lỗi, cùng kiến thức sâu về Networking, đánh chỉ mục Database và bảo mật hệ thống._
->
-> _Về mặt con người: Product Thinking đóng vai trò quyết định trong việc thấu hiểu nỗi đau của người dùng để tạo ra giá trị thực. Kỹ năng giao tiếp và làm việc nhóm giúp gắn kết yêu cầu của các bên liên quan với thiết kế kỹ thuật. Cuối cùng, năng lực tiếng Anh là chìa khóa bắt buộc để nghiên cứu tài liệu kỹ thuật mới nhất, viết prompt chuẩn xác và làm việc trong các đội ngũ toàn cầu._
->
-> _(Chuyển Slide 12): Điều gì sẽ xảy ra nếu một doanh nghiệp phớt lờ chuyên môn con người và tìm cách thay thế toàn bộ kỹ sư bằng AI? Hãy cùng phân tích các rủi ro doanh nghiệp trên Slide 12."_
+> _Đây là ranh giới kỹ thuật rõ ràng giữa AI và con người: AI đoán chữ tiếp theo theo xác suất thống kê; con người xây dựng logic tất định chặt chẽ. AI chỉ nhìn đoạn prompt trước mắt; con người bao quát toàn bộ bức tranh hệ thống kết nối ra sao. Và quan trọng nhất: AI không chịu trách nhiệm gì cả, còn con người phải chịu trách nhiệm khi hệ thống gặp sự cố. Ai cũng có thể sinh ra code, nhưng chỉ kỹ sư phần mềm mới làm chủ hệ thống._
 
 ---
 
-### Slide 12: Risk Assessment: Enterprise Risks of Replacing Human Engineers
+### Slide 16: Human Conductor, AI Orchestra
 
-- **Section Badge**: `04 / RISK ASSESSMENT`
-- **Slide Title**: Enterprise Risks of Replacing Human Engineers
-- **Layout**: 3-Card Threat Breakdown Layout
-- **Key Risks**:
-  1. Undetected Security Breaches: Unchecked AI code in production creates massive data breach vulnerabilities.
-  2. IP & Confidentiality Leaks: Leaking proprietary codebase data into public AI model training sets.
-  3. Maintenance Nightmares: Nobody understands how the AI-generated codebase operates when crashes occur.
-
-#### On-Screen Text
-
-- **Section Badge**: `04. RISK ASSESSMENT`
-- **Title**: Enterprise Risks of Replacing Human Engineers
-- **1. Undetected Security Breaches**: Unchecked AI code in production creates massive data breach vulnerabilities.
-- **2. IP & Confidentiality Leaks**: Leaking proprietary codebase data into public AI model training sets.
-- **3. Maintenance Nightmares**: Nobody understands how the AI-generated codebase operates when crashes occur.
+- **Slide Title**: Human Conductor, AI Orchestra
+- **Visuals**: Sơ đồ tháp phân tầng 3 lớp (`Tiered_Framework_Slide16.png` / Tháp 3 tầng với hình ảnh nhạc trưởng)
+- **Tiers**:
+  - Tier 1: Mechanical Syntax (Boilerplate & Test Setup) $\rightarrow$ 80% Automated
+  - Tier 2: Verification & Security (Code Review & Vulnerability Check) $\rightarrow$ 50 / 50 Hybrid
+  - Tier 3: Strategy & Ownership (System Architecture & SLA Liability) $\rightarrow$ 100% Human
+- **Takeaway**: _"Human-in-the-Loop: Engineers direct the system instead of typing raw syntax."_
 
 #### Presenter Script (English)
 
-> _"Slide 12 presents a clear risk assessment // on why attempting to fully replace human programmers is a dangerous strategic gamble for enterprises. [PAUSE]_
+> _"We put this into practice through a 3-tier framework: [PAUSE]_
 >
-> _Risk 1: // Undetected Security Breaches. // AI models frequently use outdated libraries or introduce hidden vulnerabilities like SQL injection and buffer overflows. // Shipping unreviewed AI code straight to production invites catastrophic data breaches. [PAUSE]_
+> _At the base, Tier 1: // Mechanical syntax. Demos, boilerplates, and test setup. // Here, AI automates 80% of the workload. [PAUSE]_
+> _In the middle, Tier 2: // Verification and security. Code reviews and vulnerability scans. // Here, humans and AI work fifty-fifty as partners. [PAUSE]_
+> _At the top, Tier 3: // Strategy and ownership. System architecture, trade-off decisions, and SLA liability. // This tier is ONE HUNDRED PERCENT human. [PAUSE]_
 >
-> _Risk 2: // IP and Confidentiality Leaks. // Pasting proprietary source code and trade secrets into external AI models can inadvertently expose confidential intellectual property into public training datasets. [PAUSE]_
->
-> _Risk 3: // Maintenance Nightmares. // If an entire system is generated by AI without human mental models, // what happens when the server crashes at midnight? // Nobody knows how the codebase operates, // turning routine debugging into an organizational disaster."_
+> _The software engineer is the conductor; // AI is the orchestra."_
 
-#### Slide Transition Script (Nói khi bấm chuyển sang Slide 13)
+#### Slide Transition Script
 
-> _"Having evaluated the foundations, // assistance, // limitations, // market shifts, // and enterprise risks, // what is our final conclusion? // Let's conclude with Slide 13."_
+> _"And that leads us to our final verdict."_
 
 #### Vietnamese Note / Vietsub
 
-> _"Slide 12 đưa ra bức tranh đánh giá rủi ro rõ ràng, giải thích tại sao ý định thay thế hoàn toàn kỹ sư phần mềm là nước đi nguy hiểm cho các doanh nghiệp._
->
-> _Rủi ro thứ nhất là các lỗ hổng bảo mật không được phát hiện: AI thường sử dụng các thư viện lỗi thời hoặc vô tình tạo ra các lỗ hổng bảo mật nguy hiểm. Việc đưa trực tiếp code AI lên môi trường Production mà không qua kiểm duyệt sẽ mở đường cho các đợt tấn công rò rỉ dữ liệu nghiêm trọng._
->
-> _Rủi ro thứ hai là rò rỉ tài sản trí tuệ và dữ liệu bảo mật: Việc dán mã nguồn độc quyền hay bí mật kinh doanh vào các công cụ AI bên ngoài có thể làm rò rỉ dữ liệu mật vào tập dữ liệu huấn luyện công khai của mô hình._
->
-> _Rủi ro thứ ba là thảm họa bảo trì hệ thống: Nếu toàn bộ hệ thống được sinh ra từ AI mà không có kỹ sư con người hiểu tường tận kiến trúc bên dưới, chuyện gì sẽ xảy ra khi hệ thống gặp sự cố lúc nửa đêm? Khi không ai hiểu code vận hành ra sao, việc khắc phục sự cố sẽ biến thành thảm họa đối với doanh nghiệp._
->
-> _(Chuyển Slide 13): Sau khi đã đánh giá toàn bộ từ nền tảng kỹ thuật, khả năng hỗ trợ, các giới hạn, chuyển dịch thị trường cho đến rủi ro doanh nghiệp, kết luận cuối cùng của chúng ta là gì? Hãy cùng đến với Slide 13."_
+> _Mô hình kim tự tháp 3 tầng: Dưới đáy là Tầng 1 - Cú pháp cơ học: tạo khung sườn, sinh dữ liệu test, phần này AI tự động hóa 80%. Ở giữa là Tầng 2 - Thẩm định và bảo mật: rà soát code, quét lỗ hổng, người và AI phối hợp 50/50. Trên đỉnh là Tầng 3 - Chiến lược và trách nhiệm: kiến trúc hệ thống, lựa chọn đánh đổi và cam kết chất lượng, tầng này 100% là con người. Kỹ sư là nhạc trưởng, AI là dàn nhạc._
 
 ---
 
-### Slide 13: Final Verdict & 10-Year Outlook
+### Slide 17: Strategic Verdict & Conclusion
 
-- **Section Badge**: `FINAL VERDICT & 10-YEAR OUTLOOK`
-- **Slide Title**: Final Verdict & 10-Year Outlook
-- **Core Message / Quote**: "AI will not replace developers, but developers who use AI will replace those who don't."
-- **Vision Statement**: In the next decade, programmers will act like conductors of an AI orchestra—focusing on system architecture, problem deconstruction, and product value.
-- **Closing**: Thank you for your attention!
-- **Layout**: Closing Impact Layout
-
-#### On-Screen Text
-
-- **Title**: Final Verdict & 10-Year Outlook
-- **Key Quote**: _"AI will not replace developers, but developers who use AI will replace those who don't."_
-- **Outlook**: In the next decade, programmers will act like conductors of an AI orchestra—focusing on system architecture, problem deconstruction, and product value.
-- **Closing**: Thank you for your attention!
+- **Slide Title**: Strategic Verdict & Conclusion
+- **Hero Quote**: _"AI will not replace software engineers. Engineers who master AI will replace those who don't."_
+- **Subtext**: Software engineering is the art of managing complexity and owning outcomes for humans.
 
 #### Presenter Script (English)
 
-> _"To conclude our presentation on Slide 13, // let us return to our opening question: // 'Should AI Replace Human Programmers?' [PAUSE]_
+> _"To wrap up our presentation, // we leave you with one defining truth: [PAUSE]_
 >
-> _Our definitive answer is NO. // AI will NOT replace human programmers; // it will elevate them. [PAUSE]_
+> _'AI will not replace software engineers. // Engineers who master AI will replace those who don't.' [PAUSE]_
 >
-> _As the famous industry saying goes: // 'AI will not replace developers, // but developers who use AI // will replace those who don't.' [PAUSE]_
+> _Software engineering has never been just about typing code into an editor. // It is the art of managing complexity and owning outcomes for humans. [PAUSE]_
 >
-> _Over the next decade, // software engineers will act like conductors of an AI orchestra. // While AI agents play the instruments by generating syntax, // the human engineer provides the architectural vision, // the business judgment, // the ethical safeguards, // and the creative soul of the software. [PAUSE]_
+> _Use AI as your superpower, // but always remain the conductor. [PAUSE]_
 >
-> _Thank you very much, Ms. Thu, and everyone for your attention. // We are now delighted to open the floor for questions and discussion!"_
+> _Thank you Ms. Thu and everyone for your time! // We would love to take any questions."_
 
 #### Vietnamese Note / Vietsub
 
-> _"Để khép lại bài thuyết trình ở Slide 13, chúng ta hãy cùng nhìn lại câu hỏi ban đầu: 'Liệu AI có nên thay thế lập trình viên con người không?'_
->
-> _Câu trả lời dứt khoát của chúng em là KHÔNG. AI sẽ không thay thế kỹ sư phần mềm; AI sẽ nâng tầm họ._
->
-> _Đúng như câu đúc kết nổi tiếng trong ngành công nghệ:_
-> _'AI sẽ không thay thế lập trình viên, nhưng những lập trình viên biết làm chủ AI sẽ thay thế những người không biết dùng.'_
->
-> _Trong thập kỷ tới, các kỹ sư phần mềm sẽ đóng vai trò như những vị nhạc trưởng của một dàn nhạc AI. Trong khi các AI Agent chơi các nhạc cụ bằng cách sinh mã cú pháp, thì chính kỹ sư con người mới là người nắm giữ tầm nhìn kiến trúc, đánh giá bài toán nghiệp vụ, đảm bảo chuẩn mực an toàn và thổi linh hồn sáng tạo vào từng sản phẩm phần mềm._
->
-> _Chúng em xin chân thành cảm ơn cô Đào Thị Yến Thu và các bạn đã chú ý lắng nghe. Nhóm chúng em rất mong nhận được những câu hỏi và đóng góp ý kiến từ cô cùng các bạn!"_
+> _Để kết thúc bài thuyết trình, nhóm chúng em muốn gửi gắm một thông điệp: AI sẽ không thay thế kỹ sư phần mềm, nhưng những kỹ sư làm chủ được AI sẽ thay thế những người không chịu học hỏi. Bản chất của ngành kỹ thuật phần mềm chưa bao giờ chỉ là việc ngồi gõ code vào màn hình, mà là nghệ thuật quản lý độ phức tạp và chịu trách nhiệm về kết quả cho con người. Hãy dùng AI như một siêu năng lực, nhưng hãy luôn là người nhạc trưởng điều phối. Cảm ơn cô và các bạn đã chú ý lắng nghe!_
