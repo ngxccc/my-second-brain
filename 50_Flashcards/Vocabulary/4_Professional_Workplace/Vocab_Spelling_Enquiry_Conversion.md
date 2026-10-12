@@ -2,14 +2,10 @@
 noteId: 1786852036299
 ---
 
-Spell the word/phrase that means "Tỷ lệ chuyển đổi từ yêu cầu tư vấn (The rate or process of converting incoming client inquiries into active appointments.)." (/ɪnˈkwaɪə.ri kənˈvɜː.ʃən/):
-
----
-
-_enquiry conversion_
+Engineers must apply ~~Enquiry Conversion~~ in professional software systems.
 
 ---
 
 Extra:
-- Target Term: Enquiry Conversion
-- Context: Professional engineering vocabulary and technical precision.
+
+- Meaning: Tỷ lệ chuyển đổi từ yêu cầu tư vấn (The rate or process of converting incoming client inquiries into active appointments.).

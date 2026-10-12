@@ -2,18 +2,14 @@
 noteId: 1786595083842
 ---
 
-What is the core meaning and primary technical collocation of **vary**?
-
----
-
-- **Meaning**: To differ or cause something to change in form, character, or appearance (thay đổi, biến đổi).
-- **Primary Collocation**: `thumbnail variant` / `vary by context`
+Netflix algorithms ~~vary~~ thumbnails based on individual viewing history.
 
 ---
 
 Extra:
+
+- Meaning: To differ or cause something to change in form, character, or appearance (thay đổi, biến đổi).
 - Pronunciation: /ˈveə.ri/
-- Type: Verb (Word Family)
 - Word Family:
   - **Verb**: `vary` (/ˈveə.ri/ - thay đổi, biến đổi)
   - **Noun**: `variation` (/ˌveə.riˈeɪ.ʃən/ - sự biến đổi) / `variant` (/ˈveə.ri.ənt/ - biến thể)
@@ -22,8 +18,3 @@ Extra:
 - Collocations:
   - `thumbnail variant` (biến thể ảnh đại diện)
   - `vary by context` (thay đổi theo bối cảnh)
-- Examples:
-  - _Verb: Netflix algorithms **vary** thumbnails based on individual viewing history._
-  - _Noun: The AI generates nine distinct **variants** for Stranger Things._
-  - _Adjective: The show appeals to **various** audience segments._
-  - _Adverb: The title is presented **variously** across different user profiles._

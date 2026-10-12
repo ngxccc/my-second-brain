@@ -2,18 +2,14 @@
 noteId: 1787064205684
 ---
 
-What is the core meaning and primary technical collocation of **hierarchy**?
-
----
-
-- **Meaning**: A system or organization in which people or concepts are ranked one above the other according to status or scope (hệ thống phân cấp, thứ bậc).
-- **Primary Collocation**: `domain hierarchy` / `hierarchical structure / order`
+Merging SDLC into Software Testing violates the natural domain ~~hierarchy~~.
 
 ---
 
 Extra:
+
+- Meaning: A system or organization in which people or concepts are ranked one above the other according to status or scope (hệ thống phân cấp, thứ bậc).
 - Pronunciation: /ˈhaɪ.rɑːr.ki/ (US) / /ˈhaɪə.rɑː.ki/ (UK)
-- Type: Noun (Word Family)
 - Word Family:
   - **Verb**: `hierarchize` (/ˈhaɪ.rɑːr.kaɪz/ - sắp xếp theo thứ bậc/phân cấp)
   - **Noun**: `hierarchy` (/ˈhaɪ.rɑːr.ki/ - hệ thống phân cấp)
@@ -23,7 +19,3 @@ Extra:
   - `domain hierarchy` (phân cấp miền kiến thức)
   - `hierarchical structure / order` (cấu trúc phân cấp)
   - `strict hierarchy` (hệ thống phân cấp nghiêm ngặt)
-- Examples:
-  - _Noun: Merging SDLC into Software Testing violates the natural domain **hierarchy**._
-  - _Adjective: The project maintains a **hierarchical** directory structure across all vaults._
-  - _Adverb: Concepts should be organized **hierarchically** from broader systems to specialized tools._

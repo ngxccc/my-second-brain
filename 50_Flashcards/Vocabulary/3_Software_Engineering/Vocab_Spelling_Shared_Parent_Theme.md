@@ -2,14 +2,10 @@
 noteId: 1786852037482
 ---
 
-Spell the word/phrase that means "Giao diện cha dùng chung (A centralized base design theme inherited by multiple child applications or microsites.)." (/ʃeəd ˈpeə.rənt θiːm/):
-
----
-
-_shared parent theme_
+Engineers must apply ~~Shared Parent Theme~~ in professional software systems.
 
 ---
 
 Extra:
-- Target Term: Shared Parent Theme
-- Context: Professional engineering vocabulary and technical precision.
+
+- Meaning: Giao diện cha dùng chung (A centralized base design theme inherited by multiple child applications or microsites.).

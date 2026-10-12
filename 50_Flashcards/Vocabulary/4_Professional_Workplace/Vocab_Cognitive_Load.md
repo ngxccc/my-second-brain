@@ -2,18 +2,14 @@
 noteId: 1786782469333
 ---
 
-What is the core meaning and primary technical collocation of **cognitive load**?
-
----
-
-- **Meaning**: The total amount of mental effort being used in working memory (tải nhận thức - dung lượng bộ nhớ ngắn hạn não sử dụng).
-- **Primary Collocation**: `high cognitive load` / `reduce cognitive load`
+Chess places a high ~~cognitive load~~ on your prefrontal cortex through intense calculation.
 
 ---
 
 Extra:
+
+- Meaning: The total amount of mental effort being used in working memory (tải nhận thức - dung lượng bộ nhớ ngắn hạn não sử dụng).
 - Pronunciation: /ˈkɒɡ.nə.tɪv ləʊd/
-- Type: Noun Phrase
 - Word Family:
   - **Verb**: `load` (/ləʊd/)
   - **Noun**: `cognitive load` (/ˈkɒɡ.nə.tɪv ləʊd/ - tải nhận thức) / `cognition` (/kɒɡˈnɪʃ.ən/ - nhận thức)
@@ -23,7 +19,3 @@ Extra:
   - `high cognitive load` (tải nhận thức cao)
   - `reduce cognitive load` (giảm tải nhận thức)
   - `heavy cognitive demand` (yêu cầu nhận thức nặng)
-- Examples:
-  - _Noun: Chess places a **high cognitive load** on your prefrontal cortex through intense calculation._
-  - _Adjective: Tasks with low **cognitive** demands allow the brain to enter a state of recovery._
-  - _Verb: Overloading your working memory increases mental fatigue._

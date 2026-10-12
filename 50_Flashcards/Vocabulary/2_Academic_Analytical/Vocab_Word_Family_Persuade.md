@@ -2,18 +2,14 @@
 noteId: 1786595083520
 ---
 
-What is the core meaning and primary technical collocation of **persuade**?
-
----
-
-- **Meaning**: To cause someone to do something through reasoning or argument; to convince (thuyết phục).
-- **Primary Collocation**: `persuasive imagery` / `persuade someone`
+Dynamic artwork helps ~~persuade~~ users to click on new movies.
 
 ---
 
 Extra:
+
+- Meaning: To cause someone to do something through reasoning or argument; to convince (thuyết phục).
 - Pronunciation: /pəˈsweɪd/
-- Type: Verb (Word Family)
 - Word Family:
   - **Verb**: `persuade` (/pəˈsweɪd/ - thuyết phục)
   - **Noun**: `persuasion` (/pəˈsweɪ.ʒən/ - sự thuyết phục)
@@ -22,8 +18,3 @@ Extra:
 - Collocations:
   - `persuasive imagery` (hình ảnh có tính thuyết phục)
   - `persuade someone` (thuyết phục ai đó)
-- Examples:
-  - _Verb: Dynamic artwork helps **persuade** users to click on new movies._
-  - _Noun: Visual **persuasion** plays a key role in user engagement._
-  - _Adjective: The AI renders the most **persuasive** thumbnail for each profile._
-  - _Adverb: The thumbnail **persuasively** highlights genres the user enjoys._

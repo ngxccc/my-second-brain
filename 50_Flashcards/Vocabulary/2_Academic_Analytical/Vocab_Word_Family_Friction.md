@@ -2,18 +2,14 @@
 noteId: 1787478457678
 ---
 
-What is the core meaning and primary technical collocation of **friction**?
-
----
-
-- **Meaning**: The action of one surface or object rubbing against another
-- **Primary Collocation**: `cognitive friction` / `operational friction`
+Monolithic files introduce significant editing ~~friction~~ for automated agents.
 
 ---
 
 Extra:
+
+- Meaning: The action of one surface or object rubbing against another
 - Pronunciation: /ˈfrɪk.ʃən/
-- Type: Noun (Word Family)
 - Word Family:
   - **Verb**: `N/A`
   - **Noun**: `friction` (/ˈfrɪk.ʃən/ - lực ma sát, sự cản trở/ma sát thao tác)
@@ -24,7 +20,3 @@ Extra:
   - `operational friction` (ma sát trong quy trình vận hành)
   - `frictionless workflow` (quy trình làm việc trơn tru, không điểm nghẽn)
   - `reduce editing friction` (giảm thiểu ma sát khi chỉnh sửa)
-- Examples:
-  - _Noun: Monolithic files introduce significant **editing friction** for automated agents._
-  - _Adjective: The JSONL format enables a **frictionless** append-only workflow._
-  - _Adverb: The agent **frictionlessly** updated the single-line rule entry._

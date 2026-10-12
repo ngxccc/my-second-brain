@@ -2,14 +2,10 @@
 noteId: 1786852036342
 ---
 
-Spell the word/phrase that means "Điều hướng người bệnh/khách hàng trên giao diện (Guiding users/patients smoothly through digital healthcare workflows and appointment booking.)." (/ˈpeɪ.ʃənt ˌnæv.ɪˈɡeɪ.ʃən/):
-
----
-
-_patient navigation_
+Engineers must apply ~~Patient Navigation~~ in professional software systems.
 
 ---
 
 Extra:
-- Target Term: Patient Navigation
-- Context: Professional engineering vocabulary and technical precision.
+
+- Meaning: Điều hướng người bệnh/khách hàng trên giao diện (Guiding users/patients smoothly through digital healthcare workflows and appointment booking.).

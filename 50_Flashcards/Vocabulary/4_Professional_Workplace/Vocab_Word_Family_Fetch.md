@@ -2,18 +2,14 @@
 noteId: 1786595083192
 ---
 
-What is the core meaning and primary technical collocation of **fetch**?
-
----
-
-- **Meaning**: To go for and bring back something, especially data from a remote server or API (truy xuất / tải về).
-- **Primary Collocation**: `fetch web fonts` / `fetch data from API`
+Google Slides ~~fetches~~ Material icon fonts dynamically from cloud servers.
 
 ---
 
 Extra:
+
+- Meaning: To go for and bring back something, especially data from a remote server or API (truy xuất / tải về).
 - Pronunciation: /fetʃ/
-- Type: Verb (Word Family)
 - Word Family:
   - **Verb**: `fetch` (/fetʃ/ - truy xuất, tải về)
   - **Noun**: `fetcher` (/ˈfetʃ.ər/ - bộ truy xuất dữ liệu) / `fetching` (/ˈfetʃ.ɪŋ/ - việc tải về)
@@ -22,7 +18,3 @@ Extra:
 - Collocations:
   - `fetch web fonts` (tải về font chữ từ web)
   - `fetch data from API` (truy xuất dữ liệu từ API)
-- Examples:
-  - _Verb: Google Slides **fetches** Material icon fonts dynamically from cloud servers._
-  - _Noun: Dynamic font **fetching** ensures correct icon rendering in web browsers._
-  - _Adjective: Remote font assets are easily **fetchable** via HTTPS requests._

@@ -2,18 +2,14 @@
 noteId: 1787064205607
 ---
 
-What is the core meaning and primary technical collocation of **assimilate**?
-
----
-
-- **Meaning**: To absorb and integrate people, ideas, or sounds into a wider society, culture, or phonetic environment (đồng hoá, hấp thụ, thích nghi).
-- **Primary Collocation**: `voicing assimilation` / `assimilate new concepts`
+The vocal cords ~~assimilate~~ the voicing characteristic of the preceding consonant.
 
 ---
 
 Extra:
+
+- Meaning: To absorb and integrate people, ideas, or sounds into a wider society, culture, or phonetic environment (đồng hoá, hấp thụ, thích nghi).
 - Pronunciation: /əˈsɪm.ə.leɪt/
-- Type: Verb (Word Family)
 - Word Family:
   - **Verb**: `assimilate` (/əˈsɪm.ə.leɪt/ - đồng hoá, tiếp thu)
   - **Noun**: `assimilation` (/əˌsɪm.əˈleɪ.ʃən/ - sự đồng hoá, quá trình tiếp thu)
@@ -23,7 +19,3 @@ Extra:
   - `voicing assimilation` (hiện tượng đồng hoá thanh tính trong ngữ âm học)
   - `assimilate new concepts` (tiếp thu và làm chủ các khái niệm mới)
   - `cultural assimilation` (sự đồng hoá văn hoá)
-- Examples:
-  - _Verb: The vocal cords **assimilate** the voicing characteristic of the preceding consonant._
-  - _Noun: Voicing **assimilation** explains why '-s' turns into /z/ after vowels._
-  - _Adjective: The newly **assimilated** engineering guidelines improved team velocity._

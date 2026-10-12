@@ -2,18 +2,14 @@
 noteId: 1786782988061
 ---
 
-What is the core meaning and primary technical collocation of **revert**?
-
----
-
-- **Meaning**: To return to a previous state, practice, or condition (khôi phục, quay trở lại trạng thái cũ).
-- **Primary Collocation**: `revert to previous layout` / `clean reversion`
+We decided to ~~revert~~ to the bullet-point layout for better mobile readability.
 
 ---
 
 Extra:
+
+- Meaning: To return to a previous state, practice, or condition (khôi phục, quay trở lại trạng thái cũ).
 - Pronunciation: /rɪˈvɜːt/
-- Type: Verb (Word Family)
 - Word Family:
   - **Verb**: `revert` (/rɪˈvɜːt/ - quay trở lại, khôi phục lại: revert to...)
   - **Noun**: `reversion` (/rɪˈvɜː.ʒən/ - sự hoàn nguyên, sự trở lại trạng thái ban đầu)
@@ -23,8 +19,3 @@ Extra:
   - `revert to previous layout` (quay về bố cục trước đó)
   - `clean reversion` (sự khôi phục sạch sẽ)
   - `revertible state change` (thay đổi trạng thái có thể hoàn tác)
-- Examples:
-  - _Verb: We decided to **revert** to the bullet-point layout for better mobile readability._
-  - _Noun: The emergency **reversion** to the previous release resolved the production outage._
-  - _Adjective: Ensure every schema migration step is fully **revertible** in case of failure._
-  - _Verb: The team **reverts** uncommitted changes before pulling the latest main branch._

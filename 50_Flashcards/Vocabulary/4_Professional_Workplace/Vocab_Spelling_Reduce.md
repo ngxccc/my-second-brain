@@ -2,14 +2,10 @@
 noteId: 1786852036904
 ---
 
-Spell the word/phrase that means "To make smaller or less in amount, degree, or size." (/rɪˈdjuːs/):
-
----
-
-_reduce_
+Engineers must apply ~~Reduce~~ in professional software systems.
 
 ---
 
 Extra:
-- Target Term: Reduce
-- Context: Professional engineering vocabulary and technical precision.
+
+- Meaning: To make smaller or less in amount, degree, or size.

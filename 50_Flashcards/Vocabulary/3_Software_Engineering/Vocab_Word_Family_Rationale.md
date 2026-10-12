@@ -2,18 +2,14 @@
 noteId: 1787478457571
 ---
 
-What is the core meaning and primary technical collocation of **rationale**?
-
----
-
-- **Meaning**: The fundamental reasons, principles, or logical basis underlying an action, decision, belief, or system architecture (lý do căn bản, cơ sở logic/nguyên lý cốt l...
-- **Primary Collocation**: `the rationale behind / for a decision` / `architectural rationale`
+Could you share the ~~rationale~~ behind deprecating the YouTube shadowing tool?
 
 ---
 
 Extra:
+
+- Meaning: The fundamental reasons, principles, or logical basis underlying an action, decision, belief, or system architecture (lý do căn bản, cơ sở logic/nguyên lý cốt l...
 - Pronunciation: /ˌræʃ.əˈnæl/
-- Type: Noun (Word Family)
 - Word Family:
   - **Verb**: `rationalize` (/ˈræʃ.ən.əl.aɪz/ - hợp lý hóa, giải thích hợp lý)
   - **Noun**: `rationale` (/ˌræʃ.əˈnæl/ - cơ sở lý luận, lý do cốt lõi) / `rationalization` (/ˌræʃ.ən.əl.aɪˈzeɪ.ʃən/ - sự hợp lý hóa)
@@ -23,8 +19,3 @@ Extra:
   - `the rationale behind / for a decision` (lý do cốt lõi đằng sau một quyết định)
   - `architectural rationale` (cơ sở lý luận của kiến trúc hệ thống)
   - `provide a clear rationale` (đưa ra lời giải thích/lý lẽ rõ ràng)
-- Examples:
-  - _Noun: Could you share the **rationale** behind deprecating the YouTube shadowing tool?_
-  - _Noun: The team documented the architectural **rationale** for choosing PostgreSQL over MongoDB._
-  - _Adjective: Engineers make **rational** trade-offs between system consistency and availability._
-  - _Verb: The tech lead **rationalized** the migration timeline based on benchmark data._

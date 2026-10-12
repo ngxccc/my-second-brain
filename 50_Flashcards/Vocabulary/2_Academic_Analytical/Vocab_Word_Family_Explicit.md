@@ -2,18 +2,14 @@
 noteId: 1786595083168
 ---
 
-What is the core meaning and primary technical collocation of **explicit**?
-
----
-
-- **Meaning**: Stated clearly and in detail, leaving no room for confusion or doubt (trực tiếp, rõ ràng).
-- **Primary Collocation**: `explicit rating` / `explicit feedback`
+Please explicate how ~~explicit~~ feedback affects model training.
 
 ---
 
 Extra:
+
+- Meaning: Stated clearly and in detail, leaving no room for confusion or doubt (trực tiếp, rõ ràng).
 - Pronunciation: /ɪkˈsplɪs.ɪt/
-- Type: Adjective (Word Family)
 - Word Family:
   - **Verb**: `explicate` (/ˈek.splɪ.keɪt/ - giải thích chi tiết)
   - **Noun**: `explication` (/ˌek.splɪˈkeɪ.ʃən/ - sự giải thích rõ ràng)
@@ -22,8 +18,3 @@ Extra:
 - Collocations:
   - `explicit rating` (đánh giá trực tiếp)
   - `explicit feedback` (phản hồi rõ ràng)
-- Examples:
-  - _Verb: Please **explicate** how explicit feedback affects model training._
-  - _Noun: The user's **explication** of their preference came via a Double Thumbs Up._
-  - _Adjective: Thumbs-up ratings and search queries provide **explicit** feedback._
-  - _Adverb: The user **explicitly** added the show to "My List"._

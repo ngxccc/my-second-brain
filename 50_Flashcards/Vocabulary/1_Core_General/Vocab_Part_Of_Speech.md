@@ -2,18 +2,13 @@
 noteId: 1786026050832
 ---
 
-What is the core meaning and primary technical collocation of **part of speech**?
-
----
-
-- **Meaning**: A category of words (such as noun, verb, or adjective) that have similar grammatical properties.
-
-- **Primary Collocation**: `part of speech` in technical context
+Knowing the ~~part of speech~~ helps you pl...
 
 ---
 
 Extra:
 
+- Meaning: A category of words (such as noun, verb, or adjective) that have similar grammatical properties.
 - Pronunciation: /pɑːt əv spiːtʃ/
-- Type: Noun / Grammar Term
-- Example: - _Knowing the **part of speech** helps you pl...
+- Collocations:
+  - part of speech in technical context

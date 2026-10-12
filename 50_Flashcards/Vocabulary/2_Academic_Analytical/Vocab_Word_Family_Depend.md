@@ -2,18 +2,14 @@
 noteId: 1787064205659
 ---
 
-What is the core meaning and primary technical collocation of **depend**?
-
----
-
-- **Meaning**: To rely on or be determined by something else (phụ thuộc vào, dựa vào, tuỳ thuộc vào).
-- **Primary Collocation**: `depend on` / `total dependency on AI`
+High-performance systems ~~depend~~ on efficient cache eviction policies.
 
 ---
 
 Extra:
+
+- Meaning: To rely on or be determined by something else (phụ thuộc vào, dựa vào, tuỳ thuộc vào).
 - Pronunciation: /dɪˈpend/
-- Type: Verb (Word Family)
 - Word Family:
   - **Verb**: `depend` (/dɪˈpend/ - phụ thuộc vào, dựa dẫm)
   - **Noun**: `dependency` (/dɪˈpen.dən.si/ - sự phụ thuộc, thư viện phụ thuộc) / `dependence` (/dɪˈpen.dəns/ - tình trạng lệ thuộc)
@@ -24,8 +20,3 @@ Extra:
   - `total dependency on AI` (sự phụ thuộc hoàn toàn vào AI)
   - `circular dependency` (sự phụ thuộc vòng tròn giữa các module)
   - `external dependencies` (các thư viện phụ thuộc bên ngoài)
-- Examples:
-  - _Verb: High-performance systems **depend** on efficient cache eviction policies._
-  - _Noun: Total **dependency** on generative AI creates severe blind spots in code review._
-  - _Adjective: Our API is heavily **dependent** on the upstream auth microservice._
-  - _Adjective: PostgreSQL provides a **dependable** transactional engine for critical workloads._

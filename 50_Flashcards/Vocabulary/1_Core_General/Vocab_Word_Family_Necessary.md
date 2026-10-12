@@ -2,18 +2,14 @@
 noteId: 1787478457027
 ---
 
-What is the core meaning and primary technical collocation of **necessary**?
-
----
-
-- **Meaning**: Required to be done, achieved, or present; needed; essential (cần thiết, thiết yếu).
-- **Primary Collocation**: `it is necessary to + V-bare` / `if necessary`
+It is ~~necessary~~ to write comprehensive unit tests before deploying.
 
 ---
 
 Extra:
+
+- Meaning: Required to be done, achieved, or present; needed; essential (cần thiết, thiết yếu).
 - Pronunciation: /ˈnes.ə.ser.i/
-- Type: Adjective (Word Family)
 - Word Family:
   - **Verb**: `necessitate` (/nəˈses.ə.teɪt/ - đòi hỏi, bắt buộc phải có)
   - **Noun**: `necessity` (/nəˈses.ə.t̬i/ - sự cần thiết, nhu cầu thiết yếu)
@@ -23,7 +19,3 @@ Extra:
   - `it is necessary to + V-bare` (thật sự cần thiết để làm việc gì)
   - `if necessary` (nếu cần thiết)
   - `not necessarily` (chưa hẳn, không nhất thiết là như vậy)
-- Examples:
-  - _Adjective: It is **necessary** to write comprehensive unit tests before deploying._
-  - _Noun: High throughput is a technical **necessity** for the payment service._
-  - _Adverb: High CPU usage does not **necessarily** indicate a memory leak._

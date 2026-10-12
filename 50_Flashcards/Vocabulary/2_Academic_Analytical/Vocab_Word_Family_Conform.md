@@ -2,18 +2,14 @@
 noteId: 1787478457158
 ---
 
-What is the core meaning and primary technical collocation of **conform**?
-
----
-
-- **Meaning**: To behave according to the usual standards of behaviour; in software/systems: to comply with rules, standards, or schemas (tuân thủ, phù hợp với chuẩn mực/schema).
-- **Primary Collocation**: `conform to a schema` / `conform to standards`
+The JSON document must ~~conform~~ to the formal JSON schema specification.
 
 ---
 
 Extra:
+
+- Meaning: To behave according to the usual standards of behaviour; in software/systems: to comply with rules, standards, or schemas (tuân thủ, phù hợp với chuẩn mực/schema).
 - Pronunciation: /kənˈfɔːm/
-- Type: Verb (Word Family)
 - Word Family:
   - **Verb**: `conform` (/kənˈfɔːm/ - tuân thủ, phù hợp theo chuẩn)
   - **Noun**: `conformity` (/kənˈfɔː.mə.ti/ - sự tuân thủ chuẩn mực) / `conformance` (/kənˈfɔː.məns/ - tính tương thích chuẩn)
@@ -23,7 +19,3 @@ Extra:
   - `conform to a schema` (tuân thủ theo một schema)
   - `conform to standards` (tuân theo các tiêu chuẩn)
   - `conformance test` (bài kiểm tra tính tương thích chuẩn)
-- Examples:
-  - _Verb: The JSON document must **conform to** the formal JSON schema specification._
-  - _Noun: The audit verified strict **conformance** with API contracts._
-  - _Adjective: Ensure that all exported data is fully **conformant** with RFC standards._

@@ -2,14 +2,10 @@
 noteId: 1786852036834
 ---
 
-Spell the word/phrase that means "To set apart from others or decouple system components." (/ˈaɪ.sə.leɪt/):
-
----
-
-_isolate_
+Engineers must apply ~~Isolate~~ in professional software systems.
 
 ---
 
 Extra:
-- Target Term: Isolate
-- Context: Professional engineering vocabulary and technical precision.
+
+- Meaning: To set apart from others or decouple system components.

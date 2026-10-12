@@ -2,18 +2,13 @@
 noteId: 1783154400245
 ---
 
-What is the core meaning and primary technical collocation of **adhere to**?
-
----
-
-- **Meaning**: To follow or comply with a rule, standard, or practice.
-
-- **Primary Collocation**: `adhere to` in technical context
+consistently ~~adhere to~~ regulations
 
 ---
 
 Extra:
 
+- Meaning: To follow or comply with a rule, standard, or practice.
 - Pronunciation: /ədˈhɪər tuː/
-- Type: Verb Phrase
-- Example: - _consistently adhere to regulations_
+- Collocations:
+  - adhere to in technical context

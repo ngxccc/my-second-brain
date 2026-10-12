@@ -2,18 +2,14 @@
 noteId: 1787478457524
 ---
 
-What is the core meaning and primary technical collocation of **populate**?
-
----
-
-- **Meaning**: To form the total in number of people or things
-- **Primary Collocation**: `populate a database` / `populate metadata / frontmatter`
+We used a seeder to auto-~~populate~~ test fixtures for the integration suite.
 
 ---
 
 Extra:
+
+- Meaning: To form the total in number of people or things
 - Pronunciation: /ˈpɒp.jə.leɪt/
-- Type: Verb (Word Family)
 - Word Family:
   - **Verb**: `populate` (/ˈpɒp.jə.leɪt/ - điền dữ liệu, nạp dữ liệu)
   - **Noun**: `population` (/ˌpɒp.jəˈleɪ.ʃən/ - tập dữ liệu/dân số)
@@ -23,7 +19,3 @@ Extra:
   - `populate a database` (nạp dữ liệu vào cơ sở dữ liệu)
   - `populate metadata / frontmatter` (điền tự động siêu dữ liệu/frontmatter)
   - `auto-populate` (tự động điền dữ liệu)
-- Examples:
-  - _Verb: The script automatically **populates** missing description fields in YAML frontmatter._
-  - _Adjective: The UI renders empty placeholders when the feed is **unpopulated**._
-  - _Collocation: We used a seeder to **auto-populate** test fixtures for the integration suite._

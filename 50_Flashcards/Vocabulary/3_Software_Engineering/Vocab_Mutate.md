@@ -2,18 +2,14 @@
 noteId: 1785979181910
 ---
 
-What is the core meaning and primary technical collocation of **mutate**?
-
----
-
-- **Meaning**: To change or alter form, qualities, or state; in programming: to modify the state or values of a data structure in-place (thay đổi, biến đổi trạng thái dữ liệu).
-- **Primary Collocation**: `mutate state in-place` / `prevent unintended mutations`
+Modifying slice elements will ~~mutate~~ the underlying array visible to other slice views.
 
 ---
 
 Extra:
+
+- Meaning: To change or alter form, qualities, or state; in programming: to modify the state or values of a data structure in-place (thay đổi, biến đổi trạng thái dữ liệu).
 - Pronunciation: /mjuːˈteɪt/
-- Type: Verb (Word Family)
 - Word Family:
   - **Verb**: `mutate` (/mjuːˈteɪt/ - thay đổi trạng thái, biến đổi)
   - **Noun**: `mutation` (/mjuːˈteɪ.ʃən/ - sự biến đổi, thao tác ghi dữ liệu) / `mutator` (/ˈmjuː.teɪ.t̬ɚ/ - phương thức biến đổi dữ liệu)
@@ -23,6 +19,3 @@ Extra:
   - `mutate state in-place` (thay đổi trạng thái trực tiếp tại chỗ)
   - `prevent unintended mutations` (ngăn chặn các biến đổi trạng thái ngoài ý muốn)
   - `mutable vs immutable data structures` (cấu trúc dữ liệu có thể biến đổi đối chiếu với bất biến)
-- Examples:
-  - _Verb: Modifying slice elements will **mutate** the underlying array visible to other slice views._
-  - _Adjective: Functional programming favors **immutable** data structures to guarantee thread safety._
