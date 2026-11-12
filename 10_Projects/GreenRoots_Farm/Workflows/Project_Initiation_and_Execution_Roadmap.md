@@ -95,11 +95,11 @@ Khóa toàn bộ nền tảng dữ liệu và giao tiếp:
 
 Hiện thực hóa màn hình trực quan cho cả 2 đối tượng người dùng:
 
-- **Sơ đồ Cây Thông tin (Sitemap / Information Architecture)**: Phân tách rõ luồng Storefront công khai và Dashboard tác nghiệp nội bộ.
+- **Sơ đồ Cây Thông tin (Sitemap / Information Architecture)**: Phân tách rõ luồng Storefront công khai (`apps/storefront`) và Backoffice tác nghiệp nội bộ (`apps/backoffice`).
 - **Wireframe độ trung thực thấp (Lo-fi Wireframe)**: Phác thảo bố cục lưới, vị trí các nút bấm và luồng giỏ hàng trên giấy hoặc Excalidraw.
 - **Prototype độ trung thực cao (Hi-fi Mockup trên Figma)**:
   - Storefront: Giao diện tối giản, tôn vinh hình ảnh nông sản sạch, tối ưu hoàn toàn cho thiết bị di động (Mobile-first).
-  - Admin/Staff Dashboard: Giao diện dạng thẻ chạm (Card UI) lớn cho Farm Staff thao tác ngoài đồng ruộng; bảng dữ liệu dày đặc cho Sales điều phối đơn.
+  - Backoffice (`apps/backoffice`): Giao diện dạng thẻ chạm (Card UI) tối ưu di động cho Farm Staff ngoài đồng ruộng; bảng dữ liệu dày đặc cho Sales điều phối FEFO, Admin duyệt hủy và SuperAdmin quản trị.
 - **Design System Tokens**: Thiết lập bảng màu Tailwind CSS (xanh nông nghiệp, cam đất), font chữ dễ đọc, và các component chuẩn (Button, Modal, Input, Badge trạng thái đơn hàng).
 
 ---
@@ -110,7 +110,7 @@ Hiện thực hóa màn hình trực quan cho cả 2 đối tượng người d�
 
 - **Khởi tạo Cấu trúc Dự án (Monorepo)**:
   - Backend NestJS với các module khung: `auth`, `products`, `batches`, `orders`, `payment`.
-  - Frontend Next.js cho Storefront và React.js (Vite) cho Dashboard.
+  - Frontend Next.js (App Router) cho Storefront (`apps/storefront`) và React + Vite SPA kết hợp đồng bộ TanStack Router/Query/Table cho Backoffice (`apps/backoffice`).
 - **Hạ tầng Cục bộ qua Docker Compose**:
   - Tệp `docker-compose.yml` khởi chạy container PostgreSQL 16 và Redis 7.
 - **Drizzle Kit Migration Baseline**: Chạy lệnh sinh bảng ban đầu vào cơ sở dữ liệu.

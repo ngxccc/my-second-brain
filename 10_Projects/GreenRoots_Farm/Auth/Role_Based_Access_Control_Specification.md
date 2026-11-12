@@ -47,7 +47,7 @@ Incoming Request ──► JwtAuthGuard (Verify Token) ──► RolesGuard (Che
   - Quản lý giỏ hàng cá nhân, tiến hành đặt hàng mua lẻ (COD hoặc chuyển khoản PayOS).
   - Đăng ký và quản lý gói rau định kỳ (Subscription) giao Thứ 3 hoặc Thứ 6.
   - Tích lũy 1% giá trị đơn hàng thành công làm điểm thưởng (`reward_points`) và khấu trừ vào lần mua sau.
-  - Gửi khiếu nại yêu cầu bồi hoàn rau dập nát trong vòng 24 giờ sau khi nhận hàng (đính kèm tối đa 3 ảnh).
+  - Gửi khiếu nại yêu cầu bồi hoàn rau dập nát trong vòng 24 giờ sau khi nhận hàng (bắt buộc 1–5 ảnh chụp, tùy chọn tối đa 1 video <= 15s).
 - **Giới hạn bảo mật**: Không được phép xem số lượng tồn kho theo từng Lô chi tiết, không xem báo cáo tài chính.
 
 ### 2.3. Farm Staff (Kỹ sư canh tác nông trại)
@@ -88,7 +88,7 @@ Incoming Request ──► JwtAuthGuard (Verify Token) ──► RolesGuard (Che
 
 - **Định danh**: Chủ nông trại (Owner / Founder) hoặc kỹ sư quản trị hệ thống tối cao.
 - **Quyền hạn tối cao**:
-  - Nắm giữ toàn bộ cấu hình tích hợp cổng thanh toán PayOS, tài khoản ngân hàng thụ hưởng, khóa bí mật Cloudinary.
+  - Cấu hình thông tin công khai nông trại (`farms` settings: hotline, địa chỉ, tọa độ GPS, tài khoản ngân hàng công khai), tinh chỉnh tham số phí ship / Flash Sale động và bật/tắt kênh thanh toán (`is_payos_enabled`, `is_cod_enabled`). Các khóa bí mật API (PayOS, Cloudinary, Resend) được lưu cố định trong `.env` và chỉ hiển thị trạng thái kết nối đã che khóa.
   - Quản lý danh sách nhân sự nội bộ: Tạo tài khoản, phân quyền, thu hồi hoặc vô hiệu hóa tài khoản của Admin, Sales, Farm Staff.
   - Xem toàn bộ báo cáo tài chính nhạy cảm: Dòng tiền ròng, doanh thu thực nhận về tài khoản ngân hàng và phân tích chi phí toàn diện.
 
@@ -98,26 +98,26 @@ Incoming Request ──► JwtAuthGuard (Verify Token) ──► RolesGuard (Che
 
 Quy ước: `C` (Create), `R` (Read), `U` (Update), `D` (Delete), `X` (Execute), `-` (Không có quyền).
 
-| Phân hệ chức năng                            | Guest | Customer | Farm Staff | Sales | Admin | SuperAdmin |
-| :------------------------------------------- | :---: | :------: | :--------: | :---: | :---: | :--------: |
-| Xem danh mục sản phẩm & Trang tra cứu QR     |   R   |    R     |     R      |   R   |   R   |     R      |
-| Quản lý giỏ hàng & Đặt hàng mua lẻ           |   -   |   CRUD   |     -      |   -   |   -   |    CRUD    |
-| Đăng ký & Quản lý gói rau định kỳ            |   -   |   CRUD   |     -      |   -   |   -   |    CRUD    |
-| Tích lũy & Sử dụng điểm thưởng               |   -   |    RU    |     -      |   -   |   -   |    CRUD    |
-| Gửi khiếu nại bồi hoàn rau hỏng              |   -   |    CR    |     -      |   -   |   -   |    CRUD    |
-| Quản lý Mùa vụ & Lô đất canh tác             |   -   |    -     |    CRUD    |   -   | CRUD  |    CRUD    |
-| Cập nhật Nhật ký canh tác (Append-only)      |   -   |    -     |     CR     |   -   |  CR   |    CRUD    |
-| Khởi tạo Lô thu hoạch (Batch) & In mã QR     |   -   |    -     |     CR     |   -   | CRUD  |    CRUD    |
-| Xác nhận đơn hàng & Chạy thuật toán FEFO     |   -   |    -     |     -      |   X   |   X   |     X      |
-| Xem danh sách nhặt hàng (Pick List)          |   -   |    -     |     -      |   R   |   R   |     R      |
-| Lập phiếu đề xuất xuất hủy hàng hỏng         |   -   |    -     |     CR     |  CR   | CRUD  |    CRUD    |
-| Phê duyệt phiếu xuất hủy trừ tồn kho         |   -   |    -     |     -      |   -   |   X   |     X      |
-| Kích hoạt Flash Sale lô cận hạn              |   -   |    -     |     -      |   -   |   X   |     X      |
-| Xử lý duyệt khiếu nại khách hàng             |   -   |    -     |     -      |   R   |   X   |     X      |
-| Báo cáo Doanh thu & Thống kê vận hành        |   -   |    -     |     -      |   -   |   R   |    CRUD    |
-| Báo cáo Lợi nhuận ròng & Dòng tiền ngân hàng |   -   |    -     |     -      |   -   |   -   |    CRUD    |
-| Cấu hình Cổng thanh toán & Khóa bí mật API   |   -   |    -     |     -      |   -   |   -   |    CRUD    |
-| Quản trị Tài khoản & Phân quyền User         |   -   |    -     |     -      |   -   |   -   |    CRUD    |
+| Phân hệ chức năng                                      | Guest | Customer | Farm Staff | Sales | Admin | SuperAdmin |
+| :----------------------------------------------------- | :---: | :------: | :--------: | :---: | :---: | :--------: |
+| Xem danh mục sản phẩm & Trang tra cứu QR               |   R   |    R     |     R      |   R   |   R   |     R      |
+| Quản lý giỏ hàng & Đặt hàng mua lẻ                     |   -   |   CRUD   |     -      |   -   |   -   |    CRUD    |
+| Đăng ký & Quản lý gói rau định kỳ                      |   -   |   CRUD   |     -      |   -   |   -   |    CRUD    |
+| Tích lũy & Sử dụng điểm thưởng                         |   -   |    RU    |     -      |   -   |   -   |    CRUD    |
+| Gửi khiếu nại bồi hoàn rau hỏng                        |   -   |    CR    |     -      |   -   |   -   |    CRUD    |
+| Quản lý Mùa vụ & Lô đất canh tác                       |   -   |    -     |    CRUD    |   -   | CRUD  |    CRUD    |
+| Cập nhật Nhật ký canh tác (Append-only)                |   -   |    -     |     CR     |   -   |  CR   |    CRUD    |
+| Khởi tạo Lô thu hoạch (Batch) & In mã QR               |   -   |    -     |     CR     |   -   | CRUD  |    CRUD    |
+| Xác nhận đơn hàng & Chạy thuật toán FEFO               |   -   |    -     |     -      |   X   |   X   |     X      |
+| Xem danh sách nhặt hàng (Pick List)                    |   -   |    -     |     -      |   R   |   R   |     R      |
+| Lập phiếu đề xuất xuất hủy hàng hỏng                   |   -   |    -     |     CR     |  CR   | CRUD  |    CRUD    |
+| Phê duyệt phiếu xuất hủy trừ tồn kho                   |   -   |    -     |     -      |   -   |   X   |     X      |
+| Kích hoạt Flash Sale lô cận hạn                        |   -   |    -     |     -      |   -   |   X   |     X      |
+| Xử lý duyệt khiếu nại khách hàng                       |   -   |    -     |     -      |   R   |   X   |     X      |
+| Báo cáo Doanh thu & Thống kê vận hành                  |   -   |    -     |     -      |   -   |   R   |    CRUD    |
+| Báo cáo Lợi nhuận ròng & Dòng tiền ngân hàng           |   -   |    -     |     -      |   -   |   -   |    CRUD    |
+| Cấu hình Nông trại, Tham số vận hành & Kênh thanh toán |   -   |    -     |     -      |   -   |   -   |    CRUD    |
+| Quản trị Tài khoản & Phân quyền User                   |   -   |    -     |     -      |   -   |   -   |    CRUD    |
 
 ---
 

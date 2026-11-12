@@ -79,7 +79,7 @@ Rào cản nghiệp vụ bảo vệ nông trại trước các khiếu nại tr�
 - **Đặc thù hàng tươi sống**: Nông sản dễ héo nếu khách hàng bảo quản sai cách sau khi nhận hàng.
 - **Cơ chế kiểm soát 3 bước**:
   - _Bước 1 (Giới hạn cửa sổ thời gian)_: Khách hàng chỉ được gửi yêu cầu khiếu nại trong vòng **02 giờ** kể từ thời điểm đối tác vận chuyển cập nhật trạng thái `Giao hàng thành công` (Delivered). Nút khiếu nại sẽ tự động khóa lại sau mốc thời gian này.
-  - _Bước 2 (Bắt buộc bằng chứng đa phương tiện)_: Hệ thống bắt buộc đính kèm tối thiểu 2 hình ảnh chụp rõ tem nhãn QR trên bao bì và phần dập nát của nông sản.
+  - _Bước 2 (Bắt buộc bằng chứng đa phương tiện)_: Bắt buộc đính kèm từ 1 đến 5 hình ảnh chụp rõ tem nhãn QR trên bao bì và phần dập nát (`proof_image_urls`). Cho phép đính kèm tùy chọn 1 video quay cận cảnh (`proof_video_url`, giới hạn tối đa 15 giây và dung lượng $\le 15\text{MB}$ để tránh tràn quota Cloudinary).
   - _Bước 3 (Kiểm duyệt bán tự động)_: Nhân viên Sales đối chiếu thời gian nhận hàng và hình ảnh hư hại trước khi bấm phê duyệt hoàn tiền qua PayOS hoặc phát hành voucher bù vào tài khoản.
 
 ---
@@ -95,6 +95,9 @@ Kiểm soát luân chuyển trạng thái đơn hàng qua Finite State Machine (
   - Khách chỉ được tự hủy đơn khi đơn ở trạng thái `PENDING_PAYMENT` hoặc `PAID`.
   - Khi đơn đã sang `CONFIRMED`, thao tác hủy bắt buộc do Sales thực hiện.
   - Trạng thái `CANCELLED` tự động kích hoạt transaction hoàn trả số lượng khả dụng vào đúng các Batch đã phân bổ.
+- **Tự động hủy đơn quá hạn qua BullMQ Delayed Job**:
+  - Khi đơn hàng tạo với phương thức PayOS, hệ thống đẩy một delayed job vào hàng đợi `order-queue` của BullMQ với thời gian trễ 15 phút (`delay: 900000`).
+  - Worker kích hoạt sau 15 phút: Nếu đơn hàng vẫn ở trạng thái `PENDING_PAYMENT`, hệ thống tự động cập nhật sang `CANCELLED` và giải phóng lượng tồn kho giữ chỗ.
 
 ---
 

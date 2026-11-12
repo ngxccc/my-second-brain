@@ -83,7 +83,7 @@ Các tác nhân ngoại vi hỗ trợ xử lý nền:
 | `Tạo Lô thu hoạch (Batch)` | `<<include>>` | `Khởi tạo mã QR định danh`             | Hệ thống tự sinh mã QR gắn liền với ID Lô                       |
 | `Xác nhận đơn hàng`        | `<<include>>` | `Phân bổ trừ kho FEFO`                 | **Cốt lõi**: Tự động gán các Lô cận hạn vào `batch_allocations` |
 | `Xác nhận đơn hàng`        | `<<include>>` | `Xuất danh sách nhặt hàng (Pick List)` | Nhân viên kho lấy danh sách để đóng gói đúng Lô chỉ định        |
-| `Gửi khiếu nại bồi hoàn`   | `<<include>>` | `Tải ảnh minh chứng rau hỏng`          | Khách bắt buộc gửi 1-3 ảnh thực tế trong vòng 24 giờ            |
+| `Gửi khiếu nại bồi hoàn`   | `<<include>>` | `Tải minh chứng rau hỏng`              | Khách bắt buộc gửi 1-5 ảnh (tùy chọn 1 video <= 15s) trong 24h  |
 | `Lập phiếu xuất hủy`       | `<<include>>` | `Tải ảnh xác nhận rau hỏng`            | Kỹ sư nông trại bắt buộc chụp hiện trạng ngoài vườn/kho         |
 | `Phê duyệt xuất hủy`       | `<<include>>` | `Trừ số lượng tồn kho Lô (Batch)`      | Admin bấm duyệt thì CSDL mới chính thức cập nhật tồn            |
 | `Theo dõi tồn kho cận hạn` | `<<extend>>`  | `Kích hoạt Flash Sale giảm giá`        | Áp dụng khi Lô hàng có hạn sử dụng dưới 48 giờ                  |
