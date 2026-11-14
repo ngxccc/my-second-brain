@@ -66,7 +66,9 @@ function classifyDomain(relPath, tags = []) {
 		lowerPath.includes("para_method") ||
 		lowerPath.includes("map_of_content") ||
 		lowerPath.includes("visual_workflow_documentation_policy") ||
-		lowerPath.includes("star_method")
+		lowerPath.includes("star_method") ||
+		lowerPath.includes("learning_and_cognition") ||
+		lowerPath.includes("cognitive_load")
 	) {
 		return DOMAINS.META_HUB;
 	}
