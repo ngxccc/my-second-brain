@@ -31,7 +31,7 @@ Tài liệu dự án được tổ chức theo chuẩn phân cấp kiến trúc 
 
 - Báo cáo hoàn chỉnh Chương 1 Tuần 1: [[Chapter_01_Project_Initiation_Report]]
 - Đặc tả 5 Use Case cốt lõi & NFR Tuần 2: [[Week_02_Use_Case_Specs_and_NFR]]
-- Hướng dẫn nhập liệu báo cáo cho Kim Anh: [[Kim_Anh_Word_Entry_Guide]]
+- Hướng dẫn nhập liệu báo cáo cho Kim Anh: [[Word_Entry_Guide]]
 - Đặc tả chi tiết 35 User Stories MoSCoW: [[MoSCoW_User_Stories_Specification]]
 - Ánh xạ ca sử dụng Use Case: [[Use_Case_Specification_and_Diagram_Mapping]]
 - Sơ đồ ERD và Từ điển Dữ liệu CSDL: [[Database_ERD_and_Data_Dictionary]]
