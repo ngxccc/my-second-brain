@@ -8,7 +8,7 @@ Pessimistic locking prevented race conditions under high ~~concurrency~~.
 
 Extra:
 
-- Meaning: The ability of different parts or units of a program, algorithm, or problem to be executed out-of-order or in partial order, without affecting the outcome (tính...
+- Meaning: The ability of different parts or units of a program, algorithm, or problem to be executed out-of-order or in partial order, without affecting the outcome.
 - Pronunciation: /kənˈkʌr.ən.si/
 - Word Family:
   - **Verb**: `concur` (/kənˈkɜːr/ - đồng ý / xảy ra đồng thời)

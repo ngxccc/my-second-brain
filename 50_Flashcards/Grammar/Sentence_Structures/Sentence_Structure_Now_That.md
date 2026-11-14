@@ -7,7 +7,7 @@ What is the causal-temporal structure for stating a newly established situation 
 ---
 
 - **Formula**: `Now that + Subject + Verb, [Main Clause]`
-- **Core Usage**: - Diễn tả một nguyên nhân hoặc bối cảnh thực tế vừa hoàn thành/vừa được thiết lập, dẫn đến một quyết định/hành động...
+- **Core Usage**: Diễn tả nguyên nhân hoặc bối cảnh thực tế vừa hoàn thành dẫn đến quyết định tiếp theo: `now that + clause`.
 
 ---
 

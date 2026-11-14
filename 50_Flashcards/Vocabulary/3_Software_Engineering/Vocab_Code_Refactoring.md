@@ -8,7 +8,7 @@ Comprehensive unit tests are essential before initiating major ~~code refactorin
 
 Extra:
 
-- Meaning: The disciplined process of restructuring existing computer code without changing its external observable behavior to improve non-functional attributes (tái cấu...
+- Meaning: The disciplined process of restructuring existing computer code without changing its external observable behavior to improve non-functional attributes.
 - Pronunciation: /ˈkoʊd ˌriːˈfæk.tɚ.ɪŋ/
 - Collocations:
   - `continuous code refactoring` (tái cấu trúc mã liên tục)

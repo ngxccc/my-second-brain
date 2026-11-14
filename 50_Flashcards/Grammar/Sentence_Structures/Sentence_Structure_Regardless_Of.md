@@ -7,7 +7,7 @@ What is the pattern, complement forms, and usage of **regardless of**?
 ---
 
 - **Formula**: `Clause + regardless of + Noun Phrase / WH-clause / Pronoun`
-- **Core Usage**: - Diễn tả ý nghĩa "bất kể", "bất chấp" một yếu tố hay điều kiện nào đó không làm thay đổi hành động chính. Vì `of`...
+- **Core Usage**: Diễn tả ý nghĩa bất kể/bất chấp điều kiện nào: sau giới từ `regardless of` là danh từ, cụm từ hoặc Wh-clause.
 
 ---
 

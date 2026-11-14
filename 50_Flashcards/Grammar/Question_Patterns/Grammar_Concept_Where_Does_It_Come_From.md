@@ -7,7 +7,7 @@ What is the question pattern for asking about the origin/namespace of technical 
 ---
 
 - **Formula**: `Where + do/does + Subject + come from?`; `Which [namespace/package] contains [Subject]?`
-- **Core Usage**: - Khi hỏi về nguồn gốc của một lớp, module, gói thư viện hoặc khái niệm kỹ thuật, dùng động từ `come from` kèm trợ...
+- **Core Usage**: Khi hỏi về nguồn gốc của một module hay concept kỹ thuật, dùng `come from` kết hợp trợ động từ `do/does` đảo trước chủ ngữ.
 
 ---
 

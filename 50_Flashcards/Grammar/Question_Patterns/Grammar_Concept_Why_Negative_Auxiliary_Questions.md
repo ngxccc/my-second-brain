@@ -7,7 +7,7 @@ What is the question word order and auxiliary rule for **Why + Negative Auxiliar
 ---
 
 - **Formula**: ```text; ⎧ Why don't + Subject + Verb (bare)... ? (Present Simple)
-- **Core Usage**: - Trong câu hỏi trực tiếp dạng WH-question với thể phủ định, bắt buộc phải **đảo trợ động từ phủ định (`don't / doe...
+- **Core Usage**: Trong câu hỏi WH-question phủ định, bắt buộc đảo trợ động từ phủ định (`don't / doesn't / didn't`) lên trước chủ ngữ và động từ chính giữ nguyên thể.
 
 ---
 

@@ -7,7 +7,7 @@ What is the structure, preposition, and passive pattern for **qualify someone to
 ---
 
 - **Formula**: ```text; Active: Subject + qualify + Object + to-infinitive
-- **Core Usage**: - Động từ `qualify` khi mang nghĩa "đáp ứng tiêu chuẩn / làm cho ai đủ điều kiện" đi với cấu trúc `qualify someone...
+- **Core Usage**: Động từ `qualify` khi mang nghĩa đáp ứng tiêu chuẩn đi với cấu trúc `qualify someone to do something`.
 
 ---
 

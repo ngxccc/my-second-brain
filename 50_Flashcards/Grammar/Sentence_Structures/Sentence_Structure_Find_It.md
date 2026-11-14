@@ -7,7 +7,7 @@ What is the dummy object pattern and verb form for expressing opinions using the
 ---
 
 - **Formula**: `Subject + find + it + Adjective + to + V-bare`
-- **Core Usage**: - Diễn tả nhận định của ai đó khi thấy việc thực hiện một hành động là như thế nào. `it` làm tân ngữ giả đại diện c...
+- **Core Usage**: Diễn tả nhận định của chủ thể khi thấy một hành động như thế nào: `find it + Adjective + to-V`.
 
 ---
 

@@ -8,7 +8,7 @@ A good architecture review ~~cuts through the fluff~~ and focuses strictly on th
 
 Extra:
 
-- Meaning: To get directly to the essential, practical point while discarding unnecessary, superficial details or corporate buzzwords (đi thẳng vào trọng tâm, loại bỏ râu...
+- Meaning: To get directly to the essential, practical point while discarding unnecessary, superficial details or corporate buzzwords.
 - Pronunciation: /kʌts θruː ðə flʌf/
 - Collocations:
   - `cut through the fluff` (đi thẳng vào thực chất)

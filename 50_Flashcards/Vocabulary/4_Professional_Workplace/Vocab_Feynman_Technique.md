@@ -8,7 +8,7 @@ Using the ~~feynman technique~~, he explained Go memory escape analysis using a 
 
 Extra:
 
-- Meaning: A mental model and learning framework where one learns a complex topic by teaching or explaining it in simple, jargon-free language to revea...
+- Meaning: A mental model and learning framework where one learns a complex topic by teaching or explaining it in simple, jargon-free language to revea.
 - Pronunciation: /ˈfaɪn.mən tekˌniːk/
 - Collocations:
   - `apply the feynman technique` (áp dụng kỹ thuật Feynman)

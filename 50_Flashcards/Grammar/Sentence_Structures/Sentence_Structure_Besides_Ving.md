@@ -7,7 +7,7 @@ What is the additive preposition pattern and required verb form for adding facts
 ---
 
 - **Formula**: `Besides + V-ing / Noun, [Main Clause]`
-- **Core Usage**: - Dùng để bổ sung thông tin ("Bên cạnh việc X, Y cũng đúng/xảy ra"). Vì `Besides` là giới từ nên đi vớ `V-ing` hoặc...
+- **Core Usage**: Dùng để bổ sung thông tin ("Bên cạnh việc X, Y cũng xảy ra"). Vì `Besides` là giới từ nên theo sau là danh từ hoặc `V-ing`.
 
 ---
 

@@ -7,7 +7,7 @@ What are the concessive sentence patterns for expressing regardlessness using **
 ---
 
 - **Formula**: `No matter how + Adj/Adv + Subject + Verb, [Main Clause]`; `No matter what + Subject + Verb / Noun, [Main Clause]`
-- **Core Usage**: - Diễn tả ý nhượng bộ: bất kể tính chất sự việc như thế nào hay điều gì xảy ra thì kết quả ở mệnh đề chính vẫn khôn...
+- **Core Usage**: Diễn tả ý nhượng bộ: `no matter what/how/who` dẫn đầu mệnh đề trạng ngữ chỉ sự bất biến của kết quả chính.
 
 ---
 

@@ -8,7 +8,7 @@ Academic projects teach syntax, but ~~shipping real world code~~ requires unders
 
 Extra:
 
-- Meaning: Successfully deploying robust, functional software to actual production environments where it serves real paying users and handles authentic...
+- Meaning: Successfully deploying robust, functional software to actual production environments where it serves real paying users and handles authentic.
 - Pronunciation: /ˈʃɪp.ɪŋ ˌriː.əl ˈwɝːld ˌkoʊd/
 - Collocations:
   - `focus on shipping real world code` (tập trung phát hành code thực chiến)

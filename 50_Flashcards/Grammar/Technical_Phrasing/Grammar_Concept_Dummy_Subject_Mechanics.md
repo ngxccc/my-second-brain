@@ -6,9 +6,8 @@ What is the first-principles mechanic and formula of **Dummy Subjects (Chủ ng�
 
 ---
 
-- **First-Principles Invariant (Luật bất biến về Chủ ngữ)**:
-- **Tiếng Việt (Pro-Drop / Topic-Prominent)**: Ngôn ngữ cho phép khuyết/ẩn chủ ngữ hoàn toàn (_"Mưa rồi"_, _"Có 2 tiến trìn...
-  - **Tiếng Anh (Strict Non-Pro-Drop)**: Mọi mệnh đề độc lập (trừ câu mệnh lệnh) B...
+- **Non-Pro-Drop Invariant**: Tiếng Anh bắt buộc mọi mệnh đề độc lập phải có chủ ngữ; cấm ẩn chủ ngữ như tiếng Việt.
+- **Two Operators**: `There + be` cho sự tồn tại (❌ `Have a bug` $\rightarrow$ ✅ `There is a bug`); `It + be + Adj` cho nhận định (`It is critical to test`).
 
 ---
 

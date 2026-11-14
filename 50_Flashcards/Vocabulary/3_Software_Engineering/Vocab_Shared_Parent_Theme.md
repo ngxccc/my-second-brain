@@ -2,7 +2,7 @@
 noteId: 1785417092603
 ---
 
-A ~~shared parent theme~~ en...
+A ~~shared parent theme~~ ensures visual and functional consistency across micro-frontends.
 
 ---
 

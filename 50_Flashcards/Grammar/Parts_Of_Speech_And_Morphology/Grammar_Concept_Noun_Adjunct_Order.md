@@ -7,7 +7,7 @@ What is the rule and pattern for **Noun Adjunct Order** (Danh từ bổ nghĩa c
 ---
 
 - **Formula**: `[Modifier Noun] + [Main Noun]` (e.g., `View Component section`)
-- **Core Usage**: - Trong cụm danh từ ghép, danh từ đóng vai trò bổ nghĩa (chủ đề cụ thể) đứng TRƯỚC danh từ chính (khái niệm chung n...
+- **Core Usage**: Trong cụm danh từ ghép, danh từ đóng vai trò bổ nghĩa đứng trước danh từ chính (Head Noun nằm ở vị trí tận cùng bên phải).
 
 ---
 

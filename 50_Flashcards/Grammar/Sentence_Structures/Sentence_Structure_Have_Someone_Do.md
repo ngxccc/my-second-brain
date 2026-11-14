@@ -7,7 +7,7 @@ What is the active causative structure and verb form for delegating or requestin
 ---
 
 - **Formula**: `Active`: `Subject + have + someone + V-bare`; `Passive`: `Subject + have + something + V-3/ed`
-- **Core Usage**: - Diễn tả việc nhờ, thuê hoặc phân công ai đó thực hiện một công việc. Động từ theo sau tân ngữ chỉ người ở dạng Ng...
+- **Core Usage**: Diễn tả việc nhờ hoặc phân công ai đó thực hiện việc gì: `have someone + V-bare` (nguyên thể không to).
 
 ---
 

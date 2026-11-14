@@ -7,7 +7,7 @@ What is the subjunctive mood pattern and verb form for expressing urgency/import
 ---
 
 - **Formula**: `It is + [Adj: essential / important / necessary / vital] + that + Subject + V-bare`
-- **Core Usage**: - Nhấn mạnh tính khẩn thiết/quan trọng của một việc. Động từ ở mệnh đề sau `that` LUÔN để nguyên thể không chia (`V...
+- **Core Usage**: Cấu trúc giả định thức nhấn mạnh tính quan trọng: động từ ở mệnh đề sau `that` giữ nguyên thể không chia.
 
 ---
 

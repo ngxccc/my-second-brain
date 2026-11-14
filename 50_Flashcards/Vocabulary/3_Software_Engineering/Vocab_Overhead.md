@@ -8,7 +8,7 @@ Passing large structs by value creates unnecessary copy ~~overhead~~ on the CPU 
 
 Extra:
 
-- Meaning: The indirect or excess computing resources (CPU cycles, memory, network latency) consumed by system infrastructure or abstractions beyond the core task (chi phí...
+- Meaning: The indirect or excess computing resources (CPU cycles, memory, network latency) consumed by system infrastructure or abstractions beyond the core task.
 - Pronunciation: /ˈoʊ.vɚ.hed/
 - Collocations:
   - `memory overhead` (chi phí phụ trội về bộ nhớ)

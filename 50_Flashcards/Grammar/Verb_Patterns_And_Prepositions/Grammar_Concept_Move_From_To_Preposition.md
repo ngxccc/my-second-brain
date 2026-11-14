@@ -7,7 +7,7 @@ What is the preposition pattern for moving components from one place to another 
 ---
 
 - **Formula**: `move + [Object] + from [Location A] + to [Location B]`
-- **Core Usage**: - Khi nói về việc di chuyển file, component hay tài nguyên từ nguồn A sang đích B, bắt buộc dùng cặp giới từ `from...
+- **Core Usage**: Khi diễn tả việc di chuyển file, component hoặc tài nguyên từ nguồn A sang đích B, bắt buộc dùng cặp giới từ `from... to...`.
 
 ---
 

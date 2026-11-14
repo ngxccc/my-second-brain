@@ -8,7 +8,7 @@ Go's ~~garbage collection~~ is optimized for sub-millisecond pause times to supp
 
 Extra:
 
-- Meaning: An automatic memory management process in runtimes that detects and reclaims memory allocated to objects that are no longer reachable by the program (thu gom rá...
+- Meaning: An automatic memory management process in runtimes that detects and reclaims memory allocated to objects that are no longer reachable by the program.
 - Pronunciation: /ˈɡɑːr.bɪdʒ kəˌlek.ʃən/
 - Collocations:
   - `garbage collection pause` (thời gian dừng hệ thống để thu gom rác / stop-the-world)

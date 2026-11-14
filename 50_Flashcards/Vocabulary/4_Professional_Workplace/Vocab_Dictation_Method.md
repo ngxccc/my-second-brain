@@ -8,7 +8,7 @@ The ~~dictation method~~ forces your brain to register subtle unstressed preposi
 
 Extra:
 
-- Meaning: A language learning technique where the student listens to audio speech and transcribes every spoken word verbatim to train phonetics and ear precision (phương...
+- Meaning: A language learning technique where the student listens to audio speech and transcribes every spoken word verbatim to train phonetics and ear precision.
 - Pronunciation: /dɪkˈteɪ.ʃən ˌmeθ.əd/
 - Collocations:
   - `apply the dictation method` (áp dụng phương pháp chép chính tả)

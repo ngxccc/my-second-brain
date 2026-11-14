@@ -7,7 +7,7 @@ What is the technical distinction between **Compilation Errors** and **Runtime E
 ---
 
 - **Formula**: `Compilation Error`: `occur at compile time`; `Runtime Exception`: `occur at runtime` / `throw an exception`
-- **Core Usage**: - `Compilation Error` xảy ra khi trình biên dịch kiểm tra code trước khi chạy (cú pháp, thiếu namespace). `Runtime...
+- **Core Usage**: `Compilation Error` xảy ra khi biên dịch cú pháp trước khi chạy, còn `Runtime Error` xảy ra trong quá trình thực thi chương trình.
 
 ---
 

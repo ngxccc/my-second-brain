@@ -8,7 +8,7 @@ Our order routing engine splits ~~mixed fulfillment orders~~ across the nearest 
 
 Extra:
 
-- Meaning: Customer orders that require items to be picked and dispatched from multiple different warehouses or fulfillment channels (đơn hàng xử lý hỗ...
+- Meaning: Customer orders that require items to be picked and dispatched from multiple different warehouses or fulfillment channels.
 - Pronunciation: /ˌmɪkst fʊlˈfɪl.mənt ˌɔːr.dɚz/
 - Collocations:
   - `route mixed fulfillment orders` (điều phối các đơn hàng xử lý hỗn hợp)

@@ -7,7 +7,7 @@ What are the natural technical collocations for expressing system errors (**thro
 ---
 
 - **Formula**: `Subject + throw / produce / return + an error`; `Subject + get / encounter + an error`
-- **Core Usage**: - Trong tiếng Anh lập trình, không nói "code bị error" (`my code was error`). Phải dùng động từ chuyên ngành: `thro...
+- **Core Usage**: Trong tiếng Anh kỹ thuật, dùng cụm `throw an error` hoặc `raise an exception`; không dùng các cách diễn đạt bồi.
 
 ---
 

@@ -8,7 +8,7 @@ Using constructor ~~dependency injection~~ makes it straightforward to mock data
 
 Extra:
 
-- Meaning: A software design pattern where an object receives its collaborating dependencies from an external source rather than instantiating them int...
+- Meaning: A software design pattern where an object receives its collaborating dependencies from an external source rather than instantiating them int.
 - Pronunciation: /dɪˌpen.dən.si ɪnˈdʒek.ʃən/
 - Collocations:
   - `constructor dependency injection` (tiêm phụ thuộc thông qua hàm khởi tạo)

@@ -9,7 +9,7 @@ What is the preposition pattern and verb form after **instead of**?
 ---
 
 - **Formula**: `Action A + instead of + V-ing / Noun / Pronoun (Action B)`; `instead of + Noun / Noun Phrase / Pronoun / V-ing (Gerund)`
-- **Core Usage**: - Diễn tả sự lựa chọn thay thế: làm/dùng A thay vì B. Vì `of` là giới từ nên động từ sau `instead of` BẮT BUỘC thêm...
+- **Core Usage**: Diễn tả sự lựa chọn thay thế (làm A thay vì B). Sau giới từ `instead of` bắt buộc là danh từ hoặc `V-ing`.
 
 ---
 

@@ -7,7 +7,7 @@ How do you correctly express **Measurements with Adjectives (e.g., 500 lines lon
 ---
 
 - **Formula**: ```text; ⎧ Subject + is/are + [Quantity/Unit] + [Adjective] (long/high/wide/old)
-- **Core Usage**: - **Measurement + Adjective**: Đơn vị đo lường đứng trước tính từ mô tả kích thước (`500 lines long`, `100 megabyte...
+- **Core Usage**: Đơn vị đo lường đứng trước tính từ mô tả kích thước hoặc thời lượng (`500 lines long`, `2 seconds faster`).
 
 ---
 

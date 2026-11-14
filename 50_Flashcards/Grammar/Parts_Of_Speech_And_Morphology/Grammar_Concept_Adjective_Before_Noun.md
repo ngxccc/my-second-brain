@@ -7,7 +7,7 @@ What is the word order rule for **Adjectives before Nouns** (English grammar, Vi
 ---
 
 - **Formula**: `Adjective + Noun` (e.g., `English grammar`, `Vietnamese food`)
-- **Core Usage**: - Trong tiếng Anh, tính từ (bao gồm tính từ chỉ quốc tịch/ngôn ngữ) LUÔN đứng TRƯỚC danh từ mà nó bổ nghĩa (trược l...
+- **Core Usage**: Trong tiếng Anh, tính từ mô tả luôn đứng trước danh từ mà nó bổ nghĩa để tạo thành cụm danh từ chuẩn xác.
 
 ---
 

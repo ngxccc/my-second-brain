@@ -6,9 +6,8 @@ How do you correctly use **Modal Conditionals (Should I vs. Would it be benefici
 
 ---
 
-- **Formula**: ```text; ⎧ Should I + [Base Verb: V1] ... to [Infinitive of Purpose: to-V]?
-- **Core Usage**: - Khi tham vấn hoặc đặt câu hỏi phản biện về các quyết định kỹ thuật:
-  - **`Should I [V1]... to-V?`**: Dùng khi...
+- **Formula**: `Should I + [V-bare]... to [to-V]?` / `Would it be advisable to + [to-V]?`
+- **Core Usage**: Dùng khi tham vấn hoặc phản biện về các quyết định kiến trúc trước khi triển khai (tránh câu bồi `Have should I...`).
 
 ---
 

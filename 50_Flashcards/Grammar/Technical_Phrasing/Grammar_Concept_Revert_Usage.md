@@ -7,7 +7,7 @@ What is the preposition rule for the verb **revert** (revert to / revert back to
 ---
 
 - **Formula**: `revert + to + [Original State / Commit]`; `revert back to + [Original State]`
-- **Core Usage**: - Động từ `revert` (hoặc `revert back`) BẮT BUỘC đi với giới từ `to` để chỉ trạng thái, phiên bản hoặc thiết kế ban...
+- **Core Usage**: Động từ `revert` luôn đi với giới từ `to` để chỉ phiên bản, commit hoặc trạng thái trước đó cần khôi phục.
 
 ---
 

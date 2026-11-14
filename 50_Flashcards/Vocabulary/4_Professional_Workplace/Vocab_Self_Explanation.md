@@ -8,7 +8,7 @@ Using ~~self explanation~~ while tracing a Go pointer reveals exactly where a me
 
 Extra:
 
-- Meaning: A metacognitive learning strategy where learners explain concepts, code flows, or logic to themselves out loud to verify comprehension (tự giải thích cơ chế cho...
+- Meaning: A metacognitive learning strategy where learners explain concepts, code flows, or logic to themselves out loud to verify comprehension.
 - Pronunciation: /ˌself ˌek.spləˈneɪ.ʃən/
 - Collocations:
   - `practice self explanation` (thực hành tự giải thích)

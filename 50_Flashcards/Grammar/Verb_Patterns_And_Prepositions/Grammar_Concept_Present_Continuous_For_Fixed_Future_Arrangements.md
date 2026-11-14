@@ -6,7 +6,7 @@ When do we use **Present Continuous (be + V-ing)** for the future instead of **w
 
 ---
 
-- **Present Continuous for Future:** Used exclusively for **Fixed Arrangements** (pre-scheduled with specific time, place, or...
+- **Present Continuous for Future:** Dùng cho các lịch trình hoặc sự kiện đã lên kế hoạch và chốt thời gian cố định.
 - **Contrast with 'be going to':** Expresses a personal intention or unconfirmed plan (_'I am going to rewrite this module'_).
 
 ---

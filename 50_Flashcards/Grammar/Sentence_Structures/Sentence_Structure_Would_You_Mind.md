@@ -7,7 +7,7 @@ What are the polite request and permission patterns and verb forms for **would y
 ---
 
 - **Formula**: `Polite Request`: `Would you mind + V-ing...?`; `Permission`: `Would you mind if + Subject + V-past...?`
-- **Core Usage**: - Dùng để đưa ra lời nhờ vả hoặc xin phép một cách rất lịch sự. `mind` yêu cầu người khác làm gì đi với `V-ing`; xi...
+- **Core Usage**: Đưa ra lời yêu cầu lịch sự: `Would you mind + V-ing` (yêu cầu người khác) hoặc `Would you mind if I + V2/ed` (xin phép).
 
 ---
 

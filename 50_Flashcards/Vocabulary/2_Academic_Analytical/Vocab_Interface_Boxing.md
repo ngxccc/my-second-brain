@@ -8,7 +8,7 @@ Passing concrete structs to `any` (`interface{}`) causes ~~interface boxing~~, a
 
 Extra:
 
-- Meaning: The runtime process of wrapping a concrete value inside an interface value, which copies the data to heap memory unless small enough to inline (đóng gói kiểu dữ...
+- Meaning: The runtime process of wrapping a concrete value inside an interface value, which copies the data to heap memory unless small enough to inline.
 - Pronunciation: /ˈɪn.tɚ.feɪs ˈbɑːk.sɪŋ/
 - Collocations:
   - `cost of interface boxing` (chi phí của việc đóng gói interface)

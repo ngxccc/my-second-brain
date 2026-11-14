@@ -8,7 +8,7 @@ E-commerce fulfillment centers use ~~atomic item tracking~~ to prevent inventory
 
 Extra:
 
-- Meaning: The practice of tracking each individual inventory item independently with a unique serial or identifier rather than grouped as a batch (theo dõi từng đơn vị sả...
+- Meaning: The practice of tracking each individual inventory item independently with a unique serial or identifier rather than grouped as a batch.
 - Pronunciation: /əˈtɑː.mɪk ˈaɪ.t̬əm ˌtræk.ɪŋ/
 - Collocations:
   - `implement atomic item tracking` (triển khai theo dõi từng món đồ độc lập)

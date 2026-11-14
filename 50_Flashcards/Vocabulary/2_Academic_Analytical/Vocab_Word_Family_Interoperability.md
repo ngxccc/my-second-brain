@@ -8,7 +8,7 @@ Maintaining Markdown files as the authoring layer preserves ~~interoperability~~
 
 Extra:
 
-- Meaning: The ability of computer systems or software to exchange and make use of information across different platforms and tools (khả năng tương tác và trao đổi dữ liệu...
+- Meaning: The ability of computer systems or software to exchange and make use of information across different platforms and tools.
 - Pronunciation: /ˌɪn.tə.rɒp.ər.əˈbɪl.ə.ti/
 - Word Family:
   - **Verb**: `interoperate` (/ˌɪn.təˈrɒp.ər.eɪt/ - tương tác qua lại liên hệ thống)

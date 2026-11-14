@@ -6,9 +6,8 @@ What are the 2 valid complementation patterns and common preposition traps for t
 
 ---
 
-- **Core Invariant (Luật bất biến của Transitive Verb 'provide')**:
-  - `provide` là một **Ngoại động từ (Transitive Verb)**, bắt buộc phải có một Danh từ làm Direct Object đứng ngay liền kề sau nó.
-  - **FATAL ERROR TRAP**: Nhồi nhét cả 2 giới từ `to` và `with` vào cùn...
+- **Two Formulas**: `provide + [Thing] + to + [Entity]` hoặc `provide + [Entity] + with + [Thing]`.
+- **Trap**: Không nhồi nhét cả `to` và `with` (❌ `provides to users with keys` $\rightarrow$ ✅ `provides users with keys`).
 
 ---
 

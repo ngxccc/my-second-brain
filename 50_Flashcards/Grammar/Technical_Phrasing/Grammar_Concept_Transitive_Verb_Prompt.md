@@ -7,7 +7,7 @@ What is the transitive verb pattern for **prompting someone** (prompt someone vs
 ---
 
 - **Formula**: `prompt + [Object: Person / AI]` (e.g., `prompt you`, `prompt the model`)
-- **Core Usage**: - Động từ `prompt` mang nghĩa "gửi câu lệnh/yêu cầu ai đó" là tha động từ (transitive verb), đi trực tiếp với tân n...
+- **Core Usage**: Động từ `prompt` là ngoại động từ (transitive verb), đi trực tiếp với tân ngữ chỉ đối tượng nhận lệnh (`prompt someone to do something`).
 
 ---
 

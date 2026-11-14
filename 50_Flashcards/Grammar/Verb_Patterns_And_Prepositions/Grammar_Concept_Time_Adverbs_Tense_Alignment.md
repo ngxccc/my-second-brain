@@ -6,8 +6,8 @@ How do you align **Time Adverbs** (Currently, Lately/Recently, At that time) wit
 
 ---
 
-- **Currently / At present:** Signals an ongoing action in progress $\rightarrow$ Align with **Present Continuous** or Presen...
-- **Lately / Recently:** Signals an action completed within an open time frame connecting to the present $\rightarrow$ Align...
+- **Currently / At present:** Báo hiệu hành động đang diễn ra, kết hợp thì Present Continuous hoặc Present Simple.
+- **Lately / Recently:** Báo hiệu hành động vừa hoàn thành có ảnh hưởng đến hiện tại, kết hợp thì Present Perfect.
 
 ---
 

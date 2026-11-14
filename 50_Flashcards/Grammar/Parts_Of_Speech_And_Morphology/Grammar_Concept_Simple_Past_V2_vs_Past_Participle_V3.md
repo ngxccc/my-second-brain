@@ -7,7 +7,7 @@ What is the fundamental difference between **Simple Past ($V_2$)** and **Past Pa
 ---
 
 - **Formula**: ```text; ⎧ Simple Past (V2) -> Subject + chose + Object (Hành động đã hoàn tất trong quá khứ)
-- **Core Usage**: - **$V_2$ (Simple Past - `chose`)**: Là động từ vị ngữ độc lập (finite verb), có thể tự đứng sau chủ ngữ để tạo thà...
+- **Core Usage**: Động từ $V_2$ (Simple Past) tự thân làm vị ngữ độc lập trong quá khứ, còn $V_3$ (Past Participle) chỉ đứng sau `have/has` hoặc `be` trong thể bị động.
 
 ---
 

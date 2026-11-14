@@ -6,9 +6,8 @@ How do you correctly construct the **Passive Voice** in technical English, and w
 
 ---
 
-- **Formula**: ```text; ⎧ Present Simple -> Subject + is / are + V3 (Past Participle)
-- **Core Usage**: - **Bản chất**: Trong câu bị động, chủ ngữ là đối tượng tiếp nhận hành động (chứ không tự thực hiện hành động).
-  -...
+- **Formula**: `Subject + [be] + V3/Past Participle` (e.g., `is validated`, `were migrated`).
+- **Core Usage**: Chủ ngữ là đối tượng tiếp nhận hành động; động từ chính bắt buộc ở dạng phân từ 2 ($V_3$) để làm vị ngữ bị động.
 
 ---
 

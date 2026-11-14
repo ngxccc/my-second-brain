@@ -6,9 +6,8 @@ What are the valid complementation patterns and common traps for the transitive 
 
 ---
 
-- **Core Invariant (Luật bất biến của Transitive Verb 'require')**:
-  - `require` là một **Ngoại động từ (Transitive Verb)** mang nghĩa bắt buộc, đòi hỏi.
-- **FATAL ERROR TRAP**: Trong tiếng Việt ta hay nói _"Middleware này yêu cầu xác thực..."_ $\rightarrow$ Người học ...
+- **Core Pattern**: `require + [Noun / V-ing]` hoặc `require + [Object] + to-V`.
+- **Trap**: Không dùng `require to-V` trực tiếp (❌ `requires to authenticate` $\rightarrow$ ✅ `requires authentication`).
 
 ---
 

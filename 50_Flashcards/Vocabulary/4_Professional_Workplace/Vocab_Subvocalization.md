@@ -8,7 +8,7 @@ Intentional ~~subvocalization~~ allows engineers to rehearse English presentatio
 
 Extra:
 
-- Meaning: The internal, silent or whispered articulation of speech sounds and words, activating speech muscle pathways without producing loud sound (k...
+- Meaning: The internal, silent or whispered articulation of speech sounds and words, activating speech muscle pathways without producing loud sound.
 - Pronunciation: /ˌsʌb.voʊ.kəl.aɪˈzeɪ.ʃən/
 - Word Family:
   - **Verb**: `subvocalize` (/ˌsʌbˈvoʊ.kəl.aɪz/ - nói thầm ngầm, mấp máy cơ miệng)

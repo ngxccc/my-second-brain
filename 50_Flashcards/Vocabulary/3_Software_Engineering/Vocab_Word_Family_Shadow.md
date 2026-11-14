@@ -8,7 +8,7 @@ Language learners ~~shadow~~ native speakers on YouTube to master connected spee
 
 Extra:
 
-- Meaning: To follow closely; in language learning, a technique where you listen to native speech and repeat it immediately with minimal delay (nghe nhại, kỹ thuật shadowi...
+- Meaning: To follow closely; in language learning, a technique where you listen to native speech and repeat it immediately with minimal delay.
 - Pronunciation: /ˈʃæd.oʊ/
 - Word Family:
   - **Verb**: `shadow` (/ˈʃæd.oʊ/ - nghe nhại theo, đi theo quan sát/học việc)

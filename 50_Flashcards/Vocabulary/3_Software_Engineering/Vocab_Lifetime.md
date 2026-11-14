@@ -8,7 +8,7 @@ Stack-allocated variables have a ~~lifetime~~ strictly bound to the execution of
 
 Extra:
 
-- Meaning: The duration during program execution from when a variable, object, or resource is allocated until it is deallocated or invalidated (vòng đời tồn tại của biến/t...
+- Meaning: The duration during program execution from when a variable, object, or resource is allocated until it is deallocated or invalidated.
 - Pronunciation: /ˈlaɪf.taɪm/
 - Collocations:
   - `variable lifetime` (vòng đời của một biến)

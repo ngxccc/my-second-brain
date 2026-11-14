@@ -8,7 +8,7 @@ Interviewers test ~~slice mechanics~~ to see if candidates understand pointer al
 
 Extra:
 
-- Meaning: The internal architectural rules governing how slices in Go allocate, sub-slice, reallocate, and share memory with backing arrays (cơ chế vậ...
+- Meaning: The internal architectural rules governing how slices in Go allocate, sub-slice, reallocate, and share memory with backing arrays.
 - Pronunciation: /ˈslaɪs məˌkæn.ɪks/
 - Collocations:
   - `master Go slice mechanics` (làm chủ cơ chế hoạt động của slice trong Go)

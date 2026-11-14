@@ -8,7 +8,7 @@ Start your whiteboard presentation by stating the user scale; this ~~sets the st
 
 Extra:
 
-- Meaning: To prepare conditions, provide foundational context, or establish background so that subsequent developments or explanations can succeed (tạ...
+- Meaning: To prepare conditions, provide foundational context, or establish background so that subsequent developments or explanations can succeed.
 - Pronunciation: /set ðə ˈsteɪdʒ/
 - Collocations:
   - `set the stage for discussion` (chuẩn bị bối cảnh cho cuộc thảo luận)

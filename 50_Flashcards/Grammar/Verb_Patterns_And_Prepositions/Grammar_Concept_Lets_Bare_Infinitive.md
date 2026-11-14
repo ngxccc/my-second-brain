@@ -7,7 +7,7 @@ What is the verb form rule after **let's** and how does the verb following **sta
 ---
 
 - **Formula**: `Let's + V-bare` (e.g., `Let's start...`); `start + V-ing` OR `start by + V-ing`
-- **Core Usage**: - `Let's` (viết tắt của `Let us`) LUÔN đi với Động từ nguyên thể không chia. Động từ `start` đi với `V-ing` khi nói...
+- **Core Usage**: `Let's` luôn đi trực tiếp với động từ nguyên thể không chia (`Bare Infinitive`) để đưa ra đề xuất hành động.
 
 ---
 

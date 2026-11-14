@@ -7,7 +7,7 @@ What is the noun adjunct and pluralization grammar behind **application renderin
 ---
 
 - **Formula**: `[Noun] + [Gerund / Participle Modifier] + [Plural Noun]`
-- **Core Usage**: - `rendering` (gerund): biến động từ `render` thành từ bổ nghĩa cho hành động dựng hình. `speeds` (số nhiều): chỉ t...
+- **Core Usage**: Kết hợp danh động từ `rendering` với danh từ `speeds` để tạo cụm danh từ chỉ tốc độ dựng hình của các pipeline khác nhau.
 
 ---
 

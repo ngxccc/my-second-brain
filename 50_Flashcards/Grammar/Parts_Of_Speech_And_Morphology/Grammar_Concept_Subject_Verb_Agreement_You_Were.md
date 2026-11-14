@@ -7,7 +7,7 @@ What is the correct subject-verb agreement for **You** in past tense (You were /
 ---
 
 - **Formula**: `To Be (Past)`: `You were...` / `You were not (weren't)...`; `Action Verb (Past)`: `You didn't + V-bare`
-- **Core Usage**: - Với đại từ `You` (ngôi thứ 2), động từ `to be` ở quá khứ LUÔN dùng `were` (không dùng `was`). Phủ định hành động...
+- **Core Usage**: Với đại từ `You` (ngôi thứ 2), động từ `to be` ở quá khứ luôn là `were`; dạng phủ định là `weren't`.
 
 ---
 

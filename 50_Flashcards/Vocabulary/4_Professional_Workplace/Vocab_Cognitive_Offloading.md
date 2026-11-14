@@ -8,7 +8,7 @@ Sketching the execution flow on an Excalidraw board is an effective form of ~~co
 
 Extra:
 
-- Meaning: The use of physical actions or external tools (like whiteboards, notes, diagrams) to reduce mental demand on working memory (sự giải phóng t...
+- Meaning: The use of physical actions or external tools (like whiteboards, notes, diagrams) to reduce mental demand on working memory.
 - Pronunciation: /ˈkɑːɡ.nə.tɪv ˌɔːfˈloʊ.dɪŋ/
 - Collocations:
   - `practice cognitive offloading` (thực hành giải phóng tải nhận thức)

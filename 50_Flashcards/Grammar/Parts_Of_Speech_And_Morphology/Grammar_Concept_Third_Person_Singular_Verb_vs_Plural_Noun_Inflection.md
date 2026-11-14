@@ -6,11 +6,8 @@ Why does the suffix **`-s / -es / -ies`** represent opposite grammatical numbers
 
 ---
 
-- **First-Principles Dichotomy (Quy luật đối lập 180 độ)**:
-  - **Noun + `-s/-es` = SỐ NHIỀU (Plural Noun)**:
-    - _One company_ $\rightarrow$ _Two **companies**_ (nhiều công ty).
-    - _One developer_ $\rightarrow$ _Ten **developers**_ (nhiều lập trình viên).
-- **Conc...
+- **Noun + `-s/-es` = SỐ NHIỀU (Plural)**: e.g., `one service` $\rightarrow$ `two services`.
+- **Verb + `-s/-es` = SỐ ÍT (3rd Person Singular)**: Chủ ngữ số ít đi với động từ thêm `-s/-es` (e.g., `the system fails`).
 
 ---
 

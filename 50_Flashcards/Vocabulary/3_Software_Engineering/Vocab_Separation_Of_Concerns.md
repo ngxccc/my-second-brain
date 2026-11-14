@@ -8,7 +8,7 @@ Applying ~~separation of concerns~~ decouples the HTTP transport layer from busi
 
 Extra:
 
-- Meaning: A software architecture design principle that divides a computer program into distinct sections, each addressing a separate concern (nguyên...
+- Meaning: A software architecture design principle that divides a computer program into distinct sections, each addressing a separate concern.
 - Pronunciation: /ˌsep.əˈreɪ.ʃən əv kənˈsɝːnz/
 - Collocations:
   - `enforce separation of concerns`

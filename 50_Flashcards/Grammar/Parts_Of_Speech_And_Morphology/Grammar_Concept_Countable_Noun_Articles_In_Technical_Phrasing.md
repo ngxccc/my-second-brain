@@ -7,7 +7,7 @@ How do you correctly use singular countable nouns and articles in software engin
 ---
 
 - **Formula**: ```text; ⎧ Write a commit message for the [Folder/Service] (Countable noun: a + commit message)
-- **Core Usage**: - Trong tiếng Anh kỹ thuật, các từ như `commit` (khi dùng làm danh từ chỉ lượt commit), `branch`, `folder`, `endpoi...
+- **Core Usage**: Các danh từ kỹ thuật đếm được như `commit`, `branch`, `folder`, `endpoint` ở dạng số ít bắt buộc phải có mạo từ hoặc từ chỉ định đi kèm.
 
 ---
 

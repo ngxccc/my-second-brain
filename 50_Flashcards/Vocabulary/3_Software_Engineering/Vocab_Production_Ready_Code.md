@@ -8,7 +8,7 @@ Prototype scripts lack graceful error handling and structured logging, making th
 
 Extra:
 
-- Meaning: Software source code that meets all rigorous engineering standards for reliability, security, observability, automated testing, and performance needed for deplo...
+- Meaning: Software source code that meets all rigorous engineering standards for reliability, security, observability, automated testing, and performance needed for deplo.
 - Pronunciation: /prəˈdʌk.ʃən ˌred.i ˈkoʊd/
 - Collocations:
   - `write production ready code` (viết mã nguồn đạt chuẩn production)

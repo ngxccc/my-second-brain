@@ -7,7 +7,7 @@ What are the natural technical collocations for UI consistency (**fit the UI** /
 ---
 
 - **Formula**: `fit + the current / existing UI`; `match + the existing UI design`
-- **Core Usage**: - Khi miêu tả việc thiết kế thành phần mới sao cho hài hòa với giao diện đã có, dùng động từ `fit`, `match` hoặc `b...
+- **Core Usage**: Khi miêu tả việc thiết kế thành phần giao diện hài hòa với hệ thống, dùng các động từ `fit`, `match` hoặc `align with`.
 
 ---
 

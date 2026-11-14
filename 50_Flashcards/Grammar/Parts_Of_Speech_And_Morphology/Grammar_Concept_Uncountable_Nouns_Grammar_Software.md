@@ -7,7 +7,7 @@ How do you correctly use uncountable nouns in technical and linguistic contexts 
 ---
 
 - **Formula**: ```text; ⎧ a grammar pattern / a grammar rule (KHÔNG dùng: a grammar)
-- **Core Usage**: - Các danh từ `grammar`, `software`, `code`, `information`, `hardware` là **Danh từ không đếm được (Uncountable Nou...
+- **Core Usage**: Các danh từ `grammar`, `software`, `code`, `information` là danh từ không đếm được; không dùng mạo từ `a/an` và không thêm số nhiều `-s`.
 
 ---
 

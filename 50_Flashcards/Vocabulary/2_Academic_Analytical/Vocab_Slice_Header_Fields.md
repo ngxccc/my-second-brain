@@ -8,7 +8,7 @@ Understanding the three ~~slice header fields~~ clarifies why reallocations disc
 
 Extra:
 
-- Meaning: The three constituent structural components of Go's `reflect.SliceHeader`: `Data` (pointer to array), `Len` (current element count), and `Cap` (total capacity)...
+- Meaning: The three constituent structural components of Go's `reflect.SliceHeader`: `Data` (pointer to array), `Len` (current element count), and `Cap` (total capacity).
 - Pronunciation: /ˈslaɪs ˌhed.ɚ ˈfiːldz/
 - Collocations:
   - `modify slice header fields` (chỉnh sửa các trường của slice header)

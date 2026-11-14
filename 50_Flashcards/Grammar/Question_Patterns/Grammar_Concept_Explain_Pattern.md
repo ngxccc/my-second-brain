@@ -7,7 +7,7 @@ What are the correct patterns for using the verb **explain** (explain something 
 ---
 
 - **Formula**: `Pattern 1`: `explain something to someone`; `Pattern 2`: `explain to someone + Wh-clause / how...`
-- **Core Usage**: - Động từ `explain` không dùng cấu trúc `explain me something` hay `explain to me understand`. Phải dùng giới từ `t...
+- **Core Usage**: Động từ `explain` không đi trực tiếp với tân ngữ chỉ người mà phải dùng giới từ `to` (`explain something to someone`).
 
 ---
 

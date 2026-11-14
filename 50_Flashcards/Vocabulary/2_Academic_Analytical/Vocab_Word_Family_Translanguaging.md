@@ -8,7 +8,7 @@ noteId: 1787478457752
 
 Extra:
 
-- Meaning: The process whereby multilingual speakers utilize their entire integrated linguistic repertoire flexibly to communicate and maximize learning (sử dụng linh hoạt...
+- Meaning: The process whereby multilingual speakers utilize their entire integrated linguistic repertoire flexibly to communicate and maximize learning.
 - Pronunciation: /trænzˈlæŋ.ɡwɪdʒ.ɪŋ/
 - Word Family:
   - **Verb**: `translanguage` (/trænzˈlæŋ.ɡwɪdʒ/ - sử dụng linh hoạt đa ngôn ngữ)

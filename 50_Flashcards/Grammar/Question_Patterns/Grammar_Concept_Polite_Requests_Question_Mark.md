@@ -7,7 +7,7 @@ What is the punctuation rule for polite request questions (**Could you...?
 ---
 
 - **Formula**: `Could / Would / Can + Subject + V-bare + ...?`
-- **Core Usage**: - Các câu đề nghị/yêu cầu lịch sự bắt đầu bằng Động từ khuyết thiếu (`Could you`, `Would you`) về mặt ngữ pháp là C...
+- **Core Usage**: Các câu yêu cầu lịch sự bắt đầu bằng `Could you` hoặc `Would you` mang bản chất là câu hỏi đảo ngữ, bắt buộc kết thúc bằng dấu chấm hỏi.
 
 ---
 

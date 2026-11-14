@@ -7,7 +7,7 @@ Why can **V-ing** words (Caching, Refactoring) act as the Subject of a sentence 
 ---
 
 - **Formula**: `Gerund Subject`: `V-ing + Singular Verb + Object/Complement`
-- **Core Usage**: - Khi thêm đuôi `-ing` vào động từ, ta biến hành động thành Danh động từ (tương tự việc thêm từ "Việc/Sự" trong tiế...
+- **Core Usage**: Thêm đuôi `-ing` để biến động từ thành danh động từ (Gerund) làm chủ ngữ câu, biểu thị một hành động hoặc quy trình kỹ thuật.
 
 ---
 

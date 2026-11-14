@@ -8,7 +8,7 @@ Go primitives and structs use ~~value semantics~~ by default, copying data acros
 
 Extra:
 
-- Meaning: A programming model where assigning or passing an entity creates an independent, isolated copy of its data, guaranteeing that mutations do not affect the origin...
+- Meaning: A programming model where assigning or passing an entity creates an independent, isolated copy of its data, guaranteeing that mutations do not affect the origin.
 - Pronunciation: /ˈvæl.juː sɪˌmæn.tɪks/
 - Collocations:
   - `enforce value semantics` (áp dụng ngữ nghĩa giá trị)

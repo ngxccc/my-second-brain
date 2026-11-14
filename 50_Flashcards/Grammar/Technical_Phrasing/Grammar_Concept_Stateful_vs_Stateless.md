@@ -7,7 +7,7 @@ What is the terminology distinction between **Stateful** and **Stateless** archi
 ---
 
 - **Formula**: `Stateless`: `inherently stateless` (HTTP protocol); `Stateful`: `maintain session state` (Session / Cookies)
-- **Core Usage**: - `Stateless` (Vô trạng thái): Mỗi request hoàn toàn độc lập, server không lưu bộ nhớ về client. `Stateful` (Có trạ...
+- **Core Usage**: `Stateless` nghĩa là mỗi request độc lập không lưu state trên server, `Stateful` nghĩa là server lưu session/state giữa các request.
 
 ---
 

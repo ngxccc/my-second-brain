@@ -7,7 +7,7 @@ What is the auxiliary verb and main verb form rule for Present Simple questions 
 ---
 
 - **Formula**: `Does + Singular Subject + V-bare...?`
-- **Core Usage**: - Khi đặt câu hỏi Hiện tại đơn với chủ ngữ số ít và Động từ thường (như `have`), dùng trợ động từ `Does` đảo lên đầ...
+- **Core Usage**: Khi đặt câu hỏi Hiện tại đơn với chủ ngữ ngôi thứ 3 số ít và động từ thường, đảo `Does` lên đầu và động từ chính quay về nguyên thể (`V-bare`).
 
 ---
 

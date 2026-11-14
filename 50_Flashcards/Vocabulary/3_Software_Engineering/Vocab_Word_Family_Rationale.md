@@ -8,7 +8,7 @@ Could you share the ~~rationale~~ behind deprecating the YouTube shadowing tool?
 
 Extra:
 
-- Meaning: The fundamental reasons, principles, or logical basis underlying an action, decision, belief, or system architecture (lý do căn bản, cơ sở logic/nguyên lý cốt l...
+- Meaning: The fundamental reasons, principles, or logical basis underlying an action, decision, belief, or system architecture.
 - Pronunciation: /ˌræʃ.əˈnæl/
 - Word Family:
   - **Verb**: `rationalize` (/ˈræʃ.ən.əl.aɪz/ - hợp lý hóa, giải thích hợp lý)

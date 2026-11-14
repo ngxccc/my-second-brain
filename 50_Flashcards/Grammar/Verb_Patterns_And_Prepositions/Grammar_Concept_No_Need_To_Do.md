@@ -7,7 +7,7 @@ What are the structures for expressing lack of necessity (**There is no need to*
 ---
 
 - **Formula**: `Pattern 1`: `There is no need to + V-bare`; `Pattern 2`: `Subject + don't/doesn't need to + V-bare`
-- **Core Usage**: - Cả hai cấu trúc đều dùng để diễn đạt sự không cần thiết. `There is no need to` dùng khách quan, `don't need to` đ...
+- **Core Usage**: Cả hai cấu trúc đều diễn đạt sự không cần thiết: `There is no need to` nhấn mạnh tính khách quan, `don't need to` nhấn mạnh chủ thể.
 
 ---
 

@@ -8,7 +8,7 @@ Unlike heap objects that require garbage collector passes, stack allocations enj
 
 Extra:
 
-- Meaning: The automatic, zero-overhead process where a CPU rewinds its stack pointer to reclaim local variable space upon function return (sự thu hồi và dọn dẹp khung ngă...
+- Meaning: The automatic, zero-overhead process where a CPU rewinds its stack pointer to reclaim local variable space upon function return.
 - Pronunciation: /ˈstæk freɪm ˈkliːn.ʌp/
 - Collocations:
   - `instantaneous stack frame cleanup` (dọn dẹp khung ngăn xếp tức thời)

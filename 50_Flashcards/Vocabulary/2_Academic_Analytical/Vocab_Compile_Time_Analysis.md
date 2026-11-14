@@ -8,7 +8,7 @@ Go performs ~~compile time analysis~~ to determine whether variables should esca
 
 Extra:
 
-- Meaning: Code inspection and optimization performed by the compiler before program execution begins, catching bugs and deciding memory placement (phân tích tại thời điểm...
+- Meaning: Code inspection and optimization performed by the compiler before program execution begins, catching bugs and deciding memory placement.
 - Pronunciation: /kəmˈpaɪl taɪm əˌnæl.ə.sɪs/
 - Collocations:
   - `perform compile time analysis` (thực hiện phân tích lúc biên dịch)

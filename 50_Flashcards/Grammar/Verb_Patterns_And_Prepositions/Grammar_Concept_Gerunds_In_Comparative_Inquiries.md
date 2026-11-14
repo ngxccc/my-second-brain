@@ -7,7 +7,7 @@ How do you correctly formulate **Comparative Questions with Gerunds ($V\text{-in
 ---
 
 - **Formula**: ```text; ⎧ Do you think / find + [Gerund Phrase: V-ing] + more [Adjective] than [Noun / V-ing]?
-- **Core Usage**: - Khi hỏi về độ phức tạp/khó khăn của một hành động, sử dụng **Danh động từ (Gerund - $V\text{-ing}$)** làm chủ ngữ...
+- **Core Usage**: Khi hỏi về độ phức tạp của một thao tác, dùng danh động từ (Gerund) làm chủ ngữ kết hợp động từ `to be` và tính từ.
 
 ---
 
