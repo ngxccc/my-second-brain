@@ -27,10 +27,12 @@ Hệ thống được thiết kế giải quyết bài toán chuỗi cung ứng 
 
 ## Cấu trúc Thư mục và Tài liệu Kiến trúc
 
-Tài liệu dự án được tổ chức theo chuẩn phân cấp kiến trúc phẳng:
+Tài liệu dự án được tổ chức theo chuẩn phân cấp kiến trúc phẳng (`Architecture/`, `Auth/`, `Database/`, `Submissions/`, `Workflows/`):
 
 - Báo cáo hoàn chỉnh Chương 1 Tuần 1: [[Chapter_01_Project_Initiation_Report]]
-- Đặc tả chi tiết 32 User Stories MoSCoW: [[MoSCoW_User_Stories_Specification]]
+- Đặc tả 5 Use Case cốt lõi & NFR Tuần 2: [[Week_02_Use_Case_Specs_and_NFR]]
+- Hướng dẫn nhập liệu báo cáo cho Kim Anh: [[Kim_Anh_Word_Entry_Guide]]
+- Đặc tả chi tiết 35 User Stories MoSCoW: [[MoSCoW_User_Stories_Specification]]
 - Ánh xạ ca sử dụng Use Case: [[Use_Case_Specification_and_Diagram_Mapping]]
 - Sơ đồ ERD và Từ điển Dữ liệu CSDL: [[Database_ERD_and_Data_Dictionary]]
 - Đặc tả phân quyền 6 Roles RBAC: [[Role_Based_Access_Control_Specification]]
@@ -44,6 +46,7 @@ Tài liệu dự án được tổ chức theo chuẩn phân cấp kiến trúc 
 - Phân tích mô hình kinh tế và bài toán: [[Business_Model_and_Domain_Analysis]]
 - Đặc tả vận hành và trường hợp biên: [[Operations_and_Edge_Cases_RFC]]
 - Lộ trình khởi tạo chuẩn doanh nghiệp: [[Project_Initiation_and_Execution_Roadmap]]
+- Sổ tay thực thi thiết lập backend: [[Backend_Setup_Execution_Runbook]]
 
 ---
 

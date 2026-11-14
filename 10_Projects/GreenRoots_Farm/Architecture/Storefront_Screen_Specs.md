@@ -32,8 +32,8 @@ Phân hệ `apps/storefront` bao gồm 5 màn hình chính phục vụ hai vai t
 
 ### 2.1. Màn hình `SF-01`: Trang Chủ Siêu Thị Nông Sản (`/`)
 
-- **Bố cục (Grocery-First Layout)**: Header cố định xanh lá (`#15803D`) chứa thanh tìm kiếm lớn, bộ chọn địa chỉ giao nhận (ước lượng khoảng cách Haversine), nút Giỏ hàng và nút Quét QR; thân trang chia 2 cột gồm Sidebar Danh mục sản phẩm cố định bên trái (`260px`) và vùng nội dung chính bên phải (dải icon danh mục nhanh, banner ngang gọn giới thiệu nông trại duy nhất `farms` kèm ô tra cứu nhanh mã Lô, hàng Flash Sale cận hạn `< 48h`, và lưới thẻ sản phẩm mật độ cao có nút `MUA` / `[- 1 +]` trực tiếp trên thẻ).
-- **Trường dữ liệu**: Tên nông trại, địa chỉ từ bảng `farms`; danh mục từ `categories`; danh sách sản phẩm (`base_price`, `unit`, tổng `available_quantity`) và các gói rau định kỳ `subscription_plans`.
+- **Bố cục (Grocery-First Layout)**: Header cố định xanh lá (`#15803D`) chứa thanh tìm kiếm lớn, bộ chọn địa chỉ giao nhận (ước lượng khoảng cách Haversine cho 24 quận/huyện TP.HCM), nút Giỏ hàng (`Sheet` drawer), thanh điều hướng nhanh; thân trang gồm Hero + tra cứu nhanh mã Lô QR, kệ `DEAL TƯƠI TRONG NGÀY` (`< 48h`, giảm `50%`), các kệ rau củ và mục Gói định kỳ có nút `MUA NGAY` / `[- 1 +]` trực tiếp trên thẻ.
+- **Trường dữ liệu & Hiển thị tồn kho**: Dùng `@greenroots/ui` và `@greenroots/shared`. Hàng thường hiển thị `{unitLabel} · Còn {availableQuantity} {unit}` (không vẽ thanh tiến độ giả); riêng sản phẩm thuộc kệ `DEAL TƯƠI TRONG NGÀY` hiển thị thanh nhiệt đỏ (`Đã xuất X% | Còn Y {unit}`) tính trên các lô cận hạn đang `IN_STOCK`. Tên nông trại, địa chỉ, hotline đọc từ `FARM_METADATA` / `BUSINESS_RULES`.
 
 ### 2.2. Màn hình `SF-02`: Chi Tiết Sản Phẩm (`/products/:slug`)
 
@@ -57,27 +57,8 @@ Phân hệ `apps/storefront` bao gồm 5 màn hình chính phục vụ hai vai t
 
 ---
 
-## 3. Câu Lệnh Mẫu Tạo Giao Diện Bằng AI
-
-Nhà thiết kế có thể sao chép trực tiếp các đoạn mô tả dưới đây vào công cụ tạo mẫu AI:
-
-```text
-Prompt SF-03 (Traceability Mobile Screen):
-Design a clean, mobile-first traceability screen (390px width) in Vietnamese for an organic farm at route /trace/BATCH-20261112-TOM-01.
-Theme: Organic minimalism, warm background (#FAF8F5), forest green brand color (#15803D), white rounded cards.
-Sections:
-1. Header Card: Brand "GreenRoots Farm", verified badge "VietGAP & Append-only Verified", product "Ca chua bi huu co", Batch Code "BATCH-20261112-TOM-01", Harvest Date "12/11/2026", Expiry Date "19/11/2026".
-2. Soil & Water Card: Plot Code "PLOT-A1", badges for Soil pH 6.5 (Dat chuan) and Water Heavy Metals Pass.
-3. Cultivation Timeline: Vertical timeline entries (Gieo hat, Bon phan huu co, Tuoi nuoc, Thu hoach) with engineer name, timestamp, and field photos.
-```
-
----
-
 ## Related Notes
 
 - Bản đồ điều phối trung tâm: [[000_GreenRoots_Farm_MOC]]
 - Quy chuẩn Design Tokens: [[UI_Design_System_and_Tokens_Specification]]
 - Đặc tả màn hình Backoffice: [[Backoffice_Screen_Specs]]
-- Quyết định kiến trúc hệ thống: [[System_Scope_and_Decision_Records]]
-- Đặc tả User Stories MoSCoW: [[MoSCoW_User_Stories_Specification]]
-- Cấu trúc hệ thống toàn cục: [[000_System_Structure]]

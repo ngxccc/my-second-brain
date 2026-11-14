@@ -78,7 +78,7 @@ Rào cản nghiệp vụ bảo vệ nông trại trước các khiếu nại tr�
 
 - **Đặc thù hàng tươi sống**: Nông sản dễ héo nếu khách hàng bảo quản sai cách sau khi nhận hàng.
 - **Cơ chế kiểm soát 3 bước**:
-  - _Bước 1 (Giới hạn cửa sổ thời gian)_: Khách hàng chỉ được gửi yêu cầu khiếu nại trong vòng **02 giờ** kể từ thời điểm đối tác vận chuyển cập nhật trạng thái `Giao hàng thành công` (Delivered). Nút khiếu nại sẽ tự động khóa lại sau mốc thời gian này.
+  - _Bước 1 (Giới hạn cửa sổ thời gian)_: Khách hàng chỉ được gửi yêu cầu khiếu nại trong vòng **24 giờ** kể từ thời điểm đối tác vận chuyển cập nhật trạng thái `Giao hàng thành công` (Delivered). Nút khiếu nại sẽ tự động khóa lại sau mốc thời gian này.
   - _Bước 2 (Bắt buộc bằng chứng đa phương tiện)_: Bắt buộc đính kèm từ 1 đến 5 hình ảnh chụp rõ tem nhãn QR trên bao bì và phần dập nát (`proof_image_urls`). Cho phép đính kèm tùy chọn 1 video quay cận cảnh (`proof_video_url`, giới hạn tối đa 15 giây và dung lượng $\le 15\text{MB}$ để tránh tràn quota Cloudinary).
   - _Bước 3 (Kiểm duyệt bán tự động)_: Nhân viên Sales đối chiếu thời gian nhận hàng và hình ảnh hư hại trước khi bấm phê duyệt hoàn tiền qua PayOS hoặc phát hành voucher bù vào tài khoản.
 
@@ -120,7 +120,7 @@ Ngăn chặn hành vi khai thác cạn kiệt tài nguyên lưu trữ Cloudinary
 - **Lỗ hổng từ Unsigned Upload**: Cho phép người dùng tùy ý tải lên tệp rác gây quá tải hạn mức gói lưu trữ miễn phí.
 - **Quy trình Signed Upload có xác thực**:
   - Client gửi yêu cầu cấp chữ ký tải lên đến NestJS Backend kèm định danh người dùng.
-  - NestJS kiểm tra quyền hạn, tạo chữ ký số (Signature) kèm ràng buộc: kích thước ảnh tối đa 5MB, video tối đa 20MB, định dạng cho phép (`jpg`, `png`, `mp4`).
+  - NestJS kiểm tra quyền hạn, tạo chữ ký số (Signature) kèm ràng buộc: kích thước ảnh tối đa 5MB, video tối đa 15MB, định dạng cho phép (`jpg`, `png`, `mp4`).
   - Frontend sử dụng chữ ký để tải file trực tiếp lên Cloudinary mà không làm nghẽn băng thông server.
 
 ---
@@ -160,9 +160,8 @@ Giải quyết bài toán 1 dòng đơn hàng lấy từ nhiều Lô theo FEFO:
 
 Ngăn ngừa hành vi sửa xóa dữ liệu che giấu vi phạm canh tác:
 
-- **Mô hình Dữ liệu Bất biến (Append-Only Log)**: Nhật ký canh tác chỉ được phép thêm mới (`INSERT`). Cấm hoàn toàn hành vi xóa cứng (`DELETE`).
-- **Cơ chế Lưu vết Lịch sử (Audit Trail)**: Mọi thao tác cập nhật (`UPDATE`) đều tự động sao lưu bản ghi cũ vào bảng `farming_log_histories` kèm định danh nhân viên và mốc thời gian.
-- **Thẩm quyền đính chính**: Chỉ có `SuperAdmin` mới có quyền gắn nhãn đính chính cho các mốc canh tác trên giao diện công khai.
+- **Mô hình Dữ liệu Bất biến (Append-Only Log)**: Nhật ký canh tác chỉ được phép thêm mới (`INSERT`). SQL Trigger `trg_immutable_farming_logs` chặn cứng cả `UPDATE` lẫn `DELETE` (`P0001` $\to$ HTTP `403`).
+- **Cơ chế Đính chính (Correction Record)**: Khi cần đính chính sai sót, nhân sự được cấp quyền tạo thêm bản ghi mới với `action_type = 'correction'` tham chiếu lại thông tin cần sửa để bảo toàn 100% lịch sử gốc.
 
 ---
 

@@ -197,8 +197,97 @@ Bảng đối chiếu quyền hạn thao tác trên các phân hệ chức năng
      - Server chỉ lưu bản băm `sha256(token)` một chiều xuống PostgreSQL, đánh `Unique Index` để truy vấn $O(1) < 1$ms. Khi rò rỉ cơ sở dữ liệu, kẻ tấn công không thể đảo ngược để mạo danh phiên đăng nhập.
 - **Lý do kỹ thuật**: Đạt chuẩn công nghiệp OWASP, bảo vệ an toàn dữ liệu người dùng, loại bỏ hoàn toàn nguy cơ lỗi biên dịch C-binding (`node-gyp`), và giữ tính linh hoạt tối đa cho kiến trúc backend.
 
+---
+
+## Quyết định 14 - Kiến Trúc `apps/api`: Drizzle v1 RC.5, Cloud-Ready (Neon & Redis Cloud), Soft Delete Chọn Lọc, Per-App Env & Message Catalog (Q1–Q13)
+
+- **Vấn đề**: Đồng bộ khung `apps/api` từ `open-genset/backend` sang bài toán GreenRoots Farm sao cho vừa chạy ổn định trên Neon PostgreSQL / Redis Cloud Free, vừa không thừa tính năng B2B hoặc vướng lỗi runtime/index.
+- **Lựa chọn đã chốt**:
+  1. **Drizzle ORM v1 RC.5 & Toàn vẹn Schema**: Khóa đúng phiên bản `drizzle-orm@^1.0.0-rc.5-169397b` và `drizzle-kit@^1.0.0-rc.5-ab785fc` (`snakeCase.table`, `defineRelations`). Giữ `numeric`/`decimal` trả về `string` để bảo toàn độ chính xác cân nặng/tọa độ, riêng `payments.order_code` dùng `bigint({ mode: "number" })` cho PayOS SDK; gắn đầy đủ `CHECK` constraints ở tầng DB (`batches`, `order_items`, `batch_allocations`, `waste_logs`, `orders`, `subscriptions`, `payments`).
+  2. **Hỗ trợ Cloud (Neon PostgreSQL & Redis Cloud Free)**:
+     - `normalizeDatabaseUrl()` dùng chung cho cả runtime lẫn `drizzle.config.ts` (`sslmode=verify-full`, tự cắt `-pooler.` khi không có `DB_DIRECT_URL`, `pg.Pool` `max` cấu hình qua `DB_POOL_MAX`).
+     - `parseRedisOptions()` hỗ trợ `rediss://` TLS + `servername`, bật `enableOfflineQueue: true` chống lỗi TLS cold-start và dùng chung connection/prefix `gr:` dưới trần 30 connections của Redis Cloud Free.
+  3. **Cắt gọn hạ tầng thừa**: Bỏ `nestjs-i18n`, `@sentry/nestjs`, `eslint` (chỉ dùng `oxlint --type-aware` + `oxfmt`), `redlock` (dùng PostgreSQL `SELECT ... FOR UPDATE`), `outbox`, `exceljs`, `telegram`, và các module B2B (`dealer-tiers`, `quotes`, `leads`, `carts`).
+  4. **Biên dịch `@greenroots/shared`**: Bỏ `noEmit` ở `packages/shared`, build ra `dist/*.js + *.d.ts` để `apps/api` import runtime Enum/Constants an toàn trên cả Bun, `node dist/main.js` và `drizzle-kit`.
+  5. **Soft Delete có chọn lọc (`deleted_at`)**: Chỉ áp dụng `deleted_at` cho **5 bảng Master Data có FK `RESTRICT`** (`users`, `categories`, `products`, `subscription_plans`, `plots`) kèm **Partial Unique Index `WHERE deleted_at IS NULL`** trên `email`, `slug`, `name`, `plot_code`. Tuyệt đối không gắn `deleted_at` lên các bảng sổ cái/bất biến (`farming_logs`, `orders`, `order_items`, `batch_allocations`, `payments`, `waste_logs`, `complaints`, `subscriptions`, `batches`, `seasons`).
+  6. **Migration Trigger & 3-Tier Seeder**: Cài `trg_immutable_farming_logs` qua custom SQL migration; Seeder 3 tiers idempotent tính ngày động theo múi giờ `Asia/Ho_Chi_Minh` (`UTC+7`) cho `batches` Flash Sale/FEFO.
+  7. **Quản lý ngôn ngữ tập trung**: Thay `nestjs-i18n` bằng từ điển TypeScript tập trung `src/common/constants/messages.constant.ts` (`API_MESSAGES` + Domain Error Codes) cho 100% thông báo tiếng Việt, kiểm lỗi ngay lúc compile.
+  8. **Biến môi trường Per-App & Doppler Dual-Mode**: Tách `.env.example` về từng app (`apps/api/.env.example`, kèm `apps/api/doppler.yaml`; Root chỉ giữ 3 biến Docker infra nếu cần). Nhóm script chuẩn dùng `.env` của app (Node thêm `--env-file-if-exists=.env`); nhóm script `doppler:*` chạy `doppler run -- ...` không dùng `--preserve-env="true"` để tránh local `.env` đè secret thật của Doppler.
+- **Lý do kỹ thuật**: Loại bỏ lệch phiên bản Drizzle, chặn lỗi trùng khóa sau xóa mềm, bảo toàn tính bất biến kế toán/VietGAP, và giữ code nhẹ tối đa cho tiến độ 3 tuần.
+
+---
+
+## Quyết định 15 - Kiến Trúc Auth, JWT & Thu Hồi Quyền Tức Thì (Q14–Q16)
+
+- **Vấn đề**: Thiết kế luồng xác thực xuyên suốt 2 Frontend (`Next.js 16` Storefront và `Vite SPA` Backoffice) với `apps/api`, đồng thời khắc phục khe hở 15 phút khi khóa tài khoản nhân viên và loại bỏ 4 lỗi copy từ `open-genset`.
+- **Lựa chọn đã chốt**:
+  1. **Kênh truyền Token (Q14-A)**: Trả `{ accessToken, refreshToken }` qua **JSON Body** (Frontend giữ `accessToken` trong RAM `zustand`, dùng single-flight refresh lock khi 401), giúp tách domain deploy dễ dàng và test trực tiếp qua Swagger/Scalar/Apidog không vướng third-party cookie.
+  2. **Refresh Token dạng Opaque 256-bit (KHÔNG dùng JWT)**: `refreshToken` sinh bằng `randomBytes(32).toString("hex")` và lưu bản băm `sha256(token)` trong PostgreSQL (`refresh_tokens`). Vì mọi thao tác làm mới/đăng xuất đều phải tra DB để xoay vòng và thu hồi, dùng JWT sẽ dư thừa payload, rò rỉ claim cũ và xác thực chữ ký thừa thãi.
+  3. **Thu hồi Access Token tức thì qua Redis (Q15-A, Fail-Open)**: `JwtAuthGuard` mặc định không chạm PostgreSQL; chỉ khi SuperAdmin khóa/xóa mềm/đổi role hoặc user đổi/reset mật khẩu thì ghi key Redis `auth:revoked:<userId> = <epoch_ms>` (TTL = `15m`). `JwtAuthGuard` kiểm `iat * 1000 < revokedBefore` để chặn ngay token cũ; nếu Redis gặp sự cố kết nối thì **log warning và cho qua (fail-open)** nhằm tránh sập toàn bộ API.
+  4. **Khắc phục 4 lỗi từ `open-genset` & Cấp tài khoản Nhân sự (Q16)**:
+     - Loại bỏ dead field `isRevoked` vì cơ chế xoay vòng dùng `DELETE ... RETURNING`.
+     - Bọc `refreshToken()` và `verifyEmail()` trong `db.transaction` kèm điều kiện `isNull(users.deletedAt)` trên mọi query Auth.
+     - Trả HTTP `401 Unauthorized` khi sai mật khẩu (thay vì `400 Bad Request`).
+     - Chỉ gọi `mailQueue.add(...)` **sau khi** `db.transaction` đã commit (tránh gửi email link ma khi DB rollback).
+     - `/auth/register` khóa cứng `role = 'customer'`; `POST /admin/users` của SuperAdmin tạo tài khoản nhân sự (`admin`, `sales`, `farm_staff`) với `email_verified = true` và `initialPassword` tùy chọn (nếu bỏ trống thì gửi email link đặt mật khẩu).
+- **Lý do kỹ thuật**: Cân bằng giữa tốc độ stateless JWT, khả năng thu hồi quyền tức thì cho RBAC nội bộ, độ an toàn ACID của phiên đăng nhập, và tính khả thi demo trong 3 tuần.
+
+---
+
+## Quyết định 16 - Chuẩn Hóa Response (RFC 9457), Scalar `/api/docs` và Kiến Trúc Đồng Bộ Type Monorepo (Q17–Q21)
+
+- **Vấn đề**: Đồng bộ toàn bộ chuẩn HTTP response, validation, tài liệu API và xác lập kiến trúc đồng bộ kiểu dữ liệu (Type Sync) chuẩn Monorepo thay vì dùng script kéo mạng kiểu Polyrepo.
+- **Lựa chọn đã chốt**:
+  1. **Khóa bảo vệ toàn cục (Q17)**: Đăng ký `JwtAuthGuard` và `RolesGuard` làm `APP_GUARD` mặc định toàn cục; mở route công khai bằng `@Public()`; siết `@Throttle` cho toàn bộ nhóm `/auth/*`; dùng biến môi trường chuẩn `JWT_ACCESS_SECRET`.
+  2. **Envelope thành công tường minh (Q18-A)**: Sử dụng hàm helper `apiSuccess(data, meta?)` và `buildPaginationMeta()` trực tiếp ở Controller, giữ chữ ký kiểu trả về của method khớp 100% với JSON thực tế, tránh rủi ro interceptor bọc nhầm Webhook PayOS hoặc binary stream.
+  3. **Chuẩn lỗi RFC 9457 Problem Details (Q19-A)**: Trả về `application/problem+json` theo định dạng `{ type, title, status, detail, instance, code, invalidParams, timestamp }`. Khắc phục Host Header Injection bằng URN tĩnh `/errors/<slug>`; bắt lỗi PostgreSQL `P0001` (`RAISE EXCEPTION` từ Trigger `farming_logs`) trả về `403 Forbidden` (`FARMING_LOG_IMMUTABLE`) và `23503` (FK violation) trả về `409 Conflict`.
+  4. **Validation và kiểm soát Response (Q20)**: `ZodValidationPipe` chuẩn hóa lỗi input tiếng Việt kèm path field form vào `invalidParams`. `ZodResponseValidationInterceptor` tự động kiểm tra tính toàn vẹn của dữ liệu trả về trong môi trường `development` và `test` (tắt ở production).
+  5. **Tài liệu API Scalar tại `/api/docs` (Q21)**: Triển khai giao diện Scalar hiện đại tại đường dẫn `/api/docs`, đồng thời xuất đặc tả JSON tại `/openapi.json`.
+  6. **Kiến trúc đồng bộ Type chuẩn Monorepo (Hybrid Architecture)**:
+     - **Tầng Domain & Form (`packages/shared`)**: Chia sẻ trực tiếp Enums, Business Constants, và Zod Schemas dùng chung cho React Hook Form ở Frontend và `nestjs-zod` DTO ở Backend.
+     - **Tầng Transport & Wire (`openapi-typescript` + `openapi-fetch`)**: Loại bỏ hoàn toàn script `pull-openapi-types` kéo qua mạng `http://localhost:3000` kiểu Polyrepo. Thay bằng script offline cục bộ trong Monorepo: `apps/api` khởi tạo in-memory xuất file `openapi.json`, và `openapi-typescript` đọc trực tiếp file cục bộ để sinh type an toàn, triệt tiêu lỗi lệch kiểu dữ liệu JSON (như `Date` biến thành `string`) mà không kéo dependency của NestJS vào bundle Web.
+- **Lý do kỹ thuật**: Đạt chuẩn công nghiệp RFC 9457, loại bỏ lỗi runtime ở Frontend, tối ưu hóa trải nghiệm kiểm thử API, và tận dụng tối đa lợi thế Monorepo offline.
+
+---
+
+## Quyết định 17 - Cơ Chế Tính Phí Vận Chuyển Động và Hệ Số Khúc Quanh Haversine (Q22–Q24)
+
+- **Vấn đề**: Xác định ranh giới tính cước vận chuyển nông sản tươi sống giữa đơn lẻ và gói định kỳ, đồng thời định nghĩa vai trò của thuật toán Haversine và môi trường áp dụng.
+- **Lựa chọn đã chốt**:
+  1. **Vai trò Haversine và Môi trường áp dụng (Q22)**: Trong môi trường production, geocoding chạy trực tuyến qua Google Maps hoặc OpenStreetMap. Driver nội suy Haversine (`MockHaversineDriver`) thuần túy đóng vai trò test fixture phục vụ Unit Test, E2E Testing, và chạy offline cục bộ khi không có API key.
+  2. **Hệ số khúc quanh (Detour Factor = 1.30)**: Khoảng cách đường bộ thực tế được ước lượng bằng $d_{\text{road}} = d_{\text{haversine}} \times 1.30$. Hệ số $1.30$ dựa trên chỉ số Circuity Index thực nghiệm của mạng lưới giao thông đô thị dạng lưới phi đối xứng có chướng ngại vật sông ngòi (trung bình dao động $1.27 - 1.35$).
+  3. **Công thức cước và giới hạn bán kính (Q23)**: Cước vận chuyển đơn hàng lẻ áp dụng công thức sàn: $15.000$đ cho $3$ km đầu tiên, cộng $5.000$đ cho mỗi kilomet tiếp theo (làm tròn lên theo block $1$ km: $\lceil\text{distance} - 3\rceil$). Chặn cứng bán kính giao hàng tươi tối đa $25$ km từ vị trí Nông trại/Kho điều phối để bảo đảm độ tươi sống.
+  4. **Chính sách giao nhận gói định kỳ (Q24)**: Miễn phí vận chuyển cho khách hàng đăng ký Gói định kỳ (`subscriptions`) trong bán kính $\le 20$ km nhờ tối ưu gom chuyến cố định vào Thứ 3 và Thứ 6.
+  5. **Lộ trình triển khai**: Toàn bộ quy tắc tính cước và Driver giao vận được lưu trữ vào SSOT và kích hoạt ở giai đoạn hoàn thiện Checkout/Order (không nằm trong phạm vi cài đặt hạ tầng CSDL Bước 1).
+- **Lý do kỹ thuật**: Đảm bảo tính khả thi vận hành thực tế của nông sản tươi, kiểm soát chi phí logistics xe máy nội thành, và duy trì tính độc lập kiểm thử tự động.
+
+---
+
+## Quyết định 18 - Kiến Trúc Nền Tảng Phân Hệ Storefront Next.js 16 (Q25–Q32)
+
+- **Vấn đề**: Định hình kiến trúc phân hệ giao diện khách hàng `apps/storefront` theo chuẩn Next.js 16 và Bun runtime, lựa chọn UI stack, chiến lược giỏ hàng, xác thực session, bảng màu tối giản và cơ chế truy xuất nguồn gốc QR.
+- **Lựa chọn đã chốt**:
+  1. **Quản lý ngôn ngữ Tiếng Việt (Q25 — Hybrid Pragmatic SSOT)**: Bỏ hoàn toàn `next-intl` và phân đoạn `[locale]`. Tách 2 tầng dữ liệu chữ tiếng Việt để vừa đọc JSX nhanh vừa không lệch nghiệp vụ giữa Storefront và Backoffice:
+     - **Dùng chung ở `@greenroots/shared`**: `API_ERROR_DICTIONARY` (RFC 9457), `ORDER_STATUS_LABELS`, `PAYMENT_METHOD_LABELS`, `DELIVERY_DAY_LABELS`, và các hằng số vận hành trong `BUSINESS_RULES` (`HARVEST_START_HOUR`, `EXPRESS_DELIVERY_HOURS`, `COMPLAINT_WINDOW_HOURS`, `FLASH_SALE_DISCOUNT_PERCENT`, `FLASH_SALE_HOURS_THRESHOLD`, `SHIPPING.MAX_RADIUS_KM`).
+     - **Riêng theo phân hệ (`apps/storefront/src/constants/`)**: `FARM_METADATA` (suy xuất từ `BUSINESS_RULES`), `HOME_SHELF_NAV`, và bộ nhãn hướng khách hàng (`BATCH_STATUS_LABELS`, `FARMING_ACTION_LABELS`, `SEASON_STATUS_LABELS`) để `apps/backoffice` tự giữ bộ nhãn vận hành riêng cho kỹ sư/Admin.
+     - **Quy tắc JSX**: Copy giao diện cục bộ viết inline trong TSX; mọi con số/cam kết vận hành (`4h sáng`, `2h`, `24h`, `50%`, `25 km`) bắt buộc đọc từ `FARM_METADATA`/`BUSINESS_RULES`.
+  2. **UI Stack, Workspace `packages/ui` & Design Tokens (Q26)**:
+     - Khởi tạo `@greenroots/ui` (`packages/ui`) bằng Shadcn CLI (`style: base-nova`, `@base-ui/react`), dùng trực tiếp npm package `cn` (không tạo `src/lib/utils.ts` tự viết), đặt `@source "../components";` ngay trong `packages/ui/src/styles/globals.css`, và re-export `cn`, `toast` cùng các primitives từ `src/index.ts`.
+     - `apps/storefront` dùng `@greenroots/ui` qua `workspace:*` + `exports` (không khai báo `tsconfig.json` `paths` `@greenroots/ui/*`), bật `cacheComponents: true`, `partialPrefetching: true`, và `<html data-scroll-behavior="smooth">`. Dùng chung phiên bản `react`, `react-dom`, `@types/react*`, `lucide-react`, `tailwindcss`, `zod`, `typescript` qua root `catalog:`.
+     - Bảng màu tối giản 3 sắc độ từ `sf-01-home.html`: Trắng (`surface-warm: #FAF8F5`, `surface-card: #FFFFFF`, `border-subtle: #E5E7EB`), Xanh (`brand-forest: #15803D`, `brand-dark: #166534`, `status-fresh: #059669`), Đỏ (`status-spoiled: #DC2626`, `red-50`, `red-200`). Font duy nhất: `Be Vietnam Pro` (`font-sans`), bỏ hoàn toàn monospace.
+     - **Hiển thị tồn kho trên thẻ sản phẩm (`ProductCard`)**: Hàng thường chỉ hiện `{unitLabel} · Còn {availableQuantity} {unit}`; riêng kệ `DEAL TƯƠI TRONG NGÀY` (`isRescueDeal`) mới hiển thị thanh nhiệt đỏ (`Đã xuất X% | Còn Y {unit}`) tính trên các lô cận hạn đang `IN_STOCK`.
+  3. **Quản lý trạng thái giỏ hàng (Q27)**: Client-side Zustand Store với middleware `persist` (`localStorage`), hỗ trợ khách vãng lai `Guest` thao tác `[- 1 +]` tức thì trên thẻ sản phẩm. Không khóa tồn kho trước.
+  4. **Cầu nối phiên đăng nhập Cookie Bridge (Q28)**: Next.js Server Actions nhận token từ NestJS API ghi vào `httpOnly`, `Secure`, `SameSite=Lax` Cookie trên domain Storefront. Server Components đọc Cookie và đính kèm `Bearer <accessToken>` khi gọi backend qua `openapi-fetch`.
+  5. **Tọa độ Geocoding & Tính cước Haversine (Q29)**: Nhúng danh mục 24 quận huyện TP.HCM kèm tọa độ trung tâm vào `@greenroots/shared`. Tính cước tức thì theo công thức Quyết định 17 ($15.000$đ/3km đầu + $5.000$đ/km, Detour Factor = $1.30$, chặn tối đa 25km). Hoàn toàn ngoại tuyến, không phụ thuộc Google Maps API.
+  6. **Hiệu năng trang QR truy xuất nguồn gốc `/trace/:batchCode` (Q30)**: Áp dụng React Server Component kết hợp bộ nhớ đệm máy chủ. Dữ liệu lô hàng sau thu hoạch là bất biến, xuất HTML tĩnh tải dưới 500ms khi quét QR trên di động.
+  7. **Kiểm tra tồn kho tại Giỏ hàng Drawer (Q31)**: Kiểm tra ngay khi mở Drawer hoặc bấm nút "Thanh toán" thông qua endpoint `POST /orders/validate-cart`. Hiển thị nhãn cảnh báo đỏ ngay tại dòng sản phẩm nếu tồn kho không đủ.
+  8. **Đồng hồ đếm ngược 15 phút VietQR PayOS (Q32)**: Chạy đồng hồ đếm ngược tại Client kết hợp cơ chế tự động thăm dò (polling mỗi 3s). Khi hết 15 phút mà chưa thanh toán, làm mờ mã QR và thông báo hết hạn.
+- **Lý do kỹ thuật**: Tối ưu hóa tối đa trải nghiệm người dùng mua sắm nông sản tươi, bảo đảm tốc độ quét mã QR dưới 2 giây theo tiêu chí đồ án, và triệt tiêu mọi rủi ro lỗi mạng của các dịch vụ bên thứ ba khi báo cáo.
+
 ## Related Notes
 
 - Bản đồ điều phối trung tâm: [[000_GreenRoots_Farm_MOC]]
+- Đặc tả màn hình Storefront: [[Storefront_Screen_Specs]]
+- Quy chuẩn Design Tokens: [[UI_Design_System_and_Tokens_Specification]]
 - Chi tiết kỹ thuật Adapter Pattern: [[Third_Party_API_Adapter_Pattern_Strategy]]
 - Kiến trúc hệ thống toàn cục: [[000_System_Structure]]

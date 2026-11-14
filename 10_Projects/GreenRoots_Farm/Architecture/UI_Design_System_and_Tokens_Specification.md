@@ -48,7 +48,6 @@ Hệ thống token được đồng bộ trực tiếp vào cấu hình Tailwind
 Phông chữ được cấu hình hiển thị chuẩn xác dấu tiếng Việt và chữ số định lượng:
 
 - **Font Sans (`font-sans`)**: Sử dụng phông `Be Vietnam Pro` cho toàn bộ văn bản, nhãn nút và tiêu đề.
-- **Font Mono (`font-mono`)**: Sử dụng phông `JetBrains Mono` cho mã Lô (`batch_code`), mã đơn (`order_code`), số kg và tiền tệ VND.
 
 Kích thước khung hình chuẩn trên công cụ thiết kế:
 
@@ -65,6 +64,3 @@ Kích thước khung hình chuẩn trên công cụ thiết kế:
 - Bản đồ điều phối trung tâm: [[000_GreenRoots_Farm_MOC]]
 - Đặc tả màn hình Storefront: [[Storefront_Screen_Specs]]
 - Đặc tả màn hình Backoffice: [[Backoffice_Screen_Specs]]
-- Quyết định kiến trúc hệ thống: [[System_Scope_and_Decision_Records]]
-- Phân quyền 6 Roles RBAC: [[Role_Based_Access_Control_Specification]]
-- Cấu trúc hệ thống toàn cục: [[000_System_Structure]]

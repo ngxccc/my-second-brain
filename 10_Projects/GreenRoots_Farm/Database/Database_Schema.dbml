@@ -118,6 +118,7 @@ Table users {
   id uuid [pk, note: 'Time-sortable UUIDv7 primary key']
   created_at timestamp [not null, default: `now()`]
   updated_at timestamp [not null, default: `now()`]
+  deleted_at timestamp [note: 'Soft delete timestamp (NULL when active); email unique index scoped WHERE deleted_at IS NULL']
   email varchar(255) [not null, unique]
   phone varchar(20) [note: 'Optional profile or internal staff contact phone; delivery recipient phone lives in user_addresses.phone_number']
   password varchar(255) [not null, note: 'Hashed password string via scrypt (node:crypto) with versioned format s1$<salt>$<hash>']
@@ -134,7 +135,7 @@ Table users {
   Note: 'Unified User entity supporting 6 system roles with RBAC guards and email authentication lifecycle'
 
   Indexes {
-    email [unique, name: "users_email_uidx"]
+    email [unique, name: "users_email_uidx", note: 'Partial unique index: WHERE deleted_at IS NULL']
     phone [name: "users_phone_idx"]
     role [name: "users_role_idx"]
     status [name: "users_status_idx"]
@@ -216,6 +217,7 @@ Table plots {
   id uuid [pk, note: 'UUIDv7 primary key']
   created_at timestamp [not null, default: `now()`]
   updated_at timestamp [not null, default: `now()`]
+  deleted_at timestamp [note: 'Soft delete timestamp (NULL when active); plot_code unique index scoped WHERE deleted_at IS NULL']
   farm_id uuid [not null, note: 'Belongs to farm']
   plot_code varchar(50) [not null, unique, note: 'E.g. PLOT-A1, PLOT-B2']
   name varchar(255) [not null]
@@ -227,7 +229,7 @@ Table plots {
 
   Indexes {
     farm_id [name: "plots_farm_id_idx"]
-    plot_code [unique, name: "plots_plot_code_uidx"]
+    plot_code [unique, name: "plots_plot_code_uidx", note: 'Partial unique index: WHERE deleted_at IS NULL']
   }
 }
 
@@ -273,6 +275,8 @@ Table farming_logs {
 Table categories {
   id uuid [pk, note: 'UUIDv7 primary key']
   created_at timestamp [not null, default: `now()`]
+  updated_at timestamp [not null, default: `now()`]
+  deleted_at timestamp [note: 'Soft delete timestamp (NULL when active); name/slug unique indexes scoped WHERE deleted_at IS NULL']
   name varchar(255) [not null, unique, note: 'E.g. Rau an la, Rau cu qua, Rau gia vi']
   slug varchar(255) [not null, unique]
   description text
@@ -283,7 +287,7 @@ Table categories {
   Note: 'Product category taxonomy with hierarchical navigation and sorting support'
 
   Indexes {
-    slug [unique, name: "categories_slug_uidx"]
+    slug [unique, name: "categories_slug_uidx", note: 'Partial unique index: WHERE deleted_at IS NULL']
     parent_id [name: "categories_parent_id_idx"]
     is_active [name: "categories_is_active_idx"]
   }
@@ -293,6 +297,7 @@ Table products {
   id uuid [pk, note: 'UUIDv7 primary key']
   created_at timestamp [not null, default: `now()`]
   updated_at timestamp [not null, default: `now()`]
+  deleted_at timestamp [note: 'Soft delete timestamp (NULL when active); slug unique index scoped WHERE deleted_at IS NULL']
   category_id uuid [not null, note: 'Belongs to category']
   name varchar(255) [not null, note: 'E.g. Ca chua bi huu co']
   slug varchar(255) [not null, unique]
@@ -306,7 +311,7 @@ Table products {
   Note: 'Commercial agricultural products displayed on Customer Storefront'
 
   Indexes {
-    slug [unique, name: "products_slug_uidx"]
+    slug [unique, name: "products_slug_uidx", note: 'Partial unique index: WHERE deleted_at IS NULL']
     category_id [name: "products_category_id_idx"]
   }
 }
@@ -423,6 +428,7 @@ Table subscription_plans {
   id uuid [pk, note: 'UUIDv7 primary key']
   created_at timestamp [not null, default: `now()`]
   updated_at timestamp [not null, default: `now()`]
+  deleted_at timestamp [note: 'Soft delete timestamp (NULL when active); slug unique index scoped WHERE deleted_at IS NULL']
   name varchar(255) [not null, note: 'E.g. Goi Rau Gia Dinh 1 Thang, Goi An Dam Cho Be']
   slug varchar(255) [not null, unique]
   description text [not null]
@@ -435,7 +441,7 @@ Table subscription_plans {
   Note: 'Predefined recurring subscription package definitions manageable by Admin'
 
   Indexes {
-    slug [unique, name: "subscription_plans_slug_uidx"]
+    slug [unique, name: "subscription_plans_slug_uidx", note: 'Partial unique index: WHERE deleted_at IS NULL']
     is_active [name: "subscription_plans_is_active_idx"]
   }
 }

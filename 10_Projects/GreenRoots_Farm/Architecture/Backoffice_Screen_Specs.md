@@ -59,39 +59,9 @@ Phân hệ `apps/backoffice` bao gồm 10 màn hình phân bổ theo 4 vai trò 
 
 ---
 
-## 3. Câu Lệnh Mẫu Tạo Giao Diện Bằng AI
-
-Nhà thiết kế có thể sử dụng các đoạn mô tả dưới đây để sinh layout chi tiết trên các công cụ tạo mẫu AI:
-
-```text
-Prompt BO-02 (Farm Staff Mobile Screen):
-Design a touch-friendly mobile web screen (390px width) in Vietnamese for a farm engineer working outdoors.
-Theme: High contrast white cards, deep forest green (#15803D) primary buttons, 48px touch targets.
-Components:
-1. Header: Role badge "Farm Staff", Plot Selector "Thua dat PLOT-A1 - Vu Dong Xuan 2026".
-2. Action Type Grid (2x4 touch buttons): "Gieo hat", "Tuoi nuoc", "Bon phan huu co", "Lam co", "Bao ve thuc vat", "Kiem nghiem dat", "Thu hoach", "Dinh chinh".
-3. Notes textarea and a prominent media dropzone "Chup anh / Video thuc te (Toi da 3 tep, Video <= 15s)".
-4. Warning badge: "Nhat ky la so cai bat bien (Append-only)". Sticky full-width submit button "Luu Nhat Ky Canh Tac".
-5. Bottom navigation: 4 tabs ("Mua vu", "Nhat ky", "Lo & QR", "Xuat huy").
-```
-
-```text
-Prompt BO-04 (Sales FEFO Desktop Screen):
-Design a dense, clean enterprise ERP dashboard (1440px width) in Vietnamese for a Sales Coordinator.
-Theme: Clean SaaS table layout, left sidebar (240px) with role badge "Sales", JetBrains Mono font for weights and currency.
-Layout:
-- Left Column (60%): Order Header "#ORD-20261112-009", Badge "Da thanh toan (PayOS)", Status Stepper (Pending Confirmation -> Packing -> Shipping -> Delivered -> Completed).
-  Table "FEFO Pick List (Phieu nhat hang theo Lo)": Item "Ca chua bi (5 kg)" with expandable rows: "2.0 kg tu BATCH-20261110-TOM-01 (HSD: 14/11 - Can han)" (amber pill), and "3.0 kg tu BATCH-20261112-TOM-02 (HSD: 19/11)" (green pill).
-- Right Column (40%): Customer address, Haversine distance "6.2 km - Phi ship 21.000d", Action buttons "Xac nhan & Phan bo FEFO", "In Phieu Giao Hang".
-```
-
----
-
 ## Related Notes
 
 - Bản đồ điều phối trung tâm: [[000_GreenRoots_Farm_MOC]]
 - Quy chuẩn Design Tokens: [[UI_Design_System_and_Tokens_Specification]]
 - Đặc tả màn hình Storefront: [[Storefront_Screen_Specs]]
-- Quyết định kiến trúc hệ thống: [[System_Scope_and_Decision_Records]]
 - Phân quyền 6 Roles RBAC: [[Role_Based_Access_Control_Specification]]
-- Cấu trúc hệ thống toàn cục: [[000_System_Structure]]
