@@ -10,6 +10,7 @@ import { validate as validatePattern } from "./validators/pattern.mjs";
 import { validate as validateProject } from "./validators/project.mjs";
 import { validate as validateStrategy } from "./validators/strategy.mjs";
 import { validate as validateTechnique } from "./validators/technique.mjs";
+import { codeBlockOrCommandRegex } from "./validators/utils.mjs";
 
 const rootDir = process.cwd();
 const validatorsRegistry = {
@@ -94,11 +95,26 @@ function parseFrontmatter(content) {
 	const block = match[1];
 	const lines = block.split(/\r?\n/);
 	const yaml = {};
+	// This is a hand-rolled parser, not YAML. Track the structures it cannot
+	// represent so a silent wrong parse becomes a visible error instead.
+	const issues = [];
+	const seenKeys = new Set();
 	for (const line of lines) {
 		const colonIdx = line.indexOf(":");
-		if (colonIdx > 0) {
+		if (colonIdx > 0 && !/^\s/.test(line)) {
 			const key = line.slice(0, colonIdx).trim();
 			const val = line.slice(colonIdx + 1).trim();
+			if (seenKeys.has(key)) {
+				issues.push(
+					`duplicate frontmatter key '${key}' (later value silently wins)`,
+				);
+			}
+			seenKeys.add(key);
+			if (/^[>|][+-]?\s*$/.test(val)) {
+				issues.push(
+					`block scalar '${key}: ${val}' is not parsed by this validator`,
+				);
+			}
 			yaml[key] = val;
 		}
 	}
@@ -115,10 +131,248 @@ function parseFrontmatter(content) {
 			.join(", ");
 		yaml.tags = tagsStr;
 	}
+	yaml.__issues = issues;
 	return yaml;
 }
 
-async function validateFile(filePath) {
+// Scope where the atomic note standard is enforced. Notes outside it (inbox,
+// projects, archives, flashcards) are working material, not permanent notes.
+function isPermanentScope(relativePath) {
+	return (
+		relativePath.startsWith("30_Resources/") ||
+		relativePath.startsWith("20_Areas/")
+	);
+}
+
+// Daily logs are append-only timelines; nothing links to a given day, so the
+// orphan check would only ever produce noise for them.
+function isDailyLogPath(relativePath) {
+	return relativePath.startsWith("20_Areas/Daily_Logs/");
+}
+
+const TLDR_LABELS = ["Bản chất", "Mục đích", "Điểm mấu chốt"];
+
+function getTldrBody(content) {
+	const lines = content.split(/\r?\n/);
+	const start = lines.findIndex((l) => /^##\s+(?:[^\n#]*\s+)?TL;DR/.test(l));
+	if (start < 0) return null;
+	const rest = lines.slice(start + 1);
+	const stop = rest.findIndex((l) => /^##\s+/.test(l));
+	return stop >= 0 ? rest.slice(0, stop) : rest;
+}
+
+// --- Concision policy (AGENTS.md §4) ---
+// Caps are calibrated against the vault distribution, not invented: median
+// TL;DR block 362 chars, median prose paragraph 260 chars, median body 3.6k.
+const TLDR_MAX_BULLET_CHARS = 200;
+const TLDR_MAX_TOTAL_CHARS = 600;
+const PROSE_MAX_CHARS = 300;
+const BODY_MAX_CHARS = 5000;
+// A checklist is a lookup table, a roadmap is a curriculum, an index is a
+// directory: long is their correct shape, so only study notes are capped.
+const BODY_CAPPED_TYPES = ["type/concept", "type/tech", "type/method"];
+const STRUCTURAL_HEADINGS = ["TL;DR", "Related Notes"];
+const PRACTICAL_HEADINGS =
+	/^##\s+(?:[^\n#]*\s+)?(?:Practical\s+Implementation|Concrete\s+Examples|Practical\s+Examples|Code\s+Snippet)/i;
+const DESCRIPTION_OVERLAP_MAX = 0.45;
+
+// Split a note into its intro (frontmatter + H1 stripped) and H2 sections.
+function splitNote(content) {
+	const parts = content.split(/^##\s+(.+?)\s*$/m);
+	const intro = (parts[0] || "").replace(/^---\n[\s\S]*?\n---\n?/, "");
+	const sections = [];
+	for (let i = 1; i < parts.length; i += 2) {
+		sections.push({ title: (parts[i] || "").trim(), body: parts[i + 1] || "" });
+	}
+	return { intro, sections };
+}
+
+// Longest run of consecutive prose lines: no heading, list, table or fence.
+function longestProseRun(text) {
+	let run = 0;
+	let worst = 0;
+	let inCode = false;
+	for (const line of text.split(/\r?\n/)) {
+		if (/^\s*```/.test(line)) inCode = !inCode;
+		const isProse =
+			!inCode && line.trim() !== "" && !/^\s*(#|[-*+]|\d+\.|>|\||<)/.test(line);
+		run = isProse ? run + line.trim().length : 0;
+		if (run > worst) worst = run;
+	}
+	return worst;
+}
+
+function contentWords(text) {
+	return new Set(
+		(
+			String(text)
+				.toLowerCase()
+				.match(/[\p{L}\p{N}]+/gu) || []
+		).filter((w) => w.length >= 4),
+	);
+}
+
+// Returns warnings (never errors): this policy ships as a transition, and its
+// checks are promoted to errors once the flagged backlog is trimmed.
+function collectConcisionWarnings(content, frontmatter, tags, relativePath) {
+	const warnings = [];
+	// A day log is raw working material: it takes no TL;DR shape, no paragraph
+	// cap and no body cap. Same reason the orphan check skips this folder.
+	if (/20_Areas\/Daily_Logs\//.test(relativePath || "")) return warnings;
+	const { intro, sections } = splitNote(content);
+	// Reference material is long by design: a curriculum, a lookup table, a
+	// profile or a directory is not a study note and takes no body cap.
+	const isReferenceMaterial =
+		/(?:Roadmap|Index|MOC|Dashboard|Hub|Profile|Learning_Path|Knowledge_Checklist)\.md$/i.test(
+			relativePath || "",
+		) || /\/000_[^/]*\.md$/i.test(relativePath || "");
+	const tldr = sections.find((s) => /TL;DR/i.test(s.title));
+
+	if (tldr) {
+		const bullets = tldr.body.split(/\r?\n/).filter((l) => /^-\s+/.test(l));
+		const labels = bullets
+			.map((l) => /^-\s+\*\*(.+?)\*\*/.exec(l))
+			.filter(Boolean)
+			.map((m) => m[1].trim());
+		const ordered = labels.filter((l) =>
+			TLDR_LABELS.some((tl) => l.startsWith(tl)),
+		);
+		if (
+			ordered.length === TLDR_LABELS.length &&
+			ordered.some((l, i) => !l.startsWith(TLDR_LABELS[i]))
+		) {
+			warnings.push(
+				`TL;DR labels out of order (expected: ${TLDR_LABELS.join(" -> ")})`,
+			);
+		}
+		const lens = bullets.map((b) => b.replace(/^-\s+/, "").trim().length);
+		const longest = lens.length ? Math.max(...lens) : 0;
+		const total = lens.reduce((a, b) => a + b, 0);
+		if (longest > TLDR_MAX_BULLET_CHARS) {
+			warnings.push(
+				`TL;DR bullet of ${longest} chars (cap ${TLDR_MAX_BULLET_CHARS}): keep one line per label`,
+			);
+		}
+		if (total > TLDR_MAX_TOTAL_CHARS) {
+			warnings.push(
+				`TL;DR block of ${total} chars (cap ${TLDR_MAX_TOTAL_CHARS}): it is a scan target, not a summary document`,
+			);
+		}
+		const description = frontmatter ? frontmatter.description || "" : "";
+		const essence = bullets.find((b) => /^-\s+\*\*Bản chất/.test(b));
+		if (description && essence) {
+			const essenceText = essence
+				.replace(/^-\s+/, "")
+				.replace(/^\*\*[^*]+\*\*\s*[:：]?\s*/, "")
+				.trim();
+			const a = contentWords(essenceText);
+			const b = contentWords(description);
+			const union = new Set([...a, ...b]);
+			const shared = [...a].filter((w) => b.has(w)).length;
+			const overlap = union.size ? shared / union.size : 0;
+			if (overlap >= DESCRIPTION_OVERLAP_MAX) {
+				warnings.push(
+					`TL;DR 'Bản chất' restates the description (word overlap ${overlap.toFixed(2)}, cap ${DESCRIPTION_OVERLAP_MAX}): it must carry new information`,
+				);
+			}
+		}
+	}
+
+	const topicSections = sections.filter(
+		(s) => !STRUCTURAL_HEADINGS.includes(s.title),
+	);
+	if (sections.length > 0 && topicSections.length === 0) {
+		warnings.push(
+			"Note has no topic heading besides TL;DR/Related Notes: nothing answers the subject of the note",
+		);
+	}
+	for (const s of topicSections) {
+		const hasStructure = /^\s*(?:[-*+]\s|\d+\.\s|\||>)/m.test(s.body);
+		const hasCode = codeBlockOrCommandRegex.test(s.body);
+		if (!hasStructure && !hasCode) {
+			warnings.push(
+				`Section '${s.title}' holds no bullet, table row or code block: name it, then list its mechanics`,
+			);
+		}
+		if (PRACTICAL_HEADINGS.test(`## ${s.title}`) && !hasCode) {
+			warnings.push(
+				`Section '${s.title}' promises implementation but contains no code block, command or output: rename it to what it really holds`,
+			);
+		}
+	}
+
+	const body = intro + topicSections.map((s) => s.body).join("\n");
+	const prose = longestProseRun(body);
+	if (prose > PROSE_MAX_CHARS) {
+		warnings.push(
+			`Prose paragraph of ${prose} chars (cap ${PROSE_MAX_CHARS}): split it into bullets, a table or code`,
+		);
+	}
+	if (
+		!isReferenceMaterial &&
+		BODY_CAPPED_TYPES.some((t) => String(tags).includes(t))
+	) {
+		const len = body.trim().length;
+		if (len > BODY_MAX_CHARS) {
+			warnings.push(
+				`Body of ${len} chars (cap ${BODY_MAX_CHARS} for this note type): check whether the note holds more than one idea`,
+			);
+		}
+	}
+	return warnings;
+}
+
+// Build the set of note names that at least one other note links to.
+// Aliases resolve too, so renaming a note does not create false orphans.
+async function collectInboundLinks() {
+	const skipDirs = [".git", ".obsidian", ".agents", "node_modules", ".trash"];
+	const files = [];
+	async function walk(dir) {
+		const list = await fs.readdir(dir, { withFileTypes: true });
+		for (const entry of list) {
+			const res = path.resolve(dir, entry.name);
+			if (entry.isDirectory()) {
+				if (!skipDirs.includes(entry.name)) await walk(res);
+			} else if (entry.isFile() && entry.name.endsWith(".md")) {
+				files.push(res);
+			}
+		}
+	}
+	await walk(rootDir);
+
+	const names = new Set(files.map((f) => path.basename(f, ".md")));
+	const contents = new Map();
+	const aliasTo = new Map();
+	for (const f of files) {
+		const content = await fs.readFile(f, "utf8");
+		contents.set(f, content);
+		const fm = parseFrontmatter(content);
+		if (!fm || !fm.aliases) continue;
+		const aliasList = String(fm.aliases)
+			.replace(/^\[|\]$/g, "")
+			.split(",")
+			.map((a) => a.trim().replace(/^["']|["']$/g, ""))
+			.filter(Boolean);
+		for (const alias of aliasList) aliasTo.set(alias, path.basename(f, ".md"));
+	}
+
+	const inbound = new Set();
+	for (const [f, content] of contents) {
+		const own = path.basename(f, ".md");
+		for (const match of content.match(/\[\[[^\]]+\]\]/g) || []) {
+			const target = match.slice(2, -2).split("|")[0].split("#")[0].trim();
+			if (!target) continue;
+			const base = target.split("/").pop();
+			const resolved = names.has(base)
+				? base
+				: aliasTo.get(base) || aliasTo.get(target);
+			if (resolved && resolved !== own) inbound.add(resolved);
+		}
+	}
+	return inbound;
+}
+
+async function validateFile(filePath, inboundLinks) {
 	const relativePath = path.relative(rootDir, filePath);
 	try {
 		const content = await fs.readFile(filePath, "utf8");
@@ -192,6 +446,22 @@ async function validateFile(filePath) {
 			}
 		}
 
+		if (
+			frontmatter &&
+			frontmatter.__issues &&
+			frontmatter.__issues.length > 0
+		) {
+			for (const issue of frontmatter.__issues) {
+				errors.push(
+					`Frontmatter not representable by validator parser: ${issue}`,
+				);
+			}
+		}
+
+		if (isResource && frontmatter && !frontmatter.date) {
+			errors.push("Missing 'date' in frontmatter (format YYYY-MM-DD)");
+		}
+
 		const tags = frontmatter ? frontmatter.tags || "" : "";
 		const hasTypeTag = tags.includes("type/");
 
@@ -204,18 +474,61 @@ async function validateFile(filePath) {
 			tags.includes("status/todo") ||
 			/^\s*[-*]\s*TODO\s*:/im.test(content) ||
 			content.includes("Ghi chú chờ (Placeholder)");
+		// TL;DR standard: exactly 3 bullets carrying the 3 required labels.
+		if (!isPlaceholder && isPermanentScope(relativePath)) {
+			const tldrBody = getTldrBody(content);
+			if (tldrBody) {
+				const bulletCount = tldrBody.filter((l) => /^-\s+/.test(l)).length;
+				const joined = tldrBody.join("\n");
+				const missingLabels = TLDR_LABELS.filter(
+					(label) => !joined.includes(label),
+				);
+				if (bulletCount !== 3) {
+					errors.push(
+						`TL;DR must have exactly 3 bullets (found ${bulletCount})`,
+					);
+				}
+				if (missingLabels.length > 0) {
+					errors.push(`TL;DR missing label(s): ${missingLabels.join(", ")}`);
+				}
+			}
+			// Concision policy: warnings during the transition, promoted to
+			// errors once the flagged backlog is trimmed.
+			warnings.push(
+				...collectConcisionWarnings(content, frontmatter, tags, relativePath),
+			);
+		}
+
+		// Orphan: nothing links here, so the note is unreachable while browsing.
+		const baseName = path.basename(filePath, ".md");
+		const isIndexNote = /(?:^000_|MOC|Index|Dashboard|README|Hub)/.test(
+			baseName,
+		);
+		if (
+			!isPlaceholder &&
+			isPermanentScope(relativePath) &&
+			!isDailyLogPath(relativePath) &&
+			inboundLinks &&
+			!isIndexNote &&
+			!inboundLinks.has(baseName)
+		) {
+			warnings.push("Orphan note: no other note links to this file");
+		}
+
 		// 2. Heading 1 check
 		const hasH1 = /^#\s+.+/m.test(content);
 		if (!hasH1) {
 			errors.push("Missing top-level heading (# Title)");
 		}
-		// Check for emojis/icons (No-Emoji policy)
-		const emojiRegex =
-			/[\u{1F300}-\u{1F9FF}\u{1F600}-\u{1F64F}\u{1F680}-\u{1F6FF}\u{2600}-\u{26FF}\u{2700}-\u{27BF}\u{1F1E6}-\u{1F1FF}\u{1F900}-\u{1F9FF}\u{1FA70}-\u{1FAFF}]/u;
-		if (emojiRegex.test(content)) {
-			warnings.push(
-				"Note contains emojis or icons, violating the No-Emoji policy.",
-			);
+		// Check for emojis/icons (No-Emoji policy). Code fences are exempt:
+		// sample data and terminal output may legitimately contain pictographs.
+		const contentWithoutCode = content.replace(/```[\s\S]*?```/g, "");
+		const emojiRegex = /\p{Extended_Pictographic}/u;
+		if (emojiRegex.test(contentWithoutCode)) {
+			const message =
+				"Note contains emojis or icons, violating the No-Emoji policy.";
+			if (isPermanentScope(relativePath)) errors.push(message);
+			else warnings.push(message);
 		}
 
 		// Check for raw template instruction markers
@@ -234,12 +547,19 @@ async function validateFile(filePath) {
 				}
 			} else {
 				let hasSpecificValidator = false;
-				for (const [tag, validateFn] of Object.entries(validatorsRegistry)) {
-					if (tags.includes(tag)) {
-						hasSpecificValidator = true;
-						const res = validateFn(content, { tags, relativePath });
-						if (res.errors) errors.push(...res.errors);
-						if (res.warnings) warnings.push(...res.warnings);
+				const isRoadmap = /Roadmap\.md$/i.test(relativePath);
+				if (isRoadmap) {
+					// Roadmaps have their own dedicated standalone validator (validate_roadmaps.mjs)
+					// Skip generic method/tech validation here as requested by user
+					hasSpecificValidator = true;
+				} else {
+					for (const [tag, validateFn] of Object.entries(validatorsRegistry)) {
+						if (tags.includes(tag)) {
+							hasSpecificValidator = true;
+							const res = validateFn(content, { tags, relativePath });
+							if (res.errors) errors.push(...res.errors);
+							if (res.warnings) warnings.push(...res.warnings);
+						}
 					}
 				}
 
@@ -313,13 +633,14 @@ async function main() {
 		}
 	}
 
+	const inboundLinks = await collectInboundLinks();
 	let failedCount = 0;
 	let passedCount = 0;
 	let placeholderCount = 0;
 	const jsonResults = [];
 
 	for (const file of allFiles) {
-		const result = await validateFile(file);
+		const result = await validateFile(file, inboundLinks);
 		const passed = result.errors.length === 0;
 
 		if (isJsonMode) {

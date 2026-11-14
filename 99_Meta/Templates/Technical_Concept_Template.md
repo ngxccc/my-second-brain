@@ -1,6 +1,5 @@
 ---
 tags: [type/concept, status/permanent]
-aliases: []
 date: <% tp.file.creation_date("YYYY-MM-DD") %>
 description: "Tóm tắt ngắn gọn 1-2 câu nội dung cốt lõi của ghi chú (để DataviewJS hiển thị trên MOC)."
 ---
@@ -9,9 +8,11 @@ description: "Tóm tắt ngắn gọn 1-2 câu nội dung cốt lõi của ghi c
 
 ## TL;DR [BẮT BUỘC]
 
-- **Bản chất**: [Định nghĩa bản chất kỹ thuật trong 1 câu ngắn gọn, chuẩn xác]
-- **Mục đích & Bài toán**: [Giải quyết vấn đề gì hoặc tối ưu chỉ số/tài nguyên nào]
-- **Điểm mấu chốt**: [Cơ chế cốt lõi hoặc takeaway quan trọng nhất cần nhớ]
+_Mỗi bullet ≤ 200 ký tự, cả khối ≤ 600 ký tự, tính cả nhãn bullet._
+
+- **Bản chất**: [Định nghĩa bản chất kỹ thuật trong 1 câu ngắn gọn, chuẩn xác; không lặp lại câu `description`]
+- **Mục đích**: [Bài toán cụ thể nó giải quyết, hoặc cái giá phải trả và trường hợp KHÔNG nên dùng]
+- **Điểm mấu chốt**: [Một cơ chế, bất biến, con số hoặc failure mode, viết dạng "X thì Y" để dự đoán được hành vi]
 
 ## Core Concept [BẮT BUỘC]
 
@@ -25,6 +26,8 @@ description: "Tóm tắt ngắn gọn 1-2 câu nội dung cốt lõi của ghi c
   - (Giải thích ngắn gọn luồng xử lý hoặc cấu trúc hoạt động bên dưới)
 
 ## Practical Implementation [BẮT BUỘC]
+
+_(Mục này phải chứa ít nhất một code block, lệnh hoặc output. Không có thì phải đổi tên mục cho đúng nội dung thật của nó.)_
 
 - **Trade-offs** [TÙY CHỌN]
   - (Nhược điểm, chi phí hoặc trường hợp KHÔNG nên áp dụng)

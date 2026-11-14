@@ -1,6 +1,5 @@
 ---
 tags: [type/method, status/permanent]
-aliases: []
 date: <% tp.file.creation_date("YYYY-MM-DD") %>
 description: "Tóm tắt ngắn gọn 1-2 câu về quy trình/phương pháp này (để DataviewJS hiển thị trên MOC)."
 ---
@@ -9,9 +8,11 @@ description: "Tóm tắt ngắn gọn 1-2 câu về quy trình/phương pháp n�
 
 ## TL;DR [BẮT BUỘC]
 
-- **Mục tiêu**: [Quy trình/phương pháp này dùng để làm gì và giải quyết bài toán nào]
-- **Đầu ra (Deliverable)**: [Kết quả cụ thể đạt được sau khi hoàn thành]
-- **Thời điểm áp dụng**: [Điều kiện hoặc bối cảnh cần kích hoạt SOP này]
+_Ba nhãn dưới đây là cố định, không đổi tên. Mỗi bullet ≤ 200 ký tự, cả khối ≤ 600 ký tự, tính cả nhãn bullet._
+
+- **Bản chất**: [Quy trình/phương pháp này là gì, trong 1 câu; không lặp lại câu `description`]
+- **Mục đích**: [Bài toán cụ thể nó giải quyết, và cái giá phải trả khi áp dụng]
+- **Điểm mấu chốt**: [Bước hoặc điều kiện quyết định thành bại, viết dạng "X thì Y"]
 
 ## Context: When to use? [BẮT BUỘC]
 

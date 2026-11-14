@@ -1,6 +1,5 @@
 ---
 tags: [type/project, status/active]
-aliases: []
 date: <% tp.file.creation_date("YYYY-MM-DD") %>
 description: "Mục tiêu cốt lõi và kết quả đầu ra của dự án."
 ---

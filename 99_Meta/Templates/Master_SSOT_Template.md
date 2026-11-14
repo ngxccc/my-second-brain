@@ -2,9 +2,6 @@
 tags: [type/guide, status/permanent]
 status: permanent
 date: <% tp.file.creation_date("YYYY-MM-DD") %>
-aliases:
-  - Master [Domain] SSOT
-  - [Domain] Strategy Compass
 description: "Single Source of Truth (SSOT), Active Workbench, Evergreen Fundamentals, and Roadmap Checklist for [Domain]."
 ---
 
@@ -12,9 +9,11 @@ description: "Single Source of Truth (SSOT), Active Workbench, Evergreen Fundame
 
 ## TL;DR
 
-- **Sứ mệnh SSOT**: [Single Source of Truth và trung tâm điều phối toàn bộ lộ trình phát triển cho Domain]
-- **Mục tiêu trọng tâm**: [Cột mốc / vai trò / chỉ số năng lực kỹ thuật cụ thể cần đạt]
-- **Kỷ luật thực thi**: [Evidence-First, Zero Fluff, 100% nghiệm thu bằng mã nguồn và số liệu đo đạc thực tế]
+_Nhãn dưới đây là cố định để validator nhận dạng; nội dung viết theo vai trò SSOT. Mỗi bullet ≤ 200 ký tự, cả khối ≤ 600 ký tự, tính cả nhãn bullet._
+
+- **Bản chất**: [SSOT này bao trùm phạm vi nào và điều phối lộ trình nào, trong 1 câu]
+- **Mục đích**: [Khi nào phải mở file này ra: mục tiêu, sprint hiện tại và tiêu chuẩn kỹ nghệ nằm cùng một chỗ]
+- **Điểm mấu chốt**: [Cách đo tiến độ theo tuần, và cái giá của việc không cập nhật]
 
 ---
 
