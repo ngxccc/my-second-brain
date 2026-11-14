@@ -1,17 +1,18 @@
 ---
 tags: [type/strategy, status/permanent]
+date: 2026-01-30
 status: active
 created_at: Friday, January 30th 2026, 9:17:00 am +07:00
 updated_at: Friday, January 30th 2026, 11:04:30 am +07:00
-aliases: [Luật đầu tư, Quy tắc tài chính, Kim chỉ nam, JARS System]
 ---
 
 # My Investment Strategy (Kim Chỉ Nam Tài Chính)
 
 ## TL;DR
 
-Bộ quy tắc bất di bất dịch để quản lý dòng tiền cá nhân, giúp tối ưu hóa lợi nhuận dài hạn mà vẫn đảm bảo an toàn tài chính (ngủ ngon mỗi tối).
-**Core Philosophy:** "Kiếm tiền từ Code, Giữ tiền bằng Tích sản, Tăng trưởng bằng Tri thức."
+- **Bản chất**: Bộ quy tắc cá nhân cố định: phòng thủ trước bằng quỹ khẩn cấp, rồi mới tích sản định kỳ, và dùng tri thức để quyết định.
+- **Mục đích**: Tối ưu lợi nhuận dài hạn mà vẫn ngủ ngon, bằng cách chặn trước mọi kịch bản buộc phải bán tài sản đúng lúc thị trường xấu.
+- **Điểm mấu chốt**: Quỹ khẩn cấp 6 tháng chi phí là điều kiện vào lệnh, không phải mục tiêu song song; thiếu nó thì mọi quy tắc phía sau đều bị vô hiệu khi có biến cố.
 
 ---
 

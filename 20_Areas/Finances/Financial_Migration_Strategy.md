@@ -1,16 +1,18 @@
 ---
 tags: [type/strategy, status/permanent]
+date: 2026-01-30
 status: sapling
 created_at: Friday, January 30th 2026, 9:47:49 am +07:00
 updated_at: Friday, January 30th 2026, 9:49:47 am +07:00
-aliases: [Nâng cấp tài chính, 4 to 6 Jars, Refactoring Finance]
 ---
 
 # Financial Migration Strategy (4 to 6 Jars)
 
 ## TL;DR
 
-Quy trình "Refactoring" hệ thống quản lý tài chính từ phiên bản rút gọn (4 Lọ - Sinh tồn & Tăng trưởng) lên phiên bản tiêu chuẩn (6 Lọ - Tự do & Cân bằng) khi thu nhập cá nhân đạt ngưỡng an toàn.
+- **Bản chất**: Nâng hệ thống quản lý tài chính từ bản rút gọn 4 lọ (sinh tồn, tăng trưởng) lên bản đầy đủ 6 lọ khi thu nhập đạt ngưỡng an toàn.
+- **Mục đích**: Tránh hai cực sai: chia 6 lọ khi lương còn thấp làm mỗi lọ quá nhỏ và gây nản, còn giữ 4 lọ khi thu nhập đã cao thì rơi vào lifestyle inflation.
+- **Điểm mấu chốt**: Ngưỡng chuyển đổi phải xác định trước bằng con số cụ thể; không có ngưỡng thì việc migration chỉ là quyết định cảm tính và dễ trượt sang tiêu nhiều hơn.
 
 ---
 

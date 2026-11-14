@@ -2,16 +2,15 @@
 docType: learning-profile
 tags: [type/concept, status/permanent]
 date: 2026-08-06
-aliases:
-  - English Learner Profile
-  - Hồ sơ học tiếng Anh
 ---
 
 # English Learner Profile & Strategy SSOT
 
 ## TL;DR
 
-Hồ sơ cá nhân và **Single Source of Truth (SSOT)** theo dõi lộ trình phát triển năng lực tiếng Anh (CEFR A2 $\rightarrow$ B1 $\rightarrow$ B2). Phân cấp rõ ràng: Ưu tiên số 1 là **Technical English Communication** phục vụ mục tiêu nghề nghiệp (xem chi tiết mục tiêu vai trò và mốc thời gian tại [[Master_Backend_Engineering_SSOT]]); các lộ trình luyện thi chứng chỉ như TOEIC/IELTS chỉ đóng vai trò bài tập bổ trợ phương pháp nghe/viết.
+- **Bản chất**: Hồ sơ SSOT theo dõi lộ trình tiếng Anh CEFR từ A2 lên B1 rồi B2, với track chính là Technical English Communication.
+- **Mục đích**: Giữ một nguồn sự thật duy nhất cho mọi tài liệu và roadmap tiếng Anh, tránh học song song nhiều lộ trình xung đột.
+- **Điểm mấu chốt**: Track chính phục vụ mục tiêu nghề nghiệp, các module khác chỉ là hỗ trợ; đảo thứ tự ưu tiên sẽ tạo tiến bộ đo được trên giấy nhưng không dùng được trong phỏng vấn.
 
 ---
 
@@ -21,7 +20,7 @@ Hồ sơ cá nhân và **Single Source of Truth (SSOT)** theo dõi lộ trình p
 [ PRIMARY TRACK ]     ──> B1 ──> B2 Technical English Communication (Feynman Presentation & Mock Interview)
                                         │
                                         ▼
-[ SUPPORTING MODULE ] ──> [[TOEIC_Self_Study_Roadmap_0_To_900]] (Dictation Part 1 & Part 2)
+[ SUPPORTING MODULE ] ──> [[TOEIC_Roadmap]] (Dictation Part 1 & Part 2)
                                         │
                                         ▼
 [ REFERENCE METHODS ] ──> [[IELTS_Simon_Writing_Method]], [[Card_By_Card_Presentation_Delivery_Technique]]
@@ -120,6 +119,6 @@ Hồ sơ cá nhân và **Single Source of Truth (SSOT)** theo dõi lộ trình p
 ## Related Notes
 
 - [[Master_Backend_Engineering_SSOT]]: Kế hoạch mục tiêu kỹ thuật tổng thể kết nối với năng lực tiếng Anh.
-- [[English_Mastery_80_20_Roadmap]]: Lộ trình phương pháp luận tiếng Anh 80/20 theo khung Paul Nation.
-- [[TOEIC_Self_Study_Roadmap_0_To_900]]: Lộ trình tự học TOEIC 0 đến 900+ phục vụ bài tập bổ trợ.
+- [[English_Roadmap]]: Lộ trình phương pháp luận tiếng Anh 80/20 theo khung Paul Nation và Ultralearning.
+- [[TOEIC_Roadmap]]: Lộ trình tự học TOEIC 0 đến 900+ phục vụ bài tập bổ trợ.
 - [[Master_Roadmaps_Index]]: Bản đồ điều hướng trung tâm các lộ trình học tập trong vault.

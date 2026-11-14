@@ -3,7 +3,6 @@ tags: [type/moc, topic/finance, topic/investment]
 status: evergreen
 created_at: Friday, January 30th 2026, 9:13:21 am +07:00
 updated_at: Friday, January 30th 2026, 9:54:16 am +07:00
-aliases: [Bản đồ tài chính, Investment Strategy]
 ---
 
 # Personal Finance & Investment MOC

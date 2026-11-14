@@ -1,16 +1,18 @@
 ---
 tags: [type/technique, status/permanent]
+date: 2026-01-30
 status: sapling
 created_at: Friday, January 30th 2026, 9:51:15 am +07:00
 updated_at: Friday, January 30th 2026, 9:51:59 am +07:00
-aliases: [Hồ chứa nước, Income Smoothing, Lương tự trả]
 ---
 
 # Income Reservoir Technique (Hồ chứa nước)
 
 ## TL;DR
 
-Kỹ thuật "làm phẳng" dòng tiền cho Freelancer/Người có thu nhập biến động bằng cách tạo một lớp đệm trung gian (Hồ chứa), biến dòng tiền bất ổn (AC) thành dòng lương đều đặn (DC) để dễ dàng quản lý theo nguyên tắc 6 chiếc lọ.
+- **Bản chất**: Tạo một hồ chứa trung gian nhận toàn bộ thu nhập biến động rồi tự trả lương cố định hàng tháng cho bản thân.
+- **Mục đích**: Biến dòng tiền AC thành DC để budgeting và kỷ luật đầu tư vẫn chạy được trong tháng thu nhập thấp hoặc bằng không.
+- **Điểm mấu chốt**: Hồ chứa phải có mức sàn tối thiểu (vài tháng chi phí); hồ cạn nghĩa là cơ chế sụp và quay lại đúng vòng xoáy rút tiết kiệm ăn dần.
 
 ---
 
