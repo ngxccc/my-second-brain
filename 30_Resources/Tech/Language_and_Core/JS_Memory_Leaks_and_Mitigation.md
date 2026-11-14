@@ -1,6 +1,5 @@
 ---
 tags: [type/concept, status/permanent]
-aliases: [JS Memory Leaks, Memory Leaks Mitigation, Memory Leaks Backend]
 date: 2026-08-09
 description: "Các mô hình gây rò rỉ bộ nhớ (Memory Leaks) phổ biến trong JavaScript và phương pháp phòng ngừa."
 ---
@@ -11,7 +10,9 @@ Tài liệu này là một ghi chép Layer 2 mô tả chi tiết các nguyên nh
 
 ## TL;DR
 
-Memory Leak (rò rỉ bộ nhớ) xảy ra khi đối tượng không còn được sử dụng trong logic nghiệp vụ nhưng vẫn nằm trong đồ thị truy cập từ điểm gốc (GC Roots), khiến bộ dọn rác [[JS_Generational_Garbage_Collection]] không thể thu hồi khỏi vùng nhớ [[JS_Stack_vs_Heap_Memory|Heap]]. Các nguyên nhân phổ biến trên backend [[JS_Runtimes_Bun_vs_NodeJS|Node.js/Bun]] bao gồm Dangling Closures, Forgotten Timers và Accidental Globals.
+- **Bản chất**: Memory leak là object không còn dùng trong nghiệp vụ nhưng vẫn reachable từ GC Roots, nên Garbage Collector không thu hồi được.
+- **Mục đích**: Nhận diện ba pattern gây leak phổ biến trên backend: dangling closure, timer không dọn, và accidental global.
+- **Điểm mấu chốt**: Leak trong JS không phải "quên free" mà là còn tham chiếu; cách sửa là cắt tham chiếu (clear timer, bỏ listener, không giữ closure dài hạn).
 
 ---
 
@@ -61,8 +62,8 @@ function startManagedTimer(userData: { id: string }) {
 
 - [[Memory_Leaks_Core_Mechanics]] - Bản chất rò rỉ bộ nhớ ở mức độ nguyên lý nền tảng.
 - [[Garbage_Collection_Fundamentals]] - Nguyên lý khoa học máy tính cốt lõi về cơ chế dọn rác tự động.
-- [[Stack_vs_Heap_Memory_Fundamentals]] - Nguyên lý khoa học máy tính cốt lõi về phân tầng bộ nhớ Stack và Heap.
-- [[JS_Stack_vs_Heap_Memory]]
-- [[JS_Generational_Garbage_Collection]]
-- [[JS_Runtimes_Bun_vs_NodeJS]]
+- Tham chiếu sót lại nằm ở Heap: [[Stack_vs_Heap_Memory_Fundamentals]]
+- Nơi các tham chiếu rò rỉ trú ngụ: [[JS_Stack_vs_Heap_Memory]]
+- Cơ chế lẽ ra phải thu hồi chúng: [[JS_Generational_Garbage_Collection]]
+- Engine ảnh hưởng cách phát hiện leak: [[JS_Runtimes_Bun_vs_NodeJS]]
 - [[000_Tech_MOC]]

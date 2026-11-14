@@ -1,12 +1,5 @@
 ---
 tags: [type/concept, status/permanent]
-aliases:
-  [
-    Finite State Machine and Concurrency Guard,
-    FSM State Machine Lifecycle,
-    Máy trạng thái hữu hạn FSM,
-    State Machine Double Approval Prevention,
-  ]
 date: 2026-09-22
 description: "Nguyên lý thiết kế Máy trạng thái hữu hạn (FSM) trong luồng nghiệp vụ B2B/E-commerce, ma trận chuyển trạng thái hợp lệ, và cơ chế bảo vệ chống Double-Approval Race Condition bằng Pessimistic Lock và Database Constraint."
 ---
@@ -15,9 +8,9 @@ description: "Nguyên lý thiết kế Máy trạng thái hữu hạn (FSM) tron
 
 ## TL;DR
 
-- **Bản chất**: **Finite State Machine (FSM - Máy trạng thái hữu hạn)** là mô hình toán học định nghĩa một tập hữu hạn các trạng thái (`States`) và các quy tắc chuyển đổi hợp lệ (`Transitions`) giữa chúng.
-- **Mục đích**: Triệt tiêu hoàn toàn trạng thái phi lý của hệ thống (ví dụ: đơn hàng đã `REJECTED` lại bị sửa thành `APPROVED`, hoặc báo giá được duyệt 2 lần sinh ra 2 đơn hàng trùng lặp).
-- **Điểm mấu chốt**: Trong môi trường phân tán hoặc đồng thời cao, FSM thuần túy ở tầng mã nguồn (Application Code) **bắt buộc phải kết hợp với cơ chế Khóa bi quan (`SELECT ... FOR UPDATE`) hoặc Atomic Conditional Update (`UPDATE ... WHERE status = 'NEGOTIATING'`)** để ngăn chặn lỗ hổng **Double-Approval Race Condition (TOCTOU)**.
+- **Bản chất**: `Finite State Machine` là mô hình gồm tập hữu hạn các `States` và tập quy tắc `Transitions` hợp lệ giữa chúng; chuyển đổi nằm ngoài tập đó không tồn tại.
+- **Mục đích**: Chặn trạng thái phi lý ở tầng nghiệp vụ: đơn đã `REJECTED` không sửa lại được thành `APPROVED`, báo giá không duyệt hai lần để sinh hai đơn trùng.
+- **Điểm mấu chốt**: FSM thuần ở Application Code không đủ khi có đồng thời: cần khoá bi quan (`SELECT ... FOR UPDATE`) hoặc Atomic Conditional Update để bịt Double-Approval Race Condition (TOCTOU).
 
 ---
 
@@ -64,7 +57,7 @@ t6             UPDATE status = 'APPROVED'                 UPDATE status = 'APPRO
 t7             COMMIT                                     COMMIT
 ```
 
-👉 **Hậu quả**: Cùng 1 Báo giá nhưng sinh ra **2 Đơn hàng độc lập** trong Database $\rightarrow$ Xuất kho gấp đôi thiết bị, sai lệch kế toán và công nợ nghiêm trọng.
+**Hậu quả**: Cùng 1 Báo giá nhưng sinh ra **2 Đơn hàng độc lập** trong Database $\rightarrow$ Xuất kho gấp đôi thiết bị, sai lệch kế toán và công nợ nghiêm trọng.
 
 ---
 

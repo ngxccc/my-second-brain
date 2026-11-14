@@ -1,15 +1,6 @@
 ---
 tags: [type/concept, status/permanent]
 date: 2026-08-22
-aliases:
-  [
-    Spectrum Thinking,
-    Tư duy dải phổ,
-    Continuous Thinking,
-    Fuzzy Thinking,
-    Tư duy liên tục,
-    Non-binary Thinking,
-  ]
 description: "Tư duy dải phổ - Mô hình nhận thức biểu diễn thực tại dưới dạng dải liên tục đa biến số thay vì các trạng thái nhị phân rời rạc."
 ---
 
@@ -17,7 +8,7 @@ description: "Tư duy dải phổ - Mô hình nhận thức biểu diễn thực
 
 ## TL;DR
 
-- **Bản chất**: Mô hình tư duy kiến tạo chuyển đổi việc phân tích từ các trạng thái nhị phân rời rạc (Discrete Binary: 0 hoặc 1, Đúng hoặc Sai) sang một dải phổ liên tục (Continuous Spectrum: $X \in [0.0, 1.0]$) với vô số mức độ và biến số trung gian.
+- **Bản chất**: Chuyển việc phân tích từ trạng thái nhị phân rời rạc (0/1, Đúng/Sai) sang dải liên tục (Continuous Spectrum, $X \in [0.0, 1.0]$) với vô số mức độ và biến số trung gian.
 - **Mục đích**: Thay thế sự phán xét nhị nguyên bằng khả năng định lượng mức độ, tối ưu hóa các quyết định phức tạp trong kỹ nghệ phần mềm, quản trị sản phẩm và phân tích xã hội.
 - **Điểm mấu chốt**: Các hệ thống thực tế không tồn tại ở hai đầu cực đoan; giá trị tối ưu luôn nằm tại một điểm cân bằng (Equilibrium Point) trên dải phổ tùy thuộc vào ràng buộc ngữ cảnh.
 
@@ -62,7 +53,7 @@ Trạng thái A ───[0.2]───[0.4]───[Điểm cân bằng 0.65]�
 
 ---
 
-## Concrete Examples & Engineering Applications
+## Ứng dụng tư duy dải phổ trong kỹ nghệ
 
 ### 1. Ứng dụng trong Kỹ nghệ Phần mềm & Kiến trúc Hệ thống
 

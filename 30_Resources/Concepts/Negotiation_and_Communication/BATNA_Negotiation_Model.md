@@ -1,12 +1,6 @@
 ---
 tags: [type/concept, status/permanent]
 date: 2026-07-27
-aliases:
-  [
-    BATNA,
-    Best Alternative to a Negotiated Agreement,
-    Phương án thay thế tốt nhất khi đàm phán,
-  ]
 description: "Phương án thay thế tốt nhất - Điểm tựa an toàn và nguồn sức mạnh thương lượng cốt lõi."
 ---
 
@@ -14,7 +8,9 @@ description: "Phương án thay thế tốt nhất - Điểm tựa an toàn và 
 
 ## TL;DR
 
-BATNA (Best Alternative to a Negotiated Agreement - Phương án thay thế tốt nhất cho một thỏa thuận được đàm phán) là điểm tựa an toàn và nguồn sức mạnh thương lượng cốt lõi của một cá nhân khi bước vào bàn đàm phán. BATNA xác định ngưỡng giới hạn tối thiểu mà nếu thỏa thuận đàm phán không đạt được ngưỡng này, bạn hoàn toàn có thể chủ động rời đi (Walk-away point) mà không chịu thiệt hại tiêu cực.
+- **Bản chất**: BATNA là phương án tốt nhất có thể thực hiện nếu cuộc đàm phán thất bại, và nó xác định walk-away point của bạn.
+- **Mục đích**: Tạo sức mạnh thương lượng từ vị thế có lựa chọn khác, thay vì phụ thuộc vào thiện chí của đối phương.
+- **Điểm mấu chốt**: BATNA không phải mức giá bạn muốn; nó là giá trị thật của phương án thay thế. Nếu không có BATNA, mọi nhượng bộ đều bị ép từ thế yếu.
 
 ## Application Context & Maslow Alignment
 
@@ -35,12 +31,12 @@ Mô hình BATNA được phát triển bởi Roger Fisher và William Ury trong 
   - **Tăng cường BATNA bản thân:** Tìm kiếm thêm các đối tác dự phòng hoặc nâng cao năng lực nội tại trước khi đàm phán.
   - **Đánh giá BATNA đối phương:** Tìm hiểu phương án thay thế của đối tác để ước tính mức độ cấp bách và giới hạn của họ.
 
-## Concrete Examples
+## Ví dụ thực tế
 
 - **Đàm phán lương khởi điểm:** Bạn ứng tuyển vào Công ty A. Nếu bạn chưa có offer nào khác, BATNA của bạn là tiếp tục thất nghiệp (BATNA yếu $\rightarrow$ dễ bị ép lương). Nếu bạn đã nhận được offer 15 triệu/tháng từ Công ty B, đó là BATNA mạnh của bạn $\rightarrow$ Bạn tự tin đề xuất 18 triệu tại Công ty A và sẵn sàng từ chối nếu Công ty A trả dưới 15 triệu.
 - **Thương lượng hợp đồng cung cấp phần mềm:** Kỹ sư thương lượng với nhà cung cấp Cloud A. Nếu đã chuẩn bị sẵn kịch bản triển khai trên Cloud B với chi phí tương đương (BATNA rõ ràng), bên mua có vị thế yêu cầu Cloud A giảm giá hoặc tặng thêm credits.
 
-## Practical Implementation
+## Trade-offs và điểm mù cần tránh
 
 - **Trade-offs (Điểm mù cần tránh):**
   - _Bộc lộ BATNA quá sớm:_ Nếu bạn có BATNA rất mạnh, việc tiết lộ lịch sự sẽ tạo uy thế. Nhưng nếu BATNA của bạn yếu, bộc lộ ra sẽ khiến đối phương ép giá triệt để.

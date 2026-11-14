@@ -1,8 +1,6 @@
 ---
 tags: [type/concept, status/permanent]
 date: 2026-07-04
-aliases:
-  [Torrent CLI Tools, aria2c Alternatives, Torrent Download Clients Comparison]
 description: "So sánh các công cụ download torrent CLI thay thế aria2c; qBittorrent-nox là all-rounder hàng đầu cho server headless năm 2026."
 ---
 
@@ -10,7 +8,9 @@ description: "So sánh các công cụ download torrent CLI thay thế aria2c; q
 
 ## TL;DR
 
-aria2c là công cụ download đa giao thức (HTTP/FTP/BitTorrent) mạnh về scripting và nhẹ nhàng, nhưng thiếu các tính năng quản lý torrent nâng cao. Dựa trên dữ liệu mới nhất tháng 7/2026 từ các nguồn seedboxes.cc, computingforgeeks.com, qBittorrent-nox vẫn là lựa chọn all-rounder hàng đầu cho server headless. Các lựa chọn thay thế tốt hơn cho use-case server/headless là **qBittorrent-nox** (hiện đại, WebUI, tích hợp Arr stack) và **rTorrent** (hiệu năng cao cho volume lớn/private tracker). Transmission-daemon phù hợp khi cần cực nhẹ.
+- **Bản chất**: So sánh công cụ torrent CLI cho server headless: aria2c là utility đa giao thức, qBittorrent-nox và rTorrent là client đầy đủ.
+- **Mục đích**: Chọn đúng công cụ theo use case - media server cần WebUI và API, private tracker cần hiệu năng cao, máy yếu cần cực nhẹ.
+- **Điểm mấu chốt**: aria2c thiếu quản lý swarm và peer selection nên không thay được torrent client thật; chọn theo khối lượng seed và nhu cầu tích hợp, không theo benchmark đơn lẻ.
 
 ## Core Concept / Rules / Rationales
 
@@ -53,5 +53,3 @@ schedule = watch_directory,5,5,load_start=~/watch/*.torrent
 ## Related Notes
 
 - [[000_Tech_MOC]]
-- [[Serverless_Architecture]]
-- [[Edge_Computing]]

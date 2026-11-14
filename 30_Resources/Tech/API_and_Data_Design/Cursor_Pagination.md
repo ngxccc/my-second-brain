@@ -1,7 +1,6 @@
 ---
 tags: [type/concept, status/permanent]
 date: 2026-02-08
-aliases: [Cursor Pagination, Offset Pagination]
 description: "Phân trang hiệu suất cao O(1) thay thế cho Offset O(N) cồng kềnh."
 ---
 
@@ -9,7 +8,9 @@ description: "Phân trang hiệu suất cao O(1) thay thế cho Offset O(N) cồ
 
 ## TL;DR
 
-Kỹ thuật cắt nhỏ dữ liệu lớn thành từng chunk (Phân trang) và tinh chỉnh kết quả (Lọc/Sắp xếp) thông qua URL Parameters. Mục tiêu là chống tràn RAM (Memory overflow) cho Server và giảm tải băng thông (Network latency) cho Client.
+- **Bản chất**: Phân trang là cắt dữ liệu lớn thành từng chunk qua URL parameter, với hai cơ chế: `LIMIT/OFFSET` phải quét N dòng rồi bỏ, và `WHERE id > cursor LIMIT` nhảy thẳng nhờ index.
+- **Mục đích**: Chống tràn RAM cho server, giảm băng thông cho client, và giữ kết quả ổn định khi dữ liệu được chèn giữa các lần lật trang.
+- **Điểm mấu chốt**: Offset sinh duplicate hoặc mất bản ghi khi có insert xen vào; cursor phải kèm tie-breaker (`ORDER BY created_at DESC, id DESC`), nếu không sẽ bỏ sót bản ghi trùng mili-giây.
 
 ## Core Concept
 

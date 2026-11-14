@@ -1,20 +1,18 @@
 ---
 tags: [type/concept, status/permanent]
 date: 2026-08-05
-aliases:
-  - Bản Chất Escape Analysis Trong Go
-  - Go Escape Analysis
-  - Memory Escape Analysis
 description: "Escape Analysis là bước phân tích tĩnh do Trình biên dịch Go (Go Compiler) thực hiện trong quá trình biên dịch (Compile-time) nhằm quyết định một biến sẽ được cấp phát trên bộ nhớ Stack (nhanh, tự ..."
 ---
 
 # Bản Chất Kiến Trúc Và Cơ Chế Vận Hành Của Go Escape Analysis
 
-Tài liệu này là một ghi chép Layer 2 mô tả chi tiết cơ chế phân tích thoát (Escape Analysis) trong trình biên dịch Go, một giải pháp tự động tối ưu hóa việc phân chia cấp phát bộ nhớ Stack và Heap, dựa trên nguyên lý khoa học máy tính cốt lõi của [[Stack_vs_Heap_Memory_Fundamentals]] và giúp tối ưu hóa hiệu năng dọn rác của [[Garbage_Collection_Fundamentals]].
+Ghi chép Layer 2 về Escape Analysis trong trình biên dịch Go: cơ chế quyết định biến nằm trên Stack hay Heap, dựa trên [[Stack_vs_Heap_Memory_Fundamentals]], và ảnh hưởng tới hiệu năng dọn rác của [[Garbage_Collection_Fundamentals]].
 
 ## TL;DR
 
-**Escape Analysis** là bước phân tích tĩnh do Trình biên dịch Go (Go Compiler) thực hiện trong **quá trình biên dịch (Compile-time)** nhằm quyết định một biến sẽ được cấp phát trên bộ nhớ **Stack** (nhanh, tự dọn dẹp khi thoát hàm) hay bộ nhớ **Heap** (linh hoạt, nhưng đòi hỏi Garbage Collector dọn dẹp). Nếu một biến tồn tại lâu hơn phạm vi khung hàm (Function Frame Scope) hoặc có kích thước không thể xác định tĩnh, nó sẽ "thoát" (Escape) lên Heap để đảm bảo an toàn bộ nhớ và ngăn ngừa lỗi con trỏ treo (Dangling Pointer).
+- **Bản chất**: Escape Analysis là phân tích tĩnh lúc compile để quyết định một biến nằm trên stack hay phải escape lên heap.
+- **Mục đích**: Giữ cấp phát trên stack khi vòng đời biến không vượt khỏi function frame, từ đó giảm áp lực cho Garbage Collector.
+- **Điểm mấu chốt**: Trả con trỏ ra ngoài, capture vào closure, hoặc kích thước không xác định tĩnh đều đẩy biến lên heap; kiểm chứng bằng `go build -gcflags="-m"` thay vì đoán.
 
 ---
 
@@ -110,10 +108,10 @@ func main() {
 
 ## Related Notes
 
-- [[Stack_vs_Heap_Memory_Fundamentals]] - Nguyên lý khoa học máy tính cốt lõi về phân tầng bộ nhớ Stack và Heap.
+- Quy tắc quyết định biến escape sang Heap: [[Stack_vs_Heap_Memory_Fundamentals]]
 - [[Garbage_Collection_Fundamentals]] - Nguyên lý cốt lõi về cơ chế dọn rác tự động.
 - [[Memory_Leaks_Core_Mechanics]] - Bản chất rò rỉ bộ nhớ ở mức độ nguyên lý nền tảng.
 - [[Go_Slice_Underlying_Mechanics]] - Bản chất cấu trúc Slice Header và sự ảnh hưởng của Escape Analysis đến Underlying Array.
-- [[Go_Learning_Roadmap]] - Lộ trình làm chủ ngôn ngữ Go và tối ưu hiệu năng bộ nhớ.
+- [[Go_Roadmap]] - Lộ trình làm chủ ngôn ngữ Go và tối ưu hiệu năng bộ nhớ.
 - [[JS_Stack_vs_Heap_Memory]] - So sánh cơ chế quản lý Stack/Heap và Garbage Collection giữa các ngôn ngữ.
 - [[First_Principles_Thinking]] - Tư duy từ nguyên lý gốc để thiết kế phần mềm tối ưu hiệu năng.

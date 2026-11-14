@@ -1,8 +1,6 @@
 ---
 tags: [type/guide, status/permanent]
 date: 2026-06-07
-aliases:
-  [Stress Test Local, Kế hoạch Stress Test, k6 Benchmark, Phỏng vấn Stress Test]
 description: "SOP thiết lập kịch bản và tư duy stress test an toàn trên máy local."
 ---
 
@@ -10,7 +8,9 @@ description: "SOP thiết lập kịch bản và tư duy stress test an toàn tr
 
 ## TL;DR
 
-Hướng dẫn thiết lập và tư duy thực hiện Stress Test (kiểm thử tải cực hạn) an toàn trong môi trường phát triển cục bộ (Localhost). Sử dụng các công cụ nhẹ nhàng như **k6**, **wrk**, **ab** thay vì JMeter để tìm ra giới hạn lỗi (Breaking Point) của ứng dụng mà không gây nghẽn phần cứng cục bộ.
+- **Bản chất**: Stress test local bằng công cụ nhẹ (k6, wrk, ab) theo quy trình start small, ramp up, monitor.
+- **Mục đích**: Tìm breaking point của ứng dụng mà không làm treo máy dev.
+- **Điểm mấu chốt**: Phải theo dõi tài nguyên phần cứng song song, nếu không sẽ nhầm giới hạn của máy với giới hạn của ứng dụng.
 
 ## Safe Local Stress Testing Workflow
 

@@ -1,8 +1,6 @@
 ---
 tags: [type/concept, status/permanent]
 date: 2026-08-28
-aliases:
-  [k6 Scenarios, k6 Executors, Scenario Executors, Concurrency vs Arrival Rate]
 description: "Phân loại các cơ chế điều phối Executor, tham số gracefulStop và kiến trúc thực thi Scenarios trong Grafana k6."
 ---
 
@@ -12,7 +10,7 @@ description: "Phân loại các cơ chế điều phối Executor, tham số gra
 
 - **Bản chất**: k6 Scenarios điều phối lưu lượng kiểm thử độc lập hoặc tuần tự thông qua các cơ chế Executor chuyên biệt.
 - **Mục đích**: Mô phỏng trung thực các dạng tải thực tế (Flash-Sale Burst, Traffic Spike, Soak Test, Rate-Limit Abuse) trên cùng một bộ runner.
-- **Điểm mấu chốt**: Kiểm thử Race Condition và Distributed Lock bắt buộc dùng `per-vu-iterations` (`iterations: 1`) để tạo xung đột tức thời vi giây tại $t=0$; cấu hình rõ ràng `gracefulStop` để tránh k6 runner bị treo timeout ngoài ý muốn.
+- **Điểm mấu chốt**: Kiểm thử Race Condition và Distributed Lock phải dùng `per-vu-iterations` (`iterations: 1`) để tạo xung đột tức thời tại $t=0$; khai báo `gracefulStop` để tránh k6 treo timeout.
 
 ---
 
@@ -111,4 +109,4 @@ export function rateLimitScenario(): void {
 - Cơ chế khóa phân tán Redis Redlock: [[Redis_Redlock]]
 - Cơ chế khóa bi quan Postgres: [[Postgres_Select_For_Update_Pessimistic_Locking]]
 - Chiến lược ngăn chặn DDoS và Rate Limiting: [[Multi_Layer_Rate_Limiting_DDoS_Prevention]]
-- Bản đồ tri thức kiểm thử: [[30_Resources/Concepts/000_Concepts_MOC.md|Concepts MOC]]
+- [[000_Concepts_MOC]]

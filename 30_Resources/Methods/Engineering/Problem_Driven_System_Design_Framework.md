@@ -1,13 +1,6 @@
 ---
 tags: [type/method, status/permanent]
 date: 2026-08-07
-aliases:
-  [
-    Problem-Driven System Design,
-    Incremental System Design Framework,
-    Architectural Evolution Model,
-    Tư duy thiết kế kiến trúc theo nhu cầu thực tế,
-  ]
 description: "Problem-Driven System Design Framework là phương pháp thiết kế kiến trúc hệ thống dựa trên nhu cầu kinh doanh thực tế và tải hệ thống thực tế (Tư duy Tiến hóa Kiến trúc - Incremental / Evolutionary..."
 ---
 
@@ -15,7 +8,9 @@ description: "Problem-Driven System Design Framework là phương pháp thiết 
 
 ## TL;DR
 
-**Problem-Driven System Design Framework** là phương pháp thiết kế kiến trúc hệ thống dựa trên nhu cầu kinh doanh thực tế và tải hệ thống thực tế (Tư duy Tiến hóa Kiến trúc - _Incremental / Evolutionary Architecture_). Phương pháp này giúp triệt tiêu hoàn toàn sự quá tải nhận thức (_Cognitive Overload_) và cạm bẫy thiết kế thái quá (_Over-Engineering_) bằng cách đặt ra 4 câu hỏi bộ lọc trước khi quyết định áp dụng bất kỳ mẫu System Design nào.
+- **Bản chất**: Thiết kế hệ thống tiến hóa theo nhu cầu thật, qua 4 câu hỏi lọc trước khi áp dụng bất kỳ pattern nào.
+- **Mục đích**: Triệt tiêu over-engineering và cognitive overload khi copy kiến trúc của hệ lớn vào bài toán nhỏ.
+- **Điểm mấu chốt**: Caching, microservices hay event-driven cho app CRUD 100 user/ngày là chi phí thuần túy; pattern phải trả lời một nỗi đau đã đo được.
 
 ---
 
@@ -81,6 +76,6 @@ Không giải quyết tất cả cùng lúc! Chia ra các mốc nâng cấp:
 ## Related Notes
 
 - Siêu học tập đúng lúc cần: [[Metalearning_Just_In_Time_Framework]]
-- Lộ trình System Design tổng thể: [[System_Design_Architecture_Roadmap]]
+- Lộ trình System Design tổng thể: [[System_Design_Roadmap]]
 - Tư duy hướng tới giá trị người dùng: [[Customer_Outcome_Thinking]]
 - Tư duy bóc tách nguyên bản: [[First_Principles_Thinking]]

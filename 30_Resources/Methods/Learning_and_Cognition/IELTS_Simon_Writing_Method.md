@@ -1,7 +1,6 @@
 ---
 tags: [type/method, status/permanent]
 date: 2026-07-04
-aliases: [IELTS Simon Method, Phương pháp viết IELTS Simon, IELTS Simon Writing]
 description: "Chiến thuật làm bài thi IELTS Writing đơn giản và mạch lạc để đạt band score cao."
 ---
 
@@ -9,7 +8,9 @@ description: "Chiến thuật làm bài thi IELTS Writing đơn giản và mạc
 
 ## TL;DR
 
-Chiến thuật làm bài thi IELTS Writing (Task 1 và Task 2) tập trung vào sự đơn giản, rõ ràng và mạch lạc. Triết lý cốt lõi của cựu giám khảo Simon Corcoran là "Less is more" - viết đúng những gì giám khảo cần đánh giá, tránh việc phô diễn từ vựng phức tạp hoặc dùng các mẫu câu học thuộc lòng sáo rỗng.
+- **Bản chất**: Trả lời đúng câu hỏi bằng ngôn ngữ đơn giản, mạch lạc, theo triết lý less is more của cựu giám khảo Simon Corcoran.
+- **Mục đích**: Tối đa hóa điểm theo bốn tiêu chí chấm thi thay vì gây ấn tượng bằng từ vựng phức tạp.
+- **Điểm mấu chốt**: Mẫu câu học thuộc và từ vựng hoa mỹ không được cộng điểm, còn dùng sai ngữ cảnh thì bị trừ trực tiếp vào Lexical Resource.
 
 ## Context: When to use?
 
@@ -65,7 +66,7 @@ Báo cáo số liệu Task 1 không cần kết luận, thay vào đó là đo�
 ## Related Notes
 
 - Hồ sơ và lộ trình học tiếng Anh: [[English_Learner_Profile]]
-- Lộ trình luyện thi TOEIC: [[TOEIC_Self_Study_Roadmap_0_To_900]]
+- Lộ trình luyện thi TOEIC: [[TOEIC_Roadmap]]
 - Phương pháp ghi nhớ từ vựng hiệu quả: [[Phonetic_Chunking]]
 
 ## Sources / References

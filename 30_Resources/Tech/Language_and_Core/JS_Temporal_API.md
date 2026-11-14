@@ -1,7 +1,6 @@
 ---
 tags: [type/concept, status/permanent]
 date: 2026-06-24
-aliases: [Temporal API, JS Temporal API, API xử lý thời gian mới của JavaScript]
 description: "API xử lý ngày giờ thế hệ mới chính thức của JavaScript (ECMAScript 2026)."
 ---
 
@@ -9,7 +8,9 @@ description: "API xử lý ngày giờ thế hệ mới chính thức của Java
 
 ## TL;DR
 
-Temporal API là API xử lý ngày giờ thế hệ mới chính thức của JavaScript (đạt Stage 4 và là một phần của ECMAScript 2026). Nó được thiết kế để thay thế hoàn toàn đối tượng `Date` cũ vốn nổi tiếng với thiết kế lỗi thời, đột biến (mutable) dễ gây bug, và tháng đánh số từ 0. Temporal cung cấp các thực thể bất biến (immutable), chia nhỏ kiểu dữ liệu chuyên biệt (PlainDate, ZonedDateTime, Duration) và hỗ trợ múi giờ IANA cấp độ một.
+- **Bản chất**: Temporal là API ngày giờ thay thế `Date`, với thực thể bất biến và kiểu chuyên biệt (`PlainDate`, `ZonedDateTime`, `Duration`).
+- **Mục đích**: Loại bỏ ba lỗi kinh điển của `Date`: mutable, tháng đánh số từ 0, và xử lý múi giờ mơ hồ.
+- **Điểm mấu chốt**: Temporal hỗ trợ IANA timezone cấp một, nên khác biệt thật nằm ở chỗ phân biệt "giờ địa phương" với "mốc tuyệt đối" ngay ở kiểu dữ liệu.
 
 ---
 
@@ -18,8 +19,8 @@ Temporal API là API xử lý ngày giờ thế hệ mới chính thức của J
 ### 1. Tại Sao Đối Tượng `Date` Cũ Lại Bị Chê?
 
 - **Tính Đột Biến (Mutability):** Các phương thức của `Date` thay đổi trực tiếp giá trị của đối tượng gốc (ví dụ: `date.setMonth(5)`), dẫn đến các bug khó dò khi chia sẻ đối tượng ngày giờ giữa các hàm.
-- **Tháng Đánh Số Từ 0 (0-indexed Months):** Trong `Date`, tháng 1 được biểu diễn bằng số `0`, gây khó hiểu và nhầm lẫn liên tục cho nhà phát triển.
-- **Không Hỗ Trợ Múi Giờ (Poor Time Zone Support):** `Date` chỉ hiểu hai múi giờ là UTC và múi giờ cục bộ của thiết bị (Local). Nó không hỗ trợ việc tính toán múi giờ IANA cụ thể (như `Asia/Ho_Chi_Minh` vs `Europe/Paris`) hoặc tự động xử lý giờ mùa hè (DST - Daylight Saving Time).
+- **Tháng Đánh Số Từ 0 (0-indexed Months):** Trong `Date`, tháng 1 là số `0`, gây nhầm lẫn liên tục.
+- **Không Hỗ Trợ Múi Giờ (Poor Time Zone Support):** `Date` chỉ hiểu UTC và múi giờ cục bộ thiết bị; không hỗ trợ múi giờ IANA cụ thể (`Asia/Ho_Chi_Minh` vs `Europe/Paris`) hay DST.
 - **Độ Chính Xác Thấp:** Chỉ hỗ trợ độ chính xác đến mili giây (milliseconds).
 
 ### 2. Các Cải Tiến Cốt Lõi Của Temporal API
@@ -109,6 +110,4 @@ const compareResult = Temporal.PlainDate.compare(birthDay, futureDate); // Trả
 ## Related Notes
 
 - [[000_Tech_MOC]]
-- [[JS_Stack_vs_Heap_Memory]]
-- [[TS_Decorators]]
-- [[JS_Runtimes_Bun_vs_NodeJS]]
+- Mức hỗ trợ Temporal khác nhau theo engine: [[JS_Runtimes_Bun_vs_NodeJS]]

@@ -1,13 +1,6 @@
 ---
 tags: [type/method, status/permanent]
 date: 2026-08-12
-aliases:
-  [
-    GPS Goal Problem Solution Framework,
-    Khung GPS ghim mục tiêu ban đầu,
-    GPS Framework,
-    Goal Problem Solution Anchor,
-  ]
 description: "Khung tư duy GPS ghim mục tiêu ban đầu giúp quản lý bối cảnh khi phân rã bài toán kỹ thuật phức tạp mà không bị trôi bối cảnh."
 ---
 
@@ -15,7 +8,9 @@ description: "Khung tư duy GPS ghim mục tiêu ban đầu giúp quản lý b�
 
 ## TL;DR
 
-**GPS (Goal - Problem - Solution) Framework** là phương pháp quản lý bối cảnh và duy trì định hướng bài toán bằng cách ghim chặt **North Star Goal (Mục tiêu tối thượng)** và các **Core Constraints (Ràng buộc cứng)** ở vị trí trên cùng của tài liệu. Phương pháp này triệt tiêu rủi ro Context Loss và Goal Drift khi người làm việc đào sâu vào các chi tiết kỹ thuật ở mức độ thấp.
+- **Bản chất**: Ghim North Star Goal và Core Constraints lên đầu tài liệu, rồi mới phân rã Problem và Solution bên dưới.
+- **Mục đích**: Chặn Context Loss và Goal Drift khi càng đào sâu kỹ thuật càng xa mục tiêu ban đầu.
+- **Điểm mấu chốt**: Mục tiêu phải viết kèm ràng buộc cứng; mục tiêu không có ràng buộc thì mọi giải pháp đều hợp lệ và framework mất tác dụng.
 
 ---
 
@@ -71,5 +66,4 @@ Khi làm việc ở Tầng 2 hoặc Tầng 3, trước khi chuyển sang một s
 
 - Quy trình chuẩn hóa xử lý vấn đề: [[Problem_Solving_Mental_Model_Pipeline]]
 - Khung bóc tách cây vấn đề: [[McKinsey_Issue_Tree_Framework]]
-- Quy trình 5 bước đánh giá vấn đề: [[Problem_Solving_Mental_Model_Pipeline]]
 - Tư duy kiến trúc theo nhu cầu thực tế: [[Problem_Driven_System_Design_Framework]]

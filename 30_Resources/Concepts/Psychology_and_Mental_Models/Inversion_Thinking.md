@@ -1,13 +1,6 @@
 ---
 tags: [type/concept, status/permanent]
 date: 2026-08-07
-aliases:
-  [
-    Inversion Thinking,
-    Tư duy đảo ngược,
-    Nguyên lý đảo ngược Jacobi,
-    Avoid Stupidity,
-  ]
 description: "Tư duy đảo ngược (Inversion Thinking) là kỹ thuật giải quyết vấn đề bằng cách tiếp cận từ góc độ ngược lại: Thay vì tìm cách để thành công hay đạt mục tiêu, bạn tập trung xác định và loại bỏ tất cả..."
 ---
 
@@ -15,7 +8,9 @@ description: "Tư duy đảo ngược (Inversion Thinking) là kỹ thuật gi�
 
 ## TL;DR
 
-Tư duy đảo ngược (Inversion Thinking) là kỹ thuật giải quyết vấn đề bằng cách tiếp cận từ góc độ ngược lại: Thay vì tìm cách để thành công hay đạt mục tiêu, bạn tập trung xác định và loại bỏ tất cả những cách dẫn đến thất bại, thảm họa hoặc sai lầm.
+- **Bản chất**: Tư duy đảo ngược là giải bài toán bằng cách liệt kê và loại bỏ những con đường dẫn đến thất bại, thay vì đi tìm đường đến thành công.
+- **Mục đích**: Áp dụng khi mục tiêu mơ hồ nhưng các kiểu thất bại lại dễ nhận diện và dễ chặn hơn.
+- **Điểm mấu chốt**: Đảo ngược hiệu quả nhất với rủi ro không thể phục hồi; nó bổ sung chứ không thay thế tư duy thuận, vì tránh hết sai không tự sinh ra đúng.
 
 ---
 
@@ -29,7 +24,7 @@ Tư duy đảo ngược (Inversion Thinking) là kỹ thuật giải quyết v�
 
 ---
 
-## Practical Implementation
+## Thuật toán 3 bước và ví dụ
 
 - **Thuật toán 3 bước áp dụng:**
   1. _Xác định Mục tiêu:_ Nêu rõ điều bạn muốn đạt được (Ví dụ: Định hướng sự nghiệp an toàn và phát triển).

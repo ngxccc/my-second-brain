@@ -1,7 +1,6 @@
 ---
 title: Atomic Conditional Update
 tags: [type/concept, status/permanent]
-aliases: [Atomic Update, Conditional Update, Compare-and-Swap SQL]
 date: 2026-09-16
 description: "Cơ chế cập nhật nguyên tử có điều kiện trong Database để triệt tiêu Race Condition mà không cần giữ khóa giao dịch dài."
 ---
@@ -101,7 +100,7 @@ async function decrementStock(
 
 ## Related Notes
 
-- [[Postgres_Select_For_Update_Pessimistic_Locking]]
-- [[Database_Indexing_Guidelines]]
-- [[Outbox_Pattern]]
+- Dùng khi phải đọc rồi mới quyết định: [[Postgres_Select_For_Update_Pessimistic_Locking]]
+- Index cho câu UPDATE có điều kiện: [[Database_Indexing_Guidelines]]
+- Áp dụng nguyên tử cho side effect nghiệp vụ: [[Outbox_Pattern]]
 - [[000_Tech_MOC]]

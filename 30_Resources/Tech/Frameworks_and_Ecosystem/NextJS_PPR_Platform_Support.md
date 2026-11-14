@@ -1,11 +1,5 @@
 ---
 tags: [type/concept, status/permanent]
-aliases:
-  [
-    NextJS PPR Platform Support,
-    Hỗ trợ PPR trên các Nền tảng,
-    Partial Prerendering Integration,
-  ]
 date: 2026-06-12
 description: "Cơ chế và cách thức các Cloud Platform hỗ trợ triển khai Partial Prerendering."
 ---
@@ -14,7 +8,9 @@ description: "Cơ chế và cách thức các Cloud Platform hỗ trợ triển 
 
 ## TL;DR
 
-Partial Prerendering (PPR) của Next.js kết hợp static và dynamic rendering trên cùng một route bằng cách tạo ra một static HTML shell lúc build và stream tiếp phần dynamic lúc request. Để hỗ trợ PPR, platform cần lưu trữ đồng thời và cập nhật nguyên tử cả shell tĩnh và chuỗi trạng thái trì hoãn (postponedState), sau đó dùng Resume Protocol để thực hiện việc render tiếp các suspense boundaries còn thiếu.
+- **Bản chất**: PPR gửi static HTML shell lúc build và stream phần dynamic lúc request, qua `PostponedState` và Resume Protocol.
+- **Mục đích**: Một route vừa có TTFB của static vừa có dữ liệu theo request.
+- **Điểm mấu chốt**: Platform phải lưu shell và `postponedState` như một cặp nguyên tử, và phải coi `postponedState` là dữ liệu opaque - không tự parse hay sửa.
 
 ## Core Concept
 

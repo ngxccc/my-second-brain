@@ -1,7 +1,6 @@
 ---
 tags: [type/concept, status/permanent]
 date: 2026-08-06
-aliases: [Đặt tên Database, DB Naming, Database Naming Conventions]
 description: "Quy tắc đặt tên đồng bộ và nhất quán giữa Database (Số ít) và TypeScript ORM (Số nhiều)."
 ---
 
@@ -9,7 +8,9 @@ description: "Quy tắc đặt tên đồng bộ và nhất quán giữa Databas
 
 ## TL;DR
 
-Quy tắc đặt tên nhất quán giữa cơ sở dữ liệu (Database) và mã nguồn (TypeScript): Tên bảng vật lý trong DB và tên biến ORM/TypeScript đại diện đều dùng **Số nhiều (Plural)** (ví dụ: `users`, `categories`, `orders`, `sessions`). Định nghĩa bảng bằng helper `snakeCase.table` của Drizzle ORM để đảm bảo tự động chuẩn hóa snake_case và đồng bộ 1:1 từ mã nguồn tới cơ sở dữ liệu.
+- **Bản chất**: Tên bảng và tên biến ORM dùng số nhiều (`users`, `categories`), tên cột và foreign key dùng số ít (`user_id`).
+- **Mục đích**: Giữ tên code TypeScript và tên bảng SQL khớp 1:1, tránh nhầm lẫn khi debug hoặc viết raw query.
+- **Điểm mấu chốt**: Danh từ bất quy tắc không phải vấn đề vì tên bảng được viết tường minh trong schema, không có cơ chế suy đoán chuỗi ngầm.
 
 ---
 
@@ -88,7 +89,8 @@ Vì chuỗi tên bảng `"categories"` hay `"people"` được viết rõ ràng 
 
 ### 2. Bộ Thư Viện Pluralize Chuẩn TrONG Framework Auto-Mapping
 
-Đối với các Framework tự động map tên Model ra tên bảng (như Rails hay Laravel), bộ thư viện mã nguồn mở `ActiveSupport::Inflector` / `pluralize` đã có sẵn từ điển đầy đủ cho tất cả các từ bất quy tắc (`category` $\rightarrow$ `categories`, `person` $\rightarrow$ `people`, `child` $\rightarrow$ `children`, `status` $\rightarrow$ `statuses`).
+- **Framework tự map tên:** Rails/Laravel dùng `ActiveSupport::Inflector` / `pluralize`, đã có sẵn từ điển đầy đủ cho từ bất quy tắc.
+- **Ví dụ:** `category` $\rightarrow$ `categories`, `person` $\rightarrow$ `people`, `child` $\rightarrow$ `children`, `status` $\rightarrow$ `statuses`.
 
 ### 3. Tính Đọc Hiểu Tự Nhiên Ngữ Nghĩa
 

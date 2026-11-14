@@ -1,14 +1,6 @@
 ---
 tags: [type/concept, status/permanent]
 date: 2026-08-22
-aliases:
-  [
-    Institutional Tradeoffs Framework,
-    Khung đánh đổi thể chế,
-    Sowell Tradeoff Principle,
-    Institutional Economics Framework,
-    Kinh tế học thể chế và sự đánh đổi,
-  ]
 description: "Khung đánh đổi thể chế - Nguyên lý phân tích hệ thống kinh tế - xã hội dựa trên ràng buộc nguồn lực và chi phí đánh đổi thay vì giải pháp không tưởng."
 ---
 
@@ -16,7 +8,7 @@ description: "Khung đánh đổi thể chế - Nguyên lý phân tích hệ th�
 
 ## TL;DR
 
-- **Bản chất**: Khung phân tích dựa trên nguyên lý kinh tế học thể chế (Douglass North, Daron Acemoglu) và triết lý Thomas Sowell: _Không có giải pháp hoàn hảo trong quản trị xã hội, chỉ tồn tại các gói đánh đổi (Trade-offs) dưới các ràng buộc nguồn lực và lịch sử nhất định_.
+- **Bản chất**: Khung phân tích dựa trên kinh tế học thể chế (Douglass North, Acemoglu) và Thomas Sowell: không có giải pháp hoàn hảo, chỉ có các gói Trade-off dưới ràng buộc nguồn lực và lịch sử.
 - **Mục đích**: Giải phóng tư duy khỏi ảo tưởng về một "thể chế thiên đường", phân tích chính sách công và mô hình quốc gia bằng chi phí cơ hội và chi phí giao dịch thực tế.
 - **Điểm mấu chốt**: Đánh giá một mô hình không phải bằng những lời hứa hẹn lý tưởng, mà bằng cái giá bắt buộc phải trả khi lựa chọn gói thể chế đó.
 
@@ -25,12 +17,12 @@ description: "Khung đánh đổi thể chế - Nguyên lý phân tích hệ th�
 ## Context: When to apply?
 
 - **Good for:**
-  - Đánh giá hiện trạng kinh tế - xã hội của các quốc gia đang phát triển và phát triển.
+  - Đánh giá hiện trạng kinh tế - xã hội của các quốc gia.
   - Phân tích chính sách vĩ mô, quy hoạch đô thị, cải cách giáo dục, y tế.
-  - Đưa ra các quyết định định cư, di trú, phát triển sự nghiệp toàn cầu.
-  - Tranh luận và tư duy chính trị - xã hội một cách khách quan, phi cảm tính.
+  - Đưa ra quyết định định cư, di trú, phát triển sự nghiệp toàn cầu.
+  - Tranh luận chính trị - xã hội khách quan, phi cảm tính.
 - **Bad for:**
-  - Các bài toán kỹ thuật thuần túy có một lời giải tối ưu toán học duy nhất (Deterministic Problems).
+  - Bài toán kỹ thuật có một lời giải tối ưu toán học duy nhất.
 - **Phân tầng Maslow phù hợp**: **Tầng 4 (Esteem)** và **Tầng 5 (Cognitive & Self-Actualization)**.
 - **Điều kiện tiên quyết**: Năng lực tư duy hệ thống ([[Systems_Thinking]]) và tư duy hệ quả bậc hai ([[Second_Order_Thinking]]).
 
@@ -71,7 +63,7 @@ tích lũy tư bản ban đầu.     ma sát thị trường.       bảo vệ l
 
 ---
 
-## Practical Implementation: Framework 3 câu hỏi đánh giá chính sách
+## Framework 3 câu hỏi đánh giá chính sách
 
 Khi đối mặt với bất kỳ tranh luận hoặc chính sách xã hội nào, áp dụng 3 câu hỏi:
 

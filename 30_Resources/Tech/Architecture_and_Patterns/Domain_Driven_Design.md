@@ -1,7 +1,6 @@
 ---
 tags: [type/concept, status/permanent]
 date: 2026-06-07
-aliases: [Domain-Driven Design, Thiết kế hướng tên miền, DDD]
 description: "Thiết kế hướng tên miền, giải quyết độ phức tạp của nghiệp vụ cốt lõi."
 ---
 
@@ -9,7 +8,9 @@ description: "Thiết kế hướng tên miền, giải quyết độ phức t�
 
 ## TL;DR
 
-Domain-Driven Design (DDD) là một phương pháp thiết kế phần mềm tập trung vào việc mô hình hóa các bài toán nghiệp vụ cốt lõi (**Domain**). Bằng cách kết nối chặt chẽ giữa code ứng dụng và thế giới thực của nghiệp vụ qua ngôn ngữ chung (**Ubiquitous Language**), DDD giúp quản lý hiệu quả các hệ thống phức tạp và phân rã các service lớn.
+- **Bản chất**: DDD mô hình hóa nghiệp vụ cốt lõi bằng Ubiquitous Language và chia hệ thống thành các Bounded Context.
+- **Mục đích**: Quản lý độ phức tạp nghiệp vụ, để code phản ánh domain chứ không phản ánh cấu trúc kỹ thuật.
+- **Điểm mấu chốt**: Cùng một từ như `Order` mang nghĩa khác nhau ở hai Bounded Context; gộp chúng lại thành một model dùng chung là nguồn lỗi.
 
 ## Core Concepts
 

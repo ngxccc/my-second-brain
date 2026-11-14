@@ -1,7 +1,6 @@
 ---
 tags: [type/method, status/permanent]
 date: 2026-04-29
-aliases: [STAR Framework, Kỹ thuật phỏng vấn hành vi]
 description: "Framework kể chuyện (Situation-Task-Action-Result) để flex kinh nghiệm mượt mà trong các vòng phỏng vấn hành vi (Behavioral Interview)."
 ---
 
@@ -9,14 +8,16 @@ description: "Framework kể chuyện (Situation-Task-Action-Result) để flex 
 
 ## TL;DR
 
-Khung kể chuyện chiến lược (Situation -> Task -> Action -> Result) giúp cấu trúc hóa câu trả lời trong các vòng phỏng vấn hành vi (Behavioral Interview) hoặc khi viết CV. Mục tiêu là show ra bằng chứng thép về năng lực giải quyết vấn đề.
+- **Bản chất**: STAR là khung Situation -> Task -> Action -> Result để kể một câu chuyện có bằng chứng.
+- **Mục đích**: Trả lời câu hỏi hành vi và viết CV theo cấu trúc, thay vì kể lan man.
+- **Điểm mấu chốt**: 60% thời lượng phải dành cho Action - phần chứng minh năng lực; dài dòng ở Situation là lỗi phổ biến nhất.
 
 ## Core Concept
 
 - **Đúng người, đúng thời điểm:** Chỉ lấy STAR ra xài khi gặp những câu hỏi mở đầu bằng "Tell me about a time..." hoặc dùng để tự review bản thân cuối năm xin tăng lương. Tuyệt đối cất nó đi khi làm System Design hay Live Coding (những vòng này cần show hard skills ngay tại trận).
 - **Phân bổ thời lượng (The 60% Rule):** Đừng dành 20 phút để than thở/kể khổ về cái project cũ nát như thế nào (Situation/Task). Khúc này chỉ nói lướt qua. Trọng tâm sân khấu (60% thời lượng) phải dành cho **Action**: Bạn đã dùng tech stack gì, tư duy ra sao, và chấp nhận đánh đổi (trade-off) cái gì để giải quyết vấn đề.
 
-## Practical Implementation
+## Kỹ thuật kể STAR khi phỏng vấn
 
 - **Tranh công hợp lý (The "I" Factor):** Tách bạch rõ ràng sự cống hiến. Thay vì nói "Chúng tôi đã tối ưu DB", hãy nói "Team chốt phương án X, nhưng **tôi trực tiếp** refactor module Y và optimize query...".
 - **Cú chốt định lượng (Result):** Phải có con số để đóng nắp quan tài sự nghi ngờ của người phỏng vấn.

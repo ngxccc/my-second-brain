@@ -1,11 +1,5 @@
 ---
 tags: [type/concept, status/permanent]
-aliases:
-  [
-    Git DAG and Object Storage Model,
-    Mô hình Đối tượng và Đồ thị DAG trong Git,
-    Git Internals DAG,
-  ]
 date: 2026-09-20
 description: "Cơ chế lưu trữ đối tượng bất biến (Blob, Tree, Commit) và cấu trúc đồ thị có hướng không chu trình (DAG) trong Git."
 ---
@@ -14,9 +8,9 @@ description: "Cơ chế lưu trữ đối tượng bất biến (Blob, Tree, Com
 
 ## TL;DR
 
-- **Bản chất**: Git là một cơ sở dữ liệu địa chỉ hóa theo nội dung (Content-Addressable Storage) biểu diễn lịch sử dưới dạng **Đồ thị có hướng không chu trình (Directed Acyclic Graph - DAG)**.
-- **Mục đích**: Bảo toàn tính toàn vẹn tuyệt đối của mã nguồn (Snapshot bất biến qua mã băm SHA) và hỗ trợ phân nhánh/gộp nhánh với chi phí tài nguyên gần như bằng 0.
-- **Điểm mấu chốt**: Git không lưu trữ danh sách các bản vá (Diff-based), mà lưu từng ảnh chụp (Snapshot) hoàn chỉnh. Mỗi Commit trỏ ngược về Commit cha (Parent pointer). Branch và HEAD thực chất chỉ là những con trỏ tham chiếu (Refs) chứa chuỗi SHA trỏ vào một nút trên đồ thị DAG.
+- **Bản chất**: Git là Content-Addressable Storage: mọi đối tượng (Blob, Tree, Commit) được định danh bằng SHA của chính nội dung, nên nội dung đổi thì định danh đổi.
+- **Mục đích**: Bảo toàn tính toàn vẹn mã nguồn bằng snapshot bất biến, đồng thời cho phép phân nhánh và gộp nhánh với chi phí tài nguyên gần bằng không.
+- **Điểm mấu chốt**: Git lưu snapshot đầy đủ chứ không lưu diff; Commit trỏ ngược về Commit cha, còn Branch và HEAD chỉ là Refs chứa SHA trỏ vào một nút trên DAG.
 
 ---
 
@@ -86,7 +80,6 @@ git reset --hard <old-feature-tip-sha>
 
 ## Related Notes
 
-- [[Git_Conflict_and_Three_Way_Merge_Mechanics]]
-- [[Git_Four_Zones_and_Reset_Lifecycle]]
-- [[Stack_vs_Heap_Memory_Fundamentals]]
+- BASE của merge được lấy từ DAG: [[Git_Conflict_and_Three_Way_Merge_Mechanics]]
+- Con trỏ vùng di chuyển trên DAG này: [[Git_Four_Zones_and_Reset_Lifecycle]]
 - [[000_Concepts_MOC]]

@@ -1,7 +1,6 @@
 ---
 tags: [type/concept, status/permanent]
 date: 2026-01-29
-aliases: [Background Sync, Outbox Pattern, Offline First]
 description: "Kỹ thuật Outbox Pattern ở phía client cho ứng dụng Offline-First."
 ---
 
@@ -9,7 +8,9 @@ description: "Kỹ thuật Outbox Pattern ở phía client cho ứng dụng Offl
 
 ## TL;DR
 
-Kỹ thuật "lưu trước, gửi sau" (Store-forward) dành cho các ứng dụng Offline-First. Bắt các HTTP request bị lỗi do mất mạng, đẩy vào một hàng đợi (Queue) tại Local DB, và tự động gửi lại (Flush) khi thiết bị khôi phục kết nối internet.
+- **Bản chất**: Outbox Pattern phía client: request thất bại do mất mạng được đẩy vào queue trong local DB rồi flush lại khi có kết nối.
+- **Mục đích**: Giữ thao tác của người dùng không bị mất trong ứng dụng offline-first.
+- **Điểm mấu chốt**: Flush lại có thể gửi trùng, nên mỗi item phải mang idempotency key và server phải xử lý được retry; thiếu điều đó thì offline-first sinh ra dữ liệu nhân đôi.
 
 ## Core Concept
 
@@ -19,7 +20,7 @@ Kỹ thuật "lưu trước, gửi sau" (Store-forward) dành cho các ứng d�
   3. _Flush:_ Lắng nghe sự kiện `window.addEventListener('online')` để duyệt mảng và bắn lại request theo thứ tự FIFO (Vào trước ra trước).
 - **Optimistic UI:** Kiến trúc này thường đi kèm với việc cập nhật giao diện thành công ngay lập tức (để user không bị gián đoạn trải nghiệm), giấu đi luồng xử lý đồng bộ bất đồng bộ ở dưới background.
 
-## Practical Implementation
+## Trade-offs và tử huyệt vận hành
 
 - **Trade-offs (Xung đột dữ liệu - Conflict Resolution):** Rủi ro lớn nhất là trạng thái dữ liệu bất đồng bộ. Ví dụ: Máy A sửa tên thành "John" lúc offline. Máy B sửa tên thành "Doe" lúc online. Khi máy A có mạng trở lại, Queue chạy và ghi đè "Doe" thành "John". Cần thiết lập chiến lược như _Last Write Wins_ (dựa vào timestamp) trên server.
 - **Tử huyệt Spam Request:** Tuyệt đối không xóa request khỏi Queue nếu server trả về lỗi `5xx` (Lỗi từ phía server). Tuy nhiên, nếu cứ nhắm mắt bắn lại (retry) liên tục, client của em sẽ vô tình tạo ra một cuộc tấn công DDoS vào chính server của mình. Phải cài đặt thuật toán **Exponential Backoff** (tăng dần thời gian chờ giữa mỗi lần thử lại).

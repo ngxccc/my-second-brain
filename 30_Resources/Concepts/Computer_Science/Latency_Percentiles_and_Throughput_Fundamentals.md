@@ -1,11 +1,5 @@
 ---
 tags: [type/concept, status/permanent]
-aliases:
-  [
-    Latency Percentiles and Throughput Fundamentals,
-    Latency p50 p95 p99 and Throughput Metrics,
-    Tail Latency and Ops Per Second,
-  ]
 date: 2026-09-22
 description: "Nguyên lý đo lường hiệu năng hệ thống: Phân vị độ trễ (p50, p90, p95, p99), bẫy số trung bình (Flaw of Averages), Tail Latency, và thông lượng hệ thống (Throughput / Ops per second / RPS)."
 ---
@@ -14,9 +8,9 @@ description: "Nguyên lý đo lường hiệu năng hệ thống: Phân vị đ�
 
 ## TL;DR
 
-- **Bản chất**: **Throughput (Ops/sec hoặc RPS)** đo tốc độ xử lý khối lượng công việc của hệ thống trên một đơn vị thời gian. **Latency Percentiles ($p50, p90, p95, p99$)** đo phân bố thời gian phản hồi thực tế của từng nhóm người dùng, phản ánh rủi ro **Tail Latency** mà số trung bình (Mean/Average) hoàn toàn che giấu.
-- **Mục đích**: $p50$ (Median) đại diện cho trải nghiệm người dùng phổ thông. $p95$ và $p99$ là tiêu chuẩn vàng để cam kết SLA/SLO (Service Level Agreement/Objective), bảo vệ nhóm khách hàng chịu độ trễ tồi tệ nhất.
-- **Điểm mấu chốt**: Không bao giờ dùng **Số trung bình (Average)** để đánh giá hiệu năng API vì $1\%$ request bị nghẽn (ví dụ: Stop-The-World Garbage Collection, Lock Contention, Disk I/O) sẽ bị số lượng lớn request nhanh làm lu mờ. Trong kiến trúc Microservices, nếu $p99$ của một service con chậm, toàn bộ request tổng hợp của người dùng sẽ bị kéo chậm theo quy tắc xác suất nhị thức.
+- **Bản chất**: **Throughput (Ops/sec hoặc RPS)** đo khối lượng xử lý mỗi đơn vị thời gian; **Latency Percentiles** ($p50, p90, p95, p99$) đo phân bố thời gian phản hồi theo từng nhóm người dùng.
+- **Mục đích**: $p50$ (Median) là trải nghiệm phổ thông; $p95$ và $p99$ là tiêu chuẩn cam kết SLA/SLO, bảo vệ nhóm khách hàng chịu độ trễ tồi tệ nhất.
+- **Điểm mấu chốt**: Không đánh giá API bằng Average: $1\%$ request nghẽn (GC, Lock Contention, Disk I/O) bị số đông request nhanh che mất; $p99$ chậm ở một service con kéo chậm cả request tổng hợp.
 
 ---
 
@@ -49,7 +43,7 @@ Giả sử kiểm thử 100 requests với kết quả thời gian phản hồi:
 **Tính số trung bình (Mean / Average):**
 $$\text{Average Latency} = \frac{(99 \times 10) + (1 \times 10,000)}{100} = \frac{990 + 10,000}{100} \approx 109.9\text{ms}$$
 
-👉 **Hậu quả**: Con số $109.9\text{ms}$ nhìn có vẻ "khá tốt", nhưng nó hoàn toàn che giấu sự thật rằng có khách hàng đã phải đứng chờ tới $10$ giây và có thể đã bỏ giỏ hàng!
+**Hậu quả**: Con số $109.9\text{ms}$ nhìn có vẻ "khá tốt", nhưng nó hoàn toàn che giấu sự thật rằng có khách hàng đã phải đứng chờ tới $10$ giây và có thể đã bỏ giỏ hàng!
 
 ---
 

@@ -1,11 +1,5 @@
 ---
 tags: [type/method, status/permanent]
-aliases:
-  [
-    Quản lý dự án Agile bằng GitHub,
-    Agile Management via GitHub,
-    GitHub Project Board SOP,
-  ]
 date: 2026-06-24
 description: "Hướng dẫn cấu hình và quy trình vận hành Kanban Board, Sprints bằng GitHub Projects & Issues."
 ---
@@ -14,7 +8,9 @@ description: "Hướng dẫn cấu hình và quy trình vận hành Kanban Board
 
 ## TL;DR
 
-Hướng dẫn cấu hình và vận hành quy trình quản lý tiến độ, quản lý công việc (tasks) và theo dõi hiệu suất của thành viên bằng GitHub Projects và Issues thay thế cho hệ thống JIRA đắt đỏ.
+- **Bản chất**: Dùng GitHub Projects và Issues làm Kanban board, sprint tracking và nơi theo dõi tiến độ, thay cho JIRA.
+- **Mục đích**: Quản lý task gắn trực tiếp với repo, không phải đồng bộ hai hệ thống và không trả phí công cụ.
+- **Điểm mấu chốt**: Chỉ phù hợp đội nhỏ đến trung bình; khi cần báo cáo, phân quyền và workflow phức tạp thì công cụ chuyên dụng vẫn thắng.
 
 ---
 
@@ -84,9 +80,8 @@ Hướng dẫn cấu hình và vận hành quy trình quản lý tiến độ, q
 
 ## Related Notes
 
-- [[Agile_Scrum]]
-- [[Standard_Project_Timeline_SOP]]
-- [[STAR_Method_Tech]]
+- Quy trình mà board này vận hành: [[Agile_Scrum]]
+- Mốc thời gian cho sprint của đồ án: [[Standard_Project_Timeline_SOP]]
 
 ---
 

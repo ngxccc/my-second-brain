@@ -1,7 +1,6 @@
 ---
 tags: [type/concept, status/permanent]
 date: 2026-08-09
-aliases: [Mô hình kỹ năng chữ T, Skill Stacking Strategy, T-Shaped Polymath]
 description: "Mô hình Kỹ năng Chữ T (T-Shaped Skills Model) và Chiến lược Xếp chồng Kỹ năng (Skill Stacking) là phương pháp phát triển sự nghiệp tối ưu cho kỷ nguyên hiện đại. Bằng cách kết hợp một chuyên môn sâ..."
 ---
 
@@ -9,7 +8,9 @@ description: "Mô hình Kỹ năng Chữ T (T-Shaped Skills Model) và Chiến l
 
 ## TL;DR
 
-Mô hình Kỹ năng Chữ T (T-Shaped Skills Model) và Chiến lược Xếp chồng Kỹ năng (Skill Stacking) là phương pháp phát triển sự nghiệp tối ưu cho kỷ nguyên hiện đại. Bằng cách kết hợp **một chuyên môn sâu cốt lõi** (thanh đứng chữ T) với **kiến thức đa ngành rộng** (thanh ngang chữ T), cá nhân có thể tạo ra bộ nhận diện độc bản thuộc Top 0.1% hiếm có mà không cần phải là thiên tài ở duy nhất một lĩnh vực.
+- **Bản chất**: Mô hình chữ T là một chuyên môn sâu (thanh đứng) cộng kiến thức đa ngành đủ rộng (thanh ngang); skill stacking là cộng nhiều kỹ năng tầm trung thành bộ kỹ năng khó sao chép.
+- **Mục đích**: Định hướng phát triển sự nghiệp mà không phải cạnh tranh trực diện với người giỏi nhất ở một lĩnh vực duy nhất.
+- **Điểm mấu chốt**: Thanh đứng phải đủ sâu để có giá trị trao đổi trước; mở rộng thanh ngang khi chưa có chuyên môn cốt lõi chỉ tạo ra người biết nhiều thứ ở mức nông.
 
 ---
 
@@ -42,7 +43,7 @@ Do Scott Adams (tác giả bộ truyện Dilbert) đề xuất. Lý thuyết ch�
 
 ---
 
-## Practical Examples
+## Skill Stacking: ví dụ ngành công nghệ
 
 ### Ví dụ về Skill Stacking trong ngành Công nghệ
 
@@ -59,9 +60,9 @@ Một lập trình viên áp dụng chiến lược Skill Stacking để tạo r
 
 ## Related Notes
 
-- [[30_Resources/Concepts/Psychology_and_Mental_Models/Polymathy_and_Modern_Generalist.md|Polymathy and Modern Generalist]]
-- [[30_Resources/Methods/Learning_and_Cognition/M_Shaped_Polymath_Skill_Stacking.md|M-Shaped Polymath Skill Stacking]]
-- [[30_Resources/Concepts/Psychology_and_Mental_Models/Systems_Thinking.md|Systems Thinking]]
-- [[30_Resources/Concepts/Psychology_and_Mental_Models/Critical_Thinking_Models.md|Critical Thinking Models]]
-- [[30_Resources/Methods/Learning_and_Cognition/First_Principles_Thinking.md|First Principles Thinking]]
-- [[30_Resources/Concepts/000_Concepts_MOC.md|Concepts MOC]]
+- Đích đến khi mở rộng chiều ngang: [[Polymathy_and_Modern_Generalist]]
+- Quy trình nhân bản chiều sâu thứ hai: [[M_Shaped_Polymath_Skill_Stacking]]
+- Lăng kính chọn ngành để tạo chiều ngang: [[Systems_Thinking]]
+- Lọc nhiễu khi đánh giá ngành mới: [[Critical_Thinking_Models]]
+- Bóc tách ngành về kỹ năng lõi: [[First_Principles_Thinking]]
+- [[000_Concepts_MOC]]

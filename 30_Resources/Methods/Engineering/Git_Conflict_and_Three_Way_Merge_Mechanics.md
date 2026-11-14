@@ -1,11 +1,5 @@
 ---
 tags: [type/method, status/permanent]
-aliases:
-  [
-    Git Conflict and Three-Way Merge Mechanics,
-    Cơ chế Xung đột Git và Thuật toán Three-Way Merge,
-    Git Merge Conflict Resolution,
-  ]
 date: 2026-09-20
 description: "Nguyên lý thuật toán Three-Way Merge, phân tích mâu thuẫn giữa BASE, OURS, THEIRS, và quy trình giải quyết xung đột trong Git Merge vs Rebase."
 ---
@@ -14,9 +8,9 @@ description: "Nguyên lý thuật toán Three-Way Merge, phân tích mâu thuẫ
 
 ## TL;DR
 
-- **Bản chất**: Git không so sánh trực tiếp 2 file với nhau (2-Way Diff), mà vận hành dựa trên **Thuật toán Gộp 3 Chiều (Three-Way Merge)** giữa điểm tổ tiên chung gần nhất (`BASE`), nhánh hiện tại (`OURS`/`HEAD`), và nhánh gộp (`THEIRS`).
+- **Bản chất**: Git không so sánh trực tiếp 2 file (2-Way Diff) mà gộp theo **Three-Way Merge** giữa `BASE` (tổ tiên chung gần nhất), `OURS`/`HEAD` (nhánh hiện tại) và `THEIRS`.
 - **Mục đích**: Tự động tích hợp các thay đổi không chồng lấn và phát hiện chính xác các xung đột logic khi hai nhánh cùng biến đổi một đoạn mã so với điểm gốc.
-- **Điểm mấu chốt**: Conflict chỉ xuất hiện khi cả hai nhánh cùng sửa đổi cùng một dòng/vùng mã nhưng cho ra kết quả khác nhau so với `BASE`. Giải quyết conflict trong `git merge` diễn ra một lần tại Merge Commit; trong khi `git rebase` diễn ra tuần tự từng commit một với nhãn `OURS`/`THEIRS` bị đảo ngược.
+- **Điểm mấu chốt**: Conflict nổ ra khi hai nhánh sửa cùng vùng nhưng khác kết quả so với `BASE`; `merge` giải một lần ở Merge Commit, `rebase` giải tuần tự từng commit với `OURS`/`THEIRS` đảo nhau.
 
 ---
 
@@ -119,8 +113,7 @@ git merge --abort    # hoặc: git rebase --abort
 
 ## Related Notes
 
-- [[Git_DAG_and_Object_Storage_Model]]
-- [[Git_Four_Zones_and_Reset_Lifecycle]]
-- [[Stack_vs_Heap_Memory_Fundamentals]]
+- DAG quyết định BASE của phép merge: [[Git_DAG_and_Object_Storage_Model]]
+- Reset dọn xung đột giữa các vùng: [[Git_Four_Zones_and_Reset_Lifecycle]]
 - [[Master_Backend_Engineering_SSOT]]
 - [[000_Methods_MOC]]

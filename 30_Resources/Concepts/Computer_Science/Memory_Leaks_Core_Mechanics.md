@@ -1,11 +1,5 @@
 ---
 tags: [type/concept, status/permanent]
-aliases:
-  [
-    Memory Leaks Core Mechanics,
-    Rò rỉ Bộ nhớ Nguyên lý Gốc,
-    Memory Leak Fundamentals,
-  ]
 date: 2026-08-09
 description: "Nguyên lý khoa học máy tính cốt lõi của Memory Leak: Khái niệm Unreachable vs Unintended Retention từ GC Roots trên môi trường Unmanaged và Managed."
 ---
@@ -14,7 +8,9 @@ description: "Nguyên lý khoa học máy tính cốt lõi của Memory Leak: Kh
 
 ## TL;DR
 
-Memory Leak (rò rỉ bộ nhớ) là hiện tượng bộ nhớ đã cấp phát trên Heap không còn được sử dụng trong logic nghiệp vụ nhưng hệ thống không thể thu hồi. Trong môi trường **Unmanaged** (C/C++), rò rỉ xảy ra khi lập trình viên quên gọi hàm giải phóng (`free`/`delete`). Trong môi trường **Managed** (Java, Go, C#, JavaScript), rò rỉ xảy ra khi đối tượng rác vẫn vô tình bị giữ lại trong đồ thị tham chiếu bắt nguồn từ **GC Roots**, khiến bộ dọn rác (Garbage Collector) coi nó là "còn khả năng truy cập" (Reachable).
+- **Bản chất**: Memory leak là bộ nhớ đã cấp phát nhưng không còn dùng trong nghiệp vụ mà vẫn reachable, nên không thu hồi được.
+- **Mục đích**: Phân biệt hai cơ chế khác nhau: quên `free` ở môi trường unmanaged và unintentional retention từ GC Roots ở môi trường managed.
+- **Điểm mấu chốt**: Trong managed runtime, leak không phải lỗi cấp phát mà là lỗi giữ tham chiếu; sửa bằng cách cắt tham chiếu, không bằng cách tăng heap.
 
 ---
 
@@ -38,7 +34,7 @@ Memory Leak (rò rỉ bộ nhớ) là hiện tượng bộ nhớ đã cấp phá
 
 ---
 
-## Practical Implementation
+## Danh mục rò rỉ và cách phòng ngừa
 
 ### Các Pattern Gây Rò rỉ Bộ nhớ Kinh điển Trong Lập trình
 
@@ -53,7 +49,7 @@ Memory Leak (rò rỉ bộ nhớ) là hiện tượng bộ nhớ đã cấp phá
 
 ## Related Notes
 
-- [[Garbage_Collection_Fundamentals]]
-- [[Stack_vs_Heap_Memory_Fundamentals]]
-- [[JS_Memory_Leaks_and_Mitigation]]
+- Cơ chế lẽ ra phải thu hồi đối tượng: [[Garbage_Collection_Fundamentals]]
+- Phân vùng bộ nhớ nơi leak phát sinh: [[Stack_vs_Heap_Memory_Fundamentals]]
+- Hiện thực leak ở tầng JavaScript: [[JS_Memory_Leaks_and_Mitigation]]
 - [[000_Concepts_MOC]]

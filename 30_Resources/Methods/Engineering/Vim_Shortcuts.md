@@ -1,7 +1,6 @@
 ---
 tags: [type/guide, status/permanent]
 date: 2026-06-07
-aliases: [Phím tắt Vim, Vim Shortcuts Cheat Sheet, Phím tắt nâng cao Vim]
 description: "Các phím tắt và câu lệnh thay thế vùng nâng cao trong Vim."
 ---
 
@@ -9,7 +8,9 @@ description: "Các phím tắt và câu lệnh thay thế vùng nâng cao trong 
 
 ## TL;DR
 
-Tập hợp các phím tắt nâng cao và câu lệnh dòng tương đối trong Vim giúp tăng tốc độ điều hướng con trỏ (Navigation), thay thế văn bản (Substitution) và viết code nhanh chóng mà không cần dùng chuột.
+- **Bản chất**: Tập phím tắt và lệnh dòng tương đối để điều hướng, thay thế văn bản và soạn code trong Vim.
+- **Mục đích**: Giảm thao tác tay và giữ ngón tay trên home row.
+- **Điểm mấu chốt**: Giá trị chỉ đến khi phím thành phản xạ; học thuộc danh sách mà không luyện thì chậm hơn dùng chuột.
 
 ## Navigation & Screen Control
 

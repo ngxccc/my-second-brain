@@ -1,7 +1,6 @@
 ---
 tags: [type/concept, status/permanent]
 date: 2026-01-30
-aliases: [Mental Models, Khuôn mẫu tư duy]
 description: "Các lăng kính lọc nhiễu thông tin."
 ---
 
@@ -9,7 +8,9 @@ description: "Các lăng kính lọc nhiễu thông tin."
 
 ## TL;DR
 
-Những lăng kính/khuôn mẫu trừu tượng được đúc kết từ nhiều ngành khoa học (Toán, Vật lý, Tâm lý học) để giúp con người lọc bỏ nhiễu loạn thông tin (noise), phân tích vấn đề đa chiều và đưa ra các quyết định lý trí hơn.
+- **Bản chất**: Tập lăng kính trừu tượng vay từ toán, vật lý và tâm lý học dùng để lọc nhiễu và phân tích vấn đề đa chiều.
+- **Mục đích**: Thay phản ứng cảm tính bằng một bộ câu hỏi có cấu trúc khi gặp vấn đề mới.
+- **Điểm mấu chốt**: Lăng kính chỉ có tác dụng khi nhu cầu an toàn cơ bản đã được đáp ứng; khi đang bị đe dọa ngắn hạn, Hệ thống 1 sẽ chiếm quyền và vô hiệu hóa tư duy có cấu trúc.
 
 ## Application Context & Maslow Alignment
 
@@ -23,7 +24,7 @@ Những lăng kính/khuôn mẫu trừu tượng được đúc kết từ nhi�
 - **Mục tiêu cốt lõi:** Kích hoạt Hệ thống 2 (Tư duy chậm). Khi đối mặt với rủi ro, não bộ thường phản xạ bằng cảm xúc (Hệ thống 1). Việc ép bản thân lấy một Mental Model ra áp dụng là hành động "phanh" não lại để đánh giá logic.
 - **Cấu trúc phân cấp (Cognitive Stack):** Để tăng tính thuyết phục và hiệu quả áp dụng, các mô hình tư duy được sắp xếp theo hệ quy chiếu phân cấp tầng nhận thức đi từ bộ lọc dữ liệu thô đến đưa ra hành động tối ưu thông qua [[Cognitive_Stack_Framework]].
 
-## Practical Implementation
+## Trade-offs và điểm mù của mô hình
 
 - **Trade-offs (Điểm mù của mô hình):** - _Sự gò ép (Force-fitting):_ Cố tình bẻ cong sự thật hoặc dữ liệu thực tế chỉ để cho nó khớp với cái mô hình mà mình đang xài (ví dụ: cái gì cũng cố ép về quy luật 80/20 dù data phân bổ đều).
   - _Tê liệt phân tích (Analysis Paralysis):_ Dùng quá nhiều mô hình (lôi cả Socratic, Occam's Razor, Inversion ra cùng lúc) khiến não bị "overload" và kẹt cứng, không dám ra quyết định cuối cùng.

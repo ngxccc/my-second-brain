@@ -1,13 +1,6 @@
 ---
 tags: [type/concept, status/permanent]
 date: 2026-07-27
-aliases:
-  [
-    Tactical Empathy,
-    Chris Voss Negotiation,
-    Thấu cảm chiến thuật,
-    Never Split the Difference,
-  ]
 description: "Thấu cảm chiến thuật & Kỹ thuật đàm phán tâm lý FBI (Mirroring, Labeling, Accusation Audit)."
 ---
 
@@ -15,7 +8,9 @@ description: "Thấu cảm chiến thuật & Kỹ thuật đàm phán tâm lý F
 
 ## TL;DR
 
-Tactical Empathy (Thấu cảm chiến thuật) là phương pháp đàm phán tâm lý được phát triển bởi Chris Voss (cựu chuyên gia đàm phán con tin FBI, tác giả cuốn _Never Split the Difference_). Phương pháp này thừa nhận con người ra quyết định chủ yếu dựa trên cảm xúc và bản năng thay vì logic thuần túy. Bằng cách chủ động lắng nghe, dán nhãn cảm xúc và đặt câu hỏi định hướng, bạn làm chủ cuộc đàm phán bằng cách xoa dịu cảm xúc tiêu cực và tạo sự tin tưởng tuyệt đối.
+- **Bản chất**: Tactical empathy dùng mirroring, labeling và accusation audit để hạ nhiệt cảm xúc đối phương trước khi bàn nội dung.
+- **Mục đích**: Đưa người đang phòng thủ về trạng thái có thể nghe, vì quyết định được đưa ra bằng cảm xúc trước rồi mới đến lý lẽ.
+- **Điểm mấu chốt**: Không được tranh luận hay áp logic khi đối phương đang kích động - làm vậy chỉ củng cố phòng thủ; phải hạ nhiệt trước, thuyết phục sau.
 
 ## Application Context & Maslow Alignment
 
@@ -34,7 +29,7 @@ Bộ công cụ đàm phán tâm lý cốt lõi của Chris Voss bao gồm:
 5. **Calibrated Questions (Câu hỏi định hướng):** Đặt các câu hỏi mở bắt đầu bằng _"How"_ (Làm thế nào) hoặc _"What"_ (Cái gì). Chuyển gánh nặng giải quyết vấn đề sang đối phương mà vẫn giữ cho bạn quyền kiểm soát (Ví dụ: _"Làm thế nào để tôi có thể làm điều đó nếu ngân sách không đủ?"_).
 6. **Kích hoạt phản ứng "That's Right" (Đúng thế):** Mục tiêu không phải là bắt đối phương nói _"You're right"_ (Bạn đúng - thường là lời nói dối để kết thúc câu chuyện), mà là _"That's right"_ (Đúng thế - khi họ cảm thấy bạn đã diễn tả chính xác thực tại của họ).
 
-## Concrete Examples
+## Ví dụ thực tế
 
 - **Xử lý khiếu nại khách hàng khó tính:**
   - _Accusation Audit:_ "Anh/Chị có thể đang nghĩ chúng em làm việc thiếu trách nhiệm và dịch vụ này là một cú lừa..."
@@ -42,7 +37,7 @@ Bộ công cụ đàm phán tâm lý cốt lõi của Chris Voss bao gồm:
   - _Mirroring:_ Khách hàng bảo "Dự án chậm trễ quá!", Bạn phản hồi: "Chậm trễ quá?" với ngữ điệu nhẹ nhàng $\rightarrow$ Khách hàng tiếp tục xả và giải thích nguyên nhân ẩn đằng sau.
   - _Calibrated Question:_ "Làm thế nào để chúng em có thể khắc phục sự cố này mà không làm ảnh hưởng đến kế hoạch ra mắt tuần sau của anh/chị?"
 
-## Practical Implementation
+## Trade-offs và điểm mù cần tránh
 
 - **Trade-offs (Điểm mù cần tránh):**
   - _Thấu cảm nhầm thành Nhượng bộ:_ Thấu cảm chiến thuật là **hiểu** cảm xúc đối phương để chi phối cuộc chơi, không phải là thỏa hiệp hay đầu hàng trước đòi hỏi vô lý.

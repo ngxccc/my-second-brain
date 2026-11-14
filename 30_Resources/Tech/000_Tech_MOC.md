@@ -1,7 +1,6 @@
 ---
 tags: [type/moc, topic/tech]
 date: 2026-04-28
-aliases: [Tech Index, Tech Map]
 description: "Bản đồ điều hướng trung tâm cho toàn bộ tri thức kỹ thuật. Phân loại theo các Domain cốt lõi và tự động truy vấn dữ liệu động bằng DataviewJS."
 ---
 

@@ -1,6 +1,7 @@
 ---
 title: NextJS Dynamic Opt Out and connection() API
 tags: [type/concept, status/permanent]
+date: 2026-06-21
 created: 2026-06-20
 description: "Cơ chế ngắt Prerender tĩnh và chuyển đổi sang Dynamic Rendering ở Next.js 15/16."
 ---
@@ -9,7 +10,9 @@ description: "Cơ chế ngắt Prerender tĩnh và chuyển đổi sang Dynamic 
 
 ## TL;DR
 
-Trong Next.js 15/16 App Router, `connection()` (từ `next/server`) là một hàm báo hiệu (signaling API) dùng để chủ động ngắt quá trình Prerender tĩnh (Static Generation) tại thời điểm build. Khi gặp `await connection()`, Next.js sẽ hiểu rằng đoạn code/route này bắt buộc phải chạy ở runtime (dynamic) và dừng render tĩnh route đó mà không ném ra lỗi crash build. Thiết kế này giúp bảo vệ các API động (như truy vấn DB theo request, gọi headers, cookies) và là nền tảng cốt lõi của tính năng Partial Prerendering (PPR) để stream nội dung động.
+- **Bản chất**: `await connection()` báo cho Next.js biết route phải chạy ở runtime, dừng prerender tĩnh mà không làm crash build.
+- **Mục đích**: Bảo vệ route dùng `headers()`, `cookies()` hoặc truy vấn DB theo request khỏi bị đánh giá lúc build.
+- **Điểm mấu chốt**: Đây là tín hiệu opt-out tường minh, và là nền của PPR vì cho phép tách phần tĩnh khỏi phần động trên cùng một route.
 
 ---
 
@@ -29,8 +32,8 @@ Tuy nhiên, tại thời điểm build:
 `connection()` là **hàm nguyên bản (primitive)** tổng quát trong Next.js 15+ để chủ động kích hoạt chế độ dynamic rendering, thay vì chỉ là một giải pháp tình thế (workaround) cho riêng hàm `headers()`.
 
 - **Cú pháp:** `import { connection } from "next/server";`
-- **Cơ chế hoạt động:** Khi trình biên dịch tĩnh của Next.js (prerendering engine) chạy gặp `await connection()`, nó sẽ nhận được tín hiệu rõ ràng rằng _"quá trình render này bắt buộc phải là dynamic"_. Next.js sẽ kích hoạt ngoại lệ `NEXT_PRERENDER_INTERRUPTED`, ngắt prerender tĩnh một cách an toàn và hoãn (defer) việc render phần logic phía sau cho đến runtime.
-- **Phạm vi bao phủ:** Nó bao quát và thay thế cho mọi API động khác như `headers()`, `cookies()`, `searchParams`, `unstable_noStore()`, hoặc bất kỳ truy vấn cơ sở dữ liệu động/gọi API bên thứ ba nào.
+- **Cơ chế hoạt động:** Khi prerendering engine gặp `await connection()`, nó nhận tín hiệu rằng render này bắt buộc phải là dynamic: Next.js ném ngoại lệ `NEXT_PRERENDER_INTERRUPTED`, ngắt prerender an toàn và defer phần logic phía sau tới runtime.
+- **Phạm vi bao phủ:** thay thế cho mọi API động khác như `headers()`, `cookies()`, `searchParams`, `unstable_noStore()`, hoặc truy vấn cơ sở dữ liệu động/gọi API bên thứ ba.
 
 ### 3. Đánh đổi: `force-dynamic` vs `connection()`
 
@@ -106,16 +109,16 @@ export async function GET(request: Request) {
 
 ### Q1: Lỗi `NEXT_PRERENDER_INTERRUPTED` trong Next.js App Router nghĩa là gì và cách xử lý?
 
-- **Trả lời:** Đây là ngoại lệ được ném ra khi Next.js cố gắng chạy static prerender một trang/API nhưng gặp phải các hàm động (như `headers()`, `cookies()`, hoặc `connection()`). Next.js bắt ngoại lệ này để chuyển trang đó sang Dynamic rendering. Để xử lý triệt để lỗi crash build, chúng ta cần đảm bảo các hàm động được gọi đúng vị trí, hoặc sử dụng `await connection()` để thông báo rõ ràng cho trình biên dịch bốc tách phần động.
+- **Trả lời:** Đây là ngoại lệ Next.js ném ra khi cố static prerender một trang/API nhưng gặp hàm động (`headers()`, `cookies()` hoặc `connection()`), rồi bắt lại để chuyển trang sang Dynamic rendering. Để hết lỗi crash build, hãy gọi hàm động đúng vị trí hoặc dùng `await connection()` để báo rõ cho trình biên dịch.
 
 ### Q2: Tại sao Next.js 15+ lại khuyên dùng `connection()` thay vì `export const dynamic = 'force-dynamic'`?
 
-- **Trả lời:** Vì `force-dynamic` là một cấu hình thô bạo làm mất hoàn toàn khả năng render tĩnh của trang. Trong khi đó, `connection()` hỗ trợ mô hình **Partial Prerendering (PPR)**. Next.js vẫn có thể tạo ra static HTML shell (ví dụ: khung xương Layout, Header, Footer tĩnh) và chỉ hoãn render phần dynamic (ví dụ: giỏ hàng hoặc thông tin cá nhân của user). Điều này giúp cải thiện đáng kể tốc độ tải trang ban đầu (FCP/TTFB).
+- **Trả lời:** Vì `force-dynamic` là cấu hình thô bạo làm mất hoàn toàn khả năng render tĩnh của trang; `connection()` hỗ trợ **Partial Prerendering (PPR)**: Next.js vẫn tạo static HTML shell (Layout, Header, Footer) và chỉ hoãn phần dynamic (giỏ hàng, thông tin user), cải thiện FCP/TTFB.
 
 ---
 
 ## Related Notes
 
-- Bản đồ tri thức lập trình: [[000_Tech_MOC]]
+- [[000_Tech_MOC]]
 - Next.js 16 Caching: [[NextJS_16_Cache_Components]]
 - Nền tảng PPR Cloud: [[NextJS_PPR_Platform_Support]]

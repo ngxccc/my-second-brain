@@ -1,14 +1,6 @@
 ---
 title: Postgres MVCC Tuple Visibility
 tags: [type/concept, status/permanent]
-aliases:
-  [
-    MVCC,
-    Multi-Version Concurrency Control,
-    Tuple Visibility,
-    Postgres MVCC,
-    Snapshot Isolation,
-  ]
 date: 2026-09-16
 description: "Cơ chế quản lý truy cập đồng thời đa phiên bản (MVCC), vòng đời Tuple và khả năng hiển thị dữ liệu (Visibility) trong PostgreSQL."
 ---
@@ -17,9 +9,9 @@ description: "Cơ chế quản lý truy cập đồng thời đa phiên bản (M
 
 ## TL;DR
 
-- **Bản chất**: PostgreSQL thực thi quy tắc "Không sửa đè" (Out-of-place Update). Mọi thao tác `UPDATE` và `DELETE` không chỉnh sửa trực tiếp dữ liệu tại chỗ, mà ghi thêm Tuple phiên bản mới và đánh dấu trạng thái hết hạn trên Tuple cũ thông qua Transaction ID.
-- **Mục đích**: Hiện thực hóa triết lý "Người đọc không chặn người ghi, người ghi không chặn người đọc" (Readers never block Writers, Writers never block Readers), cho phép hàng nghìn truy vấn đồng thời với độ trễ tối thiểu.
-- **Điểm mấu chốt**: Tính hiển thị (Visibility) của một Tuple được xác định thông qua việc so sánh Transaction ID của truy vấn với hai trường ẩn `xmin` (ID tạo) và `xmax` (ID hủy/cập nhật) nằm trong Header của Tuple.
+- **Bản chất**: PostgreSQL không sửa đè (Out-of-place Update): `UPDATE`/`DELETE` ghi Tuple phiên bản mới và đánh dấu hết hạn Tuple cũ bằng Transaction ID.
+- **Mục đích**: Hiện thực hóa triết lý "người đọc không chặn người ghi, người ghi không chặn người đọc", cho phép hàng nghìn truy vấn đồng thời độ trễ tối thiểu.
+- **Điểm mấu chốt**: Visibility của một Tuple xác định bằng cách so Transaction ID của truy vấn với hai trường ẩn `xmin` (ID tạo) và `xmax` (ID hủy) trong Header.
 
 ---
 
@@ -39,12 +31,12 @@ Mỗi hàng dữ liệu (Tuple) lưu trữ trên các trang đĩa (Heap Page 8KB
 └────────────────────────────────────────────────────────────────────────┘
 ```
 
-- **`xmin` (Creation XID)**: Transaction ID của giao dịch đã chèn (`INSERT`) hoặc sinh ra phiên bản Tuple này.
+- **`xmin` (Creation XID)**: Transaction ID của giao dịch đã `INSERT` hoặc sinh ra phiên bản Tuple này.
 - **`xmax` (Expiry XID / Lock XID)**:
   - Nếu Tuple còn hiệu lực: $xmax = 0$.
-  - Nếu Tuple đã bị xóa (`DELETE`) hoặc cập nhật (`UPDATE`): $xmax$ lưu Transaction ID của giao dịch thực hiện hành động đó.
+  - Nếu Tuple bị xóa/cập nhật: $xmax$ lưu Transaction ID của giao dịch thực hiện hành động đó.
   - Nếu hàng bị khóa (`SELECT FOR UPDATE`): $xmax$ tạm thời lưu Transaction ID của giao dịch giữ khóa.
-- **`t_ctid` (Current Tuple ID)**: Con trỏ địa chỉ vật lý `(page_number, tuple_index)`. Khi một Tuple bị `UPDATE`, `t_ctid` của Tuple cũ sẽ trỏ thẳng tới vị trí của Tuple mới sinh ra.
+- **`t_ctid` (Current Tuple ID)**: con trỏ địa chỉ vật lý `(page_number, tuple_index)`. Khi Tuple bị `UPDATE`, `t_ctid` của bản cũ trỏ tới vị trí bản mới sinh ra.
 
 ---
 
@@ -103,14 +95,14 @@ Nhờ cơ chế này, câu lệnh `SELECT` đọc trực tiếp phiên bản h�
 
 ## 4. Hệ quả vật lý: Dead Tuples và vai trò của VACUUM
 
-Cơ chế "Không sửa đè" mang lại khả năng xử lý song song cực cao, nhưng đánh đổi bằng việc tích lũy các bản ghi rác trên đĩa:
+Cơ chế "Không sửa đè" cho khả năng song song cao, nhưng đánh đổi bằng việc tích lũy bản ghi rác trên đĩa:
 
-- **Dead Tuples (Hàng chết)**: Các Tuple có `xmax` thuộc về các giao dịch đã `COMMIT` trong quá khứ và không còn bất kỳ Snapshot nào đang chạy có thể nhìn thấy.
-- **Table Bloat (Phình bảng)**: Không gian đĩa chứa Dead Tuples không tự động co lại sau khi hoàn tất giao dịch. Nếu bảng nhận lượng `UPDATE/DELETE` lớn liên tục, kích thước tệp vật lý sẽ tăng mất kiểm soát.
+- **Dead Tuples (Hàng chết)**: Tuple có `xmax` thuộc giao dịch đã `COMMIT` và không còn Snapshot nào nhìn thấy.
+- **Table Bloat (Phình bảng)**: không gian chứa Dead Tuples không tự co lại; nếu bảng nhận nhiều `UPDATE/DELETE`, kích thước tệp vật lý tăng mất kiểm soát.
 - **Cơ chế VACUUM / AutoVacuum**:
   1. Quét qua các Heap Page để xác định Dead Tuples.
   2. Xóa các mục trỏ đến Dead Tuples trong B+ Tree Index.
-  3. Đánh dấu không gian của Dead Tuples là "vùng trống khả dụng" (Free Space Map) để các câu lệnh `INSERT`/`UPDATE` tiếp theo tái sử dụng mà không cần cấp phát thêm đĩa.
+  3. Đánh dấu không gian Dead Tuples là "vùng trống khả dụng" (Free Space Map) để `INSERT`/`UPDATE` sau tái sử dụng.
 
 ---
 
@@ -141,8 +133,8 @@ SELECT ctid, xmin, xmax, id, name FROM items;
 
 ## Related Notes
 
-- [[Postgres_Select_For_Update_Pessimistic_Locking]]
-- [[Atomic_Conditional_Update]]
-- [[Index_BPlusTree]]
-- [[Database_Indexing_Guidelines]]
+- Khóa hàng tương tác với xmax: [[Postgres_Select_For_Update_Pessimistic_Locking]]
+- Cách tránh phụ thuộc visibility khi ghi: [[Atomic_Conditional_Update]]
+- Index phải hiểu Dead Tuple để quét: [[Index_BPlusTree]]
+- Thiết kế index dưới MVCC: [[Database_Indexing_Guidelines]]
 - [[000_Tech_MOC]]

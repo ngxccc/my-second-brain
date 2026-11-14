@@ -2,11 +2,6 @@
 tags: [type/guide, status/permanent]
 status: permanent
 date: 2026-08-16
-aliases:
-  - Master Backend Engineering SSOT
-  - Backend Engineering Mastery Pipeline
-  - Backend Engineering Mastery SSOT
-  - Evergreen Software Engineering Fundamentals
 description: "Single Source of Truth (SSOT), Active Workbench, 6 Evergreen Fundamentals, Diagnostic Protocols, and 4-Layer Cognitive Roadmap for Backend & Software Engineers."
 ---
 
@@ -14,7 +9,9 @@ description: "Single Source of Truth (SSOT), Active Workbench, 6 Evergreen Funda
 
 ## TL;DR
 
-Tài liệu này là **Single Source of Truth (SSOT)** và **Interactive Command Center** định hình toàn bộ lộ trình phát triển năng lực, tư duy kiến trúc, và tiêu chuẩn kỹ nghệ cho Backend & Software Engineering. Được xây dựng dựa trên triết lý kỹ nghệ của các kỹ sư huyền thoại (_Salvatore Sanfilippo (antirez)_, _Mitchell Hashimoto_, _Fabrice Bellard_, _Martin Fowler_): **Giá trị cốt lõi đến từ độ sâu kiến trúc, khả năng giải quyết bài toán phức tạp bằng giải pháp tối giản (KISS), và sự thấu hiểu bản chất cách hệ thống vận hành under the hood.**
+- **Bản chất**: SSOT định hình lộ trình năng lực backend: 6 fundamentals, diagnostic protocol, và roadmap 4 tầng nhận thức.
+- **Mục đích**: Là điểm điều phối duy nhất khi mất phương hướng: mục tiêu, sprint hiện tại và tiêu chuẩn kỹ nghệ nằm cùng một chỗ.
+- **Điểm mấu chốt**: Giá trị cốt lõi là độ sâu kiến trúc và giải pháp tối giản, không phải số công nghệ liệt kê được; file này chỉ có ích nếu được cập nhật theo tuần.
 
 ---
 
@@ -49,7 +46,7 @@ _Cây lộ trình 4 tầng nhận thức - Đánh dấu `[x]` khi đã nghiệm 
 #### Computer Science & OS Process / Memory Execution
 
 - [x] [[Stack_vs_Heap_Memory_Fundamentals]]
-- [x] [[Process_vs_Thread_and_Context_Switching]]
+- [x] [[Process_vs_Thread_Memory_Model]]
 - [ ] [[Concurrency_Primitives_Mutex_Semaphore_Atomic]]
 - [ ] [[Garbage_Collection_Fundamentals]]
 - [ ] [[Memory_Leaks_Core_Mechanics]]
@@ -59,7 +56,7 @@ _Cây lộ trình 4 tầng nhận thức - Đánh dấu `[x]` khi đã nghiệm 
 #### JavaScript Engine & V8 Internals
 
 - [ ] [[JS_Stack_vs_Heap_Memory]]
-- [ ] [[JS_Event_Loop]]
+- [ ] [[JS_Event_Loop_Macrotask_vs_Microtask]]
 - [ ] [[JS_Generational_Garbage_Collection]]
 - [ ] [[JS_Memory_Leaks_and_Mitigation]]
 - [ ] [[JS_V8_Hidden_Classes_Inline_Caching]]
@@ -121,7 +118,6 @@ _Cây lộ trình 4 tầng nhận thức - Đánh dấu `[x]` khi đã nghiệm 
 - [ ] [[Dependency_Injection]]
 - [ ] [[Interface_Driven_Design]]
 - [ ] [[Repository_Pattern_vs_Fat_Service]]
-- [ ] [[DI_WinForms_Components]]
 
 #### Authentication, Authorization & Web Security Core
 
@@ -133,7 +129,7 @@ _Cây lộ trình 4 tầng nhận thức - Đánh dấu `[x]` khi đã nghiệm 
 
 #### System Design Frameworks
 
-- [ ] [[System_Design_Architecture_Roadmap]]
+- [ ] [[System_Design_Roadmap]]
 - [ ] [[Problem_Driven_System_Design_Framework]]
 - [ ] [[Newsfeed_Architecture_Fanout]]
 
@@ -294,7 +290,7 @@ _Khi hệ thống gặp sự cố (High CPU, Memory Leak, Timeout, Deadlock), tu
    - [ ] [[Engineering_Post_Mortem_Writing_Guide]]
 
 5. **AI-as-Mentor Protocol (Cognitive Ownership & Active Coding)**:
-   - Tuân thủ [[RMIT_Critical_Review_AI_Coding_2026]] (Phase 1: System Fundamentals): Tuyệt đối không copy-paste code do AI sinh sẵn cho các thuật toán, concurrency logic, hay core business rules.
+   - Tuân thủ nguyên tắc Phase 1 (System Fundamentals): Tuyệt đối không copy-paste code do AI sinh sẵn cho các thuật toán, concurrency logic, hay core business rules.
    - **Phân định vai trò:**
      - **AI đóng vai trò:** Socratic Tutor (gợi mở tư duy, giải thích under-the-hood, chỉ ra edge-cases, cung cấp tài liệu uy tín, và review phản biện logic).
      - **Human đóng vai trò:** Author & Implementer (tự tay tư duy thuật toán, tự gõ từng dòng code thực nghiệm, tự debug qua compiler/runtime errors).
@@ -315,11 +311,11 @@ Một chủ đề hoặc tính năng chỉ được đánh dấu `[x]` khi thỏ
 
 ## Related Notes
 
-- [[System_Design_Architecture_Roadmap]]
+- [[System_Design_Roadmap]]
 - [[Problem_Driven_System_Design_Framework]]
 - [[Postgres_SQL_Performance_Benchmarking_Guide]]
 - [[Automated_Verification_System_Framework]]
-- [[Data_Structures_and_Algorithms_Roadmap]]
+- [[DSA_Roadmap]]
 - [[English_Learner_Profile]]
 - [[00_Dashboard]]
 - [[000_Methods_MOC]]

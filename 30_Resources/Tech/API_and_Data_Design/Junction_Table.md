@@ -1,8 +1,6 @@
 ---
 tags: [type/concept, status/permanent]
 date: 2026-06-07
-aliases:
-  [Bảng liên kết, Junction Table, Bridge Table, Join Table, Khóa chính phức hợp]
 description: "Giải quyết quan hệ Nhiều-Nhiều bằng bảng liên kết và khóa chính phức hợp."
 ---
 
@@ -10,7 +8,9 @@ description: "Giải quyết quan hệ Nhiều-Nhiều bằng bảng liên kết
 
 ## TL;DR
 
-Bảng liên kết (Junction Table) giải quyết mối quan hệ **Nhiều-Nhiều (Many-to-Many)** trong cơ sở dữ liệu quan hệ bằng cách đứng ở giữa kết nối hai bảng chính. Sử dụng **Khóa chính phức hợp (Composite Primary Key)** trên hai cột khóa ngoại để loại bỏ trùng lặp dữ liệu ở mức vật lý mà không cần cột `id` độc lập.
+- **Bản chất**: Quan hệ nhiều-nhiều được giải bằng một bảng đứng giữa chứa hai foreign key, với composite primary key `(warehouse_id, product_id)`.
+- **Mục đích**: Liên kết hai bảng chính, lưu thuộc tính riêng của quan hệ (`quantity`), và chặn dữ liệu trùng ở mức vật lý.
+- **Điểm mấu chốt**: Composite primary key thay cho cột `id` tự tăng mới là thứ chống duplicate; thêm cột `id` riêng sẽ mở đường cho hai dòng cùng cặp khóa.
 
 ## Core Concept
 

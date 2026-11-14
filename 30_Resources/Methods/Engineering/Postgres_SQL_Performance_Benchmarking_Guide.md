@@ -1,12 +1,6 @@
 ---
 tags: [type/method, status/permanent]
 date: 2026-08-07
-aliases:
-  [
-    Postgres SQL Performance Benchmarking Guide,
-    Hướng dẫn SQL Benchmark và EXPLAIN ANALYZE,
-    PostgreSQL Performance Optimization,
-  ]
 description: "Hướng dẫn chuyên sâu về tối ưu hóa truy vấn PostgreSQL và đo đạc hiệu năng (Benchmarking) từ bản chất giải phẫu chỉ mục B+Tree, kỹ thuật đọc câu lệnh `EXPLAIN (ANALYZE, BUFFERS)`, phân trang Cursor..."
 ---
 
@@ -14,7 +8,9 @@ description: "Hướng dẫn chuyên sâu về tối ưu hóa truy vấn Postgre
 
 ## TL;DR
 
-Hướng dẫn chuyên sâu về tối ưu hóa truy vấn PostgreSQL và đo đạc hiệu năng (Benchmarking) từ bản chất giải phẫu chỉ mục B+Tree, kỹ thuật đọc câu lệnh `EXPLAIN (ANALYZE, BUFFERS)`, phân trang Cursor-based đến thực hành viết kịch bản `k6` Stress Test đo RPS và Latency ($p95/p99$) cho ứng dụng Backend.
+- **Bản chất**: Tối ưu query PostgreSQL dựa trên bằng chứng: B+Tree, `EXPLAIN (ANALYZE, BUFFERS)`, và đo bằng k6.
+- **Mục đích**: Thay "đoán mò" bằng số đo thật về RPS, latency p95/p99 và buffer usage.
+- **Điểm mấu chốt**: Không có `EXPLAIN ANALYZE` thì mọi thay đổi index chỉ là giả thuyết; phải đo cả trước và sau khi sửa.
 
 ---
 
@@ -111,7 +107,7 @@ export default function () {
 ## Related Notes
 
 - Lộ trình tổng thể Backend: [[Master_Backend_Engineering_SSOT]]
-- Hướng dẫn System Design: [[System_Design_Architecture_Roadmap]]
+- Hướng dẫn System Design: [[System_Design_Roadmap]]
 - Hướng dẫn Stress Test Local: [[Local_Stress_Testing_Benchmark]]
 - Tối ưu hóa Database Indexing: [[Database_Indexing_Guidelines]]
 - Cấu trúc dữ liệu B+Tree: [[Index_BPlusTree]]

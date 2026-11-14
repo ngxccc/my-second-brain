@@ -1,12 +1,6 @@
 ---
 tags: [type/concept, status/permanent]
 date: 2026-06-24
-aliases:
-  [
-    Hiệu quả thực tế của mặt nạ giấy,
-    Efficacy of Facial Sheet Masks,
-    Cơ chế hoạt động của mặt nạ dưỡng da,
-  ]
 description: "Mặt nạ giấy là một liệu pháp dưỡng ẩm cấp tốc hiệu quả dựa trên hiệu ứng bít kín cơ học (occlusion effect) giúp đẩy tinh chất vào lớp sừng của da. Tuy nhiên, hiệu quả làm căng mịn này chỉ mang tính..."
 ---
 
@@ -14,7 +8,9 @@ description: "Mặt nạ giấy là một liệu pháp dưỡng ẩm cấp tốc
 
 ## TL;DR
 
-Mặt nạ giấy là một liệu pháp dưỡng ẩm cấp tốc hiệu quả dựa trên hiệu ứng bít kín cơ học (occlusion effect) giúp đẩy tinh chất vào lớp sừng của da. Tuy nhiên, hiệu quả làm căng mịn này chỉ mang tính tạm thời (kéo dài vài giờ) và sẽ biến mất nếu không được khóa ẩm bằng kem dưỡng. Đắp mặt nạ quá lâu hoặc lạm dụng quá nhiều có thể phản tác dụng, dẫn đến thẩm thấu ngược hoặc làm suy yếu hàng rào bảo vệ da.
+- **Bản chất**: Mặt nạ giấy tạo hiệu ứng bít kín (occlusion), làm chậm bay hơi và tăng thẩm thấu humectant vào lớp sừng.
+- **Mục đích**: Dưỡng ẩm cấp tốc và làm mềm bề mặt da trong vài giờ, không phải điều trị cấu trúc da.
+- **Điểm mấu chốt**: Hiệu quả mất đi khi thiếu bước khóa ẩm sau đó; đắp mặt nạ mà không bôi kem dưỡng chỉ là ngâm nước tạm thời.
 
 ## Core Concept
 
@@ -32,7 +28,7 @@ Mặt nạ giấy là một liệu pháp dưỡng ẩm cấp tốc hiệu quả 
   - **Tính chất tạm thời:** Lớp sừng chỉ ngậm nước căng mọng tạm thời (transitional swelling). Nếu không có kem dưỡng chứa chất khóa ẩm vật lý (Ceramides, Squalane, Petrolatum) để niêm phong lại, lượng nước này sẽ biến mất hoàn toàn trong 2–8 giờ.
   - **Không thay thế được kem dưỡng:** Mặt nạ giấy chỉ là công cụ nạp độ ẩm cấp tốc, không chứa đủ lượng lipid cần thiết để phục hồi hàng rào bảo vệ da lâu dài.
 
-## Practical Implementation
+## Bảng cách dùng đúng
 
 Để sử dụng mặt nạ giấy đạt hiệu quả tối đa và bảo vệ da, cần áp dụng các biện pháp sau:
 

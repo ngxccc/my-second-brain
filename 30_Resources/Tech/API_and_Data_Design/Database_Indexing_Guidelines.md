@@ -1,8 +1,6 @@
 ---
 tags: [type/concept, status/permanent]
 date: 2026-07-04
-aliases:
-  [Quy tắc thiết lập Index, Database Indexing Guidelines, Khi nào dùng Index]
 description: "Hướng dẫn chi tiết khi nào dùng Index thường, Composite Index và Partial Index."
 ---
 
@@ -10,7 +8,9 @@ description: "Hướng dẫn chi tiết khi nào dùng Index thường, Composit
 
 ## TL;DR
 
-Quy tắc lựa chọn và thiết lập chỉ mục (Index) hiệu quả cho cơ sở dữ liệu quan hệ dựa trên tính chất chọn lọc (Selectivity), lực lượng (Cardinality) và tần suất truy vấn. Ưu tiên **Composite Index** (tuân thủ Left-Prefix) cho sắp xếp đa chiều, **Partial Index** cho dữ liệu động (loại bỏ các trạng thái tĩnh phổ biến), và tận dụng **Index Skip Scan (PostgreSQL 18+)** để tối ưu số lượng chỉ mục dư thừa dựa trên Lực lượng (Cardinality) của cột đầu tiên.
+- **Bản chất**: Index chỉ có lợi khi query lọc ra dưới 10-15% số dòng; quyết định dựa trên cardinality và selectivity của cột.
+- **Mục đích**: Chọn đúng loại index (single, composite theo left-prefix, partial) và biết khi nào xóa index dư thừa để không trả giá bằng dung lượng đĩa và tốc độ ghi.
+- **Điểm mấu chốt**: Composite `(col1, col2)` chỉ dùng được khi query có `col1`; ngoại lệ là Index Skip Scan (PostgreSQL 18+) chỉ hiệu quả khi cardinality của `col1` thấp.
 
 ---
 
@@ -42,10 +42,10 @@ Quy tắc lựa chọn và thiết lập chỉ mục (Index) hiệu quả cho c�
 
 ##### ️ Quy tắc loại bỏ Single Index dựa trên Cardinality của `col1`
 
-| Cardinality của `col1`     | Ví dụ Composite Index `(col1, col2)`                 | Lọc chỉ theo `col2` dùng Index Skip Scan?                               | Có nên XÓA / BỎ Single Index trên `col2` không?      | Lý do kỹ thuật                                                                                                                                                      |
-| :------------------------- | :--------------------------------------------------- | :---------------------------------------------------------------------- | :--------------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **THẤP (Low Cardinality)** | `(status, expires_at)` hoặc `(status, locked_until)` | **CỰC KỲ NHANH** (Số giá trị $K$ nhỏ, ví dụ status chỉ có 3 trạng thái) | **NÊN XÓA / KHÔNG CẦN TẠO** Single Index trên `col2` | Trình truy vấn chỉ cần nhảy qua $K=3$ nhánh B-Tree đại diện. Loại bỏ Single Index `(col2)` giúp tiết kiệm 100% dung lượng đĩa và chi phí I/O khi `INSERT`/`UPDATE`. |
-| **CAO (High Cardinality)** | `(user_id, created_at)`                              | **RẤT CHẬM** (Số giá trị $K$ lớn, ví dụ có 1 triệu `user_id` khác nhau) | **BẮT BUỘC GIỮ / TẠO MỚI** Single Index trên `col2`  | Trình truy vấn phải thực hiện 1 triệu lần B-Tree search để nhảy qua từng `user_id`, hiệu năng kém hơn cả `Seq Scan`. Do đó phải giữ Single Index `(created_at)`.    |
+| Cardinality của `col1`     | Ví dụ Composite Index `(col1, col2)`                 | Lọc chỉ theo `col2` dùng Index Skip Scan?              | Nên XÓA Single Index trên `col2`?         | Lý do kỹ thuật                                                                                                                           |
+| :------------------------- | :--------------------------------------------------- | :----------------------------------------------------- | :---------------------------------------- | :--------------------------------------------------------------------------------------------------------------------------------------- |
+| **THẤP (Low Cardinality)** | `(status, expires_at)` hoặc `(status, locked_until)` | **CỰC KỲ NHANH** ($K$ nhỏ, status chỉ có 3 trạng thái) | **NÊN XÓA** Single Index trên `col2`      | Trình truy vấn chỉ nhảy qua $K=3$ nhánh B-Tree; bỏ Single Index `(col2)` tiết kiệm 100% dung lượng đĩa và chi phí I/O `INSERT`/`UPDATE`. |
+| **CAO (High Cardinality)** | `(user_id, created_at)`                              | **RẤT CHẬM** ($K$ lớn, 1 triệu `user_id` khác nhau)    | **BẮT BUỘC GIỮ** Single Index trên `col2` | Phải 1 triệu lần B-Tree search, kém hơn cả `Seq Scan`; do đó phải giữ Single Index `(created_at)`.                                       |
 
 #### Partial Index
 

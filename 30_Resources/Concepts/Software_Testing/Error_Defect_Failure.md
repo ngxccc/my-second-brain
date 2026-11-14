@@ -1,7 +1,6 @@
 ---
 tags: [type/concept, status/permanent]
 date: 2026-07-07
-aliases: [Lỗi nhầm lẫn sự cố, Error Defect Failure]
 description: "Định nghĩa và chu kỳ lỗi nhầm lẫn, lỗi sai sót, và sự cố phần mềm theo chuẩn ISTQB."
 ---
 
@@ -9,7 +8,9 @@ description: "Định nghĩa và chu kỳ lỗi nhầm lẫn, lỗi sai sót, v�
 
 ## TL;DR
 
-Trong kiểm thử phần mềm, việc phân biệt rõ giữa Error (Sai sót), Defect/Bug (Lỗi trong code/tài liệu) và Failure (Sự cố khi vận hành) là vô cùng quan trọng. Sự nhầm lẫn của con người (Error) dẫn đến khuyết tật trong hệ thống (Defect), và khi khuyết tật đó được thực thi sẽ tạo ra hoạt động sai lệch thực tế của phần mềm (Failure).
+- **Bản chất**: Chuỗi nhân quả theo ISTQB: con người mắc Error (sai sót), tạo ra Defect trong code hoặc tài liệu, và Defect khi được thực thi gây ra Failure.
+- **Mục đích**: Dùng đúng từ khi báo lỗi và điều tra, để không nhầm triệu chứng quan sát được với nguyên nhân gốc.
+- **Điểm mấu chốt**: Một Defect có thể tồn tại mà chưa gây Failure nếu nhánh code đó chưa được chạy; đây là lý do coverage theo nhánh quan trọng hơn coverage theo dòng.
 
 ---
 
@@ -36,7 +37,7 @@ graph TD
 
 ---
 
-## Practical Examples
+## Ví dụ minh họa Error, Defect, Failure
 
 ### Ví dụ 1: Lỗi lập trình tính toán giảm giá
 
@@ -54,4 +55,4 @@ graph TD
 
 ## Related Notes
 
-- [[30_Resources/Concepts/000_Concepts_MOC.md|Concepts MOC]]
+- [[000_Concepts_MOC]]

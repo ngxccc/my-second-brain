@@ -1,15 +1,6 @@
 ---
 tags: [type/concept, status/permanent]
 date: 2026-08-22
-aliases:
-  [
-    Locus of Control and Circle of Influence,
-    Locus of Control,
-    Circle of Influence,
-    Circle of Control,
-    Điểm kiểm soát và vòng tròn ảnh hưởng,
-    Tâm lý chủ động và vùng kiểm soát,
-  ]
 description: "Điểm kiểm soát và vòng tròn ảnh hưởng - Mô hình chuyển dịch trọng tâm nhận thức từ bất mãn thụ động sang hành động tạo giá trị thực tế."
 ---
 
@@ -17,9 +8,9 @@ description: "Điểm kiểm soát và vòng tròn ảnh hưởng - Mô hình ch
 
 ## TL;DR
 
-- **Bản chất**: Sự kết hợp giữa tâm lý học hành vi (Julian Rotter - Locus of Control) và mô hình quản trị cá nhân (Stephen Covey - Circle of Influence): Phân định ranh giới rõ ràng giữa những thứ ta có thể trực tiếp kiểm soát/tác động và những thứ ta chỉ có thể quan sát nhưng không thể thay đổi tức thì.
+- **Bản chất**: Ghép tâm lý học hành vi (Julian Rotter - Locus of Control) với quản trị cá nhân (Stephen Covey - Circle of Influence): tách thứ kiểm soát hoặc tác động được khỏi thứ chỉ quan sát được.
 - **Mục đích**: Triệt tiêu cảm giác bất lực, trầm uất và xu hướng chiếu xạ bế tắc cá nhân lên các vấn đề vĩ mô; tối đa hóa năng lượng hành động thực tế (High Agency).
-- **Điểm mấu chốt**: Người có năng lực cao tập trung $90\%$ năng lượng vào những việc họ trực tiếp kiểm soát được; người bất mãn kinh niên tiêu tốn $90\%$ năng lượng vào việc phẫn nộ về những thứ họ không thể thay đổi.
+- **Điểm mấu chốt**: Người High Agency dồn ~$90\%$ năng lượng vào việc mình kiểm soát được; người bất mãn kinh niên tiêu $90\%$ năng lượng vào phẫn nộ về thứ không đổi được.
 
 ---
 
@@ -76,7 +67,7 @@ thể chế, may rủi, người khác định đoạt.             kỹ năng q
 
 ---
 
-## Practical Implementation: The Action Matrix
+## Action Matrix: từ thụ động sang chủ động
 
 ### 1. Bảng chuyển hóa tư duy từ Nạn nhân sang Chủ động
 
@@ -84,7 +75,7 @@ thể chế, may rủi, người khác định đoạt.             kỹ năng q
 | :--------------------------------- | :------------------------------------------------------------------ | :---------------------------------------------------------------------------------------------------------------------------------------- |
 | **Thu nhập thấp, giá nhà đất cao** | "Xã hội này bất công, đất nước này hỏng rồi, ở đây không sống nổi." | Tối ưu hóa kỹ năng chuyên môn, học tiếng Anh, nhận việc remote quốc tế, xây dựng chiến lược tích lũy tài sản ([[Dollar_Cost_Averaging]]). |
 | **Môi trường làm việc độc hại**    | Than phiền mỗi ngày trên mạng xã hội, làm việc chống đối.           | Thiết lập quỹ khẩn cấp 6 tháng ([[Short_Term_Income_and_Defensive_Saving]]), mài giũa CV, phỏng vấn tìm bến đỗ mới.                       |
-| **Tranh cãi chính trị trên mạng**  | Dành 3 tiếng mỗi ngày gõ phím cãi nhau để chứng minh phe mình đúng. | Tắt ứng dụng, mở IDE làm bài tập thuật toán ([[LeetCode_Pattern_Mastery_Roadmap]]) hoặc đọc sách chuyên sâu.                              |
+| **Tranh cãi chính trị trên mạng**  | Dành 3 tiếng mỗi ngày gõ phím cãi nhau để chứng minh phe mình đúng. | Tắt ứng dụng, mở IDE làm bài tập thuật toán ([[LeetCode_Roadmap]]) hoặc đọc sách chuyên sâu.                                              |
 
 ### 2. Quy trình 3 bước xử lý bất mãn (Discontent Reframing)
 

@@ -1,14 +1,6 @@
 ---
 tags: [type/concept, status/permanent]
 date: 2026-10-01
-aliases:
-  [
-    Open vs Closed Workload Models,
-    Open Model,
-    Closed Model,
-    Coordinated Omission,
-    Workload Modeling Fundamentals,
-  ]
 description: "Phân định bản chất cơ học giữa Open Workload Model và Closed Workload Model, công thức Little's Law và hiện tượng Coordinated Omission trong kiểm thử tải."
 ---
 
@@ -18,7 +10,7 @@ description: "Phân định bản chất cơ học giữa Open Workload Model v�
 
 - **Bản chất**: Closed Model kích hoạt request tiếp theo phụ thuộc vào thời điểm hoàn tất của request trước đó; Open Model phát request độc lập theo nhịp định sẵn (Arrival Rate).
 - **Mục đích**: Lựa chọn đúng cơ chế phát tải để mô phỏng trung thực hành vi người dùng thực tế và loại trừ hiện tượng sai lệch số liệu đo lường.
-- **Điểm mấu chốt**: Dùng sai Closed Model cho Public API sẽ kích hoạt lỗi **Coordinated Omission** — khi Server nghẽn, máy phát tải tự động giảm tốc độ gửi request, khiến báo cáo phân vị độ trễ ($p_{95}, p_{99}$) hiển thị đạt chuẩn giả tạo.
+- **Điểm mấu chốt**: Dùng Closed Model cho Public API sẽ gây **Coordinated Omission**: server nghẽn thì máy phát tải tự giảm tốc, khiến $p_{95}, p_{99}$ báo đạt chuẩn giả tạo.
 
 ---
 
@@ -79,4 +71,4 @@ $$\text{"Khi Server phản hồi chậm, người dùng ngoài đời có ngừn
 - Kiến trúc bộ nhớ và vòng đời k6: [[K6_Execution_Lifecycle_and_Memory_Architecture]]
 - Quy chuẩn kiểm thử tải Concurrency: [[K6_High_Concurrency_Load_Testing_SOP]]
 - Phân vị độ trễ và thông lượng: [[Latency_Percentiles_p50_p95_p99_Throughput]]
-- Bản đồ tri thức kiểm thử: [[30_Resources/Concepts/000_Concepts_MOC.md|Concepts MOC]]
+- [[000_Concepts_MOC]]

@@ -1,7 +1,6 @@
 ---
 tags: [type/concept, status/permanent]
 date: 2026-07-31
-aliases: [Vấn đề truy vấn N+1, N+1 Query Problem, Solution for N+1 Selects]
 description: "N+1 Query Problem là sự cố hiệu năng phổ biến khi làm việc với ORM (Object-Relational Mapping), xảy ra khi ứng dụng thực thi $1$ câu truy vấn ban đầu để lấy danh sách $N$ bản ghi cha, sau đó tiếp t..."
 ---
 
@@ -9,7 +8,9 @@ description: "N+1 Query Problem là sự cố hiệu năng phổ biến khi làm
 
 ## TL;DR
 
-**N+1 Query Problem** là sự cố hiệu năng phổ biến khi làm việc với ORM (Object-Relational Mapping), xảy ra khi ứng dụng thực thi $1$ câu truy vấn ban đầu để lấy danh sách $N$ bản ghi cha, sau đó tiếp tục phát sinh thêm $N$ câu truy vấn con lặp đi lặp lại để lấy dữ liệu quan hệ liên quan. Tác hại trực tiếp là gây bùng nổ số lượng truy vấn đến CSDL, tăng độ trễ (latency), tiêu tốn CPU và cạn kiệt Connection Pool. Các giải pháp khắc phục triệt để bao gồm **Eager Loading** (`JOIN` / Batch `IN` clause), **DataLoader Pattern** (Batching & Caching ở tầng ứng dụng), hoặc bật chế độ **Strict Loading**.
+- **Bản chất**: Lazy loading làm một query lấy N bản ghi cha sinh thêm N query con, tổng cộng 1+N query cho một request.
+- **Mục đích**: Nhận ra và loại bỏ bùng nổ query, vì nó cộng dồn network round-trip, làm cạn connection pool và tăng CPU cho database.
+- **Điểm mấu chốt**: Ba cách chặn là eager loading (`JOIN` hoặc batch `IN`), DataLoader gom call trong một tick, và strict loading để ném lỗi ngay ở môi trường dev.
 
 ---
 

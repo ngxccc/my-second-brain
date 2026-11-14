@@ -1,7 +1,5 @@
 ---
 tags: [type/concept, status/permanent]
-aliases:
-  [Garbage Collection Fundamentals, Cơ chế Dọn rác Bộ nhớ Gốc, GC Fundamentals]
 date: 2026-08-09
 description: "Nguyên lý khoa học máy tính cốt lõi của Garbage Collection: Lisp 1959, Reference Counting vs Tracing GC, Generational Hypothesis và Tri-color Marking."
 ---
@@ -10,7 +8,9 @@ description: "Nguyên lý khoa học máy tính cốt lõi của Garbage Collect
 
 ## TL;DR
 
-Garbage Collection (GC) là cơ chế quản lý bộ nhớ tự động được sáng chế bởi John McCarthy vào năm 1959 cho ngôn ngữ Lisp. GC giải phóng nhà phát triển khỏi việc gọi `malloc`/`free` thủ công bằng cách tự động thu hồi các ô nhớ không còn truy cập được trên Heap. Hai họ thuật toán chính bao gồm **Reference Counting** (Đếm tham chiếu) và **Tracing GC** (Duyệt đồ thị đối tượng từ GC Roots). Hiểu rõ các nguyên lý tổng quát như Generational Hypothesis, Stop-the-World pauses và Tri-color Marking là nền tảng để đánh giá cơ chế GC của bất kỳ ngôn ngữ nào (Java, Go, C#, Python, JavaScript).
+- **Bản chất**: GC tự thu hồi ô nhớ trên heap không còn truy cập được, theo hai họ chính là reference counting và tracing từ GC Roots.
+- **Mục đích**: Bỏ được `malloc`/`free` thủ công mà vẫn không rò rỉ bộ nhớ, đổi lại bằng thời gian chạy của bộ thu gom.
+- **Điểm mấu chốt**: Reference counting không xử lý được chu trình tham chiếu, còn tracing GC gây stop-the-world; mọi cơ chế thực tế đều là đánh đổi giữa hai điểm này.
 
 ---
 
@@ -39,7 +39,7 @@ Garbage Collection (GC) là cơ chế quản lý bộ nhớ tự động đượ
 
 ---
 
-## Practical Implementation
+## Ma trận GC theo runtime và engine
 
 ### So sánh Chiến lược GC giữa các Ngôn ngữ & Engine
 
@@ -55,8 +55,8 @@ Garbage Collection (GC) là cơ chế quản lý bộ nhớ tự động đượ
 
 ## Related Notes
 
-- [[Memory_Leaks_Core_Mechanics]]
-- [[Stack_vs_Heap_Memory_Fundamentals]]
-- [[JS_Generational_Garbage_Collection]]
-- [[JS_Memory_Leaks_and_Mitigation]]
+- Trường hợp GC không giải phóng được: [[Memory_Leaks_Core_Mechanics]]
+- Vùng bộ nhớ mà GC quản lý: [[Stack_vs_Heap_Memory_Fundamentals]]
+- Hiện thực generational trong V8: [[JS_Generational_Garbage_Collection]]
+- Các mẫu leak phổ biến trong JavaScript: [[JS_Memory_Leaks_and_Mitigation]]
 - [[000_Concepts_MOC]]

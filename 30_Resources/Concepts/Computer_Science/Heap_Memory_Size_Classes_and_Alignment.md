@@ -1,20 +1,18 @@
 ---
 tags: [type/concept, status/permanent]
-aliases:
-  - Heap Memory Size Classes and Alignment
-  - Ô Nhớ Tiêu Chuẩn Heap Allocator
-  - Memory Alignment and Size Classes
 date: 2026-08-13
 description: "Nguyên lý Khoa học Máy tính cốt lõi về cơ chế phân chia Size Classes và Memory Alignment của Heap Allocator giúp triệt tiêu hiện tượng External Memory Fragmentation."
 ---
 
 # Heap Memory Size Classes and Alignment
 
-Tài liệu này là một ghi chép Layer 1 phân tích nguyên lý Khoa học Máy tính cốt lõi về cách các trình cấp phát bộ nhớ Heap (Heap Allocators như TCMalloc, jemalloc, glibc malloc, Go Heap Allocator) phân chia RAM thành các **Size Classes** tiêu chuẩn để phòng chống hiện tượng **Rò rỉ mảnh bộ nhớ ngoài (External Memory Fragmentation)**.
+Ghi chép Layer 1 về cách Heap Allocator (TCMalloc, jemalloc, glibc malloc, Go Heap Allocator) chia RAM thành các **Size Class** tiêu chuẩn để chống **External Memory Fragmentation**.
 
 ## TL;DR
 
-Nếu Heap Allocator cấp phát RAM theo đúng từng số byte lẻ ngẫu nhiên do chương trình yêu cầu (ví dụ 17B, 53B, 103B), bộ nhớ RAM sẽ nhanh chóng bị băm nhỏ thành vô số lỗ hổng vụn vặt không thể tái sử dụng. Bằng cách định nghĩa trước danh sách **Size Classes tiêu chuẩn** (ví dụ 8B, 16B, 24B, 32B, 48B, 64B... 32KB) và làm tròn kích thước yêu cầu lên ô nhớ tiêu chuẩn gần nhất (**Memory Alignment / Size Class Roundup**), hệ thống triệt tiêu phân mảnh bộ nhớ và tối ưu tốc độ quản lý RAM.
+- **Bản chất**: Heap allocator làm tròn kích thước yêu cầu lên size class tiêu chuẩn (8B, 16B, ... 32KB) thay vì cấp đúng số byte lẻ.
+- **Mục đích**: Triệt tiêu external fragmentation và giữ mỗi lần cấp phát là thao tác O(1) trên free list có sẵn.
+- **Điểm mấu chốt**: Cái giá là internal fragmentation - cấp 17 byte sẽ chiếm 24 byte; đây là lý do cấu trúc dữ liệu nhỏ nên nhóm lại thay vì cấp riêng lẻ.
 
 ---
 
@@ -27,7 +25,8 @@ Khi một ứng dụng chạy liên tục và xin cấp phát / giải phóng c�
 - Vùng nhớ 17 bytes được cấp phát, sau đó bị hủy -> Tạo ra lỗ hổng 17 bytes.
 - Vùng nhớ 53 bytes được cấp phát, sau đó bị hủy -> Tạo ra lỗ hổng 53 bytes.
 
-Mặc dù tổng số RAM trống trên hệ thống còn rất nhiều (ví dụ 10MB), nhưng nếu ứng dụng cần xin một khối bộ nhớ liên tục 100 bytes, Heap Allocator **không thể tìm thấy một lỗ hổng liên tục nào đủ 100 bytes**. Kết quả: Hệ thống báo lỗi hết bộ nhớ (Out of Memory) hoặc phải tốn CPU dồn đống bộ nhớ (Memory Compaction).
+- **Triệu chứng:** RAM trống tổng còn nhiều (ví dụ 10MB) nhưng không có lỗ hổng liên tục đủ 100 bytes, nên cấp phát 100 bytes thất bại.
+- **Hệ quả:** hệ thống báo Out of Memory, hoặc phải tốn CPU để dồn đống bộ nhớ (Memory Compaction).
 
 ---
 
@@ -51,7 +50,7 @@ Mặc dù tổng số RAM trống trên hệ thống còn rất nhiều (ví d�
 
 ---
 
-## Practical Implementation
+## Bảng Roundup Size khi cấp phát mảng
 
 Dưới đây là bảng minh họa cơ chế Roundup Size khi cấp phát mảng trên Heap trong Go Runtime (`src/runtime/sizeclasses.go`):
 
@@ -66,6 +65,6 @@ Dưới đây là bảng minh họa cơ chế Roundup Size khi cấp phát mản
 
 ## Related Notes
 
-- [[Stack_vs_Heap_Memory_Fundamentals]] - Phân tầng bộ nhớ Stack và Heap.
+- Đơn vị cấp phát mà allocator dùng: [[Stack_vs_Heap_Memory_Fundamentals]]
 - [[Dynamic_Array_Exponential_Growth]] - Thuật toán tăng trưởng lũy thừa mảng động.
-- [[Go_Slice_Underlying_Mechanics]] - Ứng dụng `runtime.roundupsize` trong Slice của Go.
+- [[Go_Append_Growth_and_Reallocation]] - Ứng dụng `runtime.roundupsize` trong Slice của Go.

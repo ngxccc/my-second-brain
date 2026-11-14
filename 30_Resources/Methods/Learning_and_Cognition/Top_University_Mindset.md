@@ -1,12 +1,6 @@
 ---
 tags: [type/method, status/permanent]
-aliases:
-  [
-    Tư duy trường top,
-    Học tập chủ động,
-    Elite Thinking Mindset,
-    Top University Mindset,
-  ]
+date: 2026-07-15
 created_at: 2026-07-14
 description: "Lộ trình rèn luyện tư duy phản biện, giải quyết vấn đề và truy vết nguồn gốc thông tin theo tiêu chuẩn đại học top đầu."
 ---
@@ -15,7 +9,9 @@ description: "Lộ trình rèn luyện tư duy phản biện, giải quyết v�
 
 ## TL;DR
 
-Quy trình tự rèn luyện tư duy phản biện và giải quyết vấn đề theo tiêu chuẩn của các trường đại học top đầu (như RMIT, Harvard, NUS). Giúp người học chuyển từ tiếp thu thụ động sang học tập chủ động thông qua các công cụ tư duy logic và kiểm chứng thực tế.
+- **Bản chất**: Ba kỹ năng chạy theo thứ tự: đặt câu hỏi, kiểm chứng bằng nguồn gốc, rồi mới kết luận; bỏ bước nào thì kết luận chỉ còn là cảm giác.
+- **Mục đích**: Chuyển từ tiếp thu thụ động (học vẹt) sang học chủ động có kiểm chứng.
+- **Điểm mấu chốt**: Kỹ năng cốt lõi là truy vết nguồn và kiểm chứng thực tế; thiếu bước đó thì mọi công cụ tư duy chỉ tạo cảm giác hiểu biết.
 
 ## Context: When to use?
 

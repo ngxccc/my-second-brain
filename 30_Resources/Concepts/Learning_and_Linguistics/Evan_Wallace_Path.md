@@ -1,7 +1,6 @@
 ---
 tags: [type/concept, status/permanent]
 date: 2026-07-04
-aliases: [Evan Wallace Path, Figma CTO Career, esbuild Creator]
 description: "Con đường phát triển sự nghiệp của Evan Wallace (Figma CTO, esbuild creator) – chuyên môn sâu graphics/WebGL + timing + execution."
 ---
 
@@ -9,7 +8,9 @@ description: "Con đường phát triển sự nghiệp của Evan Wallace (Figm
 
 ## TL;DR
 
-Evan Wallace là co-founder & cựu CTO Figma, người xây dựng rendering engine, multiplayer collab và plugin system. Ông nổi tiếng với esbuild (bundler JS/CSS cực nhanh) sau khi rời Figma năm 2021. Con đường: Brown University CS → Microsoft/Pixar → Figma (2012) → open source legend. Thành tựu dựa trên chuyên môn sâu WebGL, graphics, compilers.
+- **Bản chất**: Evan Wallace là co-founder và cựu CTO Figma, tác giả esbuild, đi từ Brown University CS qua Microsoft và Pixar rồi tới Figma năm 2012.
+- **Mục đích**: Dùng làm case study về đường phát triển chuyên môn sâu (WebGL, graphics, compiler) thay vì học dàn trải.
+- **Điểm mấu chốt**: Lợi thế đến từ việc cắt ngang hai lĩnh vực hiếm gặp - graphics và performance tooling - chứ không phải từ việc giỏi nhất một mảng.
 
 ## Core Concept / Rules / Rationales
 
@@ -24,7 +25,7 @@ Evan Wallace là co-founder & cựu CTO Figma, người xây dựng rendering en
 - **Sau Figma**: Tập trung open source, nổi bật **esbuild** (2020) – bundler nhanh gấp nhiều lần, thay đổi build pipeline web dev. Được Forbes 30 Under 30 (2017), Inc. Rising Star (2019).
 - **Quy tắc thành công**: Chuyên môn sâu một lĩnh vực (graphics + compilers) + timing đúng (browser graphics boom) + execution mạnh (Figma scale). Không phải "genius overnight" mà tích lũy 10+ năm.
 
-## Practical Implementation
+## Timeline sự nghiệp và bài học
 
 **Timeline thực tế**:
 
@@ -41,4 +42,4 @@ Evan Wallace là co-founder & cựu CTO Figma, người xây dựng rendering en
 
 - [[000_Concepts_MOC]]
 - [[Master_Backend_Engineering_SSOT]]
-- [[M_Shaped_Polymath_Skill_Stacking]]
+- Quy trình để đi theo hình mẫu này: [[M_Shaped_Polymath_Skill_Stacking]]

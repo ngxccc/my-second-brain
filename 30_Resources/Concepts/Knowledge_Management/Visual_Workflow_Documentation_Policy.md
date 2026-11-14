@@ -1,12 +1,6 @@
 ---
 tags: [type/concept, status/permanent]
 date: 2026-07-24
-aliases:
-  [
-    Visual Workflow Documentation Policy,
-    Chính sách Tài liệu hóa Quy trình Trực quan,
-    Visual Workflow Policy,
-  ]
 description: "Visual Workflow Documentation Policy là bộ quy chuẩn quản trị tài liệu bắt buộc nhằm chuyển đổi luồng công việc (workflow), quy trình xử lý và kiến trúc hệ thống từ dạng văn bản thô sang mô hình tr..."
 ---
 
@@ -14,7 +8,9 @@ description: "Visual Workflow Documentation Policy là bộ quy chuẩn quản t
 
 ## TL;DR
 
-**Visual Workflow Documentation Policy** là bộ quy chuẩn quản trị tài liệu bắt buộc nhằm chuyển đổi luồng công việc (workflow), quy trình xử lý và kiến trúc hệ thống từ dạng văn bản thô sang mô hình trực quan hóa (Diagrams/Flowcharts). Giúp loại bỏ sự mơ hình, tối ưu hóa tốc độ tiếp cận (onboarding) và phát hiện điểm nghẽn hệ thống.
+- **Bản chất**: Quy chuẩn bắt buộc mọi quy trình từ ba bước trở lên phải có sơ đồ, viết bằng mã (Mermaid, PlantUML) và lưu trong Git.
+- **Mục đích**: Loại bỏ mô tả mơ hồ bằng văn bản, tăng tốc onboarding và làm lộ điểm nghẽn của hệ thống.
+- **Điểm mấu chốt**: Docs-as-code là điều kiện để chính sách sống được: sơ đồ nằm ngoài Git sẽ lệch phiên bản và trở thành tài liệu sai gây hại hơn không có.
 
 ## Core Concept
 

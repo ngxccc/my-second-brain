@@ -1,11 +1,5 @@
 ---
 tags: [type/method, status/permanent]
-aliases:
-  [
-    Git Four Zones and Reset Lifecycle,
-    Vòng đời 4 Vùng Bộ nhớ và Cơ chế Reset trong Git,
-    Git Reset Soft Mixed Hard Reflog,
-  ]
 date: 2026-09-20
 description: "Phân tích 4 vùng lưu trữ trong Git, cơ chế di chuyển con trỏ của git reset (soft, mixed, hard), và kỹ thuật cứu hộ dữ liệu bằng git reflog."
 ---
@@ -16,7 +10,7 @@ description: "Phân tích 4 vùng lưu trữ trong Git, cơ chế di chuyển co
 
 - **Bản chất**: Dữ liệu trong Git di chuyển qua **4 vùng lưu trữ**: Working Directory (Đĩa cứng), Staging Area / Index (Vùng đệm), Local Repository (Lịch sử commit / HEAD), và Remote Repository.
 - **Mục đích**: Tách biệt giữa trạng thái soạn thảo nháp, chuẩn bị gói commit, và lưu trữ snapshot vĩnh viễn.
-- **Điểm mấu chốt**: `git reset` bản chất chỉ là lệnh **di chuyển con trỏ HEAD lùi lại** trên đồ thị commit; các cờ `--soft`, `--mixed`, `--hard` chỉ quyết định việc có kéo Staging Area và Working Directory lùi theo hay không. Mọi bước nhảy con trỏ đều được ghi lại trong `git reflog`, tạo thành mạng lưới cứu hộ tuyệt đối.
+- **Điểm mấu chốt**: `git reset` chỉ dịch con trỏ HEAD lùi trên đồ thị commit; `--soft`/`--mixed`/`--hard` quyết định có kéo Staging Area và Working Directory theo; mọi bước nhảy ghi trong `git reflog`.
 
 ---
 
@@ -82,7 +76,7 @@ git checkout -b rescue-branch 5d6e7f8
 
 ## Related Notes
 
-- [[Git_DAG_and_Object_Storage_Model]]
-- [[Git_Conflict_and_Three_Way_Merge_Mechanics]]
+- Mô hình dữ liệu mà con trỏ vùng trỏ tới: [[Git_DAG_and_Object_Storage_Model]]
+- Xung đột khi reset trên nhánh chia sẻ: [[Git_Conflict_and_Three_Way_Merge_Mechanics]]
 - [[Master_Backend_Engineering_SSOT]]
 - [[000_Methods_MOC]]

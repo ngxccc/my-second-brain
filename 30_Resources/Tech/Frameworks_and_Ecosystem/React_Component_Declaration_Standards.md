@@ -1,12 +1,6 @@
 ---
 tags: [type/concept, status/permanent]
 date: 2026-06-08
-aliases:
-  [
-    React Component Declaration Standards,
-    Quy tắc khai báo React Component,
-    export function vs arrow function,
-  ]
 description: "Tiêu chuẩn khai báo React component (export function vs arrow function)."
 ---
 
@@ -14,7 +8,9 @@ description: "Tiêu chuẩn khai báo React component (export function vs arrow 
 
 ## TL;DR
 
-Quy tắc thống nhất cách khai báo React components: Ưu tiên **Traditional Functions (`export function`)** cho UI Components nhằm tối ưu hóa Component Identity, Fast Refresh (HMR), Generic props và Next.js Server Components. Sử dụng **Arrow Functions** cho Callbacks, Inline Event Handlers và Closures.
+- **Bản chất**: UI component khai báo bằng `export function`; callback, inline handler và closure dùng arrow function.
+- **Mục đích**: Giữ component identity ổn định cho Fast Refresh, generic props và Next.js Server Components.
+- **Điểm mấu chốt**: Đây là quy ước có lý do kỹ thuật, không phải thẩm mỹ: đổi sang arrow function cho component làm mất tên và phá HMR.
 
 ---
 
@@ -106,4 +102,4 @@ CustomInput.displayName = "CustomInput";
 
 - React Server Components: [[React_Server_Components]]
 - Server Actions trong Next.js: [[NextJS_Server_Actions]]
-- Bản đồ tri thức kỹ thuật: [[000_Tech_MOC]]
+- [[000_Tech_MOC]]

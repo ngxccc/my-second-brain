@@ -1,6 +1,6 @@
 ---
 tags: [type/concept, status/permanent]
-aliases: [Next.js after(), next/server after(), after()]
+date: 2026-08-19
 description: "Cơ chế lập lịch tác vụ nền không chặn (non-blocking) sau khi response đã được gửi về client."
 ---
 
@@ -8,7 +8,9 @@ description: "Cơ chế lập lịch tác vụ nền không chặn (non-blocking
 
 ## TL;DR
 
-Next.js `after()` (import từ `next/server`) cho phép lập lịch thực thi các tác vụ nền (background tasks/side effects) như gửi mail, Telegram, hoặc ghi log/analytics **sau khi phản hồi HTTP (hoặc prerender) đã hoàn tất gửi về client**. Cơ chế này hoạt động non-blocking, cải thiện tối đa TTFB (Time to First Byte) và ngăn chặn tình trạng serverless function bị đóng băng (freeze) trước khi tác vụ nền hoàn thành.
+- **Bản chất**: `after()` lập lịch tác vụ chạy sau khi response đã gửi xong, dựa trên `waitUntil` ngầm của runtime.
+- **Mục đích**: Gửi mail, ghi log, analytics mà không chặn TTFB và không bị serverless freeze giết giữa chừng.
+- **Điểm mấu chốt**: Nó thay `await` fire-and-forget trong handler, nhưng chỉ phù hợp tác vụ quy mô vừa; việc cần retry và đảm bảo giao vẫn phải qua queue.
 
 ## Core Concept
 
@@ -112,4 +114,4 @@ export default async function Page() {
 
 - [[Outbox_Pattern]]: Mẫu thiết kế xử lý gửi tin nhắn tin cậy bằng bảng lưu vết.
 - [[Serverless_Architecture]]: Kiến trúc điện toán không máy chủ và cơ chế freeze/thaw container.
-- [[10_Projects/Hyundai_Ecommerce/Docs/V8_Performance_Audit.md|V8_Performance_Audit]]: Tối ưu hóa hiệu năng thực thi V8 Engine.
+- [[V8_Performance_Audit]]: Tối ưu hóa hiệu năng thực thi V8 Engine.

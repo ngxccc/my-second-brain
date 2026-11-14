@@ -1,12 +1,6 @@
 ---
 tags: [type/method, status/permanent]
 date: 2026-07-27
-aliases:
-  [
-    Phương pháp tự động hóa mô hình tư duy,
-    Mental Model Automation,
-    Phản xạ tư duy đàm phán và phản biện,
-  ]
 description: "Quy trình 4 bước Deliberate Practice chuyển hóa các mô hình tư duy từ System 2 thành phản xạ System 1 tự động khi đối thoại."
 ---
 
@@ -14,13 +8,15 @@ description: "Quy trình 4 bước Deliberate Practice chuyển hóa các mô h�
 
 ## TL;DR
 
-Mental Model Automation Method là quy trình rèn luyện có chủ đích (Deliberate Practice) giúp chuyển hóa các mô hình tư duy đàm phán, phản biện và lý thuyết trò chơi từ dạng **Kiến thức khai báo (System 2 - Tư duy chậm, tốn sức)** thành **Phản xạ tự nhiên (System 1 - Tư duy tự động, tức thì)** trong các cuộc đối thoại thực tế. Phương pháp kết hợp thuật toán `IF-THEN`, cú phanh nhận thức 3 giây, thẻ Anki tình huống và nhật ký phản tư siêu nhận thức.
+- **Bản chất**: Chuyển mental model từ kiến thức khai báo (System 2) thành phản xạ tự động (System 1) bằng IF-THEN, phanh 3 giây, thẻ Anki tình huống và nhật ký phản tư.
+- **Mục đích**: Dùng được mô hình ngay trong hội thoại thật, khi không có thời gian để suy nghĩ có ý thức.
+- **Điểm mấu chốt**: Phải đã nắm lý thuyết trước khi tự động hóa; tự động hóa một mô hình hiểu sai chỉ làm cái sai nhanh hơn.
 
 ## Application Context & Maslow Alignment
 
 - **Phân tầng Maslow phù hợp**: **Tầng 4 (Esteem - Tự tin & Năng lực làm chủ giao tiếp)** và **Tầng 5 (Cognitive & Self-Actualization - Tự động hóa nhận thức cao cấp)**.
 - **Điều kiện tiên quyết**: Người học đã nắm được lý thuyết cơ bản của các mô hình tư duy cốt lõi (như [[BATNA_Negotiation_Model]], [[ZOPA_Negotiation_Framework]], [[Tactical_Empathy_Chris_Voss]], [[Socratic_Questioning_Method]]).
-- **Đối tượng áp dụng**: Lập trình viên, Quản lý dự án, Nhà đàm phán, Kỹ sư muốn phản xạ nhanh và sắc bén khi thương lượng hoặc tranh luận mà không bị cảm xúc chi phối.
+- **Đối tượng áp dụng**: Lập trình viên, Quản lý dự án, Nhà đàm phán, Kỹ sư muốn phản xạ nhanh khi thương lượng mà không bị cảm xúc chi phối.
 
 ## Core Concept
 
@@ -74,7 +70,7 @@ Dành 3-5 phút cuối ngày để viết nhật ký phản tư (Decision Journa
   2. _"Nếu được nói lại ở tình huống đó, kịch bản chuẩn sẽ là gì?"_
 - Việc tái hiện và sửa lỗi trong tư duy giúp não bộ hình thành và củng cố các đường truyền thần kinh mới (_Neural Plasticity_).
 
-## Concrete Examples
+## Kịch bản thực tế
 
 - **Kịch bản 1: Xử lý khi sếp ép deadline vô lý**
   - _Phản xạ tự nhiên cũ:_ Bào chữa, than thở hoặc im lặng nhận lời rồi về quá tải stress.
@@ -83,7 +79,7 @@ Dành 3-5 phút cuối ngày để viết nhật ký phản tư (Decision Journa
   - _Phản xạ tự nhiên cũ:_ Nổi giận, công kích lại hoặc tự vệ cá nhân.
   - _Phản xạ mới đã tự động hóa:_ Phanh 3s $\rightarrow$ Tách con người khỏi vấn đề ([[Principled_Negotiation_Getting_To_Yes]]) $\rightarrow$ _"Góc nhìn của bạn rất đáng suy ngẫm. Số liệu hay trường hợp cụ thể nào khiến bạn lo lắng về phương án này?"_ ([[Socratic_Questioning_Method]]).
 
-## Practical Implementation
+## Trade-offs và rủi ro cần tránh
 
 - **Trade-offs (Điểm mù & Rủi ro cần tránh):**
   - _Bẫy phản xạ máy móc (Robot Syndrome):_ Giai đoạn đầu khi mới tập dùng `Labeling` hay `Calibrated Questions`, lời nói có thể thiếu tự nhiên. Cần điều chỉnh ngữ điệu chân thành, mềm mỏng.

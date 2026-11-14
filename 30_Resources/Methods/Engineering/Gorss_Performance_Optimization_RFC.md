@@ -9,7 +9,9 @@ description: RFC for High-Performance UI Navigation and Asynchronous Storage Eng
 
 ## TL;DR
 
-RFC thiết kế và triển khai tối ưu hóa hiệu năng điều hướng UI và động cơ lưu trữ bất đồng bộ trong ứng dụng TUI `gorss`, giúp giảm độ trễ điều hướng từ hàng mili-giây xuống còn dưới 50 micro-giây ($83.1\times$ speedup) và cắt giảm hơn $99\%$ lượng cấp phát bộ nhớ.
+- **Bản chất**: RFC tối ưu điều hướng UI và storage bất đồng bộ trong TUI `gorss`, đưa độ trễ xuống dưới 50 micro-giây.
+- **Mục đích**: Cắt allocation trên đường nóng - nguồn gây GC pressure - chứ không chỉ làm cho nhanh hơn.
+- **Điểm mấu chốt**: Cải thiện đến từ việc bỏ cấp phát; con số 83.1 lần chỉ có nghĩa khi đo trên cùng workload và cùng máy.
 
 ## Core Concept
 
@@ -65,7 +67,7 @@ RFC thiết kế và triển khai tối ưu hóa hiệu năng điều hướng U
 
 ---
 
-## Practical Implementation
+## Nhật ký tối ưu theo hạng mục
 
 ### 1. In-Place Table Updates (`internal/window.go` & `internal/controller.go`) - COMPLETED
 
@@ -83,5 +85,5 @@ RFC thiết kế và triển khai tối ưu hóa hiệu năng điều hướng U
 
 ## Related Notes
 
-- [[Go_Benchmarking_and_Allocation_Guide]]
-- [[Go_Slice_Underlying_Mechanics]]
+- Cách đo trước khi tối ưu: [[Go_Benchmarking_and_Allocation_Guide]]
+- Điểm nóng allocation mà RFC nhắm vào: [[Go_Append_Growth_and_Reallocation]]

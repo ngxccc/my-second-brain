@@ -1,7 +1,5 @@
 ---
 tags: [type/concept, status/permanent]
-aliases:
-  [Structural Typing, Type Erasure, Type Guards, Type Predicates, Duck Typing]
 date: 2026-06-20
 description: "Hệ thống kiểu cấu trúc (Structural Typing), cơ chế xóa bỏ kiểu (Type Erasure) và cách thu hẹp kiểu an toàn với Type Predicates."
 ---
@@ -10,7 +8,9 @@ description: "Hệ thống kiểu cấu trúc (Structural Typing), cơ chế xó
 
 ## TL;DR
 
-TypeScript sử dụng hệ thống kiểu cấu trúc **Structural Type System** (kiểm tra kiểu dựa trên hình dáng/cấu trúc dữ liệu thay vì tên lớp khai báo), trái ngược hoàn toàn với hệ thống kiểu định danh **Nominal Type System** của Java/C#. Thêm vào đó, TypeScript áp dụng cơ chế xóa bỏ kiểu **Type Erasure** — toàn bộ kiểu tĩnh (interface, type) bị xóa bỏ 100% khi biên dịch sang JavaScript, nghĩa là kiểu dữ liệu không tồn tại ở runtime. Do đó, để kiểm tra và thu hẹp kiểu dữ liệu (type narrowing) khi chạy ứng dụng (ví dụ nhận dữ liệu từ API), lập trình viên bắt buộc phải tự viết **Type Guards** và **User-Defined Type Predicates** (`parameter is Type`).
+- **Bản chất**: TypeScript dùng structural typing (so khớp theo hình dạng) và xóa toàn bộ type khi compile, nên type không tồn tại ở runtime.
+- **Mục đích**: Giải thích vì sao dữ liệu từ API vẫn phải validate, và vì sao hai type trùng hình dạng lại gán được cho nhau.
+- **Điểm mấu chốt**: Muốn kiểm tra kiểu lúc chạy phải tự viết type guard hoặc type predicate `parameter is Type`; không có cơ chế runtime nào làm hộ.
 
 ---
 
@@ -108,26 +108,12 @@ function calculateOrderTotal(user: Contractor | Dealer, basePrice: number) {
 
 ## Interview Prep
 
-### Q1: Sự khác biệt giữa Structural Typing của TypeScript và Nominal Typing của Java/C# là gì?
-
-- **Trả lời:**
-  - Nominal Typing (Java/C#) so sánh kiểu dựa trên tên lớp khai báo và quan hệ kế thừa rõ ràng. Hai class giống hệt nhau về thuộc tính nhưng khác tên thì không thể gán cho nhau.
-  - Structural Typing (TypeScript) so sánh kiểu dựa trên hình dáng và thuộc tính của dữ liệu. Nếu đối tượng truyền vào có đủ các thuộc tính mà nơi gọi yêu cầu, TypeScript sẽ chấp nhận mà không cần quan tâm tên hay nguồn gốc của đối tượng đó.
-
-### Q2: Type Erasure là gì và nó ảnh hưởng thế nào đến việc viết mã TypeScript?
-
-- **Trả lời:** Type Erasure là cơ chế xóa bỏ toàn bộ cú pháp liên quan đến kiểu tĩnh (interface, type annotations, generics) của TypeScript khi biên dịch sang JavaScript. Vì kiểu dữ liệu không hề tồn tại ở runtime, chúng ta không thể dùng toán tử `instanceof` cho `interface` hoặc `type`. Điều này bắt buộc ta phải tự viết các hàm kiểm tra kiểu ở runtime (Type Guards) bằng các toán tử JavaScript thực tế như `typeof`, `"prop" in object`, hoặc tạo hàm trả về kiểu **Type Predicate** (`arg is Type`) để hướng dẫn TypeScript compiler thu hẹp kiểu an toàn.
-
-### Q3: Em hãy ánh xạ hệ thống kiểu của TypeScript sang hệ thống kiểu của ngôn ngữ Go và Java?
-
-- **Trả lời:**
-  - **Java:** Sử dụng hệ thống kiểu tĩnh định danh (**Nominal Typing**). Mọi lớp muốn tương thích với nhau phải kế thừa hoặc implement chung một Interface một cách tường minh tại thời điểm compile.
-  - **Go (Golang):** Rất tương đồng với TypeScript vì Go sử dụng cơ chế **Duck Typing** cho Interface. Một struct trong Go không cần khai báo từ khóa kế thừa hay implement một interface nào cả. Chỉ cần struct đó định nghĩa đầy đủ các phương thức (methods) mà interface yêu cầu, Go compiler sẽ tự động coi struct đó là thực thể hợp lệ của interface đó. Điều này tương tự như việc so sánh hình dáng (Shape) của Structural Typing trong TypeScript.
+- Đã tách sang note riêng: [[TS_Type_System_Interview_QA]]
 
 ---
 
 ## Related Notes
 
-- Bản đồ tri thức: [[000_Tech_MOC]]
+- [[000_Tech_MOC]]
 - Cơ chế Runtime: [[JS_Runtimes_Bun_vs_NodeJS]]
 - Tối ưu hóa bộ nhớ: [[JS_Stack_vs_Heap_Memory]]

@@ -1,7 +1,6 @@
 ---
 tags: [type/concept, status/permanent]
 date: 2026-06-09
-aliases: [Trường hợp kiểm thử, Ca kiểm thử, Test Case Basics]
 description: "Khái niệm cơ bản về kịch bản kiểm thử và 3 bước cấu thành cốt lõi."
 ---
 
@@ -9,7 +8,9 @@ description: "Khái niệm cơ bản về kịch bản kiểm thử và 3 bướ
 
 ## TL;DR
 
-Test Case (trường hợp kiểm thử) là một tình huống kiểm tra được thiết kế để xác minh xem một đối tượng (chức năng/hệ thống) có thỏa mãn yêu cầu đặt ra hay không. Một test case cơ bản bao gồm 3 bước: **Mô tả** (các điều kiện cần có), **Nhập** (dữ liệu đầu vào), và **Kết quả mong chờ** (kết quả trả về từ đối tượng kiểm tra).
+- **Bản chất**: Test case là một tình huống kiểm tra gồm ba phần cốt lõi: điều kiện ban đầu, dữ liệu nhập, và kết quả mong chờ.
+- **Mục đích**: Biến yêu cầu mơ hồ thành bước kiểm chứng lặp lại được, để người khác chạy lại cho cùng kết luận.
+- **Điểm mấu chốt**: Thiếu kết quả mong chờ thì đó chỉ là bước thao tác, không phải test case; không có oracle thì không thể kết luận pass hay fail.
 
 ---
 
@@ -60,7 +61,7 @@ graph TD
 
 ---
 
-## Concrete Examples
+## Bảng ví dụ test case Đăng nhập
 
 Dưới đây là bảng ví dụ trực quan về 2 test case cho chức năng Đăng nhập (Login):
 
@@ -76,4 +77,4 @@ Dưới đây là bảng ví dụ trực quan về 2 test case cho chức năng 
 - [[Error_Defect_Failure]]: Hiểu rõ sự khác biệt giữa lỗi thiết kế, lỗi code và sự cố thực tế khi chạy thử.
 - [[7_Principles_of_Testing]]: Các triết lý cốt lõi giúp thiết kế test case hiệu quả và thực tế.
 - [[Black_Box_Testing_Techniques]]: Sử dụng phân vùng tương đương và phân tích giá trị biên để tối ưu hóa việc chọn Dữ liệu đầu vào (Test Data).
-- [[30_Resources/Concepts/000_Concepts_MOC.md|Concepts MOC]]
+- [[000_Concepts_MOC]]

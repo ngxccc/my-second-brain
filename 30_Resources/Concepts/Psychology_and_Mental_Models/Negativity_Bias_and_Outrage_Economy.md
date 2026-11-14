@@ -1,14 +1,6 @@
 ---
 tags: [type/concept, status/permanent]
 date: 2026-08-22
-aliases:
-  [
-    Negativity Bias and Outrage Economy,
-    Negativity Bias,
-    Outrage Economy,
-    Thiên kiến tiêu cực và kinh tế phẫn nộ,
-    Cơ chế phẫn nộ truyền thông,
-  ]
 description: "Thiên kiến tiêu cực và kinh tế phẫn nộ - Cơ chế tiến hóa ưu tiên tín hiệu đe dọa bị khai thác bởi thuật toán tương tác mạng xã hội."
 ---
 
@@ -16,7 +8,7 @@ description: "Thiên kiến tiêu cực và kinh tế phẫn nộ - Cơ chế ti
 
 ## TL;DR
 
-- **Bản chất**: Sự cộng hưởng nguy hiểm giữa thiên kiến tiến hóa ưu tiên xử lý mối đe dọa (Negativity Bias) và mô hình kinh doanh thuật toán tối ưu hóa thời lượng tương tác bằng cảm xúc phẫn nộ (Outrage Economy).
+- **Bản chất**: Cộng hưởng giữa thiên kiến tiến hóa ưu tiên mối đe dọa (Negativity Bias) và thuật toán tối ưu thời lượng tương tác bằng cảm xúc phẫn nộ (Outrage Economy).
 - **Mục đích**: Nhận diện và ngắt kết nối các vòng lặp phản hồi dopamine tiêu cực, bảo vệ năng lượng tâm trí và duy trì bức tranh hiện thực khách quan.
 - **Điểm mấu chốt**: Mạng xã hội không phản ánh thực tế xã hội; nó chỉ phản ánh những gì kích hoạt hạch hạnh nhân (Amygdala) mạnh nhất để bán quảng cáo và giật tương tác.
 
@@ -60,7 +52,7 @@ Do đó, não bộ tiến hóa với sự bất đối xứng nhận thức:
 
 ---
 
-## Practical Implementation & Digital Hygiene Protocol
+## Hiệu chuẩn dòng tin và vệ sinh thông tin
 
 ### 1. Bảng đối chiếu nhận thức
 

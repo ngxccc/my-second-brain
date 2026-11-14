@@ -1,7 +1,5 @@
 ---
 tags: [type/method, status/permanent]
-aliases:
-  [Comment Taxonomy, Code Commenting Standards, Code Documentation Policy]
 date: 2026-08-21
 description: "Quy chuẩn phân cấp Comment trong mã nguồn (4-Tier Comment Taxonomy), phân biệt TSDoc cho Public API, // WHY: cho Invariants, và các loại comment cấm kỵ."
 ---
@@ -11,8 +9,8 @@ description: "Quy chuẩn phân cấp Comment trong mã nguồn (4-Tier Comment 
 ## TL;DR
 
 - **Bản chất**: Phân cấp và chuẩn hóa việc viết comment trong mã nguồn theo nguyên lý: _"Code tells you HOW, Comments tell you WHY"_.
-- **Mục đích & Bài toán**: Xóa bỏ sự thiếu nhất quán (chỗ có comment, chỗ không), loại bỏ các comment rác (echoing code, dead code, excusing poor code) và bắt buộc ghi nhận các quyết định kỹ thuật / bất biến nghiệp vụ quan trọng.
-- **Điểm mấu chốt**: Áp dụng **Bộ khung 4 tầng (4-Tier Taxonomy)**: TSDoc cho Public APIs, `// WHY:` cho Non-obvious Invariants / Safeguards, `// TODO(context):` cho Nợ kỹ thuật, và CẤM TUYỆT ĐỐI comment giải thích code hiển nhiên.
+- **Mục đích & Bài toán**: Xóa bỏ sự thiếu nhất quán, loại comment rác (echoing code, dead code, excusing poor code) và buộc ghi lại quyết định kỹ thuật cùng bất biến nghiệp vụ.
+- **Điểm mấu chốt**: Bộ khung 4 tầng: TSDoc cho Public API, `// WHY:` cho non-obvious invariant, `// TODO(context):` cho nợ kỹ thuật, và cấm comment giải thích code hiển nhiên.
 
 ---
 

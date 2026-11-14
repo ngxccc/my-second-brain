@@ -1,11 +1,5 @@
 ---
 tags: [type/method, status/permanent]
-aliases:
-  [
-    Git Revert vs Reset on Shared Branch,
-    Revert vs Reset trên Nhánh dùng chung,
-    Shared Branch Undo Best Practices,
-  ]
 date: 2026-09-22
 description: "Phân tích rủi ro khi dùng git reset trên Shared Branch (main, develop), và nguyên lý an toàn của git revert trong môi trường cộng tác nhiều người."
 ---
@@ -14,9 +8,9 @@ description: "Phân tích rủi ro khi dùng git reset trên Shared Branch (main
 
 ## TL;DR
 
-- **Bản chất**: **Shared Branch** là nhánh dùng chung mà nhiều developer cùng clone/pull về máy (`main`, `develop`, `release`).
-- **Quy tắc an toàn**: Trên Shared Branch đã `git push`, **BẮT BUỘC dùng `git revert`** (tiến về phía trước), **CẤM dùng `git reset`** (lùi lại và viết lại lịch sử).
-- **Điểm mấu chốt**: `git reset` xóa bỏ commit khỏi lịch sử nhánh, ép buộc phải dùng `push --force` $\rightarrow$ làm hỏng lịch sử của toàn bộ thành viên khác. Ngược lại, `git revert` tạo ra một commit **MỚI** có nội dung đảo ngược hoàn toàn thay đổi của commit lỗi, giữ nguyên tính tuyến tính của lịch sử.
+- **Bản chất**: Trên shared branch đã push, `git revert` tạo commit mới đảo ngược thay đổi; `git reset` viết lại lịch sử của nhánh.
+- **Mục đích**: Hoàn tác thay đổi mà không phá lịch sử của những người đã pull về máy.
+- **Điểm mấu chốt**: `reset` buộc phải `push --force` và làm hỏng lịch sử toàn đội; đây là lý do revert là lựa chọn mặc định trên nhánh dùng chung.
 
 ---
 

@@ -1,20 +1,18 @@
 ---
 tags: [type/concept, status/permanent]
-aliases:
-  - Dynamic Array Exponential Growth
-  - Thuật Toán Tăng Trưởng Lũy Thừa Mảng Động
-  - Amortized O(1) Dynamic Array Growth
 date: 2026-08-13
 description: "Nguyên lý Khoa học Máy tính cốt lõi về thuật toán tăng trưởng lũy thừa của Mảng động (Dynamic Arrays) giúp đạt độ phức tạp khấu trắc Amortized O(1) thay vì O(N^2)."
 ---
 
 # Dynamic Array Exponential Growth
 
-Tài liệu này là một ghi chép Layer 1 phân tích nguyên lý Khoa học Máy tính cốt lõi về thuật toán tăng trưởng lũy thừa của Mảng động (Dynamic Arrays như C++ `std::vector`, Java `ArrayList`, Python `list`, Rust `Vec`, Go `slice`), giải thích lý do tại sao việc nhân sức chứa giúp đưa độ phức tạp của thao tác chèn cuối về mức khấu trắc Amortized $O(1)$.
+Ghi chép Layer 1 về tăng trưởng lũy thừa của Mảng động (C++ `std::vector`, Java `ArrayList`, Python `list`, Rust `Vec`, Go `slice`): vì sao nhân sức chứa đưa thao tác chèn cuối về khấu trắc Amortized $O(1)$.
 
 ## TL;DR
 
-Nếu mảng động tăng sức chứa theo kiểu tuyến tính ($+1$ phần tử mỗi lần cấp phát), việc thêm $N$ phần tử sẽ yêu cầu $\frac{N(N+1)}{2}$ lượt copy bộ nhớ với độ phức tạp $O(N^2)$. Bằng cách áp dụng **Thuật toán Tăng trưởng Lũy thừa (Exponential Growth Algorithm)** với hệ số nhân (từ $1.25\times$ đến $2.0\times$), tổng số lần xin RAM giảm xuống $O(\log N)$ lần và đưa chi phí trung bình của mỗi thao tác `append` về **Amortized $O(1)$**.
+- **Bản chất**: Mảng động tăng sức chứa theo hệ số nhân (1.25x đến 2x) thay vì cộng thêm từng phần tử, nên số lần cấp phát giảm từ O(N) xuống O(log N).
+- **Mục đích**: Đưa chi phí trung bình của mỗi thao tác `append` về amortized O(1) thay vì O(N) khi phải copy toàn bộ mảng.
+- **Điểm mấu chốt**: Amortized O(1) là trung bình cộng dồn, không phải mọi lần gọi đều nhanh; lần vượt capacity vẫn là O(N) và có thể gây spike latency.
 
 ---
 
@@ -61,7 +59,7 @@ Thao tác `append` đạt hiệu năng cực cao ở mức trung bình **Amortiz
 
 ---
 
-## Practical Implementation
+## Bảng so sánh Growth Factor giữa các ngôn ngữ
 
 Dưới đây là so sánh hệ số tăng trưởng (Growth Factor) của mảng động trên các ngôn ngữ lập trình phổ biến:
 
@@ -77,6 +75,6 @@ Dưới đây là so sánh hệ số tăng trưởng (Growth Factor) của mản
 
 ## Related Notes
 
-- [[Stack_vs_Heap_Memory_Fundamentals]] - Phân tầng bộ nhớ Stack và Heap trong khoa học máy tính.
+- Cấp phát lại mảng động trên Heap: [[Stack_vs_Heap_Memory_Fundamentals]]
 - [[Heap_Memory_Size_Classes_and_Alignment]] - Cơ chế phân chia ô nhớ tiêu chuẩn để tránh phân mảnh RAM.
-- [[Go_Slice_Underlying_Mechanics]] - Ứng dụng thuật toán tăng trưởng mượt trên Slice của Go.
+- [[Go_Append_Growth_and_Reallocation]] - Ứng dụng thuật toán tăng trưởng mượt trên Slice của Go.

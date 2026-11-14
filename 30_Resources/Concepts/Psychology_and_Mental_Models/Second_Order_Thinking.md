@@ -1,13 +1,6 @@
 ---
 tags: [type/concept, status/permanent]
 date: 2026-08-07
-aliases:
-  [
-    Second-Order Thinking,
-    Tư duy hệ quả bậc hai,
-    Tư duy đa tầng,
-    Second-Order Effects,
-  ]
 description: "Tư duy hệ quả bậc hai (Second-Order Thinking) là khả năng suy nghĩ vượt xa khỏi các kết quả tức thì (bậc một) để đánh giá chuỗi hiệu ứng gợn sóng (ripple effects) và những hậu quả dài hạn (bậc hai,..."
 ---
 
@@ -15,7 +8,9 @@ description: "Tư duy hệ quả bậc hai (Second-Order Thinking) là khả nă
 
 ## TL;DR
 
-Tư duy hệ quả bậc hai (Second-Order Thinking) là khả năng suy nghĩ vượt xa khỏi các kết quả tức thì (bậc một) để đánh giá chuỗi hiệu ứng gợn sóng (ripple effects) và những hậu quả dài hạn (bậc hai, bậc ba) của một quyết định.
+- **Bản chất**: Tư duy bậc hai là hỏi "rồi điều gì xảy ra tiếp theo" sau kết quả trước mắt, thay vì dừng ở hệ quả bậc một.
+- **Mục đích**: Tránh các quyết định đúng trong ngắn hạn nhưng tạo hệ quả xấu lan rộng về sau.
+- **Điểm mấu chốt**: Hệ quả bậc hai thường đến từ phản ứng của người khác và từ feedback loop, nên khó thấy nếu chỉ nhìn vào bản thân quyết định.
 
 ---
 
@@ -28,7 +23,7 @@ Tư duy hệ quả bậc hai (Second-Order Thinking) là khả năng suy nghĩ v
 
 ---
 
-## Practical Implementation
+## Bảng so sánh hệ quả bậc 1 và bậc 2
 
 - **Bảng so sánh Hệ quả Bậc 1 vs Bậc 2 trong Quyết định Sự nghiệp:**
 

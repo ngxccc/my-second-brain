@@ -1,7 +1,6 @@
 ---
 tags: [type/concept, status/permanent]
 date: 2026-06-18
-aliases: [TypeScript Type Utilities, So sánh Omit Pick Exclude]
 description: "So sánh chi tiết bản chất và phân biệt các tiện ích kiểu Omit, Pick, Exclude."
 ---
 
@@ -9,12 +8,9 @@ description: "So sánh chi tiết bản chất và phân biệt các tiện ích
 
 ## TL;DR
 
-Các Utility Types của TypeScript được chia thành hai nhóm chính dựa trên kiểu dữ liệu đầu vào:
-
-- **Object Types (Interface/Type):** Sử dụng `Pick` (lấy ra các thuộc tính) và `Omit` (loại bỏ các thuộc tính).
-- **Union Types (Tập hợp các kiểu dữ liệu/String literals):** Sử dụng `Exclude` (loại bỏ phần tử khỏi Union) và `Extract` (giữ lại phần tử trong Union).
-
-Sai lầm phổ biến nhất là sử dụng `Omit` lên một Union type, dẫn đến việc TypeScript hiểu sai mục đích và gây lỗi biên dịch.
+- **Bản chất**: `Pick` và `Omit` tác động lên object type theo key; `Exclude` và `Extract` tác động lên union theo phần tử.
+- **Mục đích**: Chọn đúng utility theo loại đầu vào thay vì viết lại mapped type thủ công.
+- **Điểm mấu chốt**: Dùng `Omit` lên một union là lỗi phổ biến: nó không loại bỏ key khỏi từng nhánh mà áp lên toàn bộ union, cho ra kết quả không như mong đợi.
 
 ## Core Concept
 
@@ -74,12 +70,13 @@ type WrongPaymentMethod = Omit<PaymentMethod, "TRADE_CREDIT">;
 ```
 
 **Bản chất lỗi:**
-`Omit` định nghĩa là `Pick<T, Exclude<keyof T, K>>`. Với `T = "PAYOS" | "CASH" | "TRADE_CREDIT"`, kiểu dữ liệu này là các string literals. Do đó `keyof T` sẽ trả về danh sách các thuộc tính của đối tượng toàn cục `String` (như `toString`, `length`, `valueOf`,...).
-TypeScript sẽ tiến hành loại bỏ thuộc tính `"TRADE_CREDIT"` ra khỏi đối tượng `String` chứ không loại bỏ phần tử `"TRADE_CREDIT"` ra khỏi Union. Kết quả là kiểu `WrongPaymentMethod` không thể gán bằng `"PAYOS"` hay `"CASH"`.
+
+- `Omit` định nghĩa là `Pick<T, Exclude<keyof T, K>>`. Với `T = "PAYOS" | "CASH" | "TRADE_CREDIT"`, đây là union của string literal, nên `keyof T` trả về danh sách thuộc tính của object toàn cục `String` (`toString`, `length`, `valueOf`, ...).
+- TypeScript loại bỏ thuộc tính `"TRADE_CREDIT"` khỏi object `String` chứ không loại phần tử `"TRADE_CREDIT"` khỏi Union; kết quả là `WrongPaymentMethod` không nhận được `"PAYOS"` hay `"CASH"`.
 
 ---
 
 **Related Notes:**
 
 - Cơ chế duyệt Union tự động: [[TS_Distributive_Conditional_Types]]
-- Bản đồ tri thức lập trình: [[000_Tech_MOC]]
+- [[000_Tech_MOC]]

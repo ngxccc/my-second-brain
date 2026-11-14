@@ -1,7 +1,6 @@
 ---
 tags: [type/concept, status/permanent]
 date: 2026-02-08
-aliases: [Model-View-Controller, Classical MVC]
 description: "Mô hình kinh điển và sự tiến hóa thành REST API hiện đại."
 ---
 
@@ -9,7 +8,9 @@ description: "Mô hình kinh điển và sự tiến hóa thành REST API hiện
 
 ## TL;DR
 
-Mẫu kiến trúc kinh điển chia ứng dụng thành 3 phần: **Model** (Dữ liệu & Logic), **View** (Giao diện hiển thị), và **Controller** (Điều phối). MVC là nền tảng giải quyết triệt để vấn đề "Spaghetti Code" (trộn lẫn logic query DB vào file HTML).
+- **Bản chất**: MVC chia ba phần: Model giữ dữ liệu và luật, View hiển thị, Controller điều phối request.
+- **Mục đích**: Tách logic khỏi HTML để chấm dứt spaghetti code trộn query DB vào template.
+- **Điểm mấu chốt**: Trong REST API hiện đại, View biến mất và Controller trả JSON; phần còn lại của MVC vẫn là nền của Layered Architecture.
 
 ## Core Concept
 

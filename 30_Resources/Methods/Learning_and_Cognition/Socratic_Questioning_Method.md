@@ -1,7 +1,6 @@
 ---
 tags: [type/method, status/permanent]
 date: 2026-04-29
-aliases: [Socratic Method, Maieutics, Elenchus]
 description: "Bộ 6 câu hỏi truy vấn để bóc mẽ các giả định (assumptions) ngầm và tránh bị dắt mũi."
 ---
 
@@ -9,7 +8,9 @@ description: "Bộ 6 câu hỏi truy vấn để bóc mẽ các giả định (a
 
 ## TL;DR
 
-Kỹ thuật đặt câu hỏi có hệ thống để bóc tách vấn đề, làm rõ sự mơ hồ và lôi các giả định ngầm (Assumptions) ra ánh sáng. Phương pháp này giúp tránh việc ra quyết định dựa trên cảm tính hoặc bị cuốn vào các cuộc tranh luận vô bổ.
+- **Bản chất**: Bộ 6 câu hỏi có hệ thống để làm rõ mơ hồ và lôi giả định ngầm ra ánh sáng.
+- **Mục đích**: Tránh quyết định dựa trên cảm tính và tránh bị dắt vào tranh luận vô bổ.
+- **Điểm mấu chốt**: Mục tiêu là tò mò có chủ đích để hiểu bản chất, không phải công cụ tấn công; dùng để thắng tranh luận sẽ chỉ nhận lại phòng thủ.
 
 ## Core Concept
 
@@ -22,7 +23,7 @@ Kỹ thuật đặt câu hỏi có hệ thống để bóc tách vấn đề, l�
   5. _Implications (Hệ quả):_ "Hành động này sẽ dẫn đến rủi ro dài hạn nào?".
   6. _Meta-question (Siêu câu hỏi):_ "Câu hỏi này có thực sự giúp giải quyết vấn đề cốt lõi không?".
 
-## Practical Implementation
+## Cạm bẫy giao tiếp và cách khắc phục
 
 - **Cạm bẫy Giao tiếp (Tone of Voice):** Dùng giọng điệu gay gắt hoặc dồn dập sẽ khiến người nghe cảm thấy bị thẩm vấn và lập tức đóng não phòng thủ.
 - **Cách khắc phục (State Intent & Play Dumb):** Luôn hạ giọng, khẳng định mục đích tốt và tỏ ra "ngây thơ" để đối phương thoải mái giải thích (Ví dụ: "Tôi hỏi để hiểu rõ ý bạn hơn chứ không có ý bắt bẻ...").

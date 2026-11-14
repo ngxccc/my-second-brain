@@ -1,6 +1,5 @@
 ---
 tags: [type/concept, status/permanent]
-aliases: [Generational Garbage Collection, V8 GC Orinoco, Minor and Major GC]
 date: 2026-08-09
 description: "Cơ chế dọn rác phân thế hệ (Generational GC) trong V8 Engine gồm Scavenger và Mark-Sweep-Compact."
 ---
@@ -11,7 +10,9 @@ Tài liệu này là một ghi chép Layer 2 mô tả chi tiết cách JavaScrip
 
 ## TL;DR
 
-Garbage Collector (GC) trong JavaScript Engine (như V8 Orinoco) áp dụng **Giả thuyết thế hệ (Generational Hypothesis)**: phần lớn các đối tượng đều chết trẻ. Vùng nhớ [[JS_Stack_vs_Heap_Memory|Heap]] được chia thành **New Space** (chứa đối tượng mới, dùng thuật toán Scavenger) và **Old Space** (chứa đối tượng sống lâu, dùng thuật toán Mark-Sweep-Compact). Cơ chế phân chia này giúp thu hồi các vùng nhớ không còn truy cập được để chống [[JS_Memory_Leaks_and_Mitigation|rò rỉ bộ nhớ]] trên các runtime hiện đại như [[JS_Runtimes_Bun_vs_NodeJS|Node.js và Bun]].
+- **Bản chất**: V8 chia heap thành New Space (Scavenger) và Old Space (Mark-Sweep-Compact), dựa trên giả thuyết phần lớn object chết trẻ.
+- **Mục đích**: Giảm chi phí dọn rác bằng cách chỉ chạy thuật toán đắt trên vùng có ít object sống lâu.
+- **Điểm mấu chốt**: Object sống sót qua nhiều lần Scavenge sẽ được promote lên Old Space; giữ object lâu là chi phí thật, không phải chi tiết nội bộ của engine.
 
 ---
 
@@ -33,7 +34,7 @@ Garbage Collector (GC) trong JavaScript Engine (như V8 Orinoco) áp dụng **Gi
 
 ---
 
-## Practical Implementation
+## Tối ưu hóa GC trong V8
 
 ### Kỹ thuật Tối ưu Hóa Orinoco trong V8
 
@@ -46,8 +47,8 @@ Garbage Collector (GC) trong JavaScript Engine (như V8 Orinoco) áp dụng **Gi
 
 - [[Garbage_Collection_Fundamentals]] - Nguyên lý khoa học máy tính cốt lõi về cơ chế dọn rác tự động.
 - [[Memory_Leaks_Core_Mechanics]] - Bản chất rò rỉ bộ nhớ ở mức độ nền tảng.
-- [[Stack_vs_Heap_Memory_Fundamentals]] - Nguyên lý khoa học máy tính cốt lõi về phân tầng bộ nhớ Stack và Heap.
-- [[JS_Stack_vs_Heap_Memory]]
-- [[JS_Memory_Leaks_and_Mitigation]]
-- [[JS_Runtimes_Bun_vs_NodeJS]]
+- Hai phân vùng V8 phải quản lý: [[Stack_vs_Heap_Memory_Fundamentals]]
+- Bố cục bộ nhớ mà V8 chia thế hệ: [[JS_Stack_vs_Heap_Memory]]
+- Hệ quả khi object sống quá lâu: [[JS_Memory_Leaks_and_Mitigation]]
+- Khác biệt engine khiến GC khác nhau: [[JS_Runtimes_Bun_vs_NodeJS]]
 - [[000_Tech_MOC]]

@@ -1,7 +1,6 @@
 ---
 tags: [type/concept, status/permanent]
 date: 2026-06-07
-aliases: [Dấu nháy trong SQL, SQL Quotes, Single vs Double Quotes SQL]
 description: "Phân biệt dấu nháy đơn (String Literals) và nháy kép (Identifiers) trong SQL."
 ---
 
@@ -9,7 +8,9 @@ description: "Phân biệt dấu nháy đơn (String Literals) và nháy kép (I
 
 ## TL;DR
 
-Phân biệt sử dụng dấu nháy đơn và nháy kép trong SQL: Nháy đơn `''` dùng cho giá trị chuỗi (String Literals), nháy kép `""` dùng cho tên thực thể (Identifiers như tên cột, tên bảng).
+- **Bản chất**: Nháy đơn `''` đánh dấu string literal, nháy kép `""` đánh dấu identifier (tên cột, tên bảng).
+- **Mục đích**: Tránh lỗi khi tên cột chứa dấu cách hoặc trùng từ khóa hệ thống, và tránh nhầm giá trị dữ liệu với tên thực thể.
+- **Điểm mấu chốt**: Nháy kép còn dùng để phân biệt hoa thường của identifier; dùng sai loại nháy thường ra lỗi `column does not exist` khó đọc thay vì lỗi cú pháp rõ ràng.
 
 ## Core Concept
 

@@ -1,12 +1,6 @@
 ---
 tags: [type/method, status/permanent]
 date: 2026-08-07
-aliases:
-  [
-    Problem Solving Mental Model Pipeline,
-    Quy trình 5 bước đánh giá vấn đề bằng mô hình tư duy,
-    Mental Model Decision Framework,
-  ]
 description: "Quy trình 5 bước tiêu chuẩn hóa (Mental Model Decision Engine) giúp chuyển hóa các mô hình tư duy rải rác thành một pipeline đánh giá, phản biện và ra quyết định thực chiến cho bất kỳ bài toán phức..."
 ---
 
@@ -14,7 +8,9 @@ description: "Quy trình 5 bước tiêu chuẩn hóa (Mental Model Decision Eng
 
 ## TL;DR
 
-Quy trình 5 bước tiêu chuẩn hóa (Mental Model Decision Engine) giúp chuyển hóa các mô hình tư duy rải rác thành một pipeline đánh giá, phản biện và ra quyết định thực chiến cho bất kỳ bài toán phức tạp nào trong cuộc sống, sự nghiệp và đầu tư.
+- **Bản chất**: Pipeline 5 bước chuẩn hóa việc chọn và áp mental model cho một bài toán cụ thể.
+- **Mục đích**: Biến tập mental model rời rạc thành quy trình ra quyết định lặp lại được, thay vì phụ thuộc trí nhớ lúc cần.
+- **Điểm mấu chốt**: Giá trị nằm ở bước phản biện và kiểm tra chéo giữa các mô hình; chạy pipeline mà bỏ bước đó chỉ là hợp lý hóa quyết định đã có sẵn.
 
 ---
 

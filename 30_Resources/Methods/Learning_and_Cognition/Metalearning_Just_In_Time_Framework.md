@@ -1,13 +1,6 @@
 ---
 tags: [type/method, status/permanent]
 date: 2026-07-31
-aliases:
-  [
-    Metalearning Framework,
-    Just In Time Learning,
-    Phương pháp Siêu học tập,
-    Tư duy học tập nguyên bản,
-  ]
 description: "Metalearning Just-In-Time Framework là phương pháp tiếp thu kiến thức và kỹ năng kỹ thuật tối ưu dựa trên nguyên tắc 80/20 và học tập dựa trên bài toán thực tế (Problem-Driven Learning). Phương phá..."
 ---
 
@@ -15,7 +8,9 @@ description: "Metalearning Just-In-Time Framework là phương pháp tiếp thu 
 
 ## TL;DR
 
-**Metalearning Just-In-Time Framework** là phương pháp tiếp thu kiến thức và kỹ năng kỹ thuật tối ưu dựa trên nguyên tắc 80/20 và học tập dựa trên bài toán thực tế (_Problem-Driven Learning_). Phương pháp này thay thế tư duy học thuộc lòng thụ động (_Just-In-Case Learning_) bằng thuật toán 3 bước: Nắm sơ đồ tư duy cốt lõi (Mental Model 20%), Xây dựng sản phẩm thực tế (Build), và Tra cứu cú pháp đúng lúc cần (Just-In-Time Lookup).
+- **Bản chất**: Học 20% mental model cốt lõi, build sản phẩm thật, rồi tra cú pháp đúng lúc cần thay vì học thuộc trước.
+- **Mục đích**: Cắt thời gian học những thứ chưa dùng đến và neo kiến thức vào bài toán thật.
+- **Điểm mấu chốt**: Just-In-Time chỉ hiệu quả khi đã có mental model đủ để biết cần tra cái gì; thiếu nền thì tra cứu biến thành copy-paste.
 
 ---
 
@@ -46,7 +41,7 @@ $$\text{Mental Model (20\%)} + \text{Build Something} + \text{Just-In-Time Looku
 
 ---
 
-## Concrete Examples & 3-Step Algorithm
+## Lộ trình thực thi Siêu Học Tập
 
 ### Thuật toán 3 bước Siêu Học Tập
 
@@ -62,7 +57,7 @@ $$\text{Mental Model (20\%)} + \text{Build Something} + \text{Just-In-Time Looku
 
 ---
 
-## Practical Implementation
+## Những cạm bẫy cần tránh
 
 ### Trade-offs & Cạm bẫy cần tránh
 

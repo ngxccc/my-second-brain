@@ -1,8 +1,6 @@
 ---
 tags: [type/concept, status/permanent]
 date: 2026-06-22
-aliases:
-  [Swimmer's Body Illusion, Ảo tưởng vóc dáng kình ngư, Selection Bias Fallacy]
 description: "Nhầm lẫn giữa tiêu chí chọn lọc và kết quả thực tế."
 ---
 
@@ -10,7 +8,9 @@ description: "Nhầm lẫn giữa tiêu chí chọn lọc và kết quả thực
 
 ## TL;DR
 
-Ảo tưởng vóc dáng kình ngư (Swimmer's Body Illusion) xảy ra khi chúng ta nhầm lẫn giữa **tiêu chí lựa chọn/đặc tính bẩm sinh** (selection factors) với **kết quả của quá trình rèn luyện/hành động** (results). Chúng ta tin rằng việc thực hiện một hoạt động sẽ mang lại các thuộc tính mong ước, trong khi thực chất chính những thuộc tính đó mới là nguyên nhân khiến một đối tượng được chọn lọc vào hoạt động đó.
+- **Bản chất**: Ảo tưởng vóc dáng kình ngư là nhầm lẫn giữa tiêu chí chọn lọc (người có sẵn tố chất mới được chọn) với kết quả của quá trình rèn luyện.
+- **Mục đích**: Nhận diện các lời hứa "làm X sẽ có được Y" để không mua khóa học hay phương pháp dựa trên bằng chứng bị chọn lọc.
+- **Điểm mấu chốt**: Câu hỏi kiểm tra là nhóm đối chứng nằm ở đâu; nếu chỉ nhìn những người thành công mà không nhìn người đã làm y hệt và thất bại thì kết luận vô giá trị.
 
 ---
 
@@ -36,7 +36,7 @@ description: "Nhầm lẫn giữa tiêu chí chọn lọc và kết quả thực
 
 ---
 
-## Practical Implementation
+## Quy tắc chống ảo tưởng chọn mẫu
 
 Để tránh rơi vào ảo tưởng này trong công việc và cuộc sống, hãy áp dụng các nguyên tắc sau:
 

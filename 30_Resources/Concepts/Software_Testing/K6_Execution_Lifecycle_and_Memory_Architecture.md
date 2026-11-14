@@ -1,14 +1,6 @@
 ---
 tags: [type/concept, status/permanent]
 date: 2026-08-28
-aliases:
-  [
-    k6 Lifecycle,
-    k6 Goja Memory Model,
-    k6 SharedArray,
-    Virtual Users Execution Context,
-    k6/execution,
-  ]
 description: "Vòng đời thực thi 4 pha, cơ chế cô lập bộ nhớ Goja VM và module k6/execution trong Grafana k6."
 ---
 
@@ -18,7 +10,7 @@ description: "Vòng đời thực thi 4 pha, cơ chế cô lập bộ nhớ Goja
 
 - **Bản chất**: k6 thực thi kịch bản bằng các máy ảo Goja JavaScript độc lập được quản lý bởi Go runtime chính.
 - **Mục đích**: Phân lập hoàn toàn không gian bộ nhớ giữa các Virtual User (VU), ngăn chặn rò rỉ RAM khi scale hàng nghìn VU đồng thời.
-- **Điểm mấu chốt**: Dữ liệu dùng chung (fixtures, tokens) bắt buộc nạp qua `SharedArray` ở Init Context để lưu trữ 1 bản duy nhất trên Go heap; truy xuất ngữ cảnh thực thi hiện đại qua module `k6/execution` thay cho biến global `__VU` / `__ITER`.
+- **Điểm mấu chốt**: Dữ liệu dùng chung (fixtures, tokens) nạp qua `SharedArray` ở Init Context để chỉ giữ 1 bản trên Go heap; ngữ cảnh thực thi lấy qua `k6/execution` thay cho `__VU`/`__ITER`.
 
 ---
 
@@ -90,67 +82,12 @@ graph TD
 
 ---
 
-## Practical Implementation
+## Tham chiếu Script
 
-```typescript
-import { post } from "k6/http";
-import { check } from "k6";
-import { SharedArray } from "k6/data";
-import { vu, test } from "k6/execution";
+Script tham chiếu đầy đủ nằm ở [[K6_Concurrency_Script_Blueprint]]. Hai chi tiết riêng của biến thể stress trong note này:
 
-interface UserCredential {
-  id: string;
-  token: string;
-  ip: string;
-}
-
-// 1. INIT CONTEXT: Load fixture 1 lần duy nhất vào Go memory
-const users = new SharedArray<UserCredential>("user_pool", () => {
-  return JSON.parse(open("./fixtures/users.json")) as UserCredential[];
-});
-
-export const options = {
-  discardResponseBodies: true, // Tiết kiệm RAM khi không parse response body
-  scenarios: {
-    stress: {
-      executor: "per-vu-iterations",
-      vus: 500,
-      iterations: 1,
-      maxDuration: "10s",
-    },
-  },
-};
-
-// 2. VU CONTEXT: Truy xuất qua k6/execution API
-export default function (): void {
-  // Ánh xạ an toàn không trùng lặp qua idInTest
-  const userIndex = (vu.idInTest - 1) % users.length;
-  const user = users[userIndex];
-
-  if (!user) {
-    test.abort("User credentials partition missing");
-    return;
-  }
-
-  const res = post(
-    "http://127.0.0.1:3000/api/v1/booking",
-    JSON.stringify({ seatId: "VIP-01" }),
-    {
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${user.token}`,
-        "X-Forwarded-For": user.ip,
-      },
-    },
-  );
-
-  check(res, {
-    "status valid": (r) => r.status === 201 || r.status === 409,
-  });
-}
-```
-
----
+- `discardResponseBodies: true` để không parse response và tiết kiệm RAM khi bắn 500 VUs.
+- Gọi `test.abort("User credentials partition missing")` khi không tìm thấy user partition, thay vì để request chạy với token rỗng.
 
 ## Related Notes
 
@@ -159,4 +96,4 @@ export default function (): void {
 - Quy chuẩn kiểm thử tải Concurrency: [[K6_High_Concurrency_Load_Testing_SOP]]
 - Nguyên lý quản lý bộ nhớ nền tảng: [[Stack_vs_Heap_Memory_Fundamentals]]
 - Hướng dẫn Benchmark cục bộ: [[Local_Stress_Testing_Benchmark]]
-- Bản đồ tri thức kiểm thử: [[30_Resources/Concepts/000_Concepts_MOC.md|Concepts MOC]]
+- [[000_Concepts_MOC]]

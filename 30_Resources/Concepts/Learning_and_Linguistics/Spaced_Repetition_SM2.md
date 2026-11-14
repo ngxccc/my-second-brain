@@ -1,7 +1,6 @@
 ---
 tags: [type/algorithm, status/permanent]
 date: 2026-04-29
-aliases: [SuperMemo 2, SRS, Forgetting Curve]
 description: "Thuật toán chống quên lãng bằng toán học."
 ---
 
@@ -9,7 +8,9 @@ description: "Thuật toán chống quên lãng bằng toán học."
 
 ## TL;DR
 
-Thuật toán tính toán "điểm rơi phong độ" của trí nhớ. Cập nhật khoảng cách ngày ôn tập tiếp theo (Interval) dựa trên hệ số độ dễ (Easiness Factor - EF) và điểm tự đánh giá của người dùng. Giúp ghi nhớ dài hạn với số lần lặp lại ít nhất ($O(1)$ effort cho mỗi từ).
+- **Bản chất**: SM-2 tính interval ôn tiếp theo từ easiness factor và điểm tự đánh giá, nhắm can thiệp ngay trước khi forgetting curve chạm đáy.
+- **Mục đích**: Giữ trí nhớ dài hạn với số lần lặp tối thiểu thay vì ôn dày.
+- **Điểm mấu chốt**: Thuật toán phụ thuộc hoàn toàn vào chất lượng tự đánh giá; chấm điểm dễ dãi làm interval giãn sai và gây quên hàng loạt.
 
 ## Core Concept
 
@@ -63,7 +64,10 @@ export const calculateSM2 = (state: Sm2State, grade: number): Sm2State => {
 
 ---
 
-**Related Notes:**
+## Related Notes
 
+- 20 quy tắc thiết kế thẻ flashcard tối ưu: [[Wozniak_20_Rules_of_Formulating_Knowledge]]
+- Khung đánh giá kỹ thuật học tập thực chứng: [[Dunlosky_Learning_Techniques_Matrix]]
+- Thuyết tải nhận thức tối ưu hóa bộ nhớ: [[Cognitive_Load_Theory]]
 - Áp dụng thuật toán này vào nhóm từ: [[Phonetic_Chunking]]
 - Áp dụng tâm lý học để tăng độ ghi nhớ: [[Cognitive_Strain_UX]]

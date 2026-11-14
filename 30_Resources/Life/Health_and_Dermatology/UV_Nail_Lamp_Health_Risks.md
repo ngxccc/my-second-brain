@@ -1,12 +1,6 @@
 ---
 tags: [type/concept, status/permanent]
 date: 2026-06-23
-aliases:
-  [
-    Tác hại của máy hơ gel tia cực tím,
-    UV Nail Lamp Health Risks,
-    Ảnh hưởng của tia UV làm móng,
-  ]
 description: "Sử dụng máy hơ gel tia cực tím (UV/LED) khi làm móng phát ra bức xạ UVA. Bức xạ này gây tổn thương DNA tế bào, lão hóa da tay sớm và có thể tăng nguy cơ ung thư da nếu tiếp xúc thường xuyên tích lũ..."
 ---
 
@@ -14,7 +8,9 @@ description: "Sử dụng máy hơ gel tia cực tím (UV/LED) khi làm móng ph
 
 ## TL;DR
 
-Sử dụng máy hơ gel tia cực tím (UV/LED) khi làm móng phát ra bức xạ UVA. Bức xạ này gây tổn thương DNA tế bào, lão hóa da tay sớm và có thể tăng nguy cơ ung thư da nếu tiếp xúc thường xuyên tích lũy dài hạn. Người dùng có thể giảm thiểu rủi ro bằng cách bôi kem chống nắng phổ rộng hoặc đeo găng tay chống tia UV chuyên dụng trước khi thực hiện quy trình.
+- **Bản chất**: Đèn hơ gel phát UVA 340-395nm, xuyên xuống hạ bì và sinh ROS gây tổn thương DNA cùng collagen.
+- **Mục đích**: Định lượng rủi ro thay vì tin vào nhãn "an toàn": rủi ro tích lũy theo số lần làm móng, không theo một lần.
+- **Điểm mấu chốt**: Giảm thiểu bằng kem chống nắng vùng tay, găng chắn UV và giãn tần suất; tổn thương là tích lũy nên giảm số lần có tác động lớn hơn đổi thiết bị.
 
 ## Core Concept
 
@@ -33,7 +29,7 @@ Sử dụng máy hơ gel tia cực tím (UV/LED) khi làm móng phát ra bức x
   - **Cường độ phơi nhiễm cao:** Thời gian phơi nhiễm trong phòng thí nghiệm (ví dụ: 20 phút liên tục) lớn hơn nhiều so với thời gian hơ móng thực tế tại salon (chỉ 30 giây đến 2 phút).
   - **Thiếu dữ liệu dịch tễ học:** Hiện vẫn chưa có các nghiên cứu dịch tễ học dài hạn trên quy mô lớn ở người để đưa ra kết luận chắc chắn về mối quan hệ nhân quả trực tiếp giữa máy hơ gel và ung thư da.
 
-## Practical Implementation
+## Bảng biện pháp phòng ngừa
 
 Để giảm thiểu tối đa rủi ro tổn hại da tay khi làm móng gel, cần thực hiện các biện pháp phòng ngừa sau:
 

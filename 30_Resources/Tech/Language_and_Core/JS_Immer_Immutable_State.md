@@ -1,6 +1,5 @@
 ---
 tags: [type/concept, status/permanent]
-aliases: [Immer, ImmerJS, Copy-on-Write, Structural Sharing, Immutable State]
 date: 2026-06-20
 description: "Quản lý trạng thái bất biến (Immutable State) thông qua cơ chế Copy-on-Write (COW) và ES6 Proxy, giải pháp tối ưu cho Zustand/Redux stores."
 ---
@@ -9,7 +8,9 @@ description: "Quản lý trạng thái bất biến (Immutable State) thông qua
 
 ## TL;DR
 
-**Immer** là một thư viện JavaScript giúp đơn giản hóa việc quản lý trạng thái bất biến (Immutable State). Nó cho phép lập trình viên viết mã đột biến trực tiếp (mutable mutation) tự nhiên trên một đối tượng nháp (`draft`), sau đó tự động chuyển đổi thành trạng thái mới bất biến thông qua cơ chế **Copy-on-Write (COW)** sử dụng ES6 **Proxy**. Immer đảm bảo tối ưu hóa bộ nhớ thông qua **Structural Sharing (Chia sẻ cấu trúc)** và loại bỏ hoàn toàn các rủi ro lỗi khi sử dụng các toán tử spread lồng nhau (`...`) phức tạp.
+- **Bản chất**: Immer cho phép viết mutation trực tiếp trên `draft` proxy, rồi tự sinh state mới bất biến bằng Copy-on-Write.
+- **Mục đích**: Tránh spread lồng nhiều tầng khi cập nhật state, đồng thời giữ structural sharing để không phải copy toàn bộ cây.
+- **Điểm mấu chốt**: Bất biến chỉ đúng ở kết quả; bên trong `produce` vẫn đang mutate, nên trả draft ra ngoài hoặc giữ tham chiếu tới draft là bug.
 
 ---
 
@@ -19,7 +20,7 @@ description: "Quản lý trạng thái bất biến (Immutable State) thông qua
 
 Immer hoạt động thông qua một hàm trung tâm là `produce(baseState, recipe)`:
 
-- **Draft State (Bản nháp):** Khi bắt đầu, Immer tạo ra một đối tượng `Proxy` bao bọc lấy `baseState` gốc. Bản nháp `draft` này sẽ hứng toàn bộ các thao tác ghi (mutations) của bạn.
+- **Draft State (Bản nháp):** Khi bắt đầu, Immer tạo một `Proxy` bao bọc `baseState` gốc; `draft` hứng toàn bộ thao tác ghi (mutations).
 - **Đánh chặn (Interception):** Khi bạn thực hiện thay đổi trên `draft`, ES6 `Proxy` sẽ đánh chặn các thao tác đó.
 - **Sao chép lười biếng (Lazy Cloning / Copy-on-Write):** Immer **không** clone toàn bộ object tree ngay lập tức. Chỉ khi bạn bắt đầu ghi đè/thay đổi thuộc tính của một node cụ thể, Immer mới thực hiện sao chép nông (shallow copy) node đó.
 - **Đóng băng kết quả (Finalization):** Khi hàm kết thúc, Immer duyệt qua cây và lắp ghép các phần đã clone mới với các phần không đổi (chia sẻ tham chiếu cũ) để tạo ra `nextState` hoàn chỉnh và gọi `Object.freeze()` để bảo vệ nó.
@@ -133,6 +134,6 @@ export const useCartStore = create<CartState>()(
 
 ## Related Notes
 
-- Bản đồ tri thức: [[000_Tech_MOC]]
-- Đánh giá hiệu năng thực tế dự án: [[10_Projects/Hyundai_Ecommerce/Docs/V8_Performance_Audit.md|V8_Performance_Audit]]
+- [[000_Tech_MOC]]
+- Đánh giá hiệu năng thực tế dự án: [[V8_Performance_Audit]]
 - Cơ chế dọn rác bộ nhớ: [[JS_Generational_Garbage_Collection]]

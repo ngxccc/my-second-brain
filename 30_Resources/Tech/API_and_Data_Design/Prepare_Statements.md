@@ -1,11 +1,6 @@
 ---
 tags: [type/concept, status/permanent]
 date: 2026-06-07
-aliases:
-  - Prepare Statements in DB
-  - SQL Prepare
-  - Parameterized Queries
-  - Prepared Statements
 description: "Cơ chế phân tách Query Template và Parameters trong RDBMS nhằm tối ưu hóa Execution Plan Caching và miễn nhiễm tuyệt đối với SQL Injection."
 ---
 
@@ -13,9 +8,9 @@ description: "Cơ chế phân tách Query Template và Parameters trong RDBMS nh
 
 ## TL;DR
 
-- **Bản chất**: Cơ chế giao tiếp cơ sở dữ liệu phân tách quy trình thực thi SQL thành 2 pha độc lập: Pha 1 biên dịch khung truy vấn (Query Template Compilation & Optimization) và Pha 2 truyền dữ liệu tham số (Parameter Binding & Execution).
+- **Bản chất**: Cơ chế tách quy trình SQL thành 2 pha: biên dịch khung truy vấn (Query Template) và truyền tham số (Parameter Binding) ở pha thực thi.
 - **Mục đích**: Miễn nhiễm 100% với tấn công **SQL Injection** và tăng tốc độ xử lý hàng loạt nhờ tái sử dụng kế hoạch thực thi (**Execution Plan Cache**).
-- **Điểm mấu chốt**: RDBMS coi tham số truyền vào thuần túy là giá trị văn bản/dữ liệu (literal data), tuyệt đối không bao giờ thông dịch lại cú pháp (syntax parsing) hay thay đổi cây cú pháp trừu tượng (AST) của câu lệnh.
+- **Điểm mấu chốt**: RDBMS coi tham số là literal data thuần túy: không bao giờ thông dịch lại cú pháp hay thay đổi AST của câu lệnh.
 
 ---
 
@@ -105,7 +100,7 @@ for _, b := range batchBookings {
 
 ## Related Notes
 
-- [[Index_BPlusTree]]
-- [[Database_Indexing_Guidelines]]
-- [[Postgres_SQL_Performance_Benchmarking_Guide]]
-- [[Client_Side_Encryption]]
+- Cấu trúc mà prepared statement tận dụng: [[Index_BPlusTree]]
+- Chọn index cho câu lệnh đã chuẩn bị: [[Database_Indexing_Guidelines]]
+- Đo lại hiệu năng sau khi prepare: [[Postgres_SQL_Performance_Benchmarking_Guide]]
+- Cùng nhóm hardening phía dữ liệu: [[Client_Side_Encryption]]

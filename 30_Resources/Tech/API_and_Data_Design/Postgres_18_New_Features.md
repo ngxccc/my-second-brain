@@ -1,8 +1,6 @@
 ---
 tags: [type/concept, status/permanent]
 date: 2026-07-04
-aliases:
-  [PostgreSQL 18 Features, Cập nhật PostgreSQL 18, Postgres 18 Stable Features]
 description: "Tổng hợp các tính năng mới và cải tiến kiến trúc nhân (Meson build, AIO, Failover Slots, Radix Tree Vacuum) của PostgreSQL 18."
 ---
 
@@ -10,7 +8,9 @@ description: "Tổng hợp các tính năng mới và cải tiến kiến trúc 
 
 ## TL;DR
 
-PostgreSQL 18 (phiên bản chính thức phát hành cuối năm 2025, đạt trạng thái GA ổn định trong năm 2026) mang lại những đột phá kiến trúc quan trọng cho các hệ thống doanh nghiệp tải cao. Các điểm cải tiến trọng tâm bao gồm: **B-Tree Index Skip Scan**, **Biến phiên chuẩn SQL (SQL-standard Session Variables)**, **DDL Logical Replication**, **Tối ưu hóa Scaling kết nối nội tại (Core Connection Scaling)**, **Tiến trình chuyển đổi 64-bit Transaction ID (64-bit XID)** và **Mã hóa Dữ liệu Tự động (Transparent Data Encryption - TDE)**.
+- **Bản chất**: PostgreSQL 18 bổ sung Index Skip Scan, biến phiên chuẩn SQL, DDL logical replication, tối ưu scaling kết nối, 64-bit XID và TDE.
+- **Mục đích**: Biết tính năng nào thay đổi quyết định thiết kế hiện tại, đặc biệt index cho cột không phải tiền tố và rủi ro XID wraparound.
+- **Điểm mấu chốt**: Index Skip Scan không miễn phí: chỉ nhanh khi cardinality của cột đầu thấp, còn với cột cardinality cao thì vẫn phải giữ single index.
 
 ---
 

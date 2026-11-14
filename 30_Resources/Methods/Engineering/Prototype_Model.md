@@ -1,6 +1,5 @@
 ---
 tags: [type/method, status/permanent]
-aliases: [Quy trình bản mẫu, Mô hình bản mẫu, Prototype Model, Prototyping]
 date: 2026-07-08
 description: "Quy trình phát triển phần mềm theo mô hình bản mẫu (Prototype Model) là phương pháp xây dựng một phiên bản thử nghiệm sớm (prototype) của sản phẩm để trình diễn, thu thập phản hồi và làm rõ yêu cầu..."
 ---
@@ -9,7 +8,9 @@ description: "Quy trình phát triển phần mềm theo mô hình bản mẫu (
 
 ## TL;DR
 
-Quy trình phát triển phần mềm theo mô hình bản mẫu (Prototype Model) là phương pháp xây dựng một phiên bản thử nghiệm sớm (prototype) của sản phẩm để trình diễn, thu thập phản hồi và làm rõ yêu cầu của khách hàng trước khi tiến hành phát triển hệ thống hoàn chỉnh. Mô hình này tập trung giảm thiểu rủi ro hiểu sai nghiệp vụ và tăng tính trực quan cho người dùng.
+- **Bản chất**: Xây bản thử sớm để làm rõ yêu cầu trước khi phát triển hệ thống hoàn chỉnh.
+- **Mục đích**: Giảm rủi ro hiểu sai nghiệp vụ khi khách hàng chưa định nghĩa được yêu cầu.
+- **Điểm mấu chốt**: Prototype để học yêu cầu, không phải để ship; đẩy code prototype lên production là nợ kỹ thuật ngay từ đầu.
 
 ---
 
@@ -30,7 +31,9 @@ Quy trình phát triển phần mềm theo mô hình bản mẫu (Prototype Mode
 
 ### Lịch Sử & Tiến Hóa
 
-Prototype Model được phát triển để giải quyết nhược điểm _"khách hàng không xác định rõ yêu cầu từ đầu"_ của Waterfall. Bằng cách cho phép xây dựng nhanh các bản mẫu thô để lấy ý kiến trực quan từ người dùng, mô hình này mở ra tư duy phát triển lặp (iterative) định hình nên Agile hiện đại. Xem chi tiết tại [[SDLC_Methodologies_Evolution]].
+- **Vấn đề gốc:** Waterfall giả định khách hàng xác định rõ yêu cầu từ đầu, điều thường không đúng.
+- **Cách Prototype Model xử lý:** dựng nhanh bản mẫu thô để lấy ý kiến trực quan từ người dùng, mở ra tư duy phát triển lặp (iterative) định hình nên Agile hiện đại.
+- **Đọc thêm:** [[SDLC_Methodologies_Evolution]].
 
 ---
 

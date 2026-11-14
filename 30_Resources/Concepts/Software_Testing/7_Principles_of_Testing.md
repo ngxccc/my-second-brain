@@ -1,7 +1,6 @@
 ---
 tags: [type/concept, status/permanent]
 date: 2026-07-07
-aliases: [7 nguyên lý kiểm thử, Seven Principles of Testing]
 description: "7 nguyên lý kiểm thử phần mềm nền tảng định hình hoạt động kiểm định."
 ---
 
@@ -9,7 +8,9 @@ description: "7 nguyên lý kiểm thử phần mềm nền tảng định hình
 
 ## TL;DR
 
-7 Nguyên lý Kiểm thử Phần mềm là các quy tắc triết lý cơ bản được đúc kết từ thực tế ngành phát triển phần mềm. Chúng giúp người kiểm thử định hình tư duy đúng đắn, tránh những ảo tưởng phi thực tế (như kiểm thử hết mọi trường hợp) và tối ưu hóa nguồn lực kiểm thử để đạt hiệu quả cao nhất.
+- **Bản chất**: Bảy nguyên lý ISTQB đặt giới hạn cho kiểm thử: kiểm thử chỉ chứng minh có lỗi, không chứng minh hết lỗi; test sớm; lỗi tập trung; test phụ thuộc ngữ cảnh; và nghịch lý thuốc trừ sâu.
+- **Mục đích**: Bỏ ảo tưởng kiểm thử hết mọi trường hợp và phân bổ nguồn lực vào nơi rủi ro cao thay vì dàn đều.
+- **Điểm mấu chốt**: Không có lỗi tìm thấy không đồng nghĩa với hệ thống đúng; đây là lý do phải kết hợp kiểm thử với phân tích rủi ro và kiểm chứng độc lập.
 
 ---
 
@@ -61,7 +62,7 @@ graph LR
 
 ---
 
-## Practical Examples
+## Ví dụ minh họa cho các nguyên lý
 
 - **Ví dụ về Nguyên lý 2 (Kiểm thử kiệt quệ):** Một form nhập liệu chỉ có 3 trường số nguyên: Tuổi (1 đến 100), Điểm số (0 đến 10), và Số năm kinh nghiệm (0 đến 50). Số lượng tổ hợp đầu vào có thể có là 100 _11_ 51 = 56.100 trường hợp. Ta không thể test tay hết được mà phải áp dụng kỹ thuật chọn giá trị đại diện và kiểm thử biên.
 - **Ví dụ về Nguyên lý 6 (Phụ thuộc bối cảnh):** Khi phát triển ứng dụng ngân hàng di động (Mobile Banking), kiểm thử viên sẽ tập trung cao độ vào bảo mật (Security), mã hóa dữ liệu và tính chính xác của giao dịch. Nhưng khi kiểm thử game Flappy Bird, kiểm thử viên sẽ tập trung vào độ mượt (Performance), trải nghiệm chơi game (Playability) và đồ họa (GUI).
@@ -71,4 +72,4 @@ graph LR
 ## Related Notes
 
 - [[Error_Defect_Failure]]: Khái niệm lỗi nhầm lẫn và sự cố trong kiểm thử phần mềm.
-- [[30_Resources/Concepts/000_Concepts_MOC.md|Concepts MOC]]
+- [[000_Concepts_MOC]]

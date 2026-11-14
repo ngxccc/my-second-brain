@@ -1,7 +1,6 @@
 ---
 tags: [type/concept, status/permanent]
 date: 2026-04-28
-aliases: [SDP, Stable Dependencies Principle, Circular Dependency]
 description: "Quy tắc mũi tên một chiều chống Circular Dependency."
 ---
 
@@ -9,7 +8,9 @@ description: "Quy tắc mũi tên một chiều chống Circular Dependency."
 
 ## TL;DR
 
-Quy tắc kiến trúc quy định luồng phụ thuộc (import) một chiều bất di bất dịch: Các Module Nghiệp vụ (Features) được phép gọi đến Module Dùng chung (Shared), nhưng Shared tuyệt đối KHÔNG ĐƯỢC biết sự tồn tại của Features.
+- **Bản chất**: Quy tắc một chiều: Feature được import Shared, Shared không được biết Feature tồn tại.
+- **Mục đích**: Chặn circular dependency và giữ Shared không bị nhiễm domain logic.
+- **Điểm mấu chốt**: Đây là hệ quả của Stable Dependencies Principle: mũi tên phải trỏ về phía ổn định hơn, và Shared là thứ ít thay đổi nhất.
 
 ## Core Concept
 

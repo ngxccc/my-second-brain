@@ -1,9 +1,6 @@
 ---
 tags: [type/concept, status/permanent]
 date: 2026-08-06
-aliases:
-  - Word Family Matrix & Morphemic Anchor Method
-  - Phương pháp học từ loại theo họ từ và neo từ mẫu
 description: "Phương pháp học từ loại dựa trên khoa học ngôn ngữ (Morphology) và phản xạ nhóm từ (Word Family Matrix). Thay vì học thuộc lòng từng từ riêng lẻ hay nhớ danh sách quy tắc khô khan, phương pháp sử d..."
 ---
 
@@ -11,7 +8,9 @@ description: "Phương pháp học từ loại dựa trên khoa học ngôn ng�
 
 ## TL;DR
 
-Phương pháp học từ loại dựa trên khoa học ngôn ngữ (Morphology) và phản xạ nhóm từ (Word Family Matrix). Thay vì học thuộc lòng từng từ riêng lẻ hay nhớ danh sách quy tắc khô khan, phương pháp sử dụng Kỹ thuật Neo Từ Mẫu (Anchor Words) và Vòng Lặp Thay Thế (Substitution Loop) để làm chủ 4 dạng từ (Verb, Noun, Adjective, Adverb).
+- **Bản chất**: Dùng anchor words và substitution loop để nắm bốn dạng của một gốc từ (verb, noun, adjective, adverb) thay vì học từng từ riêng.
+- **Mục đích**: Suy ra từ loại từ đuôi từ và tái sử dụng một gốc từ cho cả câu.
+- **Điểm mấu chốt**: Quy tắc đuôi từ có ngoại lệ và biến đổi hình thái bất quy tắc, nên anchor word là điểm tựa cần kiểm chứng chứ không phải công thức.
 
 ---
 

@@ -1,7 +1,6 @@
 ---
 tags: [type/moc, topic/concepts]
 date: 2026-06-22
-aliases: [Concepts Index, Concepts Map]
 description: "Bản đồ điều hướng trung tâm cho toàn bộ tri thức khái niệm lý thuyết và mô hình tư duy (Psychology, Finance, Economics, Linguistics, Software Testing). Tự động truy vấn dữ liệu động bằng DataviewJS."
 ---
 
@@ -94,17 +93,6 @@ dv.table(["Note Title", "Description"],
 dv.header(2, "Finance & Economics");
 dv.table(["Note Title", "Description"],
   dv.pages('"30_Resources/Concepts/Finance_and_Economics"')
-    .where(p => p.file.name !== "000_Concepts_MOC")
-    .sort(p => p.file.name, 'asc')
-    .map(p => [
-      p.file.link,
-      p.description || (p.aliases ? (Array.isArray(p.aliases) ? p.aliases.join(", ") : p.aliases) : "")
-    ])
-);
-
-dv.header(2, "Academic & Case Studies");
-dv.table(["Note Title", "Description"],
-  dv.pages('"30_Resources/Concepts/Academic_and_Case_Studies"')
     .where(p => p.file.name !== "000_Concepts_MOC")
     .sort(p => p.file.name, 'asc')
     .map(p => [

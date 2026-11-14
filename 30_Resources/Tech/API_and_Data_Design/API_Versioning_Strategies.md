@@ -1,7 +1,6 @@
 ---
 tags: [type/concept, status/permanent]
 date: 2026-04-28
-aliases: [API Versioning, Backward Compatibility]
 description: "Quản lý tương thích ngược (Backward Compatibility) bằng URI hoặc Header."
 ---
 
@@ -9,7 +8,9 @@ description: "Quản lý tương thích ngược (Backward Compatibility) bằng
 
 ## TL;DR
 
-Các chiến lược quản lý nhiều phiên bản API chạy song song nhằm đảm bảo khả năng tương thích ngược (Backward Compatibility). Giúp hệ thống nâng cấp, thay đổi cấu trúc dữ liệu mà không làm crash các Client (đặc biệt là Mobile App) phiên bản cũ.
+- **Bản chất**: Versioning là chạy song song nhiều phiên bản API; ba cơ chế phổ biến là URI (`/api/v1`), header (`Accept: application/vnd.myapi.v2+json`), và query parameter (`?version=2`).
+- **Mục đích**: Cho phép nâng cấp schema mà không làm crash client cũ, đặc biệt Mobile App không thể buộc người dùng update.
+- **Điểm mấu chốt**: Cái giá là phải bảo trì song song N phiên bản codebase. Ưu tiên thiết kế cộng dồn (chỉ thêm field, không xóa field cũ) để không phải bump version.
 
 ## Core Concept
 

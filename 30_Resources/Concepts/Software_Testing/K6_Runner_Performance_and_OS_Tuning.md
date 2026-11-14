@@ -1,8 +1,6 @@
 ---
 tags: [type/concept, status/permanent]
 date: 2026-08-28
-aliases:
-  [k6 OS Tuning, k6 Tag Cardinality, k6 System Tags, k6 Large Tests Performance]
 description: "Nguyên lý tối ưu hiệu năng máy chạy k6, kiểm soát Tag Cardinality và tinh chỉnh kernel OS khi kiểm thử quy mô lớn."
 ---
 
@@ -145,4 +143,4 @@ sudo sysctl -w net.ipv4.tcp_fin_timeout=15
 - Hệ thống đo lường và ngưỡng kiểm định k6: [[K6_Telemetry_Metrics_and_Threshold_Gates]]
 - Quy chuẩn kiểm thử tải Concurrency: [[K6_High_Concurrency_Load_Testing_SOP]]
 - Hướng dẫn Benchmark cục bộ: [[Local_Stress_Testing_Benchmark]]
-- Bản đồ tri thức kiểm thử: [[30_Resources/Concepts/000_Concepts_MOC.md|Concepts MOC]]
+- [[000_Concepts_MOC]]

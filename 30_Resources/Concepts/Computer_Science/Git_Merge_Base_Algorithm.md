@@ -1,12 +1,5 @@
 ---
 tags: [type/concept, status/permanent]
-aliases:
-  [
-    Git Merge Base Algorithm,
-    Thuật toán Merge Base trong Git,
-    Git LCA Lowest Common Ancestor,
-    Cơ chế tìm điểm phân nhánh Git,
-  ]
 date: 2026-09-22
 description: "Cơ chế tìm điểm phân nhánh (Merge Base) trong đồ thị DAG của Git, giải thuật Lowest Common Ancestor (LCA) với sơn cờ Bitwise và đồ thị cam kết commit-graph."
 ---
@@ -15,9 +8,9 @@ description: "Cơ chế tìm điểm phân nhánh (Merge Base) trong đồ thị
 
 ## TL;DR
 
-- **Bản chất**: Git **không** liên tục so sánh commit cha từng cặp một cách tuyến tính thô sơ, mà thực hiện phép duyệt đồ thị **Lowest Common Ancestor (LCA)** bằng thuật toán duyệt theo chiều rộng (BFS / Priority Queue theo commit timestamp) kết hợp kỹ thuật **sơn cờ bitwise (Commit Flags)** trên đồ thị DAG.
-- **Mục đích**: Xác định chính xác commit tổ tiên chung gần nhất (`BASE`) giữa hai hoặc nhiều nhánh để làm hệ quy chiếu cho thuật toán Three-Way Merge và tính toán Git Diff / Rebase.
-- **Điểm mấu chốt**: Mỗi commit được gán các bit cờ (`PARENT1`, `PARENT2`, `COMMON`). Khi duyệt ngược từ 2 đỉnh nhánh, commit nào tích lũy đủ cờ từ cả hai nhánh sẽ trở thành tổ tiên chung. Git lọc tiếp để loại bỏ các tổ tiên bị che khuất (stale common ancestors) để tìm ra điểm hội tụ tối ưu gần nhất. Với file `commit-graph` (Generation Numbers / Topological Levels), Git có thể cắt tỉa (pruning) việc duyệt để tìm kết quả gần như tức thì ($O(V+E)$).
+- **Bản chất**: Không so từng cặp commit cha: Git tìm Merge Base bằng duyệt đồ thị theo Lowest Common Ancestor (LCA), dùng BFS/Priority Queue theo timestamp và sơn cờ bitwise trên DAG.
+- **Mục đích**: Xác định commit tổ tiên chung gần nhất giữa hai hay nhiều nhánh, làm hệ quy chiếu cho Three-Way Merge, Git Diff và Rebase.
+- **Điểm mấu chốt**: Commit nào tích đủ cờ của cả hai nhánh thì thành tổ tiên chung; Git lọc tiếp tổ tiên bị che khuất, còn `commit-graph` (Generation Number) cho phép pruning nên tìm gần như tức thì.
 
 ---
 

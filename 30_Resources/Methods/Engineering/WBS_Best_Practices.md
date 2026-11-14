@@ -1,7 +1,6 @@
 ---
 tags: [type/method, status/permanent]
 date: 2026-06-24
-aliases: [Phương pháp phân rã công việc WBS, WBS Best Practices]
 description: "Phương pháp phân rã công việc WBS chuẩn PMBOK (PMI) và cách phân rã task cá nhân."
 ---
 
@@ -9,13 +8,16 @@ description: "Phương pháp phân rã công việc WBS chuẩn PMBOK (PMI) và 
 
 ## TL;DR
 
-Tài liệu hướng dẫn chi tiết phương pháp phân rã công việc WBS theo tiêu chuẩn quản lý dự án quốc tế PMBOK (PMI). Cung cấp các quy tắc vàng như Quy tắc 100%, tính hướng sản phẩm (Deliverable-oriented), so sánh thực tế Đúng vs Sai trong phát triển phần mềm và cách chuyển đổi từ WBS dự án sang Task List cá nhân.
+- **Bản chất**: WBS phân rã công việc theo deliverable, tuân Quy tắc 100% và dừng ở work package ước lượng được.
+- **Mục đích**: Chốt phạm vi bàn giao và làm cơ sở ước lượng, phân công cho sprint.
+- **Điểm mấu chốt**: Phân rã theo sản phẩm, không theo phòng ban hay hoạt động; sai trục phân rã thì WBS không dùng được để estimate.
 
 ---
 
 ## Context: When to use?
 
-Phương pháp WBS được sử dụng ngay tại thời điểm khởi động dự án (Day 1 - Kick-off) và trước mỗi đợt lập kế hoạch Sprint (Sprint Planning). Nó giúp bóc tách và định nghĩa rõ ràng phạm vi công việc bàn giao, làm cơ sở để phân chia trách nhiệm và ước lượng thời gian chính xác cho từng thành viên trong nhóm.
+- **Thời điểm:** ngay tại Kick-off (Day 1) và trước mỗi Sprint Planning.
+- **Việc nó làm:** bóc tách phạm vi bàn giao, làm cơ sở phân chia trách nhiệm và ước lượng thời gian cho từng thành viên.
 
 ## Định Nghĩa & Nguyên Tắc Cốt Lõi
 
@@ -107,7 +109,7 @@ Trong môi trường phát triển phần mềm Agile/Scrum:
 ## Related Notes
 
 - [[000_Methods_MOC]]
-- [[Agile_Scrum]]
-- [[Agile_Management_via_GitHub]]
-- [[Prep_Guide_Day1]]
+- Chu kỳ mà WBS phải khớp: [[Agile_Scrum]]
+- Công cụ dựng WBS thành board: [[Agile_Management_via_GitHub]]
+- WBS áp dụng cho buổi chuẩn bị Day 1: [[Prep_Guide_Day1]]
 - [[Day1_Checklist]]

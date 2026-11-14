@@ -1,6 +1,5 @@
 ---
 tags: [type/method, status/permanent]
-aliases: [Quy trình V-Model, Mô hình chữ V, V-Model]
 date: 2026-07-08
 description: "Mô hình V-Model (mô hình chữ V) là bản mở rộng kỷ luật của mô hình thác nước (Waterfall), trong đó mỗi giai đoạn phát triển (Verification) đều đi kèm với một giai đoạn kiểm thử tương ứng (Validatio..."
 ---
@@ -9,7 +8,9 @@ description: "Mô hình V-Model (mô hình chữ V) là bản mở rộng kỷ l
 
 ## TL;DR
 
-Mô hình V-Model (mô hình chữ V) là bản mở rộng kỷ luật của mô hình thác nước (Waterfall), trong đó mỗi giai đoạn phát triển (Verification) đều đi kèm với một giai đoạn kiểm thử tương ứng (Validation). Quy trình này liên kết chặt chẽ thiết kế và kiểm thử ngay từ đầu để phát hiện lỗi sớm và đảm bảo chất lượng phần mềm cao nhất.
+- **Bản chất**: V-Model gắn mỗi giai đoạn thiết kế với một giai đoạn kiểm thử tương ứng, tạo thành hình chữ V.
+- **Mục đích**: Phát hiện lỗi sớm bằng cách chuẩn bị test ngay khi chốt thiết kế.
+- **Điểm mấu chốt**: Giá trị nằm ở cặp thiết kế - test, không ở số lượng tài liệu; chi phí sửa lỗi tăng theo giai đoạn phát hiện.
 
 ---
 

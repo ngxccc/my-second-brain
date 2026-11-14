@@ -1,7 +1,6 @@
 ---
 tags: [type/concept, status/permanent]
 date: 2026-06-07
-aliases: [Bóc tách dữ liệu JS, Destructuring Assignment, ES6 Destructuring]
 description: "Kỹ thuật bóc tách dữ liệu mảng và đối tượng trong ES6."
 ---
 
@@ -9,7 +8,9 @@ description: "Kỹ thuật bóc tách dữ liệu mảng và đối tượng tro
 
 ## TL;DR
 
-Destructuring Assignment (bóc tách dữ liệu) trong ES6 giúp trích xuất dữ liệu từ Mảng hoặc Đối tượng vào các biến riêng biệt một cách ngắn gọn. **Array Destructuring** dựa trên **thứ tự vị trí (Index)**, còn **Object Destructuring** dựa trên **tên thuộc tính (Key)**.
+- **Bản chất**: Destructuring bóc dữ liệu vào biến riêng; array dựa trên vị trí index, object dựa trên tên key.
+- **Mục đích**: Rút ngắn code truy xuất dữ liệu lồng nhau và đặt tên lại biến ngay tại chỗ.
+- **Điểm mấu chốt**: Array destructuring phụ thuộc thứ tự nên đổi thứ tự phần tử là đổi nghĩa; object destructuring phụ thuộc tên key nên đổi tên field là vỡ.
 
 ## Array vs Object Destructuring
 

@@ -1,6 +1,5 @@
 ---
 tags: [type/concept, status/permanent]
-aliases: [NextJS ISR, Incremental Static Regeneration, Tái tạo tĩnh theo chu kỳ]
 date: 2026-06-12
 description: "Cơ chế cập nhật và tái tạo các trang tĩnh ở runtime mà không cần rebuild toàn bộ site."
 ---
@@ -9,7 +8,9 @@ description: "Cơ chế cập nhật và tái tạo các trang tĩnh ở runtime
 
 ## TL;DR
 
-Incremental Static Regeneration (ISR) là cơ chế của Next.js cho phép tạo mới hoặc cập nhật các trang tĩnh (static pages) ở runtime mà không cần rebuild lại toàn bộ trang web. ISR tối ưu hóa TTFB và giảm tải server bằng cách phục vụ trang từ cache tĩnh và thực hiện tái tạo trang ở nền (background regeneration) khi cache hết hạn.
+- **Bản chất**: ISR phục vụ trang tĩnh từ cache và tái tạo ở nền khi hết chu kỳ revalidate.
+- **Mục đích**: Có tốc độ của static mà không phải rebuild toàn site mỗi khi nội dung đổi.
+- **Điểm mấu chốt**: Request đầu sau khi hết hạn vẫn nhận bản cũ trong lúc bản mới đang render; đây là stale-while-revalidate, không phải lúc nào cũng tươi.
 
 ## Core Concept
 

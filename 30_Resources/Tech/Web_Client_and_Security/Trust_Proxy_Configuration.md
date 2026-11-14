@@ -1,8 +1,6 @@
 ---
 tags: [type/concept, status/permanent]
 date: 2026-07-09
-aliases:
-  [Trust Proxy Express, Trust Proxy NestJS, X-Forwarded-For Configuration]
 description: "Cấu hình tin tưởng proxy trong Express & NestJS để lấy client IP chính xác."
 ---
 
@@ -10,7 +8,9 @@ description: "Cấu hình tin tưởng proxy trong Express & NestJS để lấy 
 
 ## TL;DR
 
-Khi ứng dụng NestJS/Express chạy phía sau một Reverse Proxy hoặc CDN (như Nginx, Cloudflare, AWS ALB), địa chỉ IP kết nối trực tiếp đến ứng dụng sẽ luôn là IP nội bộ của Proxy (`127.0.0.1`). Để đọc được IP thực tế của client, ứng dụng cần tin tưởng các header do proxy đính kèm (E.g. `X-Forwarded-For`) bằng cách thiết lập cấu hình `app.set("trust proxy", 1)`. Nếu không cấu hình, các tính năng bảo mật dựa trên IP như giới hạn tần suất yêu cầu (Rate Limiting/ThrottlerGuard) sẽ nhận diện sai và vô tình khóa truy cập của toàn bộ người dùng hệ thống.
+- **Bản chất**: `app.set("trust proxy", n)` cho Express/NestJS biết tin `X-Forwarded-For` từ đúng n lớp proxy để lấy IP client thật.
+- **Mục đích**: Rate limiting và audit log hoạt động đúng thay vì thấy toàn bộ traffic đến từ IP nội bộ của proxy.
+- **Điểm mấu chốt**: Đặt `trust proxy` quá rộng cho phép client tự giả header và vượt rate limit; số lớp phải khớp chính xác kiến trúc triển khai.
 
 ---
 
@@ -37,8 +37,9 @@ Khi nhận được request từ client, Reverse Proxy sẽ chuyển tiếp requ
 
 ### 2. Tại sao Express bỏ qua header này mặc định?
 
-Theo mặc định, Express (và NestJS chạy trên nền Express) sẽ **không tin tưởng** các header chuyển tiếp này. Lý do là để ngăn chặn tấn công **IP Spoofing (Giả mạo IP)**.
-Nếu hệ thống tin tưởng vô điều kiện, một hacker từ IP `2.2.2.2` có thể tự gửi request với header `X-Forwarded-For: 1.1.1.1` để đổ lỗi hoặc bypass giới hạn IP của người dùng có IP `1.1.1.1`. Do đó, Express chỉ đọc trường kết nối trực tiếp (`connection.remoteAddress`), dẫn đến việc `request.ip` luôn trả về IP của Proxy (ví dụ `127.0.0.1`).
+- **Mặc định Express không tin header chuyển tiếp:** lý do là để chặn tấn công **IP Spoofing (Giả mạo IP)**.
+- **Kịch bản tấn công:** nếu tin vô điều kiện, hacker từ IP `2.2.2.2` tự gửi `X-Forwarded-For: 1.1.1.1` để đổ lỗi hoặc bypass giới hạn IP của người dùng thật `1.1.1.1`.
+- **Hệ quả:** Express chỉ đọc `connection.remoteAddress`, nên `request.ip` luôn trả về IP của Proxy (ví dụ `127.0.0.1`).
 
 ### 3. Hậu quả đối với hệ thống Rate Limiting
 
@@ -88,4 +89,4 @@ Tùy thuộc vào số lượng proxy đứng trước ứng dụng, bạn có t
 ## Related Notes
 
 - [[000_Tech_MOC]]
-- [[Multi_Layer_Rate_Limiting_DDoS_Prevention]]
+- Rate limit cần IP thật từ proxy: [[Multi_Layer_Rate_Limiting_DDoS_Prevention]]

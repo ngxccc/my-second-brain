@@ -1,7 +1,6 @@
 ---
 tags: [type/concept, status/permanent]
 date: 2026-04-28
-aliases: [DI, Inversion of Control, IoC]
 description: "Kỹ thuật đảo ngược luồng điều khiển (IoC) để giảm tight-coupling và dễ test."
 ---
 
@@ -9,7 +8,9 @@ description: "Kỹ thuật đảo ngược luồng điều khiển (IoC) để g
 
 ## TL;DR
 
-Kỹ thuật thiết kế trong đó một đối tượng nhận các phụ thuộc (dependencies) từ bên ngoài truyền vào thay vì tự mình khởi tạo chúng. Giúp code linh hoạt, giảm sự phụ thuộc cứng (Decoupling) và cực kỳ dễ viết Unit Test.
+- **Bản chất**: DI là đảo ngược điều khiển: đối tượng nhận dependency từ bên ngoài truyền vào thay vì tự `new` bên trong.
+- **Mục đích**: Giảm tight coupling và cho phép thay implementation thật bằng mock trong unit test.
+- **Điểm mấu chốt**: Giá trị nằm ở việc truyền phụ thuộc từ ngoài, không nằm ở thư viện DI; container chỉ là tầng lắp ráp.
 
 ## Core Concept
 

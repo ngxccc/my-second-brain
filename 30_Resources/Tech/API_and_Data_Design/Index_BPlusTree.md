@@ -1,7 +1,6 @@
 ---
 tags: [type/concept, status/permanent]
 date: 2026-06-09
-aliases: [Index và B+Tree, B+Tree Index, B-Tree vs B+Tree]
 description: "Bản chất của Index, cấu trúc B+Tree và lý do tại sao Disk I/O quyết định kiến trúc Database."
 ---
 
@@ -9,7 +8,9 @@ description: "Bản chất của Index, cấu trúc B+Tree và lý do tại sao 
 
 ## TL;DR
 
-Index là cấu trúc dữ liệu phụ trợ giúp database chuyển đổi từ duyệt tuần tự Full Table Scan $O(N)$ sang tìm kiếm cây phân cấp $O(\log N)$. Cấu trúc **B+Tree** được thiết kế để tối ưu hóa hiệu năng trên ổ cứng nhờ mở rộng độ rộng của cây (fan-out) nhằm giảm tối đa số lần Disk I/O, đồng thời sử dụng Doubly Linked List để liên kết các Leaf Node nhằm tối ưu hóa các truy vấn khoảng (Range Queries).
+- **Bản chất**: Index là cấu trúc phụ đổi full table scan O(N) thành tìm kiếm cây O(log N); B+Tree gom nhiều key vào một page để giảm số lần disk I/O.
+- **Mục đích**: Định vị một dòng trong hàng trăm triệu dòng chỉ với 3-4 lần đọc page, đồng thời hỗ trợ `ORDER BY` và range query mà không phải sort trong RAM.
+- **Điểm mấu chốt**: Internal node chỉ chứa key và con trỏ nên fan-out lớn, cây thấp; cái giá là tốn đĩa và làm chậm `INSERT`/`UPDATE` do page split.
 
 ---
 

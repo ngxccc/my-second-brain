@@ -1,7 +1,6 @@
 ---
 tags: [type/concept, status/permanent]
 date: 2026-06-07
-aliases: [Phương pháp PARA, Tổ chức thông tin theo mức độ hành động]
 description: "Tổ chức thông tin theo mức độ hành động (Actionability)."
 ---
 
@@ -9,7 +8,9 @@ description: "Tổ chức thông tin theo mức độ hành động (Actionabili
 
 ## TL;DR
 
-Phương pháp tổ chức thông tin kỹ thuật số do Tiago Forte (tác giả _Building a Second Brain_) phát triển. Điểm mấu chốt của PARA là phân loại tài liệu theo **mức độ hành động (Actionability)** thay vì phân loại theo chủ đề, giúp giảm thiểu tải lượng nhận thức và giữ cho không gian làm việc luôn gọn gàng.
+- **Bản chất**: PARA chia thông tin thành Projects, Areas, Resources, Archives theo mức độ hành động thay vì theo chủ đề.
+- **Mục đích**: Giảm tải nhận thức khi tìm tài liệu: thứ đang làm nằm gần nhất, thứ để tham khảo nằm xa hơn.
+- **Điểm mấu chốt**: Tiêu chí phân loại là actionability, nên một tài liệu có thể phải chuyển danh mục khi trạng thái công việc đổi; giữ nguyên vị trí vì "đã để đó" làm hệ thống mất tính phân loại.
 
 ## Core Concept
 

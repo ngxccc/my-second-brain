@@ -1,12 +1,6 @@
 ---
 tags: [type/concept, status/permanent]
 date: 2026-06-22
-aliases:
-  [
-    Customer Outcome Thinking,
-    Tư duy hướng kết quả khách hàng,
-    Outcome-Based Thinking,
-  ]
 description: "Tập trung vào thay đổi hành vi tích cực của người dùng (Outcomes) thay vì tính năng (Outputs)."
 ---
 
@@ -14,7 +8,9 @@ description: "Tập trung vào thay đổi hành vi tích cực của người d
 
 ## TL;DR
 
-Tư duy hướng kết quả khách hàng (Customer-Outcome Thinking) là phương pháp tiếp cận lập trình và thiết kế sản phẩm tập trung vào việc thay đổi hành vi hoặc trạng thái tích cực của người dùng (Outcomes), thay vì chỉ tập trung vào việc tạo ra các tính năng vật lý (Outputs). Tư duy này giúp lập trình viên trả lời câu hỏi: _"Người dùng đã giải quyết được vấn đề của họ nhanh hơn/tốt hơn thế nào nhờ dòng code của tôi?"_.
+- **Bản chất**: Đo giá trị bằng thay đổi hành vi hoặc trạng thái của người dùng (outcome) thay vì số tính năng đã ship (output).
+- **Mục đích**: Trả lời câu hỏi người dùng giải quyết vấn đề nhanh hơn bao nhiêu nhờ code này, để không xây tính năng không ai dùng.
+- **Điểm mấu chốt**: Outcome chỉ đo được sau khi ship và cần metric hành vi; không có phép đo đó thì tuyên bố hướng-kết-quả chỉ là cách nói lại của hướng-tính-năng.
 
 ---
 
@@ -38,7 +34,7 @@ Tư duy hướng kết quả khách hàng (Customer-Outcome Thinking) là phươ
 
 ---
 
-## Practical Implementation
+## Rèn luyện tư duy hướng kết quả
 
 Để rèn luyện tư duy hướng kết quả trong công việc lập trình:
 

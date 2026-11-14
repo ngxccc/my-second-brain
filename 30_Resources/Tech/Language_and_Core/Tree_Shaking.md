@@ -1,11 +1,6 @@
 ---
 tags: [type/concept, status/permanent]
 date: 2026-06-07
-aliases:
-  - Tree Shaking
-  - Dead Code Elimination
-  - Tối ưu hóa bundle JS
-  - DCE
 description: "Kỹ thuật phân tích tĩnh cấu trúc cây cú pháp trừu tượng (AST) dựa trên cú pháp tĩnh của ES Modules nhằm loại bỏ mã nguồn không được sử dụng khỏi bundle cuối cùng."
 ---
 
@@ -13,9 +8,9 @@ description: "Kỹ thuật phân tích tĩnh cấu trúc cây cú pháp trừu t
 
 ## TL;DR
 
-- **Bản chất**: Kỹ thuật tối ưu hóa mã nguồn trong quá trình đóng gói (Bundling / Compilation) dựa trên phân tích tĩnh (Static Analysis) cấu trúc cây cú pháp (AST) để định vị và loại bỏ hoàn toàn các hàm, biến, hoặc module không bao giờ được tham chiếu (Dead Code Elimination).
-- **Mục đích**: Giảm thiểu tối đa dung lượng file JavaScript phân phối tới client (Client Bundle Size), rút ngắn thời gian tải mạng (Network Transfer) và thời gian phân tích/thực thi mã nguồn của JavaScript Engine (Parse & Compile Time).
-- **Điểm mấu chốt**: Tree Shaking chỉ hoạt động hoàn hảo trên **ES Modules (ESM: `import` / `export`)** nhờ tính chất tĩnh bất biến (Static Structure); hoàn toàn bất lực trước tính năng nạp động (Dynamic Resolution) của CommonJS (`require()`).
+- **Bản chất**: Tối ưu hóa lúc bundling: phân tích tĩnh (Static Analysis) trên AST để tìm và loại bỏ hàm, biến, module không bao giờ được tham chiếu (Dead Code Elimination).
+- **Mục đích**: Giảm dung lượng bundle gửi tới client, rút ngắn thời gian tải mạng và thời gian parse/compile của JS Engine.
+- **Điểm mấu chốt**: Chỉ hoạt động hoàn hảo trên ES Modules (`import`/`export`) nhờ cấu trúc tĩnh; bất lực trước cơ chế nạp động của CommonJS (`require()`).
 
 ---
 
@@ -109,7 +104,6 @@ esbuild src/index.ts --bundle --minify --format=esm --analyze
 
 ## Related Notes
 
-- [[TS_Type_System_Structural_Type_Erasure]]
-- [[JS_V8_Hidden_Classes_Inline_Caching]]
-- [[NextJS_Monorepo_Package_Transpilation]]
-- [[Turborepo]]
+- Shape ổn định là điều kiện để tree-shake: [[JS_V8_Hidden_Classes_Inline_Caching]]
+- Cấu hình transpile ảnh hưởng kết quả tree-shake: [[NextJS_Monorepo_Package_Transpilation]]
+- Nơi tree-shaking tác động thời gian build: [[Turborepo]]

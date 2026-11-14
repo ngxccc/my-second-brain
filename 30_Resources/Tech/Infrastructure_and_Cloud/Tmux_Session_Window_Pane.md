@@ -1,6 +1,6 @@
 ---
 tags: [type/concept, status/permanent]
-aliases: [Tmux Session vs Window vs Pane, Tmux Keybinds]
+date: 2026-07-11
 description: "Tmux (Terminal Multiplexer) giúp quản lý nhiều phiên làm việc (Sessions), tab (Windows) và phân mảnh màn hình (Panes) trên một cửa sổ Terminal duy nhất. Bằng cách tích hợp `vim-tmux-navigator`, ta ..."
 ---
 
@@ -8,7 +8,9 @@ description: "Tmux (Terminal Multiplexer) giúp quản lý nhiều phiên làm v
 
 ## TL;DR
 
-Tmux (Terminal Multiplexer) giúp quản lý nhiều phiên làm việc (Sessions), tab (Windows) và phân mảnh màn hình (Panes) trên một cửa sổ Terminal duy nhất. Bằng cách tích hợp `vim-tmux-navigator`, ta có thể di chuyển liền mạch giữa các split windows của Neovim và các panes của Tmux bằng tổ hợp phím `Ctrl + h/j/k/l` trực tiếp mà không cần bấm phím Prefix (`Ctrl + a`). Đồng thời, hệ thống hỗ trợ lưu trạng thái tự động qua `tmux-resurrect` giúp khôi phục toàn bộ môi trường làm việc khi khởi động lại máy.
+- **Bản chất**: Tmux phân cấp Session, Window, Pane trên một terminal duy nhất và giữ chúng sống độc lập với kết nối SSH.
+- **Mục đích**: Làm việc nhiều phiên song song và khôi phục nguyên trạng môi trường sau khi mất kết nối hoặc reboot.
+- **Điểm mấu chốt**: Giá trị thật là session sống ở phía server, nên tắt máy client không mất việc; phần tiện ích như `vim-tmux-navigator` chỉ là lớp phím tắt.
 
 ## Core Concept
 
@@ -28,7 +30,7 @@ Session (Một dự án độc lập, chạy ngầm)
 - **Window (Cửa sổ):** Là các Tab hiển thị ở thanh trạng thái dưới cùng màn hình. Tại một thời điểm chỉ hiển thị một Window.
 - **Pane (Phân mảnh):** Chia nhỏ một Window thành nhiều ô nhỏ hiển thị đồng thời (Split dọc `|` hoặc ngang `-`).
 
-## Practical Implementation
+## Phím tắt và cấu hình phiên
 
 ### 1. Điều hướng và Phím tắt Cấu hình sẵn
 

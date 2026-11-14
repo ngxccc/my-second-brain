@@ -1,7 +1,6 @@
 ---
 tags: [type/concept, status/permanent]
 date: 2026-07-10
-aliases: [React State, Trạng thái trong React]
 description: "Trạng thái nội bộ của component, quản lý dữ liệu động thay đổi theo thời gian."
 ---
 
@@ -9,7 +8,9 @@ description: "Trạng thái nội bộ của component, quản lý dữ liệu �
 
 ## TL;DR
 
-**React State** là một đối tượng JavaScript nội bộ được quản lý bên trong một component để lưu giữ các thông tin/dữ liệu có thể thay đổi theo thời gian (như giá trị nhập từ input, kết quả API, trạng thái bật/tắt UI). Khi state thay đổi thông qua hàm cập nhật (setter function), React sẽ tự động kích hoạt quá trình render lại (re-render) component đó để cập nhật giao diện hiển thị đồng bộ với dữ liệu mới.
+- **Bản chất**: State là dữ liệu nội bộ của component; gọi setter khiến React schedule re-render.
+- **Mục đích**: Đồng bộ giao diện với dữ liệu thay đổi theo tương tác người dùng.
+- **Điểm mấu chốt**: So sánh thay đổi dựa trên tham chiếu, nên mutate trực tiếp object trong state không trigger re-render; phải tạo object mới.
 
 ## Core Concept
 

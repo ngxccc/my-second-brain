@@ -1,8 +1,6 @@
 ---
 tags: [type/method, status/permanent]
 date: 2026-04-29
-aliases:
-  [Reasoning from First Principles, Tư duy nguyên bản, Nguyên lý đầu tiên]
 description: "Phá vỡ vấn đề thành các hạt nguyên tử sự thật để tìm giải pháp đột phá từ con số 0."
 ---
 
@@ -10,7 +8,9 @@ description: "Phá vỡ vấn đề thành các hạt nguyên tử sự thật �
 
 ## TL;DR
 
-Kỹ thuật giải quyết vấn đề bằng cách phá vỡ các định kiến, bóc tách sự việc xuống thành những chân lý/sự thật cơ bản nhất (Facts), sau đó xây dựng lên một giải pháp hoàn toàn mới. Công cụ đắc lực để tạo ra sự đổi mới mang tính đột phá (Innovation).
+- **Bản chất**: Bóc vấn đề xuống các sự thật cơ bản không thể phủ nhận rồi xây lại giải pháp từ đó, thay vì bắt chước tiền lệ.
+- **Mục đích**: Tạo bước nhảy đột phá khi tư duy tương đồng (analogy) chỉ sinh ra cải tiến nhỏ giọt vì bị khóa trong giả định cũ.
+- **Điểm mấu chốt**: Chi phí thật là thời gian và công sức phá giả định, nên chỉ đáng dùng khi bài toán cần thay đổi bản chất; áp dụng cho việc nhỏ là lãng phí.
 
 ## Core Concept
 
@@ -18,7 +18,7 @@ Kỹ thuật giải quyết vấn đề bằng cách phá vỡ các định ki�
 - **Nguyên lý đầu tiên:** Đi tìm "chân lý tuyệt đối". Liên tục đặt câu hỏi truy vấn để loại bỏ các giả định (Assumptions) cho đến khi chỉ còn lại những sự thật vật lý/toán học không thể phủ nhận. Giúp tạo ra những bước nhảy vọt (Đột phá).
 - **Cook vs. Chef:** Người đầu bếp (Cook) sao chép công thức. Bếp trưởng (Chef) thấu hiểu bản chất nguyên liệu để kiến tạo món mới.
 
-## Practical Implementation
+## Thuật toán 3 bước và cạm bẫy
 
 - **Thuật toán 3 bước:**
   1. _Deconstruct:_ Phân rã vấn đề và nhận diện mọi giả định đang tồn tại.

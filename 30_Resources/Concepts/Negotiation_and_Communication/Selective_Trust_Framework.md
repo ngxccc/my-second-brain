@@ -1,14 +1,6 @@
 ---
 tags: [type/concept, status/permanent]
 date: 2026-07-31
-aliases:
-  [
-    Selective Trust Framework,
-    Khung tư duy Tín có chọn lọc,
-    Iron Hand in a Velvet Glove,
-    Nắm đấm thép bọc găng tay nhung,
-    Ranh giới cá nhân và Chữ Tín,
-  ]
 description: 'Selective Trust Framework (Khung tư duy Tín có chọn lọc) là mô hình tâm lý và rèn luyện ranh giới cá nhân dành cho người coi trọng chữ tín. Mô hình giúp loại bỏ bẫy "Sự suy đoán ngây thơ" (Naïve Re...'
 ---
 
@@ -16,7 +8,9 @@ description: 'Selective Trust Framework (Khung tư duy Tín có chọn lọc) l�
 
 ## TL;DR
 
-**Selective Trust Framework (Khung tư duy Tín có chọn lọc)** là mô hình tâm lý và rèn luyện ranh giới cá nhân dành cho người coi trọng chữ tín. Mô hình giúp loại bỏ bẫy "Sự suy đoán ngây thơ" (_Naïve Realism_ - kỳ vọng người khác cũng tôn trọng lời hứa như mình) bằng cách kết hợp giữa nguyên tắc kiểm chứng niềm tin dựa trên hành vi, thái độ ứng xử **"Nắm đấm thép bọc găng tay nhung"** (_Iron Hand in a Velvet Glove_ - dứt khoát về ranh giới nhưng điềm tĩnh, lịch sự), và góc nhìn Khắc kỷ (_Stoic Realism_) coi tổn thất nhỏ là chi phí lọc người (_Filter Cost_) hiệu quả.
+- **Bản chất**: Khung tín có chọn lọc dựa trên kiểm chứng hành vi, giữ ranh giới dứt khoát nhưng ứng xử điềm tĩnh (iron hand in a velvet glove).
+- **Mục đích**: Loại bỏ naive realism - kỳ vọng người khác tôn trọng lời hứa như mình - để không bị tổn thất lớn vì một lần tin sai.
+- **Điểm mấu chốt**: Tổn thất nhỏ được coi là filter cost để lọc người; cái giá phải trả là chấp nhận mất một ít thay vì cố chứng minh mình đúng.
 
 ---
 
@@ -50,7 +44,7 @@ Mô hình bao gồm 4 trụ cột tư duy và ứng xử cốt lõi:
 
 ---
 
-## Concrete Examples
+## Ví dụ thực tế
 
 ### 1. Xử lý khi bị thất hứa
 
@@ -67,7 +61,7 @@ Mô hình bao gồm 4 trụ cột tư duy và ứng xử cốt lõi:
 
 ---
 
-## Practical Implementation
+## Những cạm bẫy cần tránh
 
 ### Trade-offs & Điểm mù cần tránh
 

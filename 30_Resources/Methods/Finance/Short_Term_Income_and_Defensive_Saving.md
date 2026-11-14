@@ -1,12 +1,6 @@
 ---
 tags: [type/method, status/permanent]
 date: 2026-07-20
-aliases:
-  [
-    Tư duy Tăng thu nhập ngắn hạn và Tiết kiệm phòng thủ,
-    Short-Term Income and Defensive Saving,
-    Quỹ khẩn cấp và Tăng thu nhập ngắn hạn,
-  ]
 description: "Chiến lược tăng thu nhập ngắn hạn và xây dựng quỹ khẩn cấp phòng thủ ở tầng nhu cầu sinh tồn/an toàn."
 ---
 
@@ -14,7 +8,9 @@ description: "Chiến lược tăng thu nhập ngắn hạn và xây dựng qu�
 
 ## TL;DR
 
-Phương pháp **Tăng thu nhập ngắn hạn và Tiết kiệm phòng thủ (Short-Term Income Acceleration & Defensive Saving)** là chiến lược tài chính dành riêng cho cá nhân đang ở tầng nhu cầu Sinh lý và An toàn (Tầng 1 & 2 Maslow). Bằng cách tập trung tạo bệ đỡ tài chính thanh khoản cao (Quỹ khẩn cấp 3–6 tháng) và kích hoạt các luồng thu nhập bổ sung ngắn hạn, phương pháp này giúp giải tỏa áp lực đe dọa từ hạch hạnh nhân (Amygdala), khôi phục băng thông nhận thức của vỏ não trước trán (PFC) để thoát khỏi bẫy tư duy khan hiếm (Scarcity Mindset).
+- **Bản chất**: Cấu trúc hai tầng: thu nhập ngắn hạn nuôi quỹ khẩn cấp, quỹ khẩn cấp nuôi quyết định đầu tư; không có đường tắt bỏ qua tầng nào.
+- **Mục đích**: Thoát scarcity mindset để giải phóng băng thông nhận thức, vì khi thiếu tiền não bộ bị áp lực ngắn hạn chiếm hết.
+- **Điểm mấu chốt**: Điều kiện vào lệnh là quỹ khẩn cấp đủ 3-6 tháng chi phí; đầu tư rủi ro trước khi có bệ đỡ là đánh cược vào việc không có biến cố.
 
 ## Context: When to apply?
 
@@ -78,7 +74,7 @@ Phương pháp **Tăng thu nhập ngắn hạn và Tiết kiệm phòng thủ (S
 
 ## Related Notes
 
-- [[Maslow_Hierarchy_and_Brain_Structure]]: Phân tầng thần kinh học của tháp nhu cầu Maslow và cơ chế Amygdala Hijack.
+- [[Amygdala_Hijack_and_Prefrontal_Override]]: Phân tầng thần kinh học của tháp nhu cầu Maslow và cơ chế Amygdala Hijack.
 - [[000_Concepts_MOC]]: Bản đồ khái niệm tâm lý và kinh tế.
 - [[Dollar_Cost_Averaging]]: Phương pháp trung bình giá trong đầu tư khi đã hoàn thành bệ đỡ an toàn.
 - [[Opportunity_Cost_Hold]]: Đánh đổi rủi ro và quản lý chi phí cơ hội.

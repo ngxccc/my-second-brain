@@ -1,15 +1,6 @@
 ---
 tags: [type/concept, status/permanent]
 date: 2026-08-28
-aliases:
-  [
-    k6 Metrics,
-    k6 Thresholds,
-    k6 Assertions,
-    k6 Checks vs Thresholds,
-    Telemetry Gates,
-    abortOnFail,
-  ]
 description: "Hệ thống chỉ số viễn trắc (Telemetry Metrics), cơ chế phân tách Tag và cấu hình ngưỡng Fail-Fast trong Grafana k6."
 ---
 
@@ -19,7 +10,7 @@ description: "Hệ thống chỉ số viễn trắc (Telemetry Metrics), cơ ch�
 
 - **Bản chất**: k6 tích hợp telemetry engine thu thập các mốc thời gian TCP/HTTP mặc định kết hợp 4 loại Custom Metric (`Counter`, `Trend`, `Rate`, `Gauge`).
 - **Mục đích**: Thiết lập cổng kiểm soát chất lượng (Quality Gate) tự động đánh giá SLA độ trễ và các bất biến nghiệp vụ.
-- **Điểm mấu chốt**: `check()` chỉ ghi nhận tỷ lệ thành công (Soft Assertion); `thresholds` là Hard Assertion quyết định mã thoát CI/CD ($Exit\ Code \ne 0$) và có thể kích hoạt dừng sớm khẩn cấp qua `abortOnFail: true`.
+- **Điểm mấu chốt**: `check()` chỉ ghi tỷ lệ thành công (Soft Assertion); `thresholds` là Hard Assertion quyết định mã thoát CI/CD và có thể dừng sớm qua `abortOnFail: true`.
 
 ---
 
@@ -131,4 +122,4 @@ export default function (): void {
 - Quy chuẩn kiểm thử tải Concurrency: [[K6_High_Concurrency_Load_Testing_SOP]]
 - 7 nguyên lý kiểm thử phần mềm nền tảng: [[7_Principles_of_Testing]]
 - Khái niệm lỗi, khuyết tật và sự cố: [[Error_Defect_Failure]]
-- Bản đồ tri thức kiểm thử: [[30_Resources/Concepts/000_Concepts_MOC.md|Concepts MOC]]
+- [[000_Concepts_MOC]]

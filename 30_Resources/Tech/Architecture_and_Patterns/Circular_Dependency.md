@@ -1,14 +1,6 @@
 ---
 tags: [type/concept, status/permanent]
 date: 2026-05-01
-aliases:
-  [
-    Circular Dependency,
-    Cyclic Dependency,
-    Phụ thuộc vòng tròn,
-    Vòng lặp phụ thuộc,
-    Dependency Cycle,
-  ]
 description: "Vòng lặp phụ thuộc tai hại giữa các module và cách giải quyết."
 ---
 
@@ -16,7 +8,9 @@ description: "Vòng lặp phụ thuộc tai hại giữa các module và cách g
 
 ## TL;DR
 
-Circular Dependency (Phụ thuộc vòng tròn) xảy ra khi hai hoặc nhiều module phụ thuộc lẫn nhau trực tiếp hoặc gián tiếp, tạo thành chu kỳ trong dependency graph. Đây là anti-pattern nghiêm trọng, thường gây crash lúc khởi động và phá hủy khả năng maintain, test, scale codebase.
+- **Bản chất**: Circular dependency là chu trình trong dependency graph, khi hai hay nhiều module phụ thuộc lẫn nhau trực tiếp hoặc gián tiếp.
+- **Mục đích**: Giải thích vì sao nó làm module loader trả `undefined`, crash lúc khởi động, và phá khả năng test độc lập.
+- **Điểm mấu chốt**: Kiến trúc đúng là DAG một chiều; mọi vòng lặp vi phạm Acyclic Dependencies Principle, và chỗ hay sinh vòng nhất là Shared layer import ngược lại Feature.
 
 ## Core Concept
 

@@ -1,7 +1,6 @@
 ---
 tags: [type/concept, status/permanent]
 date: 2026-02-08
-aliases: [N-Tier Architecture, Monolithic Architecture]
 description: "Kiến trúc N-Tier truyền thống chia theo Technical Concerns."
 ---
 
@@ -9,7 +8,9 @@ description: "Kiến trúc N-Tier truyền thống chia theo Technical Concerns.
 
 ## TL;DR
 
-Cách tổ chức code bằng cách chia cắt ứng dụng theo chiều ngang dựa trên vai trò kỹ thuật (Technical Concerns): Controller (Giao tiếp HTTP), Service (Xử lý nghiệp vụ), Model (Dữ liệu). Kiến trúc "nhập môn" dễ setup nhất cho các dự án vừa và nhỏ.
+- **Bản chất**: Chia ứng dụng theo chiều ngang theo vai trò kỹ thuật: Controller, Service, Model.
+- **Mục đích**: Tách trách nhiệm để controller không tính nghiệp vụ và model không xử lý HTTP request.
+- **Điểm mấu chốt**: Luồng dữ liệu một chiều Controller -> Service -> Model; cái giá là sửa một tính năng phải mở nhiều thư mục.
 
 ## Core Concept
 

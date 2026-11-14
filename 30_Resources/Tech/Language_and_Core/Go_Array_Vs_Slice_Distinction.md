@@ -1,20 +1,18 @@
 ---
 tags: [type/concept, status/permanent]
 date: 2026-08-06
-aliases:
-  - Phân Biệt Mảng Và Slice Trong Go
-  - Go Array vs Slice Distinction
-  - Memory Semantics of Arrays and Slices
 description: "In Go, an Array (`[N]T`) is a fixed-size value type allocated contiguously in memory, while a Slice (`[]T`) is a lightweight 24-byte header descriptor (`ptr`, `len`, `cap`) serving as a dynamic vie..."
 ---
 
 # Bản Chất Kiến Trúc Và Sự Phân Biệt Giữa Array Và Slice Trong Go
 
-Tài liệu này là một ghi chép Layer 2 phân tích sự khác biệt giữa Array và Slice trong Go, cách chúng tương tác với bộ nhớ Stack (dành cho mảng cố định) và Heap (dành cho mảng động), dựa trên nguyên lý khoa học máy tính cốt lõi của [[Stack_vs_Heap_Memory_Fundamentals]] và ảnh hưởng của chúng đối với áp lực dọn rác của [[Garbage_Collection_Fundamentals]].
+Ghi chép Layer 2 về khác biệt Array và Slice trong Go, cách chúng tương tác với Stack (mảng cố định) và Heap (mảng động), dựa trên [[Stack_vs_Heap_Memory_Fundamentals]] và ảnh hưởng tới áp lực dọn rác của [[Garbage_Collection_Fundamentals]].
 
 ## TL;DR
 
-In Go, an **Array (`[N]T`)** is a fixed-size value type allocated contiguously in memory, while a **Slice (`[]T`)** is a lightweight 24-byte header descriptor (`ptr`, `len`, `cap`) serving as a dynamic viewport over an underlying array. Go separates them to achieve both low-level memory control (C-like hardware predictability) and high-level dynamic flexibility (Python-like ease of use).
+- **Bản chất**: Array `[N]T` là value type kích thước cố định; slice `[]T` là header 24 byte gồm `ptr`, `len`, `cap` trỏ vào một array ngầm.
+- **Mục đích**: Hiểu vì sao truyền array copy toàn bộ dữ liệu còn truyền slice chỉ copy header, và vì sao hai slice có thể chia sẻ cùng vùng nhớ.
+- **Điểm mấu chốt**: Mọi hành vi bất ngờ của slice đều suy ra được từ ba trường đó: side effect khi sửa, và việc `append` vượt `cap` mới cấp phát mảng mới.
 
 ---
 
@@ -39,10 +37,6 @@ In Go, an **Array (`[N]T`)** is a fixed-size value type allocated contiguously i
 Instead of creating a heavy unified object (like Java's `ArrayList` or Python's `list`), Go applies **separation of concerns**:
 
 1. **Arrays handle raw storage**: Fixed-size memory buffer with hardware-friendly layout.
-
-## Practical Implementation
-
----
 
 ## Practical Code Comparison
 
@@ -84,9 +78,10 @@ func main() {
 
 ## Related Notes
 
-- [[Stack_vs_Heap_Memory_Fundamentals]] - Nguyên lý khoa học máy tính cốt lõi về phân tầng bộ nhớ Stack và Heap.
+- Lý do Array nằm Stack còn Slice trỏ Heap: [[Stack_vs_Heap_Memory_Fundamentals]]
 - [[Garbage_Collection_Fundamentals]] - Nguyên lý cốt lõi về cơ chế dọn rác tự động.
 - [[Memory_Leaks_Core_Mechanics]] - Bản chất rò rỉ bộ nhớ ở mức độ nguyên lý nền tảng.
-- [[Go_Slice_Underlying_Mechanics]] - Detailed breakdown of slice headers, ptr, len, and cap growth strategy.
+- [[Go_Slice_Underlying_Mechanics]] - Detailed breakdown of slice headers, ptr and len.
+- [[Go_Append_Growth_and_Reallocation]] - When append reallocates, and the cap growth strategy.
 - [[Go_Escape_Analysis_Mechanics]] - How memory escapes from stack to heap.
 - [[English_Learner_Profile]] - Vocabulary tracker and progress milestones.

@@ -1,7 +1,6 @@
 ---
 tags: [type/concept, status/permanent]
 date: 2026-07-27
-aliases: [ZOPA, Zone of Possible Agreement, Vùng thỏa thuận khả thi]
 description: "Vùng thỏa thuận khả thi - Khoảng không gian giao thoa ranh giới chấp nhận được giữa hai bên."
 ---
 
@@ -9,7 +8,9 @@ description: "Vùng thỏa thuận khả thi - Khoảng không gian giao thoa ra
 
 ## TL;DR
 
-ZOPA (Zone of Possible Agreement - Vùng thỏa thuận khả thi) là khoảng không gian giao thoa giữa các giới hạn chấp nhận được của hai bên đàm phán. Nếu ranh giới tối thiểu của bên bán nằm dưới ranh giới tối đa của bên mua, một ZOPA dương tồn tại và thỏa thuận có thể đạt được. Ngược lại, nếu hai giới hạn không đè lên nhau, ZOPA bằng không và cuộc đàm phán sẽ bế tắc trừ khi các điều kiện được thay đổi.
+- **Bản chất**: Không phải một con số: ZOPA là cả một khoảng, tính từ mức sàn của bên bán tới mức trần của bên mua, và hai điểm này do Reservation Price của từng bên quyết định.
+- **Mục đích**: Xác định trước cuộc đàm phán có khả năng đạt thỏa thuận hay không, thay vì mất thời gian mặc cả vô vọng.
+- **Điểm mấu chốt**: ZOPA rỗng không có nghĩa phải bỏ cuộc - có thể mở rộng bằng cách thêm biến số (thời hạn, phạm vi, điều khoản), nhưng chỉ khi biết BATNA của mình.
 
 ## Application Context & Maslow Alignment
 
@@ -27,7 +28,7 @@ ZOPA đại diện cho vùng đất chung nơi cả hai bên đều cảm thấy
   - **Negative ZOPA (ZOPA âm / Không có ZOPA):** Điểm sàn của bên bán cao hơn điểm trần của bên mua (Ví dụ: Bên bán đòi tối thiểu $200, Bên mua chỉ có tối đa $150 $\rightarrow$ Không thể đạt thỏa thuận tiền mặt thuần túy).
 - **Chiến lược mở rộng ZOPA:** Khi rơi vào ZOPA âm hoặc ZOPA hẹp, thay vì chỉ mặc cả một biến số duy nhất (như giá tiền), hãy đưa thêm các giá trị phi tiền tệ vào bàn đàm phán (như tiến độ thanh toán, thời gian bảo hành, cam kết hợp tác dài hạn) để tạo ra ZOPA mới.
 
-## Concrete Examples
+## Ví dụ thực tế
 
 - **Mua bán phần mềm doanh nghiệp:**
   - Bên mua có ngân sách tối đa $50.000/năm.
@@ -37,7 +38,7 @@ ZOPA đại diện cho vùng đất chung nơi cả hai bên đều cảm thấy
   - Ứng viên yêu cầu mức lương tối thiểu 30 triệu/tháng. Công ty chỉ có quỹ lương 25 triệu/tháng (ZOPA âm về tiền mặt).
   - **Giải pháp mở rộng ZOPA:** Công ty đề xuất lương 25 triệu + thưởng theo KPI dự án + cho phép làm việc từ xa 2 ngày/tuần. Ứng viên chấp nhận gói giá trị này vì nó vượt ngưỡng thỏa mãn tổng thể.
 
-## Practical Implementation
+## Trade-offs và điểm mù cần tránh
 
 - **Trade-offs (Điểm mù cần tránh):**
   - _Mơ hồ về Reservation Price:_ Đàm phán mà không biết rõ giá sàn/trần của chính mình dễ dẫn đến việc chấp nhận thỏa thuận thua lỗ hoặc vô tình bác bỏ một thỏa thuận tốt.

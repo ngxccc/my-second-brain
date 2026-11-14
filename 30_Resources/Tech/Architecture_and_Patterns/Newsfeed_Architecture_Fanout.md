@@ -1,13 +1,6 @@
 ---
 tags: [type/concept, status/permanent]
 date: 2026-06-07
-aliases:
-  [
-    Thiết kế hệ thống Newsfeed,
-    Pull vs Push Model,
-    Hybrid Fan-out Newsfeed,
-    Fan-out on Read/Write,
-  ]
 description: "Thiết kế hệ thống Newsfeed tải cao bằng kiến trúc Hybrid Fan-out (Push + Pull)."
 ---
 
@@ -15,7 +8,9 @@ description: "Thiết kế hệ thống Newsfeed tải cao bằng kiến trúc H
 
 ## TL;DR
 
-Thiết kế hệ thống Newsfeed (mạng xã hội giống Twitter/Facebook) đối mặt với thách thức phân phối bài viết lớn. Giải pháp tối ưu là sử dụng kiến trúc **Hybrid Fan-out** kết hợp giữa **Push Model (Fan-out on Write)** cho người dùng bình thường và **Pull Model (Fan-out on Read)** cho người dùng nổi tiếng (KOLs/Celebrities), giúp cân bằng tải trọng ghi và đọc dữ liệu.
+- **Bản chất**: Hybrid fan-out dùng push (ghi sẵn vào feed) cho user thường và pull (truy vấn lúc đọc) cho KOL.
+- **Mục đích**: Cân bằng chi phí ghi và đọc: push làm write đắt, pull làm read đắt, nên chọn theo từng nhóm user.
+- **Điểm mấu chốt**: Ngưỡng follower là tham số quyết định; với tài khoản triệu follower, fan-out on write biến một bài đăng thành hàng triệu lần ghi.
 
 ## Pull vs Push Model Comparison
 

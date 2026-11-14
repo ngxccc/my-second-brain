@@ -1,12 +1,6 @@
 ---
 tags: [type/concept, status/permanent]
 date: 2026-07-07
-aliases:
-  [
-    Kiểm thử hộp đen,
-    Black-box Testing Techniques,
-    Phân vùng tương đương Phân tích giá trị biên,
-  ]
 description: "Kỹ thuật kiểm thử hộp đen tập trung vào phân vùng tương đương (EP) và phân tích giá trị biên (BVA)."
 ---
 
@@ -14,7 +8,9 @@ description: "Kỹ thuật kiểm thử hộp đen tập trung vào phân vùng 
 
 ## TL;DR
 
-Kiểm thử hộp đen là kỹ thuật thiết kế test case dựa trên yêu cầu hệ thống mà không cần biết cấu trúc mã nguồn bên trong. Hai phương pháp cốt lõi và phổ biến nhất của kiểm thử hộp đen là Phân vùng tương đương (Equivalence Partitioning) và Phân tích giá trị biên (Boundary Value Analysis), giúp giảm tối đa số lượng test case cần thực thi nhưng vẫn đảm bảo độ phủ cao nhất.
+- **Bản chất**: Hộp đen thiết kế test từ yêu cầu mà không nhìn vào code, dùng phân vùng tương đương và phân tích giá trị biên.
+- **Mục đích**: Giảm số test case cần chạy trong khi vẫn giữ độ phủ, vì mọi giá trị trong cùng một phân vùng được xử lý giống nhau.
+- **Điểm mấu chốt**: Giá trị biên sinh nhiều lỗi hơn giá trị giữa miền; chỉ làm phân vùng mà bỏ biên là bỏ qua đúng chỗ lỗi tập trung.
 
 ---
 
@@ -47,7 +43,7 @@ Phân vùng không hợp lệ          Phân vùng hợp lệ (Từ A đến B) 
 
 ---
 
-## Practical Examples
+## Ví dụ: ô nhập số lượng mua hàng
 
 ### Bài toán thiết kế Test Case thực tế
 
@@ -92,4 +88,4 @@ _Kết quả BVA:_ Cần **4 test cases** biên (0, 1, 100, 101).
 
 - [[Error_Defect_Failure]]: Khái niệm lỗi nhầm lẫn và sự cố trong kiểm thử phần mềm.
 - [[7_Principles_of_Testing]]: 7 nguyên lý kiểm thử định hình tư duy kiểm thử biên.
-- [[30_Resources/Concepts/000_Concepts_MOC.md|Concepts MOC]]
+- [[000_Concepts_MOC]]

@@ -1,13 +1,6 @@
 ---
 tags: [type/method, status/permanent]
 date: 2026-08-12
-aliases:
-  [
-    McKinsey Issue Tree Framework,
-    Cây vấn đề McKinsey,
-    Issue Tree Framework,
-    MECE Hypothesis Driven Framework,
-  ]
 description: "Khung tư duy bóc tách cây vấn đề MECE kết hợp kiểm chứng giả thuyết giúp tìm nguyên nhân gốc rễ và xử lý triệt để bài toán kỹ thuật."
 ---
 
@@ -15,7 +8,9 @@ description: "Khung tư duy bóc tách cây vấn đề MECE kết hợp kiểm 
 
 ## TL;DR
 
-**McKinsey Issue Tree Framework** là phương pháp phân rã một bài toán phức tạp thành cấu trúc cây phân cấp tuân theo nguyên tắc **MECE (Mutually Exclusive, Collectively Exhaustive - Không trùng lặp, Không bỏ sót)** kết hợp với mô hình **Hypothesis-Driven Approach (Hướng giả thuyết)**. Phương pháp này giúp cô lập nguyên nhân gốc rễ (Root Cause) và đưa ra bài kiểm tra xác nhận (Verification Test) cho từng nhánh vấn đề.
+- **Bản chất**: Phân rã vấn đề thành cây MECE (không trùng lặp, không bỏ sót) rồi kiểm chứng từng nhánh bằng giả thuyết và test xác nhận.
+- **Mục đích**: Cô lập root cause thay vì sửa triệu chứng, và biết nhánh nào chưa được kiểm tra.
+- **Điểm mấu chốt**: Cây chỉ đáng tin khi các nhánh thật sự MECE; nhánh chồng lấn khiến cùng một nguyên nhân bị đếm hai lần và nhánh thiếu khiến root cause nằm ngoài cây.
 
 ---
 
@@ -71,5 +66,4 @@ Một cây vấn đề thuần túy chỉ liệt kê câu hỏi sẽ dẫn đế
 
 - Phương pháp ghim mục tiêu ban đầu: [[GPS_Goal_Problem_Solution_Framework]]
 - Khung tư duy giải quyết vấn đề: [[Problem_Solving_Mental_Model_Pipeline]]
-- Quy trình 5 bước đánh giá vấn đề: [[Problem_Solving_Mental_Model_Pipeline]]
 - Tư duy thiết kế kiến trúc tiến hóa: [[Problem_Driven_System_Design_Framework]]

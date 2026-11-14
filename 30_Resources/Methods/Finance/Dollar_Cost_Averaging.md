@@ -1,7 +1,6 @@
 ---
 tags: [type/method, status/permanent]
 date: 2026-04-29
-aliases: [DCA, Trung bình giá, Đầu tư định kỳ]
 description: "Chiến thuật trung bình giá để triệt tiêu tâm lý FOMO/Panic, biến việc đầu tư thành một Cron Job tự động vô tri."
 ---
 
@@ -9,7 +8,9 @@ description: "Chiến thuật trung bình giá để triệt tiêu tâm lý FOMO
 
 ## TL;DR
 
-Chiến thuật chia nhỏ tổng vốn để giải ngân định kỳ (hàng tuần/tháng) bất chấp tình hình thị trường. Mục tiêu cốt lõi là triệt tiêu yếu tố cảm xúc (FOMO/Panic) và tự động kéo giá vốn về mức trung bình an toàn.
+- **Bản chất**: Giải ngân vốn cố định theo chu kỳ bất kể giá thị trường, để số lượng mua tự tăng khi giá giảm và giảm khi giá tăng.
+- **Mục đích**: Triệt tiêu yếu tố cảm xúc FOMO và panic, đồng thời giải phóng cognitive load cho công việc tạo thu nhập chính.
+- **Điểm mấu chốt**: DCA không đảm bảo lợi nhuận, nó chỉ loại bỏ quyết định timing; DCA một tài sản có kỳ vọng âm vẫn lỗ, chỉ chậm hơn.
 
 ## Core Concept
 
@@ -17,7 +18,7 @@ Chiến thuật chia nhỏ tổng vốn để giải ngân định kỳ (hàng t
 - **Công thức Self-balancing:** Với một ngân sách cố định (VD: 5 triệu/tháng), khi giá giảm bạn mua được nhiều số lượng hơn, khi giá tăng bạn mua được ít hơn. Trọng số tự động nghiêng về vùng giá thấp, giúp giá vốn trung bình luôn nằm ở mức an toàn.
 - **Giải phóng năng lượng nhận thức:** DCA chuyển việc đầu tư từ "chủ động suy nghĩ" sang "hành động thụ động", giúp bạn dành năng lượng (Cognitive Load) cho công việc chuyên môn tạo ra dòng tiền chính.
 
-## Practical Implementation
+## Trade-offs và cạm bẫy
 
 - **Trade-offs (Downtrend vs Uptrend):** DCA sẽ thua kém phương pháp All-in (Lump Sum) trong một thị trường tăng trưởng liên tục (Bull Run), vì bạn đang giam một lượng tiền mặt không sinh lời. Tuy nhiên, DCA là "Vua" trong thị trường biến động (Volatile) hoặc suy thoái dài hạn.
 - **Cạm bẫy "Dao rơi":** Tuyệt đối không DCA vào các tài sản rác, trend ngắn hạn, hoặc cổ phiếu của công ty có nền tảng cơ bản đã gãy. DCA lúc này là hành động ném tiền qua cửa sổ.

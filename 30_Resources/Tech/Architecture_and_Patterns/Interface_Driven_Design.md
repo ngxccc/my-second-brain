@@ -1,6 +1,6 @@
 ---
 tags: [type/concept, status/permanent]
-aliases: [IDD, Contract-First Design, Contract-Driven Development]
+date: 2026-05-23
 created_at: Saturday, May 23rd 2026, 6:20:30 pm +07:00
 updated_at: Saturday, May 23rd 2026, 7:19:54 pm +07:00
 description: "Thiết kế dựa trên giao diện (contract-first) giúp các lớp lỏng lẻo và phát triển song song."
@@ -10,7 +10,9 @@ description: "Thiết kế dựa trên giao diện (contract-first) giúp các l
 
 ## TL;DR
 
-IDD (Interface-Driven Design) là hệ tư tưởng "chốt kèo trên giấy trước, code thật sau". Nó ép kỹ sư phải định nghĩa rành mạch các bản hợp đồng (Interface/Contract) quy định input/output giữa các module trước khi cắm đầu vào viết logic, giúp các team (Front-end, Back-end, Microservices) có thể làm việc song song mà không phải mốc mỏ chờ nhau.
+- **Bản chất**: IDD chốt contract (input/output) trước khi viết implementation, để các bên phát triển song song.
+- **Mục đích**: Hiện thực hóa Dependency Inversion và bỏ nút thắt "bên này phải xong thì bên kia mới làm được".
+- **Điểm mấu chốt**: Giá trị không nằm ở file interface mà ở chỗ contract được review trước khi code; interface viết sau implementation chỉ là mô tả lại cái đã có.
 
 ## Core Concept
 

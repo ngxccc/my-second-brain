@@ -1,17 +1,16 @@
 ---
 tags: [type/concept, status/permanent]
-aliases: [MQTT QoS Mechanics, MQTT Quality of Service, MQTT Delivery Guarantees]
 date: 2026-09-24
-description: "Nguyên lý tầng sâu của MQTT QoS: giải pháp The Two Generals' Problem, phân rã State Machine của QoS 0, QoS 1, QoS 2 (Two-Phase Commit Handshake), Inflight Window và cơ chế Idempotency."
+description: "Nguyên lý tầng sâu của MQTT QoS: giải pháp The Two Generals' Problem và phân rã State Machine của QoS 0, QoS 1, QoS 2 (Two-Phase Commit Handshake)."
 ---
 
 # MQTT QoS Mechanics
 
 ## TL;DR
 
-- **Bản chất**: **MQTT QoS (Quality of Service)** là một hợp đồng thỏa thuận mức độ tin cậy trong việc chuyển phát gói tin giữa Client và Broker trên một kênh truyền vật lý không ổn định.
-- **Mục đích**: Cân bằng có chủ đích giữa thông lượng mạng (Throughput), độ trễ (Latency) và tính toàn vẹn dữ liệu (Data Integrity) nhằm hóa giải giới hạn phân tán của The Two Generals' Problem.
-- **Điểm mấu chốt**: **QoS 0** là Best-Effort không lưu trạng thái (Zero ACK); **QoS 1** đảm bảo không mất tin bằng cơ chế ACK-Retransmission nhưng có thể gây Duplicate tin (bắt buộc Backend phải Idempotent); **QoS 2** sử dụng quy trình bắt tay 4 bước (4-Way Handshake / Two-Phase Commit thu nhỏ) triệt tiêu hoàn toàn mất mát và trùng lặp với cái giá là Latency cao nhất.
+- **Bản chất**: **MQTT QoS** là hợp đồng mức độ tin cậy khi chuyển phát gói tin giữa Client và Broker trên một kênh truyền không ổn định.
+- **Mục đích**: Cân bằng có chủ đích giữa throughput, latency và toàn vẹn dữ liệu, nhằm hóa giải giới hạn phân tán của The Two Generals' Problem.
+- **Điểm mấu chốt**: **QoS 0** best-effort, không ACK; **QoS 1** ACK-Retransmission có thể trùng tin, buộc Backend Idempotent; **QoS 2** bắt tay 4 bước, hết mất mát/trùng lặp, đổi lại latency cao hơn.
 
 ---
 
@@ -19,7 +18,7 @@ description: "Nguyên lý tầng sâu của MQTT QoS: giải pháp The Two Gener
 
 ### 1. The Two Generals' Problem & Đường biên Đánh đổi Tin cậy
 
-Trong lý thuyết mạng máy tính phân tán, **The Two Generals' Problem** chứng minh rằng: Trên một môi trường mạng có độ trễ biến thiên và nguy cơ rớt gói tin (Packet Loss), hai nút tính toán **không bao giờ có thể đạt được sự đồng thuận tuyệt đối về trạng thái** chỉ bằng một số lượng hữu hạn các thông điệp xác nhận (Acknowledge).
+**The Two Generals' Problem** chứng minh: trên mạng có độ trễ biến thiên và nguy cơ rớt gói, hai nút tính toán không bao giờ đạt được đồng thuận tuyệt đối về trạng thái chỉ bằng một số lượng hữu hạn thông điệp xác nhận.
 
 Mọi giao thức chuyển phát đều phải chấp nhận đánh đổi:
 
@@ -78,42 +77,10 @@ QoS 2 triệt tiêu hoàn toàn khả năng mất tin và trùng lặp thông qu
 
 ---
 
-### 3. Inflight Window, Packet ID Lifecycle & Backpressure
-
-- **Inflight Window (Hạn ngạch gói tin đang bay)**:
-  - Vì `Packet ID` chỉ có 16-bit (tối đa 65.535 ID khả dụng) và bộ nhớ RAM của thiết bị là hữu hạn, hệ thống không thể gửi đi vô hạn các gói tin chưa có xác nhận.
-  - Chuẩn MQTT quy định một hạn mức cửa sổ (Inflight Window, thường cấu hình từ 10 đến 100). Khi số lượng gói tin QoS 1 và QoS 2 chưa nhận được `PUBACK` hoặc `PUBCOMP` chạm ngưỡng này, bên gửi phải tạm dừng gửi gói tin mới.
-- **Hiện tượng Backpressure (Áp lực ngược)**:
-  - Khi mạng bị nghẽn (Latency tăng cao, tỷ lệ rớt gói tin lớn), hàng đợi Inflight Window bị lấp đầy.
-  - Tầng gửi (Publisher) bị nghẽn bộ đệm, buộc phải áp dụng chính sách chặn (Block Publisher Thread), đệm vào đĩa cứng (Disk Spooling), hoặc chủ động ngắt kết nối để bảo toàn bộ nhớ RAM.
-
----
-
-### 4. Yêu cầu Bắt buộc tại Tầng Ứng dụng: Idempotency Pattern
-
-Một ngộ nhận tai hại trong kiến trúc phần mềm là cho rằng: _"Chỉ cần chọn QoS 1 ở tầng mạng là dữ liệu của hệ thống sẽ an toàn tuyệt đối"_.
-
-Thực tế, QoS 1 chỉ bảo vệ gói tin ở tầng truyền thông (Transport Level). Để xử lý triệt để nguy cơ trùng lặp bản tin do Retransmission gây ra, tầng ứng dụng Backend bắt buộc phải hiện thực hóa **Idempotent Consumer Pattern**:
-
-- Mỗi bản tin nghiệp vụ phải chứa một mã định danh duy nhất sinh ra từ nguồn (ví dụ: `UUID` hoặc `timestamp + device_id`).
-- Backend (Go Service) khi nhận bản tin từ MQTT Broker phải kiểm tra trạng thái khóa này (thông qua Redis `SET NX` hoặc PostgreSQL Unique Constraint) trước khi thực hiện ghi nhận dữ liệu hoặc kích hoạt cảnh báo.
-
----
-
-## Comparative Decision Matrix
-
-Áp dụng trong Hệ thống Giám sát & Điều khiển Máy phát điện Công nghiệp (Industrial Generator Management):
-
-| Cấp độ QoS | Độ tin cậy                          |     Chi phí RTT mạng      | Tác động bộ nhớ RAM                      | Kịch bản ứng dụng chuẩn xác                                                                                                                             |
-| :--------: | :---------------------------------- | :-----------------------: | :--------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **QoS 0**  | Có thể mất tin, không bao giờ trùng |    $0$ (Không chờ ACK)    | Tối thiểu (Không lưu Inflight)           | **Đo đạc Telemetry định kỳ**: Điện áp, nhiệt độ, mức dầu gửi mỗi 1 giây/lần. Bản tin sau tự động bù đắp bản tin trước.                                  |
-| **QoS 1**  | Không mất tin, có thể nhận trùng    |    $1$ RTT (`PUBACK`)     | Trung bình (Lưu Inflight Queue)          | **Cảnh báo bất thường (Alerts)**: Máy quá nhiệt $> 95^\circ\text{C}$, mất điện lưới, mức dầu cạn $< 10\%$. Thà nhận 2 lần cảnh báo còn hơn bị thất lạc. |
-| **QoS 2**  | Không mất tin, không trùng lặp      | $2$ RTT (4-Way Handshake) | Cao (Lưu Inflight + Deduplication Cache) | **Lệnh điều khiển nhạy cảm (Critical Control)**: Lệnh tắt máy khẩn cấp từ xa, lệnh kích hoạt nổ máy chạy tải bệnh viện, lệnh thanh toán nạp nhiên liệu. |
-
----
-
 ## Related Notes
 
+- Hạn ngạch gói tin đang bay và hiện tượng nghẽn ngược: [[MQTT_Inflight_Window_and_Backpressure]]
+- Yêu cầu bắt buộc ở tầng ứng dụng khi dùng QoS 1: [[MQTT_Consumer_Idempotency]]
+- Chọn mức QoS nào cho từng loại bản tin: [[MQTT_QoS_Selection_Guide]]
 - [[MQTT_Broker_Architecture]]: Tổng quan kiến trúc định tuyến Trie và cơ chế Decoupling của MQTT Broker.
-- [[Process_vs_Thread_and_Context_Switching]]: Cấu trúc luồng và chi phí chuyển đổi ngữ cảnh trong xử lý Concurrency.
 - [[000_Concepts_MOC]]: Danh mục lý thuyết nền tảng Khoa học Máy tính.

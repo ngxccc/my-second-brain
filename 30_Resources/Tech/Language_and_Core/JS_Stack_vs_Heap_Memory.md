@@ -1,6 +1,5 @@
 ---
 tags: [type/concept, status/permanent]
-aliases: [Stack vs Heap Memory, JS Stack vs Heap, Stack and Heap]
 date: 2026-08-09
 description: "Mô hình phân tầng bộ nhớ Stack (LIFO) và Heap (Dynamic Allocation) trong JavaScript."
 ---
@@ -11,7 +10,9 @@ Tài liệu này là một ghi chép Layer 2 mô tả chi tiết cách JavaScrip
 
 ## TL;DR
 
-Bộ nhớ trong JavaScript được chia làm hai vùng chính: **Stack** và **Heap**. Stack lưu trữ các kiểu dữ liệu nguyên thủy (Primitive Values) và con trỏ tham chiếu (Reference Pointers) với cơ chế LIFO tĩnh ở cấp độ phần cứng. Heap lưu trữ các cấu trúc dữ liệu động có kích thước không cố định như Object, Array và Closure. Đăng ký và giải phóng bộ nhớ Stack xảy ra tự động khi kết thúc Stack Frame, trong khi bộ nhớ Heap cần được dọn dẹp bởi Garbage Collector [[JS_Generational_Garbage_Collection]] để phòng ngừa hiện tượng rò rỉ bộ nhớ [[JS_Memory_Leaks_and_Mitigation]].
+- **Bản chất**: Stack chứa primitive và con trỏ tham chiếu theo LIFO, tự giải phóng khi frame kết thúc; heap chứa object, array và closure và do Garbage Collector dọn.
+- **Mục đích**: Giải thích vì sao primitive copy giá trị còn object copy tham chiếu, và vì sao leak chỉ xảy ra ở phía heap.
+- **Điểm mấu chốt**: Closure sống trên heap, nên biến "cục bộ" bị capture vẫn sống sau khi hàm return; đây là gốc của cả memory leak lẫn bug `var` trong loop.
 
 ---
 
@@ -29,7 +30,7 @@ Bộ nhớ trong JavaScript được chia làm hai vùng chính: **Stack** và *
 
 ---
 
-## Practical Implementation
+## Bảng so sánh Stack và Heap
 
 ### So sánh Đặc tính Kỹ thuật giữa Stack và Heap
 
@@ -44,10 +45,10 @@ Bộ nhớ trong JavaScript được chia làm hai vùng chính: **Stack** và *
 
 ## Related Notes
 
-- [[Stack_vs_Heap_Memory_Fundamentals]] - Nguyên lý khoa học máy tính cốt lõi về phân tầng bộ nhớ Stack và Heap.
+- Nguyên lý chung đằng sau mô hình JavaScript: [[Stack_vs_Heap_Memory_Fundamentals]]
 - [[Garbage_Collection_Fundamentals]] - Nguyên lý cốt lõi về cơ chế dọn rác bộ nhớ tự động.
 - [[Memory_Leaks_Core_Mechanics]] - Bản chất rò rỉ bộ nhớ ở mức độ nền tảng.
-- [[JS_Generational_Garbage_Collection]]
-- [[JS_Memory_Leaks_and_Mitigation]]
-- [[JS_Runtimes_Bun_vs_NodeJS]]
+- Cách V8 dọn vùng Heap: [[JS_Generational_Garbage_Collection]]
+- Khi Heap giữ tham chiếu ngoài ý muốn: [[JS_Memory_Leaks_and_Mitigation]]
+- Mỗi engine bố trí bộ nhớ khác nhau: [[JS_Runtimes_Bun_vs_NodeJS]]
 - [[000_Tech_MOC]]

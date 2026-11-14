@@ -1,8 +1,6 @@
 ---
 tags: [type/concept, status/permanent]
 date: 2026-06-07
-aliases:
-  [RFC Caching Trending, Sorted Sets Redis Leaderboard, Realtime Ranking Cache]
 description: "RFC đề xuất caching realtime leaderboard bằng Redis Sorted Sets (ZSET)."
 ---
 
@@ -10,7 +8,9 @@ description: "RFC đề xuất caching realtime leaderboard bằng Redis Sorted 
 
 ## TL;DR
 
-Tài liệu đề xuất (RFC) giải quyết bài toán Over-engineering và nghẽn CPU trên PostgreSQL khi tính toán bảng xếp hạng realtime bằng cách áp dụng bộ đệm Redis Sorted Sets (ZSET) với độ phức tạp $O(log(N))$ cho việc xếp hạng.
+- **Bản chất**: Bảng xếp hạng realtime được đẩy khỏi PostgreSQL sang Redis Sorted Set, cập nhật bằng `ZINCRBY` và đọc bằng `ZREVRANGE`.
+- **Mục đích**: Loại bỏ `COUNT` + `SORT` lặp lại trên bảng lớn, thứ làm CPU database spike 100% ở 5.000 request/giây.
+- **Điểm mấu chốt**: Đổi lấy eventual consistency khoảng 5 giây giữa Redis và PostgreSQL; chấp nhận được vì bảng xếp hạng không phải dữ liệu giao dịch.
 
 ## Context & Problem
 

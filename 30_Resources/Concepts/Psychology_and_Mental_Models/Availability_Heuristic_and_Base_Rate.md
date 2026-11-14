@@ -1,14 +1,6 @@
 ---
 tags: [type/concept, status/permanent]
 date: 2026-08-22
-aliases:
-  [
-    Availability Heuristic and Base Rate,
-    Availability Heuristic,
-    Base Rate Fallacy,
-    Thiên kiến sẵn có và tỷ lệ nền,
-    Hiệu ứng sẵn có,
-  ]
 description: "Thiên kiến sẵn có và tỷ lệ nền - Lỗi đánh giá xác suất dựa trên độ dễ nhớ của sự kiện thay vì tần suất thống kê thực tế."
 ---
 
@@ -16,7 +8,7 @@ description: "Thiên kiến sẵn có và tỷ lệ nền - Lỗi đánh giá x�
 
 ## TL;DR
 
-- **Bản chất**: Xu hướng tâm lý đánh giá tần suất, xác suất hoặc tầm quan trọng của một hiện tượng dựa trên mức độ dễ dàng gợi nhớ lại các ví dụ về nó trong tâm trí (Availability Heuristic), dẫn đến việc phớt lờ hoàn toàn dữ liệu thống kê nền (Base-Rate Fallacy).
+- **Bản chất**: Đánh giá tần suất, xác suất hoặc tầm quan trọng của một hiện tượng theo mức độ dễ gợi nhớ ví dụ về nó, thay vì theo dữ liệu thống kê nền (Base-Rate Fallacy).
 - **Mục đích**: Chặn đứng các đánh giá sai lầm về rủi ro xã hội, tài chính, kỹ thuật do bị thao túng bởi các sự kiện giật gân, nổi cộm trên truyền thông.
 - **Điểm mấu chốt**: Mức độ xuất hiện dày đặc của một sự việc trên màn hình không đồng nghĩa với xác suất xảy ra của sự việc đó trong thế giới thực.
 
@@ -55,7 +47,7 @@ $$\text{Đánh giá xác suất } P(E) \approx \text{Độ dễ dàng khi truy x
 
 ---
 
-## Practical Implementation & De-biasing Framework
+## Hiệu chuẩn dữ liệu và bảng đối chiếu
 
 ### 1. Bảng đối chiếu các tình huống thực tế
 

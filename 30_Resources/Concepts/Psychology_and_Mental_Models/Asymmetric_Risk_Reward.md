@@ -1,13 +1,6 @@
 ---
 tags: [type/concept, status/permanent]
 date: 2026-08-07
-aliases:
-  [
-    Asymmetric Risk Reward,
-    Rủi ro bất đối xứng,
-    Asymmetric Upside,
-    Margin of Safety,
-  ]
 description: "Rủi ro bất đối xứng (Asymmetric Risk/Reward) là trạng thái mà ở đó mức thiệt hại tối đa có thể chịu đựng (Downside) là rất nhỏ hoặc bị giới hạn, trong khi tiềm năng lợi nhuận thu về (Upside) lại cự..."
 ---
 
@@ -15,7 +8,9 @@ description: "Rủi ro bất đối xứng (Asymmetric Risk/Reward) là trạng 
 
 ## TL;DR
 
-Rủi ro bất đối xứng (Asymmetric Risk/Reward) là trạng thái mà ở đó mức thiệt hại tối đa có thể chịu đựng (Downside) là rất nhỏ hoặc bị giới hạn, trong khi tiềm năng lợi nhuận thu về (Upside) lại cực kỳ lớn hoặc không giới hạn.
+- **Bản chất**: Rủi ro bất đối xứng là trạng thái downside bị giới hạn trong khi upside gần như không giới hạn, nên kỳ vọng dương dù xác suất thắng thấp.
+- **Mục đích**: Ra quyết định dựa trên mức thiệt hại tối đa có thể chịu thay vì xác suất thắng, để không bị một lần sai xóa sạch nhiều lần đúng.
+- **Điểm mấu chốt**: Kèo bất đối xứng chỉ tồn tại khi phần thiệt hại thật sự bị chặn (stop loss, biên an toàn); nếu downside không đo được thì đó chỉ là đánh bạc.
 
 ---
 

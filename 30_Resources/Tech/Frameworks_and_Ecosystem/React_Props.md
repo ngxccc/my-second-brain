@@ -1,7 +1,6 @@
 ---
 tags: [type/concept, status/permanent]
 date: 2026-07-10
-aliases: [React Props, Thuộc tính trong React]
 description: "Thuộc tính truyền từ component cha xuống, mang tính chất bất biến (read-only)."
 ---
 
@@ -9,7 +8,9 @@ description: "Thuộc tính truyền từ component cha xuống, mang tính ch�
 
 ## TL;DR
 
-**React Props** (viết tắt của "properties") là một đối tượng JavaScript chứa các giá trị được truyền từ một component cha (parent) xuống các component con (child) của nó. Props mang tính chất bất biến (read-only/immutable) đối với component nhận, đóng vai trò như các tham số đầu vào cấu hình giao diện hoặc hành vi hiển thị cho component đó.
+- **Bản chất**: Props là object truyền từ component cha xuống con và read-only với component nhận.
+- **Mục đích**: Cấu hình giao diện và hành vi của component tái sử dụng mà không cần state toàn cục.
+- **Điểm mấu chốt**: Con không được sửa props; muốn đổi dữ liệu phải gọi callback do cha truyền xuống. Đây chính là one-way data flow.
 
 ## Core Concept
 

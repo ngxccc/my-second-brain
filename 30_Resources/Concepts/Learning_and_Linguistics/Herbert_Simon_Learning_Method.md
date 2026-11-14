@@ -1,12 +1,6 @@
 ---
 tags: [type/concept, status/permanent]
 date: 2026-07-04
-aliases:
-  [
-    Herbert Simon Learning Method,
-    Phương pháp học tập Herbert Simon,
-    Chunking and Expertise,
-  ]
 description: "Phương pháp nhận thức dựa trên chunking và deliberate practice để thành thạo kỹ năng mới."
 ---
 
@@ -14,7 +8,9 @@ description: "Phương pháp nhận thức dựa trên chunking và deliberate p
 
 ## TL;DR
 
-Phương pháp học tập và xây dựng chuyên môn dựa trên các nghiên cứu khoa học nhận thức của Giáo sư Herbert A. Simon (đoạt giải Nobel). Trọng tâm của phương pháp là cơ chế **Chunking** (gom nhóm thông tin) kết hợp với **Deliberate Practice** (thực hành có chủ đích) nhằm tối ưu hóa bộ nhớ làm việc (Working Memory) hữu hạn và chuyển hóa kiến thức vào bộ nhớ dài hạn (Long-term Memory) hiệu quả.
+- **Bản chất**: Kết hợp chunking (gom thông tin thành đơn vị lớn) với deliberate practice để lách giới hạn working memory 7±2.
+- **Mục đích**: Chuyển kiến thức vào long-term memory bằng cách luyện có chủ đích thay vì đọc lại nhiều lần.
+- **Điểm mấu chốt**: Chunking chỉ nén được thứ đã hiểu; học vẹt tạo ra chunk rỗng, và chunk rỗng không giải phóng được working memory.
 
 ---
 
@@ -26,7 +22,7 @@ Phương pháp học tập và xây dựng chuyên môn dựa trên các nghiên
 
 ---
 
-## Practical Implementation
+## Bốn bước học theo Herbert Simon
 
 ### 1. Phân rã kiến thức
 
@@ -61,6 +57,8 @@ Nghiên cứu của Chase & Simon (1973) chỉ ra sự tích lũy chuyên môn l
 - Quy trình đào sâu đa ngành tuần tự: [[M_Shaped_Polymath_Skill_Stacking]]
 - Ứng dụng chunking trong việc học tiếng Anh: [[Phonetic_Chunking]]
 - Thuật toán sắp xếp lịch ôn tập củng cố các chunk: [[Spaced_Repetition_SM2]]
+- Lý thuyết tải nhận thức và bộ nhớ làm việc: [[Cognitive_Load_Theory]]
+- 20 quy tắc nguyên tử hóa tri thức để tối ưu bộ đệm nhận thức: [[Wozniak_20_Rules_of_Formulating_Knowledge]]
 
 ## Sources / References
 

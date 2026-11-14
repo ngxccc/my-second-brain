@@ -1,7 +1,6 @@
 ---
 tags: [type/concept, status/permanent]
 date: 2026-02-08
-aliases: [Modular Architecture, Feature-Based Architecture]
 description: "Kiến trúc chia theo Domain/Feature (High Cohesion, Low Coupling)."
 ---
 
@@ -9,7 +8,9 @@ description: "Kiến trúc chia theo Domain/Feature (High Cohesion, Low Coupling
 
 ## TL;DR
 
-Kiến trúc tổ chức codebase bằng cách gom nhóm file theo chức năng nghiệp vụ (Domain/Feature như Auth, Users, Orders) thay vì vai trò kỹ thuật (Controllers, Services, Models). Nó mang lại sự rạch ròi của Microservices nhưng vẫn giữ sự đơn giản khi deploy một khối (Monolith).
+- **Bản chất**: Gom file theo domain hoặc feature (Auth, Orders) thay vì theo vai trò kỹ thuật, trong khi vẫn deploy một khối.
+- **Mục đích**: Có ranh giới rõ như microservices mà không phải chịu chi phí vận hành hệ phân tán.
+- **Điểm mấu chốt**: Giá trị đến từ high cohesion và low coupling thực thi bằng Public Interface; gom thư mục mà module vẫn chọc vào nhau thì chỉ là đổi tên Layered.
 
 ## Core Concept
 

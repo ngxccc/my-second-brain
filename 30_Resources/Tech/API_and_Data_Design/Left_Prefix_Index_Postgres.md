@@ -1,8 +1,6 @@
 ---
 tags: [type/concept, status/permanent]
 date: 2026-06-07
-aliases:
-  [Nguyên lý Left-Prefix, Composite Index Left-Prefix, PostgreSQL Left-Prefix]
 description: "Nguyên lý Left-Prefix của Composite Index trong PostgreSQL."
 ---
 
@@ -10,7 +8,9 @@ description: "Nguyên lý Left-Prefix của Composite Index trong PostgreSQL."
 
 ## TL;DR
 
-Nguyên lý Left-Prefix (tiền tố bên trái) của chỉ mục hỗn hợp (Composite Index): Khi tạo chỉ mục trên nhiều cột `(col1, col2, col3)`, PostgreSQL có thể tái sử dụng chỉ mục này cho các truy vấn lọc bằng cột tiền tố bên trái đầu tiên (`col1`), giúp tiết kiệm việc tạo chỉ mục đơn lẻ dư thừa.
+- **Bản chất**: Composite index `(col1, col2, col3)` dùng được cho query chỉ lọc theo tiền tố bên trái `col1`, vì B-Tree sắp xếp theo đúng thứ tự khai báo.
+- **Mục đích**: Một composite index thay được nhiều single index, giảm dung lượng đĩa và chi phí cập nhật index khi ghi.
+- **Điểm mấu chốt**: Query chỉ lọc `col2` hoặc `col3` mà không có `col1` thì không dùng được index này; thứ tự cột khi tạo index quan trọng hơn số lượng cột.
 
 ## Core Concept
 

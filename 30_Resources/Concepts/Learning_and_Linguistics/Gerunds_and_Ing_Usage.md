@@ -1,7 +1,6 @@
 ---
 tags: [type/concept, status/permanent]
 date: 2026-07-21
-aliases: [Danh động từ và cách dùng đuôi -ing, Gerunds and Present Participles]
 description: "Cách sử dụng đuôi `-ing` trong tiếng Anh để chuyển đổi động từ thành danh từ làm chủ ngữ/tân ngữ (Danh động từ - Gerund) hoặc mô tả tính chất của danh từ (Hiện tại phân từ - Present Participle). Gi..."
 ---
 
@@ -9,7 +8,9 @@ description: "Cách sử dụng đuôi `-ing` trong tiếng Anh để chuyển �
 
 ## TL;DR
 
-Cách sử dụng đuôi `-ing` trong tiếng Anh để chuyển đổi động từ thành danh từ làm chủ ngữ/tân ngữ (Danh động từ - Gerund) hoặc mô tả tính chất của danh từ (Hiện tại phân từ - Present Participle). Giúp hiểu rõ các cấu trúc ngữ pháp phổ biến ngoài thì tiếp diễn trong giao tiếp và công việc lập trình.
+- **Bản chất**: Đuôi `-ing` tạo hai dạng khác nhau: gerund (động từ thành danh từ, làm chủ ngữ hoặc tân ngữ) và present participle (tính từ hoặc rút gọn mệnh đề).
+- **Mục đích**: Đọc đúng cấu trúc câu ngoài thì tiếp diễn, tránh dịch sai khi `-ing` đứng ở vị trí danh từ.
+- **Điểm mấu chốt**: Vị trí trong câu quyết định chức năng; cùng một từ thêm `-ing` có thể là chủ ngữ, tân ngữ, hoặc bổ nghĩa cho danh từ.
 
 ---
 
@@ -20,7 +21,7 @@ Cách sử dụng đuôi `-ing` trong tiếng Anh để chuyển đổi động 
 
 ---
 
-## Practical Implementation
+## Các vị trí dùng V-ing
 
 ### 1. Làm chủ ngữ đứng ở đầu câu
 
@@ -70,7 +71,7 @@ Từ đuôi `-ing` đứng trước danh từ để bổ nghĩa, biểu thị t�
 
 ## Related Notes
 
-- Lộ trình học tiếng Anh cốt lõi: [[English_Mastery_80_20_Roadmap]]
+- Lộ trình học tiếng Anh cốt lõi: [[English_Roadmap]]
 - Hồ sơ năng lực tiếng Anh: [[English_Learner_Profile]]
 - Cơ chế ghi nhớ từ vựng: [[Phonetic_Chunking]]
 - Phương pháp họ từ và hình thái: [[Word_Family_and_Morphology_Method]]

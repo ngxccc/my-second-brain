@@ -1,7 +1,6 @@
 ---
 tags: [type/concept, status/permanent]
 date: 2026-04-28
-aliases: [Module Facade, Boundary Interface]
 description: "Cổng giao tiếp an toàn giữa các module (Facade)."
 ---
 
@@ -9,7 +8,9 @@ description: "Cổng giao tiếp an toàn giữa các module (Facade)."
 
 ## TL;DR
 
-Kỹ thuật đóng gói (Encapsulation) ở cấp độ Architecture. Tạo ra một "Cổng giao tiếp" duy nhất cho một Module, giấu đi toàn bộ logic phức tạp và database schema bên trong. Các module khác chỉ được phép tương tác thông qua cổng này.
+- **Bản chất**: Mỗi module chỉ expose một cổng duy nhất; internal (entity, ORM query) bị giấu hoàn toàn.
+- **Mục đích**: Chặn module khác chọc vào repository hoặc schema nội bộ, để đổi database không làm vỡ module gọi.
+- **Điểm mấu chốt**: Đây là cơ chế thực thi Modular Monolith; không có nó thì ranh giới module chỉ là quy ước trên giấy.
 
 ## Core Concept
 

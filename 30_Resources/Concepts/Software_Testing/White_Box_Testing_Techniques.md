@@ -1,12 +1,6 @@
 ---
 tags: [type/concept, status/permanent]
 date: 2026-07-07
-aliases:
-  [
-    Kiểm thử hộp trắng,
-    White-box Testing Techniques,
-    Độ phủ dòng lệnh Độ phủ nhánh,
-  ]
 description: "Kỹ thuật kiểm thử hộp trắng tập trung vào độ phủ dòng lệnh và độ phủ nhánh/quyết định."
 ---
 
@@ -14,7 +8,9 @@ description: "Kỹ thuật kiểm thử hộp trắng tập trung vào độ ph�
 
 ## TL;DR
 
-Kiểm thử hộp trắng là kỹ thuật thiết kế test case dựa trên việc phân tích cấu trúc mã nguồn bên trong của chương trình. Hai độ phủ cơ bản của kiểm thử hộp trắng là Độ phủ dòng lệnh (Statement Coverage) và Độ phủ nhánh/quyết định (Branch/Decision Coverage), giúp đo lường mức độ kiểm thử mã nguồn và hạn chế sót mã chưa chạy qua.
+- **Bản chất**: Hộp trắng thiết kế test từ cấu trúc code, đo bằng statement coverage và branch coverage.
+- **Mục đích**: Tìm nhánh chưa được chạy, nhất là nhánh xử lý lỗi và điều kiện biên trong logic.
+- **Điểm mấu chốt**: 100% statement coverage vẫn có thể bỏ lọt nhánh, vì một điều kiện `if` không có `else` được tính là đã phủ dù nhánh false chưa bao giờ chạy.
 
 ---
 
@@ -101,4 +97,4 @@ Ta thực hiện hai test case:
 - [[Error_Defect_Failure]]: Các khái niệm cơ bản về sai sót phần mềm.
 - [[7_Principles_of_Testing]]: 7 nguyên lý kiểm thử định hình hoạt động kiểm định.
 - [[Black_Box_Testing_Techniques]]: So sánh đối chiếu với kỹ thuật kiểm thử hộp đen.
-- [[30_Resources/Concepts/000_Concepts_MOC.md|Concepts MOC]]
+- [[000_Concepts_MOC]]

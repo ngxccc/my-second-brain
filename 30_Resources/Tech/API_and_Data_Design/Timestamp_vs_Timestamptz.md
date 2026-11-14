@@ -1,7 +1,6 @@
 ---
 tags: [type/concept, status/permanent]
 date: 2026-06-07
-aliases: [Timestamp vs Timestamptz, Múi giờ Database, Thời gian UTC SQL]
 description: "Phân biệt timestamp và timestamptz, quy tắc Enterprise bắt buộc."
 ---
 
@@ -9,7 +8,9 @@ description: "Phân biệt timestamp và timestamptz, quy tắc Enterprise bắt
 
 ## TL;DR
 
-Phân biệt kiểu dữ liệu thời gian: `timestamp` (Without Time Zone) lưu trữ chuỗi thời gian tĩnh không đổi theo múi giờ, dễ gây lệch giờ. `timestamptz` (With Time Zone) lưu thời gian dưới dạng múi giờ chuẩn UTC tuyệt đối và tự động chuyển đổi phù hợp theo server/client truy vấn. Luật Enterprise: Luôn luôn dùng `timestamptz` cho `created_at` và `updated_at`.
+- **Bản chất**: `timestamp` lưu chuỗi thời gian tĩnh không kèm múi giờ; `timestamptz` lưu mốc UTC tuyệt đối và tự chuyển đổi khi ghi/đọc.
+- **Mục đích**: Tránh lệch giờ khi server, client và database nằm ở các múi giờ khác nhau.
+- **Điểm mấu chốt**: Luôn dùng `timestamptz` cho `created_at` và `updated_at`; `timestamp` chỉ đúng khi giá trị đó thực sự là giờ địa phương không có mốc tuyệt đối.
 
 ## Core Concept
 
@@ -25,7 +26,8 @@ Phân biệt kiểu dữ liệu thời gian: `timestamp` (Without Time Zone) lư
 
 ## Enterprise Rule of Thumb
 
-BẮT BUỘC sử dụng kiểu dữ liệu `timestamptz` cho tất cả các cột dấu thời gian hệ thống như `created_at` và `updated_at` để đảm bảo tính nhất quán trên các server phân tán địa lý.
+- **BẮT BUỘC:** dùng `timestamptz` cho mọi cột dấu thời gian hệ thống như `created_at` và `updated_at`.
+- **Lý do:** giữ tính nhất quán trên các server phân tán địa lý.
 
 ## Related Notes
 

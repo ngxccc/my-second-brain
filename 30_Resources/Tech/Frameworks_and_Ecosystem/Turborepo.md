@@ -1,6 +1,6 @@
 ---
 tags: [type/concept, status/permanent]
-aliases: [Monorepo, Turbo]
+date: 2026-08-19
 description: "Công cụ xây dựng hiệu suất cao cho các dự án Monorepo sử dụng JavaScript/TypeScript."
 ---
 
@@ -8,7 +8,9 @@ description: "Công cụ xây dựng hiệu suất cao cho các dự án Monorep
 
 ## TL;DR
 
-Turborepo là một công cụ xây dựng (build system) hiệu suất cao cho các dự án Monorepo sử dụng JavaScript/TypeScript. Nó giúp chia sẻ code cực dễ dàng qua cơ chế workspace, quản lý luồng phụ thuộc task (Dependency Graph), và tối ưu tốc độ build cực hạn thông qua Caching.
+- **Bản chất**: Turborepo là build system cho monorepo JS/TS: workspace, dependency graph giữa các task, và cache theo input hash.
+- **Mục đích**: Không chạy lại task khi input không đổi, và chạy song song theo đúng thứ tự phụ thuộc.
+- **Điểm mấu chốt**: Giá trị nằm ở cache và graph chứ không phải ở việc chạy nhiều lệnh; chỉ đáng dùng khi đã có nhiều package thật.
 
 ## Core Concept
 

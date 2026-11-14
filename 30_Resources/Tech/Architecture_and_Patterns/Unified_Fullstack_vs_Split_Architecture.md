@@ -1,6 +1,7 @@
 ---
 title: Unified Fullstack Architecture vs Split Repository Architecture
 tags: [type/concept, status/permanent]
+date: 2026-06-21
 created: 2026-06-20
 description: "Phân tích so sánh chi tiết giữa mô hình Fullstack gộp (Next.js Monorepo) và mô hình chia tách repo Backend/Frontend."
 ---
@@ -9,7 +10,9 @@ description: "Phân tích so sánh chi tiết giữa mô hình Fullstack gộp (
 
 ## TL;DR
 
-Kiến trúc Fullstack đồng nhất (Unified Fullstack - sử dụng Next.js App Router + Monorepo) gộp cả Frontend và Backend vào chung một codebase, trái ngược với kiến trúc chia tách (Split Architecture) chia thành 2 repository Backend (Node/Go/Java) và Frontend (React SPA) riêng biệt. Lựa chọn này mang lại lợi thế vượt trội về **End-to-End Type Safety** (Drizzle ORM truyền type trực tiếp lên UI), **tối ưu hóa hiệu năng render (zero network overhead từ Server Components đến DB)**, đơn giản hóa vận hành (DevOps/CORS) và tăng tốc độ phát triển (DX), đánh đổi lại bằng việc tăng độ phức tạp trong quản lý Monorepo và phụ thuộc công nghệ vào hệ sinh thái Next.js.
+- **Bản chất**: Unified fullstack gộp frontend và backend vào một Next.js monorepo; split tách repo backend và frontend SPA.
+- **Mục đích**: Đổi end-to-end type safety, ít network hop và vận hành đơn giản lấy phụ thuộc sâu vào hệ sinh thái Next.js.
+- **Điểm mấu chốt**: Cái giá thật là độ phức tạp monorepo và vendor lock-in; split thắng khi backend cần runtime riêng hoặc phục vụ nhiều client.
 
 ---
 
@@ -79,6 +82,6 @@ export const LoginSchema = z.object({
 
 ## Related Notes
 
-- Bản đồ tri thức lập trình: [[000_Tech_MOC]]
+- [[000_Tech_MOC]]
 - Kiến trúc thư mục monorepo: [[Turborepo]]
 - Ranh giới thực thi Client-Server: [[React_Server_Components]]

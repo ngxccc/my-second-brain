@@ -1,16 +1,6 @@
 ---
 tags: [type/concept, status/permanent]
 date: 2026-08-22
-aliases:
-  [
-    False Dichotomy,
-    False Dilemma,
-    Bẫy nhị nguyên,
-    Ngụy biện nhị nguyên,
-    Black-and-White Thinking,
-    Polarized Thinking,
-    Splitting,
-  ]
 description: "Bẫy nhị nguyên - Lỗi nhận thức ép thực tại đa chiều thành hai lựa chọn cực đoan loại trừ lẫn nhau."
 ---
 
@@ -64,7 +54,7 @@ Khi đối mặt với các hệ thống hiện đại phức tạp (kinh tế, 
 
 ---
 
-## Concrete Examples & De-biasing Protocol
+## Quy trình gỡ bẫy nhị nguyên
 
 ### 1. So sánh bẫy nhị nguyên vs. Tư duy dải phổ
 

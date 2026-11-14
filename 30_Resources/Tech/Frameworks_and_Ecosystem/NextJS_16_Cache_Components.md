@@ -1,7 +1,5 @@
 ---
 tags: [type/concept, status/permanent]
-aliases:
-  [NextJS 16 Cache Components, NextJS 16 Caching, use cache, Cache Components]
 date: 2026-06-20
 description: "Mô hình Caching component-level mới của Next.js 16 dùng chỉ thị 'use cache' và cacheLife."
 ---
@@ -10,7 +8,9 @@ description: "Mô hình Caching component-level mới của Next.js 16 dùng ch�
 
 ## TL;DR
 
-Trong Next.js 16, **Cache Components** (kích hoạt bằng cấu hình `cacheComponents: true` trong `next.config.ts`) chuyển đổi toàn bộ kiến trúc caching của App Router từ mô hình cấp mạng `fetch()` (Request-level cache) sang mô hình cấp hàm/component (Component-level cache) thông qua chỉ thị **`"use cache"`**. Cơ chế này cho phép cache kết quả truy vấn database trực tiếp (ORM), tự động hóa việc tạo cache key dựa trên đối số truyền vào, và cung cấp các chế độ cache riêng tư (`"use cache: private"`) hoặc lưu trữ ngoài (`"use cache: remote"`). Nó cũng là nền tảng mặc định giúp kích hoạt chế độ **Partial Prerendering (PPR)**.
+- **Bản chất**: Next.js 16 chuyển cache từ cấp `fetch()` sang cấp hàm/component bằng chỉ thị `"use cache"`, bật qua `cacheComponents: true`.
+- **Mục đích**: Cache được cả truy vấn DB/ORM chứ không chỉ HTTP, và tự sinh cache key từ đối số truyền vào.
+- **Điểm mấu chốt**: Đây là nền để bật Partial Prerendering; cache key thiếu đối số là nguồn dữ liệu cũ khó phát hiện nhất.
 
 ---
 
@@ -107,6 +107,6 @@ export async function updateProductAdminAction() {
 
 ## Related Notes
 
-- Bản đồ tri thức lập trình: [[000_Tech_MOC]]
+- [[000_Tech_MOC]]
 - Cơ chế ngắt Prerender: [[NextJS_Dynamic_Opt_Out_Connection]]
 - Kế thừa Layout và Route Groups: [[NextJS_Route_Groups_and_Nested_Layouts]]

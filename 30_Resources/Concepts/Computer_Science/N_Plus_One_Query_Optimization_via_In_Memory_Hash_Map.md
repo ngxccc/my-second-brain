@@ -1,12 +1,5 @@
 ---
 tags: [type/concept, status/permanent]
-aliases:
-  [
-    N Plus One Query Optimization via In-Memory Hash Map,
-    N+1 Problem Batching,
-    Khử N+1 Query bằng In-Memory Hash Map,
-    Batch Joining in Memory,
-  ]
 date: 2026-09-22
 description: "Nguyên lý loại bỏ vấn nạn N+1 Database Query bằng kỹ thuật Batching với inArray kết hợp In-Memory Hash Map, giảm số lượng Network Round-trips từ 2N+1 xuống 3 truy vấn song song cố định O(1)."
 ---
@@ -15,12 +8,9 @@ description: "Nguyên lý loại bỏ vấn nạn N+1 Database Query bằng kỹ
 
 ## TL;DR
 
-- **Bản chất**: Vấn nạn **$N+1$ Query** xảy ra khi truy vấn 1 danh sách gồm $N$ phần tử cha, sau đó với mỗi phần tử cha lại thực hiện thêm 1 (hoặc 2) câu truy vấn độc lập xuống Database để lấy quan hệ con (`quote_items`, `users`).
-- **Hậu quả**: Nếu lấy $N = 20$ báo giá, hệ thống phải thực hiện $2N + 1 = 41$ lượt round-trips qua mạng tới PostgreSQL, gây nghẽn kết nối và tăng p95 latency.
-- **Giải pháp tối ưu**:
-  1. Gom toàn bộ danh sách ID: `quoteIds` và `userIds`.
-  2. Bắn **3 truy vấn cố định**: (1) Lấy danh sách Quotes, (2) Lấy `quote_items` bằng `WHERE quote_id IN (...)`, (3) Lấy `users` bằng `WHERE id IN (...)` chạy song song qua `Promise.all()`.
-  3. Ghép nối dữ liệu trong RAM bằng **In-Memory Hash Map (`new Map()`)** với độ phức tạp thời gian tra cứu $O(1)$.
+- **Bản chất**: Thay 2N+1 query riêng lẻ bằng 3 query cố định (`WHERE id IN (...)`), rồi ghép dữ liệu trong RAM bằng `Map` với tra cứu O(1).
+- **Mục đích**: Cắt số network round-trip xuống hằng số, giảm p95 latency và áp lực lên connection pool.
+- **Điểm mấu chốt**: Cách này chỉ O(1) về số query, không O(1) về bộ nhớ: tập ID quá lớn sẽ tạo câu `IN` khổng lồ, lúc đó phải chia batch.
 
 ---
 

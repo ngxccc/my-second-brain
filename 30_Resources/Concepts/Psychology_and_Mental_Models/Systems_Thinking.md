@@ -1,7 +1,6 @@
 ---
 tags: [type/concept, status/permanent]
 date: 2026-06-07
-aliases: [Tư duy hệ thống, Systems Thinking, 9 Lăng kính Hệ thống]
 description: "Tư duy hệ thống và quy chiếu 6 lăng kính trong kỹ nghệ phần mềm."
 ---
 
@@ -9,7 +8,9 @@ description: "Tư duy hệ thống và quy chiếu 6 lăng kính trong kỹ ngh�
 
 ## TL;DR
 
-Tư duy hệ thống (Systems Thinking) là kỹ năng phân tích phần mềm dưới góc nhìn toàn cảnh, coi ứng dụng là sự kết hợp của các phần tử và các ràng buộc phi chức năng thay vì chỉ gõ code đơn thuần. Áp dụng hệ quy chiếu 6 lăng kính hệ thống cốt lõi và bài học thực chiến để giải quyết các vấn đề tải cao, giới hạn tài nguyên một cách tối ưu.
+- **Bản chất**: Tư duy hệ thống là phân tích phần mềm như một tập hợp phần tử và ràng buộc, thay vì chỉ nhìn từng dòng code.
+- **Mục đích**: Nhìn ra nguyên nhân thật của sự cố tải cao nằm ở tương tác giữa các thành phần, không nằm ở một hàm cụ thể.
+- **Điểm mấu chốt**: Hệ thống có emergent behavior và feedback loop, nên sửa một thành phần có thể làm hệ tệ hơn; phải đo toàn hệ trước và sau khi sửa.
 
 ## Application Context & Maslow Alignment
 

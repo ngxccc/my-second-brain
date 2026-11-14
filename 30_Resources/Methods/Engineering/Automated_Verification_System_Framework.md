@@ -1,12 +1,6 @@
 ---
 tags: [type/method, status/permanent]
 date: 2026-08-12
-aliases:
-  [
-    Automated Verification System Framework,
-    Khung kiểm chứng tự động,
-    Dual Key Verification Model,
-  ]
 description: "Khung phương pháp kiểm chứng tự động 4 tầng và mô hình phân định trách nhiệm Dual-Key giữa con người và AI trong kỹ nghệ phần mềm hiện đại."
 ---
 
@@ -14,7 +8,9 @@ description: "Khung phương pháp kiểm chứng tự động 4 tầng và mô 
 
 ## TL;DR
 
-Khung phương pháp này định nghĩa cấu trúc 4 tầng kiểm chứng tự động (Automated Verification Stack) và mô hình phân định trách nhiệm Hai Chìa Khóa (Dual-Key Control Model) giữa con người và AI Agents. Phương pháp này loại bỏ quá tải nhận thức do đọc dò code ngẫu nhiên bằng mắt, đồng thời ngăn chặn bẫy ngụy biện tự xác nhận vòng tròn (Self-Referential Validation Bias) khi AI tự sinh code và tự duyệt test của chính nó.
+- **Bản chất**: Bốn tầng kiểm chứng xếp theo khả năng bắt lỗi: mỗi tầng phải bắt được loại lỗi mà tầng dưới không bắt được, cộng mô hình Dual-Key phân định ai chịu trách nhiệm ký.
+- **Mục đích**: Loại bỏ việc đọc dò code bằng mắt và chặn self-referential validation - AI tự sinh code rồi tự duyệt test của chính nó.
+- **Điểm mấu chốt**: Mỗi tầng phải bắt được một loại lỗi mà tầng dưới không bắt được; tầng nào chỉ lặp lại tầng trước là tầng thừa.
 
 ---
 
@@ -74,7 +70,7 @@ Hệ thống kiểm chứng tự động trong kỹ nghệ phần mềm hiện �
 
 ---
 
-## Practical Implementation
+## Quy trình triển khai theo bước
 
 Khi triển khai mô hình kiểm chứng tự động với AI Coding Workflow:
 
@@ -90,5 +86,4 @@ Khi triển khai mô hình kiểm chứng tự động với AI Coding Workflow:
 
 - Phương pháp ghim mục tiêu: [[GPS_Goal_Problem_Solution_Framework]]
 - Phương pháp bóc tách vấn đề: [[McKinsey_Issue_Tree_Framework]]
-- Case study phân tích thực tế: [[GPS_Case_Study_DailyDev_Analysis]]
 - Khung phân cấp nhận thức 5 tầng: [[Cognitive_Stack_Framework]]

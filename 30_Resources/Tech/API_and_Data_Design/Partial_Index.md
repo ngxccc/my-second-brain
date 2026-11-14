@@ -1,10 +1,6 @@
 ---
 tags: [type/concept, status/permanent]
 date: 2026-06-07
-aliases:
-  - Partial Index
-  - Filtered Index
-  - Index có điều kiện
 description: "Kỹ thuật lập chỉ mục B+ Tree có điều kiện vị từ (WHERE) giúp tiết kiệm dung lượng đĩa, giảm overhead ghi và tối ưu hóa truy vấn chuyên biệt."
 ---
 
@@ -12,8 +8,8 @@ description: "Kỹ thuật lập chỉ mục B+ Tree có điều kiện vị t�
 
 ## TL;DR
 
-- **Bản chất**: Chỉ mục được xây dựng trên một tập con dữ liệu của bảng thỏa mãn điều kiện lọc xác định trước (`WHERE predicate`), thay vì bao phủ toàn bộ các hàng trong bảng.
-- **Mục đích**: Giảm thiểu $70-90\%$ kích thước cây B+ Tree trên đĩa/RAM, triệt tiêu chi phí bảo trì Index trong các lệnh `INSERT/UPDATE` đối với các hàng không thỏa mãn điều kiện, và tăng tốc độ Index Scan.
+- **Bản chất**: Chỉ mục dựng trên tập con dữ liệu thỏa điều kiện lọc (`WHERE predicate`) thay vì bao phủ toàn bộ hàng của bảng.
+- **Mục đích**: Giảm $70-90\%$ kích thước cây B+ Tree trên đĩa/RAM, triệt tiêu chi phí bảo trì Index trong `INSERT/UPDATE` với hàng không thỏa điều kiện, và tăng tốc Index Scan.
 - **Điểm mấu chốt**: Query Planner chỉ sử dụng Partial Index khi điều kiện `WHERE` trong câu truy vấn là tập con hoặc khớp chính xác với vị từ khai báo của Index (`Index Predicate Pushdown`).
 
 ---

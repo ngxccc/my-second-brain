@@ -1,7 +1,6 @@
 ---
 tags: [type/concept, status/permanent]
 date: 2026-06-24
-aliases: [TypeScript Decorators, Decorators trong TypeScript]
 description: "Phương pháp trang trí trong TypeScript chuẩn ES (Stage 3) vs cũ (experimentalDecorators)."
 ---
 
@@ -9,7 +8,9 @@ description: "Phương pháp trang trí trong TypeScript chuẩn ES (Stage 3) vs
 
 ## TL;DR
 
-Decorator là một tính năng siêu lập trình (meta-programming) cho phép can thiệp, quan sát và thay đổi hành vi của Lớp (Class), Phương thức (Method), Thuộc tính (Property), hoặc Accessor tại runtime. Bài viết này phân tích bản chất, so sánh sự khác biệt sống còn giữa Decorator cũ (`experimentalDecorators` - Stage 2) và Decorator mới tiêu chuẩn (ES Decorators - Stage 3, từ TS 5.0+), đồng thời giải thích tại sao các framework như NestJS/TypeORM vẫn phải tiếp tục duy trì phiên bản cũ.
+- **Bản chất**: Decorator là hàm bậc cao bọc class, method hoặc property và chạy tại runtime; có hai thế hệ không tương thích: `experimentalDecorators` (Stage 2) và ES Decorators (Stage 3).
+- **Mục đích**: Hiểu vì sao NestJS và TypeORM vẫn buộc dùng bản cũ, và bản chuẩn mới thay đổi ngữ nghĩa ở đâu.
+- **Điểm mấu chốt**: Bản cũ nhận `(target, key, descriptor)` và có parameter decorator; bản mới nhận `(value, context)`, không có parameter decorator, nên DI của NestJS vẫn cần `emitDecoratorMetadata`.
 
 ---
 
@@ -17,7 +18,8 @@ Decorator là một tính năng siêu lập trình (meta-programming) cho phép 
 
 ### 1. Bản Chất Của Decorator
 
-Decorator thực chất là các **hàm bậc cao (higher-order functions)**. Khi được áp dụng bằng ký hiệu `@decoratorName` phía trước một phần tử của Class, trình biên dịch TypeScript sẽ bọc phần tử đó lại bằng hàm decorator để theo dõi hoặc thay thế hành vi của phần tử đó trước khi nó thực sự được khởi tạo hoặc thực thi.
+- **Bản chất kỹ thuật:** decorator là hàm bậc cao (higher-order function).
+- **Cách thức:** khi viết `@decoratorName` trước một phần tử của Class, TypeScript bọc phần tử đó bằng hàm decorator để theo dõi hoặc thay thế hành vi trước khi nó được khởi tạo.
 
 ### 2. Sự Khác Biệt Giữa 2 Thế Hệ Decorator
 
@@ -134,18 +136,12 @@ class Configuration {
 
 ### 4. Mẫu Câu Hỏi Phỏng Vấn
 
-**Q: Sự khác biệt lớn nhất giữa Decorator mặc định của TS 5.0+ và Decorator cũ (experimentalDecorators) là gì? Trong NestJS bạn sẽ chọn loại nào?**
-
-**A:**
-
-- Sự khác biệt lớn nhất nằm ở chữ ký hàm và khả năng tương thích. Decorator cũ (Stage 2) nhận đối số `(target, key, descriptor)` và cho phép trang trí tham số của hàm (parameter decorators). Decorator mới của TS 5.0 (Stage 3) là chuẩn ECMAScript chính thức, nhận đối số `(value, context)` giúp bảo vệ ngữ cảnh tốt hơn nhưng lại **không hỗ trợ parameter decorators**.
-- Vì vậy, trong **NestJS**, em bắt buộc phải cấu hình `"experimentalDecorators": true` và `"emitDecoratorMetadata": true` để NestJS có thể thực hiện Dependency Injection thông qua các parameter decorator ở constructor và suy luận kiểu dữ liệu phục vụ IoC Container lúc runtime.
+- Đã tách sang note riêng: [[TS_Decorators_Interview_QA]]
 
 ---
 
 ## Related Notes
 
 - [[000_Tech_MOC]]
-- [[Dependency_Injection]]
-- [[SOLID_Principles]]
-- [[JS_Stack_vs_Heap_Memory]]
+- Decorator là điểm tiêm phụ thuộc: [[Dependency_Injection]]
+- Nguyên lý mà decorator giúp tuân thủ: [[SOLID_Principles]]

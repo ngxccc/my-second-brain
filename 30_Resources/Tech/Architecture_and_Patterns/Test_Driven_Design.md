@@ -1,6 +1,6 @@
 ---
 tags: [type/concept, status/permanent]
-aliases: [Test-Driven Development]
+date: 2026-05-23
 created_at: Saturday, May 23rd 2026, 6:23:01 pm +07:00
 updated_at: Saturday, May 23rd 2026, 7:18:36 pm +07:00
 description: "Quy trình viết test trước, code sau giúp định hình kiến trúc phần mềm sạch."
@@ -10,7 +10,9 @@ description: "Quy trình viết test trước, code sau giúp định hình ki�
 
 ## TL;DR
 
-TDD (Test-Driven Design) là hệ tư tưởng "viết test trước, code sau" hoạt động như một màng lọc kiến trúc, giúp định hình interface, decouple logic và triệt tiêu vĩnh viễn tình trạng "fix một chỗ, oẳng ba chỗ".
+- **Bản chất**: TDD là vòng lặp Red -> Green -> Refactor, viết test trước để ép định nghĩa contract trước khi implement.
+- **Mục đích**: Chặn confirmation bias khi viết test sau, và buộc decouple vì code khó test thường là code dính chặt.
+- **Điểm mấu chốt**: TDD là công cụ thiết kế chứ không phải công cụ đo coverage; giá trị nằm ở bước ép định nghĩa hành vi, không ở số lượng test.
 
 ## Core Concept
 

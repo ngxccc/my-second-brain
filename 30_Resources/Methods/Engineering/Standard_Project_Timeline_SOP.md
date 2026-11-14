@@ -1,7 +1,6 @@
 ---
 tags: [type/method, status/permanent]
 date: 2026-04-29
-aliases: [Capstone Roadmap, Software Dev Lifecycle, Project SOP]
 description: "Quy trình 16 tuần tiêu chuẩn (Hybrid SDLC) để build đồ án/project từ số 0 đến lúc deploy và bảo vệ thành công."
 ---
 
@@ -9,14 +8,16 @@ description: "Quy trình 16 tuần tiêu chuẩn (Hybrid SDLC) để build đồ
 
 ## TL;DR
 
-Quy trình 16 tuần tiêu chuẩn (SOP) định hình Vòng đời Phát triển Phần mềm (SDLC) từ con số 0 đến lúc deploy. Giúp cân bằng giữa chất lượng kỹ thuật (Technical) và khả năng đóng gói sản phẩm (Delivery/Presentation).
+- **Bản chất**: SOP 16 tuần từ con số 0 đến deploy, Agile trong lúc code nhưng cứng nhắc ở giai đoạn thiết kế database.
+- **Mục đích**: Cân bằng chất lượng kỹ thuật và khả năng đóng gói, bảo vệ sản phẩm.
+- **Điểm mấu chốt**: ERD sai phá toàn bộ quan hệ entity và kéo theo phải đập backend; đây là lý do database phải chốt trước khi code.
 
 ## Core Concept
 
 - **Kiến trúc Hybrid:** Linh hoạt trong lúc code (Agile Sprints) nhưng phải cực kỳ bảo thủ và cứng nhắc ở giai đoạn thiết kế Database ban đầu (Waterfall).
 - **Thiết kế Database là sinh tử:** Logic code có thể viết lại trong 1 giờ, nhưng cấu trúc bảng dữ liệu (ERD) bị sai sẽ phá nát toàn bộ quan hệ Entity, kéo theo việc phải đập bỏ toàn bộ Backend.
 
-## Practical Implementation
+## Timeline 16 tuần
 
 - **Roadmap 16 Tuần:**
   - _Phase 1: The Blueprint (Tuần 1-3):_ Phân tích Requirement, chốt User Flow, thiết kế ERD Database, init repo và cấu trúc thư mục.

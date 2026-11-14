@@ -1,12 +1,5 @@
 ---
 tags: [type/method, status/permanent]
-aliases:
-  [
-    Git Branch Deletion and Recovery Mechanics,
-    Xóa và Khôi phục Nhánh trong Git,
-    Git Branch Delete Safe vs Force,
-    Recover Deleted Git Branch,
-  ]
 date: 2026-09-22
 description: "Cơ chế xóa an toàn (git branch -d) vs ép buộc (-D), bản chất xóa file tham chiếu trong .git/refs/heads, và quy trình 2 bước khôi phục nhánh đã xóa bằng git reflog."
 ---
@@ -15,7 +8,7 @@ description: "Cơ chế xóa an toàn (git branch -d) vs ép buộc (-D), bản 
 
 ## TL;DR
 
-- **Bản chất**: `git branch -d` **chỉ xóa file text 41 bytes** trong `.git/refs/heads/<branch>`, **không hề xóa commit hay dữ liệu**. Commit chỉ trở thành "commit mồ côi" (Dangling Commit) và vẫn tồn tại trong Object Store ít nhất 30-90 ngày trước khi `git gc` dọn dẹp.
+- **Bản chất**: `git branch -d` chỉ xóa file text 41 bytes trong `.git/refs/heads/<branch>`, không xóa commit; commit thành Dangling Commit và còn trong Object Store 30-90 ngày trước `git gc`.
 - **Mục đích**: `git branch -d` bảo vệ an toàn bằng cách kiểm tra Merge Status trước khi xóa; `git branch -D` bỏ qua kiểm tra an toàn.
 - **Điểm mấu chốt**: Khôi phục branch đã xóa chỉ mất 2 bước: Lấy lại Commit SHA cuối cùng qua `git reflog`, sau đó tái tạo lại con trỏ branch bằng `git branch <tên-nhánh> <commit-sha>`.
 

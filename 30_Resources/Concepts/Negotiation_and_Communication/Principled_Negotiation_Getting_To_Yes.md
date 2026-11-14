@@ -1,13 +1,6 @@
 ---
 tags: [type/concept, status/permanent]
 date: 2026-07-27
-aliases:
-  [
-    Getting to Yes,
-    Principled Negotiation,
-    Đàm phán nguyên tắc,
-    Phương pháp đàm phán Harvard,
-  ]
 description: "Đàm phán nguyên tắc Harvard - Giải quyết xung đột dựa trên lợi ích cốt lõi và tiêu chí khách quan."
 ---
 
@@ -15,7 +8,9 @@ description: "Đàm phán nguyên tắc Harvard - Giải quyết xung đột d�
 
 ## TL;DR
 
-Principled Negotiation (Đàm phán nguyên tắc) là phương pháp đàm phán hợp tác được phát triển bởi Roger Fisher và William Ury thuộc Dự án Đàm phán Harvard (Harvard Negotiation Project). Phương pháp này bác bỏ cả hai lối đàm phán truyền thống: đàm phán cứng (Hard negotiation - cố chấp ép giá) và đàm phán mềm (Soft negotiation - dễ dàng nhượng bộ), thay vào đó tập trung giải quyết vấn đề dựa trên lợi ích cốt lõi và các tiêu chí khách quan để đạt được thỏa thuận win-win bền vững.
+- **Bản chất**: Đàm phán nguyên tắc tách con người khỏi vấn đề, tập trung vào lợi ích thay vì lập trường, và dùng tiêu chí khách quan để chốt.
+- **Mục đích**: Thoát khỏi lưỡng nan cứng-thì vỡ, mềm-thì thiệt, và tạo thỏa thuận bền vì cả hai bên thấy lợi ích được tôn trọng.
+- **Điểm mấu chốt**: Phương pháp này cần đối phương cũng ở thế hợp tác; khi bên kia đang ở tầng đe dọa sinh tồn thì phải hạ nhiệt cảm xúc trước bằng tactical empathy.
 
 ## Application Context & Maslow Alignment
 
@@ -36,14 +31,14 @@ Principled Negotiation (Đàm phán nguyên tắc) là phương pháp đàm phá
 4. **Insist on Using Objective Criteria (Sử dụng các tiêu chí khách quan):**
    - Đưa quyết định dựa trên các chuẩn mực công bằng độc lập (giá thị trường, quy định pháp lý, tiền lệ ngành, đánh giá của chuyên gia) thay vì áp lực quyền lực hay ý muốn chủ quan của bất kỳ bên nào.
 
-## Concrete Examples
+## Ví dụ thực tế
 
 - **Xung đột giữa Team Product và Team Engineering:**
   - _Vị thế cứng:_ Product đòi ra mắt feature X trong 2 tuần; Dev từ chối và đòi 6 tuần để làm sạch kỹ thuật.
   - _Ứng dụng Đàm phán nguyên tắc:_ Tách con người khỏi vấn đề $\rightarrow$ Dev hiểu Product cần đáp ứng sự kiện marketing của công ty (Lợi ích), Product hiểu Dev cần bảo vệ tính ổn định hệ thống (Lợi ích).
   - _Giải pháp Win-Win:_ Sáng tạo phương án phát hành phiên bản MVP của feature X đúng hạn 2 tuần, đồng thời xếp backlog refactor cho sprint tiếp theo dựa trên chỉ số SLO khách quan.
 
-## Practical Implementation
+## Trade-offs và điểm mù cần tránh
 
 - **Trade-offs (Điểm mù cần tránh):**
   - _Đối phương đàm phán bẩn (Nasty/Hard Negotiators):_ Nếu đối phương cố tình dùng chiêu trò đàm phán cứng hoặc đe dọa, việc thuần túy áp dụng đàm phán nguyên tắc có thể bị lợi dụng. Cần kết hợp với [[BATNA_Negotiation_Model]] để sẵn sàng dừng cuộc chơi.

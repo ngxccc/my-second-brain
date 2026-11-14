@@ -1,7 +1,6 @@
 ---
 tags: [type/concept, status/permanent]
 date: 2026-04-29
-aliases: [MOC, Index Note, Bản đồ định hướng]
 description: "Nút giao thông điều hướng hệ thống."
 ---
 
@@ -9,7 +8,9 @@ description: "Nút giao thông điều hướng hệ thống."
 
 ## TL;DR
 
-Một node (ghi chú) đặc biệt đóng vai trò làm "mục lục động" để gom nhóm và điều phối các Atomic Notes rời rạc. Giúp não bộ có được cái nhìn toàn cảnh (Bird's-eye view) chống lại sự hỗn loạn khi hệ thống Zettelkasten phình to.
+- **Bản chất**: MOC là một note đóng vai trò mục lục động, gom và điều phối các atomic note rời rạc quanh một ngữ cảnh.
+- **Mục đích**: Giữ cái nhìn toàn cảnh khi vault phình to, chống lại việc mất đường đi giữa hàng nghìn note phẳng.
+- **Điểm mấu chốt**: MOC sinh ra từ dưới lên khi note đã đủ khối lượng tới hạn; thiết kế MOC trước khi có note chỉ tạo ra thư mục đổi tên, vì một note có thể thuộc nhiều MOC cùng lúc.
 
 ## Core Concept
 

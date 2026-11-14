@@ -1,7 +1,6 @@
 ---
 tags: [type/concept, status/permanent]
 date: 2026-04-28
-aliases: [Distributive Conditionals, Disable Distribution]
 description: "Cơ chế tự động xé lẻ Union Type trong các biểu thức Generic của TypeScript."
 ---
 
@@ -9,7 +8,9 @@ description: "Cơ chế tự động xé lẻ Union Type trong các biểu thứ
 
 ## TL;DR
 
-Cơ chế tự động "xé lẻ" của TypeScript. Khi truyền một Union Type (`A | B`) vào một Generic Condition, TS sẽ tự động chạy vòng lặp phân phối (distribute) điều kiện cho từng phần tử bên trong Union thay vì so sánh nguyên một cục.
+- **Bản chất**: Conditional type phân phối trên union khi type parameter đứng trần: `T extends U` với `T = A | B` chạy thành `(A extends U) | (B extends U)`.
+- **Mục đích**: Giải thích vì sao cùng một utility type cho kết quả khác nhau tùy đầu vào là union hay object, và vì sao `never` cho ra `never`.
+- **Điểm mấu chốt**: Bọc `T` trong `[T]` hoặc `T[]` sẽ tắt phân phối; đây là kỹ thuật để kiểm soát hành vi, không phải chi tiết vụn.
 
 ## Core Concept
 

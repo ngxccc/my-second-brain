@@ -1,9 +1,5 @@
 ---
 tags: [type/method, status/permanent]
-aliases:
-  - Go Benchmarking and Allocation Guide
-  - Hướng Dẫn Đo Đạc Hiệu Năng Benchmark Trong Go
-  - Go Escape Analysis SOP
 date: 2026-08-13
 description: "SOP quy trình đo đạc hiệu năng Benchmarking (go test -benchmem), b.Loop() trên Go 1.24+, và phân tích bộ nhớ Heap/Stack bằng Escape Analysis (-gcflags=-m)."
 ---
@@ -14,7 +10,9 @@ Tài liệu này là một quy trình SOP (`type/method`) hướng dẫn chi ti�
 
 ## TL;DR
 
-Sử dụng gói `testing.B` cùng vòng lặp hiện đại `for b.Loop()` (Go 1.24+) để đo đạc thời gian thực thi. Chạy cờ CLI `go test -bench=. -benchmem` để đo đạc lượng RAM cấp phát trên Heap. Luôn khai báo một biến toàn cục `var sink` (Benchmark Sink) để gán kết quả đầu ra, ngăn Trình biên dịch Go (Compiler) áp dụng Dead Code Elimination làm sai lệch kết quả. Sử dụng `go build -gcflags="-m"` để kiểm tra Escape Analysis.
+- **Bản chất**: Đo hiệu năng Go bằng `testing.B` với `for b.Loop()` (Go 1.24+) và chạy `go test -bench=. -benchmem`.
+- **Mục đích**: Tách thời gian chạy khỏi lượng RAM cấp phát, và kiểm chứng escape analysis bằng `-gcflags="-m"` thay vì đoán.
+- **Điểm mấu chốt**: Phải gán kết quả vào biến `var sink`; không có sink thì compiler áp dead code elimination và xóa luôn phần cần đo.
 
 ---
 
@@ -91,7 +89,7 @@ Ví dụ output thực tế từ Trình biên dịch Go (Compiler):
 
 ## Practical Implementation
 
-Ví dụ đối chiếu hiệu năng thực tế từ case study của [[Go_Slice_Underlying_Mechanics]]:
+Ví dụ đối chiếu hiệu năng thực tế từ case study của [[Go_Append_Growth_and_Reallocation]]:
 
 ```text
 BenchmarkAppendNoAlloc-12     130    9263964 ns/op    41678261 B/op    38 allocs/op
@@ -102,6 +100,6 @@ BenchmarkAppendPrealloc-12    729    1591648 ns/op     8003584 B/op     1 allocs
 
 ## Related Notes
 
-- [[Go_Slice_Underlying_Mechanics]] - Ứng dụng đo đạc hiệu năng trên Slice của Go.
-- [[Stack_vs_Heap_Memory_Fundamentals]] - Nguyên lý phân tầng bộ nhớ Stack và Heap.
+- [[Go_Append_Growth_and_Reallocation]] - Ứng dụng đo đạc hiệu năng và pre-allocation trên Slice của Go.
+- Số đo allocation đọc theo phân vùng Stack/Heap: [[Stack_vs_Heap_Memory_Fundamentals]]
 - [[Garbage_Collection_Fundamentals]] - Ảnh hưởng của `allocs/op` tới cơ chế dọn rác.

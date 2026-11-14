@@ -1,7 +1,6 @@
 ---
 title: Postgres SELECT FOR UPDATE (Pessimistic Locking)
 tags: [type/concept, status/permanent]
-aliases: [SELECT FOR UPDATE, Row-Level Locking, Pessimistic Locking]
 date: 2026-06-08
 description: "Cơ chế Row-Level Exclusive Lock trong PostgreSQL chống tranh chấp đồng thời (TOCTOU / Race Condition)."
 ---
@@ -10,7 +9,9 @@ description: "Cơ chế Row-Level Exclusive Lock trong PostgreSQL chống tranh 
 
 ## TL;DR
 
-`SELECT ... FOR UPDATE` trong PostgreSQL thiết lập **Row-Level Exclusive Lock (Khóa độc quyền cấp dòng)** lên các bản ghi được chọn trong một Database Transaction. Nó ngăn chặn các transaction khác thực hiện `UPDATE`, `DELETE`, hoặc `SELECT ... FOR UPDATE` trên cùng các dòng đó cho đến khi transaction giữ khóa kết thúc (`COMMIT` hoặc `ROLLBACK`). Phương pháp này giải quyết triệt để rủi ro tranh chấp dữ liệu đồng thời (**Race Condition / TOCTOU**) khi nhiều tiến trình thao tác trên cùng một bản ghi.
+- **Bản chất**: `SELECT ... FOR UPDATE` đặt row-level exclusive lock lên các dòng thỏa `WHERE` trong transaction, buộc `UPDATE`/`DELETE`/`FOR UPDATE` khác phải chờ.
+- **Mục đích**: Đóng khe TOCTOU giữa bước đọc trạng thái và bước ghi, khi hai request cùng xử lý một bản ghi.
+- **Điểm mấu chốt**: Plain `SELECT` không bị chặn nhờ MVCC, nên lock này chỉ tuần tự hóa writer; nó không bảo vệ invariant trải trên nhiều dòng.
 
 ## Core Concept
 
@@ -96,6 +97,6 @@ await this.db.transaction(async (tx) => {
 ## Related Notes
 
 - [[000_Tech_MOC]]
-- [[Database_Indexing_Guidelines]]
-- [[Outbox_Pattern]]
-- [[Atomic_Conditional_Update]]
+- Index quyết định phạm vi hàng bị khóa: [[Database_Indexing_Guidelines]]
+- Tránh khóa dài bằng ghi sự kiện cùng transaction: [[Outbox_Pattern]]
+- Thay thế khóa bằng cập nhật có điều kiện: [[Atomic_Conditional_Update]]

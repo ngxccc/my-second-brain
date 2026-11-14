@@ -1,7 +1,6 @@
 ---
 tags: [type/concept, status/permanent]
 date: 2026-01-29
-aliases: [AES Encryption, Secure Local Storage]
 description: "Mã hóa LocalStorage/IndexedDB bằng thuật toán AES."
 ---
 
@@ -9,7 +8,9 @@ description: "Mã hóa LocalStorage/IndexedDB bằng thuật toán AES."
 
 ## TL;DR
 
-Sử dụng thuật toán (thường là AES) để mã hóa dữ liệu thành chuỗi vô nghĩa trước khi lưu vào LocalStorage/IndexedDB. Mục tiêu là làm rối (Obfuscation) để ngăn chặn việc đọc trộm dữ liệu nhạy cảm qua DevTools hoặc XSS cơ bản.
+- **Bản chất**: Mã hóa dữ liệu bằng AES trước khi ghi vào LocalStorage hoặc IndexedDB, với khóa đối xứng giữ phía client.
+- **Mục đích**: Chặn đọc trộm dữ liệu nhạy cảm qua DevTools hoặc qua một lỗ XSS đơn giản.
+- **Điểm mấu chốt**: Khóa phải nằm ở đâu đó phía client, nên XSS chạy được code sẽ lấy được cả khóa; đây là obfuscation tăng chi phí tấn công, không phải bảo vệ thật.
 
 ## Core Concept
 

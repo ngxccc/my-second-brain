@@ -1,11 +1,5 @@
 ---
 tags: [type/concept, status/permanent]
-aliases:
-  [
-    Stack vs Heap Memory Fundamentals,
-    Phân tầng Bộ nhớ Stack Heap Nguyên lý Gốc,
-    Stack and Heap CS,
-  ]
 date: 2026-08-09
 description: "Nguyên lý khoa học máy tính cốt lõi của bộ nhớ Stack (LIFO, CPU Stack Pointer) và Heap (Dynamic Memory Allocation, OS Virtual Memory)."
 ---
@@ -14,9 +8,9 @@ description: "Nguyên lý khoa học máy tính cốt lõi của bộ nhớ Stac
 
 ## TL;DR
 
-- **Bản chất**: Stack là cơ chế quản lý phần cứng trực tiếp bằng thanh ghi CPU Stack Pointer theo nguyên lý LIFO; Heap là vùng nhớ cấp phát động quản lý bằng phần mềm qua OS Virtual Memory và Runtime Memory Allocator.
-- **Mục đích**: Stack phục vụ lưu trữ ngữ cảnh thực thi hàm và biến cục bộ ngắn hạn với tốc độ tối đa; Heap lưu trữ các đối tượng có kích thước linh hoạt, con trỏ chia sẻ trạng thái, hoặc tuổi thọ vượt ra ngoài phạm vi một hàm.
-- **Điểm mấu chốt**: Cấp phát và thu hồi trên Stack tốn chi phí $O(1)$ chỉ bằng 1 phép tính số học trên thanh ghi CPU (như `SUB/ADD RSP`) và không gây áp lực lên Garbage Collector; ngược lại Heap tốn chi phí tra cứu ô nhớ trống và kích hoạt chu kỳ dọn rác (GC overhead qua `runtime.newobject`).
+- **Bản chất**: Stack do phần cứng quản lý bằng thanh ghi CPU Stack Pointer theo nguyên lý LIFO; Heap là vùng cấp phát động do phần mềm quản lý qua OS Virtual Memory và Runtime Allocator.
+- **Mục đích**: Stack giữ ngữ cảnh thực thi hàm và biến cục bộ ngắn hạn với tốc độ tối đa; Heap giữ đối tượng kích thước linh hoạt, con trỏ chia sẻ trạng thái, hoặc dữ liệu sống ngoài phạm vi một hàm.
+- **Điểm mấu chốt**: Cấp phát và thu hồi trên Stack là $O(1)$ bằng một phép tính trên thanh ghi (như `SUB/ADD RSP`) và không tạo áp lực lên GC; Heap phải tra ô trống và kích hoạt chu kỳ dọn rác.
 
 ---
 
@@ -46,7 +40,7 @@ description: "Nguyên lý khoa học máy tính cốt lõi của bộ nhớ Stac
 
 ---
 
-## Practical Implementation
+## Kiểm chứng Escape Analysis trong Go
 
 ### Mô hình 2 bước kiểm chứng Escape Analysis trong Go
 
@@ -61,9 +55,9 @@ description: "Nguyên lý khoa học máy tính cốt lõi của bộ nhớ Stac
 
 ## Related Notes
 
-- [[Garbage_Collection_Fundamentals]]
-- [[Memory_Leaks_Core_Mechanics]]
-- [[Heap_Memory_Size_Classes_and_Alignment]]
-- [[Go_Escape_Analysis_Mechanics]]
-- [[JS_Stack_vs_Heap_Memory]]
+- Cơ chế thu hồi vùng Heap: [[Garbage_Collection_Fundamentals]]
+- Hệ quả giữ tham chiếu sai trên Heap: [[Memory_Leaks_Core_Mechanics]]
+- Allocator chia Heap thành size class: [[Heap_Memory_Size_Classes_and_Alignment]]
+- Quyết định biến nằm Stack hay Heap: [[Go_Escape_Analysis_Mechanics]]
+- Bản dịch mô hình này sang JavaScript: [[JS_Stack_vs_Heap_Memory]]
 - [[000_Concepts_MOC]]

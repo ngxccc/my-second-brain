@@ -1,13 +1,6 @@
 ---
 tags: [type/concept, status/permanent]
 date: 2026-07-14
-aliases:
-  [
-    Confirmation Bias,
-    Thiên kiến xác nhận,
-    Thành kiến chứng thực,
-    Thành kiến xác nhận,
-  ]
 description: "Thiên kiến xác nhận - Lỗi tư duy chỉ tập trung tìm kiếm thông tin ủng hộ niềm tin sẵn có và bác bỏ bằng chứng trái chiều."
 ---
 
@@ -15,7 +8,9 @@ description: "Thiên kiến xác nhận - Lỗi tư duy chỉ tập trung tìm k
 
 ## TL;DR
 
-Thiên kiến xác nhận (Confirmation Bias) là lỗi tư duy khi chúng ta chỉ chủ động tìm kiếm, ghi nhớ và diễn giải thông tin theo cách ủng hộ hoặc xác nhận các niềm tin, giả định sẵn có của bản thân, đồng thời phớt lờ hoặc bác bỏ những bằng chứng đi ngược lại.
+- **Bản chất**: Thiên kiến xác nhận là xu hướng chỉ tìm, nhớ và diễn giải thông tin theo hướng ủng hộ niềm tin sẵn có, đồng thời bỏ qua bằng chứng ngược lại.
+- **Mục đích**: Nhận diện để không tự biến việc học và debug thành quá trình đi tìm lời xác nhận cho giả thuyết ban đầu.
+- **Điểm mấu chốt**: Cách chặn hiệu quả là chủ động tìm bằng chứng phủ định - hỏi "điều gì sẽ chứng minh tao sai" trước khi tin một kết luận.
 
 ---
 
@@ -46,7 +41,7 @@ Thiên kiến xác nhận vận hành thông qua 3 cơ chế cốt lõi:
 
 ---
 
-## Practical Implementation
+## Kỹ thuật giảm thiểu thiên kiến
 
 Để giảm thiểu tác động của Thiên kiến xác nhận trong nghiên cứu và công việc, hãy áp dụng các kỹ thuật sau:
 

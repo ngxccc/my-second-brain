@@ -1,11 +1,6 @@
 ---
 tags: [type/concept, status/permanent]
-aliases:
-  [
-    Repository vs Fat Service,
-    Repository Pattern vs Transaction Script,
-    Direct ORM,
-  ]
+date: 2026-06-19
 description: "So sánh giữa Repository Pattern và Fat Service (Direct ORM) trong thiết kế tầng dữ liệu."
 ---
 
@@ -13,34 +8,32 @@ description: "So sánh giữa Repository Pattern và Fat Service (Direct ORM) tr
 
 ## TL;DR
 
-So sánh hai trường phái thiết kế tầng truy cập dữ liệu (Data Access Layer): **Repository Pattern** tạo ra một lớp trừu tượng (abstraction) che giấu Database/ORM để phục vụ Domain Logic độc lập, trong khi **Fat Service (Direct ORM / Transaction Script)** nhúng trực tiếp truy vấn ORM vào lớp Service để giảm thiểu code thừa (boilerplate) và tận dụng tối đa sức mạnh của các ORM hiện đại (như Drizzle hay Prisma).
+- **Bản chất**: Repository bọc ORM sau một interface cho domain dùng; Fat Service nhúng truy vấn ORM trực tiếp vào service.
+- **Mục đích**: Chọn giữa khả năng thay thế hạ tầng và lượng boilerplate phải viết.
+- **Điểm mấu chốt**: Repository đổi boilerplate lấy khả năng thay thế hạ tầng; lợi ích đó chỉ thật khi domain phức tạp hoặc hạ tầng thực sự có khả năng đổi.
 
 ## Core Concept
 
 - **Tại sao nó tồn tại & Giải quyết bài toán gì?**
-  Khi phát triển ứng dụng Backend, việc thiết kế cách thức lớp Logic nghiệp vụ (Service/Domain) tương tác với lớp lưu trữ dữ liệu (Database) là vô cùng quan trọng.
-  - **Repository Pattern** ra đời nhằm giải quyết sự phụ thuộc cứng (tight coupling) của Business Logic vào các truy vấn SQL hoặc thư viện ORM cụ thể. Nó tạo ra một lớp "hợp đồng" (Interface) hoạt động như một collection trong bộ nhớ của các Domain Object.
-  - **Fat Service (Direct ORM)** ra đời để giải quyết vấn đề "lạm dụng trừu tượng" (over-abstraction) và hạn chế lượng code lặp đi lặp lại vô nghĩa (boilerplate) khi viết các lớp Repository đơn giản chỉ để gọi các hàm CRUD 1-1 của ORM.
+  Quyết định kiến trúc ở đây là cách Service/Domain tương tác với Database.
+  - **Repository Pattern** gỡ phụ thuộc cứng của Business Logic vào SQL/ORM cụ thể, bằng một Interface đóng vai collection trong bộ nhớ của Domain Object.
+  - **Fat Service (Direct ORM)** tránh "lạm dụng trừu tượng" và boilerplate khi Repository chỉ để gọi CRUD 1-1 của ORM.
 
 - **Cơ chế hoạt động (How it works under the hood)**
-  - **Repository Pattern**:
-    `Client (Controller) -> Service -> Repository Interface -> Repository Implementation (ORM/SQL) -> Database`
-    Lớp Service chỉ biết đến các phương thức định nghĩa trong Interface (ví dụ: `save(user: User)`). Lớp Implementation chịu trách nhiệm dịch nó thành câu truy vấn ORM hoặc SQL thực tế.
-  - **Fat Service**:
-    `Client (Controller) -> Service (Direct ORM Queries) -> Database`
-    Lớp Service trực tiếp import instance của DB/ORM (ví dụ: `this.db` của Drizzle) và viết các câu lệnh `select()`, `insert()`, `update()`, `delete()` ngay trong lòng các hàm nghiệp vụ.
+  - **Repository Pattern**: `Client -> Service -> Repository Interface -> Implementation (ORM/SQL) -> Database`; Service chỉ biết Interface (`save(user: User)`), Implementation dịch thành truy vấn thật.
+  - **Fat Service**: `Client -> Service (Direct ORM Queries) -> Database`; Service import thẳng instance DB/ORM (như `this.db` của Drizzle) và viết `select()`, `insert()`, `update()`, `delete()` trong hàm nghiệp vụ.
 
 ## Practical Implementation
 
 - **Trade-offs (So sánh và Đánh đổi)**:
 
-  | Tiêu chí                      | Repository Pattern                                                                  | Fat Service (Direct ORM)                                                    |
-  | :---------------------------- | :---------------------------------------------------------------------------------- | :-------------------------------------------------------------------------- |
-  | **Độ phức tạp (Boilerplate)** | **Cao**: Phải viết Interface, class cụ thể, DTO mapping.                            | **Thấp**: Viết truy vấn trực tiếp trong Service.                            |
-  | **Sự phụ thuộc (Coupling)**   | **Thấp**: Độc lập với DB/ORM công nghệ (Persistence Ignorance).                     | **Cao**: Service bị gắn chặt vào ORM cụ thể (như Drizzle).                  |
-  | **Khả năng Unit Test**        | **Rất dễ**: Chỉ cần mock Repository Interface bằng mock đơn giản.                   | **Trung bình**: Cần mock Database Connection hoặc API của ORM.              |
-  | **Tối ưu hiệu năng Query**    | **Khó**: Khó tận dụng các tính năng đặc thù của ORM như Lazy loading, Dynamic Join. | **Rất dễ**: Tự do tối ưu truy vấn, sử dụng các hàm tối ưu trực tiếp từ ORM. |
-  | **Phù hợp nhất**              | Hệ thống lớn, Domain Model phức tạp (DDD), dùng nhiều nguồn DB.                     | Hệ thống CRUD-heavy, vừa và nhỏ, sử dụng ORM mạnh mẽ (Prisma, Drizzle).     |
+  | Tiêu chí                      | Repository Pattern                                              | Fat Service (Direct ORM)                                        |
+  | :---------------------------- | :-------------------------------------------------------------- | :-------------------------------------------------------------- |
+  | **Độ phức tạp (Boilerplate)** | **Cao**: phải viết Interface, class cụ thể, DTO mapping.        | **Thấp**: viết truy vấn trực tiếp trong Service.                |
+  | **Sự phụ thuộc (Coupling)**   | **Thấp**: độc lập với DB/ORM công nghệ (Persistence Ignorance). | **Cao**: Service gắn chặt vào ORM cụ thể (như Drizzle).         |
+  | **Khả năng Unit Test**        | **Rất dễ**: chỉ cần mock Repository Interface.                  | **Trung bình**: phải mock Database Connection hoặc API của ORM. |
+  | **Tối ưu hiệu năng Query**    | **Khó**: khó tận dụng Lazy loading, Dynamic Join của ORM.       | **Rất dễ**: tự do tối ưu truy vấn trực tiếp từ ORM.             |
+  | **Phù hợp nhất**              | Hệ thống lớn, Domain Model phức tạp (DDD), nhiều nguồn DB.      | CRUD-heavy, vừa và nhỏ, dùng ORM mạnh (Prisma, Drizzle).        |
 
 - **Code Snippet (TypeScript & Drizzle ORM)**:
 

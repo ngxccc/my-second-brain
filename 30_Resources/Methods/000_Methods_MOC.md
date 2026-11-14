@@ -1,7 +1,6 @@
 ---
 tags: [type/moc, topic/productivity]
 date: 2026-04-29
-aliases: [Methods Index, Actionable Frameworks, The Toolbox]
 description: "Bản đồ quy tụ các quy trình, thuật toán và framework thực chiến có thể lấy ra áp dụng ngay để giải quyết vấn đề (Actionable Toolbox). Tự động truy vấn dữ liệu động bằng DataviewJS."
 ---
 

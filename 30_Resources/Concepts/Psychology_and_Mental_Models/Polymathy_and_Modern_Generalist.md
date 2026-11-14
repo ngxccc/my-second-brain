@@ -1,13 +1,6 @@
 ---
 tags: [type/concept, status/permanent]
 date: 2026-10-01
-aliases:
-  [
-    Polymathy,
-    Modern Generalist,
-    Charlie Munger Latticework,
-    Cross-Domain Synthesis,
-  ]
 description: "Khái niệm Polymathy (Bác học / Toàn diện) và hình mẫu Modern Generalist trong kỷ nguyên AI. Bản chất kết hợp Latticework of Mental Models và Cross-Domain Synthesis để giải quyết các vấn đề phức tạp."
 ---
 
@@ -17,7 +10,7 @@ description: "Khái niệm Polymathy (Bác học / Toàn diện) và hình mẫu
 
 - **Bản chất**: Năng lực am hiểu sâu sắc và làm chủ đồng thời nhiều domain tri thức khác nhau (Polymathy), kết nối chúng qua một hệ thống mô hình tư duy đa ngành (Latticework of Mental Models).
 - **Mục đích**: Vượt qua bẫy chuyên môn hóa hẹp (Einstellung Effect và Man with a Hammer Syndrome), tạo lợi thế cạnh tranh bất đối xứng trong kỷ nguyên AI thông qua Cross-Domain Synthesis.
-- **Điểm mấu chốt**: Không phải là "Jack of all trades, master of none", mà là đạt được điểm chuyển hóa (Cognitive Tipping Point) ở từng domain cốt lõi để kích hoạt Transfer of Learning giữa các hệ thống phức tạp.
+- **Điểm mấu chốt**: Không phải "Jack of all trades, master of none": phải đạt điểm chuyển hóa (Cognitive Tipping Point) ở từng domain cốt lõi để kích hoạt Transfer of Learning.
 
 ---
 
@@ -66,7 +59,7 @@ Polymath học một domain mới nhanh gấp nhiều lần người bình thư�
 
 ---
 
-## Architectural Applications & Practical Examples
+## Case study và áp dụng cho kỹ sư
 
 ### 1. Case Study: Herbert Simon - Hình mẫu Modern Polymath
 
@@ -91,10 +84,10 @@ Một Software Engineer phát triển theo lộ trình Polymathy:
 
 ## Related Notes
 
-- [[30_Resources/Concepts/Psychology_and_Mental_Models/T_Shaped_Skills_Model.md|T-Shaped Skills Model]]
-- [[30_Resources/Methods/Learning_and_Cognition/M_Shaped_Polymath_Skill_Stacking.md|M-Shaped Polymath Skill Stacking]]
-- [[30_Resources/Concepts/Learning_and_Linguistics/Herbert_Simon_Learning_Method.md|Herbert Simon Learning Method]]
-- [[30_Resources/Concepts/Psychology_and_Mental_Models/Systems_Thinking.md|Systems Thinking]]
-- [[30_Resources/Concepts/Psychology_and_Mental_Models/Critical_Thinking_Models.md|Critical Thinking Models]]
-- [[30_Resources/Methods/Learning_and_Cognition/First_Principles_Thinking.md|First Principles Thinking]]
-- [[30_Resources/Concepts/000_Concepts_MOC.md|Concepts MOC]]
+- Mô hình nền để chọn độ sâu một ngành: [[T_Shaped_Skills_Model]]
+- Quy trình thực thi nhiều tầng kỹ năng: [[M_Shaped_Polymath_Skill_Stacking]]
+- Cơ chế chunking để tích lũy nhiều miền: [[Herbert_Simon_Learning_Method]]
+- Lăng kính nối các miền rời rạc: [[Systems_Thinking]]
+- Bộ lọc nhiễu khi chọn miền học: [[Critical_Thinking_Models]]
+- Bóc tách miền về nguyên lý gốc: [[First_Principles_Thinking]]
+- [[000_Concepts_MOC]]

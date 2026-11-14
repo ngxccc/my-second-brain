@@ -1,8 +1,6 @@
 ---
 tags: [type/method, status/permanent]
 date: 2026-07-09
-aliases:
-  [Rate Limiting Strategies, DDoS Prevention, Defense in Depth Rate Limiting]
 description: "Chiến lược rate limit đa lớp (IP/Email) và chống DDoS/Credential Stuffing."
 ---
 
@@ -10,7 +8,9 @@ description: "Chiến lược rate limit đa lớp (IP/Email) và chống DDoS/C
 
 ## TL;DR
 
-Để bảo vệ các endpoint nhạy cảm (đặc biệt là Đăng ký/Đăng nhập) khỏi tấn công spam và brute-force phân tán (botnet), hệ thống cần áp dụng chiến lược phòng thủ đa lớp (Defense in Depth) kết hợp giới hạn thô IP ở tầng CDN/WAF và giới hạn tinh (Email/Account) ở tầng logic NestJS/Redis. Riêng luồng đăng ký phải chặn theo IP để tránh lỗi từ từ chối dịch vụ chiếm quyền (Account Pre-emption DoS).
+- **Bản chất**: Phòng thủ nhiều lớp: giới hạn thô theo IP ở CDN/WAF, giới hạn tinh theo email hoặc account ở tầng ứng dụng.
+- **Mục đích**: Chặn botnet brute-force phân tán mà không khóa nhầm người dùng thật.
+- **Điểm mấu chốt**: Luồng đăng ký phải chặn theo IP, nếu không kẻ tấn công chiếm trước email của nạn nhân (account pre-emption DoS).
 
 ---
 
@@ -98,4 +98,4 @@ export class CustomThrottlerGuard extends ThrottlerGuard {
 ## Related Notes
 
 - [[000_Tech_MOC]]
-- [[Register_User_Existence_Creation_Workflow]]
+- Luồng đăng ký cần rate limit (note chưa viết): [[Register_User_Existence_Creation_Workflow]]

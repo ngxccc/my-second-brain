@@ -1,11 +1,5 @@
 ---
 tags: [type/concept, status/permanent]
-aliases:
-  [
-    Git Stash Internals and Object Structure,
-    Cơ chế bên trong Git Stash,
-    Git Stash Commit Refs Architecture,
-  ]
 date: 2026-09-22
 description: "Cơ chế lưu trữ bên trong của Git Stash: tạo 2 (hoặc 3) commit đặc biệt liên kết với refs/stash thay vì lưu bộ nhớ tạm độc lập."
 ---
@@ -14,9 +8,9 @@ description: "Cơ chế lưu trữ bên trong của Git Stash: tạo 2 (hoặc 3
 
 ## TL;DR
 
-- **Bản chất**: `git stash` không hề có vùng nhớ tạm "ma thuật" nào riêng biệt. Nó thực chất là **tạo 2 (hoặc 3) commit tạm thời bình thường** trên đồ thị DAG và gắn vào con trỏ tham chiếu `.git/refs/stash`.
-- **Mục đích**: Lưu lại trạng thái chưa hoàn thiện của cả Working Directory và Index (Staging Area) để đưa thư mục làm việc về trạng thái sạch sẽ (`HEAD`) mà không làm ô nhiễm nhánh làm việc.
-- **Điểm mấu chốt**: Mỗi lần stash, Git tạo ra: Commit 1 (lưu Staging Area), Commit 2 (lưu Working Directory, có 2 commit cha: `HEAD` và Commit 1). Nếu dùng `git stash -u` (include untracked), Git tạo thêm Commit 3 lưu riêng các file Untracked. Danh sách `stash@{0}`, `stash@{1}` được quản lý bởi `logs/refs/stash`.
+- **Bản chất**: `git stash` không có vùng nhớ tạm riêng: nó tạo 2 (hoặc 3) commit bình thường trên DAG rồi gắn vào con trỏ `refs/stash`.
+- **Mục đích**: Lưu trạng thái dở dang của cả Working Directory và Index để đưa thư mục làm việc về `HEAD` sạch mà không làm ô nhiễm nhánh làm việc.
+- **Điểm mấu chốt**: Commit 1 giữ Index, Commit 2 giữ Working Directory với hai cha (`HEAD` và Commit 1); `-u` thêm Commit 3 cho file untracked; `stash@{n}` nằm trong `logs/refs/stash`.
 
 ---
 

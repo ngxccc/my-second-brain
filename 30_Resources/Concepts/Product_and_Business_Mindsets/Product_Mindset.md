@@ -1,7 +1,6 @@
 ---
 tags: [type/concept, status/permanent]
 date: 2026-06-22
-aliases: [Product Mindset, Tư duy sản phẩm, Product-led Thinking]
 description: "Chuyển dịch trọng tâm từ hoàn thành dự án sang tối ưu hóa giá trị sản phẩm."
 ---
 
@@ -9,7 +8,9 @@ description: "Chuyển dịch trọng tâm từ hoàn thành dự án sang tối
 
 ## TL;DR
 
-Tư duy sản phẩm (Product Mindset) là sự chuyển dịch từ việc tập trung hoàn thành các công việc ngắn hạn (Project Mindset) sang việc liên tục tối ưu hóa và tạo ra giá trị lâu dài cho người dùng. Tư duy này định nghĩa sự thành công của phần mềm bằng giá trị kinh doanh và sự hài lòng của khách hàng, thay vì chỉ là việc bàn giao đúng hạn.
+- **Bản chất**: Chuyển từ đo thành công bằng việc bàn giao đúng hạn (project mindset) sang đo bằng giá trị liên tục tạo ra cho người dùng.
+- **Mục đích**: Tránh việc ship xong rồi dừng, khi sản phẩm cần được tối ưu sau khi người dùng thật chạm vào.
+- **Điểm mấu chốt**: Product mindset không phủ định deadline; nó đòi thêm vòng đo lường sau khi ship, và vòng đó cần ngân sách thời gian được cấp trước.
 
 ---
 
@@ -39,7 +40,7 @@ Tư duy sản phẩm (Product Mindset) là sự chuyển dịch từ việc tậ
 
 ---
 
-## Practical Implementation
+## Rèn luyện tư duy sản phẩm
 
 Để rèn luyện tư duy sản phẩm trong kỹ nghệ phần mềm:
 
