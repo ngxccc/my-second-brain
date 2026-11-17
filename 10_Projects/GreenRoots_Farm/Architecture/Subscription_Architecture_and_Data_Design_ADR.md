@@ -86,9 +86,9 @@ Khi tác nhân thời gian (Cron Job) tự động sinh đơn hàng con (`orders
 - Phương thức thanh toán được gán: `payment_method = 'subscription'`, `payment_status = 'paid'`.
 - Giá trị đơn hàng con được tính theo công thức:
 
-$$\text{total\_amount} = \frac{\text{prepaid\_amount}}{\text{total\_deliveries}}$$
+$$\text{Total Amount} = \frac{\text{Prepaid Amount}}{\text{Total Deliveries}}$$
 
-_Ví dụ: Gói 1.200.000đ gồm 8 lần giao $\rightarrow$ mỗi đơn con ghi nhận $\text{total\_amount} = 150.000\text{ đ}$._
+_Ví dụ: Gói 1.200.000đ gồm 8 lần giao $\rightarrow$ mỗi đơn con ghi nhận `total_amount` = 150.000đ._
 
 ### 3 mục đích nghiệp vụ sống còn của công thức này:
 
