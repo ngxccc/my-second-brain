@@ -68,7 +68,7 @@ Phương án xử lý các kết nối hạ tầng bên ngoài để đảm bả
 
 Quy chuẩn công nghệ nền tảng và kiến trúc bảo mật:
 
-- **Lựa chọn đã chốt**: TypeScript đồng nhất cho cả hệ thống. Backend sử dụng NestJS với Drizzle ORM, cơ sở dữ liệu PostgreSQL, Redis cho caching/rate-limiting/blacklist, Cloudinary cho lưu trữ media, và PayOS cho cổng thanh toán. Frontend hợp nhất trên một ứng dụng Next.js (App Router) duy nhất sử dụng Route Groups: `(storefront)` cho khách hàng (SSR/Mobile-first) và `(dashboard)` cho nhân viên nội bộ (`'use client'`).
+- **Lựa chọn đã chốt**: TypeScript đồng nhất cho cả hệ thống theo mô hình Monorepo. Backend sử dụng NestJS 12 với Drizzle ORM v1, cơ sở dữ liệu PostgreSQL 18, Redis 8 cho caching/rate-limiting/blacklist, Cloudinary Signed Direct Upload cho media, và PayOS cho cổng thanh toán VietQR. Frontend phân tách độc lập thành hai workspace: `apps/storefront` sử dụng Next.js 16 (App Router) cho khách hàng (SSR/Mobile-first, SEO tra cứu QR) và `apps/backoffice` sử dụng React 19 + Vite 7 SPA kết hợp TanStack Suite (Router, Query, Table) cho vận hành nội bộ.
 - **Cơ chế phân quyền**: Sử dụng Role-Based Access Control chặt chẽ thông qua NestJS `Guards` và custom decorators gắn tại từng controller endpoint.
 - **Phân cấp 6 Roles nghiệp vụ**:
   - `Guest`: Người dùng chưa xác thực, chỉ được xem danh mục sản phẩm và nhật ký công khai.

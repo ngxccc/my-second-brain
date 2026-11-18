@@ -55,6 +55,8 @@ erDiagram
         uuid id PK
         string name
         string legal_name
+        string tagline
+        string tax_id
         string address
         numeric latitude
         numeric longitude
@@ -73,6 +75,7 @@ erDiagram
         uuid id PK
         uuid farm_id FK
         string plot_code
+        string name
         numeric area_sqm
         string soil_test_result
         string water_test_result
@@ -94,7 +97,7 @@ erDiagram
         uuid staff_id FK
         string action_type
         text description
-        string media_urls
+        jsonb media_urls
         timestamp logged_at
     }
 
@@ -133,9 +136,10 @@ erDiagram
         uuid category_id FK
         string name
         string slug
-        numeric base_price
+        integer base_price
         string unit
         boolean is_subscription_eligible
+        boolean is_active
         timestamp deleted_at
     }
 
@@ -161,6 +165,10 @@ erDiagram
         string role
         string status
         boolean email_verified
+        string verification_token
+        timestamp verification_expires_at
+        string reset_password_token
+        timestamp reset_password_expires_at
         integer reward_points
         timestamp deleted_at
     }
@@ -172,8 +180,10 @@ erDiagram
         uuid subscription_id FK
         string shipping_address
         numeric shipping_distance_km
-        numeric shipping_fee
-        numeric total_amount
+        integer shipping_fee
+        integer subtotal
+        integer discount_amount
+        integer total_amount
         string payment_method
         string payment_status
         string order_status
@@ -184,7 +194,7 @@ erDiagram
         uuid order_id FK
         uuid product_id FK
         numeric quantity
-        numeric unit_price
+        integer unit_price
     }
 
     BATCH_ALLOCATIONS {
@@ -275,32 +285,32 @@ Bảng đối chiếu 18 thực thể theo 4 phân vùng nghiệp vụ chính:
 
 ### Phân vùng 1: Farm Operations
 
-| Tên Bảng       | Khóa Chính  | Khóa Ngoại                      | Các Cột Thuộc Tính Trọng Tâm                                                                                                     | Ràng Buộc Nghiệp Vụ                                                    |
-| :------------- | :---------- | :------------------------------ | :------------------------------------------------------------------------------------------------------------------------------- | :--------------------------------------------------------------------- |
-| `farms`        | `id` (UUID) | Không                           | `name`, `legal_name`, `address`, `latitude`, `longitude`, `hotlines`, `shipping_config`, `flash_sale_config`, `is_payos_enabled` | Singleton cấu hình nông trại & cache Redis 24h (không chứa API secret) |
-| `plots`        | `id` (UUID) | `farm_id` $\rightarrow$ `farms` | `plot_code` (Lô đất), `area_sqm`, `soil_test_result`, `water_test_result`, `deleted_at`                                          | 1 Farm có nhiều Plot đất; Soft delete kèm Partial Unique Index         |
-| `seasons`      | `id` (UUID) | `plot_id` $\rightarrow$ `plots` | `season_name`, `start_date`, `expected_harvest_date`, `status`                                                                   | Quản lý vòng đời gieo trồng                                            |
-| `farming_logs` | `id` (UUID) | `season_id`, `staff_id`         | `action_type`, `description`, `media_urls`, `logged_at`                                                                          | **Append-only log** (Không sửa/xóa)                                    |
+| Tên Bảng       | Khóa Chính  | Khóa Ngoại                      | Các Cột Thuộc Tính Trọng Tâm                                                                                                                          | Ràng Buộc Nghiệp Vụ                                                    |
+| :------------- | :---------- | :------------------------------ | :---------------------------------------------------------------------------------------------------------------------------------------------------- | :--------------------------------------------------------------------- |
+| `farms`        | `id` (UUID) | Không                           | `name`, `legal_name`, `tagline`, `tax_id`, `address`, `latitude`, `longitude`, `hotlines`, `shipping_config`, `flash_sale_config`, `is_payos_enabled` | Singleton cấu hình nông trại & cache Redis 24h (không chứa API secret) |
+| `plots`        | `id` (UUID) | `farm_id` $\rightarrow$ `farms` | `plot_code`, `name`, `area_sqm`, `soil_test_result`, `water_test_result`, `deleted_at`                                                                | 1 Farm có nhiều Plot đất; Soft delete kèm Partial Unique Index         |
+| `seasons`      | `id` (UUID) | `plot_id` $\rightarrow$ `plots` | `season_name`, `start_date`, `expected_harvest_date`, `status` (`planning`, `active`, `harvested`, `completed`)                                       | Quản lý vòng đời gieo trồng                                            |
+| `farming_logs` | `id` (UUID) | `season_id`, `staff_id`         | `action_type`, `description`, `media_urls`, `logged_at`                                                                                               | **Append-only log** (Không sửa/xóa)                                    |
 
 ### Phân vùng 2: Catalog & Batch Inventory
 
 | Tên Bảng     | Khóa Chính  | Khóa Ngoại                               | Các Cột Thuộc Tính Trọng Tâm                                                                                       | Ràng Buộc Nghiệp Vụ                                        |
 | :----------- | :---------- | :--------------------------------------- | :----------------------------------------------------------------------------------------------------------------- | :--------------------------------------------------------- |
 | `categories` | `id` (UUID) | `parent_id` $\rightarrow$ `categories`   | `name`, `slug`, `parent_id`, `sort_order`, `is_active`, `deleted_at`                                               | Phân loại đa cấp; `is_active` tạm ẩn, `deleted_at` xóa mềm |
-| `products`   | `id` (UUID) | `category_id`                            | `name`, `slug`, `base_price`, `unit`, `is_subscription_eligible`, `deleted_at`                                     | Sản phẩm Storefront; Soft delete giữ lịch sử `order_items` |
+| `products`   | `id` (UUID) | `category_id`                            | `name`, `slug`, `base_price` (VND integer), `unit`, `is_subscription_eligible`, `is_active`, `deleted_at`          | Sản phẩm Storefront; Soft delete giữ lịch sử `order_items` |
 | `batches`    | `id` (UUID) | `season_id`, `product_id`                | `batch_code`, `harvest_date`, `expiration_date`, `initial_quantity`, `available_quantity`, `qr_code_url`, `status` | **Cốt lõi FEFO & QR Code**. 1 sản phẩm có nhiều Lô         |
 | `waste_logs` | `id` (UUID) | `batch_id`, `reported_by`, `approved_by` | `discarded_quantity`, `reason`, `media_urls`, `status`, `updated_at`                                               | Phiếu xuất hủy 2 bước (Staff tạo, Admin duyệt)             |
 
 ### Phân vùng 3: Users & Orders
 
-| Tên Bảng            | Khóa Chính  | Khóa Ngoại                       | Các Cột Thuộc Tính Trọng Tâm                                                                                                                                    | Ràng Buộc Nghiệp Vụ                                      |
-| :------------------ | :---------- | :------------------------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------- | :------------------------------------------------------- |
-| `users`             | `id` (UUID) | Không                            | `email`, `phone`, `password`, `full_name`, `role`, `status`, `email_verified`, `reward_points`, `deleted_at`                                                    | Phân quyền 6 vai trò; Soft delete + Partial Unique Index |
-| `refresh_tokens`    | `id` (UUID) | `user_id` $\rightarrow$ `users`  | `token`, `device_name`, `ip_address`, `expires_at`                                                                                                              | **Phiên đăng nhập bền vững**: ACID xoay vòng token       |
-| `user_addresses`    | `id` (UUID) | `user_id` $\rightarrow$ `users`  | `receiver_name`, `phone_number`, `street_address`, `district`, `city`, `latitude`, `longitude`, `is_default`                                                    | Sổ địa chỉ khách hàng; tọa độ tính ship Haversine        |
-| `orders`            | `id` (UUID) | `customer_id`, `subscription_id` | `order_code`, `subscription_id`, `shipping_address`, `shipping_distance_km`, `shipping_fee`, `total_amount`, `payment_method`, `payment_status`, `order_status` | FSM trạng thái đơn; đơn con liên kết gói                 |
-| `order_items`       | `id` (UUID) | `order_id`, `product_id`         | `quantity`, `unit_price`                                                                                                                                        | Mỗi dòng sản phẩm trong đơn                              |
-| `batch_allocations` | `id` (UUID) | `order_item_id`, `batch_id`      | `allocated_quantity`, `allocated_at`                                                                                                                            | **Phân bổ FEFO**: 1 item có thể trừ từ nhiều Lô          |
+| Tên Bảng            | Khóa Chính  | Khóa Ngoại                       | Các Cột Thuộc Tính Trọng Tâm                                                                                                                                                               | Ràng Buộc Nghiệp Vụ                                      |
+| :------------------ | :---------- | :------------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :------------------------------------------------------- |
+| `users`             | `id` (UUID) | Không                            | `email`, `phone`, `password`, `full_name`, `role`, `status`, `email_verified`, `verification_token`, `reset_password_token`, `reward_points`, `deleted_at`                                 | Phân quyền 6 vai trò; Soft delete + Partial Unique Index |
+| `refresh_tokens`    | `id` (UUID) | `user_id` $\rightarrow$ `users`  | `token` (SHA-256 hash), `device_name`, `ip_address`, `expires_at`                                                                                                                          | **Phiên đăng nhập bền vững**: ACID xoay vòng token       |
+| `user_addresses`    | `id` (UUID) | `user_id` $\rightarrow$ `users`  | `receiver_name`, `phone_number`, `street_address`, `district`, `city`, `latitude`, `longitude`, `is_default`                                                                               | Sổ địa chỉ khách hàng; tọa độ tính ship Haversine        |
+| `orders`            | `id` (UUID) | `customer_id`, `subscription_id` | `order_code`, `subscription_id`, `shipping_address`, `shipping_distance_km`, `subtotal`, `discount_amount`, `shipping_fee`, `total_amount` (VND integer), `payment_method`, `order_status` | FSM trạng thái đơn; đơn con liên kết gói                 |
+| `order_items`       | `id` (UUID) | `order_id`, `product_id`         | `quantity`, `unit_price` (VND integer)                                                                                                                                                     | Mỗi dòng sản phẩm trong đơn                              |
+| `batch_allocations` | `id` (UUID) | `order_item_id`, `batch_id`      | `allocated_quantity`, `allocated_at`                                                                                                                                                       | **Phân bổ FEFO**: 1 item có thể trừ từ nhiều Lô          |
 
 ### Phân vùng 4: Subscription, Payments & Complaints
 

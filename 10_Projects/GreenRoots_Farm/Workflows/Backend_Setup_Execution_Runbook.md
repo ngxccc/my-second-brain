@@ -82,7 +82,7 @@ Bước 5: Chạy kiểm thử nghiệm thu toàn diện
 
 ### Bước 2: Cấu hình môi trường và kịch bản thực thi
 
-- Tạo file `apps/api/.env.example` chứa các biến: `PORT=3001`, `NODE_ENV=development`, `DB_URL`, `DB_DIRECT_URL`, `REDIS_URL`, `JWT_ACCESS_SECRET`, `JWT_ACCESS_EXPIRES_IN=15m`, `JWT_REFRESH_EXPIRES_IN=7d`.
+- Tạo file `apps/api/.env.example` chứa các biến: `PORT=3000`, `NODE_ENV=development`, `DB_URL`, `DB_DIRECT_URL`, `REDIS_URL`, `JWT_ACCESS_SECRET`, `JWT_ACCESS_EXPIRES_IN=15m`, `JWT_REFRESH_EXPIRES_IN=7d`.
 - Tạo file `apps/api/doppler.yaml` với cấu hình dự án `greenroots-farm-api`.
 - Bổ sung nhóm script vào `apps/api/package.json`:
   - Chuẩn: `dev`, `build`, `start:node`, `db:generate`, `db:migrate`, `db:push`, `db:seed`.
@@ -130,9 +130,9 @@ bun run db:seed --clean
 
 # 4. Kiểm tra tài liệu API tương tác
 bun run dev &
-curl -I http://localhost:3001/api/docs
+curl -I http://localhost:3000/api/docs
 # Yêu cầu: HTTP Status 200 OK
-curl -s http://localhost:3001/openapi.json | grep "openapi"
+curl -s http://localhost:3000/openapi.json | grep "openapi"
 # Yêu cầu: Trả về JSON OpenAPI hợp lệ
 ```
 
